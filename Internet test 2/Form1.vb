@@ -6,11 +6,17 @@ Public Class Form1
             Label3.Text = "Vous êtes connecté à Internet"
             Label3.Visible = True
             Label3.Location = New Point(248, 130)
-            NotifyIcon1.ShowBalloonTip(1000)
+            If My.Settings.EnableNotif = True Then
+                NotifyIcon1.ShowBalloonTip(1000)
+            Else
+            End If
         Else
-            Label3.Text = "Vous n'êtes pas connecté à Internet"
+                Label3.Text = "Vous n'êtes pas connecté à Internet"
             Label3.Location = New Point(225, 130)
-            NotifyIcon1.ShowBalloonTip(1000)
+            If My.Settings.EnableNotif = True Then
+                NotifyIcon1.ShowBalloonTip(1000)
+            Else
+            End If
         End If
     End Sub
 
@@ -39,12 +45,18 @@ Public Class Form1
             Label3.Text = "Vous êtes connecté à Internet"
             Label3.Visible = True
             Label3.Location = New Point(248, 130)
-            NotifyIcon1.ShowBalloonTip(1000)
+            If My.Settings.EnableNotif = True Then
+                NotifyIcon1.ShowBalloonTip(1000)
+            Else
+            End If
         Else
             Label3.Text = "Vous n'êtes pas connecté à Internet"
             Label3.Location = New Point(225, 130)
             'MsgBox("Vous n'êtes pas connecté à Internet") Les MsgBox ne servent à rien, elles sont remplacées par les NotifyIcon
-            NotifyIcon1.ShowBalloonTip(1000)
+            If My.Settings.EnableNotif = True Then
+                NotifyIcon1.ShowBalloonTip(1000)
+            Else
+            End If
         End If
     End Sub
 
@@ -97,7 +109,7 @@ Public Class Form1
             PictureBox4.Image = My.Resources.sunb
             PictureBox5.Image = My.Resources.Internetb
             PictureBox6.Image = My.Resources.GitHub_logo_2013_White
-            Button1.BackgroundImage = My.Resources.testb
+            Button1.BackgroundImage = My.Resources.Test_Button_Black
             My.Settings.DarkTheme = True
         Else
             Me.BackColor = Color.White
@@ -107,7 +119,7 @@ Public Class Form1
             PictureBox4.Image = My.Resources.moon
             PictureBox5.Image = My.Resources.Internet
             PictureBox6.Image = My.Resources.GitHub_logo_2013_svg
-            Button1.BackgroundImage = My.Resources.test
+            Button1.BackgroundImage = My.Resources.Test_Button_White
             My.Settings.DarkTheme = False
         End If
     End Sub
@@ -118,5 +130,9 @@ Public Class Form1
 
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         Process.Start("https://github.com/Leo-Corporation/InternetTest")
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        Paramètres.Show()
     End Sub
 End Class

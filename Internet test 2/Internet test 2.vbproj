@@ -134,6 +134,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Paramètres.Designer.vb">
+      <DependentUpon>Paramètres.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paramètres.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -147,6 +153,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paramètres.resx">
+      <DependentUpon>Paramètres.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +174,7 @@
   <ItemGroup>
     <Content Include="icons8-internet-96bl.ico" />
     <Content Include="Internet Test.ico" />
+    <None Include="Resources\settings.png" />
     <None Include="Resources\GitHub_logo_2013_White.png" />
     <None Include="Resources\Test_Button_Black.png" />
     <None Include="Resources\Test_Button_White.png" />

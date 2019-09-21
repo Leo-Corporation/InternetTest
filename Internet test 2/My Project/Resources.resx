@@ -127,11 +127,17 @@
   <data name="Bouton_retour" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bouton retour.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_droite_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-droite-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Internet Test" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Internet Test.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Internetb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Internetb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Test_Button_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Test_Button_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Test_Button_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Test_Button_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bouton_retour_DARK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bouton retour DARK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,6 +157,9 @@
   <data name="Barre_recherche" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Barre recherche.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GitHub_logo_2013_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GitHub_logo_2013_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="testb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\testb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,14 +172,14 @@
   <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GitHub_logo_2013.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GitHub_logo_2013.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Internet Test" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Internet Test.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="moon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\moon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Internetb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Internetb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="test" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\test.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,22 +187,16 @@
   <data name="refreshb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refreshb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Internet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Internet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_droite_512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-droite-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Bouton_avancer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bouton avancer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Test_Button_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Test_Button_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Internet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Internet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GitHub_logo_2013_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GitHub_logo_2013_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GitHub_logo_2013.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GitHub_logo_2013.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Test_Button_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Test_Button_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

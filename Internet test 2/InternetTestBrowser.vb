@@ -24,7 +24,10 @@
     End Sub
 
     Private Sub InternetTestBrowser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MsgBox("Attention, ceci est un navigateur qui a juste pour but de tester votre connexion internet. Certains sites ne fonctionnerons pas.", MsgBoxStyle.Exclamation)
+        If My.Settings.EnableWarnMsgBrowser = True Then
+            MsgBox("Attention, ceci est un navigateur qui a juste pour but de tester votre connexion internet. Certains sites ne fonctionnerons pas.", MsgBoxStyle.Exclamation)
+        Else
+        End If
         If My.Settings.DarkTheme = True Then
             PictureBox1.Image = My.Resources.Bouton_retour_DARK
             PictureBox2.Image = My.Resources.Bouton_avancer_DARK
