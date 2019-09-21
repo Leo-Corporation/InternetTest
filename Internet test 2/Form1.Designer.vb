@@ -31,15 +31,17 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,9 +93,9 @@ Partial Class Form1
         Me.Label4.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.Label4.Location = New System.Drawing.Point(0, 231)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(407, 18)
+        Me.Label4.Size = New System.Drawing.Size(339, 18)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "© 2019 Léo Peyronnet Corporation - Version 3.2.0.1904 - Uiful 1.0"
+        Me.Label4.Text = "© 2019 Léo Corporation - Version 3.2.0.1904 - Uiful 1.0"
         '
         'LinkLabel1
         '
@@ -123,6 +125,19 @@ Partial Class Form1
         Me.CheckBox1.UseVisualStyleBackColor = True
         Me.CheckBox1.Visible = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.Label3.Location = New System.Drawing.Point(225, 130)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(292, 23)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Vous n'êtes pas connecté à Internet"
+        Me.Label3.Visible = False
+        '
         'PictureBox5
         '
         Me.PictureBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -136,6 +151,20 @@ Partial Class Form1
         Me.PictureBox5.TabIndex = 9
         Me.PictureBox5.TabStop = False
         Me.ToolTip1.SetToolTip(Me.PictureBox5, "Naviguer sur Internet")
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox6.Image = Global.Internet_test_2.My.Resources.Resources.GitHub_logo_2013_svg
+        Me.PictureBox6.Location = New System.Drawing.Point(479, 194)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(76, 55)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox6.TabIndex = 6
+        Me.PictureBox6.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox6, "GitHub")
         '
         'PictureBox4
         '
@@ -201,26 +230,13 @@ Partial Class Form1
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.Internet_test_2.My.Resources.Resources.logo
+        Me.PictureBox1.Image = Global.Internet_test_2.My.Resources.Resources.Internet_Test
         Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(62, 62)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Label3.Location = New System.Drawing.Point(225, 130)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(292, 23)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Vous n'êtes pas connecté à Internet"
-        Me.Label3.Visible = False
         '
         'Form1
         '
@@ -232,6 +248,7 @@ Partial Class Form1
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.LinkLabel1)
+        Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
@@ -247,6 +264,7 @@ Partial Class Form1
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -270,4 +288,5 @@ Partial Class Form1
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox6 As PictureBox
 End Class

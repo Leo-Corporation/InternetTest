@@ -107,4 +107,8 @@ Public Class Form1
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
         InternetTestBrowser.Show()
     End Sub
+
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+        Process.Start("https://github.com/Leo-Corporation/InternetTest")
+    End Sub
 End Class

@@ -66,7 +66,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8-internet-96bl.ico</ApplicationIcon>
+    <ApplicationIcon>Internet Test.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>FE23C2DCBE4A956AE25220B5948779C32E370027</ManifestCertificateThumbprint>
@@ -164,6 +164,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8-internet-96bl.ico" />
+    <Content Include="Internet Test.ico" />
+    <None Include="Resources\Internet Test.png" />
+    <None Include="Resources\GitHub_logo_2013.svg.png" />
     <None Include="Resources\testb.png" />
     <None Include="Resources\test.png" />
     <None Include="Resources\Internetb.png" />

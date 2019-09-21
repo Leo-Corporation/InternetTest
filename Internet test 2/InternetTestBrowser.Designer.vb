@@ -164,7 +164,7 @@ Partial Class InternetTestBrowser
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "InternetTestBrowser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Navigateur d'InternetTest 3.0"
+        Me.Text = "Navigateur d'InternetTest"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
