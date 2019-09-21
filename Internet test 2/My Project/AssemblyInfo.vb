@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' Vérifiez les valeurs des attributs de l'assembly
 
-<Assembly: AssemblyTitle("Internet Test 2")>
+<Assembly: AssemblyTitle("Internet Test")>
 <Assembly: AssemblyDescription("Test la connexion Internet")>
-<Assembly: AssemblyCompany("Léo Peyronnet Corporation")>
-<Assembly: AssemblyProduct("Internet test 2")>
+<Assembly: AssemblyCompany("Léo Corporation")>
+<Assembly: AssemblyProduct("Internet Test")>
 <Assembly: AssemblyCopyright("Copyright ©  2019")>
-<Assembly: AssemblyTrademark("LPC")>
+<Assembly: AssemblyTrademark("LCorp")>
 
 <Assembly: ComVisible(False)>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' en utilisant '*', comme indiqué ci-dessous :
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("3.2.0.1904")>
-<Assembly: AssemblyFileVersion("3.2.0.1904")>
+<Assembly: AssemblyVersion("3.3.0.1909")>
+<Assembly: AssemblyFileVersion("3.3.0.1909")>
