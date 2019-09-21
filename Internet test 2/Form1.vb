@@ -26,7 +26,7 @@ Public Class Form1
     Sub CheckUpdate()
         Dim MAJ As New WebClient
         Dim Four As New WebClient
-        Dim versionActuelle As String = "3.2.0.1904"
+        Dim versionActuelle As String = "3.3.0.1909"
         Dim derniereVersion As String = MAJ.DownloadString("https://dl.dropboxusercontent.com/s/j45gbzsjlfv6v4q/Versions.txt")
         Dim FourMaj As String = Four.DownloadString("https://dl.dropboxusercontent.com/s/9fqb84pj4davna9/Fournisseur.txt")
         If versionActuelle = derniereVersion Then

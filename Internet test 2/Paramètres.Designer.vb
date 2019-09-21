@@ -110,9 +110,9 @@ Partial Class Paramètres
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(5, 246)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(379, 21)
+        Me.Label6.Size = New System.Drawing.Size(372, 21)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Lorsque vosus ouvrez le navigateur d'InternetTest :"
+        Me.Label6.Text = "Lorsque vous ouvrez le navigateur d'InternetTest :"
         '
         'CheckBox1
         '
@@ -143,6 +143,7 @@ Partial Class Paramètres
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -157,6 +158,7 @@ Partial Class Paramètres
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))

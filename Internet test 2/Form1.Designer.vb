@@ -70,7 +70,7 @@ Partial Class Form1
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Label2.Location = New System.Drawing.Point(366, 22)
+        Me.Label2.Location = New System.Drawing.Point(280, 22)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(364, 20)
         Me.Label2.TabIndex = 2
@@ -247,13 +247,13 @@ Partial Class Form1
         Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox7.Image = Global.Internet_test_2.My.Resources.Resources.settings
-        Me.PictureBox7.Location = New System.Drawing.Point(281, 6)
+        Me.PictureBox7.Location = New System.Drawing.Point(675, 5)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(55, 55)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox7.TabIndex = 10
         Me.PictureBox7.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox7, "Mode nuit/clair")
+        Me.ToolTip1.SetToolTip(Me.PictureBox7, "Paramètres")
         '
         'PictureBox1
         '
@@ -287,7 +287,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Internet Test 3.3.0.1909 (Preview)"
+        Me.Text = "Internet Test 3.3.0.1909"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
