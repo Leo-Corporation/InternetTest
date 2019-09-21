@@ -165,6 +165,9 @@
   <ItemGroup>
     <Content Include="icons8-internet-96bl.ico" />
     <Content Include="Internet Test.ico" />
+    <None Include="Resources\GitHub_logo_2013_White.png" />
+    <None Include="Resources\Test_Button_Black.png" />
+    <None Include="Resources\Test_Button_White.png" />
     <None Include="Resources\Internet Test.png" />
     <None Include="Resources\GitHub_logo_2013.svg.png" />
     <None Include="Resources\testb.png" />
