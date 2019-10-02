@@ -48,7 +48,28 @@ Public Class Form1
     Public Sub Reload()
         Me.Controls.Clear()
         InitializeComponent()
-
+        If My.Settings.DarkTheme = True Then
+            Me.BackColor = Color.FromArgb(50, 50, 62)
+            CheckBox1.Checked = True
+            'PictureBox1.Image = My.Resources.logob | Logo transparent
+            PictureBox2.Image = My.Resources.updateb
+            PictureBox3.Image = My.Resources.refreshb
+            PictureBox4.Image = My.Resources.sunb
+            Button2.BackgroundImage = My.Resources.Browser_Black
+            PictureBox6.Image = My.Resources.GitHub_logo_2013_White
+            Button1.BackgroundImage = My.Resources.Test_Button_Black
+        Else
+            Me.BackColor = Color.White
+            CheckBox1.Checked = False
+            'PictureBox1.Image = My.Resources.logo
+            PictureBox2.Image = My.Resources.update
+            PictureBox3.Image = My.Resources.refresh
+            PictureBox4.Image = My.Resources.moon
+            Button2.BackgroundImage = My.Resources.Browser_White
+            PictureBox6.Image = My.Resources.GitHub_logo_2013_svg
+            Button1.BackgroundImage = My.Resources.Test_Button_White
+            My.Settings.DarkTheme = False
+        End If
     End Sub
     Sub CheckUpdate()
         Dim MAJ As New WebClient
@@ -144,7 +165,7 @@ Public Class Form1
             PictureBox2.Image = My.Resources.updateb
             PictureBox3.Image = My.Resources.refreshb
             PictureBox4.Image = My.Resources.sunb
-            PictureBox5.Image = My.Resources.Internetb
+            Button2.BackgroundImage = My.Resources.Browser_Black
             PictureBox6.Image = My.Resources.GitHub_logo_2013_White
             Button1.BackgroundImage = My.Resources.Test_Button_Black
         Else
@@ -154,7 +175,7 @@ Public Class Form1
             PictureBox2.Image = My.Resources.update
             PictureBox3.Image = My.Resources.refresh
             PictureBox4.Image = My.Resources.moon
-            PictureBox5.Image = My.Resources.Internet
+            Button2.BackgroundImage = My.Resources.Browser_White
             PictureBox6.Image = My.Resources.GitHub_logo_2013_svg
             Button1.BackgroundImage = My.Resources.Test_Button_White
             My.Settings.DarkTheme = False
@@ -168,7 +189,7 @@ Public Class Form1
             PictureBox2.Image = My.Resources.updateb
             PictureBox3.Image = My.Resources.refreshb
             PictureBox4.Image = My.Resources.sunb
-            PictureBox5.Image = My.Resources.Internetb
+            Button2.BackgroundImage = My.Resources.Browser_Black
             PictureBox6.Image = My.Resources.GitHub_logo_2013_White
             Button1.BackgroundImage = My.Resources.Test_Button_Black
             My.Settings.DarkTheme = True
@@ -178,14 +199,14 @@ Public Class Form1
             PictureBox2.Image = My.Resources.update
             PictureBox3.Image = My.Resources.refresh
             PictureBox4.Image = My.Resources.moon
-            PictureBox5.Image = My.Resources.Internet
+            Button2.BackgroundImage = My.Resources.Browser_White
             PictureBox6.Image = My.Resources.GitHub_logo_2013_svg
             Button1.BackgroundImage = My.Resources.Test_Button_White
             My.Settings.DarkTheme = False
         End If
     End Sub
 
-    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs)
         InternetTestBrowser.Show()
     End Sub
 
@@ -195,5 +216,9 @@ Public Class Form1
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         Paramètres.Show()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        InternetTestBrowser.Show()
     End Sub
 End Class

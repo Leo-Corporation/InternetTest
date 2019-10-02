@@ -10,6 +10,7 @@ Public Class Paramètres
             End If
             Me.BackColor = Color.FromArgb(50, 50, 62)
             ComboBox1.BackColor = Color.FromArgb(50, 50, 62)
+            ComboBox2.BackColor = Color.FromArgb(50, 50, 62)
         Else
             If My.Settings.LanguageUsed = "FR" Then
                 ComboBox1.Text = "Clair"
@@ -19,6 +20,7 @@ Public Class Paramètres
 
             Me.BackColor = Color.White
             ComboBox1.BackColor = Color.White
+            ComboBox2.BackColor = Color.White
         End If
         If My.Settings.EnableNotif = True Then
             CheckBox1.Checked = True
@@ -42,10 +44,11 @@ Public Class Paramètres
                 My.Settings.DarkTheme = False
                 Me.BackColor = Color.White
                 ComboBox1.BackColor = Color.White
+                ComboBox2.BackColor = Color.White
                 Form1.PictureBox2.Image = My.Resources.update
                 Form1.PictureBox3.Image = My.Resources.refresh
                 Form1.PictureBox4.Image = My.Resources.moon
-                Form1.PictureBox5.Image = My.Resources.Internet
+                Form1.Button2.BackgroundImage = My.Resources.Browser_White
                 Form1.PictureBox6.Image = My.Resources.GitHub_logo_2013_svg
                 Form1.Button1.BackgroundImage = My.Resources.Test_Button_White
                 Form1.BackColor = Color.White
@@ -53,10 +56,11 @@ Public Class Paramètres
                 My.Settings.DarkTheme = True
                 Me.BackColor = Color.FromArgb(50, 50, 62)
                 ComboBox1.BackColor = Color.FromArgb(50, 50, 62)
+                ComboBox2.BackColor = Color.FromArgb(50, 50, 62)
                 Form1.PictureBox2.Image = My.Resources.updateb
                 Form1.PictureBox3.Image = My.Resources.refreshb
                 Form1.PictureBox4.Image = My.Resources.sunb
-                Form1.PictureBox5.Image = My.Resources.Internetb
+                Form1.Button2.BackgroundImage = My.Resources.Browser_Black
                 Form1.PictureBox6.Image = My.Resources.GitHub_logo_2013_White
                 Form1.Button1.BackgroundImage = My.Resources.Test_Button_Black
                 Form1.BackColor = Color.FromArgb(50, 50, 62)
@@ -66,10 +70,11 @@ Public Class Paramètres
                 My.Settings.DarkTheme = False
                 Me.BackColor = Color.White
                 ComboBox1.BackColor = Color.White
+                ComboBox2.BackColor = Color.White
                 Form1.PictureBox2.Image = My.Resources.update
                 Form1.PictureBox3.Image = My.Resources.refresh
                 Form1.PictureBox4.Image = My.Resources.moon
-                Form1.PictureBox5.Image = My.Resources.Internet
+                Form1.Button2.BackgroundImage = My.Resources.Browser_White
                 Form1.PictureBox6.Image = My.Resources.GitHub_logo_2013_svg
                 Form1.Button1.BackgroundImage = My.Resources.Test_Button_White
                 Form1.BackColor = Color.White
@@ -77,10 +82,11 @@ Public Class Paramètres
                 My.Settings.DarkTheme = True
                 Me.BackColor = Color.FromArgb(50, 50, 62)
                 ComboBox1.BackColor = Color.FromArgb(50, 50, 62)
+                ComboBox2.BackColor = Color.FromArgb(50, 50, 62)
                 Form1.PictureBox2.Image = My.Resources.updateb
                 Form1.PictureBox3.Image = My.Resources.refreshb
                 Form1.PictureBox4.Image = My.Resources.sunb
-                Form1.PictureBox5.Image = My.Resources.Internetb
+                Form1.Button2.BackgroundImage = My.Resources.Browser_Black
                 Form1.PictureBox6.Image = My.Resources.GitHub_logo_2013_White
                 Form1.Button1.BackgroundImage = My.Resources.Test_Button_Black
                 Form1.BackColor = Color.FromArgb(50, 50, 62)

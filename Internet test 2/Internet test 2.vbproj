@@ -148,6 +148,9 @@
     <EmbeddedResource Include="Form1.fr-FR.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.fr.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +198,8 @@
   <ItemGroup>
     <Content Include="icons8-internet-96bl.ico" />
     <Content Include="Internet Test.ico" />
+    <None Include="Resources\Browser_White.png" />
+    <None Include="Resources\Browser_Black.png" />
     <None Include="Resources\settings.png" />
     <None Include="Resources\GitHub_logo_2013_White.png" />
     <None Include="Resources\Test_Button_Black.png" />

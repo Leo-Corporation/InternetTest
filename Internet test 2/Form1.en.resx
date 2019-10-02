@@ -158,6 +158,57 @@
   <data name="Label3.Text" xml:space="preserve">
     <value>You're not connected to the Internet</value>
   </data>
+  <data name="Button2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="Button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="Button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.75pt, style=Bold</value>
+  </data>
+  <data name="Button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 164</value>
+  </data>
+  <data name="Button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 65</value>
+  </data>
+  <data name="Button2.Text" xml:space="preserve">
+    <value>       Go to the Internet</value>
+  </data>
+  <data name="Button2.ToolTip" xml:space="preserve">
+    <value>Go to the Internet</value>
+  </data>
+  <data name="PictureBox6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PictureBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PictureBox4.ToolTip" xml:space="preserve">
+    <value>Dark Mode</value>
+  </data>
+  <data name="PictureBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PictureBox3.ToolTip" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="PictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PictureBox2.ToolTip" xml:space="preserve">
+    <value>Scan for update</value>
+  </data>
+  <data name="Button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Button1.Text" xml:space="preserve">
+    <value>       Test your connexion</value>
+  </data>
+  <data name="Button1.ToolTip" xml:space="preserve">
+    <value>Test your connexion</value>
+  </data>
   <data name="NotifyIcon1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAB4dgAAZgAAAICAAAABACAAKAgBAN52AABAQAAAAQAgAChCAAAGfwEAMDAAAAEA
@@ -2330,39 +2381,6 @@
         AAA=
 </value>
   </data>
-  <data name="PictureBox5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="PictureBox5.ToolTip" xml:space="preserve">
-    <value>Go to the Internet</value>
-  </data>
-  <data name="PictureBox6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="PictureBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="PictureBox4.ToolTip" xml:space="preserve">
-    <value>Dark Mode</value>
-  </data>
-  <data name="PictureBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="PictureBox3.ToolTip" xml:space="preserve">
-    <value>Retry</value>
-  </data>
-  <data name="PictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="PictureBox2.ToolTip" xml:space="preserve">
-    <value>Scan for update</value>
-  </data>
-  <data name="Button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Button1.ToolTip" xml:space="preserve">
-    <value>Test your connexion</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAB4dgAAZgAAAICAAAABACAAKAgBAN52AABAQAAAAQAgAChCAAAGfwEAMDAAAAEA
@@ -4534,8 +4552,5 @@
         AADwDwAA4AcAAMADAACAAQAAgAEAAJmZAACAAQAAgAEAAIABAACAAQAAgAEAAMADAADgBwAA8A8AAP//
         AAA=
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>
