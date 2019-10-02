@@ -43,6 +43,7 @@ Partial Class InternetTestBrowser
         '
         'Panel1
         '
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -52,7 +53,6 @@ Partial Class InternetTestBrowser
         Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.Name = "Panel1"
         '
         'Label2
@@ -75,16 +75,16 @@ Partial Class InternetTestBrowser
         '
         'PictureBox4
         '
-        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.PictureBox4, "PictureBox4")
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.TabStop = False
         '
         'TextBox1
         '
+        resources.ApplyResources(Me.TextBox1, "TextBox1")
         Me.TextBox1.BackColor = System.Drawing.Color.White
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        resources.ApplyResources(Me.TextBox1, "TextBox1")
         Me.TextBox1.Name = "TextBox1"
         '
         'PictureBox3
@@ -95,15 +95,15 @@ Partial Class InternetTestBrowser
         '
         'PictureBox2
         '
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.PictureBox2, "PictureBox2")
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.TabStop = False
         '
         'PictureBox1
         '
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.PictureBox1, "PictureBox1")
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = False
         '

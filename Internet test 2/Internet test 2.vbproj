@@ -151,6 +151,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InternetTestBrowser.en.resx">
+      <DependentUpon>InternetTestBrowser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternetTestBrowser.fr-FR.resx">
+      <DependentUpon>InternetTestBrowser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternetTestBrowser.fr.resx">
+      <DependentUpon>InternetTestBrowser.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InternetTestBrowser.resx">
       <DependentUpon>InternetTestBrowser.vb</DependentUpon>
     </EmbeddedResource>

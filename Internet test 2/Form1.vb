@@ -4,18 +4,39 @@ Imports System.Globalization
 Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If My.Computer.Network.IsAvailable = True Then
-            Label3.Text = "Vous êtes connecté à Internet"
+            If My.Settings.LanguageUsed = "FR" Then
+                Label3.Text = "Vous êtes connecté à Internet"
+            ElseIf My.Settings.LanguageUsed = "EN" Then
+                Label3.Text = "You are connected to Internet"
+            End If
+
             Label3.Visible = True
             Label3.Location = New Point(248, 130)
             If My.Settings.EnableNotif = True Then
-                NotifyIcon1.ShowBalloonTip(1000)
+                If My.Settings.LanguageUsed = "FR" Then
+                    NotifyIcon1.BalloonTipText = "Votre connexion a été testée"
+                    NotifyIcon1.ShowBalloonTip(1000)
+                ElseIf My.Settings.LanguageUsed = "EN" Then
+                    NotifyIcon1.BalloonTipText = "Your connexion was tested"
+                    NotifyIcon1.ShowBalloonTip(1000)
+                End If
             Else
             End If
         Else
+            If My.Settings.LanguageUsed = "FR" Then
                 Label3.Text = "Vous n'êtes pas connecté à Internet"
+            ElseIf My.Settings.LanguageUsed = "EN" Then
+                Label3.Text = "You are not connected to Internet"
+            End If
             Label3.Location = New Point(225, 130)
             If My.Settings.EnableNotif = True Then
-                NotifyIcon1.ShowBalloonTip(1000)
+                If My.Settings.LanguageUsed = "FR" Then
+                    NotifyIcon1.BalloonTipText = "Votre connexion a été testée"
+                    NotifyIcon1.ShowBalloonTip(1000)
+                ElseIf My.Settings.LanguageUsed = "EN" Then
+                    NotifyIcon1.BalloonTipText = "Your connexion was tested"
+                    NotifyIcon1.ShowBalloonTip(1000)
+                End If
             Else
             End If
         End If
@@ -36,9 +57,17 @@ Public Class Form1
         Dim derniereVersion As String = MAJ.DownloadString("https://dl.dropboxusercontent.com/s/j45gbzsjlfv6v4q/Versions.txt")
         Dim FourMaj As String = Four.DownloadString("https://dl.dropboxusercontent.com/s/9fqb84pj4davna9/Fournisseur.txt")
         If versionActuelle = derniereVersion Then
-            MsgBox("Tout est à jour !")
+            If My.Settings.LanguageUsed = "FR" Then
+                MsgBox("Tout est à jour !")
+            ElseIf My.Settings.LanguageUsed = "EN" Then
+                MsgBox("Everything is up to date!")
+            End If
         Else
-            MsgBox("Des mises à jour sont disponibles." & vbNewLine & "La dernière version est : " & derniereVersion & vbNewLine & "Fournit par : " & FourMaj, vbOKOnly + MsgBoxStyle.Information, "Mise à jour du logiciel")
+            If My.Settings.LanguageUsed = "FR" Then
+                MsgBox("Des mises à jour sont disponibles." & vbNewLine & "La dernière version est : " & derniereVersion & vbNewLine & "Fournit par : " & FourMaj, vbOKOnly + MsgBoxStyle.Information, "Mise à jour du logiciel")
+            ElseIf My.Settings.LanguageUsed = "EN" Then
+                MsgBox("Updates are avaible.." & vbNewLine & "The last version is : " & derniereVersion & vbNewLine & "Provided by : " & FourMaj, vbOKOnly + MsgBoxStyle.Information, "Software Updates")
+            End If
             Dim MAJ2 As New WebClient
             Dim downloadLink As String = MAJ2.DownloadString("https://dl.dropboxusercontent.com/s/2eetxlypn39h6hj/Download.txt")
             Process.Start(downloadLink)
@@ -47,20 +76,39 @@ Public Class Form1
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         If My.Computer.Network.IsAvailable = True Then
-            'MsgBox("Vous êtes connecté à Internet")
-            Label3.Text = "Vous êtes connecté à Internet"
+            If My.Settings.LanguageUsed = "FR" Then
+                Label3.Text = "Vous êtes connecté à Internet"
+            ElseIf My.Settings.LanguageUsed = "EN" Then
+                Label3.Text = "You are connected to Internet"
+            End If
+
             Label3.Visible = True
             Label3.Location = New Point(248, 130)
             If My.Settings.EnableNotif = True Then
-                NotifyIcon1.ShowBalloonTip(1000)
+                If My.Settings.LanguageUsed = "FR" Then
+                    NotifyIcon1.BalloonTipText = "Votre connexion a été testée"
+                    NotifyIcon1.ShowBalloonTip(1000)
+                ElseIf My.Settings.LanguageUsed = "EN" Then
+                    NotifyIcon1.BalloonTipText = "Your connexion was tested"
+                    NotifyIcon1.ShowBalloonTip(1000)
+                End If
             Else
             End If
         Else
-            Label3.Text = "Vous n'êtes pas connecté à Internet"
+            If My.Settings.LanguageUsed = "FR" Then
+                Label3.Text = "Vous n'êtes pas connecté à Internet"
+            ElseIf My.Settings.LanguageUsed = "EN" Then
+                Label3.Text = "You are not connected to Internet"
+            End If
             Label3.Location = New Point(225, 130)
-            'MsgBox("Vous n'êtes pas connecté à Internet") Les MsgBox ne servent à rien, elles sont remplacées par les NotifyIcon
             If My.Settings.EnableNotif = True Then
-                NotifyIcon1.ShowBalloonTip(1000)
+                If My.Settings.LanguageUsed = "FR" Then
+                    NotifyIcon1.BalloonTipText = "Votre connexion a été testée"
+                    NotifyIcon1.ShowBalloonTip(1000)
+                ElseIf My.Settings.LanguageUsed = "EN" Then
+                    NotifyIcon1.BalloonTipText = "Your connexion was tested"
+                    NotifyIcon1.ShowBalloonTip(1000)
+                End If
             Else
             End If
         End If
