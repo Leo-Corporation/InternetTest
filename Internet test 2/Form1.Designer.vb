@@ -53,224 +53,157 @@ Partial Class Form1
         '
         'Panel1
         '
+        resources.ApplyResources(Me.Panel1, "Panel1")
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.PictureBox7)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(742, 65)
-        Me.Panel1.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.Panel1, resources.GetString("Panel1.ToolTip"))
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Label2.Location = New System.Drawing.Point(280, 22)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(364, 20)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Cliquez sur le bouton pour tester votre connexion !"
+        Me.ToolTip1.SetToolTip(Me.Label2, resources.GetString("Label2.ToolTip"))
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Label1.Location = New System.Drawing.Point(71, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(203, 37)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Internet Test 3"
+        Me.ToolTip1.SetToolTip(Me.Label1, resources.GetString("Label1.ToolTip"))
         '
         'Label4
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
+        resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Label4.Location = New System.Drawing.Point(0, 231)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(339, 18)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "© 2019 Léo Corporation - Version 3.3.0.1909 - Uiful 1.0"
+        Me.ToolTip1.SetToolTip(Me.Label4, resources.GetString("Label4.ToolTip"))
         '
         'LinkLabel1
         '
+        resources.ApplyResources(Me.LinkLabel1, "LinkLabel1")
         Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.DimGray
-        Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel1.LinkColor = System.Drawing.SystemColors.Highlight
-        Me.LinkLabel1.Location = New System.Drawing.Point(291, 203)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(160, 26)
-        Me.LinkLabel1.TabIndex = 7
         Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Aller sur Internet"
-        Me.LinkLabel1.Visible = False
+        Me.ToolTip1.SetToolTip(Me.LinkLabel1, resources.GetString("LinkLabel1.ToolTip"))
         '
         'CheckBox1
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        resources.ApplyResources(Me.CheckBox1, "CheckBox1")
         Me.CheckBox1.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.CheckBox1.Location = New System.Drawing.Point(437, 324)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(109, 19)
-        Me.CheckBox1.TabIndex = 8
-        Me.CheckBox1.Text = "Thème sombre"
+        Me.ToolTip1.SetToolTip(Me.CheckBox1, resources.GetString("CheckBox1.ToolTip"))
         Me.CheckBox1.UseVisualStyleBackColor = True
-        Me.CheckBox1.Visible = False
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
+        resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Label3.Location = New System.Drawing.Point(225, 130)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(292, 23)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Vous n'êtes pas connecté à Internet"
-        Me.Label3.Visible = False
+        Me.ToolTip1.SetToolTip(Me.Label3, resources.GetString("Label3.ToolTip"))
         '
         'NotifyIcon1
         '
         Me.NotifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        Me.NotifyIcon1.BalloonTipText = "Votre connexion a été testée"
-        Me.NotifyIcon1.BalloonTipTitle = "InternetTest"
-        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
-        Me.NotifyIcon1.Text = "InternetTest"
-        Me.NotifyIcon1.Visible = True
+        resources.ApplyResources(Me.NotifyIcon1, "NotifyIcon1")
         '
         'PictureBox5
         '
-        Me.PictureBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.PictureBox5, "PictureBox5")
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox5.Image = Global.Internet_test_2.My.Resources.Resources.Internet
-        Me.PictureBox5.Location = New System.Drawing.Point(270, 160)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(203, 65)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox5.TabIndex = 9
         Me.PictureBox5.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox5, "Naviguer sur Internet")
+        Me.ToolTip1.SetToolTip(Me.PictureBox5, resources.GetString("PictureBox5.ToolTip"))
         '
         'PictureBox6
         '
-        Me.PictureBox6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.PictureBox6, "PictureBox6")
         Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox6.Image = Global.Internet_test_2.My.Resources.Resources.GitHub_logo_2013_svg
-        Me.PictureBox6.Location = New System.Drawing.Point(479, 194)
         Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(76, 55)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox6.TabIndex = 6
         Me.PictureBox6.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox6, "GitHub")
+        Me.ToolTip1.SetToolTip(Me.PictureBox6, resources.GetString("PictureBox6.ToolTip"))
         '
         'PictureBox4
         '
-        Me.PictureBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.PictureBox4, "PictureBox4")
         Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox4.Image = Global.Internet_test_2.My.Resources.Resources.moon
-        Me.PictureBox4.Location = New System.Drawing.Point(561, 194)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(55, 55)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 6
         Me.PictureBox4.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox4, "Mode nuit/clair")
+        Me.ToolTip1.SetToolTip(Me.PictureBox4, resources.GetString("PictureBox4.ToolTip"))
         '
         'PictureBox3
         '
-        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.PictureBox3, "PictureBox3")
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox3.Image = Global.Internet_test_2.My.Resources.Resources.refresh
-        Me.PictureBox3.Location = New System.Drawing.Point(622, 194)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(55, 55)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 6
         Me.PictureBox3.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox3, "Réessayer.")
+        Me.ToolTip1.SetToolTip(Me.PictureBox3, resources.GetString("PictureBox3.ToolTip"))
         '
         'PictureBox2
         '
-        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.PictureBox2, "PictureBox2")
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.Image = Global.Internet_test_2.My.Resources.Resources.update
-        Me.PictureBox2.Location = New System.Drawing.Point(683, 194)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(55, 55)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 5
         Me.PictureBox2.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Cliquez ici pour rechercher les mises à jour du logiciel.")
+        Me.ToolTip1.SetToolTip(Me.PictureBox2, resources.GetString("PictureBox2.ToolTip"))
         '
         'Button1
         '
+        resources.ApplyResources(Me.Button1, "Button1")
         Me.Button1.BackColor = System.Drawing.Color.Transparent
         Me.Button1.BackgroundImage = Global.Internet_test_2.My.Resources.Resources.Test_Button_White
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(258, 68)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(227, 59)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "       Tester votre connexion"
-        Me.ToolTip1.SetToolTip(Me.Button1, "Cliquez ici pour tester votre connexion !")
+        Me.ToolTip1.SetToolTip(Me.Button1, resources.GetString("Button1.ToolTip"))
         Me.Button1.UseVisualStyleBackColor = False
         '
         'PictureBox7
         '
-        Me.PictureBox7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        resources.ApplyResources(Me.PictureBox7, "PictureBox7")
         Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox7.Image = Global.Internet_test_2.My.Resources.Resources.settings
-        Me.PictureBox7.Location = New System.Drawing.Point(675, 5)
         Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(55, 55)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 10
         Me.PictureBox7.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox7, "Paramètres")
+        Me.ToolTip1.SetToolTip(Me.PictureBox7, resources.GetString("PictureBox7.ToolTip"))
         '
         'PictureBox1
         '
+        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Image = Global.Internet_test_2.My.Resources.Resources.Internet_Test
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(62, 62)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, resources.GetString("PictureBox1.ToolTip"))
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(742, 252)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.CheckBox1)
@@ -283,11 +216,9 @@ Partial Class Form1
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Form1"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Internet Test 3.3.0.1909"
+        Me.ToolTip1.SetToolTip(Me, resources.GetString("$this.ToolTip"))
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()

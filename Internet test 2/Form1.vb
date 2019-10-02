@@ -1,5 +1,6 @@
 ﻿Imports System.Net
-
+Imports System.Threading.Thread
+Imports System.Globalization
 Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If My.Computer.Network.IsAvailable = True Then
@@ -22,6 +23,11 @@ Public Class Form1
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         CheckUpdate()
+    End Sub
+    Public Sub Reload()
+        Me.Controls.Clear()
+        InitializeComponent()
+
     End Sub
     Sub CheckUpdate()
         Dim MAJ As New WebClient
@@ -76,6 +82,13 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If My.Settings.LanguageUsed = "EN" Then
+            CurrentThread.CurrentUICulture = New CultureInfo("EN")
+            Reload()
+        ElseIf My.Settings.LanguageUsed = "FR" Then
+            CurrentThread.CurrentUICulture = New CultureInfo("FR")
+            Reload()
+        End If
         If My.Settings.DarkTheme = True Then
             Me.BackColor = Color.FromArgb(50, 50, 62)
             CheckBox1.Checked = True

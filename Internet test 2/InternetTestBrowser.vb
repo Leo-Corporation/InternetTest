@@ -1,4 +1,6 @@
-﻿Public Class InternetTestBrowser
+﻿Imports System.Threading.Thread
+Imports System.Globalization
+Public Class InternetTestBrowser
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         Dim textUrl As String = TextBox1.Text
