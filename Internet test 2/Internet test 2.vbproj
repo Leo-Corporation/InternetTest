@@ -178,6 +178,9 @@
     <EmbeddedResource Include="Paramètres.fr-FR.resx">
       <DependentUpon>Paramètres.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Paramètres.fr.resx">
+      <DependentUpon>Paramètres.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Paramètres.resx">
       <DependentUpon>Paramètres.vb</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +201,10 @@
   <ItemGroup>
     <Content Include="icons8-internet-96bl.ico" />
     <Content Include="Internet Test.ico" />
+    <None Include="Resources\Settings_Button_Second_White.png" />
+    <None Include="Resources\Settings_Button_Second_Black.png" />
+    <None Include="Resources\Settings_Button_Main_White.png" />
+    <None Include="Resources\Settings_Button_Main_Black.png" />
     <None Include="Resources\Browser_White.png" />
     <None Include="Resources\Browser_Black.png" />
     <None Include="Resources\settings.png" />

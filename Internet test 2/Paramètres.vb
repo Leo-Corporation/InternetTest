@@ -11,6 +11,8 @@ Public Class Paramètres
             Me.BackColor = Color.FromArgb(50, 50, 62)
             ComboBox1.BackColor = Color.FromArgb(50, 50, 62)
             ComboBox2.BackColor = Color.FromArgb(50, 50, 62)
+            Button1.BackgroundImage = My.Resources.Settings_Button_Main_Black
+            Button2.BackgroundImage = My.Resources.Settings_Button_Second_Black
         Else
             If My.Settings.LanguageUsed = "FR" Then
                 ComboBox1.Text = "Clair"
@@ -21,6 +23,8 @@ Public Class Paramètres
             Me.BackColor = Color.White
             ComboBox1.BackColor = Color.White
             ComboBox2.BackColor = Color.White
+            Button1.BackgroundImage = My.Resources.Settings_Button_Main_White
+            Button2.BackgroundImage = My.Resources.Settings_Button_Second_White
         End If
         If My.Settings.EnableNotif = True Then
             CheckBox1.Checked = True
