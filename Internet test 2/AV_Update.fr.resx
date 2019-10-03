@@ -121,36 +121,11 @@
   <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 35</value>
-  </data>
-  <data name="Label1.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
   <data name="Label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>Theme</value>
-  </data>
-  <data name="ComboBox1.Items" xml:space="preserve">
-    <value>White</value>
-  </data>
-  <data name="ComboBox1.Items1" xml:space="preserve">
-    <value>Dark</value>
-  </data>
-  <data name="ComboBox1.Text" xml:space="preserve">
-    <value>White</value>
-  </data>
   <data name="Label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 21</value>
-  </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>Select a theme</value>
   </data>
   <data name="Label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -158,87 +133,7 @@
   <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 21</value>
-  </data>
-  <data name="Label5.Text" xml:space="preserve">
-    <value>When you're testing your connexion:</value>
-  </data>
-  <data name="Label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 21</value>
-  </data>
-  <data name="Label6.Text" xml:space="preserve">
-    <value>When you're opening the InternetTest browser:</value>
-  </data>
-  <data name="CheckBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CheckBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 25</value>
-  </data>
-  <data name="CheckBox1.Text" xml:space="preserve">
-    <value>Show a notification</value>
-  </data>
-  <data name="CheckBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CheckBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 25</value>
-  </data>
-  <data name="CheckBox2.Text" xml:space="preserve">
-    <value>Show an alert message</value>
-  </data>
-  <data name="Label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 30</value>
-  </data>
-  <data name="Label7.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="Label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 21</value>
-  </data>
-  <data name="Label8.Text" xml:space="preserve">
-    <value>Select a language:</value>
-  </data>
-  <data name="ComboBox2.Text" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="Button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Button2.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="Button1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="Button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 411</value>
-  </data>
-  <data name="Button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 32</value>
-  </data>
-  <data name="Button1.Text" xml:space="preserve">
-    <value>Save and close</value>
-  </data>
-  <data name="LinkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 21</value>
-  </data>
-  <data name="LinkLabel1.Text" xml:space="preserve">
-    <value>Reset to default</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAB4dgAAZgAAAICAAAABACAAKAgBAN52AABAQAAAAQAgAChCAAAGfwEAMDAAAAEA
@@ -2411,7 +2306,10 @@
         AAA=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Mise à jour disponible</value>
   </data>
 </root>

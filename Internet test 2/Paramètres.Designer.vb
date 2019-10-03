@@ -37,6 +37,7 @@ Partial Class Paramètres
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.SuspendLayout()
         '
         'Label1
@@ -145,11 +146,20 @@ Partial Class Paramètres
         Me.Button1.Name = "Button1"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'LinkLabel1
+        '
+        resources.ApplyResources(Me.LinkLabel1, "LinkLabel1")
+        Me.LinkLabel1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLabel1.LinkColor = System.Drawing.SystemColors.Highlight
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.TabStop = True
+        '
         'Paramètres
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -186,4 +196,5 @@ Partial Class Paramètres
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

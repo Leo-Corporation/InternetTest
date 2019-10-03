@@ -78,20 +78,9 @@ Public Class Form1
         Dim derniereVersion As String = MAJ.DownloadString("https://dl.dropboxusercontent.com/s/j45gbzsjlfv6v4q/Versions.txt")
         Dim FourMaj As String = Four.DownloadString("https://dl.dropboxusercontent.com/s/9fqb84pj4davna9/Fournisseur.txt")
         If versionActuelle = derniereVersion Then
-            If My.Settings.LanguageUsed = "FR" Then
-                MsgBox("Tout est à jour !")
-            ElseIf My.Settings.LanguageUsed = "EN" Then
-                MsgBox("Everything is up to date!")
-            End If
+            UN_Update.Show()
         Else
-            If My.Settings.LanguageUsed = "FR" Then
-                MsgBox("Des mises à jour sont disponibles." & vbNewLine & "La dernière version est : " & derniereVersion & vbNewLine & "Fournit par : " & FourMaj, vbOKOnly + MsgBoxStyle.Information, "Mise à jour du logiciel")
-            ElseIf My.Settings.LanguageUsed = "EN" Then
-                MsgBox("Updates are avaible.." & vbNewLine & "The last version is : " & derniereVersion & vbNewLine & "Provided by : " & FourMaj, vbOKOnly + MsgBoxStyle.Information, "Software Updates")
-            End If
-            Dim MAJ2 As New WebClient
-            Dim downloadLink As String = MAJ2.DownloadString("https://dl.dropboxusercontent.com/s/2eetxlypn39h6hj/Download.txt")
-            Process.Start(downloadLink)
+            AV_Update.Show()
         End If
     End Sub
 

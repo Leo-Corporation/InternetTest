@@ -106,6 +106,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AV_Update.Designer.vb">
+      <DependentUpon>AV_Update.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AV_Update.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -140,8 +146,26 @@
     <Compile Include="Paramètres.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UN_Update.Designer.vb">
+      <DependentUpon>UN_Update.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UN_Update.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AV_Update.en.resx">
+      <DependentUpon>AV_Update.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AV_Update.fr-FR.resx">
+      <DependentUpon>AV_Update.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AV_Update.fr.resx">
+      <DependentUpon>AV_Update.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AV_Update.resx">
+      <DependentUpon>AV_Update.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.en.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +207,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Paramètres.resx">
       <DependentUpon>Paramètres.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UN_Update.en.resx">
+      <DependentUpon>UN_Update.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UN_Update.fr-FR.resx">
+      <DependentUpon>UN_Update.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UN_Update.fr.resx">
+      <DependentUpon>UN_Update.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UN_Update.resx">
+      <DependentUpon>UN_Update.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

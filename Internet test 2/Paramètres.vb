@@ -117,4 +117,11 @@ Public Class Paramètres
         Form1.Reload()
         Me.Close()
     End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        ComboBox1.Text = "Clair"
+        ComboBox2.Text = "Français"
+        CheckBox1.Checked = True
+        CheckBox2.Checked = True
+    End Sub
 End Class
