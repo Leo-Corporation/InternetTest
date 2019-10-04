@@ -11,5 +11,8 @@
     <Setting Name="EnableWarnMsgBrowser" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="LanguageUsed" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FR</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
