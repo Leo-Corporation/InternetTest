@@ -8,10 +8,9 @@ InternetTest permet de tester votre connexion Internet.
 * Paramètres
 
 ## A venir
-### Version 3.4
+### Version 3.5
 InternetTest subira quelques changements dans la prochaine version :
-* Prise en charge de plusieurs Langues
-* Section appropriée dans la fenêtre "Options"
+* Installateur.
 Cette liste peut être modifiée à tout moment
 ## Branches
 Il existe 2 branches : 
