@@ -13,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyCompany("Léo Corporation")>
 <Assembly: AssemblyProduct("Internet Test")>
 <Assembly: AssemblyCopyright("Copyright ©  2019")>
-<Assembly: AssemblyTrademark("LCorp")>
+<Assembly: AssemblyTrademark("Léo Corp")>
 
 <Assembly: ComVisible(False)>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' en utilisant '*', comme indiqué ci-dessous :
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("3.3.0.1909")>
-<Assembly: AssemblyFileVersion("3.3.0.1909")>
+<Assembly: AssemblyVersion("3.4.0.1910")>
+<Assembly: AssemblyFileVersion("3.4.0.1910")>
