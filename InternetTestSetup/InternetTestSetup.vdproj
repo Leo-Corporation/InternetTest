@@ -134,6 +134,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -168,7 +176,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.4.0.1910, Culture=en, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.0.1910, Culture=en, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_0AFF29DC4FA84CEEBF00DA21DC7C518E"
@@ -199,7 +207,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.4.0.1910, Culture=fr, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.0.1910, Culture=fr, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_353EECB4BF8A4BC8AB8CE16877858DB0"
@@ -257,37 +265,11 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B38153531ECD1EDF423D01DC0F0DEF3C"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B4721B5E3D6747A4AE22BF3F8894D3E7"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.4.0.1910, Culture=fr-FR, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.0.1910, Culture=fr-FR, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_B4721B5E3D6747A4AE22BF3F8894D3E7"
@@ -433,9 +415,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:InternetTestSetup"
+        "ProductName" = "8:InternetTest"
         "ProductCode" = "8:{FF0360C5-ED63-4B4D-9D9E-0E52B360BC9F}"
-        "PackageCode" = "8:{6E65C40B-8D53-472E-AB91-6FEE96DFB70B}"
+        "PackageCode" = "8:{1A104C52-BC1D-483E-862B-FE426071D947}"
         "UpgradeCode" = "8:{E51467CA-571A-4650-9CE9-EF00E6ECD4A8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
