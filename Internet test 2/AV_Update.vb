@@ -5,9 +5,8 @@ Public Class AV_Update
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim download As New WebClient()
-        Dim downloadLink = download.DownloadString("https://dl.dropboxusercontent.com/s/2eetxlypn39h6hj/Download.txt")
-        Process.Start(downloadLink)
+        Dim start = Application.StartupPath
+        Process.Start(start & "\InternetTestUpdater.exe")
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
