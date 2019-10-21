@@ -11,6 +11,7 @@ InternetTest permet de tester votre connexion Internet.
 ### Version 3.5
 InternetTest subira quelques changements dans la prochaine version :
 * Installateur.
+* Updater (normalement)
 Cette liste peut être modifiée à tout moment
 ## Branches
 Il existe 2 branches : 
