@@ -6,12 +6,13 @@ InternetTest permet de tester votre connexion Internet.
 * Navigateur intégré
 * Système de mise à jour
 * Paramètres
+* Installation des mises à jour automatiquement
+* Langues
 
 ## A venir
-### Version 3.5
+### Version 3.6
 InternetTest subira quelques changements dans la prochaine version :
-* Installateur.
-* Updater (normalement)
+* Aucun changement prévu pour le moment.
 Cette liste peut être modifiée à tout moment
 ## Branches
 Il existe 2 branches : 
