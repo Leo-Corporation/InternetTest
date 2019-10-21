@@ -7,6 +7,7 @@ Public Class AV_Update
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim start = Application.StartupPath
         Process.Start(start & "\InternetTestUpdater.exe")
+        Application.Exit()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

@@ -133,9 +133,6 @@
   <data name="Label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>© 2019 Léo Corporation - Version 3.5.0.1910 - Uiful 1.0</value>
-  </data>
   <data name="Button2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>

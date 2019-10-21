@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_199BF260D6114FDF9FA94D272040B2F5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_353EECB4BF8A4BC8AB8CE16877858DB0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -35,12 +29,6 @@
         {
         "MsmKey" = "8:_A93A97066B3D48A896FF7E75D5B85C1A"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B38153531ECD1EDF423D01DC0F0DEF3C"
-        "OwnerKey" = "8:_A93A97066B3D48A896FF7E75D5B85C1A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -57,8 +45,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_FCA0B1C304EF48E5AD447EF501C9B894"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_353EECB4BF8A4BC8AB8CE16877858DB0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A93A97066B3D48A896FF7E75D5B85C1A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -82,13 +82,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B38153531ECD1EDF423D01DC0F0DEF3C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_199BF260D6114FDF9FA94D272040B2F5"
+        "OwnerKey" = "8:_FCA0B1C304EF48E5AD447EF501C9B894"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -190,7 +184,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.0.1910, Culture=en, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.2.1910, Culture=en, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_0AFF29DC4FA84CEEBF00DA21DC7C518E"
@@ -217,42 +211,11 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_199BF260D6114FDF9FA94D272040B2F5"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InternetTestUpdater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_199BF260D6114FDF9FA94D272040B2F5"
-                    {
-                    "Name" = "8:InternetTestUpdater.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\..\\InternetTestUpdater\\InternetTestUpdater\\bin\\Release\\InternetTestUpdater.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_353EECB4BF8A4BC8AB8CE16877858DB0"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.0.1910, Culture=fr, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.2.1910, Culture=fr, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_353EECB4BF8A4BC8AB8CE16877858DB0"
@@ -286,11 +249,6 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_B38153531ECD1EDF423D01DC0F0DEF3C"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -314,7 +272,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.0.1910, Culture=fr-FR, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.2.1910, Culture=fr-FR, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_B4721B5E3D6747A4AE22BF3F8894D3E7"
@@ -345,6 +303,37 @@
             {
             "SourcePath" = "8:D:\\Software\\Nouveaux logos\\Internet Test.ico"
             "TargetName" = "8:Internet Test.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FCA0B1C304EF48E5AD447EF501C9B894"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:InternetTestUpdater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_FCA0B1C304EF48E5AD447EF501C9B894"
+                    {
+                    "Name" = "8:InternetTestUpdater.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\..\\InternetTestUpdater\\InternetTestUpdater\\bin\\Release\\InternetTestUpdater.exe"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
             "Condition" = "8:"
