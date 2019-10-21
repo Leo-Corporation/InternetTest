@@ -119,9 +119,22 @@ Public Class Paramètres
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        ComboBox1.Text = "Clair"
-        ComboBox2.Text = "Français"
-        CheckBox1.Checked = True
-        CheckBox2.Checked = True
+        If ComboBox2.Text = "Français" Then
+            ComboBox1.Text = "Clair"
+            ComboBox2.Text = "Français"
+            CheckBox1.Checked = True
+            CheckBox2.Checked = True
+        Else
+            If ComboBox1.Text = "Clair" Then
+                ComboBox2.Text = "Français"
+                CheckBox1.Checked = True
+                CheckBox2.Checked = True
+            Else
+                ComboBox1.Text = "White"
+                ComboBox2.Text = "Français"
+                CheckBox1.Checked = True
+                CheckBox2.Checked = True
+            End If
+        End If
     End Sub
 End Class
