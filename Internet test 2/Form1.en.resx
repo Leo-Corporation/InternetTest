@@ -134,29 +134,17 @@
   <data name="Label2.Text" xml:space="preserve">
     <value>To test your connexion, click on the button.</value>
   </data>
-  <data name="Label2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="Label1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="PictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="PictureBox1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Panel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="Label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Label4.ToolTip" xml:space="preserve">
-    <value />
+  <data name="Label4.Text" xml:space="preserve">
+    <value>© 2019 Léo Corporation - Version 3.6.0.1910 - Uiful 1.0</value>
   </data>
   <data name="Button2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
@@ -212,14 +200,8 @@
   <data name="LinkLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LinkLabel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="CheckBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="CheckBox1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="Label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -229,9 +211,6 @@
   </data>
   <data name="Label3.Text" xml:space="preserve">
     <value>You're not connected to the Internet</value>
-  </data>
-  <data name="Label3.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="NotifyIcon1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4577,7 +4556,7 @@
         AAA=
 </value>
   </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
+  <data name="$this.Text" xml:space="preserve">
+    <value>Internet Test 3.6.0.1910</value>
   </data>
 </root>

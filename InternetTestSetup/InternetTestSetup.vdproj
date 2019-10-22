@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3F6A2D88CDDE4523A38486402A2E317C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A93A97066B3D48A896FF7E75D5B85C1A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,12 +46,6 @@
         "Entry"
         {
         "MsmKey" = "8:_D9141251DE89471CBA845FEA936E3B6F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FCA0B1C304EF48E5AD447EF501C9B894"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -82,7 +82,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FCA0B1C304EF48E5AD447EF501C9B894"
+        "OwnerKey" = "8:_3F6A2D88CDDE4523A38486402A2E317C"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -184,7 +184,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.2.1910, Culture=en, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.6.0.1910, Culture=en, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_0AFF29DC4FA84CEEBF00DA21DC7C518E"
@@ -215,7 +215,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.2.1910, Culture=fr, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.6.0.1910, Culture=fr, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_353EECB4BF8A4BC8AB8CE16877858DB0"
@@ -242,15 +242,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B38153531ECD1EDF423D01DC0F0DEF3C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3F6A2D88CDDE4523A38486402A2E317C"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+            "AssemblyAsmDisplayName" = "8:InternetTestUpdater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_3F6A2D88CDDE4523A38486402A2E317C"
+                    {
+                    "Name" = "8:InternetTestUpdater.exe"
+                    "Attributes" = "3:512"
+                    }
                 }
-            "SourcePath" = "8:System.Net.Http.dll"
+            "SourcePath" = "8:..\\..\\InternetTestUpdater\\InternetTestUpdater\\bin\\Release\\InternetTestUpdater.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
@@ -265,14 +270,14 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B4721B5E3D6747A4AE22BF3F8894D3E7"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.5.2.1910, Culture=fr-FR, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.6.0.1910, Culture=fr-FR, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_B4721B5E3D6747A4AE22BF3F8894D3E7"
@@ -303,37 +308,6 @@
             {
             "SourcePath" = "8:D:\\Software\\Nouveaux logos\\Internet Test.ico"
             "TargetName" = "8:Internet Test.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FCA0B1C304EF48E5AD447EF501C9B894"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InternetTestUpdater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_FCA0B1C304EF48E5AD447EF501C9B894"
-                    {
-                    "Name" = "8:InternetTestUpdater.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\..\\InternetTestUpdater\\InternetTestUpdater\\bin\\Release\\InternetTestUpdater.exe"
-            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
             "Condition" = "8:"
@@ -450,15 +424,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InternetTest"
-        "ProductCode" = "8:{FF0360C5-ED63-4B4D-9D9E-0E52B360BC9F}"
-        "PackageCode" = "8:{1A104C52-BC1D-483E-862B-FE426071D947}"
+        "ProductCode" = "8:{F991B18E-99C1-4B6F-96E3-B32201E14F30}"
+        "PackageCode" = "8:{E41276B6-2750-4703-B861-E5A1AE6D4BAD}"
         "UpgradeCode" = "8:{E51467CA-571A-4650-9CE9-EF00E6ECD4A8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:3.6.0"
         "Manufacturer" = "8:Léo Corporation"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -468,7 +442,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:https://leopeyronnet.wixsite.com/leopeyronnetcorp"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_D9141251DE89471CBA845FEA936E3B6F"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
