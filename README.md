@@ -10,9 +10,11 @@ InternetTest permet de tester votre connexion Internet.
 * Langues
 
 ## A venir
-### Version 3.6
+### Version 3.7
 InternetTest subira quelques changements dans la prochaine version :
-* Faire en sorte qu'InternetTestUpdater mette à jour les fichiers de langues.
+* Refonte du naviguateur intégré
+* Correction de bugs
+
 Cette liste peut être modifiée à tout moment
 ## Branches
 Il existe 2 branches : 
