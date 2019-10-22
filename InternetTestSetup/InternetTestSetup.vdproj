@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3F6A2D88CDDE4523A38486402A2E317C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A93A97066B3D48A896FF7E75D5B85C1A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,12 +46,6 @@
         "Entry"
         {
         "MsmKey" = "8:_D9141251DE89471CBA845FEA936E3B6F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FCA0B1C304EF48E5AD447EF501C9B894"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -82,7 +82,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FCA0B1C304EF48E5AD447EF501C9B894"
+        "OwnerKey" = "8:_3F6A2D88CDDE4523A38486402A2E317C"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -242,6 +242,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3F6A2D88CDDE4523A38486402A2E317C"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:InternetTestUpdater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_3F6A2D88CDDE4523A38486402A2E317C"
+                    {
+                    "Name" = "8:InternetTestUpdater.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\..\\InternetTestUpdater\\InternetTestUpdater\\bin\\Release\\InternetTestUpdater.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B38153531ECD1EDF423D01DC0F0DEF3C"
             {
             "AssemblyRegister" = "3:1"
@@ -303,37 +334,6 @@
             {
             "SourcePath" = "8:D:\\Software\\Nouveaux logos\\Internet Test.ico"
             "TargetName" = "8:Internet Test.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FCA0B1C304EF48E5AD447EF501C9B894"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InternetTestUpdater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_FCA0B1C304EF48E5AD447EF501C9B894"
-                    {
-                    "Name" = "8:InternetTestUpdater.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\..\\InternetTestUpdater\\InternetTestUpdater\\bin\\Release\\InternetTestUpdater.exe"
-            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
             "Condition" = "8:"
