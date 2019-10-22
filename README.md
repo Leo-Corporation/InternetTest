@@ -12,7 +12,7 @@ InternetTest permet de tester votre connexion Internet.
 ## A venir
 ### Version 3.6
 InternetTest subira quelques changements dans la prochaine version :
-* Aucun changement prévu pour le moment.
+* Faire en sorte qu'InternetTestUpdater mette à jour les fichiers de langues.
 Cette liste peut être modifiée à tout moment
 ## Branches
 Il existe 2 branches : 
