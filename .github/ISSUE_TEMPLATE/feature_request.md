@@ -1,9 +1,9 @@
 ---
-Nom: Suggérer une fonctionnalité
-A propos: Suggérer une idée pour le projet.
-titre: ''
+name: Suggérer une fonctionnalité
+about: Suggérer une idée pour le projet.
+title: ''
 labels: ''
-assigné.e.s: ''
+assignees: ''
 
 ---
 
