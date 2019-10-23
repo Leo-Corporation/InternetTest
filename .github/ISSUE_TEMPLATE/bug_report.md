@@ -7,32 +7,32 @@ assigné.e.s: ''
 
 ---
 
-**Décrire le bug**
+**Descritpion bug :**
 
 Une description claire du bug.
 
-**Comment reproduire le bug**
+**Comment reproduire le bug :**
 
-Etape pour reporduire le bug :
+Etapes pour reproduire le bug :
 1. Allez à '...'
 2. Cliquez sur '....'
 3. Déscendez jusqu'à '....'
 4. Le problème est là.
 
-**Comportement attendu**
+**Comportement attendu :**
 
 Une description claire de ce qui est censé ce produire.
 
-**Captures d'écrans**
+**Captures d'écrans :**
 
 Si vous pouvez, joignez des captures d'écrans.
 
 **Ordinateur (Complétez les informations ci-dessous):**
  - OS: [ex: Windows 10]
-  - Version de l'OS [ex: Windows 10 18362]
+ - Version de l'OS [ex: Windows 10 18362]
  - Version du programme [ex: 1.2.0.0]
 
 
-**Autres informations**
+**Autres informations :**
 
 Ajoutez si nécessaire, des informations supplémentaires.
