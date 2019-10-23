@@ -13,4 +13,4 @@ Indiquez où se trouve le problème. Ex: Erreur de traduction sur Form1 ou Probl
 **Proposer une nouvelle traduction :**
 Proposer une solution, ex: Je propose de remplacer [...] par [...]
 
-**Capture(s) d'écran**
+**Capture(s) d'écran :**
