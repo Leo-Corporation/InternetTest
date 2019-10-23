@@ -14,6 +14,7 @@ InternetTest permet de tester votre connexion Internet.
 InternetTest subira quelques changements dans la prochaine version :
 * Refonte du naviguateur intégré
 * Correction de bugs
+* Amélioration de la documentation
 
 Cette liste peut être modifiée à tout moment
 ## Branches
