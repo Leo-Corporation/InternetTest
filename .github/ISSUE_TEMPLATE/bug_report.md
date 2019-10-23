@@ -1,38 +1,38 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
+Nom: Reporter un bug
+A propos: Rapporter un bug pour nous améliorer
+titre: ''
 labels: ''
-assignees: ''
+assigné.e.s: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Description bug :**
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+Une description claire du bug.
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Comment reproduire le bug :**
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+Etapes pour reproduire le bug :
+1. Allez à '...'
+2. Cliquez sur '....'
+3. Déscendez jusqu'à '....'
+4. Le problème est là.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Comportement attendu :**
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+Une description claire de ce qui est censé ce produire.
 
-**Additional context**
-Add any other context about the problem here.
+**Captures d'écrans :**
+
+Si vous pouvez, joignez des captures d'écrans.
+
+**Ordinateur (Complétez les informations ci-dessous):**
+ - OS: [ex: Windows 10]
+ - Version de l'OS [ex: Windows 10 18362]
+ - Version du programme [ex: 1.2.0.0]
+
+
+**Autres informations :**
+
+Ajoutez si nécessaire, des informations supplémentaires.

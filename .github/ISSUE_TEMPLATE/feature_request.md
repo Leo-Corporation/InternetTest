@@ -1,20 +1,21 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
+Nom: Suggérer une fonctionnalité
+A propos: Suggérer une idée pour le projet.
+titre: ''
 labels: ''
-assignees: ''
+assigné.e.s: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**Est-ce que votre demande concerne un bug/problème ? Merci de le décicre.**
+**Si votre suggestion ne concerne pas un problème, merci de décrire la fonctionnalité que vous souhaitez voir apparaître dans le projet.**
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+Une description claire et précise de problème/suggestion Ex: Je suis frustré lorsque [...]
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**Décrire la solution que vous voulez :**
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+Description claire de la solution.
+
+**Autres informations :**
+
+Ajoutez des informations supplémentaires ici.
