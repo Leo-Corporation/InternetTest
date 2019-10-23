@@ -1,6 +1,6 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: Reporter un bug
+about: Rapporter un bug pour nous améliorer
 title: ''
 labels: ''
 assignees: ''
@@ -8,9 +8,11 @@ assignees: ''
 ---
 
 **Décrire le bug**
+
 Une description claire du bug.
 
 **Comment reproduire le bug**
+
 Etape pour reporduire le bug :
 1. Allez à '...'
 2. Cliquez sur '....'
@@ -18,10 +20,12 @@ Etape pour reporduire le bug :
 4. Le problème est là.
 
 **Comportement attendu**
+
 Une description claire de ce qui est censé ce produire.
 
 **Captures d'écrans**
-Su vous pouvez, joignez des captures d'écrans.
+
+Si vous pouvez, joignez des captures d'écrans.
 
 **Ordinateur (Complétez les informations ci-dessous):**
  - OS: [ex: Windows 10]
@@ -30,4 +34,5 @@ Su vous pouvez, joignez des captures d'écrans.
 
 
 **Autres informations**
+
 Ajoutez si nécessaire, des informations supplémentaires.
