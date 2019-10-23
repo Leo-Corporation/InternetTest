@@ -7,32 +7,27 @@ assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Décrire le bug**
+Une description claire du bug.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**Comment reproduire le bug**
+Etape pour reporduire le bug :
+1. Allez à '...'
+2. Cliquez sur '....'
+3. Déscendez jusqu'à '....'
+4. Le problème est là.
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Comportement attendu**
+Une description claire de ce qui est censé ce produire.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Captures d'écrans**
+Su vous pouvez, joignez des captures d'écrans.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Ordinateur (Complétez les informations ci-dessous):**
+ - OS: [ex: Windows 10]
+  - Version de l'OS [ex: Windows 10 18362]
+ - Version du programme [ex: 1.2.0.0]
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
 
-**Additional context**
-Add any other context about the problem here.
+**Autres informations**
+Ajoutez si nécessaire, des informations supplémentaires.
