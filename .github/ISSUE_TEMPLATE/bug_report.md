@@ -1,9 +1,9 @@
 ---
-Nom: Reporter un bug
-A propos: Rapporter un bug pour nous améliorer
-titre: ''
+name: Reporter un bug
+about: Rapporter un bug pour nous améliorer
+title: ''
 labels: ''
-assigné.e.s: ''
+assignees: ''
 
 ---
 
