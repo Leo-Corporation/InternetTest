@@ -7,7 +7,7 @@ assigné.e.s: ''
 
 ---
 
-**Descritpion bug :**
+**Description bug :**
 
 Une description claire du bug.
 
