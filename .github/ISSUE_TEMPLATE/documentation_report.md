@@ -6,7 +6,7 @@ labels: ''
 assignees: ''
 
 ---
-**Décrire le problème :**
+**Description du problème :**
 
 * Indiquez si la nature du problème de manière claire.
 * Indiquez dans quel fichier/page du wiki se trouve le problème 

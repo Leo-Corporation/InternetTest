@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Description bug :**
+**Description du bug :**
 
 Une description claire du bug.
 
