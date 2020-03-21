@@ -10,11 +10,10 @@ InternetTest permet de tester votre connexion Internet.
 * Langues
 
 ## A venir
-### Version 3.7
-InternetTest subira quelques changements dans la prochaine version :
-* Refonte du naviguateur intégré
-* Correction de bugs
-* Amélioration de la documentation
+### Version 4.0
+- Refonte totale en C# du logiciel
+- Utilisation du framework de design Guna.UI
+- Implémentation de [LeoCorpLibrary](https://github.com/Leo-Corporation/LeoCorpLibrary)
 
 Cette liste peut être modifiée à tout moment
 ## Branches
