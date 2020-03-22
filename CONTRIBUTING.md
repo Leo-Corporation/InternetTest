@@ -4,7 +4,7 @@ Si vous voulez contribuer au projet, merci de lire les informations ci-dessous.
 Si vous voulez soummettre une Issue, assuez-vous de respecter ces règles :
 * Le problème doit être reproduisable
 * Le problème doit être lisible
-* Le problème doit être clair et comprhensible
+* Le problème doit être clair et compréhensible
 * Si vous souhaitez soumettre une suggestion, mettez dans l'objet "Suggestion :"
 
 ## 2. Pull request/modification du code
