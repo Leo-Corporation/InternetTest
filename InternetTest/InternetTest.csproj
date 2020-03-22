@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Internet Test.ico" />
+    <None Include="Resources\icons8_play_100px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

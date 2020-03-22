@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
+            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaDragControl2 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
@@ -53,23 +53,19 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // gunaLabel1
+            // gunaControlBox2
             // 
-            resources.ApplyResources(this.gunaLabel1, "gunaLabel1");
-            this.gunaLabel1.Name = "gunaLabel1";
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::InternetTest.Properties.Resources.Internet_Test;
-            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.TabStop = false;
-            // 
-            // gunaElipse1
-            // 
-            this.gunaElipse1.Radius = 6;
-            this.gunaElipse1.TargetControl = this;
+            resources.ApplyResources(this.gunaControlBox2, "gunaControlBox2");
+            this.gunaControlBox2.Animated = true;
+            this.gunaControlBox2.AnimationHoverSpeed = 0.07F;
+            this.gunaControlBox2.AnimationSpeed = 0.03F;
+            this.gunaControlBox2.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
+            this.gunaControlBox2.IconColor = System.Drawing.Color.Black;
+            this.gunaControlBox2.IconSize = 15F;
+            this.gunaControlBox2.Name = "gunaControlBox2";
+            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.Transparent;
+            this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.Black;
+            this.gunaControlBox2.OnPressedColor = System.Drawing.Color.Black;
             // 
             // gunaControlBox1
             // 
@@ -84,19 +80,23 @@
             this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
             this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
             // 
-            // gunaControlBox2
+            // gunaPictureBox1
             // 
-            resources.ApplyResources(this.gunaControlBox2, "gunaControlBox2");
-            this.gunaControlBox2.Animated = true;
-            this.gunaControlBox2.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox2.AnimationSpeed = 0.03F;
-            this.gunaControlBox2.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
-            this.gunaControlBox2.IconColor = System.Drawing.Color.Black;
-            this.gunaControlBox2.IconSize = 15F;
-            this.gunaControlBox2.Name = "gunaControlBox2";
-            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.Transparent;
-            this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.Black;
-            this.gunaControlBox2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::InternetTest.Properties.Resources.Internet_Test;
+            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.TabStop = false;
+            // 
+            // gunaLabel1
+            // 
+            resources.ApplyResources(this.gunaLabel1, "gunaLabel1");
+            this.gunaLabel1.Name = "gunaLabel1";
+            // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.Radius = 6;
+            this.gunaElipse1.TargetControl = this;
             // 
             // gunaDragControl1
             // 
@@ -118,7 +118,7 @@
             this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
             resources.ApplyResources(this.gunaGradientButton1, "gunaGradientButton1");
             this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton1.Image")));
+            this.gunaGradientButton1.Image = global::InternetTest.Properties.Resources.icons8_play_100px;
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.DeepSkyBlue;
