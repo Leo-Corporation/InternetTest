@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Internet Test.ico" />
+    <None Include="Resources\icons8_github_100px.png" />
+    <None Include="Resources\icons8_delete_100px_1.png" />
+    <None Include="Resources\icons8_subtract_100px_1.png" />
+    <None Include="Resources\icons8_subtract_100px.png" />
+    <None Include="Resources\icons8_delete_32px.png" />
+    <None Include="Resources\icons8_info_32px.png" />
     <None Include="Resources\icons8_settings_100px.png" />
     <None Include="Resources\icons8_play_100px.png" />
   </ItemGroup>

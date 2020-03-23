@@ -28,13 +28,31 @@ namespace InternetTest
             bool connectionAvailable = new NetworkConnection().IsAvailable();
             if (connectionAvailable) // Si internet est disponible
             {
-                MessageBox.Show("Internet est disponible");
-                //TODO
+                gunaLabel2.Visible = true;
+                gunaLabel2.Text = "Vous êtes connecté à Internet";
+                gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
             }
             else
             {
-                //TODO
+                gunaLabel2.Visible = true;
+                gunaLabel2.Text = "Vous n'êtes pas connecté à Internet";
+                gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
             }
+        }
+
+        private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void gunaAdvenceTileButton2_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void gunaGradientButton4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Leo-Corporation/InternetTest");
         }
     }
 }
