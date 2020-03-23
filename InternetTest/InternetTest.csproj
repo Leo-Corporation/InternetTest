@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Branches.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +113,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Internet Test.ico" />
+    <None Include="Resources\InternetTest Logo.ico" />
+    <None Include="Resources\InternetTest Preview.ico" />
+    <None Include="Resources\InternetTest Preview.png" />
+    <None Include="Resources\InternetTest Logo.png" />
     <None Include="Resources\icons8_github_100px.png" />
     <None Include="Resources\icons8_delete_100px_1.png" />
     <None Include="Resources\icons8_subtract_100px_1.png" />

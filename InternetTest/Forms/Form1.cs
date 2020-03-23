@@ -20,6 +20,7 @@ namespace InternetTest
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Icon = Properties.Resources.InternetTest_Preview1;
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
         }
 
