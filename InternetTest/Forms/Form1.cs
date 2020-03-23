@@ -8,6 +8,7 @@ using LeoCorpLibrary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InternetTest.Classes;
 
 namespace InternetTest
 {
@@ -20,7 +21,7 @@ namespace InternetTest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Icon = Properties.Resources.InternetTest_Preview1;
+            Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
         }
 
