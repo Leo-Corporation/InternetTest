@@ -1,11 +1,12 @@
 ---
 name: Reporter un problème de documentation
 about: Rapporter une erreur dans la documentation
-title: ''
-labels: ''
+title: "[Documentation] "
+labels: documentation
 assignees: ''
 
 ---
+
 **Description du problème :**
 
 * Indiquez si la nature du problème de manière claire.
