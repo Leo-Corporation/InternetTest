@@ -1,8 +1,8 @@
 ---
 name: Reporter un bug
 about: Rapporter un bug pour nous améliorer
-title: ''
-labels: ''
+title: "[Bug] "
+labels: bug
 assignees: ''
 
 ---
@@ -27,7 +27,7 @@ Une description claire de ce qui est censé ce produire.
 
 Si vous pouvez, joignez des captures d'écrans.
 
-**Ordinateur (Complétez les informations ci-dessous):**
+**Ordinateur :**
  - OS: [ex: Windows 10]
  - Version de l'OS [ex: Windows 10 18362]
  - Version du programme [ex: 1.2.0.0]

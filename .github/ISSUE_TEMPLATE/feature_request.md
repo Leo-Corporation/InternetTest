@@ -1,8 +1,8 @@
 ---
 name: Suggérer une fonctionnalité
 about: Suggérer une idée pour le projet.
-title: ''
-labels: ''
+title: "[Suggestion] "
+labels: suggestion
 assignees: ''
 
 ---
