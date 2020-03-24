@@ -127,6 +127,7 @@
             // 
             // gunaGradientTileButton1
             // 
+            this.gunaGradientTileButton1.Animated = true;
             this.gunaGradientTileButton1.AnimationHoverSpeed = 0.07F;
             this.gunaGradientTileButton1.AnimationSpeed = 0.03F;
             this.gunaGradientTileButton1.BackColor = System.Drawing.Color.Transparent;
@@ -156,6 +157,7 @@
             // 
             // gunaGradientTileButton2
             // 
+            this.gunaGradientTileButton2.Animated = true;
             this.gunaGradientTileButton2.AnimationHoverSpeed = 0.07F;
             this.gunaGradientTileButton2.AnimationSpeed = 0.03F;
             this.gunaGradientTileButton2.BackColor = System.Drawing.Color.Transparent;
@@ -185,6 +187,7 @@
             // 
             // gunaGradientTileButton3
             // 
+            this.gunaGradientTileButton3.Animated = true;
             this.gunaGradientTileButton3.AnimationHoverSpeed = 0.07F;
             this.gunaGradientTileButton3.AnimationSpeed = 0.03F;
             this.gunaGradientTileButton3.BackColor = System.Drawing.Color.Transparent;
@@ -214,6 +217,7 @@
             // 
             // gunaGradientTileButton4
             // 
+            this.gunaGradientTileButton4.Animated = true;
             this.gunaGradientTileButton4.AnimationHoverSpeed = 0.07F;
             this.gunaGradientTileButton4.AnimationSpeed = 0.03F;
             this.gunaGradientTileButton4.BackColor = System.Drawing.Color.Transparent;
