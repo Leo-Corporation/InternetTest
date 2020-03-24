@@ -34,11 +34,11 @@ namespace InternetTest.Classes
             System.Drawing.Bitmap bitmap;
             if (branch == "Version_Next")
             {
-                bitmap = Properties.Resources.InternetTestLogo1;
+                bitmap = Properties.Resources.InternetTest_Preview;
             }
             else
             {
-                bitmap = Properties.Resources.InternetTest_Preview;
+                bitmap = Properties.Resources.InternetTestLogo1;
             }
             return bitmap;
         }
