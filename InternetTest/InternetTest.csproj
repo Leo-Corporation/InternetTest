@@ -131,6 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Internet Test.ico" />
+    <None Include="Resources\icons8_enlarge_100px_1.png" />
+    <None Include="Resources\icons8_enlarge_100px.png" />
     <None Include="Resources\icons8_play_button_100px.png" />
     <None Include="Resources\icons8_twitter_100px.png" />
     <None Include="Resources\icons8_google_100px.png" />

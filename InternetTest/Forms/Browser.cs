@@ -41,7 +41,7 @@ namespace InternetTest.Forms
             WindowState = FormWindowState.Minimized;
         }
 
-        private void panel1_DoubleClick(object sender, EventArgs e)
+        private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
             {
@@ -53,7 +53,7 @@ namespace InternetTest.Forms
             }
         }
 
-        private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void gunaAdvenceTileButton3_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
             {

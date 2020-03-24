@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Browser));
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaAdvenceTileButton3 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton2 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton1 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
@@ -52,6 +53,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.gunaAdvenceTileButton3);
             this.panel1.Controls.Add(this.gunaAdvenceTileButton2);
             this.panel1.Controls.Add(this.gunaAdvenceTileButton1);
             this.panel1.Controls.Add(this.gunaPictureBox1);
@@ -61,8 +63,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(803, 37);
             this.panel1.TabIndex = 1;
-            this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
             this.panel1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDoubleClick);
+            // 
+            // gunaAdvenceTileButton3
+            // 
+            this.gunaAdvenceTileButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaAdvenceTileButton3.Animated = true;
+            this.gunaAdvenceTileButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceTileButton3.AnimationSpeed = 0.03F;
+            this.gunaAdvenceTileButton3.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceTileButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton3.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceTileButton3.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton3.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton3.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceTileButton3.CheckedImage")));
+            this.gunaAdvenceTileButton3.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceTileButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceTileButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceTileButton3.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
+            this.gunaAdvenceTileButton3.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton3.Image = global::InternetTest.Properties.Resources.icons8_enlarge_100px_1;
+            this.gunaAdvenceTileButton3.ImageSize = new System.Drawing.Size(15, 15);
+            this.gunaAdvenceTileButton3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton3.Location = new System.Drawing.Point(646, 4);
+            this.gunaAdvenceTileButton3.Name = "gunaAdvenceTileButton3";
+            this.gunaAdvenceTileButton3.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.gunaAdvenceTileButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton3.OnHoverImage = global::InternetTest.Properties.Resources.icons8_enlarge_100px;
+            this.gunaAdvenceTileButton3.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton3.Size = new System.Drawing.Size(47, 29);
+            this.gunaAdvenceTileButton3.TabIndex = 2;
+            this.gunaAdvenceTileButton3.Click += new System.EventHandler(this.gunaAdvenceTileButton3_Click);
             // 
             // gunaAdvenceTileButton2
             // 
@@ -84,7 +117,7 @@
             this.gunaAdvenceTileButton2.Image = global::InternetTest.Properties.Resources.icons8_subtract_100px_1;
             this.gunaAdvenceTileButton2.ImageSize = new System.Drawing.Size(15, 15);
             this.gunaAdvenceTileButton2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton2.Location = new System.Drawing.Point(699, 5);
+            this.gunaAdvenceTileButton2.Location = new System.Drawing.Point(699, 4);
             this.gunaAdvenceTileButton2.Name = "gunaAdvenceTileButton2";
             this.gunaAdvenceTileButton2.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
             this.gunaAdvenceTileButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -116,7 +149,7 @@
             this.gunaAdvenceTileButton1.Image = global::InternetTest.Properties.Resources.icons8_delete_100px_1;
             this.gunaAdvenceTileButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceTileButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(752, 5);
+            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(752, 4);
             this.gunaAdvenceTileButton1.Name = "gunaAdvenceTileButton1";
             this.gunaAdvenceTileButton1.OnHoverBaseColor = System.Drawing.Color.Red;
             this.gunaAdvenceTileButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -209,5 +242,6 @@
         private Guna.UI.WinForms.GunaDragControl gunaDragControl2;
         private Guna.UI.WinForms.GunaResize gunaResize1;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton3;
     }
 }
