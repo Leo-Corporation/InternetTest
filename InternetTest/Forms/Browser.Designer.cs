@@ -182,7 +182,7 @@
             this.MinimumSize = new System.Drawing.Size(667, 457);
             this.Name = "Browser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Browser";
+            this.Text = "Navigateur";
             this.Load += new System.EventHandler(this.Browser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

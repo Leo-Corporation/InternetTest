@@ -86,6 +86,12 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SitesSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SitesSelector.Designer.cs">
+      <DependentUpon>SitesSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Browser.resx">
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SitesSelector.resx">
+      <DependentUpon>SitesSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,6 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Internet Test.ico" />
+    <None Include="Resources\icons8_play_button_100px.png" />
+    <None Include="Resources\icons8_twitter_100px.png" />
+    <None Include="Resources\icons8_google_100px.png" />
+    <None Include="Resources\icons8_bing_100px.png" />
     <None Include="Resources\InternetTest Logo.ico" />
     <None Include="Resources\InternetTest Preview.ico" />
     <None Include="Resources\InternetTest Preview.png" />

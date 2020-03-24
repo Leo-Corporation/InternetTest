@@ -58,5 +58,10 @@ namespace InternetTest
         {
             System.Diagnostics.Process.Start("https://github.com/Leo-Corporation/InternetTest");
         }
+
+        private void gunaLinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new SitesSelector().Show();
+        }
     }
 }

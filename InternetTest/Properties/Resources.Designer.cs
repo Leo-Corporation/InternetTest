@@ -63,6 +63,16 @@ namespace InternetTest.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_bing_100px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_bing_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_delete_100px_1 {
             get {
                 object obj = ResourceManager.GetObject("icons8_delete_100px_1", resourceCulture);
@@ -93,6 +103,16 @@ namespace InternetTest.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_google_100px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_google_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_info_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_info_32px", resourceCulture);
@@ -106,6 +126,16 @@ namespace InternetTest.Properties {
         internal static System.Drawing.Bitmap icons8_play_100px {
             get {
                 object obj = ResourceManager.GetObject("icons8_play_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_play_button_100px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_play_button_100px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +166,16 @@ namespace InternetTest.Properties {
         internal static System.Drawing.Bitmap icons8_subtract_100px_1 {
             get {
                 object obj = ResourceManager.GetObject("icons8_subtract_100px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_twitter_100px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_twitter_100px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
