@@ -29,5 +29,18 @@ namespace InternetTest.Classes
             }
             return icon;
         }
+        public System.Drawing.Bitmap ImageBranch()
+        {
+            System.Drawing.Bitmap bitmap;
+            if (branch == "Version_Next")
+            {
+                bitmap = Properties.Resources.InternetTestLogo1;
+            }
+            else
+            {
+                bitmap = Properties.Resources.InternetTest_Preview;
+            }
+            return bitmap;
+        }
     }
 }

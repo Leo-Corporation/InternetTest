@@ -45,6 +45,7 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
+            this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             // gunaAdvenceTileButton2
             // 
+            resources.ApplyResources(this.gunaAdvenceTileButton2, "gunaAdvenceTileButton2");
             this.gunaAdvenceTileButton2.Animated = true;
             this.gunaAdvenceTileButton2.AnimationHoverSpeed = 0.07F;
             this.gunaAdvenceTileButton2.AnimationSpeed = 0.03F;
@@ -74,7 +76,6 @@
             this.gunaAdvenceTileButton2.CheckedLineColor = System.Drawing.Color.DimGray;
             this.gunaAdvenceTileButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaAdvenceTileButton2.FocusedColor = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.gunaAdvenceTileButton2, "gunaAdvenceTileButton2");
             this.gunaAdvenceTileButton2.ForeColor = System.Drawing.Color.White;
             this.gunaAdvenceTileButton2.Image = global::InternetTest.Properties.Resources.icons8_subtract_100px_1;
             this.gunaAdvenceTileButton2.ImageSize = new System.Drawing.Size(15, 15);
@@ -90,6 +91,7 @@
             // 
             // gunaAdvenceTileButton1
             // 
+            resources.ApplyResources(this.gunaAdvenceTileButton1, "gunaAdvenceTileButton1");
             this.gunaAdvenceTileButton1.Animated = true;
             this.gunaAdvenceTileButton1.AnimationHoverSpeed = 0.07F;
             this.gunaAdvenceTileButton1.AnimationSpeed = 0.03F;
@@ -102,7 +104,6 @@
             this.gunaAdvenceTileButton1.CheckedLineColor = System.Drawing.Color.DimGray;
             this.gunaAdvenceTileButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaAdvenceTileButton1.FocusedColor = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.gunaAdvenceTileButton1, "gunaAdvenceTileButton1");
             this.gunaAdvenceTileButton1.ForeColor = System.Drawing.Color.White;
             this.gunaAdvenceTileButton1.Image = global::InternetTest.Properties.Resources.icons8_delete_100px_1;
             this.gunaAdvenceTileButton1.ImageSize = new System.Drawing.Size(20, 20);
@@ -265,11 +266,19 @@
             this.gunaGradientButton1.Radius = 6;
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
+            // gunaLinkLabel1
+            // 
+            resources.ApplyResources(this.gunaLinkLabel1, "gunaLinkLabel1");
+            this.gunaLinkLabel1.LinkColor = System.Drawing.Color.RoyalBlue;
+            this.gunaLinkLabel1.Name = "gunaLinkLabel1";
+            this.gunaLinkLabel1.TabStop = true;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.gunaLinkLabel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.gunaSeparator1);
             this.Controls.Add(this.gunaGradientButton1);
@@ -305,6 +314,7 @@
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton1;
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton2;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
+        private Guna.UI.WinForms.GunaLinkLabel gunaLinkLabel1;
     }
 }
 

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InternetTest.Classes;
+using InternetTest.Forms;
 
 namespace InternetTest
 {
@@ -22,6 +23,7 @@ namespace InternetTest
         private void Form1_Load(object sender, EventArgs e)
         {
             Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
+            gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
         }
 
