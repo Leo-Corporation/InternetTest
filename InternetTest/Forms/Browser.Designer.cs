@@ -59,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(667, 37);
+            this.panel1.Size = new System.Drawing.Size(803, 37);
             this.panel1.TabIndex = 1;
             // 
             // gunaAdvenceTileButton2
@@ -82,7 +82,7 @@
             this.gunaAdvenceTileButton2.Image = global::InternetTest.Properties.Resources.icons8_subtract_100px_1;
             this.gunaAdvenceTileButton2.ImageSize = new System.Drawing.Size(15, 15);
             this.gunaAdvenceTileButton2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton2.Location = new System.Drawing.Point(563, 5);
+            this.gunaAdvenceTileButton2.Location = new System.Drawing.Point(699, 5);
             this.gunaAdvenceTileButton2.Name = "gunaAdvenceTileButton2";
             this.gunaAdvenceTileButton2.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
             this.gunaAdvenceTileButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -92,6 +92,7 @@
             this.gunaAdvenceTileButton2.OnPressedColor = System.Drawing.Color.Black;
             this.gunaAdvenceTileButton2.Size = new System.Drawing.Size(47, 29);
             this.gunaAdvenceTileButton2.TabIndex = 2;
+            this.gunaAdvenceTileButton2.Click += new System.EventHandler(this.gunaAdvenceTileButton2_Click);
             // 
             // gunaAdvenceTileButton1
             // 
@@ -113,7 +114,7 @@
             this.gunaAdvenceTileButton1.Image = global::InternetTest.Properties.Resources.icons8_delete_100px_1;
             this.gunaAdvenceTileButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceTileButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(616, 5);
+            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(752, 5);
             this.gunaAdvenceTileButton1.Name = "gunaAdvenceTileButton1";
             this.gunaAdvenceTileButton1.OnHoverBaseColor = System.Drawing.Color.Red;
             this.gunaAdvenceTileButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -123,6 +124,7 @@
             this.gunaAdvenceTileButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaAdvenceTileButton1.Size = new System.Drawing.Size(47, 29);
             this.gunaAdvenceTileButton1.TabIndex = 2;
+            this.gunaAdvenceTileButton1.Click += new System.EventHandler(this.gunaAdvenceTileButton1_Click);
             // 
             // gunaPictureBox1
             // 
@@ -161,11 +163,13 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser1.Location = new System.Drawing.Point(0, 37);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(667, 420);
+            this.webBrowser1.Size = new System.Drawing.Size(803, 461);
             this.webBrowser1.TabIndex = 2;
             this.webBrowser1.Url = new System.Uri("", System.UriKind.Relative);
             // 
@@ -174,7 +178,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(667, 457);
+            this.ClientSize = new System.Drawing.Size(803, 498);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

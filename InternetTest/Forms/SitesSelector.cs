@@ -48,5 +48,10 @@ namespace InternetTest.Forms
             new Browser("https://youtube.com").Show();
             Close();
         }
+
+        private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
