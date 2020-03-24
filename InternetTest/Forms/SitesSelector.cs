@@ -28,21 +28,25 @@ namespace InternetTest.Forms
         private void gunaGradientTileButton1_Click(object sender, EventArgs e)
         {
             new Browser("https://bing.com").Show();
+            Close();
         }
 
         private void gunaGradientTileButton2_Click(object sender, EventArgs e)
         {
             new Browser("https://google.com").Show();
+            Close();
         }
 
         private void gunaGradientTileButton4_Click(object sender, EventArgs e)
         {
             new Browser("https://twitter.com").Show();
+            Close();
         }
 
         private void gunaGradientTileButton3_Click(object sender, EventArgs e)
         {
             new Browser("https://youtube.com").Show();
+            Close();
         }
     }
 }
