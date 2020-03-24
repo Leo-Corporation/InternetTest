@@ -62,6 +62,7 @@
             this.panel1.Size = new System.Drawing.Size(803, 37);
             this.panel1.TabIndex = 1;
             this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
+            this.panel1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDoubleClick);
             // 
             // gunaAdvenceTileButton2
             // 

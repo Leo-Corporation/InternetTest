@@ -52,5 +52,17 @@ namespace InternetTest.Forms
                 WindowState = FormWindowState.Normal;
             }
         }
+
+        private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
     }
 }
