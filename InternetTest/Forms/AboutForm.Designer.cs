@@ -133,7 +133,7 @@
             this.gunaLabel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.gunaLabel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaLabel2.Location = new System.Drawing.Point(154, 126);
+            this.gunaLabel2.Location = new System.Drawing.Point(154, 123);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(139, 30);
             this.gunaLabel2.TabIndex = 0;
@@ -145,7 +145,7 @@
             this.gunaLabel3.BackColor = System.Drawing.Color.Transparent;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.gunaLabel3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaLabel3.Location = new System.Drawing.Point(191, 156);
+            this.gunaLabel3.Location = new System.Drawing.Point(191, 153);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(65, 15);
             this.gunaLabel3.TabIndex = 0;
@@ -225,7 +225,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "A propos";
             this.Load += new System.EventHandler(this.AboutForm_Load);
             this.panel1.ResumeLayout(false);
