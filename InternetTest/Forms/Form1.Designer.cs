@@ -46,6 +46,7 @@
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
+            this.gunaSeparator2 = new Guna.UI.WinForms.GunaSeparator();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,6 +58,7 @@
             this.panel1.Controls.Add(this.gunaAdvenceTileButton2);
             this.panel1.Controls.Add(this.gunaAdvenceTileButton1);
             this.panel1.Controls.Add(this.gunaPictureBox1);
+            this.panel1.Controls.Add(this.gunaSeparator2);
             this.panel1.Controls.Add(this.gunaLabel1);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
@@ -278,6 +280,13 @@
             this.gunaLinkLabel1.TabStop = true;
             this.gunaLinkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.gunaLinkLabel1_LinkClicked);
             // 
+            // gunaSeparator2
+            // 
+            this.gunaSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaSeparator2.LineColor = System.Drawing.Color.Silver;
+            resources.ApplyResources(this.gunaSeparator2, "gunaSeparator2");
+            this.gunaSeparator2.Name = "gunaSeparator2";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -320,6 +329,7 @@
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton2;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
         private Guna.UI.WinForms.GunaLinkLabel gunaLinkLabel1;
+        private Guna.UI.WinForms.GunaSeparator gunaSeparator2;
     }
 }
 
