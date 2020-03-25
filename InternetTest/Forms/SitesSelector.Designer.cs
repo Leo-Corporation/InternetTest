@@ -82,7 +82,7 @@
             this.gunaAdvenceTileButton1.Image = global::InternetTest.Properties.Resources.icons8_delete_100px_1;
             this.gunaAdvenceTileButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceTileButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(469, 5);
+            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(469, 4);
             this.gunaAdvenceTileButton1.Name = "gunaAdvenceTileButton1";
             this.gunaAdvenceTileButton1.OnHoverBaseColor = System.Drawing.Color.Red;
             this.gunaAdvenceTileButton1.OnHoverBorderColor = System.Drawing.Color.Black;

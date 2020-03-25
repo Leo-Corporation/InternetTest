@@ -201,6 +201,7 @@
             this.gunaGradientButton3.OnHoverImage = null;
             this.gunaGradientButton3.OnPressedColor = System.Drawing.Color.Black;
             this.gunaGradientButton3.Radius = 6;
+            this.gunaGradientButton3.Click += new System.EventHandler(this.gunaGradientButton3_Click);
             // 
             // gunaGradientButton2
             // 
@@ -269,6 +270,7 @@
             // gunaLinkLabel1
             // 
             resources.ApplyResources(this.gunaLinkLabel1, "gunaLinkLabel1");
+            this.gunaLinkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaLinkLabel1.LinkColor = System.Drawing.Color.RoyalBlue;
             this.gunaLinkLabel1.Name = "gunaLinkLabel1";
             this.gunaLinkLabel1.TabStop = true;

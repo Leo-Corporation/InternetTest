@@ -63,5 +63,10 @@ namespace InternetTest
         {
             new SitesSelector().Show();
         }
+
+        private void gunaGradientButton3_Click(object sender, EventArgs e)
+        {
+            new AboutForm().Show();
+        }
     }
 }
