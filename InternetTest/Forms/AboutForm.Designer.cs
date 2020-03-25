@@ -94,6 +94,7 @@
             this.gunaAdvenceTileButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaAdvenceTileButton1.Size = new System.Drawing.Size(47, 29);
             this.gunaAdvenceTileButton1.TabIndex = 2;
+            this.gunaAdvenceTileButton1.Click += new System.EventHandler(this.gunaAdvenceTileButton1_Click);
             // 
             // gunaPictureBox1
             // 

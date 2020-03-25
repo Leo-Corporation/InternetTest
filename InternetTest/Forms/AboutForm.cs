@@ -30,5 +30,10 @@ namespace InternetTest.Forms
         {
             System.Diagnostics.Process.Start("https://github.com/Leo-Corporation/InternetTest/");
         }
+
+        private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
