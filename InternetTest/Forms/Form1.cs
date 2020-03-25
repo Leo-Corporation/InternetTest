@@ -25,6 +25,7 @@ namespace InternetTest
             Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
+            ChangeTheme(); // Change me thème en fonction des préférences de l'utilisateur
         }
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
@@ -67,6 +68,31 @@ namespace InternetTest
         private void gunaGradientButton3_Click(object sender, EventArgs e)
         {
             new AboutForm().Show();
+        }
+
+        private void gunaGradientButton2_Click(object sender, EventArgs e)
+        {
+            // Ouvrir les paramètres
+        }
+
+        public void ChangeTheme() // Changer le thème
+        {
+            if (new Theme().IsDark()) // Si le thème est sombre
+            {
+                BackColor = Color.FromArgb(50, 50, 72);
+                gunaLabel1.ForeColor = Color.White;
+                gunaLabel2.ForeColor = Color.White;
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
+                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px;
+            }
+            else // Si le thème est clair
+            {
+                BackColor = Color.White;
+                gunaLabel1.ForeColor = Color.Black;
+                gunaLabel2.ForeColor = Color.Black;
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
+                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1;
+            }
         }
     }
 }

@@ -145,6 +145,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.gunaGradientButton4);
             this.panel2.Controls.Add(this.gunaGradientButton3);
             this.panel2.Controls.Add(this.gunaGradientButton2);
@@ -227,6 +228,7 @@
             this.gunaGradientButton2.OnHoverImage = null;
             this.gunaGradientButton2.OnPressedColor = System.Drawing.Color.Black;
             this.gunaGradientButton2.Radius = 6;
+            this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click);
             // 
             // gunaLabel2
             // 
