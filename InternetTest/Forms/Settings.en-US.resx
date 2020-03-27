@@ -142,6 +142,12 @@
   <data name="gunaGradientButton1.Text" xml:space="preserve">
     <value>Apply</value>
   </data>
+  <data name="gunaComboBox1.Items" xml:space="preserve">
+    <value>French (fr-FR)</value>
+  </data>
+  <data name="gunaComboBox1.Items1" xml:space="preserve">
+    <value>English (EN)</value>
+  </data>
   <data name="gunaAdvenceTileButton2.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAABmhJREFUaEPt

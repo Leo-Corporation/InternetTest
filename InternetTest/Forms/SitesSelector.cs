@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InternetTest.Classes;
@@ -15,6 +16,14 @@ namespace InternetTest.Forms
     {
         public SitesSelector()
         {
+            if (new Language().GetCode() == "fr-FR")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
+            }
+            else if (new Language().GetCode() == "EN")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            }
             InitializeComponent();
         }
 
@@ -52,6 +61,22 @@ namespace InternetTest.Forms
         private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ChangeTheme()
+        {
+            if (new Theme().IsDark()) // Mettre le thème sombre
+            {
+                BackColor = Color.FromArgb(50, 50, 72);
+                gunaLabel1.ForeColor = Color.White;
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
+            }
+            else
+            {
+                BackColor = Color.White;
+                gunaLabel1.ForeColor = Color.Black;
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
+            }
         }
     }
 }

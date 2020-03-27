@@ -54,19 +54,16 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.gunaAdvenceTileButton1);
             this.panel1.Controls.Add(this.gunaPictureBox1);
             this.panel1.Controls.Add(this.gunaLabel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 37);
-            this.panel1.TabIndex = 1;
             // 
             // gunaAdvenceTileButton1
             // 
-            this.gunaAdvenceTileButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.gunaAdvenceTileButton1, "gunaAdvenceTileButton1");
             this.gunaAdvenceTileButton1.Animated = true;
             this.gunaAdvenceTileButton1.AnimationHoverSpeed = 0.07F;
             this.gunaAdvenceTileButton1.AnimationSpeed = 0.03F;
@@ -79,12 +76,10 @@
             this.gunaAdvenceTileButton1.CheckedLineColor = System.Drawing.Color.DimGray;
             this.gunaAdvenceTileButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaAdvenceTileButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceTileButton1.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
             this.gunaAdvenceTileButton1.ForeColor = System.Drawing.Color.White;
             this.gunaAdvenceTileButton1.Image = global::InternetTest.Properties.Resources.icons8_delete_100px_1;
             this.gunaAdvenceTileButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceTileButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(396, 4);
             this.gunaAdvenceTileButton1.Name = "gunaAdvenceTileButton1";
             this.gunaAdvenceTileButton1.OnHoverBaseColor = System.Drawing.Color.Red;
             this.gunaAdvenceTileButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -92,32 +87,20 @@
             this.gunaAdvenceTileButton1.OnHoverImage = global::InternetTest.Properties.Resources.icons8_delete_32px;
             this.gunaAdvenceTileButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.gunaAdvenceTileButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton1.Size = new System.Drawing.Size(47, 29);
-            this.gunaAdvenceTileButton1.TabIndex = 2;
             this.gunaAdvenceTileButton1.Click += new System.EventHandler(this.gunaAdvenceTileButton1_Click);
             // 
             // gunaPictureBox1
             // 
+            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::InternetTest.Properties.Resources.InternetTestLogo1;
-            this.gunaPictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(4, 3);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox1.TabIndex = 1;
             this.gunaPictureBox1.TabStop = false;
             // 
             // gunaLabel1
             // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaLabel1.Location = new System.Drawing.Point(34, 8);
+            resources.ApplyResources(this.gunaLabel1, "gunaLabel1");
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(78, 21);
-            this.gunaLabel1.TabIndex = 0;
-            this.gunaLabel1.Text = "A propos";
             // 
             // gunaDragControl2
             // 
@@ -129,43 +112,28 @@
             // 
             // gunaLabel2
             // 
-            this.gunaLabel2.AutoSize = true;
+            resources.ApplyResources(this.gunaLabel2, "gunaLabel2");
             this.gunaLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaLabel2.Location = new System.Drawing.Point(154, 123);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(139, 30);
-            this.gunaLabel2.TabIndex = 0;
-            this.gunaLabel2.Text = "InternetTest";
             // 
             // gunaLabel3
             // 
-            this.gunaLabel3.AutoSize = true;
+            resources.ApplyResources(this.gunaLabel3, "gunaLabel3");
             this.gunaLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaLabel3.Location = new System.Drawing.Point(191, 153);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(65, 15);
-            this.gunaLabel3.TabIndex = 0;
-            this.gunaLabel3.Text = "4.0.0.2003";
             // 
             // gunaPictureBox2
             // 
+            resources.ApplyResources(this.gunaPictureBox2, "gunaPictureBox2");
             this.gunaPictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox2.Image = global::InternetTest.Properties.Resources.InternetTestLogo1;
-            this.gunaPictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(183, 42);
             this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(80, 80);
-            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox2.TabIndex = 1;
             this.gunaPictureBox2.TabStop = false;
             // 
             // gunaGradientButton2
             // 
+            resources.ApplyResources(this.gunaGradientButton2, "gunaGradientButton2");
             this.gunaGradientButton2.Animated = true;
             this.gunaGradientButton2.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton2.AnimationSpeed = 0.03F;
@@ -176,11 +144,9 @@
             this.gunaGradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton2.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
             this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton2.Image = global::InternetTest.Properties.Resources.icons8_refresh_100px;
             this.gunaGradientButton2.ImageSize = new System.Drawing.Size(18, 18);
-            this.gunaGradientButton2.Location = new System.Drawing.Point(104, 175);
             this.gunaGradientButton2.Name = "gunaGradientButton2";
             this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;
             this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.MediumBlue;
@@ -189,31 +155,21 @@
             this.gunaGradientButton2.OnHoverImage = null;
             this.gunaGradientButton2.OnPressedColor = System.Drawing.Color.Black;
             this.gunaGradientButton2.Radius = 6;
-            this.gunaGradientButton2.Size = new System.Drawing.Size(238, 27);
-            this.gunaGradientButton2.TabIndex = 4;
-            this.gunaGradientButton2.Text = "Rechercher des mises à jour";
             // 
             // gunaLinkLabel1
             // 
-            this.gunaLinkLabel1.AutoSize = true;
+            resources.ApplyResources(this.gunaLinkLabel1, "gunaLinkLabel1");
             this.gunaLinkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLinkLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.gunaLinkLabel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gunaLinkLabel1.LinkColor = System.Drawing.Color.RoyalBlue;
-            this.gunaLinkLabel1.Location = new System.Drawing.Point(194, 206);
             this.gunaLinkLabel1.Name = "gunaLinkLabel1";
-            this.gunaLinkLabel1.Size = new System.Drawing.Size(59, 20);
-            this.gunaLinkLabel1.TabIndex = 5;
             this.gunaLinkLabel1.TabStop = true;
-            this.gunaLinkLabel1.Text = "GitHub";
             this.gunaLinkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.gunaLinkLabel1_LinkClicked);
             // 
             // AboutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(446, 232);
             this.Controls.Add(this.gunaLinkLabel1);
             this.Controls.Add(this.gunaGradientButton2);
             this.Controls.Add(this.panel1);
@@ -221,12 +177,9 @@
             this.Controls.Add(this.gunaPictureBox2);
             this.Controls.Add(this.gunaLabel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "A propos";
             this.Load += new System.EventHandler(this.AboutForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

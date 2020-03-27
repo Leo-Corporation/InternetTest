@@ -27,6 +27,7 @@ namespace InternetTest.Forms
             int y = (Screen.PrimaryScreen.Bounds.Height - Height) / 2;
             Location = new Point(x, y);
             Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
+            ChangeTheme();
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
             webBrowser1.Url = new Uri(url); // Charger la page Internet demandée
         }
@@ -62,6 +63,26 @@ namespace InternetTest.Forms
             else
             {
                 WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void ChangeTheme()
+        {
+            if (new Theme().IsDark()) // Mettre le thème sombre
+            {
+                BackColor = Color.FromArgb(50, 50, 72);
+                gunaLabel1.ForeColor = Color.White;
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
+                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px;
+                gunaAdvenceTileButton3.Image = Properties.Resources.icons8_enlarge_100px;
+            }
+            else // Mettre le thème clair
+            {
+                BackColor = Color.White;
+                gunaLabel1.ForeColor = Color.Black;
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
+                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1;
+                gunaAdvenceTileButton3.Image = Properties.Resources.icons8_enlarge_100px_1;
             }
         }
     }
