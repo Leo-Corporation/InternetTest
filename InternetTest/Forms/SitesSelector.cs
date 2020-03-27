@@ -31,6 +31,7 @@ namespace InternetTest.Forms
         {
             Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
+            ChangeTheme();
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
         }
 
