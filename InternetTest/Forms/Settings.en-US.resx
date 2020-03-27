@@ -232,6 +232,13 @@
   <data name="gunaLabel4.Text" xml:space="preserve">
     <value>Disabled</value>
   </data>
+  <data name="gunaLabel11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 34</value>
+  </data>
+  <data name="gunaLabel11.Text" xml:space="preserve">
+    <value>Restart InternetTest to apply
+the changes</value>
+  </data>
   <data name="gunaLabel9.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
   </data>

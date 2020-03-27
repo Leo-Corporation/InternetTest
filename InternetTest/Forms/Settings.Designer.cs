@@ -53,6 +53,7 @@
             this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
+            this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -234,6 +235,7 @@
             this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.RoyalBlue;
             this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
             this.gunaComboBox1.Radius = 6;
+            this.gunaComboBox1.SelectedIndexChanged += new System.EventHandler(this.gunaComboBox1_SelectedIndexChanged);
             // 
             // gunaGradientButton1
             // 
@@ -308,6 +310,12 @@
             this.gunaLinkLabel1.TabStop = true;
             this.gunaLinkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.gunaLinkLabel1_LinkClicked);
             // 
+            // gunaLabel11
+            // 
+            resources.ApplyResources(this.gunaLabel11, "gunaLabel11");
+            this.gunaLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLabel11.Name = "gunaLabel11";
+            // 
             // Settings
             // 
             resources.ApplyResources(this, "$this");
@@ -322,6 +330,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.gunaLabel4);
+            this.Controls.Add(this.gunaLabel11);
             this.Controls.Add(this.gunaLabel9);
             this.Controls.Add(this.gunaLabel6);
             this.Controls.Add(this.gunaLabel3);
@@ -366,5 +375,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel10;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
         private Guna.UI.WinForms.GunaLinkLabel gunaLinkLabel1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel11;
     }
 }

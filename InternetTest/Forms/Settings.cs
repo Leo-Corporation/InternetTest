@@ -26,6 +26,7 @@ namespace InternetTest.Forms
             Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
+            gunaLabel11.Visible = false;
             ChangeTheme();
             LoadSettings();
         }
@@ -196,16 +197,33 @@ namespace InternetTest.Forms
             if (new Language().GetCode() == "fr-FR")
             {
                 gunaComboBox1.Text = "Français (fr-FR)";
-                gunaWinSwitch1.Checked = true;
-                gunaWinSwitch2.Checked = false;
+                gunaWinSwitch1.Checked = false;
+                gunaWinSwitch2.Checked = true;
                 MessageBox.Show("Terminé !");
             }
             else if (new Language().GetCode() == "EN")
             {
                 gunaComboBox1.Text = "French (fr-FR)";
-                gunaWinSwitch1.Checked = true;
-                gunaWinSwitch2.Checked = false;
+                gunaWinSwitch1.Checked = false;
+                gunaWinSwitch2.Checked = true;
                 MessageBox.Show("Done !");
+            }
+        }
+
+        private void gunaComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (new Language().GetCode() == "fr-FR")
+            {
+                if (gunaComboBox1.Text != new Language().GetName("fr"))
+                {
+                    gunaLabel11.Visible = true;
+                }
+            }else if (new Language().GetCode() == "EN")
+            {
+                if (gunaComboBox1.Text != new Language().GetName("en"))
+                {
+                    gunaLabel11.Visible = true;
+                }
             }
         }
     }
