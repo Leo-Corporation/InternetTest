@@ -6,7 +6,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">FR</Value>
+      <Value Profile="(Default)">fr-FR</Value>
     </Setting>
     <Setting Name="NotifyUpdate" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

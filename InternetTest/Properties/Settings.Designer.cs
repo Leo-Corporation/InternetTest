@@ -37,7 +37,7 @@ namespace InternetTest.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("FR")]
+        [global::System.Configuration.DefaultSettingValueAttribute("fr-FR")]
         public string Language {
             get {
                 return ((string)(this["Language"]));
