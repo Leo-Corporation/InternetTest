@@ -267,6 +267,7 @@
             this.gunaWinSwitch2.Name = "gunaWinSwitch2";
             this.gunaWinSwitch2.Size = new System.Drawing.Size(40, 22);
             this.gunaWinSwitch2.TabIndex = 3;
+            this.gunaWinSwitch2.CheckedChanged += new System.EventHandler(this.gunaWinSwitch2_CheckedChanged);
             // 
             // gunaLabel8
             // 

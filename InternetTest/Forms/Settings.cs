@@ -25,6 +25,7 @@ namespace InternetTest.Forms
             Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
+            ChangeTheme();
             LoadSettings();
         }
 
@@ -139,14 +140,6 @@ namespace InternetTest.Forms
                 {
                     gunaLabel4.Text = "Désactivé";
                 }
-                if (gunaWinSwitch1.Checked)
-                {
-                    gunaLabel7.Text = "Activé";
-                }
-                else
-                {
-                    gunaLabel7.Text = "Désactivé";
-                }
             }
             else if (new Language().GetCode() == "EN")
             {
@@ -158,7 +151,25 @@ namespace InternetTest.Forms
                 {
                     gunaLabel4.Text = "Disabled";
                 }
-                if (gunaWinSwitch1.Checked)
+            }
+        }
+
+        private void gunaWinSwitch2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (new Language().GetCode() == "fr-FR") // Si la langue est française
+            {
+                if (gunaWinSwitch2.Checked)
+                {
+                    gunaLabel7.Text = "Activé";
+                }
+                else
+                {
+                    gunaLabel7.Text = "Désactivé";
+                }
+            }
+            else if (new Language().GetCode() == "EN") // Si la langue est anglaise
+            {
+                if (gunaWinSwitch2.Checked)
                 {
                     gunaLabel7.Text = "Enabled";
                 }
