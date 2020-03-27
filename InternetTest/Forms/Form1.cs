@@ -72,7 +72,7 @@ namespace InternetTest
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
-            // Ouvrir les paramètres
+            new Settings(this).Show();
         }
 
         public void ChangeTheme() // Changer le thème

@@ -204,6 +204,7 @@
             this.gunaWinSwitch1.Name = "gunaWinSwitch1";
             this.gunaWinSwitch1.Size = new System.Drawing.Size(40, 22);
             this.gunaWinSwitch1.TabIndex = 3;
+            this.gunaWinSwitch1.CheckedChanged += new System.EventHandler(this.gunaWinSwitch1_CheckedChanged);
             // 
             // gunaLabel4
             // 
@@ -299,7 +300,7 @@
             this.gunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.gunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.gunaComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
             this.gunaComboBox1.FormattingEnabled = true;
             this.gunaComboBox1.Items.AddRange(new object[] {
@@ -310,7 +311,7 @@
             this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.RoyalBlue;
             this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
             this.gunaComboBox1.Radius = 6;
-            this.gunaComboBox1.Size = new System.Drawing.Size(181, 26);
+            this.gunaComboBox1.Size = new System.Drawing.Size(181, 28);
             this.gunaComboBox1.TabIndex = 4;
             // 
             // gunaGradientButton1
@@ -341,6 +342,7 @@
             this.gunaGradientButton1.Size = new System.Drawing.Size(127, 33);
             this.gunaGradientButton1.TabIndex = 5;
             this.gunaGradientButton1.Text = "Appliquer";
+            this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
             // gunaGradientButton2
             // 
