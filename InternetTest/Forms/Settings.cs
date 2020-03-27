@@ -193,6 +193,20 @@ namespace InternetTest.Forms
         {
             Properties.Settings.Default.Reset();
             Properties.Settings.Default.Save();
+            if (new Language().GetCode() == "fr-FR")
+            {
+                gunaComboBox1.Text = "Français (fr-FR)";
+                gunaWinSwitch1.Checked = true;
+                gunaWinSwitch2.Checked = false;
+                MessageBox.Show("Terminé !");
+            }
+            else if (new Language().GetCode() == "EN")
+            {
+                gunaComboBox1.Text = "French (fr-FR)";
+                gunaWinSwitch1.Checked = true;
+                gunaWinSwitch2.Checked = false;
+                MessageBox.Show("Done !");
+            }
         }
     }
 }
