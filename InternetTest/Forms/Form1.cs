@@ -7,6 +7,7 @@ using System.Linq;
 using LeoCorpLibrary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using InternetTest.Classes;
 using InternetTest.Forms;
@@ -17,6 +18,14 @@ namespace InternetTest
     {
         public Form1()
         {
+            if (new Language().GetCode() == "fr-FR")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
+            }
+            else if (new Language().GetCode() == "EN")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            }
             InitializeComponent();
         }
 
@@ -25,7 +34,7 @@ namespace InternetTest
             Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
-            ChangeTheme(); // Change me thème en fonction des préférences de l'utilisateur
+            ChangeTheme(); // Change le thème en fonction des préférences de l'utilisateur
         }
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
@@ -33,15 +42,33 @@ namespace InternetTest
             bool connectionAvailable = new NetworkConnection().IsAvailable();
             if (connectionAvailable) // Si internet est disponible
             {
-                gunaLabel2.Visible = true;
-                gunaLabel2.Text = "Vous êtes connecté à Internet";
-                gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                if (new Language().GetCode() == "fr-FR")
+                {
+                    gunaLabel2.Visible = true;
+                    gunaLabel2.Text = "Vous êtes connecté à Internet";
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                }
+                else if (new Language().GetCode() == "EN")
+                {
+                    gunaLabel2.Visible = true;
+                    gunaLabel2.Text = "You're connected to Internet";
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                }    
             }
             else
             {
-                gunaLabel2.Visible = true;
-                gunaLabel2.Text = "Vous n'êtes pas connecté à Internet";
-                gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                if (new Language().GetCode() == "fr-FR")
+                {
+                    gunaLabel2.Visible = true;
+                    gunaLabel2.Text = "Vous n'êtes pas connecté à Internet";
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                }
+                else if (new Language().GetCode() == "EN")
+                {
+                    gunaLabel2.Visible = true;
+                    gunaLabel2.Text = "You aren't connected to Internet";
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                }
             }
         }
 

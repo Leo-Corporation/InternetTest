@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace InternetTest.Forms
@@ -72,10 +73,12 @@ namespace InternetTest.Forms
             if (gunaComboBox1.Text.Contains("fr-FR")) // Si la langue est française
             {
                 Properties.Settings.Default.Language = "fr-FR";
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
             }
             else if (gunaComboBox1.Text.Contains("EN")) // Si la langue est anglaise
             {
                 Properties.Settings.Default.Language = "EN";
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
             }
             Properties.Settings.Default.Save();
         }
@@ -182,6 +185,12 @@ namespace InternetTest.Forms
                     gunaLabel7.Text = "Disabled";
                 }
             }
+        }
+
+        private void gunaLinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Properties.Settings.Default.Reset();
+            Properties.Settings.Default.Save();
         }
     }
 }
