@@ -34,6 +34,7 @@
             this.gunaAdvenceTileButton2 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton1 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaSeparator2 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
@@ -46,7 +47,6 @@
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
-            this.gunaSeparator2 = new Guna.UI.WinForms.GunaSeparator();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -126,6 +126,13 @@
             resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.TabStop = false;
+            // 
+            // gunaSeparator2
+            // 
+            this.gunaSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaSeparator2.LineColor = System.Drawing.Color.Silver;
+            resources.ApplyResources(this.gunaSeparator2, "gunaSeparator2");
+            this.gunaSeparator2.Name = "gunaSeparator2";
             // 
             // gunaLabel1
             // 
@@ -279,13 +286,6 @@
             this.gunaLinkLabel1.Name = "gunaLinkLabel1";
             this.gunaLinkLabel1.TabStop = true;
             this.gunaLinkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.gunaLinkLabel1_LinkClicked);
-            // 
-            // gunaSeparator2
-            // 
-            this.gunaSeparator2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaSeparator2.LineColor = System.Drawing.Color.Silver;
-            resources.ApplyResources(this.gunaSeparator2, "gunaSeparator2");
-            this.gunaSeparator2.Name = "gunaSeparator2";
             // 
             // Form1
             // 
