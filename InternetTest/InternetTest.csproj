@@ -199,6 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Internet Test.ico" />
+    <None Include="Resources\icons8_download_100px.png" />
     <None Include="Resources\icons8_checkmark_100px_1.png" />
     <None Include="Resources\icons8_delete_100px_2.png" />
     <None Include="Resources\icons8_refresh_100px.png" />

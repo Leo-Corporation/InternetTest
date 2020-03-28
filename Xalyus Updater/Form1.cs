@@ -28,7 +28,7 @@ namespace Xalyus_Updater
             File.Delete(path);
             client = new WebClient();
             WebClient maj = new WebClient();
-            string link = maj.DownloadString("https://dl.dropboxusercontent.com/s/r5iv66thace7g2o/Download.txt");
+            string link = maj.DownloadString("https://dl.dropboxusercontent.com/s/hftkddmm0ojn714/download.txt");
             client.DownloadProgressChanged += Client_DownloadProgressChanged;
             client.DownloadFileCompleted += Client_DownloadFileCompleted;
             if (!string.IsNullOrEmpty(link))
