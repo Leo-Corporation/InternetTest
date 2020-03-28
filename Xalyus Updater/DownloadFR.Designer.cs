@@ -1,16 +1,16 @@
 ﻿namespace Xalyus_Updater
 {
-    partial class Form1
+    partial class DownloadFR
     {
         /// <summary>
-        /// Variable nécessaire au concepteur.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Nettoyage des ressources utilisées.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,35 +20,36 @@
             base.Dispose(disposing);
         }
 
-        #region Code généré par le Concepteur Windows Form
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-        /// le contenu de cette méthode avec l'éditeur de code.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DownloadFR));
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaProgressBar1 = new Guna.UI.WinForms.GunaProgressBar();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.gunaElipsePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             this.gunaElipsePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaElipse1
@@ -65,7 +66,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(549, 35);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 4;
             // 
             // gunaLabel1
             // 
@@ -77,17 +78,6 @@
             this.gunaLabel1.Size = new System.Drawing.Size(126, 21);
             this.gunaLabel1.TabIndex = 3;
             this.gunaLabel1.Text = "Xalyus Updater";
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::Xalyus_Updater.Properties.Resources.Xalyus_Updater;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(5, 1);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(33, 33);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox1.TabIndex = 2;
-            this.gunaPictureBox1.TabStop = false;
             // 
             // gunaControlBox1
             // 
@@ -120,7 +110,7 @@
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 10;
             this.gunaElipsePanel1.Size = new System.Drawing.Size(508, 103);
-            this.gunaElipsePanel1.TabIndex = 2;
+            this.gunaElipsePanel1.TabIndex = 5;
             // 
             // gunaLabel3
             // 
@@ -144,17 +134,6 @@
             this.gunaLabel2.TabIndex = 3;
             this.gunaLabel2.Text = "InternetTest 4";
             // 
-            // gunaPictureBox2
-            // 
-            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox2.Image = global::Xalyus_Updater.Properties.Resources.logo;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(15, 14);
-            this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(70, 70);
-            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox2.TabIndex = 1;
-            this.gunaPictureBox2.TabStop = false;
-            // 
             // gunaElipsePanel2
             // 
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
@@ -167,7 +146,7 @@
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
             this.gunaElipsePanel2.Radius = 10;
             this.gunaElipsePanel2.Size = new System.Drawing.Size(508, 118);
-            this.gunaElipsePanel2.TabIndex = 3;
+            this.gunaElipsePanel2.TabIndex = 6;
             // 
             // gunaLabel6
             // 
@@ -185,11 +164,11 @@
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel5.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel5.Location = new System.Drawing.Point(141, 69);
+            this.gunaLabel5.Location = new System.Drawing.Point(62, 69);
             this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(226, 20);
+            this.gunaLabel5.Size = new System.Drawing.Size(384, 20);
             this.gunaLabel5.TabIndex = 3;
-            this.gunaLabel5.Text = "Téléchargement et installation...";
+            this.gunaLabel5.Text = "Téléchargement et installation des fichiers de langues...";
             // 
             // gunaProgressBar1
             // 
@@ -216,29 +195,52 @@
             this.gunaLabel4.TabIndex = 3;
             this.gunaLabel4.Text = "Mise à jour";
             // 
-            // Form1
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::Xalyus_Updater.Properties.Resources.Xalyus_Updater;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(5, 1);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(33, 33);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox1.TabIndex = 2;
+            this.gunaPictureBox1.TabStop = false;
+            // 
+            // gunaPictureBox2
+            // 
+            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox2.Image = global::Xalyus_Updater.Properties.Resources.logo;
+            this.gunaPictureBox2.Location = new System.Drawing.Point(15, 14);
+            this.gunaPictureBox2.Name = "gunaPictureBox2";
+            this.gunaPictureBox2.Size = new System.Drawing.Size(70, 70);
+            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox2.TabIndex = 1;
+            this.gunaPictureBox2.TabStop = false;
+            // 
+            // DownloadFR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(549, 289);
-            this.Controls.Add(this.gunaElipsePanel2);
-            this.Controls.Add(this.gunaElipsePanel1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.gunaElipsePanel1);
+            this.Controls.Add(this.gunaElipsePanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "DownloadFR";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xalyus Updater - Mise à jour d\'InternetTest";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.DownloadFR_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.gunaElipsePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,19 +249,18 @@
 
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
-        private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
-        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
-        private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private Guna.UI.WinForms.GunaProgressBar gunaProgressBar1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel5;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
+        private Guna.UI.WinForms.GunaLabel gunaLabel5;
+        private Guna.UI.WinForms.GunaProgressBar gunaProgressBar1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
     }
 }
-

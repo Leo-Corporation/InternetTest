@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -14,16 +13,16 @@ using System.Windows.Forms;
 
 namespace Xalyus_Updater
 {
-    public partial class Form1 : Form
+    public partial class DownloadEN : Form
     {
         WebClient client;
-        string path = Application.StartupPath + "/InternetTest.exe";
-        public Form1()
+        string path = Application.StartupPath + "/en-US/InternetTest.resources.dll";
+        public DownloadEN()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void DownloadEN_Load(object sender, EventArgs e)
         {
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
             try
@@ -34,7 +33,7 @@ namespace Xalyus_Updater
                 }
                 client = new WebClient();
                 WebClient maj = new WebClient();
-                string link = maj.DownloadString("https://dl.dropboxusercontent.com/s/hftkddmm0ojn714/download.txt");
+                string link = maj.DownloadString("https://dl.dropboxusercontent.com/s/9ye4dgnvxje4701/downloaden.txt");
                 client.DownloadProgressChanged += Client_DownloadProgressChanged;
                 client.DownloadFileCompleted += Client_DownloadFileCompleted;
                 if (!string.IsNullOrEmpty(link))
@@ -49,7 +48,7 @@ namespace Xalyus_Updater
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur :" + Environment.NewLine + ex.Message, "Erreur",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erreur :" + Environment.NewLine + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -57,6 +56,7 @@ namespace Xalyus_Updater
         {
             Invoke(new MethodInvoker(delegate ()
             {
+                System.Diagnostics.Process.Start(Application.StartupPath + "/InternetTest.exe");
                 Close();
             }));
         }

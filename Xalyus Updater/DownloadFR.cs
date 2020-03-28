@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -14,16 +13,17 @@ using System.Windows.Forms;
 
 namespace Xalyus_Updater
 {
-    public partial class Form1 : Form
+    public partial class DownloadFR : Form
     {
         WebClient client;
-        string path = Application.StartupPath + "/InternetTest.exe";
-        public Form1()
+        string path = Application.StartupPath + "/fr-FR/InternetTest.resources.dll";
+        //string linkFR = new WebClient().DownloadString("https://dl.dropboxusercontent.com/s/0fyz21noc43t9d3/downloadfr.txt");
+        public DownloadFR()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void DownloadFR_Load(object sender, EventArgs e)
         {
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
             try
@@ -34,7 +34,7 @@ namespace Xalyus_Updater
                 }
                 client = new WebClient();
                 WebClient maj = new WebClient();
-                string link = maj.DownloadString("https://dl.dropboxusercontent.com/s/hftkddmm0ojn714/download.txt");
+                string link = maj.DownloadString("https://dl.dropboxusercontent.com/s/0fyz21noc43t9d3/downloadfr.txt");
                 client.DownloadProgressChanged += Client_DownloadProgressChanged;
                 client.DownloadFileCompleted += Client_DownloadFileCompleted;
                 if (!string.IsNullOrEmpty(link))
@@ -49,7 +49,7 @@ namespace Xalyus_Updater
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur :" + Environment.NewLine + ex.Message, "Erreur",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erreur : " + Environment.NewLine + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
