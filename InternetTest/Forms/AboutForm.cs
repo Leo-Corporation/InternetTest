@@ -69,7 +69,7 @@ namespace InternetTest.Forms
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
-            
+            new Update().Check("4.0.0.2003", new Update().GetLastVersion("https://dl.dropboxusercontent.com/s/0f4ydra3lzv3un5/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace InternetTest.Forms
 {
@@ -17,6 +18,14 @@ namespace InternetTest.Forms
     {
         public AvailableUpdate()
         {
+            if (new Language().GetCode() == "fr-FR")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
+            }
+            else if (new Language().GetCode() == "EN")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            }
             InitializeComponent();
         }
 
@@ -73,4 +82,5 @@ namespace InternetTest.Forms
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1;
             }
         }
+    }
 }

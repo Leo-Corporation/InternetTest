@@ -129,6 +129,12 @@
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AvailableUpdate.en-US.resx">
+      <DependentUpon>AvailableUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AvailableUpdate.fr-FR.resx">
+      <DependentUpon>AvailableUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AvailableUpdate.resx">
       <DependentUpon>AvailableUpdate.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +173,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SitesSelector.resx">
       <DependentUpon>SitesSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UnavailableUpdate.en-US.resx">
+      <DependentUpon>UnavailableUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UnavailableUpdate.fr-FR.resx">
+      <DependentUpon>UnavailableUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UnavailableUpdate.resx">
       <DependentUpon>UnavailableUpdate.cs</DependentUpon>
