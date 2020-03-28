@@ -82,6 +82,12 @@
     <Compile Include="Forms\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AvailableUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AvailableUpdate.Designer.cs">
+      <DependentUpon>AvailableUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Browser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     <Compile Include="Forms\SitesSelector.Designer.cs">
       <DependentUpon>SitesSelector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UnavailableUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UnavailableUpdate.Designer.cs">
+      <DependentUpon>UnavailableUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AboutForm.en-US.resx">
@@ -116,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AvailableUpdate.resx">
+      <DependentUpon>AvailableUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Browser.en-US.resx">
       <DependentUpon>Browser.cs</DependentUpon>
@@ -152,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SitesSelector.resx">
       <DependentUpon>SitesSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UnavailableUpdate.resx">
+      <DependentUpon>UnavailableUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

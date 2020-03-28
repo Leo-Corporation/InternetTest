@@ -24,7 +24,7 @@ namespace Xalyus_Updater
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string path = Application.StartupPath + "/Générateur de mots de passe 3.exe";
+            string path = Application.StartupPath + "/InternetTest.exe";
             File.Delete(path);
             client = new WebClient();
             WebClient maj = new WebClient();

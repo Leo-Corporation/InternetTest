@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InternetTest.Classes;
+using LeoCorpLibrary;
 
 namespace InternetTest.Forms
 {
@@ -64,6 +65,11 @@ namespace InternetTest.Forms
                 gunaLabel3.ForeColor = Color.Black;
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
             }
+        }
+
+        private void gunaGradientButton2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
