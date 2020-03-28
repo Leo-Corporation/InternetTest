@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Internet Test.ico</ApplicationIcon>
+    <ApplicationIcon>InternetTest Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI, Version=1.8.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
@@ -211,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Internet Test.ico" />
+    <Content Include="InternetTest Logo.ico" />
     <None Include="Resources\icons8_download_100px.png" />
     <None Include="Resources\icons8_checkmark_100px_1.png" />
     <None Include="Resources\icons8_delete_100px_2.png" />
