@@ -25,6 +25,10 @@ namespace Xalyus_Updater
         private void Form1_Load(object sender, EventArgs e)
         {
             string path = Application.StartupPath + "/InternetTest.exe";
+            string resFR = Application.StartupPath + "/fr-FR/InternetTest.resources.dll";
+            string resEN = Application.StartupPath + "/en-US/InternetTest.resources.dll";
+            string linkFR = new WebClient().DownloadString("https://dl.dropboxusercontent.com/s/0fyz21noc43t9d3/downloadfr.txt");
+            string linkEN = "https://dl.dropboxusercontent.com/s/9ye4dgnvxje4701/downloaden.txt";
             File.Delete(path);
             client = new WebClient();
             WebClient maj = new WebClient();
@@ -36,7 +40,11 @@ namespace Xalyus_Updater
                 Thread thread = new Thread(() =>
                 {
                     Uri uri = new Uri(link);
+                    Uri uri1 = new Uri(linkFR);
+                    Uri uri2 = new Uri(linkEN);
                     client.DownloadFileAsync(uri, path);
+                    client.DownloadFileAsync(uri1, resFR);
+                    client.DownloadFileAsync(uri2, resEN);
                 });
                 thread.Start();
             }
