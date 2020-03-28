@@ -113,6 +113,7 @@ namespace InternetTest.Forms
                 gunaLabel8.ForeColor = Color.White;
                 gunaLabel9.ForeColor = Color.White;
                 gunaLabel10.ForeColor = Color.White;
+                gunaLabel11.ForeColor = Color.White;
                 gunaComboBox1.ForeColor = Color.White;
                 gunaComboBox1.BaseColor = Color.FromArgb(50, 50, 72);
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
@@ -131,6 +132,7 @@ namespace InternetTest.Forms
                 gunaLabel8.ForeColor = Color.Black;
                 gunaLabel9.ForeColor = Color.Black;
                 gunaLabel10.ForeColor = Color.Black;
+                gunaLabel11.ForeColor = Color.Black;
                 gunaComboBox1.ForeColor = Color.Black;
                 gunaComboBox1.BaseColor = Color.White;
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
