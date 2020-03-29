@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_27D77AAF39DB41A381EB5DD32A1DA6AB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_86FBD8FCC2A7798EB5EB25807F43AD64"
         "OwnerKey" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,6 +46,12 @@
         "Entry"
         {
         "MsmKey" = "8:_9ABF8E05BA1B40DEB2010617EE7659B3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C3EBD428A15844ECA1A502309307EB72"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -65,6 +77,18 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_86FBD8FCC2A7798EB5EB25807F43AD64"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_27D77AAF39DB41A381EB5DD32A1DA6AB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C3EBD428A15844ECA1A502309307EB72"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -217,6 +241,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_27D77AAF39DB41A381EB5DD32A1DA6AB"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.0.0.2003, Culture=fr-FR, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_27D77AAF39DB41A381EB5DD32A1DA6AB"
+                    {
+                    "Name" = "8:InternetTest.resources.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\InternetTest\\bin\\Release\\fr-FR\\InternetTest.resources.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_CAC4B7860E894B469393F941B012DE66"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_86FBD8FCC2A7798EB5EB25807F43AD64"
             {
             "AssemblyRegister" = "3:1"
@@ -254,6 +309,37 @@
             "TargetName" = "8:InternetTest Logo.ico"
             "Tag" = "8:"
             "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C3EBD428A15844ECA1A502309307EB72"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.0.0.2003, Culture=en-US, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_C3EBD428A15844ECA1A502309307EB72"
+                    {
+                    "Name" = "8:InternetTest.resources.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\InternetTest\\bin\\Release\\en-US\\InternetTest.resources.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1A2E971A2927448DA65FF7EF0068DDDC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -348,6 +434,28 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_1A2E971A2927448DA65FF7EF0068DDDC"
+                    {
+                    "Name" = "8:en-US"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_8243AC0CF4D04C65BA3ABF81B8B441ED"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_CAC4B7860E894B469393F941B012DE66"
+                    {
+                    "Name" = "8:fr-FR"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_C444FC77B8C64E918C73E75C7C33CF46"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -367,7 +475,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InternetTest"
         "ProductCode" = "8:{9FC738AD-1B24-4801-956A-81EE6F27E443}"
-        "PackageCode" = "8:{31EB90ED-C771-450E-8434-94B02043B55D}"
+        "PackageCode" = "8:{DC722314-FAF1-4A7B-845B-269C9F3352B0}"
         "UpgradeCode" = "8:{E51467CA-571A-4650-9CE9-EF00E6ECD4A8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
