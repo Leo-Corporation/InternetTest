@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("InternetTest")]
-[assembly: AssemblyDescription("InternetTest vous permet de tester si votre connexion fonctionne correctement.")]
+[assembly: AssemblyDescription("InternetTest vous permet de vérifier si votre connexion fonctionne correctement.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Léo Corporation")]
 [assembly: AssemblyProduct("InternetTest")]
