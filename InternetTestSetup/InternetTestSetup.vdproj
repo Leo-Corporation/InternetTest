@@ -16,19 +16,19 @@
         "Entry"
         {
         "MsmKey" = "8:_0117EBCF9385610CC724B1E22008893D"
-        "OwnerKey" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
+        "OwnerKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_0117EBCF9385610CC724B1E22008893D"
-        "OwnerKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
+        "OwnerKey" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_27D77AAF39DB41A381EB5DD32A1DA6AB"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_86FBD8FCC2A7798EB5EB25807F43AD64"
+        "OwnerKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,8 +39,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_86FBD8FCC2A7798EB5EB25807F43AD64"
-        "OwnerKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
+        "MsmKey" = "8:_902E5425AFD84D2FA87278D62CA5459F"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -51,13 +51,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C3EBD428A15844ECA1A502309307EB72"
+        "MsmKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
+        "MsmKey" = "8:_D6C9A7328E744E299B1C9E0FCE04FFC6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -76,31 +76,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_86FBD8FCC2A7798EB5EB25807F43AD64"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_27D77AAF39DB41A381EB5DD32A1DA6AB"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C3EBD428A15844ECA1A502309307EB72"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_902E5425AFD84D2FA87278D62CA5459F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D6C9A7328E744E299B1C9E0FCE04FFC6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -112,7 +100,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_0117EBCF9385610CC724B1E22008893D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_86FBD8FCC2A7798EB5EB25807F43AD64"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -241,37 +241,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_27D77AAF39DB41A381EB5DD32A1DA6AB"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.0.0.2003, Culture=fr-FR, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_27D77AAF39DB41A381EB5DD32A1DA6AB"
-                    {
-                    "Name" = "8:InternetTest.resources.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\InternetTest\\bin\\Release\\fr-FR\\InternetTest.resources.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_CAC4B7860E894B469393F941B012DE66"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_86FBD8FCC2A7798EB5EB25807F43AD64"
             {
             "AssemblyRegister" = "3:1"
@@ -303,6 +272,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_902E5425AFD84D2FA87278D62CA5459F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.0.0.2003, Culture=en-US, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_902E5425AFD84D2FA87278D62CA5459F"
+                    {
+                    "Name" = "8:InternetTest.resources.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\InternetTest\\bin\\Release\\en-US\\InternetTest.resources.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_F3DD65D8990542B985A6ACF60C12CABB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9ABF8E05BA1B40DEB2010617EE7659B3"
             {
             "SourcePath" = "8:D:\\Software\\Nouveaux logos\\InternetTest Logo.ico"
@@ -323,23 +323,23 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C3EBD428A15844ECA1A502309307EB72"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D6C9A7328E744E299B1C9E0FCE04FFC6"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.0.0.2003, Culture=en-US, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.0.0.2003, Culture=fr-FR, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C3EBD428A15844ECA1A502309307EB72"
+                    "_D6C9A7328E744E299B1C9E0FCE04FFC6"
                     {
                     "Name" = "8:InternetTest.resources.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\InternetTest\\bin\\Release\\en-US\\InternetTest.resources.dll"
+            "SourcePath" = "8:..\\InternetTest\\bin\\Release\\fr-FR\\InternetTest.resources.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_1A2E971A2927448DA65FF7EF0068DDDC"
+            "Folder" = "8:_328B0DB32D8B4F2A9CB482F2FFE2C606"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -434,24 +434,24 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_1A2E971A2927448DA65FF7EF0068DDDC"
-                    {
-                    "Name" = "8:en-US"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_8243AC0CF4D04C65BA3ABF81B8B441ED"
-                        "Folders"
-                        {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_CAC4B7860E894B469393F941B012DE66"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_328B0DB32D8B4F2A9CB482F2FFE2C606"
                     {
                     "Name" = "8:fr-FR"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
-                    "Property" = "8:_C444FC77B8C64E918C73E75C7C33CF46"
+                    "Property" = "8:_95803FC035DF40B2ABA6A76CBE556261"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F3DD65D8990542B985A6ACF60C12CABB"
+                    {
+                    "Name" = "8:en-US"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_11B57BDCFB2442C681FFD9054E070F5F"
                         "Folders"
                         {
                         }
