@@ -2,15 +2,14 @@
 InternetTest permet de tester votre connexion Internet.
 ## Fonctionnalités
 * Mode sombre
-* Permet de tester sa connexion Internet
+* Permet de vérifier sa connexion Internet
 * Navigateur intégré
 * Système de mise à jour
 * Paramètres
-* Installation des mises à jour automatiquement
-* Langues
+* Installation des mises à jour automatique
+* Langues (français et anglais)
 
-## A venir
-### Version 4.0
+## Version 4.0
 - Refonte totale en C# du logiciel
 - Utilisation du framework de design Guna.UI
 - Implémentation de [LeoCorpLibrary](https://github.com/Leo-Corporation/LeoCorpLibrary)
