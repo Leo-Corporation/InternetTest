@@ -15,74 +15,104 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0AFF29DC4FA84CEEBF00DA21DC7C518E"
+        "MsmKey" = "8:_0117EBCF9385610CC724B1E22008893D"
+        "OwnerKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0117EBCF9385610CC724B1E22008893D"
+        "OwnerKey" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_86FBD8FCC2A7798EB5EB25807F43AD64"
+        "OwnerKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_86FBD8FCC2A7798EB5EB25807F43AD64"
+        "OwnerKey" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_902E5425AFD84D2FA87278D62CA5459F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_353EECB4BF8A4BC8AB8CE16877858DB0"
+        "MsmKey" = "8:_9ABF8E05BA1B40DEB2010617EE7659B3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_3F6A2D88CDDE4523A38486402A2E317C"
+        "MsmKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A93A97066B3D48A896FF7E75D5B85C1A"
+        "MsmKey" = "8:_D6C9A7328E744E299B1C9E0FCE04FFC6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B4721B5E3D6747A4AE22BF3F8894D3E7"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_D898182992C99AAD93CB71CEA44BAE8D"
+        "OwnerKey" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D9141251DE89471CBA845FEA936E3B6F"
+        "MsmKey" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_353EECB4BF8A4BC8AB8CE16877858DB0"
+        "OwnerKey" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A93A97066B3D48A896FF7E75D5B85C1A"
+        "OwnerKey" = "8:_902E5425AFD84D2FA87278D62CA5459F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B4721B5E3D6747A4AE22BF3F8894D3E7"
+        "OwnerKey" = "8:_D6C9A7328E744E299B1C9E0FCE04FFC6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0AFF29DC4FA84CEEBF00DA21DC7C518E"
+        "OwnerKey" = "8:_D898182992C99AAD93CB71CEA44BAE8D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A93A97066B3D48A896FF7E75D5B85C1A"
+        "OwnerKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3F6A2D88CDDE4523A38486402A2E317C"
+        "OwnerKey" = "8:_0117EBCF9385610CC724B1E22008893D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_86FBD8FCC2A7798EB5EB25807F43AD64"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -144,10 +174,10 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
                     {
-                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 et x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
                     }
                 }
             }
@@ -172,31 +202,93 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.6.1"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.7.2"
                 "AllowLaterVersions" = "11:FALSE"
-                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=671728"
+                "InstallUrl" = "8:https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net472-web-installer"
                 }
             }
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0AFF29DC4FA84CEEBF00DA21DC7C518E"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0117EBCF9385610CC724B1E22008893D"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.6.0.1910, Culture=en, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_0AFF29DC4FA84CEEBF00DA21DC7C518E"
+                    "_0117EBCF9385610CC724B1E22008893D"
                     {
-                    "Name" = "8:Internet Test.resources.dll"
+                    "Name" = "8:Guna.UI.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\Internet test 2\\bin\\Release\\en\\Internet Test.resources.dll"
+            "SourcePath" = "8:Guna.UI.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_6D23A1389AFC422BB2A20CCF223948A6"
+            "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_86FBD8FCC2A7798EB5EB25807F43AD64"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                "ScatterAssemblies"
+                {
+                    "_86FBD8FCC2A7798EB5EB25807F43AD64"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_902E5425AFD84D2FA87278D62CA5459F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.0.0.2003, Culture=en-US, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_902E5425AFD84D2FA87278D62CA5459F"
+                    {
+                    "Name" = "8:InternetTest.resources.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\InternetTest\\bin\\Release\\en-US\\InternetTest.resources.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_F3DD65D8990542B985A6ACF60C12CABB"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -211,52 +303,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_353EECB4BF8A4BC8AB8CE16877858DB0"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9ABF8E05BA1B40DEB2010617EE7659B3"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.6.0.1910, Culture=fr, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_353EECB4BF8A4BC8AB8CE16877858DB0"
-                    {
-                    "Name" = "8:Internet Test.resources.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Internet test 2\\bin\\Release\\fr\\Internet Test.resources.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_97905DA8957544C1858AF554ED2F29F8"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3F6A2D88CDDE4523A38486402A2E317C"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InternetTestUpdater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_3F6A2D88CDDE4523A38486402A2E317C"
-                    {
-                    "Name" = "8:InternetTestUpdater.exe"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\..\\InternetTestUpdater\\InternetTestUpdater\\bin\\Release\\InternetTestUpdater.exe"
-            "TargetName" = "8:"
+            "SourcePath" = "8:D:\\Software\\Nouveaux logos\\InternetTest Logo.ico"
+            "TargetName" = "8:InternetTest Logo.ico"
             "Tag" = "8:"
             "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
             "Condition" = "8:"
@@ -273,23 +323,23 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B4721B5E3D6747A4AE22BF3F8894D3E7"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D6C9A7328E744E299B1C9E0FCE04FFC6"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Internet Test.resources, Version=3.6.0.1910, Culture=fr-FR, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.0.0.2003, Culture=fr-FR, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B4721B5E3D6747A4AE22BF3F8894D3E7"
+                    "_D6C9A7328E744E299B1C9E0FCE04FFC6"
                     {
-                    "Name" = "8:Internet Test.resources.dll"
+                    "Name" = "8:InternetTest.resources.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\Internet test 2\\bin\\Release\\fr-FR\\Internet Test.resources.dll"
+            "SourcePath" = "8:..\\InternetTest\\bin\\Release\\fr-FR\\InternetTest.resources.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_DB4C25C08C784AF080F56AB35CB79E70"
+            "Folder" = "8:_328B0DB32D8B4F2A9CB482F2FFE2C606"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -304,10 +354,21 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D9141251DE89471CBA845FEA936E3B6F"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D898182992C99AAD93CB71CEA44BAE8D"
             {
-            "SourcePath" = "8:D:\\Software\\Nouveaux logos\\Internet Test.ico"
-            "TargetName" = "8:Internet Test.ico"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:LeoCorpLibrary, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_D898182992C99AAD93CB71CEA44BAE8D"
+                    {
+                    "Name" = "8:LeoCorpLibrary.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:LeoCorpLibrary.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
             "Condition" = "8:"
@@ -321,7 +382,7 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -373,35 +434,24 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_6D23A1389AFC422BB2A20CCF223948A6"
-                    {
-                    "Name" = "8:en"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_AEF93447354349FC89D934FE4851CC3C"
-                        "Folders"
-                        {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_97905DA8957544C1858AF554ED2F29F8"
-                    {
-                    "Name" = "8:fr"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_7AEA07F4ABDB46AC91C9AEC9BC83B5CD"
-                        "Folders"
-                        {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_DB4C25C08C784AF080F56AB35CB79E70"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_328B0DB32D8B4F2A9CB482F2FFE2C606"
                     {
                     "Name" = "8:fr-FR"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
-                    "Property" = "8:_6C13AE8D43404E289B95EED3B5D0FD0B"
+                    "Property" = "8:_95803FC035DF40B2ABA6A76CBE556261"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F3DD65D8990542B985A6ACF60C12CABB"
+                    {
+                    "Name" = "8:en-US"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_11B57BDCFB2442C681FFD9054E070F5F"
                         "Folders"
                         {
                         }
@@ -424,25 +474,25 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InternetTest"
-        "ProductCode" = "8:{F991B18E-99C1-4B6F-96E3-B32201E14F30}"
-        "PackageCode" = "8:{E41276B6-2750-4703-B861-E5A1AE6D4BAD}"
+        "ProductCode" = "8:{9FC738AD-1B24-4801-956A-81EE6F27E443}"
+        "PackageCode" = "8:{DC722314-FAF1-4A7B-845B-269C9F3352B0}"
         "UpgradeCode" = "8:{E51467CA-571A-4650-9CE9-EF00E6ECD4A8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:3.6.0"
+        "ProductVersion" = "8:4.0.0"
         "Manufacturer" = "8:Léo Corporation"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:InternetTestSetup"
+        "Title" = "8:InternetTest Setup"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Léo Corporation"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "ARPCOMMENTS" = "8:InternetTest vous permet de vérifier si votre connexion fonctionne correctement."
         "ARPURLINFOABOUT" = "8:https://leopeyronnet.wixsite.com/leopeyronnetcorp"
-        "ARPPRODUCTICON" = "8:_D9141251DE89471CBA845FEA936E3B6F"
+        "ARPPRODUCTICON" = "8:_9ABF8E05BA1B40DEB2010617EE7659B3"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -545,32 +595,32 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_416A4684EC24484A9F85343AD87FCBF8"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8D01AC5F0A3844748D2EFB6674F801EE"
             {
             "Name" = "8:InternetTest"
             "Arguments" = "8:"
-            "Description" = "8:"
+            "Description" = "8:InternetTest vous permet de vérifier si votre connexion fonctionne correctement."
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_A93A97066B3D48A896FF7E75D5B85C1A"
+            "Target" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
             "Folder" = "8:_D65F60CEE2444C69BAF95E3B2D4B8210"
             "WorkingFolder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
-            "Icon" = "8:_D9141251DE89471CBA845FEA936E3B6F"
+            "Icon" = "8:_9ABF8E05BA1B40DEB2010617EE7659B3"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_767FF16D878143B3B05ECD7B16E697CA"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C2ED7A3AE25443ACBFC0805184803436"
             {
             "Name" = "8:InternetTest"
             "Arguments" = "8:"
-            "Description" = "8:"
+            "Description" = "8:InternetTest vous permet de vérifier si votre connexion fonctionne correctement."
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_A93A97066B3D48A896FF7E75D5B85C1A"
+            "Target" = "8:_F97572CC5A1C4964B233CCBB9B3F211C"
             "Folder" = "8:_C215B9F6B491459782476A5D17383A26"
             "WorkingFolder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
-            "Icon" = "8:_D9141251DE89471CBA845FEA936E3B6F"
+            "Icon" = "8:_9ABF8E05BA1B40DEB2010617EE7659B3"
             "Feature" = "8:"
             }
         }
@@ -972,9 +1022,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A93A97066B3D48A896FF7E75D5B85C1A"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D5AF9BE83E7E413586CB35FE67BFB102"
             {
-            "SourcePath" = "8:..\\Internet test 2\\obj\\Release\\Internet Test.exe"
+            "SourcePath" = "8:..\\Xalyus Updater\\obj\\Release\\Xalyus Updater.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
@@ -994,7 +1044,35 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{8994FEF2-2DD6-4C02-8A66-19257BA62567}"
+            "OutputProjectGuid" = "8:{B2481103-8CFD-43EB-B6A8-D5766D592236}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_F97572CC5A1C4964B233CCBB9B3F211C"
+            {
+            "SourcePath" = "8:..\\InternetTest\\obj\\Release\\InternetTest.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{09A1DF4D-F9A9-4132-BA67-FE9E45E8E77F}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
