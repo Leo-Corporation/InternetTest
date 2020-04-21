@@ -118,6 +118,12 @@
     <Compile Include="Forms\UnavailableUpdate.Designer.cs">
       <DependentUpon>UnavailableUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UpdateXalyusUpdater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateXalyusUpdater.Designer.cs">
+      <DependentUpon>UpdateXalyusUpdater.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AboutForm.en-US.resx">
@@ -182,6 +188,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UnavailableUpdate.resx">
       <DependentUpon>UnavailableUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateXalyusUpdater.en-US.resx">
+      <DependentUpon>UpdateXalyusUpdater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateXalyusUpdater.fr-FR.resx">
+      <DependentUpon>UpdateXalyusUpdater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateXalyusUpdater.resx">
+      <DependentUpon>UpdateXalyusUpdater.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

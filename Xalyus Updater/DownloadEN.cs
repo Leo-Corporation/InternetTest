@@ -33,7 +33,7 @@ namespace Xalyus_Updater
                 }
                 client = new WebClient();
                 WebClient maj = new WebClient();
-                string link = maj.DownloadString("https://dl.dropboxusercontent.com/s/9ye4dgnvxje4701/downloaden.txt");
+                string link = maj.DownloadString("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/downloaden.txtt");
                 client.DownloadProgressChanged += Client_DownloadProgressChanged;
                 client.DownloadFileCompleted += Client_DownloadFileCompleted;
                 if (!string.IsNullOrEmpty(link))

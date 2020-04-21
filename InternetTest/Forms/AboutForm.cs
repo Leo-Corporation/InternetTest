@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -69,7 +70,16 @@ namespace InternetTest.Forms
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
-            new Update().Check("4.0.0.2003", new Update().GetLastVersion("https://dl.dropboxusercontent.com/s/0f4ydra3lzv3un5/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
+            var fileInfoVersion = FileVersionInfo.GetVersionInfo(Application.StartupPath + "/Xalyus Updater.exe");
+            string version = fileInfoVersion.FileVersion;
+            if (new Update().IsAvailable(version, new Update().GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/Xalyus%20Updater/version.txt"))) // Xalyus Updater
+            {
+                new UpdateXalyusUpdater(false).Show();
+            }
+            else // InternetTest 4
+            {
+                new Update().Check("4.1.0.2004", new Update().GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
+            }
         }
     }
 }
