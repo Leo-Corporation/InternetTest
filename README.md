@@ -1,4 +1,4 @@
-# InternetTest
+# InternetTest ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest) ![GitHub issues](https://img.shields.io/github/issues-raw/Leo-Corporation/InternetTest?label=issues)
 InternetTest permet de tester votre connexion Internet.
 ## Fonctionnalités
 * Mode sombre
@@ -37,12 +37,10 @@ Une refonte du navigateur intégré sera faite : désormais, l'utilisateur a un 
 LeoCorpLib inclut des fonctions liées au test de connexion internet.
 Désormais, le système de test de connexion est beaucoup plus performant que l'ancien.
 On pourrait avoir un paramètre pour demander sur quel site tester la connexion.
-
-Cette liste peut être modifiée à tout moment
 ## Branches
 Il existe 2 branches : 
-* master
-* Version_Next
+* master ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest)
+* Version_Next ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest?include_prereleases)
 
 La branche Version_Next est une branche pour les prochaines versions (tests).
 
