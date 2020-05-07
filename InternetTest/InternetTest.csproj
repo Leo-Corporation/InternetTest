@@ -236,6 +236,8 @@
   <ItemGroup>
     <Content Include="Internet Test.ico" />
     <Content Include="InternetTest Logo.ico" />
+    <None Include="Resources\icons8_pencil_100px.png" />
+    <None Include="Resources\icons8_pencil_32px.png" />
     <None Include="Resources\icons8_download_100px.png" />
     <None Include="Resources\icons8_checkmark_100px_1.png" />
     <None Include="Resources\icons8_delete_100px_2.png" />

@@ -163,6 +163,16 @@ namespace InternetTest.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pencil_100px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_pencil_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_play_100px {
             get {
                 object obj = ResourceManager.GetObject("icons8_play_100px", resourceCulture);
