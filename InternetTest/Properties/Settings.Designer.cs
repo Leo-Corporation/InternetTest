@@ -58,5 +58,17 @@ namespace InternetTest.Properties {
                 this["NotifyUpdate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://bing.com")]
+        public string TestSite {
+            get {
+                return ((string)(this["TestSite"]));
+            }
+            set {
+                this["TestSite"] = value;
+            }
+        }
     }
 }

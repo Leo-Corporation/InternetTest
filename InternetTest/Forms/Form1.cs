@@ -39,7 +39,7 @@ namespace InternetTest
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
-            bool connectionAvailable = new NetworkConnection().IsAvailable();
+            bool connectionAvailable = new NetworkConnection().IsAvailableTestSite(Properties.Settings.Default.TestSite);
             if (connectionAvailable) // Si internet est disponible
             {
                 if (new Language().GetCode() == "fr-FR")

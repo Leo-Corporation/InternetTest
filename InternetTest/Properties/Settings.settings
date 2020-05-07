@@ -11,5 +11,8 @@
     <Setting Name="NotifyUpdate" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="TestSite" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://bing.com</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
