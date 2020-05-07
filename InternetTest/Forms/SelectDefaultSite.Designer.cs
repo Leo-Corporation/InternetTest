@@ -152,6 +152,7 @@
             this.gunaGradientTileButton4.Size = new System.Drawing.Size(120, 120);
             this.gunaGradientTileButton4.TabIndex = 4;
             this.gunaGradientTileButton4.Text = "Twitter";
+            this.gunaGradientTileButton4.Click += new System.EventHandler(this.gunaGradientTileButton4_Click);
             // 
             // gunaGradientTileButton2
             // 
@@ -181,6 +182,7 @@
             this.gunaGradientTileButton2.Size = new System.Drawing.Size(120, 120);
             this.gunaGradientTileButton2.TabIndex = 5;
             this.gunaGradientTileButton2.Text = "Google";
+            this.gunaGradientTileButton2.Click += new System.EventHandler(this.gunaGradientTileButton2_Click);
             // 
             // gunaGradientTileButton1
             // 
@@ -210,6 +212,7 @@
             this.gunaGradientTileButton1.Size = new System.Drawing.Size(120, 120);
             this.gunaGradientTileButton1.TabIndex = 6;
             this.gunaGradientTileButton1.Text = "Bing";
+            this.gunaGradientTileButton1.Click += new System.EventHandler(this.gunaGradientTileButton1_Click);
             // 
             // gunaGradientTileButton3
             // 
@@ -239,6 +242,7 @@
             this.gunaGradientTileButton3.Size = new System.Drawing.Size(120, 120);
             this.gunaGradientTileButton3.TabIndex = 4;
             this.gunaGradientTileButton3.Text = "Autre";
+            this.gunaGradientTileButton3.Click += new System.EventHandler(this.gunaGradientTileButton3_Click);
             // 
             // SelectDefaultSite
             // 

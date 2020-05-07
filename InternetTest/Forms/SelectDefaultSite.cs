@@ -41,5 +41,31 @@ namespace InternetTest.Forms
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
             }
         }
+
+        private void gunaGradientTileButton1_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.TestSite = "https://bing.com";
+            Properties.Settings.Default.Save();
+            Close();
+        }
+
+        private void gunaGradientTileButton2_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.TestSite = "https://google.com";
+            Properties.Settings.Default.Save();
+            Close();
+        }
+
+        private void gunaGradientTileButton4_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.TestSite = "https://twitter.com";
+            Properties.Settings.Default.Save();
+            Close();
+        }
+
+        private void gunaGradientTileButton3_Click(object sender, EventArgs e)
+        {
+            //TODO
+        }
     }
 }
