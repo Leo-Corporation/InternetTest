@@ -236,5 +236,10 @@ namespace InternetTest.Forms
                 }
             }
         }
+
+        private void gunaLinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new SelectDefaultSite().Show();
+        }
     }
 }

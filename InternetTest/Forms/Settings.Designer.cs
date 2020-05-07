@@ -345,6 +345,7 @@
             this.gunaLinkLabel2.LinkColor = System.Drawing.Color.RoyalBlue;
             this.gunaLinkLabel2.Name = "gunaLinkLabel2";
             this.gunaLinkLabel2.TabStop = true;
+            this.gunaLinkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.gunaLinkLabel2_LinkClicked);
             // 
             // Settings
             // 
