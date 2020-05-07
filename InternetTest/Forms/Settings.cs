@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
+using System.Runtime;
 
 namespace InternetTest.Forms
 {
@@ -239,7 +240,13 @@ namespace InternetTest.Forms
 
         private void gunaLinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new SelectDefaultSite().Show();
+            new SelectDefaultSite(this).Show();
+        }
+
+        public void UpdateSite()
+        {
+            gunaLabel14.Text = Properties.Settings.Default.TestSite;
+            gunaLinkLabel2.Location = new Point(gunaLabel14.Width + 15, 288);
         }
     }
 }

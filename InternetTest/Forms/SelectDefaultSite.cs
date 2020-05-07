@@ -14,13 +14,15 @@ namespace InternetTest.Forms
 {
     public partial class SelectDefaultSite : Form
     {
-        public SelectDefaultSite()
+        Settings settingsForm; // Fenêtre "Paramètres"
+        public SelectDefaultSite(Settings settings)
         {
-            if (new Language().GetCode() == "fr-FR")
+            settingsForm = settings;
+            if (new Language().GetCode() == "fr-FR") // Change la langue en français (France)
             {
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
             }
-            else if (new Language().GetCode() == "EN")
+            else if (new Language().GetCode() == "EN") // Change la langue en anglais (Etats-Unis)
             {
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
             }
@@ -31,19 +33,19 @@ namespace InternetTest.Forms
         {
             Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
-            ChangeTheme();
-            Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
+            ChangeTheme(); // Changer le thème à celui qui est sélectionné
+            Guna.UI.Lib.GraphicsHelper.ShadowForm(this); // Ajouter une ombre sur la fenêtre
         }
 
-        private void ChangeTheme()
+        private void ChangeTheme() // Change le thème
         {
-            if (new Theme().IsDark())
+            if (new Theme().IsDark()) // Si le thème est sombre
             {
                 BackColor = Color.FromArgb(50, 50, 72);
                 gunaLabel1.ForeColor = Color.White;
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
             }
-            else
+            else // Si le thème est clair
             {
                 BackColor = Color.White;
                 gunaLabel1.ForeColor = Color.Black;
@@ -53,23 +55,26 @@ namespace InternetTest.Forms
 
         private void gunaGradientTileButton1_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.TestSite = "https://bing.com";
-            Properties.Settings.Default.Save();
-            Close();
+            Properties.Settings.Default.TestSite = "https://bing.com"; // Met à jour le paramètre
+            Properties.Settings.Default.Save(); // Enregistre les paramètres
+            settingsForm.UpdateSite(); // Met à jour le label dans la fenêtre "Paramètres"
+            Close(); // Ferme la fenêtre
         }
 
         private void gunaGradientTileButton2_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.TestSite = "https://google.com";
-            Properties.Settings.Default.Save();
-            Close();
+            Properties.Settings.Default.TestSite = "https://google.com"; // Met à jour le paramètre
+            Properties.Settings.Default.Save(); // Enregistre les paramètres
+            settingsForm.UpdateSite(); // Met à jour le label dans la fenêtre "Paramètres"
+            Close(); // Ferme la fenêtre
         }
 
         private void gunaGradientTileButton4_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.TestSite = "https://twitter.com";
-            Properties.Settings.Default.Save();
-            Close();
+            Properties.Settings.Default.TestSite = "https://twitter.com"; // Met à jour le paramètre
+            Properties.Settings.Default.Save(); // Enregistre les paramètres
+            settingsForm.UpdateSite(); // Met à jour le label dans la fenêtre "Paramètres"
+            Close(); // Ferme la fenêtre
         }
 
         private void gunaGradientTileButton3_Click(object sender, EventArgs e)
