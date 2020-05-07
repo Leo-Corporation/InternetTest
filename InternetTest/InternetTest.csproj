@@ -168,6 +168,12 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectDefaultSite.en-US.resx">
+      <DependentUpon>SelectDefaultSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectDefaultSite.fr-FR.resx">
+      <DependentUpon>SelectDefaultSite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectDefaultSite.resx">
       <DependentUpon>SelectDefaultSite.cs</DependentUpon>
     </EmbeddedResource>
