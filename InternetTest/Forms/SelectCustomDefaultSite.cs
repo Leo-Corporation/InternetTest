@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,14 @@ namespace InternetTest.Forms
         Settings settingsForm;
         public SelectCustomDefaultSite(Settings settings)
         {
+            if (new Language().GetCode() == "fr-FR")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
+            }
+            else if (new Language().GetCode() == "EN")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            }
             settingsForm = settings;
             InitializeComponent();
         }
