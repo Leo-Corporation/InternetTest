@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
+using System.Runtime;
 
 namespace InternetTest.Forms
 {
@@ -96,6 +97,8 @@ namespace InternetTest.Forms
             {
                 gunaComboBox1.Text = new Language().GetName("en");
             }
+            gunaLabel14.Text = Properties.Settings.Default.TestSite;
+            gunaLinkLabel2.Location = new Point(gunaLabel14.Width + 15, 288);
         }
 
         private void ChangeTheme()
@@ -114,6 +117,9 @@ namespace InternetTest.Forms
                 gunaLabel9.ForeColor = Color.White;
                 gunaLabel10.ForeColor = Color.White;
                 gunaLabel11.ForeColor = Color.White;
+                gunaLabel12.ForeColor = Color.White;
+                gunaLabel13.ForeColor = Color.White;
+                gunaLabel14.ForeColor = Color.White;
                 gunaComboBox1.ForeColor = Color.White;
                 gunaComboBox1.BaseColor = Color.FromArgb(50, 50, 72);
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
@@ -133,6 +139,9 @@ namespace InternetTest.Forms
                 gunaLabel9.ForeColor = Color.Black;
                 gunaLabel10.ForeColor = Color.Black;
                 gunaLabel11.ForeColor = Color.Black;
+                gunaLabel12.ForeColor = Color.Black;
+                gunaLabel13.ForeColor = Color.Black;
+                gunaLabel14.ForeColor = Color.Black;
                 gunaComboBox1.ForeColor = Color.Black;
                 gunaComboBox1.BaseColor = Color.White;
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
@@ -196,19 +205,20 @@ namespace InternetTest.Forms
         {
             Properties.Settings.Default.Reset();
             Properties.Settings.Default.Save();
-            if (new Language().GetCode() == "fr-FR")
+            UpdateSite();
+            if (gunaComboBox1.Text.Contains("fr-FR"))
             {
                 gunaComboBox1.Text = "Français (fr-FR)";
                 gunaWinSwitch1.Checked = false;
                 gunaWinSwitch2.Checked = true;
-                MessageBox.Show("Terminé !");
+                MessageBox.Show("Les données ont été effacées.", "Terminé", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (new Language().GetCode() == "EN")
+            else if (gunaComboBox1.Text.Contains("EN"))
             {
                 gunaComboBox1.Text = "French (fr-FR)";
                 gunaWinSwitch1.Checked = false;
                 gunaWinSwitch2.Checked = true;
-                MessageBox.Show("Done !");
+                MessageBox.Show("Data has been removed.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -227,6 +237,17 @@ namespace InternetTest.Forms
                     gunaLabel11.Visible = true;
                 }
             }
+        }
+
+        private void gunaLinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new SelectDefaultSite(this).Show();
+        }
+
+        public void UpdateSite()
+        {
+            gunaLabel14.Text = Properties.Settings.Default.TestSite;
+            gunaLinkLabel2.Location = new Point(gunaLabel14.Width + 15, 288);
         }
     }
 }

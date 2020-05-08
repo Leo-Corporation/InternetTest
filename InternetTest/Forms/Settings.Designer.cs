@@ -54,6 +54,10 @@
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
             this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel14 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLinkLabel2 = new Guna.UI.WinForms.GunaLinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -316,11 +320,41 @@
             this.gunaLabel11.BackColor = System.Drawing.Color.Transparent;
             this.gunaLabel11.Name = "gunaLabel11";
             // 
+            // gunaLabel12
+            // 
+            resources.ApplyResources(this.gunaLabel12, "gunaLabel12");
+            this.gunaLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLabel12.Name = "gunaLabel12";
+            // 
+            // gunaLabel13
+            // 
+            resources.ApplyResources(this.gunaLabel13, "gunaLabel13");
+            this.gunaLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLabel13.Name = "gunaLabel13";
+            // 
+            // gunaLabel14
+            // 
+            resources.ApplyResources(this.gunaLabel14, "gunaLabel14");
+            this.gunaLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLabel14.Name = "gunaLabel14";
+            // 
+            // gunaLinkLabel2
+            // 
+            resources.ApplyResources(this.gunaLinkLabel2, "gunaLinkLabel2");
+            this.gunaLinkLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLinkLabel2.LinkColor = System.Drawing.Color.RoyalBlue;
+            this.gunaLinkLabel2.Name = "gunaLinkLabel2";
+            this.gunaLinkLabel2.TabStop = true;
+            this.gunaLinkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.gunaLinkLabel2_LinkClicked);
+            // 
             // Settings
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.gunaLinkLabel2);
+            this.Controls.Add(this.gunaLabel14);
+            this.Controls.Add(this.gunaLabel13);
             this.Controls.Add(this.gunaLinkLabel1);
             this.Controls.Add(this.gunaGradientButton2);
             this.Controls.Add(this.gunaGradientButton1);
@@ -334,6 +368,7 @@
             this.Controls.Add(this.gunaLabel9);
             this.Controls.Add(this.gunaLabel6);
             this.Controls.Add(this.gunaLabel3);
+            this.Controls.Add(this.gunaLabel12);
             this.Controls.Add(this.gunaLabel10);
             this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.gunaLabel5);
@@ -376,5 +411,9 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
         private Guna.UI.WinForms.GunaLinkLabel gunaLinkLabel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel11;
+        private Guna.UI.WinForms.GunaLabel gunaLabel14;
+        private Guna.UI.WinForms.GunaLabel gunaLabel13;
+        private Guna.UI.WinForms.GunaLabel gunaLabel12;
+        private Guna.UI.WinForms.GunaLinkLabel gunaLinkLabel2;
     }
 }
