@@ -79,12 +79,13 @@ namespace InternetTest.Forms
 
         private void gunaGradientTileButton3_Click(object sender, EventArgs e)
         {
-            //TODO
+            new SelectCustomDefaultSite(settingsForm).Show(); // Site personnalisé
+            Close(); // Ferme la fenêtre
         }
 
         private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); // Ferme la fenêtre
         }
     }
 }
