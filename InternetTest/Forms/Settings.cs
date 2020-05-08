@@ -205,6 +205,7 @@ namespace InternetTest.Forms
         {
             Properties.Settings.Default.Reset();
             Properties.Settings.Default.Save();
+            UpdateSite();
             if (gunaComboBox1.Text.Contains("fr-FR"))
             {
                 gunaComboBox1.Text = "Français (fr-FR)";
