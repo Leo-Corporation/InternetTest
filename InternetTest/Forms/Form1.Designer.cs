@@ -47,8 +47,7 @@
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
-            this.gunaGradientButton5 = new Guna.UI.WinForms.GunaGradientButton();
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLinkLabel2 = new Guna.UI.WinForms.GunaLinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -289,49 +288,26 @@
             this.gunaLinkLabel1.TabStop = true;
             this.gunaLinkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.gunaLinkLabel1_LinkClicked);
             // 
-            // gunaGradientButton5
+            // gunaLinkLabel2
             // 
-            this.gunaGradientButton5.Animated = true;
-            this.gunaGradientButton5.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientButton5.AnimationSpeed = 0.03F;
-            this.gunaGradientButton5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton5.BaseColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.gunaGradientButton5.BaseColor2 = System.Drawing.Color.RoyalBlue;
-            this.gunaGradientButton5.BorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaGradientButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientButton5.FocusedColor = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.gunaGradientButton5, "gunaGradientButton5");
-            this.gunaGradientButton5.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton5.Image = global::InternetTest.Properties.Resources.icons8_settings_100px;
-            this.gunaGradientButton5.ImageSize = new System.Drawing.Size(18, 18);
-            this.gunaGradientButton5.Name = "gunaGradientButton5";
-            this.gunaGradientButton5.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;
-            this.gunaGradientButton5.OnHoverBaseColor2 = System.Drawing.Color.MediumBlue;
-            this.gunaGradientButton5.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton5.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton5.OnHoverImage = null;
-            this.gunaGradientButton5.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton5.Radius = 6;
-            // 
-            // gunaLabel3
-            // 
-            resources.ApplyResources(this.gunaLabel3, "gunaLabel3");
-            this.gunaLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel3.Name = "gunaLabel3";
+            resources.ApplyResources(this.gunaLinkLabel2, "gunaLinkLabel2");
+            this.gunaLinkLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLinkLabel2.LinkColor = System.Drawing.Color.RoyalBlue;
+            this.gunaLinkLabel2.Name = "gunaLinkLabel2";
+            this.gunaLinkLabel2.TabStop = true;
+            this.gunaLinkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.gunaLinkLabel2_LinkClicked);
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.gunaGradientButton5);
+            this.Controls.Add(this.gunaLinkLabel2);
             this.Controls.Add(this.gunaLinkLabel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.gunaSeparator1);
             this.Controls.Add(this.gunaGradientButton1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.gunaLabel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -365,8 +341,7 @@
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
         private Guna.UI.WinForms.GunaLinkLabel gunaLinkLabel1;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator2;
-        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton5;
-        private Guna.UI.WinForms.GunaLabel gunaLabel3;
+        private Guna.UI.WinForms.GunaLinkLabel gunaLinkLabel2;
     }
 }
 
