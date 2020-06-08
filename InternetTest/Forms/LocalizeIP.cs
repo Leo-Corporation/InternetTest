@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,9 +33,7 @@ namespace InternetTest.Forms
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erreur :\n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error); // Erreur
-                    gunaLabel2.Visible = true; // Montrer
                 }
-                gunaLineTextBox1.Text = string.Empty; // Effacer
             }
         }
 
@@ -49,7 +48,7 @@ namespace InternetTest.Forms
                 "lat",
                 "lon",
                 "timezone",
-                "isp",
+                "isp"
             };
 
             string[] NameFR = new string[] // Noms en français
@@ -61,7 +60,7 @@ namespace InternetTest.Forms
                 "Latitude : ",
                 "Longitude : ",
                 "Timezone : ",
-                "FAI : ",
+                "FAI : "
             };
 
             for (int i = 0; i < nodes.Length; i++) // Obtenir les infos
@@ -103,11 +102,11 @@ namespace InternetTest.Forms
             {
                 gunaLabel2.Visible = false; // Cacher
                 GetIPInfo(""); // Localiser l'IP de l'utilisateur si le paramètre est vide
+                gunaLineTextBox1.Text = new WebClient().DownloadString("http://ip-api.com/line/?fields=query");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur :\n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error); // Erreur
-                gunaLabel2.Visible = true; // Montrer
             }
         }
     }
