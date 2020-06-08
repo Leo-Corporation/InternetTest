@@ -47,6 +47,8 @@
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
+            this.gunaGradientButton5 = new Guna.UI.WinForms.GunaGradientButton();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -54,13 +56,13 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.gunaAdvenceTileButton2);
             this.panel1.Controls.Add(this.gunaAdvenceTileButton1);
             this.panel1.Controls.Add(this.gunaPictureBox1);
             this.panel1.Controls.Add(this.gunaSeparator2);
             this.panel1.Controls.Add(this.gunaLabel1);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // gunaAdvenceTileButton2
@@ -121,17 +123,17 @@
             // 
             // gunaPictureBox1
             // 
-            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::InternetTest.Properties.Resources.InternetTestLogo1;
+            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.TabStop = false;
             // 
             // gunaSeparator2
             // 
-            resources.ApplyResources(this.gunaSeparator2, "gunaSeparator2");
             this.gunaSeparator2.BackColor = System.Drawing.Color.Transparent;
             this.gunaSeparator2.LineColor = System.Drawing.Color.Silver;
+            resources.ApplyResources(this.gunaSeparator2, "gunaSeparator2");
             this.gunaSeparator2.Name = "gunaSeparator2";
             // 
             // gunaLabel1
@@ -154,16 +156,15 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.gunaGradientButton4);
             this.panel2.Controls.Add(this.gunaGradientButton3);
             this.panel2.Controls.Add(this.gunaGradientButton2);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // gunaGradientButton4
             // 
-            resources.ApplyResources(this.gunaGradientButton4, "gunaGradientButton4");
             this.gunaGradientButton4.Animated = true;
             this.gunaGradientButton4.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton4.AnimationSpeed = 0.03F;
@@ -174,6 +175,7 @@
             this.gunaGradientButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton4.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.gunaGradientButton4, "gunaGradientButton4");
             this.gunaGradientButton4.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton4.Image = global::InternetTest.Properties.Resources.icons8_github_100px;
             this.gunaGradientButton4.ImageSize = new System.Drawing.Size(18, 18);
@@ -189,7 +191,6 @@
             // 
             // gunaGradientButton3
             // 
-            resources.ApplyResources(this.gunaGradientButton3, "gunaGradientButton3");
             this.gunaGradientButton3.Animated = true;
             this.gunaGradientButton3.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton3.AnimationSpeed = 0.03F;
@@ -200,6 +201,7 @@
             this.gunaGradientButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton3.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.gunaGradientButton3, "gunaGradientButton3");
             this.gunaGradientButton3.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton3.Image = global::InternetTest.Properties.Resources.icons8_info_32px;
             this.gunaGradientButton3.ImageSize = new System.Drawing.Size(18, 18);
@@ -215,7 +217,6 @@
             // 
             // gunaGradientButton2
             // 
-            resources.ApplyResources(this.gunaGradientButton2, "gunaGradientButton2");
             this.gunaGradientButton2.Animated = true;
             this.gunaGradientButton2.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton2.AnimationSpeed = 0.03F;
@@ -226,6 +227,7 @@
             this.gunaGradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.gunaGradientButton2, "gunaGradientButton2");
             this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton2.Image = global::InternetTest.Properties.Resources.icons8_settings_100px;
             this.gunaGradientButton2.ImageSize = new System.Drawing.Size(18, 18);
@@ -247,14 +249,13 @@
             // 
             // gunaSeparator1
             // 
-            resources.ApplyResources(this.gunaSeparator1, "gunaSeparator1");
             this.gunaSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
+            resources.ApplyResources(this.gunaSeparator1, "gunaSeparator1");
             this.gunaSeparator1.Name = "gunaSeparator1";
             // 
             // gunaGradientButton1
             // 
-            resources.ApplyResources(this.gunaGradientButton1, "gunaGradientButton1");
             this.gunaGradientButton1.Animated = true;
             this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton1.AnimationSpeed = 0.03F;
@@ -265,6 +266,7 @@
             this.gunaGradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.gunaGradientButton1, "gunaGradientButton1");
             this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton1.Image = global::InternetTest.Properties.Resources.icons8_play_100px;
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
@@ -287,16 +289,49 @@
             this.gunaLinkLabel1.TabStop = true;
             this.gunaLinkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.gunaLinkLabel1_LinkClicked);
             // 
+            // gunaGradientButton5
+            // 
+            this.gunaGradientButton5.Animated = true;
+            this.gunaGradientButton5.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientButton5.AnimationSpeed = 0.03F;
+            this.gunaGradientButton5.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradientButton5.BaseColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.gunaGradientButton5.BaseColor2 = System.Drawing.Color.RoyalBlue;
+            this.gunaGradientButton5.BorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaGradientButton5.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientButton5.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.gunaGradientButton5, "gunaGradientButton5");
+            this.gunaGradientButton5.ForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton5.Image = global::InternetTest.Properties.Resources.icons8_settings_100px;
+            this.gunaGradientButton5.ImageSize = new System.Drawing.Size(18, 18);
+            this.gunaGradientButton5.Name = "gunaGradientButton5";
+            this.gunaGradientButton5.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;
+            this.gunaGradientButton5.OnHoverBaseColor2 = System.Drawing.Color.MediumBlue;
+            this.gunaGradientButton5.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton5.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton5.OnHoverImage = null;
+            this.gunaGradientButton5.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientButton5.Radius = 6;
+            // 
+            // gunaLabel3
+            // 
+            resources.ApplyResources(this.gunaLabel3, "gunaLabel3");
+            this.gunaLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLabel3.Name = "gunaLabel3";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.gunaGradientButton5);
             this.Controls.Add(this.gunaLinkLabel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.gunaSeparator1);
             this.Controls.Add(this.gunaGradientButton1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.gunaLabel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -330,6 +365,8 @@
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
         private Guna.UI.WinForms.GunaLinkLabel gunaLinkLabel1;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator2;
+        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton5;
+        private Guna.UI.WinForms.GunaLabel gunaLabel3;
     }
 }
 

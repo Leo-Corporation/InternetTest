@@ -55,8 +55,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
-    <Reference Include="LeoCorpLibrary">
-      <HintPath>..\..\LeoCorpLibrary\LeoCorpLibrary\bin\Release\LeoCorpLibrary.dll</HintPath>
+    <Reference Include="LeoCorpLibrary, Version=1.2.0.2004, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LeoCorpLibrary.1.2.0.2004\lib\net472\LeoCorpLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -238,6 +238,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

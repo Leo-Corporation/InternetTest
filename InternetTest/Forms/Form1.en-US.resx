@@ -193,6 +193,24 @@
   <data name="gunaLinkLabel1.Text" xml:space="preserve">
     <value>Test in a browser</value>
   </data>
+  <data name="gunaGradientButton4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>217, 4</value>
+  </data>
+  <data name="gunaGradientButton3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 4</value>
+  </data>
+  <data name="gunaGradientButton3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 27</value>
+  </data>
+  <data name="gunaGradientButton3.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="gunaGradientButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 27</value>
+  </data>
+  <data name="gunaGradientButton2.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
     <value>97, 90</value>
   </data>
@@ -2217,23 +2235,5 @@
         rzXO/6Y7jP+eQCYAAAAAAAAAAAAAAAAAAAAA8A8AAMADAACBgQAAgYEAABPIAAACwAAAIEQAACIEAAAi
         BAAAIEQAABDIAAARiAAAgYEAAIABAADAAwAA8A8AAA==
 </value>
-  </data>
-  <data name="gunaGradientButton4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 4</value>
-  </data>
-  <data name="gunaGradientButton3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 4</value>
-  </data>
-  <data name="gunaGradientButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 27</value>
-  </data>
-  <data name="gunaGradientButton3.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="gunaGradientButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 27</value>
-  </data>
-  <data name="gunaGradientButton2.Text" xml:space="preserve">
-    <value>Settings</value>
   </data>
 </root>
