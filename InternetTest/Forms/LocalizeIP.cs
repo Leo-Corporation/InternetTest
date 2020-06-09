@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -19,6 +20,7 @@ namespace InternetTest.Forms
         {
             InitializeComponent();
             ChangeTheme(); // Changer le thème
+            ChangeLanguage(); // Changer la langue
         }
 
         private void gunaGradientButton5_Click(object sender, EventArgs e)
@@ -35,6 +37,18 @@ namespace InternetTest.Forms
                 {
                     MessageBox.Show("Erreur :\n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error); // Erreur
                 }
+            }
+        }
+
+        private void ChangeLanguage()
+        {
+            if (new Language().GetCode() == "fr-FR")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
+            }
+            else if (new Language().GetCode() == "EN")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
             }
         }
 
