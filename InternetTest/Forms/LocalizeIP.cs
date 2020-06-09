@@ -155,7 +155,9 @@ namespace InternetTest.Forms
                 gunaGradientButton1.BaseColor1 = Color.FromArgb(70, 70, 92);
                 gunaGradientButton1.BaseColor2 = Color.FromArgb(70, 70, 92);
                 gunaGradientButton1.Image = Properties.Resources.person_white;
-                gunaLineTextBox1.BackColor = Color.FromArgb(70, 70, 92);
+                gunaGradientButton1.ForeColor = Color.White;
+                gunaLineTextBox1.BackColor = Color.FromArgb(50, 50, 72);
+                gunaLineTextBox1.ForeColor = Color.White;
             }
             else // Si le thème est clair
             {
@@ -168,7 +170,9 @@ namespace InternetTest.Forms
                 gunaGradientButton1.BaseColor1 = Color.FromArgb(247, 247, 247);
                 gunaGradientButton1.BaseColor2 = Color.FromArgb(247, 247, 247);
                 gunaGradientButton1.Image = Properties.Resources.person_black;
+                gunaGradientButton1.ForeColor = Color.Black;
                 gunaLineTextBox1.BackColor = Color.White;
+                gunaLineTextBox1.ForeColor = Color.Black;
             }
         }
     }
