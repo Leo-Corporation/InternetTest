@@ -51,8 +51,9 @@ namespace InternetTest.Forms
                 "timezone",
                 "isp"
             };
-
-            string[] NameFR = new string[] // Noms en français
+            if (new Language().GetCode() == "fr-FR")
+            {
+                string[] NameFR = new string[] // Noms en français
             {
                 "Pays : ",
                 "Region : ",
@@ -64,19 +65,49 @@ namespace InternetTest.Forms
                 "FAI : "
             };
 
-            for (int i = 0; i < nodes.Length; i++) // Obtenir les infos
-            {
-                // Ouvrir document XML de puis l'API
-                XmlTextReader xmlTextReader = new XmlTextReader(string.Format("http://ip-api.com/xml/{0}?lang=fr", ip));
-                while (xmlTextReader.Read())
+                for (int i = 0; i < nodes.Length; i++) // Obtenir les infos
                 {
-                    // Exemple si i = 0 (pays), vérifier  si le node "country" existe
-                    if (xmlTextReader.NodeType == XmlNodeType.Element && xmlTextReader.Name == nodes[i])
+                    // Ouvrir document XML de puis l'API
+                    XmlTextReader xmlTextReader = new XmlTextReader(string.Format("http://ip-api.com/xml/{0}?lang=fr", ip));
+                    while (xmlTextReader.Read())
                     {
-                        gunaLabel3.Text += NameFR[i] + xmlTextReader.ReadElementContentAsString() + Environment.NewLine;
+                        // Exemple si i = 0 (pays), vérifier  si le node "country" existe
+                        if (xmlTextReader.NodeType == XmlNodeType.Element && xmlTextReader.Name == nodes[i])
+                        {
+                            gunaLabel3.Text += NameFR[i] + xmlTextReader.ReadElementContentAsString() + Environment.NewLine;
+                        }
                     }
                 }
             }
+            else if (new Language().GetCode() == "EN")
+            {
+                string[] NameEN = new string[] // Noms en français
+            {
+                "Country : ",
+                "Region : ",
+                "City : ",
+                "ZIP Code : ",
+                "Latitude : ",
+                "Longitude : ",
+                "Timezone : ",
+                "ISP : "
+            };
+
+                for (int i = 0; i < nodes.Length; i++) // Obtenir les infos
+                {
+                    // Ouvrir document XML de puis l'API
+                    XmlTextReader xmlTextReader = new XmlTextReader(string.Format("http://ip-api.com/xml/{0}?lang=en", ip));
+                    while (xmlTextReader.Read())
+                    {
+                        // Exemple si i = 0 (pays), vérifier  si le node "country" existe
+                        if (xmlTextReader.NodeType == XmlNodeType.Element && xmlTextReader.Name == nodes[i])
+                        {
+                            gunaLabel3.Text += NameEN[i] + xmlTextReader.ReadElementContentAsString() + Environment.NewLine;
+                        }
+                    }
+                }
+            }
+            
         }
 
         private void LocalizeIP_Load(object sender, EventArgs e)
@@ -115,7 +146,7 @@ namespace InternetTest.Forms
         {
             if (new Theme().IsDark()) // Si le thème est sombre
             {
-                BackColor = Color.FromArgb(50, 50, 50);
+                BackColor = Color.FromArgb(50, 50, 72);
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px;
                 gunaLabel1.ForeColor = Color.White;
@@ -123,6 +154,7 @@ namespace InternetTest.Forms
                 gunaLabel3.ForeColor = Color.White;
                 gunaGradientButton1.BaseColor1 = Color.FromArgb(70, 70, 92);
                 gunaGradientButton1.BaseColor2 = Color.FromArgb(70, 70, 92);
+                gunaGradientButton1.Image = Properties.Resources.person_white;
                 gunaLineTextBox1.BackColor = Color.FromArgb(70, 70, 92);
             }
             else // Si le thème est clair
@@ -135,6 +167,7 @@ namespace InternetTest.Forms
                 gunaLabel3.ForeColor = Color.Black;
                 gunaGradientButton1.BaseColor1 = Color.FromArgb(247, 247, 247);
                 gunaGradientButton1.BaseColor2 = Color.FromArgb(247, 247, 247);
+                gunaGradientButton1.Image = Properties.Resources.person_black;
                 gunaLineTextBox1.BackColor = Color.White;
             }
         }
