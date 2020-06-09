@@ -56,7 +56,7 @@ namespace InternetTest.Forms
                 string[] NameFR = new string[] // Noms en français
             {
                 "Pays : ",
-                "Region : ",
+                "Région : ",
                 "Ville : ",
                 "Code postal : ",
                 "Latitude : ",
