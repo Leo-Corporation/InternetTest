@@ -184,6 +184,15 @@
         5ZyDggfzZv7bDAz8C67YqxkEgE5XAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="gunaLinkLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>179, 185</value>
+  </data>
+  <data name="gunaLinkLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 20</value>
+  </data>
+  <data name="gunaLinkLabel2.Text" xml:space="preserve">
+    <value>Localize an IP</value>
+  </data>
   <data name="gunaLinkLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 165</value>
   </data>
