@@ -151,6 +151,9 @@
         5ZyDggfzZv7bDAz8C67YqxkEgE5XAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="gunaAdvenceTileButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>331, 4</value>
+  </data>
   <data name="gunaAdvenceTileButton1.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAABmhJREFUaEPt
@@ -184,20 +187,35 @@
         5ZyDggfzZv7bDAz8C67YqxkEgE5XAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="gunaAdvenceTileButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 4</value>
+  </data>
   <data name="gunaLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 21</value>
   </data>
   <data name="gunaLabel1.Text" xml:space="preserve">
     <value>Localize an IP</value>
   </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 37</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>434, 278</value>
+  </data>
   <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 43</value>
+    <value>331, 43</value>
   </data>
   <data name="gunaGradientButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 29</value>
   </data>
   <data name="gunaGradientButton1.Text" xml:space="preserve">
     <value>My IP</value>
+  </data>
+  <data name="gunaLineTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 42</value>
+  </data>
+  <data name="gunaGradientButton5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>183, 43</value>
   </data>
   <data name="gunaGradientButton5.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 29</value>
@@ -206,7 +224,7 @@
     <value>Localize an IP</value>
   </data>
   <data name="gunaLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 157</value>
+    <value>127, 157</value>
   </data>
   <data name="gunaLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 21</value>
