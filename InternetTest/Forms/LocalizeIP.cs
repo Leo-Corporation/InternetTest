@@ -18,6 +18,7 @@ namespace InternetTest.Forms
         public LocalizeIP()
         {
             InitializeComponent();
+            ChangeTheme(); // Changer le thème
         }
 
         private void gunaGradientButton5_Click(object sender, EventArgs e)
@@ -107,6 +108,34 @@ namespace InternetTest.Forms
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur :\n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error); // Erreur
+            }
+        }
+
+        private void ChangeTheme()
+        {
+            if (new Theme().IsDark()) // Si le thème est sombre
+            {
+                BackColor = Color.FromArgb(50, 50, 50);
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
+                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px;
+                gunaLabel1.ForeColor = Color.White;
+                gunaLabel2.ForeColor = Color.White;
+                gunaLabel3.ForeColor = Color.White;
+                gunaGradientButton1.BaseColor1 = Color.FromArgb(70, 70, 92);
+                gunaGradientButton1.BaseColor2 = Color.FromArgb(70, 70, 92);
+                gunaLineTextBox1.BackColor = Color.FromArgb(70, 70, 92);
+            }
+            else // Si le thème est clair
+            {
+                BackColor = Color.White;
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
+                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1;
+                gunaLabel1.ForeColor = Color.Black;
+                gunaLabel2.ForeColor = Color.Black;
+                gunaLabel3.ForeColor = Color.Black;
+                gunaGradientButton1.BaseColor1 = Color.FromArgb(247, 247, 247);
+                gunaGradientButton1.BaseColor2 = Color.FromArgb(247, 247, 247);
+                gunaLineTextBox1.BackColor = Color.White;
             }
         }
     }
