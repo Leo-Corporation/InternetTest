@@ -145,7 +145,7 @@
             this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
             resources.ApplyResources(this.gunaGradientButton2, "gunaGradientButton2");
             this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton2.Image = global::InternetTest.Properties.Resources.icons8_refresh_100px;
+            this.gunaGradientButton2.Image = global::InternetTest.Properties.Resources.Update;
             this.gunaGradientButton2.ImageSize = new System.Drawing.Size(18, 18);
             this.gunaGradientButton2.Name = "gunaGradientButton2";
             this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;

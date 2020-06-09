@@ -117,96 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;gunaAdvenceTileButton2.Name" xml:space="preserve">
-    <value>gunaAdvenceTileButton2</value>
-  </data>
-  <data name="&gt;&gt;gunaAdvenceTileButton2.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaAdvenceTileButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;gunaAdvenceTileButton2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;gunaAdvenceTileButton2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;gunaAdvenceTileButton1.Name" xml:space="preserve">
-    <value>gunaAdvenceTileButton1</value>
-  </data>
-  <data name="&gt;&gt;gunaAdvenceTileButton1.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaAdvenceTileButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;gunaAdvenceTileButton1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;gunaAdvenceTileButton1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;gunaPictureBox1.Name" xml:space="preserve">
-    <value>gunaPictureBox1</value>
-  </data>
-  <data name="&gt;&gt;gunaPictureBox1.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaPictureBox, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;gunaPictureBox1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;gunaPictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;gunaSeparator2.Name" xml:space="preserve">
-    <value>gunaSeparator2</value>
-  </data>
-  <data name="&gt;&gt;gunaSeparator2.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaSeparator, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;gunaSeparator2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;gunaSeparator2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;gunaLabel1.Name" xml:space="preserve">
-    <value>gunaLabel1</value>
-  </data>
-  <data name="&gt;&gt;gunaLabel1.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;gunaLabel1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;gunaLabel1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 37</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="gunaAdvenceTileButton2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="gunaAdvenceTileButton2.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAABmhJREFUaEPt
@@ -249,6 +164,7 @@
   <data name="gunaAdvenceTileButton2.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 29</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="gunaAdvenceTileButton2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -405,6 +321,30 @@
   <data name="&gt;&gt;gunaLabel1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>460, 37</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <metadata name="gunaElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -480,6 +420,21 @@
   <data name="&gt;&gt;gunaLinkLabel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="gunaGradientButton4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.5pt, style=Bold</value>
+  </data>
+  <data name="gunaGradientButton4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 4</value>
+  </data>
+  <data name="gunaGradientButton4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 27</value>
+  </data>
+  <data name="gunaGradientButton4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="gunaGradientButton4.Text" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
   <data name="&gt;&gt;gunaGradientButton4.Name" xml:space="preserve">
     <value>gunaGradientButton4</value>
   </data>
@@ -492,6 +447,21 @@
   <data name="&gt;&gt;gunaGradientButton4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="gunaGradientButton3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.5pt, style=Bold</value>
+  </data>
+  <data name="gunaGradientButton3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 4</value>
+  </data>
+  <data name="gunaGradientButton3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 27</value>
+  </data>
+  <data name="gunaGradientButton3.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="gunaGradientButton3.Text" xml:space="preserve">
+    <value>A propos</value>
+  </data>
   <data name="&gt;&gt;gunaGradientButton3.Name" xml:space="preserve">
     <value>gunaGradientButton3</value>
   </data>
@@ -503,6 +473,21 @@
   </data>
   <data name="&gt;&gt;gunaGradientButton3.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="gunaGradientButton2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.5pt, style=Bold</value>
+  </data>
+  <data name="gunaGradientButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 4</value>
+  </data>
+  <data name="gunaGradientButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 27</value>
+  </data>
+  <data name="gunaGradientButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="gunaGradientButton2.Text" xml:space="preserve">
+    <value>Paramètres</value>
   </data>
   <data name="&gt;&gt;gunaGradientButton2.Name" xml:space="preserve">
     <value>gunaGradientButton2</value>
@@ -2676,85 +2661,4 @@
   <metadata name="gunaDragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>287, 17</value>
   </metadata>
-  <data name="gunaGradientButton4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.5pt, style=Bold</value>
-  </data>
-  <data name="gunaGradientButton4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 4</value>
-  </data>
-  <data name="gunaGradientButton4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 27</value>
-  </data>
-  <data name="gunaGradientButton4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="gunaGradientButton4.Text" xml:space="preserve">
-    <value>GitHub</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton4.Name" xml:space="preserve">
-    <value>gunaGradientButton4</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton4.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaGradientButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton4.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gunaGradientButton3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.5pt, style=Bold</value>
-  </data>
-  <data name="gunaGradientButton3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 4</value>
-  </data>
-  <data name="gunaGradientButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 27</value>
-  </data>
-  <data name="gunaGradientButton3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="gunaGradientButton3.Text" xml:space="preserve">
-    <value>A propos</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton3.Name" xml:space="preserve">
-    <value>gunaGradientButton3</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton3.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaGradientButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton3.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="gunaGradientButton2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.5pt, style=Bold</value>
-  </data>
-  <data name="gunaGradientButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 4</value>
-  </data>
-  <data name="gunaGradientButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 27</value>
-  </data>
-  <data name="gunaGradientButton2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="gunaGradientButton2.Text" xml:space="preserve">
-    <value>Paramètres</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton2.Name" xml:space="preserve">
-    <value>gunaGradientButton2</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton2.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaGradientButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton2.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
 </root>

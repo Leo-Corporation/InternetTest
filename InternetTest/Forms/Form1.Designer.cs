@@ -202,8 +202,8 @@
             this.gunaGradientButton3.FocusedColor = System.Drawing.Color.Empty;
             resources.ApplyResources(this.gunaGradientButton3, "gunaGradientButton3");
             this.gunaGradientButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton3.Image = global::InternetTest.Properties.Resources.icons8_info_32px;
-            this.gunaGradientButton3.ImageSize = new System.Drawing.Size(18, 18);
+            this.gunaGradientButton3.Image = global::InternetTest.Properties.Resources.about_white;
+            this.gunaGradientButton3.ImageSize = new System.Drawing.Size(19, 19);
             this.gunaGradientButton3.Name = "gunaGradientButton3";
             this.gunaGradientButton3.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;
             this.gunaGradientButton3.OnHoverBaseColor2 = System.Drawing.Color.MediumBlue;
@@ -228,8 +228,8 @@
             this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
             resources.ApplyResources(this.gunaGradientButton2, "gunaGradientButton2");
             this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton2.Image = global::InternetTest.Properties.Resources.icons8_settings_100px;
-            this.gunaGradientButton2.ImageSize = new System.Drawing.Size(18, 18);
+            this.gunaGradientButton2.Image = global::InternetTest.Properties.Resources.settings;
+            this.gunaGradientButton2.ImageSize = new System.Drawing.Size(19, 19);
             this.gunaGradientButton2.Name = "gunaGradientButton2";
             this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;
             this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.MediumBlue;
@@ -267,8 +267,8 @@
             this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
             resources.ApplyResources(this.gunaGradientButton1, "gunaGradientButton1");
             this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.Image = global::InternetTest.Properties.Resources.icons8_play_100px;
-            this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaGradientButton1.Image = global::InternetTest.Properties.Resources.play;
+            this.gunaGradientButton1.ImageSize = new System.Drawing.Size(15, 15);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;
             this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.MediumBlue;

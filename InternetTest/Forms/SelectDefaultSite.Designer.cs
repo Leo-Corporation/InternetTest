@@ -47,11 +47,11 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.gunaAdvenceTileButton1);
             this.panel1.Controls.Add(this.gunaPictureBox1);
             this.panel1.Controls.Add(this.gunaLabel1);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // gunaAdvenceTileButton1
@@ -84,9 +84,9 @@
             // 
             // gunaPictureBox1
             // 
-            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::InternetTest.Properties.Resources.InternetTestLogo1;
+            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.TabStop = false;
             // 
@@ -110,7 +110,6 @@
             // 
             // gunaGradientTileButton4
             // 
-            resources.ApplyResources(this.gunaGradientTileButton4, "gunaGradientTileButton4");
             this.gunaGradientTileButton4.Animated = true;
             this.gunaGradientTileButton4.AnimationHoverSpeed = 0.07F;
             this.gunaGradientTileButton4.AnimationSpeed = 0.03F;
@@ -121,6 +120,7 @@
             this.gunaGradientTileButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientTileButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientTileButton4.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.gunaGradientTileButton4, "gunaGradientTileButton4");
             this.gunaGradientTileButton4.ForeColor = System.Drawing.Color.White;
             this.gunaGradientTileButton4.Image = global::InternetTest.Properties.Resources.icons8_twitter_100px;
             this.gunaGradientTileButton4.ImageSize = new System.Drawing.Size(52, 52);
@@ -136,7 +136,6 @@
             // 
             // gunaGradientTileButton2
             // 
-            resources.ApplyResources(this.gunaGradientTileButton2, "gunaGradientTileButton2");
             this.gunaGradientTileButton2.Animated = true;
             this.gunaGradientTileButton2.AnimationHoverSpeed = 0.07F;
             this.gunaGradientTileButton2.AnimationSpeed = 0.03F;
@@ -147,6 +146,7 @@
             this.gunaGradientTileButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientTileButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientTileButton2.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.gunaGradientTileButton2, "gunaGradientTileButton2");
             this.gunaGradientTileButton2.ForeColor = System.Drawing.Color.White;
             this.gunaGradientTileButton2.Image = global::InternetTest.Properties.Resources.icons8_google_100px;
             this.gunaGradientTileButton2.ImageSize = new System.Drawing.Size(52, 52);
@@ -162,7 +162,6 @@
             // 
             // gunaGradientTileButton1
             // 
-            resources.ApplyResources(this.gunaGradientTileButton1, "gunaGradientTileButton1");
             this.gunaGradientTileButton1.Animated = true;
             this.gunaGradientTileButton1.AnimationHoverSpeed = 0.07F;
             this.gunaGradientTileButton1.AnimationSpeed = 0.03F;
@@ -173,6 +172,7 @@
             this.gunaGradientTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientTileButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientTileButton1.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.gunaGradientTileButton1, "gunaGradientTileButton1");
             this.gunaGradientTileButton1.ForeColor = System.Drawing.Color.White;
             this.gunaGradientTileButton1.Image = global::InternetTest.Properties.Resources.icons8_bing_100px;
             this.gunaGradientTileButton1.ImageSize = new System.Drawing.Size(52, 52);
@@ -188,7 +188,6 @@
             // 
             // gunaGradientTileButton3
             // 
-            resources.ApplyResources(this.gunaGradientTileButton3, "gunaGradientTileButton3");
             this.gunaGradientTileButton3.Animated = true;
             this.gunaGradientTileButton3.AnimationHoverSpeed = 0.07F;
             this.gunaGradientTileButton3.AnimationSpeed = 0.03F;
@@ -199,8 +198,9 @@
             this.gunaGradientTileButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientTileButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientTileButton3.FocusedColor = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.gunaGradientTileButton3, "gunaGradientTileButton3");
             this.gunaGradientTileButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientTileButton3.Image = global::InternetTest.Properties.Resources.icons8_pencil_100px;
+            this.gunaGradientTileButton3.Image = global::InternetTest.Properties.Resources.edit;
             this.gunaGradientTileButton3.ImageSize = new System.Drawing.Size(52, 52);
             this.gunaGradientTileButton3.Name = "gunaGradientTileButton3";
             this.gunaGradientTileButton3.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;

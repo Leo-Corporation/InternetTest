@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LocalizeIP));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaAdvenceTileButton2 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaAdvenceTileButton1 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaDragControl2 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
-            this.gunaAdvenceTileButton2 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.gunaLineTextBox1 = new Guna.UI.WinForms.GunaLineTextBox();
             this.gunaGradientButton5 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -57,8 +57,40 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(438, 37);
+            this.panel1.Size = new System.Drawing.Size(445, 37);
             this.panel1.TabIndex = 3;
+            // 
+            // gunaAdvenceTileButton2
+            // 
+            this.gunaAdvenceTileButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaAdvenceTileButton2.Animated = true;
+            this.gunaAdvenceTileButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceTileButton2.AnimationSpeed = 0.03F;
+            this.gunaAdvenceTileButton2.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceTileButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceTileButton2.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton2.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceTileButton2.CheckedImage")));
+            this.gunaAdvenceTileButton2.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceTileButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceTileButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceTileButton2.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
+            this.gunaAdvenceTileButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton2.Image = global::InternetTest.Properties.Resources.icons8_subtract_100px_1;
+            this.gunaAdvenceTileButton2.ImageSize = new System.Drawing.Size(15, 15);
+            this.gunaAdvenceTileButton2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton2.Location = new System.Drawing.Point(342, 4);
+            this.gunaAdvenceTileButton2.Name = "gunaAdvenceTileButton2";
+            this.gunaAdvenceTileButton2.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.gunaAdvenceTileButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton2.OnHoverImage = global::InternetTest.Properties.Resources.icons8_subtract_100px;
+            this.gunaAdvenceTileButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.Size = new System.Drawing.Size(47, 29);
+            this.gunaAdvenceTileButton2.TabIndex = 3;
+            this.gunaAdvenceTileButton2.Click += new System.EventHandler(this.gunaAdvenceTileButton2_Click);
             // 
             // gunaAdvenceTileButton1
             // 
@@ -80,7 +112,7 @@
             this.gunaAdvenceTileButton1.Image = global::InternetTest.Properties.Resources.icons8_delete_100px_1;
             this.gunaAdvenceTileButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceTileButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(388, 4);
+            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(395, 4);
             this.gunaAdvenceTileButton1.Name = "gunaAdvenceTileButton1";
             this.gunaAdvenceTileButton1.OnHoverBaseColor = System.Drawing.Color.Red;
             this.gunaAdvenceTileButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -128,38 +160,6 @@
             // 
             this.gunaDragControl1.TargetControl = this.panel1;
             // 
-            // gunaAdvenceTileButton2
-            // 
-            this.gunaAdvenceTileButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaAdvenceTileButton2.Animated = true;
-            this.gunaAdvenceTileButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceTileButton2.AnimationSpeed = 0.03F;
-            this.gunaAdvenceTileButton2.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceTileButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton2.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceTileButton2.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton2.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton2.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceTileButton2.CheckedImage")));
-            this.gunaAdvenceTileButton2.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceTileButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceTileButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceTileButton2.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaAdvenceTileButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton2.Image = global::InternetTest.Properties.Resources.icons8_subtract_100px_1;
-            this.gunaAdvenceTileButton2.ImageSize = new System.Drawing.Size(15, 15);
-            this.gunaAdvenceTileButton2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton2.Location = new System.Drawing.Point(335, 4);
-            this.gunaAdvenceTileButton2.Name = "gunaAdvenceTileButton2";
-            this.gunaAdvenceTileButton2.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaAdvenceTileButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton2.OnHoverImage = global::InternetTest.Properties.Resources.icons8_subtract_100px;
-            this.gunaAdvenceTileButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton2.Size = new System.Drawing.Size(47, 29);
-            this.gunaAdvenceTileButton2.TabIndex = 3;
-            this.gunaAdvenceTileButton2.Click += new System.EventHandler(this.gunaAdvenceTileButton2_Click);
-            // 
             // gunaLineTextBox1
             // 
             this.gunaLineTextBox1.Animated = true;
@@ -169,7 +169,7 @@
             this.gunaLineTextBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.gunaLineTextBox1.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaLineTextBox1.LineSize = 2;
-            this.gunaLineTextBox1.Location = new System.Drawing.Point(7, 42);
+            this.gunaLineTextBox1.Location = new System.Drawing.Point(10, 42);
             this.gunaLineTextBox1.Name = "gunaLineTextBox1";
             this.gunaLineTextBox1.PasswordChar = '\0';
             this.gunaLineTextBox1.Size = new System.Drawing.Size(160, 30);
@@ -191,7 +191,7 @@
             this.gunaGradientButton5.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton5.Image = global::InternetTest.Properties.Resources.icons8_settings_100px;
             this.gunaGradientButton5.ImageSize = new System.Drawing.Size(18, 18);
-            this.gunaGradientButton5.Location = new System.Drawing.Point(174, 44);
+            this.gunaGradientButton5.Location = new System.Drawing.Point(177, 43);
             this.gunaGradientButton5.Name = "gunaGradientButton5";
             this.gunaGradientButton5.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;
             this.gunaGradientButton5.OnHoverBaseColor2 = System.Drawing.Color.MediumBlue;
@@ -200,7 +200,7 @@
             this.gunaGradientButton5.OnHoverImage = null;
             this.gunaGradientButton5.OnPressedColor = System.Drawing.Color.Black;
             this.gunaGradientButton5.Radius = 6;
-            this.gunaGradientButton5.Size = new System.Drawing.Size(155, 27);
+            this.gunaGradientButton5.Size = new System.Drawing.Size(155, 29);
             this.gunaGradientButton5.TabIndex = 8;
             this.gunaGradientButton5.Text = "Localiser une IP";
             this.gunaGradientButton5.Click += new System.EventHandler(this.gunaGradientButton5_Click);
@@ -233,17 +233,17 @@
             this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton1.AnimationSpeed = 0.03F;
             this.gunaGradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton1.BaseColor1 = System.Drawing.Color.DeepSkyBlue;
-            this.gunaGradientButton1.BaseColor2 = System.Drawing.Color.RoyalBlue;
+            this.gunaGradientButton1.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.gunaGradientButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.gunaGradientButton1.BorderColor = System.Drawing.Color.Black;
             this.gunaGradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
             this.gunaGradientButton1.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Bold);
-            this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton1.ForeColor = System.Drawing.Color.Black;
             this.gunaGradientButton1.Image = global::InternetTest.Properties.Resources.icons8_settings_100px;
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(18, 18);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(335, 44);
+            this.gunaGradientButton1.Location = new System.Drawing.Point(338, 43);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;
             this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.MediumBlue;
@@ -252,7 +252,7 @@
             this.gunaGradientButton1.OnHoverImage = null;
             this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaGradientButton1.Radius = 6;
-            this.gunaGradientButton1.Size = new System.Drawing.Size(97, 27);
+            this.gunaGradientButton1.Size = new System.Drawing.Size(97, 29);
             this.gunaGradientButton1.TabIndex = 10;
             this.gunaGradientButton1.Text = "Mon IP";
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
@@ -262,7 +262,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(438, 278);
+            this.ClientSize = new System.Drawing.Size(445, 278);
             this.Controls.Add(this.gunaGradientButton1);
             this.Controls.Add(this.gunaLineTextBox1);
             this.Controls.Add(this.gunaGradientButton5);
