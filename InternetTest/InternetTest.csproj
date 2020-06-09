@@ -180,6 +180,12 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalizeIP.en-US.resx">
+      <DependentUpon>LocalizeIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalizeIP.fr-FR.resx">
+      <DependentUpon>LocalizeIP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LocalizeIP.resx">
       <DependentUpon>LocalizeIP.cs</DependentUpon>
     </EmbeddedResource>
