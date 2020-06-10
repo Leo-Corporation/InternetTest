@@ -54,11 +54,11 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.gunaAdvenceTileButton1);
             this.panel1.Controls.Add(this.gunaPictureBox1);
             this.panel1.Controls.Add(this.gunaLabel1);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // gunaAdvenceTileButton1
@@ -91,9 +91,9 @@
             // 
             // gunaPictureBox1
             // 
+            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::InternetTest.Properties.Resources.InternetTestLogo1;
-            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.TabStop = false;
             // 
@@ -124,15 +124,16 @@
             // 
             // gunaPictureBox2
             // 
+            resources.ApplyResources(this.gunaPictureBox2, "gunaPictureBox2");
             this.gunaPictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox2.Image = global::InternetTest.Properties.Resources.InternetTestLogo1;
-            resources.ApplyResources(this.gunaPictureBox2, "gunaPictureBox2");
             this.gunaPictureBox2.Name = "gunaPictureBox2";
             this.gunaPictureBox2.TabStop = false;
             // 
             // gunaGradientButton2
             // 
+            resources.ApplyResources(this.gunaGradientButton2, "gunaGradientButton2");
             this.gunaGradientButton2.Animated = true;
             this.gunaGradientButton2.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton2.AnimationSpeed = 0.03F;
@@ -143,7 +144,6 @@
             this.gunaGradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.gunaGradientButton2, "gunaGradientButton2");
             this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton2.Image = global::InternetTest.Properties.Resources.Update;
             this.gunaGradientButton2.ImageSize = new System.Drawing.Size(18, 18);
