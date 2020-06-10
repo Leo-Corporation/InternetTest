@@ -155,7 +155,7 @@
             this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
             this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton2.Image = global::InternetTest.Properties.Resources.icons8_delete_32px;
+            this.gunaGradientButton2.Image = global::InternetTest.Properties.Resources.close_white;
             this.gunaGradientButton2.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaGradientButton2.Name = "gunaGradientButton2";
             this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));

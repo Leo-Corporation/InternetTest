@@ -125,14 +125,20 @@
     <value>Guna.UI.WinForms.GunaGradientButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="gunaLinkLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="gunaGradientButton3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;gunaSeparator2.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
   </data>
-  <data name="&gt;&gt;gunaLabel1.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;gunaGradientButton1.Name" xml:space="preserve">
+    <value>gunaGradientButton1</value>
+  </data>
+  <data name="&gt;&gt;gunaLinkLabel2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;gunaElipse1.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaElipse, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
@@ -140,10 +146,40 @@
   <data name="&gt;&gt;gunaSeparator1.Name" xml:space="preserve">
     <value>gunaSeparator1</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="gunaPictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="gunaAdvenceTileButton1.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -157,22 +193,25 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;gunaLabel2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="gunaLinkLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="gunaLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;gunaGradientButton1.Name" xml:space="preserve">
-    <value>gunaGradientButton1</value>
+  <data name="gunaGradientButton4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.5pt, style=Bold</value>
   </data>
   <data name="&gt;&gt;gunaGradientButton1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;gunaSeparator1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;gunaGradientButton4.Parent" xml:space="preserve">
     <value>panel2</value>
@@ -182,6 +221,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>InternetTest</value>
+  </data>
+  <data name="gunaLinkLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt, style=Bold</value>
   </data>
   <data name="&gt;&gt;gunaSeparator1.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaSeparator, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
@@ -197,6 +239,9 @@
   </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gunaLinkLabel2.Text" xml:space="preserve">
+    <value>Localiser une IP</value>
   </data>
   <data name="gunaAdvenceTileButton2.Location" type="System.Drawing.Point, System.Drawing">
     <value>357, 4</value>
@@ -227,6 +272,9 @@
   </data>
   <data name="&gt;&gt;gunaPictureBox1.Parent" xml:space="preserve">
     <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;gunaLinkLabel2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="gunaSeparator2.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, 29</value>
@@ -270,13 +318,10 @@
   <data name="&gt;&gt;gunaSeparator2.Name" xml:space="preserve">
     <value>gunaSeparator2</value>
   </data>
-  <data name="gunaLinkLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 11.25pt, style=Bold</value>
+  <data name="&gt;&gt;gunaPictureBox1.Name" xml:space="preserve">
+    <value>gunaPictureBox1</value>
   </data>
   <data name="&gt;&gt;gunaLabel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gunaGradientButton1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="gunaAdvenceTileButton2.Size" type="System.Drawing.Size, System.Drawing">
@@ -285,11 +330,11 @@
   <data name="&gt;&gt;gunaAdvenceTileButton1.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;gunaPictureBox1.Name" xml:space="preserve">
-    <value>gunaPictureBox1</value>
+  <data name="&gt;&gt;gunaGradientButton3.Parent" xml:space="preserve">
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="gunaLinkLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 165</value>
@@ -309,14 +354,17 @@
   <data name="&gt;&gt;gunaAdvenceTileButton2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;gunaAdvenceTileButton2.Name" xml:space="preserve">
-    <value>gunaAdvenceTileButton2</value>
-  </data>
   <data name="gunaGradientButton2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.5pt, style=Bold</value>
   </data>
   <data name="gunaLinkLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="&gt;&gt;gunaLinkLabel2.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaLinkLabel, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="gunaPictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;gunaLabel1.Name" xml:space="preserve">
     <value>gunaLabel1</value>
@@ -324,8 +372,8 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>
   </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
+  <data name="&gt;&gt;gunaSeparator2.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="gunaLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -336,41 +384,14 @@
   <data name="&gt;&gt;gunaLabel1.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
+  <data name="gunaLinkLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="gunaSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>460, 10</value>
   </data>
-  <data name="gunaAdvenceTileButton1.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
+  <data name="gunaLinkLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 185</value>
   </data>
   <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
     <value>105, 90</value>
@@ -378,11 +399,14 @@
   <data name="&gt;&gt;gunaPictureBox1.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaPictureBox, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
+  <data name="gunaLinkLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 20</value>
+  </data>
   <data name="gunaPictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="&gt;&gt;gunaLabel1.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="gunaLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 21</value>
@@ -396,14 +420,17 @@
   <data name="gunaLinkLabel1.Text" xml:space="preserve">
     <value>Tester dans un navigateur</value>
   </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
   <data name="&gt;&gt;gunaDragControl1.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaDragControl, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="gunaAdvenceTileButton1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Light, 15.75pt</value>
   </data>
-  <data name="gunaPictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;gunaGradientButton1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="gunaGradientButton2.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 4</value>
@@ -447,9 +474,6 @@
   <data name="gunaGradientButton1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="gunaGradientButton4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10.5pt, style=Bold</value>
-  </data>
   <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -470,6 +494,9 @@
   </data>
   <data name="gunaGradientButton3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.5pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;gunaLinkLabel2.Name" xml:space="preserve">
+    <value>gunaLinkLabel2</value>
   </data>
   <data name="&gt;&gt;gunaAdvenceTileButton1.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -497,6 +524,9 @@
   </data>
   <data name="gunaAdvenceTileButton1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="gunaLinkLabel2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt, style=Bold</value>
   </data>
   <data name="gunaLabel2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>
@@ -2520,8 +2550,8 @@
   <data name="&gt;&gt;gunaSeparator2.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaSeparator, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
-  <data name="&gt;&gt;gunaDragControl2.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaDragControl, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  <data name="&gt;&gt;gunaAdvenceTileButton2.Name" xml:space="preserve">
+    <value>gunaAdvenceTileButton2</value>
   </data>
   <data name="&gt;&gt;gunaLabel2.Name" xml:space="preserve">
     <value>gunaLabel2</value>
@@ -2535,6 +2565,9 @@
   <data name="&gt;&gt;gunaPictureBox1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="gunaPictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
   <data name="&gt;&gt;gunaLabel1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
@@ -2547,11 +2580,14 @@
   <data name="gunaGradientButton4.Text" xml:space="preserve">
     <value>GitHub</value>
   </data>
+  <data name="&gt;&gt;gunaDragControl2.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaDragControl, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
   <data name="&gt;&gt;gunaLabel2.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>460, 196</value>
+    <value>460, 213</value>
   </data>
   <data name="gunaSeparator1.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, 69</value>
@@ -2572,7 +2608,10 @@
     <value>1</value>
   </data>
   <data name="&gt;&gt;gunaLinkLabel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="gunaLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
   </data>
   <data name="gunaLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 8</value>
@@ -2595,9 +2634,6 @@
   <data name="gunaPictureBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 3</value>
   </data>
-  <data name="&gt;&gt;gunaGradientButton3.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
   <data name="&gt;&gt;gunaDragControl2.Name" xml:space="preserve">
     <value>gunaDragControl2</value>
   </data>
@@ -2609,9 +2645,6 @@
   </data>
   <data name="gunaSeparator2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="gunaLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt, style=Bold</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>

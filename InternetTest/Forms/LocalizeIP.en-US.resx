@@ -151,6 +151,9 @@
         5ZyDggfzZv7bDAz8C67YqxkEgE5XAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="gunaAdvenceTileButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>331, 4</value>
+  </data>
   <data name="gunaAdvenceTileButton1.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAABmhJREFUaEPt
@@ -184,50 +187,50 @@
         5ZyDggfzZv7bDAz8C67YqxkEgE5XAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="gunaLinkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 185</value>
+  <data name="gunaAdvenceTileButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 4</value>
   </data>
-  <data name="gunaLinkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 20</value>
+  <data name="gunaLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 21</value>
   </data>
-  <data name="gunaLinkLabel2.Text" xml:space="preserve">
+  <data name="gunaLabel1.Text" xml:space="preserve">
     <value>Localize an IP</value>
   </data>
-  <data name="gunaLinkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 165</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 37</value>
   </data>
-  <data name="gunaLinkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
-  </data>
-  <data name="gunaLinkLabel1.Text" xml:space="preserve">
-    <value>Test in a browser</value>
-  </data>
-  <data name="gunaGradientButton4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 4</value>
-  </data>
-  <data name="gunaGradientButton3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 4</value>
-  </data>
-  <data name="gunaGradientButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 27</value>
-  </data>
-  <data name="gunaGradientButton3.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="gunaGradientButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 27</value>
-  </data>
-  <data name="gunaGradientButton2.Text" xml:space="preserve">
-    <value>Settings</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>434, 278</value>
   </data>
   <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 90</value>
+    <value>331, 43</value>
   </data>
   <data name="gunaGradientButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 42</value>
+    <value>88, 29</value>
   </data>
   <data name="gunaGradientButton1.Text" xml:space="preserve">
-    <value>Start a test on your connection</value>
+    <value>My IP</value>
+  </data>
+  <data name="gunaLineTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 42</value>
+  </data>
+  <data name="gunaGradientButton5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>183, 43</value>
+  </data>
+  <data name="gunaGradientButton5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 29</value>
+  </data>
+  <data name="gunaGradientButton5.Text" xml:space="preserve">
+    <value>Localize an IP</value>
+  </data>
+  <data name="gunaLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 157</value>
+  </data>
+  <data name="gunaLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 21</value>
+  </data>
+  <data name="gunaLabel2.Text" xml:space="preserve">
+    <value>IP infos shows up here</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2244,5 +2247,8 @@
         rzXO/6Y7jP+eQCYAAAAAAAAAAAAAAAAAAAAA8A8AAMADAACBgQAAgYEAABPIAAACwAAAIEQAACIEAAAi
         BAAAIEQAABDIAAARiAAAgYEAAIABAADAAwAA8A8AAA==
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Localize an IP</value>
   </data>
 </root>

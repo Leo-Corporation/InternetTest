@@ -151,8 +151,8 @@
         5ZyDggfzZv7bDAz8C67YqxkEgE5XAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="gunaAdvenceTileButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 4</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>370, 135</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2189,12 +2189,6 @@
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>370, 135</value>
-  </data>
-  <data name="&gt;&gt;gunaLabel1.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
-  </data>
   <data name="&gt;&gt;gunaAdvenceTileButton1.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -2207,9 +2201,6 @@
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="gunaAdvenceTileButton2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="gunaGradientButton2.Text" xml:space="preserve">
-    <value>Fermer</value>
   </data>
   <data name="gunaAdvenceTileButton2.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 29</value>
@@ -2298,9 +2289,6 @@
   <data name="&gt;&gt;gunaPictureBox1.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaPictureBox, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
-  <data name="gunaPictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
   <data name="gunaPictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2313,11 +2301,14 @@
   <data name="gunaLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="gunaGradientButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
   <data name="&gt;&gt;gunaAdvenceTileButton2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;gunaDragControl1.Name" xml:space="preserve">
-    <value>gunaDragControl1</value>
+  <data name="&gt;&gt;gunaGradientButton2.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaGradientButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="gunaPictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2328,11 +2319,14 @@
   <data name="gunaAdvenceTileButton1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;gunaDragControl1.Name" xml:space="preserve">
+    <value>gunaDragControl1</value>
   </data>
   <data name="&gt;&gt;gunaAdvenceTileButton1.Name" xml:space="preserve">
     <value>gunaAdvenceTileButton1</value>
+  </data>
+  <data name="gunaAdvenceTileButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="gunaLabel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2355,6 +2349,9 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="gunaAdvenceTileButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>320, 4</value>
+  </data>
   <data name="&gt;&gt;gunaPictureBox1.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -2365,8 +2362,8 @@ moment.</value>
   <data name="gunaLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;gunaGradientButton2.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaGradientButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  <data name="&gt;&gt;gunaLabel1.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaLabel, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2382,6 +2379,9 @@ moment.</value>
   </data>
   <data name="&gt;&gt;gunaAdvenceTileButton2.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaAdvenceTileButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>UnavailableUpdate</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Mises à jour non disponibles</value>
@@ -2401,14 +2401,14 @@ moment.</value>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;gunaPictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;gunaGradientButton2.Name" xml:space="preserve">
     <value>gunaGradientButton2</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;gunaAdvenceTileButton1.Type" xml:space="preserve">
+    <value>Guna.UI.WinForms.GunaAdvenceTileButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="&gt;&gt;gunaPictureBox1.Name" xml:space="preserve">
     <value>gunaPictureBox1</value>
@@ -2416,20 +2416,20 @@ moment.</value>
   <data name="&gt;&gt;gunaLabel2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="gunaGradientButton2.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="gunaPictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <data name="gunaPictureBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 3</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>UnavailableUpdate</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="gunaAdvenceTileButton1.TabIndex" type="System.Int32, mscorlib">
+  <data name="gunaGradientButton2.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="&gt;&gt;gunaPictureBox1.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;gunaAdvenceTileButton1.Type" xml:space="preserve">
-    <value>Guna.UI.WinForms.GunaAdvenceTileButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="gunaLabel1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>

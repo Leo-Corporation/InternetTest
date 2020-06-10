@@ -158,7 +158,7 @@
             this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
             this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.Image = global::InternetTest.Properties.Resources.icons8_checkmark_100px_1;
+            this.gunaGradientButton1.Image = global::InternetTest.Properties.Resources.checkmark;
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;

@@ -11,6 +11,7 @@ using System.Threading;
 using System.Windows.Forms;
 using InternetTest.Classes;
 using InternetTest.Forms;
+using System.Xml;
 
 namespace InternetTest
 {
@@ -120,6 +121,11 @@ namespace InternetTest
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1;
             }
+        }
+
+        private void gunaLinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new LocalizeIP().Show();
         }
     }
 }

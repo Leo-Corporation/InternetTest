@@ -55,8 +55,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
-    <Reference Include="LeoCorpLibrary">
-      <HintPath>..\..\LeoCorpLibrary\LeoCorpLibrary\bin\Release\LeoCorpLibrary.dll</HintPath>
+    <Reference Include="LeoCorpLibrary, Version=1.2.0.2004, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LeoCorpLibrary.1.2.0.2004\lib\net472\LeoCorpLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -99,6 +99,12 @@
     </Compile>
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LocalizeIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LocalizeIP.Designer.cs">
+      <DependentUpon>LocalizeIP.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SelectCustomDefaultSite.cs">
       <SubType>Form</SubType>
@@ -174,6 +180,15 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalizeIP.en-US.resx">
+      <DependentUpon>LocalizeIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalizeIP.fr-FR.resx">
+      <DependentUpon>LocalizeIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalizeIP.resx">
+      <DependentUpon>LocalizeIP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectCustomDefaultSite.en-US.resx">
       <DependentUpon>SelectCustomDefaultSite.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +253,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -257,6 +273,17 @@
   <ItemGroup>
     <Content Include="Internet Test.ico" />
     <Content Include="InternetTest Logo.ico" />
+    <None Include="Resources\person white.png" />
+    <None Include="Resources\person black.png" />
+    <None Include="Resources\location.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\close white.png" />
+    <None Include="Resources\checkmark.png" />
+    <None Include="Resources\Update.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\about white.png" />
     <None Include="Resources\icons8_pencil_100px.png" />
     <None Include="Resources\icons8_pencil_32px.png" />
     <None Include="Resources\icons8_download_100px.png" />
