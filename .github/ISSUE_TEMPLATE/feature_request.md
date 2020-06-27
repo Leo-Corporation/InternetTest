@@ -6,15 +6,13 @@ labels: suggestion
 assignees: ''
 
 ---
+<!---Vous pouvez supprimer les sections non-nécessaires--->
 
+<!---Une description claire et précise de problème/suggestion Ex: Je suis frustré lorsque [...] ou J'aimerai voir [...]--->
 **Suggestion :**
 
-Une description claire et précise de problème/suggestion Ex: Je suis frustré lorsque [...] ou J'aimerai voir [...] 
-
+<!---Description claire de la solution.--->
 **Décrire la solution que vous voulez :**
 
-Description claire de la solution.
-
+<!---Ajoutez des informations supplémentaires ici.--->
 **Autres informations :**
-
-Ajoutez des informations supplémentaires ici.

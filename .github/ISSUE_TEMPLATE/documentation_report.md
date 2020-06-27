@@ -6,12 +6,13 @@ labels: documentation
 assignees: ''
 
 ---
+<!---Vous pouvez supprimer les sections non-nécessaires--->
 
-**Description du problème :**
-
-* Indiquez si la nature du problème de manière claire.
+<!---* Indiquez si la nature du problème de manière claire.
 * Indiquez dans quel fichier/page du wiki se trouve le problème 
 * Indiquez où se situe le fichier e nquestion (si possible)
 * Indiquez (si possible) la ligne où se trouve le problème
 
  Ex: Faute d'othographe dans le fichier README.md qui se situe dans le dossier parent à la ligne 4.
+--->
+**Description du problème :**
