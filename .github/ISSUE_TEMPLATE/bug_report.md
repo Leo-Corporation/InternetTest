@@ -6,33 +6,29 @@ labels: bug
 assignees: ''
 
 ---
+<!---Vous pouvez supprimer les sections non-nécessaires--->
 
+<!---Une description claire du bug.--->
 **Description du bug :**
 
-Une description claire du bug.
-
-**Comment reproduire le bug :**
-
-Etapes pour reproduire le bug :
+<!---Etapes pour reproduire le bug :
 1. Allez à '...'
 2. Cliquez sur '....'
 3. Déscendez jusqu'à '....'
-4. Le problème est là.
+4. Le problème est là.--->
+**Comment reproduire le bug :**
 
+<!---Une description claire de ce qui est censé ce produire.--->
 **Comportement attendu :**
 
-Une description claire de ce qui est censé ce produire.
-
+<!---Si vous pouvez, joignez des captures d'écrans.--->
 **Captures d'écrans :**
 
-Si vous pouvez, joignez des captures d'écrans.
-
+<!---Configuration de l'ordinateur--->
 **Ordinateur :**
- - OS: [ex: Windows 10]
- - Version de l'OS [ex: Windows 10 18362]
- - Version du programme [ex: 1.2.0.0]
+ - OS :
+ - Version de l'OS :
+ - Version du programme :
 
-
+<!---Ajoutez si nécessaire, des informations supplémentaires.--->
 **Autres informations :**
-
-Ajoutez si nécessaire, des informations supplémentaires.
