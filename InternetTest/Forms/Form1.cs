@@ -43,44 +43,46 @@ namespace InternetTest
             bool connectionAvailable = new NetworkConnection().IsAvailableTestSite(Properties.Settings.Default.TestSite);
             if (connectionAvailable) // Si internet est disponible
             {
-                if (new Language().GetCode() == "fr-FR")
+                gunaPictureBox2.Image = Properties.Resources.check; // Mettre à jour la picture box avec le check
+                if (new Language().GetCode() == "fr-FR") // Si la langue est française
                 {
-                    gunaLabel2.Visible = true;
-                    gunaLabel2.Text = "Vous êtes connecté à Internet";
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "Vous êtes connecté à Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
                 }
-                else if (new Language().GetCode() == "EN")
+                else if (new Language().GetCode() == "EN") // Si la langue est anglaise
                 {
-                    gunaLabel2.Visible = true;
-                    gunaLabel2.Text = "You're connected to Internet";
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "You're connected to Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
                 }    
             }
-            else
+            else // Si non
             {
-                if (new Language().GetCode() == "fr-FR")
+                gunaPictureBox2.Image = Properties.Resources.cancel; // Mettre à jour la picture box avec le cancel
+                if (new Language().GetCode() == "fr-FR") // Si la langue est française
                 {
-                    gunaLabel2.Visible = true;
-                    gunaLabel2.Text = "Vous n'êtes pas connecté à Internet";
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "Vous n'êtes pas connecté à Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
                 }
-                else if (new Language().GetCode() == "EN")
+                else if (new Language().GetCode() == "EN") // Si la langue est anglaise
                 {
-                    gunaLabel2.Visible = true;
-                    gunaLabel2.Text = "You aren't connected to Internet";
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "You aren't connected to Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
                 }
             }
         }
 
         private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); // Fermer
         }
 
         private void gunaAdvenceTileButton2_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized; // Minimiser la fenêtre
         }
 
         private void gunaGradientButton4_Click(object sender, EventArgs e)
@@ -112,6 +114,7 @@ namespace InternetTest
                 gunaLabel2.ForeColor = Color.White;
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px;
+                gunaPictureBox2.Image = Properties.Resources.network_test;
             }
             else // Si le thème est clair
             {
@@ -120,6 +123,7 @@ namespace InternetTest
                 gunaLabel2.ForeColor = Color.Black;
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1;
+                gunaPictureBox2.Image = Properties.Resources.network_test_black;
             }
         }
 
