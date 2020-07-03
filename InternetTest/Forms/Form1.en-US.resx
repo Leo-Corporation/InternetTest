@@ -185,7 +185,7 @@
 </value>
   </data>
   <data name="gunaLinkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 185</value>
+    <value>179, 276</value>
   </data>
   <data name="gunaLinkLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 20</value>
@@ -194,7 +194,7 @@
     <value>Localize an IP</value>
   </data>
   <data name="gunaLinkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 165</value>
+    <value>166, 256</value>
   </data>
   <data name="gunaLinkLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 20</value>
@@ -221,13 +221,22 @@
     <value>Settings</value>
   </data>
   <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 90</value>
+    <value>164, 210</value>
   </data>
   <data name="gunaGradientButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 42</value>
+    <value>133, 39</value>
   </data>
   <data name="gunaGradientButton1.Text" xml:space="preserve">
-    <value>Start a test on your connection</value>
+    <value>Start a test</value>
+  </data>
+  <data name="gunaLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 180</value>
+  </data>
+  <data name="gunaLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 21</value>
+  </data>
+  <data name="gunaLabel2.Text" xml:space="preserve">
+    <value>To begin, launch a test</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
