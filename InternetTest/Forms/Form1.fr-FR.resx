@@ -184,6 +184,21 @@
         5ZyDggfzZv7bDAz8C67YqxkEgE5XAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>460, 294</value>
+  </data>
+  <data name="gunaLinkLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 265</value>
+  </data>
+  <data name="gunaLinkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 245</value>
+  </data>
+  <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 202</value>
+  </data>
+  <data name="gunaLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 169</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAAFUgAAZgAAAICAAAABACAAKAgBAGtSAABAQAAAAQAgAChCAACTWgEAMDAAAAEA
