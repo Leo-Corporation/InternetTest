@@ -109,21 +109,21 @@ namespace InternetTest
         {
             if (new Theme().IsDark()) // Si le thème est sombre
             {
-                BackColor = Color.FromArgb(50, 50, 72);
-                gunaLabel1.ForeColor = Color.White;
-                gunaLabel2.ForeColor = Color.White;
-                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
-                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px;
-                gunaPictureBox2.Image = Properties.Resources.network_test;
+                BackColor = Color.FromArgb(50, 50, 72);// Modifier la couleur d'arrière-plan
+                gunaLabel1.ForeColor = Color.White; // Modifier la couleur des labels
+                gunaLabel2.ForeColor = Color.White; // Modifier la couleur des labels
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px; // Modifier l'image
+                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px; // Modifier l'image
+                gunaPictureBox2.Image = Properties.Resources.network_test; // Modifier l'image
             }
             else // Si le thème est clair
             {
-                BackColor = Color.White;
-                gunaLabel1.ForeColor = Color.Black;
-                gunaLabel2.ForeColor = Color.Black;
-                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
-                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1;
-                gunaPictureBox2.Image = Properties.Resources.network_test_black;
+                BackColor = Color.White;// Modifier la couleur d'arrière-plan
+                gunaLabel1.ForeColor = Color.Black; // Modifier la couleur des labels
+                gunaLabel2.ForeColor = Color.Black; // Modifier la couleur des labels
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1; // Modifier l'image
+                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1; // Modifier l'image
+                gunaPictureBox2.Image = Properties.Resources.network_test_black; // Modifier l'image
             }
         }
 
