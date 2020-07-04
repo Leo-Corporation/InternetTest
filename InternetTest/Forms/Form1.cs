@@ -37,9 +37,18 @@ namespace InternetTest
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
             ChangeTheme(); // Change le thème en fonction des préférences de l'utilisateur
+            if (Properties.Settings.Default.TestOnStart)
+            {
+                LaunchTest(); // Lancer un test
+            }
         }
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
+        {
+            LaunchTest(); // Lancer un test
+        }
+
+        private void LaunchTest()
         {
             bool connectionAvailable = new NetworkConnection().IsAvailableTestSite(Properties.Settings.Default.TestSite);
             if (connectionAvailable) // Si internet est disponible
@@ -56,7 +65,7 @@ namespace InternetTest
                     gunaLabel2.Visible = true; // Afficher le label
                     gunaLabel2.Text = "You're connected to Internet"; // Mettre à jour le label
                     gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
-                }    
+                }
             }
             else // Si non
             {
