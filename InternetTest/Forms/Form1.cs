@@ -17,6 +17,7 @@ namespace InternetTest
 {
     public partial class Form1 : Form
     {
+        bool isTestLaunched = false;
         public Form1()
         {
             if (new Language().GetCode() == "fr-FR")
@@ -73,6 +74,7 @@ namespace InternetTest
                     gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
                 }
             }
+            isTestLaunched = true;
         }
 
         private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
@@ -114,7 +116,10 @@ namespace InternetTest
                 gunaLabel2.ForeColor = Color.White; // Modifier la couleur des labels
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px; // Modifier l'image
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px; // Modifier l'image
-                gunaPictureBox2.Image = Properties.Resources.network_test; // Modifier l'image
+                if (!isTestLaunched)
+                {
+                    gunaPictureBox2.Image = Properties.Resources.network_test; // Modifier l'image
+                }
             }
             else // Si le thème est clair
             {
@@ -123,7 +128,10 @@ namespace InternetTest
                 gunaLabel2.ForeColor = Color.Black; // Modifier la couleur des labels
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1; // Modifier l'image
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1; // Modifier l'image
-                gunaPictureBox2.Image = Properties.Resources.network_test_black; // Modifier l'image
+                if (!isTestLaunched)
+                {
+                    gunaPictureBox2.Image = Properties.Resources.network_test_black; // Modifier l'image
+                }
             }
         }
 
