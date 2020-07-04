@@ -249,5 +249,31 @@ namespace InternetTest.Forms
             gunaLabel14.Text = Properties.Settings.Default.TestSite;
             gunaLinkLabel2.Location = new Point(gunaLabel14.Width + 15, 288);
         }
+
+        private void gunaWinSwitch3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (new Language().GetCode() == "fr-FR") // Si la langue est française
+            {
+                if (gunaWinSwitch3.Checked)
+                {
+                    gunaLabel7.Text = "Activé";
+                }
+                else
+                {
+                    gunaLabel7.Text = "Désactivé";
+                }
+            }
+            else if (new Language().GetCode() == "EN") // Si la langue est anglaise
+            {
+                if (gunaWinSwitch3.Checked)
+                {
+                    gunaLabel7.Text = "Enabled";
+                }
+                else
+                {
+                    gunaLabel7.Text = "Disabled";
+                }
+            }
+        }
     }
 }
