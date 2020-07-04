@@ -110,6 +110,7 @@ namespace InternetTest.Forms
                 gunaLabel14.ForeColor = Color.White;
                 gunaLabel15.ForeColor = Color.White;
                 gunaLabel16.ForeColor = Color.White;
+                gunaLabel17.ForeColor = Color.White;
                 gunaComboBox1.ForeColor = Color.White;
                 gunaComboBox1.BaseColor = Color.FromArgb(50, 50, 72);
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
@@ -134,6 +135,7 @@ namespace InternetTest.Forms
                 gunaLabel14.ForeColor = Color.Black;
                 gunaLabel15.ForeColor = Color.Black;
                 gunaLabel16.ForeColor = Color.Black;
+                gunaLabel17.ForeColor = Color.Black;
                 gunaComboBox1.ForeColor = Color.Black;
                 gunaComboBox1.BaseColor = Color.White;
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
@@ -248,22 +250,22 @@ namespace InternetTest.Forms
             {
                 if (gunaWinSwitch3.Checked)
                 {
-                    gunaLabel7.Text = "Activé";
+                    gunaLabel17.Text = "Activé";
                 }
                 else
                 {
-                    gunaLabel7.Text = "Désactivé";
+                    gunaLabel17.Text = "Désactivé";
                 }
             }
             else if (new Language().GetCode() == "EN") // Si la langue est anglaise
             {
                 if (gunaWinSwitch3.Checked)
                 {
-                    gunaLabel7.Text = "Enabled";
+                    gunaLabel17.Text = "Enabled";
                 }
                 else
                 {
-                    gunaLabel7.Text = "Disabled";
+                    gunaLabel17.Text = "Disabled";
                 }
             }
         }
