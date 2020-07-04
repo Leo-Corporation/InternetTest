@@ -14,5 +14,8 @@
     <Setting Name="TestSite" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://bing.com</Value>
     </Setting>
+    <Setting Name="TestOnStart" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
