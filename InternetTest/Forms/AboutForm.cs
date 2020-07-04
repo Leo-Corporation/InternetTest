@@ -78,7 +78,7 @@ namespace InternetTest.Forms
             }
             else // InternetTest 4
             {
-                new Update().Check("4.3.0.2006", new Update().GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
+                new Update().Check("4.4.0.2007", new Update().GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
             }
         }
     }

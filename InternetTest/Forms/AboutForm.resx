@@ -180,7 +180,7 @@
     <value>183, 42</value>
   </data>
   <data name="gunaLabel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 153</value>
+    <value>179, 153</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -2380,7 +2380,7 @@
     <value>34, 8</value>
   </data>
   <data name="gunaLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 15</value>
+    <value>88, 15</value>
   </data>
   <data name="gunaLabel3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2422,7 +2422,7 @@
     <value>0, 0</value>
   </data>
   <data name="gunaLabel3.Text" xml:space="preserve">
-    <value>4.4.0.2007-pre1</value>
+    <value>4.4.0.2007-rc1</value>
   </data>
   <data name="&gt;&gt;gunaPictureBox1.Name" xml:space="preserve">
     <value>gunaPictureBox1</value>
@@ -2482,6 +2482,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>fr-FR</value>
+    <value>en-US</value>
   </metadata>
 </root>
