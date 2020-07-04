@@ -273,6 +273,10 @@
   <ItemGroup>
     <Content Include="Internet Test.ico" />
     <Content Include="InternetTest Logo.ico" />
+    <None Include="Resources\network test.png" />
+    <None Include="Resources\network test black.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\cancel.png" />
     <None Include="Resources\person white.png" />
     <None Include="Resources\person black.png" />
     <None Include="Resources\location.png" />

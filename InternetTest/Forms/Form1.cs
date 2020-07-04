@@ -17,6 +17,7 @@ namespace InternetTest
 {
     public partial class Form1 : Form
     {
+        bool isTestLaunched = false;
         public Form1()
         {
             if (new Language().GetCode() == "fr-FR")
@@ -36,51 +37,63 @@ namespace InternetTest
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
             ChangeTheme(); // Change le thème en fonction des préférences de l'utilisateur
+            if (Properties.Settings.Default.TestOnStart)
+            {
+                LaunchTest(); // Lancer un test
+            }
         }
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
+            LaunchTest(); // Lancer un test
+        }
+
+        private void LaunchTest()
+        {
             bool connectionAvailable = new NetworkConnection().IsAvailableTestSite(Properties.Settings.Default.TestSite);
             if (connectionAvailable) // Si internet est disponible
             {
-                if (new Language().GetCode() == "fr-FR")
+                gunaPictureBox2.Image = Properties.Resources.check; // Mettre à jour la picture box avec le check
+                if (new Language().GetCode() == "fr-FR") // Si la langue est française
                 {
-                    gunaLabel2.Visible = true;
-                    gunaLabel2.Text = "Vous êtes connecté à Internet";
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "Vous êtes connecté à Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
                 }
-                else if (new Language().GetCode() == "EN")
+                else if (new Language().GetCode() == "EN") // Si la langue est anglaise
                 {
-                    gunaLabel2.Visible = true;
-                    gunaLabel2.Text = "You're connected to Internet";
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
-                }    
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "You're connected to Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
+                }
             }
-            else
+            else // Si non
             {
-                if (new Language().GetCode() == "fr-FR")
+                gunaPictureBox2.Image = Properties.Resources.cancel; // Mettre à jour la picture box avec le cancel
+                if (new Language().GetCode() == "fr-FR") // Si la langue est française
                 {
-                    gunaLabel2.Visible = true;
-                    gunaLabel2.Text = "Vous n'êtes pas connecté à Internet";
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "Vous n'êtes pas connecté à Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
                 }
-                else if (new Language().GetCode() == "EN")
+                else if (new Language().GetCode() == "EN") // Si la langue est anglaise
                 {
-                    gunaLabel2.Visible = true;
-                    gunaLabel2.Text = "You aren't connected to Internet";
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2;
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "You aren't connected to Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
                 }
             }
+            isTestLaunched = true;
         }
 
         private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); // Fermer
         }
 
         private void gunaAdvenceTileButton2_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized; // Minimiser la fenêtre
         }
 
         private void gunaGradientButton4_Click(object sender, EventArgs e)
@@ -107,19 +120,27 @@ namespace InternetTest
         {
             if (new Theme().IsDark()) // Si le thème est sombre
             {
-                BackColor = Color.FromArgb(50, 50, 72);
-                gunaLabel1.ForeColor = Color.White;
-                gunaLabel2.ForeColor = Color.White;
-                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
-                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px;
+                BackColor = Color.FromArgb(50, 50, 72);// Modifier la couleur d'arrière-plan
+                gunaLabel1.ForeColor = Color.White; // Modifier la couleur des labels
+                gunaLabel2.ForeColor = Color.White; // Modifier la couleur des labels
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px; // Modifier l'image
+                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px; // Modifier l'image
+                if (!isTestLaunched)
+                {
+                    gunaPictureBox2.Image = Properties.Resources.network_test; // Modifier l'image
+                }
             }
             else // Si le thème est clair
             {
-                BackColor = Color.White;
-                gunaLabel1.ForeColor = Color.Black;
-                gunaLabel2.ForeColor = Color.Black;
-                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
-                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1;
+                BackColor = Color.White;// Modifier la couleur d'arrière-plan
+                gunaLabel1.ForeColor = Color.Black; // Modifier la couleur des labels
+                gunaLabel2.ForeColor = Color.Black; // Modifier la couleur des labels
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1; // Modifier l'image
+                gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1; // Modifier l'image
+                if (!isTestLaunched)
+                {
+                    gunaPictureBox2.Image = Properties.Resources.network_test_black; // Modifier l'image
+                }
             }
         }
 

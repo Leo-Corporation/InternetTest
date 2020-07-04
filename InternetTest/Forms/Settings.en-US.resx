@@ -118,17 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="gunaLabel17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="gunaLabel17.Text" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
   <data name="gunaLinkLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 17</value>
   </data>
   <data name="gunaLinkLabel2.Text" xml:space="preserve">
     <value>Modify</value>
   </data>
+  <data name="gunaLabel16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="gunaLabel16.Text" xml:space="preserve">
+    <value>Launch a test on start</value>
+  </data>
   <data name="gunaLabel13.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 17</value>
   </data>
   <data name="gunaLabel13.Text" xml:space="preserve">
     <value>Test your connexion on the site:</value>
+  </data>
+  <data name="gunaLinkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 402</value>
   </data>
   <data name="gunaLinkLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 17</value>
@@ -137,7 +152,7 @@
     <value>Erase all data</value>
   </data>
   <data name="gunaGradientButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 360</value>
+    <value>222, 434</value>
   </data>
   <data name="gunaGradientButton2.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 33</value>
@@ -146,7 +161,7 @@
     <value>Cancel</value>
   </data>
   <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 360</value>
+    <value>115, 434</value>
   </data>
   <data name="gunaGradientButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 33</value>
@@ -269,11 +284,20 @@ the changes</value>
   <data name="gunaLabel3.Text" xml:space="preserve">
     <value>Use dark theme</value>
   </data>
+  <data name="gunaLabel15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 28</value>
+  </data>
+  <data name="gunaLabel15.Text" xml:space="preserve">
+    <value>On start</value>
+  </data>
   <data name="gunaLabel12.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 28</value>
   </data>
   <data name="gunaLabel12.Text" xml:space="preserve">
     <value>Test site</value>
+  </data>
+  <data name="gunaLabel10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 374</value>
   </data>
   <data name="gunaLabel10.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 28</value>

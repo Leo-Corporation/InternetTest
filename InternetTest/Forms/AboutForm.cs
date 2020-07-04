@@ -52,19 +52,19 @@ namespace InternetTest.Forms
         {
             if (new Theme().IsDark())
             {
-                BackColor = Color.FromArgb(50, 50, 72);
-                gunaLabel1.ForeColor = Color.White;
-                gunaLabel2.ForeColor = Color.White;
-                gunaLabel3.ForeColor = Color.White;
-                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
+                BackColor = Color.FromArgb(50, 50, 72); // Modifier la couleur d'arrière-plan
+                gunaLabel1.ForeColor = Color.White; // Modifier la couleur des labels
+                gunaLabel2.ForeColor = Color.White; // Modifier la couleur des labels
+                gunaLabel3.ForeColor = Color.White; // Modifier la couleur des labels
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px; // Modifier l'image
             }
             else
             {
-                BackColor = Color.White;
-                gunaLabel1.ForeColor = Color.Black;
-                gunaLabel2.ForeColor = Color.Black;
-                gunaLabel3.ForeColor = Color.Black;
-                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
+                BackColor = Color.White; // Modifier la couleur d'arrière-plan
+                gunaLabel1.ForeColor = Color.Black; // Modifier la couleur des labels
+                gunaLabel2.ForeColor = Color.Black; // Modifier la couleur des labels
+                gunaLabel3.ForeColor = Color.Black; // Modifier la couleur des labels
+                gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1; // Modifier l'image
             }
         }
 
@@ -78,7 +78,7 @@ namespace InternetTest.Forms
             }
             else // InternetTest 4
             {
-                new Update().Check("4.3.0.2006", new Update().GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
+                new Update().Check("4.4.0.2007", new Update().GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
             }
         }
     }

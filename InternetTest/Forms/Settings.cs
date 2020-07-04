@@ -56,22 +56,9 @@ namespace InternetTest.Forms
 
         private void ChangeSettings() // Appliquer les changements
         {
-            if (gunaWinSwitch1.Checked) // Utiliser thème sombre est activé
-            {
-                Properties.Settings.Default.IsThemeDark = true;
-            }
-            else
-            {
-                Properties.Settings.Default.IsThemeDark = false;
-            }
-            if (gunaWinSwitch2.Checked) // Notifier des mises à jour est activé
-            {
-                Properties.Settings.Default.NotifyUpdate = true;
-            }
-            else
-            {
-                Properties.Settings.Default.NotifyUpdate = false;
-            }
+            Properties.Settings.Default.IsThemeDark = gunaWinSwitch1.Checked; // Mettre à jour le paramètre
+            Properties.Settings.Default.NotifyUpdate = gunaWinSwitch2.Checked; // Mettre à jour le paramètre
+            Properties.Settings.Default.TestOnStart = gunaWinSwitch3.Checked; // Mettre à jour le paramètre
             if (gunaComboBox1.Text.Contains("fr-FR")) // Si la langue est française
             {
                 Properties.Settings.Default.Language = "fr-FR";
@@ -89,6 +76,7 @@ namespace InternetTest.Forms
         {
             gunaWinSwitch1.Checked = Properties.Settings.Default.IsThemeDark;
             gunaWinSwitch2.Checked = Properties.Settings.Default.NotifyUpdate;
+            gunaWinSwitch3.Checked = Properties.Settings.Default.TestOnStart;
             if (Properties.Settings.Default.Language == "fr-FR")
             {
                 gunaComboBox1.Text = new Language().GetName("fr");
@@ -120,6 +108,9 @@ namespace InternetTest.Forms
                 gunaLabel12.ForeColor = Color.White;
                 gunaLabel13.ForeColor = Color.White;
                 gunaLabel14.ForeColor = Color.White;
+                gunaLabel15.ForeColor = Color.White;
+                gunaLabel16.ForeColor = Color.White;
+                gunaLabel17.ForeColor = Color.White;
                 gunaComboBox1.ForeColor = Color.White;
                 gunaComboBox1.BaseColor = Color.FromArgb(50, 50, 72);
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
@@ -142,6 +133,9 @@ namespace InternetTest.Forms
                 gunaLabel12.ForeColor = Color.Black;
                 gunaLabel13.ForeColor = Color.Black;
                 gunaLabel14.ForeColor = Color.Black;
+                gunaLabel15.ForeColor = Color.Black;
+                gunaLabel16.ForeColor = Color.Black;
+                gunaLabel17.ForeColor = Color.Black;
                 gunaComboBox1.ForeColor = Color.Black;
                 gunaComboBox1.BaseColor = Color.White;
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
@@ -248,6 +242,32 @@ namespace InternetTest.Forms
         {
             gunaLabel14.Text = Properties.Settings.Default.TestSite;
             gunaLinkLabel2.Location = new Point(gunaLabel14.Width + 15, 288);
+        }
+
+        private void gunaWinSwitch3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (new Language().GetCode() == "fr-FR") // Si la langue est française
+            {
+                if (gunaWinSwitch3.Checked)
+                {
+                    gunaLabel17.Text = "Activé";
+                }
+                else
+                {
+                    gunaLabel17.Text = "Désactivé";
+                }
+            }
+            else if (new Language().GetCode() == "EN") // Si la langue est anglaise
+            {
+                if (gunaWinSwitch3.Checked)
+                {
+                    gunaLabel17.Text = "Enabled";
+                }
+                else
+                {
+                    gunaLabel17.Text = "Disabled";
+                }
+            }
         }
     }
 }
