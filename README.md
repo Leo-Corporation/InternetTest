@@ -34,7 +34,7 @@ Une refonte du navigateur intégré sera faite : désormais, l'utilisateur a un 
 
 **LeoCorpLibrary**
 
-LeoCorpLib inclut des fonctions liées au test de connexion internet.
+[LeoCorpLibrary](https://github.com/Leo-Corporation/LeoCorpLibrary) inclut des fonctions liées au test de connexion internet.
 Désormais, le système de test de connexion est beaucoup plus performant que l'ancien.
 On pourrait avoir un paramètre pour demander sur quel site tester la connexion.
 ## Branches
@@ -48,4 +48,6 @@ La branche master est la branche pour les versions stables.
 ## Documentation 
 Dans la documentation, vous trouverez sûrement des réponses à vos questions.
 
-Cliquez [ici](https://github.com/Leo-Corporation/InternetTest/wiki) pour accéder à la documentation.
+Cliquez [ici](https://github.com/Leo-Corporation/InternetTest/wiki) pour accéder à la documentation d'InternetTest.
+
+Cliquez [ici](https://github.com/Leo-Corporation/LeoCorpLibrary/wiki) pour accèder à la documentation de LeoCorpLibrary.
