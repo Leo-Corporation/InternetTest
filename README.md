@@ -8,35 +8,7 @@ InternetTest permet de tester votre connexion Internet.
 * Paramètres
 * Installation des mises à jour automatique
 * Langues (français et anglais)
-
-## Version 4.0
-- Refonte totale en C# du logiciel
-- Utilisation du framework de design Guna.UI
-- Implémentation de [LeoCorpLibrary](https://github.com/Leo-Corporation/LeoCorpLibrary)
-
-**Refonte totale du logiciel en C# :**
-
-- Ajout de Guna.UI (Un framework de design)
-- Refonte du navigateur (sélecteur de sites)
-- Implémentation de [LeoCorpLib](https://github.com/Leo-Corporation/LeoCorpLibrary) pour tester la connexion
-
-**GunaUI**
-
-Guna est un Framework de design qui permet d'avoir des contrôles personnalisables et jolis. Cela permet d'embellir l'interface utilisateur d'un logiciel.
-
-**C#**
-
-Le C# est un langage de programmation plus moderne que le VB. Cela permettra de moderniser l'application.
-
-**Refonte du navigateur**
-
-Une refonte du navigateur intégré sera faite : désormais, l'utilisateur a un sélecteur de sites sur lesquelles il peut aller pour bien vérifier sa connexion manuellement.
-
-**LeoCorpLibrary**
-
-[LeoCorpLibrary](https://github.com/Leo-Corporation/LeoCorpLibrary) inclut des fonctions liées au test de connexion internet.
-Désormais, le système de test de connexion est beaucoup plus performant que l'ancien.
-On pourrait avoir un paramètre pour demander sur quel site tester la connexion.
+* Localisation d'IP
 ## Branches
 Il existe 2 branches : 
 * master ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest)
@@ -45,6 +17,15 @@ Il existe 2 branches :
 La branche Version_Next est une branche pour les prochaines versions (tests).
 
 La branche master est la branche pour les versions stables.
+## Nouveautés de la version 4.4.0.2007
+### Ajouts
+- Ajouter l'option d'effectuer un test au démarrage (#104)
+- Redesigner la fenêtre principale (#105)
+- Ajout de nouveaux assets
+### Corrections
+- Faire en sorte que le thème sombre soit compatible (#106)
+- Problème lors du changement de thème (#107)
+- Faire les traductions (#108)
 ## Documentation 
 Dans la documentation, vous trouverez sûrement des réponses à vos questions.
 
