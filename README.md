@@ -32,3 +32,5 @@ Dans la documentation, vous trouverez sûrement des réponses à vos questions.
 Cliquez [ici](https://github.com/Leo-Corporation/InternetTest/wiki) pour accéder à la documentation d'InternetTest.
 
 Cliquez [ici](https://github.com/Leo-Corporation/LeoCorpLibrary/wiki) pour accèder à la documentation de LeoCorpLibrary.
+## License
+Projet sous [license MPL-2.0](https://github.com/Leo-Corporation/InternetTest/blob/master/LICENSE.md)
