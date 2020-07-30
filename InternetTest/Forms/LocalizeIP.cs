@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -16,6 +17,7 @@ namespace InternetTest.Forms
 {
     public partial class LocalizeIP : Form
     {
+        string lat, lon = ""; // Latitude et longitude
         public LocalizeIP()
         {
             InitializeComponent();
@@ -54,6 +56,8 @@ namespace InternetTest.Forms
 
         private void GetIPInfo(string ip) // Localiser une IP
         {
+            lon = string.Empty; // Effacer
+            lat = string.Empty; // Effacer
             string[] nodes = new string[] // Informations à obtenir
             {
                 "country",
@@ -121,7 +125,9 @@ namespace InternetTest.Forms
                     }
                 }
             }
-            
+            lat = new WebClient().DownloadString(string.Format("http://ip-api.com/line/{0}?fields=lat", ip)); // Latitude
+            lon = new WebClient().DownloadString(string.Format("http://ip-api.com/line/{0}?fields=lon", ip)); // Longitude
+            //Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Ouvrir dans une carte
         }
 
         private void LocalizeIP_Load(object sender, EventArgs e)
