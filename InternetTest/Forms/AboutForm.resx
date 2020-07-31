@@ -2202,7 +2202,7 @@
     <value>Segoe UI, 16pt, style=Bold</value>
   </data>
   <data name="gunaLabel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>191, 153</value>
+    <value>175, 153</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -2380,7 +2380,7 @@
     <value>34, 8</value>
   </data>
   <data name="gunaLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 15</value>
+    <value>96, 15</value>
   </data>
   <data name="gunaLabel3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2422,7 +2422,7 @@
     <value>0, 0</value>
   </data>
   <data name="gunaLabel3.Text" xml:space="preserve">
-    <value>4.4.1.2007</value>
+    <value>4.5.0.2008-pre1</value>
   </data>
   <data name="&gt;&gt;gunaPictureBox1.Name" xml:space="preserve">
     <value>gunaPictureBox1</value>
