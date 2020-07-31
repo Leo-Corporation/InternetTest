@@ -31,21 +31,33 @@ namespace InternetTest
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-            Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
-            gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
-            Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
-            ChangeTheme(); // Change le thème en fonction des préférences de l'utilisateur
-            if (Properties.Settings.Default.TestOnStart)
+            await Task.Run(() =>
             {
-                LaunchTest(); // Lancer un test
-            }
+                Invoke(new MethodInvoker(delegate ()
+                {
+                    Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
+                    gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
+                    Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
+                    ChangeTheme(); // Change le thème en fonction des préférences de l'utilisateur
+                    if (Properties.Settings.Default.TestOnStart)
+                    {
+                        LaunchTest(); // Lancer un test
+                    }
+                }));
+            });
         }
 
-        private void gunaGradientButton1_Click(object sender, EventArgs e)
+        private async void gunaGradientButton1_Click(object sender, EventArgs e)
         {
-            LaunchTest(); // Lancer un test
+            await Task.Run(() =>
+            {
+                Invoke(new MethodInvoker(delegate ()
+                {
+                    LaunchTest(); // Lancer un test
+                }));
+            });
         }
 
         private void LaunchTest()

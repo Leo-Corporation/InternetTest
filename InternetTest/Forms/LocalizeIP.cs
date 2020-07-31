@@ -133,7 +133,6 @@ namespace InternetTest.Forms
             }
             lat = new WebClient().DownloadString(string.Format("http://ip-api.com/line/{0}?fields=lat", ip)); // Latitude
             lon = new WebClient().DownloadString(string.Format("http://ip-api.com/line/{0}?fields=lon", ip)); // Longitude
-            //Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Ouvrir dans une carte
         }
 
         private void LocalizeIP_Load(object sender, EventArgs e)
@@ -172,6 +171,11 @@ namespace InternetTest.Forms
             {
                 MessageBox.Show("Erreur :\n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error); // Erreur
             }
+        }
+
+        private void gunaGradientButton2_Click(object sender, EventArgs e)
+        {
+            Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Ouvrir dans une carte
         }
 
         private void ChangeTheme()

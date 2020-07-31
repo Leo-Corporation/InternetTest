@@ -200,7 +200,16 @@
     <value>434, 37</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>434, 299</value>
+    <value>434, 334</value>
+  </data>
+  <data name="gunaGradientButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 294</value>
+  </data>
+  <data name="gunaGradientButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 29</value>
+  </data>
+  <data name="gunaGradientButton2.Text" xml:space="preserve">
+    <value>See on a map</value>
   </data>
   <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
     <value>247, 80</value>
