@@ -25,15 +25,21 @@ namespace InternetTest.Forms
             ChangeLanguage(); // Changer la langue
         }
 
-        private void gunaGradientButton5_Click(object sender, EventArgs e)
+        private async void gunaGradientButton5_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(gunaLineTextBox1.Text) && !string.IsNullOrWhiteSpace(gunaLineTextBox1.Text)) // Si la textbox n'est pas vide
             {
                 try // Essayer
                 {
-                    gunaLabel2.Visible = false; // Cacher
-                    gunaLabel3.Text = string.Empty; // Effacer
-                    GetIPInfo(gunaLineTextBox1.Text); // Localiser IP
+                    await Task.Run(() =>
+                    {
+                        Invoke(new MethodInvoker(delegate ()
+                        {
+                            gunaLabel2.Visible = false; // Cacher
+                            gunaLabel3.Text = string.Empty; // Effacer
+                            GetIPInfo(gunaLineTextBox1.Text); // Localiser IP
+                        }));
+                    });
                 }
                 catch (Exception ex)
                 {
@@ -147,14 +153,20 @@ namespace InternetTest.Forms
             Close(); // Fermer la fenêtre
         }
 
-        private void gunaGradientButton1_Click(object sender, EventArgs e)
+        private async void gunaGradientButton1_Click(object sender, EventArgs e)
         {
             gunaLabel3.Text = string.Empty; // Effacer
             try // Essayer
             {
-                gunaLabel2.Visible = false; // Cacher
-                GetIPInfo(""); // Localiser l'IP de l'utilisateur si le paramètre est vide
-                gunaLineTextBox1.Text = new WebClient().DownloadString("http://ip-api.com/line/?fields=query");
+                await Task.Run(() =>
+                {
+                    Invoke(new MethodInvoker(delegate ()
+                    {
+                        gunaLabel2.Visible = false; // Cacher
+                        GetIPInfo(""); // Localiser l'IP de l'utilisateur si le paramètre est vide
+                        gunaLineTextBox1.Text = new WebClient().DownloadString("http://ip-api.com/line/?fields=query");
+                    }));
+                });
             }
             catch (Exception ex)
             {
