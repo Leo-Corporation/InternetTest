@@ -216,6 +216,7 @@ namespace InternetTest.Forms
                 gunaWinSwitch2.Checked = true;
                 MessageBox.Show("Data has been removed.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            gunaComboBox2.Text = Properties.Settings.Default.MapsProvider; // Mettre à jour le texte
         }
 
         private void gunaComboBox1_SelectedIndexChanged(object sender, EventArgs e)
