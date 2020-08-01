@@ -49,20 +49,21 @@ namespace InternetTest
             });
         }
 
-        private async void gunaGradientButton1_Click(object sender, EventArgs e)
+        private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
+            LaunchTest();
+        }
+
+        private async Task LaunchTest()
+        {
+            bool connectionAvailable = false;
             await Task.Run(() =>
             {
                 Invoke(new MethodInvoker(delegate ()
                 {
-                    LaunchTest(); // Lancer un test
+                    connectionAvailable = new NetworkConnection().IsAvailableTestSite(Properties.Settings.Default.TestSite);
                 }));
             });
-        }
-
-        private void LaunchTest()
-        {
-            bool connectionAvailable = new NetworkConnection().IsAvailableTestSite(Properties.Settings.Default.TestSite);
             if (connectionAvailable) // Si internet est disponible
             {
                 gunaPictureBox2.Image = Properties.Resources.check; // Mettre à jour la picture box avec le check
