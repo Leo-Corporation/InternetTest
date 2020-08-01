@@ -175,7 +175,10 @@ namespace InternetTest.Forms
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
-            Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Ouvrir dans une carte
+            if (!string.IsNullOrEmpty(lat) && !string.IsNullOrEmpty(lon)) // Vérifier que la localisation a été trouvée
+            {
+                Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Ouvrir dans une carte
+            }
         }
 
         private void ChangeTheme()
