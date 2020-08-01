@@ -177,7 +177,15 @@ namespace InternetTest.Forms
         {
             if (!string.IsNullOrEmpty(lat) && !string.IsNullOrEmpty(lon)) // Vérifier que la localisation a été trouvée
             {
-                Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Ouvrir dans une carte
+                switch (Properties.Settings.Default.MapsProvider) // Pouir chaque cas
+                {
+                    case "Bing": // Si Bing
+                        Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Ouvrir dans une carte
+                        break;
+                    case "Google": // Si Google
+                        Process.Start(string.Format("https://www.google.com/maps/place/{0},{1}", lat, lon)); // Ouvrir dans une carte
+                        break;
+                }
             }
         }
 
