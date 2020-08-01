@@ -54,7 +54,7 @@ namespace InternetTest
             LaunchTest();
         }
 
-        private async Task LaunchTest()
+        private async void LaunchTest()
         {
             bool connectionAvailable = false;
             await Task.Run(() =>
@@ -62,40 +62,42 @@ namespace InternetTest
                 Invoke(new MethodInvoker(delegate ()
                 {
                     connectionAvailable = new NetworkConnection().IsAvailableTestSite(Properties.Settings.Default.TestSite);
+
+                    if (connectionAvailable) // Si internet est disponible
+                    {
+                        gunaPictureBox2.Image = Properties.Resources.check; // Mettre à jour la picture box avec le check
+                        if (new Language().GetCode() == "fr-FR") // Si la langue est française
+                        {
+                            gunaLabel2.Visible = true; // Afficher le label
+                            gunaLabel2.Text = "Vous êtes connecté à Internet"; // Mettre à jour le label
+                            gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
+                        }
+                        else if (new Language().GetCode() == "EN") // Si la langue est anglaise
+                        {
+                            gunaLabel2.Visible = true; // Afficher le label
+                            gunaLabel2.Text = "You're connected to Internet"; // Mettre à jour le label
+                            gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
+                        }
+                    }
+                    else // Si non
+                    {
+                        gunaPictureBox2.Image = Properties.Resources.cancel; // Mettre à jour la picture box avec le cancel
+                        if (new Language().GetCode() == "fr-FR") // Si la langue est française
+                        {
+                            gunaLabel2.Visible = true; // Afficher le label
+                            gunaLabel2.Text = "Vous n'êtes pas connecté à Internet"; // Mettre à jour le label
+                            gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
+                        }
+                        else if (new Language().GetCode() == "EN") // Si la langue est anglaise
+                        {
+                            gunaLabel2.Visible = true; // Afficher le label
+                            gunaLabel2.Text = "You aren't connected to Internet"; // Mettre à jour le label
+                            gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
+                        }
+                    }
                 }));
             });
-            if (connectionAvailable) // Si internet est disponible
-            {
-                gunaPictureBox2.Image = Properties.Resources.check; // Mettre à jour la picture box avec le check
-                if (new Language().GetCode() == "fr-FR") // Si la langue est française
-                {
-                    gunaLabel2.Visible = true; // Afficher le label
-                    gunaLabel2.Text = "Vous êtes connecté à Internet"; // Mettre à jour le label
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
-                }
-                else if (new Language().GetCode() == "EN") // Si la langue est anglaise
-                {
-                    gunaLabel2.Visible = true; // Afficher le label
-                    gunaLabel2.Text = "You're connected to Internet"; // Mettre à jour le label
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
-                }
-            }
-            else // Si non
-            {
-                gunaPictureBox2.Image = Properties.Resources.cancel; // Mettre à jour la picture box avec le cancel
-                if (new Language().GetCode() == "fr-FR") // Si la langue est française
-                {
-                    gunaLabel2.Visible = true; // Afficher le label
-                    gunaLabel2.Text = "Vous n'êtes pas connecté à Internet"; // Mettre à jour le label
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
-                }
-                else if (new Language().GetCode() == "EN") // Si la langue est anglaise
-                {
-                    gunaLabel2.Visible = true; // Afficher le label
-                    gunaLabel2.Text = "You aren't connected to Internet"; // Mettre à jour le label
-                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
-                }
-            }
+            
             isTestLaunched = true;
         }
 
