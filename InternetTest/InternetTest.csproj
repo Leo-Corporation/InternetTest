@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Branches.cs" />
+    <Compile Include="Classes\Definitions.cs" />
     <Compile Include="Classes\Language.cs" />
     <Compile Include="Classes\Theme.cs" />
     <Compile Include="Forms\AboutForm.cs">
