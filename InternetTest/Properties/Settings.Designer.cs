@@ -82,5 +82,17 @@ namespace InternetTest.Properties {
                 this["TestOnStart"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Bing")]
+        public string MapsProvider {
+            get {
+                return ((string)(this["MapsProvider"]));
+            }
+            set {
+                this["MapsProvider"] = value;
+            }
+        }
     }
 }
