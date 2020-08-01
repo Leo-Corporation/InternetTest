@@ -18,7 +18,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="MapsProvider" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Bing</Value>
+      <Value Profile="(Default)">Bing Maps</Value>
     </Setting>
   </Settings>
 </SettingsFile>

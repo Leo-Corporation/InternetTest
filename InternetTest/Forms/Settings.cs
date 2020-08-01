@@ -69,7 +69,8 @@ namespace InternetTest.Forms
                 Properties.Settings.Default.Language = "EN";
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
             }
-            Properties.Settings.Default.Save();
+            Properties.Settings.Default.MapsProvider = gunaComboBox2.Text; // Mettre à jour le paramètre
+            Properties.Settings.Default.Save(); // Sauvegarder
         }
 
         private void LoadSettings() // Charger les paramètres et mettre à jour l'interface
@@ -85,6 +86,7 @@ namespace InternetTest.Forms
             {
                 gunaComboBox1.Text = new Language().GetName("en");
             }
+            gunaComboBox2.Text = Properties.Settings.Default.MapsProvider; // Mettre à jour le texte
             gunaLabel14.Text = Properties.Settings.Default.TestSite;
             gunaLinkLabel2.Location = new Point(gunaLabel14.Width + 15, 288);
         }

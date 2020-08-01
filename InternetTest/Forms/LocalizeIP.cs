@@ -179,10 +179,10 @@ namespace InternetTest.Forms
             {
                 switch (Properties.Settings.Default.MapsProvider) // Pouir chaque cas
                 {
-                    case "Bing": // Si Bing
+                    case "Bing Maps": // Si Bing
                         Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Ouvrir dans une carte
                         break;
-                    case "Google": // Si Google
+                    case "Google Maps": // Si Google
                         Process.Start(string.Format("https://www.google.com/maps/place/{0},{1}", lat, lon)); // Ouvrir dans une carte
                         break;
                 }

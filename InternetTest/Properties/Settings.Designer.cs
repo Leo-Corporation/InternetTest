@@ -85,7 +85,7 @@ namespace InternetTest.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Bing")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Bing Maps")]
         public string MapsProvider {
             get {
                 return ((string)(this["MapsProvider"]));
