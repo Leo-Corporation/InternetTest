@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Branches.cs" />
+    <Compile Include="Classes\Definitions.cs" />
     <Compile Include="Classes\Language.cs" />
     <Compile Include="Classes\Theme.cs" />
     <Compile Include="Forms\AboutForm.cs">
@@ -273,6 +274,7 @@
   <ItemGroup>
     <Content Include="Internet Test.ico" />
     <Content Include="InternetTest Logo.ico" />
+    <None Include="Resources\map.png" />
     <None Include="Resources\network test.png" />
     <None Include="Resources\network test black.png" />
     <None Include="Resources\check.png" />

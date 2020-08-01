@@ -69,7 +69,8 @@ namespace InternetTest.Forms
                 Properties.Settings.Default.Language = "EN";
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
             }
-            Properties.Settings.Default.Save();
+            Properties.Settings.Default.MapsProvider = gunaComboBox2.Text; // Mettre à jour le paramètre
+            Properties.Settings.Default.Save(); // Sauvegarder
         }
 
         private void LoadSettings() // Charger les paramètres et mettre à jour l'interface
@@ -85,6 +86,7 @@ namespace InternetTest.Forms
             {
                 gunaComboBox1.Text = new Language().GetName("en");
             }
+            gunaComboBox2.Text = Properties.Settings.Default.MapsProvider; // Mettre à jour le texte
             gunaLabel14.Text = Properties.Settings.Default.TestSite;
             gunaLinkLabel2.Location = new Point(gunaLabel14.Width + 15, 288);
         }
@@ -111,8 +113,12 @@ namespace InternetTest.Forms
                 gunaLabel15.ForeColor = Color.White;
                 gunaLabel16.ForeColor = Color.White;
                 gunaLabel17.ForeColor = Color.White;
+                gunaLabel18.ForeColor = Color.White;
+                gunaLabel19.ForeColor = Color.White;
                 gunaComboBox1.ForeColor = Color.White;
+                gunaComboBox2.ForeColor = Color.White;
                 gunaComboBox1.BaseColor = Color.FromArgb(50, 50, 72);
+                gunaComboBox2.BaseColor = Color.FromArgb(50, 50, 72);
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px;
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px;
             }
@@ -136,8 +142,12 @@ namespace InternetTest.Forms
                 gunaLabel15.ForeColor = Color.Black;
                 gunaLabel16.ForeColor = Color.Black;
                 gunaLabel17.ForeColor = Color.Black;
+                gunaLabel18.ForeColor = Color.Black;
+                gunaLabel19.ForeColor = Color.Black;
                 gunaComboBox1.ForeColor = Color.Black;
+                gunaComboBox2.ForeColor = Color.Black;
                 gunaComboBox1.BaseColor = Color.White;
+                gunaComboBox2.BaseColor = Color.White;
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1;
             }
@@ -214,6 +224,7 @@ namespace InternetTest.Forms
                 gunaWinSwitch2.Checked = true;
                 MessageBox.Show("Data has been removed.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            gunaComboBox2.Text = Properties.Settings.Default.MapsProvider; // Mettre à jour le texte
         }
 
         private void gunaComboBox1_SelectedIndexChanged(object sender, EventArgs e)

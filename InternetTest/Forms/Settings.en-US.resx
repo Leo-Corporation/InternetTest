@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="gunaComboBox2.Items" xml:space="preserve">
+    <value>Bing Maps</value>
+  </data>
+  <data name="gunaComboBox2.Items1" xml:space="preserve">
+    <value>Google Maps</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="gunaComboBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 419</value>
+  </data>
   <data name="gunaLabel17.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 17</value>
   </data>
@@ -129,6 +138,15 @@
   </data>
   <data name="gunaLinkLabel2.Text" xml:space="preserve">
     <value>Modify</value>
+  </data>
+  <data name="gunaLabel19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 399</value>
+  </data>
+  <data name="gunaLabel19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 17</value>
+  </data>
+  <data name="gunaLabel19.Text" xml:space="preserve">
+    <value>Open the localization of an IP in :</value>
   </data>
   <data name="gunaLabel16.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 17</value>
@@ -143,7 +161,7 @@
     <value>Test your connexion on the site:</value>
   </data>
   <data name="gunaLinkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 402</value>
+    <value>13, 477</value>
   </data>
   <data name="gunaLinkLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 17</value>
@@ -151,8 +169,12 @@
   <data name="gunaLinkLabel1.Text" xml:space="preserve">
     <value>Erase all data</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="gunaGradientButton2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="gunaGradientButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 434</value>
+    <value>222, 505</value>
   </data>
   <data name="gunaGradientButton2.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 33</value>
@@ -160,8 +182,11 @@
   <data name="gunaGradientButton2.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="gunaGradientButton1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 434</value>
+    <value>115, 505</value>
   </data>
   <data name="gunaGradientButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 33</value>
@@ -284,6 +309,15 @@ the changes</value>
   <data name="gunaLabel3.Text" xml:space="preserve">
     <value>Use dark theme</value>
   </data>
+  <data name="gunaLabel18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 371</value>
+  </data>
+  <data name="gunaLabel18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 28</value>
+  </data>
+  <data name="gunaLabel18.Text" xml:space="preserve">
+    <value>Maps</value>
+  </data>
   <data name="gunaLabel15.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 28</value>
   </data>
@@ -297,7 +331,7 @@ the changes</value>
     <value>Test site</value>
   </data>
   <data name="gunaLabel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 374</value>
+    <value>11, 449</value>
   </data>
   <data name="gunaLabel10.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 28</value>
@@ -2329,6 +2363,9 @@ the changes</value>
         rzXO/6Y7jP+eQCYAAAAAAAAAAAAAAAAAAAAA8A8AAMADAACBgQAAgYEAABPIAAACwAAAIEQAACIEAAAi
         BAAAIEQAABDIAAARiAAAgYEAAIABAADAAwAA8A8AAA==
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Settings</value>

@@ -43,6 +43,7 @@
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
+            this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -150,6 +151,7 @@
             this.gunaLineTextBox1.LineSize = 2;
             this.gunaLineTextBox1.Name = "gunaLineTextBox1";
             this.gunaLineTextBox1.PasswordChar = '\0';
+            this.gunaLineTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gunaGradientButton5
             // 
@@ -214,11 +216,38 @@
             this.gunaGradientButton1.Radius = 6;
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
+            // gunaGradientButton2
+            // 
+            resources.ApplyResources(this.gunaGradientButton2, "gunaGradientButton2");
+            this.gunaGradientButton2.Animated = true;
+            this.gunaGradientButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientButton2.AnimationSpeed = 0.03F;
+            this.gunaGradientButton2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradientButton2.BaseColor1 = System.Drawing.Color.DeepSkyBlue;
+            this.gunaGradientButton2.BaseColor2 = System.Drawing.Color.RoyalBlue;
+            this.gunaGradientButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton2.Image = global::InternetTest.Properties.Resources.map;
+            this.gunaGradientButton2.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaGradientButton2.Name = "gunaGradientButton2";
+            this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;
+            this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.MediumBlue;
+            this.gunaGradientButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton2.OnHoverImage = null;
+            this.gunaGradientButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.Radius = 6;
+            this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click);
+            // 
             // LocalizeIP
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.gunaGradientButton2);
             this.Controls.Add(this.gunaGradientButton1);
             this.Controls.Add(this.gunaLineTextBox1);
             this.Controls.Add(this.gunaGradientButton5);
@@ -252,5 +281,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
+        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton2;
     }
 }

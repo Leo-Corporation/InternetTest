@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -16,6 +17,7 @@ namespace InternetTest.Forms
 {
     public partial class LocalizeIP : Form
     {
+        string lat, lon = ""; // Latitude et longitude
         public LocalizeIP()
         {
             InitializeComponent();
@@ -23,15 +25,21 @@ namespace InternetTest.Forms
             ChangeLanguage(); // Changer la langue
         }
 
-        private void gunaGradientButton5_Click(object sender, EventArgs e)
+        private async void gunaGradientButton5_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(gunaLineTextBox1.Text) && !string.IsNullOrWhiteSpace(gunaLineTextBox1.Text)) // Si la textbox n'est pas vide
             {
                 try // Essayer
                 {
-                    gunaLabel2.Visible = false; // Cacher
-                    gunaLabel3.Text = string.Empty; // Effacer
-                    GetIPInfo(gunaLineTextBox1.Text); // Localiser IP
+                    await Task.Run(() =>
+                    {
+                        Invoke(new MethodInvoker(delegate ()
+                        {
+                            gunaLabel2.Visible = false; // Cacher
+                            gunaLabel3.Text = string.Empty; // Effacer
+                            GetIPInfo(gunaLineTextBox1.Text); // Localiser IP
+                        }));
+                    });
                 }
                 catch (Exception ex)
                 {
@@ -54,6 +62,8 @@ namespace InternetTest.Forms
 
         private void GetIPInfo(string ip) // Localiser une IP
         {
+            lon = string.Empty; // Effacer
+            lat = string.Empty; // Effacer
             string[] nodes = new string[] // Informations à obtenir
             {
                 "country",
@@ -121,7 +131,8 @@ namespace InternetTest.Forms
                     }
                 }
             }
-            
+            lat = new WebClient().DownloadString(string.Format("http://ip-api.com/line/{0}?fields=lat", ip)); // Latitude
+            lon = new WebClient().DownloadString(string.Format("http://ip-api.com/line/{0}?fields=lon", ip)); // Longitude
         }
 
         private void LocalizeIP_Load(object sender, EventArgs e)
@@ -141,18 +152,40 @@ namespace InternetTest.Forms
             Close(); // Fermer la fenêtre
         }
 
-        private void gunaGradientButton1_Click(object sender, EventArgs e)
+        private async void gunaGradientButton1_Click(object sender, EventArgs e)
         {
             gunaLabel3.Text = string.Empty; // Effacer
             try // Essayer
             {
-                gunaLabel2.Visible = false; // Cacher
-                GetIPInfo(""); // Localiser l'IP de l'utilisateur si le paramètre est vide
-                gunaLineTextBox1.Text = new WebClient().DownloadString("http://ip-api.com/line/?fields=query");
+                await Task.Run(() =>
+                {
+                    Invoke(new MethodInvoker(delegate ()
+                    {
+                        gunaLabel2.Visible = false; // Cacher
+                        GetIPInfo(""); // Localiser l'IP de l'utilisateur si le paramètre est vide
+                        gunaLineTextBox1.Text = new WebClient().DownloadString("http://ip-api.com/line/?fields=query");
+                    }));
+                });
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur :\n" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error); // Erreur
+            }
+        }
+
+        private void gunaGradientButton2_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(lat) && !string.IsNullOrEmpty(lon)) // Vérifier que la localisation a été trouvée
+            {
+                switch (Properties.Settings.Default.MapsProvider) // Pouir chaque cas
+                {
+                    case "Bing Maps": // Si Bing
+                        Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Ouvrir dans une carte
+                        break;
+                    case "Google Maps": // Si Google
+                        Process.Start(string.Format("https://www.google.com/maps/place/{0},{1}", lat, lon)); // Ouvrir dans une carte
+                        break;
+                }
             }
         }
 

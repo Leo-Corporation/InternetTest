@@ -34,18 +34,23 @@ namespace InternetTest.Forms
             Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
             gunaPictureBox2.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
+
             ChangeTheme(); // Changer le thème
+
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
+
+            gunaLabel3.Text = Definitions.Version; // Mettre la version
+            gunaLabel3.Left = (ClientSize.Width - gunaLabel3.Width) / 2; // Centrer le label horizontalement
         }
 
         private void gunaLinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Leo-Corporation/InternetTest/");
+            Process.Start("https://github.com/Leo-Corporation/InternetTest/"); // Ouvrir le dépôt GitHub
         }
 
         private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); // Fermer
         }
 
         private void ChangeTheme()
@@ -78,7 +83,7 @@ namespace InternetTest.Forms
             }
             else // InternetTest 4
             {
-                new Update().Check("4.4.1.2007", new Update().GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
+                new Update().Check(Definitions.Version, new Update().GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
             }
         }
     }
