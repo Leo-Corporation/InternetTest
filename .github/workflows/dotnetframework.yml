@@ -16,7 +16,7 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.2
      
       - name: Restore NuGet Packages
-        run: nuget restore "InternetTest\InternetTest.csproj"
+        run: nuget restore "InternetTest\InternetTest.csproj" -PackagesDirectory ..\packages
  
       - name: Build and Publish App
         run: msbuild "InternetTest\InternetTest.csproj" /p:Configuration=Release
