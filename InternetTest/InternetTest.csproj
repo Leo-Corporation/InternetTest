@@ -51,9 +51,9 @@
     <ApplicationIcon>InternetTest Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI, Version=1.8.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
+    <Reference Include="Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Downloads\.net 4.0\Guna.UI.dll</HintPath>
+      <HintPath>Lib\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="LeoCorpLibrary, Version=1.2.0.2004, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LeoCorpLibrary.1.2.0.2004\lib\net472\LeoCorpLibrary.dll</HintPath>
@@ -274,6 +274,7 @@
   <ItemGroup>
     <Content Include="Internet Test.ico" />
     <Content Include="InternetTest Logo.ico" />
+    <Content Include="Lib\Guna.UI.dll" />
     <None Include="Resources\map.png" />
     <None Include="Resources\network test.png" />
     <None Include="Resources\network test black.png" />
