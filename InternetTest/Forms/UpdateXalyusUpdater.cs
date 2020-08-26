@@ -109,7 +109,7 @@ namespace InternetTest.Forms
         {
             Invoke(new MethodInvoker(delegate ()
             {
-                if (new Update().IsAvailable("4.1.0.2004", new Update().GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt")))
+                if (LeoCorpLibrary.Update.IsAvailable(Definitions.Version, LeoCorpLibrary.Update.GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt")))
                 {
                     new AvailableUpdate().Show();
                     Close();
