@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("Xalyus Updater")]
-[assembly: AssemblyDescription("Xalyus Updater")]
+[assembly: AssemblyDescription("Xalyus Updater - Software Updater")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Léo Corporation")]
 [assembly: AssemblyProduct("Xalyus Updater")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.0.2004")]
-[assembly: AssemblyFileVersion("1.1.0.2004")]
+[assembly: AssemblyVersion("1.2.0.2009")]
+[assembly: AssemblyFileVersion("1.2.0.2009")]
