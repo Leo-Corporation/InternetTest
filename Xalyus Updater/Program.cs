@@ -19,6 +19,7 @@ namespace Xalyus_Updater
             Application.Run(new Form1());
             Application.Run(new DownloadFR());
             Application.Run(new DownloadEN());
+            Application.Run(new DownloadLeoCorpLibrary());
         }
     }
 }
