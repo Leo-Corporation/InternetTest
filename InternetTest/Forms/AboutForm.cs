@@ -75,15 +75,22 @@ namespace InternetTest.Forms
 
         private async void gunaGradientButton2_Click(object sender, EventArgs e)
         {
-            var fileInfoVersion = FileVersionInfo.GetVersionInfo(Application.StartupPath + "/Xalyus Updater.exe");
-            string version = fileInfoVersion.FileVersion;
-            if (LeoCorpLibrary.Update.IsAvailable(version, await LeoCorpLibrary.Update.GetLastVersionAsync("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/Xalyus%20Updater/version.txt"))) // Xalyus Updater
+            try
             {
-                new UpdateXalyusUpdater(false).Show();
+                var fileInfoVersion = FileVersionInfo.GetVersionInfo(Application.StartupPath + "/Xalyus Updater.exe");
+                string version = fileInfoVersion.FileVersion;
+                if (LeoCorpLibrary.Update.IsAvailable(version, await LeoCorpLibrary.Update.GetLastVersionAsync("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/Xalyus%20Updater/version.txt"))) // Xalyus Updater
+                {
+                    new UpdateXalyusUpdater(false).Show();
+                }
+                else // InternetTest 4
+                {
+                    LeoCorpLibrary.Update.Check(Definitions.Version, await LeoCorpLibrary.Update.GetLastVersionAsync("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
+                }
             }
-            else // InternetTest 4
+            catch (Exception ex)
             {
-                LeoCorpLibrary.Update.Check(Definitions.Version, await LeoCorpLibrary.Update.GetLastVersionAsync("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"), new AvailableUpdate(), new UnavailableUpdate());
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
