@@ -25,21 +25,17 @@ namespace InternetTest.Forms
             ChangeLanguage(); // Changer la langue
         }
 
-        private async void gunaGradientButton5_Click(object sender, EventArgs e)
+        private void gunaGradientButton5_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(gunaLineTextBox1.Text) && !string.IsNullOrWhiteSpace(gunaLineTextBox1.Text)) // Si la textbox n'est pas vide
             {
+                gunaLabel2.Visible = false; // Cacher
+                gunaLabel3.Text = string.Empty; // Effacer
                 try // Essayer
                 {
-                    await Task.Run(() =>
-                    {
-                        Invoke(new MethodInvoker(delegate ()
-                        {
-                            gunaLabel2.Visible = false; // Cacher
-                            gunaLabel3.Text = string.Empty; // Effacer
-                            GetIPInfo(gunaLineTextBox1.Text); // Localiser IP
-                        }));
-                    });
+                    Task task = new Task(() => GetIPInfo(gunaLineTextBox1.Text));
+
+                    task.Start(); // Localiser IP
                 }
                 catch (Exception ex)
                 {
@@ -60,12 +56,14 @@ namespace InternetTest.Forms
             }
         }
 
-        private void GetIPInfo(string ip) // Localiser une IP
+        private async void GetIPInfo(string ip) // Localiser une IP
         {
-            lon = string.Empty; // Effacer
-            lat = string.Empty; // Effacer
-            string[] nodes = new string[] // Informations à obtenir
+            Invoke(new MethodInvoker(async delegate ()
             {
+                lon = string.Empty; // Effacer
+                lat = string.Empty; // Effacer
+                string[] nodes = new string[] // Informations à obtenir
+                {
                 "country",
                 "regionName",
                 "city",
@@ -74,65 +72,66 @@ namespace InternetTest.Forms
                 "lon",
                 "timezone",
                 "isp"
-            };
-            if (new Language().GetCode() == "fr-FR")
-            {
-                string[] NameFR = new string[] // Noms en français
-            {
-                "Pays : ",
-                "Région : ",
-                "Ville : ",
-                "Code postal : ",
-                "Latitude : ",
-                "Longitude : ",
-                "Timezone : ",
-                "FAI : "
-            };
-
-                for (int i = 0; i < nodes.Length; i++) // Obtenir les infos
+                };
+                if (new Language().GetCode() == "fr-FR")
                 {
-                    // Ouvrir document XML de puis l'API
-                    XmlTextReader xmlTextReader = new XmlTextReader(string.Format("http://ip-api.com/xml/{0}?lang=fr", ip));
-                    while (xmlTextReader.Read())
+                    string[] NameFR = new string[] // Noms en français
                     {
-                        // Exemple si i = 0 (pays), vérifier  si le node "country" existe
-                        if (xmlTextReader.NodeType == XmlNodeType.Element && xmlTextReader.Name == nodes[i])
+                    "Pays : ",
+                    "Région : ",
+                    "Ville : ",
+                    "Code postal : ",
+                    "Latitude : ",
+                    "Longitude : ",
+                    "Timezone : ",
+                    "FAI : "
+                    };
+
+                    for (int i = 0; i < nodes.Length; i++) // Obtenir les infos
+                    {
+                        XmlTextReader xmlTextReader = new XmlTextReader(string.Format("http://ip-api.com/xml/{0}?lang=fr", ip));
+                        // Ouvrir document XML de puis l'API
+                        while (xmlTextReader.Read())
                         {
-                            gunaLabel3.Text += NameFR[i] + xmlTextReader.ReadElementContentAsString() + Environment.NewLine;
+                            // Exemple si i = 0 (pays), vérifier  si le node "country" existe
+                            if (xmlTextReader.NodeType == XmlNodeType.Element && xmlTextReader.Name == nodes[i])
+                            {
+                                gunaLabel3.Text += NameFR[i] + xmlTextReader.ReadElementContentAsString() + Environment.NewLine;
+                            }
                         }
                     }
                 }
-            }
-            else if (new Language().GetCode() == "EN")
-            {
-                string[] NameEN = new string[] // Noms en français
-            {
-                "Country : ",
-                "Region : ",
-                "City : ",
-                "ZIP Code : ",
-                "Latitude : ",
-                "Longitude : ",
-                "Timezone : ",
-                "ISP : "
-            };
-
-                for (int i = 0; i < nodes.Length; i++) // Obtenir les infos
+                else if (new Language().GetCode() == "EN")
                 {
-                    // Ouvrir document XML de puis l'API
-                    XmlTextReader xmlTextReader = new XmlTextReader(string.Format("http://ip-api.com/xml/{0}?lang=en", ip));
-                    while (xmlTextReader.Read())
+                    string[] NameEN = new string[] // Noms en français
                     {
-                        // Exemple si i = 0 (pays), vérifier  si le node "country" existe
-                        if (xmlTextReader.NodeType == XmlNodeType.Element && xmlTextReader.Name == nodes[i])
+                    "Country : ",
+                    "Region : ",
+                    "City : ",
+                    "ZIP Code : ",
+                    "Latitude : ",
+                    "Longitude : ",
+                    "Timezone : ",
+                    "ISP : "
+                    };
+
+                    for (int i = 0; i < nodes.Length; i++) // Obtenir les infos
+                    {
+                        XmlTextReader xmlTextReader = new XmlTextReader(string.Format("http://ip-api.com/xml/{0}?lang=en", ip));
+                        // Ouvrir document XML de puis l'API
+                        while (xmlTextReader.Read())
                         {
-                            gunaLabel3.Text += NameEN[i] + xmlTextReader.ReadElementContentAsString() + Environment.NewLine;
+                            // Exemple si i = 0 (pays), vérifier  si le node "country" existe
+                            if (xmlTextReader.NodeType == XmlNodeType.Element && xmlTextReader.Name == nodes[i])
+                            {
+                                gunaLabel3.Text += NameEN[i] + xmlTextReader.ReadElementContentAsString() + Environment.NewLine;
+                            }
                         }
                     }
                 }
-            }
-            lat = new WebClient().DownloadString(string.Format("http://ip-api.com/line/{0}?fields=lat", ip)); // Latitude
-            lon = new WebClient().DownloadString(string.Format("http://ip-api.com/line/{0}?fields=lon", ip)); // Longitude
+                lat = await new WebClient().DownloadStringTaskAsync(string.Format("http://ip-api.com/line/{0}?fields=lat", ip)); // Latitude
+                lon = await new WebClient().DownloadStringTaskAsync(string.Format("http://ip-api.com/line/{0}?fields=lon", ip)); // Longitude
+            }));
         }
 
         private void LocalizeIP_Load(object sender, EventArgs e)
@@ -157,15 +156,13 @@ namespace InternetTest.Forms
             gunaLabel3.Text = string.Empty; // Effacer
             try // Essayer
             {
-                await Task.Run(() =>
-                {
-                    Invoke(new MethodInvoker(delegate ()
-                    {
-                        gunaLabel2.Visible = false; // Cacher
-                        GetIPInfo(""); // Localiser l'IP de l'utilisateur si le paramètre est vide
-                        gunaLineTextBox1.Text = new WebClient().DownloadString("http://ip-api.com/line/?fields=query");
-                    }));
-                });
+                gunaLabel2.Visible = false; // Cacher
+
+                //Task task = new Task(() => GetIPInfo(""));
+                //task.Start(); // Localiser l'IP de l'utilisateur si le paramètre est vide
+                GetIPInfo("");
+                
+                gunaLineTextBox1.Text = await new WebClient().DownloadStringTaskAsync("http://ip-api.com/line/?fields=query");
             }
             catch (Exception ex)
             {

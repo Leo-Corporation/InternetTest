@@ -49,6 +49,7 @@
             this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
             this.gunaLinkLabel2 = new Guna.UI.WinForms.GunaLinkLabel();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -307,6 +308,11 @@
             this.gunaPictureBox2.Name = "gunaPictureBox2";
             this.gunaPictureBox2.TabStop = false;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            resources.ApplyResources(this.notifyIcon1, "notifyIcon1");
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -355,6 +361,7 @@
         private Guna.UI.WinForms.GunaSeparator gunaSeparator2;
         private Guna.UI.WinForms.GunaLinkLabel gunaLinkLabel2;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

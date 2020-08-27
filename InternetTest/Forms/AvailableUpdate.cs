@@ -32,7 +32,7 @@ namespace InternetTest.Forms
         private void AvailableUpdate_Load(object sender, EventArgs e)
         {
             Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
-            gunaLabel3.Text += new Update().GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"); // Mettre la version
+            gunaLabel3.Text += LeoCorpLibrary.Update.GetLastVersion("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt"); // Mettre la version
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
             ChangeTheme();
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);

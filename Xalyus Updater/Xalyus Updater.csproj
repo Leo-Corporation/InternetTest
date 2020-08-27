@@ -69,6 +69,12 @@
     <Compile Include="DownloadFR.Designer.cs">
       <DependentUpon>DownloadFR.cs</DependentUpon>
     </Compile>
+    <Compile Include="DownloadLeoCorpLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadLeoCorpLibrary.Designer.cs">
+      <DependentUpon>DownloadLeoCorpLibrary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DownloadFR.resx">
       <DependentUpon>DownloadFR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadLeoCorpLibrary.resx">
+      <DependentUpon>DownloadLeoCorpLibrary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

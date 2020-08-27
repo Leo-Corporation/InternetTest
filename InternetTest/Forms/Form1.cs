@@ -31,22 +31,40 @@ namespace InternetTest
             InitializeComponent();
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            await Task.Run(() =>
+            Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
+            gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
+            Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
+            ChangeTheme(); // Change le thème en fonction des préférences de l'utilisateur
+            if (Properties.Settings.Default.TestOnStart)
             {
-                Invoke(new MethodInvoker(delegate ()
+                LaunchTest(); // Lancer un test
+            }
+            CheckUpdateOnStart();
+        }
+
+        private async void CheckUpdateOnStart()
+        {
+            if (Properties.Settings.Default.NotifyUpdate)
+            {
+                string lastVersion = await LeoCorpLibrary.Update.GetLastVersionAsync("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt");
+                if (LeoCorpLibrary.Update.IsAvailable(Definitions.Version, lastVersion))
                 {
-                    Icon = new Branches().IconBranch(); // Met l'icône en foncion de la branche
-                    gunaPictureBox1.Image = new Branches().ImageBranch(); // Met l'image en fonction de la branche
-                    Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
-                    ChangeTheme(); // Change le thème en fonction des préférences de l'utilisateur
-                    if (Properties.Settings.Default.TestOnStart)
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.BalloonTipTitle = "InternetTest";
+                    if (new Language().GetCode() == "fr-FR")
                     {
-                        LaunchTest(); // Lancer un test
+                        notifyIcon1.BalloonTipText = "Des mises à jour sont disponibles";
                     }
-                }));
-            });
+                    else if (new Language().GetCode() == "EN")
+                    {
+                        notifyIcon1.BalloonTipText = "Updates are availables";
+                    }
+
+                    notifyIcon1.ShowBalloonTip(5000);
+                }
+            }
         }
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
@@ -57,46 +75,41 @@ namespace InternetTest
         private async void LaunchTest()
         {
             bool connectionAvailable = false;
-            await Task.Run(() =>
-            {
-                Invoke(new MethodInvoker(delegate ()
-                {
-                    connectionAvailable = new NetworkConnection().IsAvailableTestSite(Properties.Settings.Default.TestSite);
 
-                    if (connectionAvailable) // Si internet est disponible
-                    {
-                        gunaPictureBox2.Image = Properties.Resources.check; // Mettre à jour la picture box avec le check
-                        if (new Language().GetCode() == "fr-FR") // Si la langue est française
-                        {
-                            gunaLabel2.Visible = true; // Afficher le label
-                            gunaLabel2.Text = "Vous êtes connecté à Internet"; // Mettre à jour le label
-                            gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
-                        }
-                        else if (new Language().GetCode() == "EN") // Si la langue est anglaise
-                        {
-                            gunaLabel2.Visible = true; // Afficher le label
-                            gunaLabel2.Text = "You're connected to Internet"; // Mettre à jour le label
-                            gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
-                        }
-                    }
-                    else // Si non
-                    {
-                        gunaPictureBox2.Image = Properties.Resources.cancel; // Mettre à jour la picture box avec le cancel
-                        if (new Language().GetCode() == "fr-FR") // Si la langue est française
-                        {
-                            gunaLabel2.Visible = true; // Afficher le label
-                            gunaLabel2.Text = "Vous n'êtes pas connecté à Internet"; // Mettre à jour le label
-                            gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
-                        }
-                        else if (new Language().GetCode() == "EN") // Si la langue est anglaise
-                        {
-                            gunaLabel2.Visible = true; // Afficher le label
-                            gunaLabel2.Text = "You aren't connected to Internet"; // Mettre à jour le label
-                            gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
-                        }
-                    }
-                }));
-            });
+            connectionAvailable = await NetworkConnection.IsAvailableTestSiteAsync(Properties.Settings.Default.TestSite);
+
+            if (connectionAvailable) // Si internet est disponible
+            {
+                gunaPictureBox2.Image = Properties.Resources.check; // Mettre à jour la picture box avec le check
+                if (new Language().GetCode() == "fr-FR") // Si la langue est française
+                {
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "Vous êtes connecté à Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
+                }
+                else if (new Language().GetCode() == "EN") // Si la langue est anglaise
+                {
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "You're connected to Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
+                }
+            }
+            else // Si non
+            {
+                gunaPictureBox2.Image = Properties.Resources.cancel; // Mettre à jour la picture box avec le cancel
+                if (new Language().GetCode() == "fr-FR") // Si la langue est française
+                {
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "Vous n'êtes pas connecté à Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
+                }
+                else if (new Language().GetCode() == "EN") // Si la langue est anglaise
+                {
+                    gunaLabel2.Visible = true; // Afficher le label
+                    gunaLabel2.Text = "You aren't connected to Internet"; // Mettre à jour le label
+                    gunaLabel2.Left = (ClientSize.Width - gunaLabel2.Width) / 2; // Centrer le label
+                }
+            }
             
             isTestLaunched = true;
         }

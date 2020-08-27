@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9EEDE5EC22224F93A12739DA4FE0D8D7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D5AF9BE83E7E413586CB35FE67BFB102"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -248,11 +254,6 @@
             "AssemblyAsmDisplayName" = "8:LeoCorpLibrary, Version=1.2.0.2004, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_11E701D0DDD1127911C618ED3FD47028"
-                    {
-                    "Name" = "8:LeoCorpLibrary.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:LeoCorpLibrary.dll"
             "TargetName" = "8:"
@@ -307,7 +308,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.4.0.2007, Culture=en-US, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.5.0.2008, Culture=en-US, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_902E5425AFD84D2FA87278D62CA5459F"
@@ -354,11 +355,31 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9EEDE5EC22224F93A12739DA4FE0D8D7"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Documents\\MPL-2.rtf"
+            "TargetName" = "8:MPL-2.rtf"
+            "Tag" = "8:"
+            "Folder" = "8:_CD86E78428B84CD0B66E7563CBB22C48"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D6C9A7328E744E299B1C9E0FCE04FFC6"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.4.0.2007, Culture=fr-FR, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.5.0.2008, Culture=fr-FR, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_D6C9A7328E744E299B1C9E0FCE04FFC6"
@@ -474,15 +495,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InternetTest"
-        "ProductCode" = "8:{2FE73C94-08A3-4750-88A1-77D94B6353EC}"
-        "PackageCode" = "8:{288B5783-F114-429D-ADEB-435371BBCE20}"
+        "ProductCode" = "8:{171B379C-5EDD-4086-A5F1-6CE60B884AD7}"
+        "PackageCode" = "8:{F6B5A9F7-0E49-4091-B73A-9E7D7F2FDA3E}"
         "UpgradeCode" = "8:{E51467CA-571A-4650-9CE9-EF00E6ECD4A8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:4.5.0"
+        "ProductVersion" = "8:4.6.0"
         "Manufacturer" = "8:Léo Corporation"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://www.leocorp.fr/forum/internettest"
@@ -677,6 +698,53 @@
                             "Setting" = "3:1"
                             "Value" = "8:#1203"
                             "DefaultValue" = "8:#1203"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_33F3564C69A54EC9BC6D8C81644EF1CF"
+                    {
+                    "Sequence" = "3:110"
+                    "DisplayName" = "8:Contrat de licence"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdLicenseDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "EulaText"
+                            {
+                            "Name" = "8:EulaText"
+                            "DisplayName" = "8:#1008"
+                            "Description" = "8:#1108"
+                            "Type" = "3:6"
+                            "ContextData" = "8:"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:2"
+                            "Value" = "8:_9EEDE5EC22224F93A12739DA4FE0D8D7"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "Sunken"
+                            {
+                            "Name" = "8:Sunken"
+                            "DisplayName" = "8:#1007"
+                            "Description" = "8:#1107"
+                            "Type" = "3:5"
+                            "ContextData" = "8:4;True=4;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:4"
+                            "DefaultValue" = "3:4"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -944,6 +1012,53 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_6842C094F1F2413B8728504EEF80401D"
+                    {
+                    "Sequence" = "3:110"
+                    "DisplayName" = "8:Contrat de licence"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminLicenseDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "EulaText"
+                            {
+                            "Name" = "8:EulaText"
+                            "DisplayName" = "8:#1008"
+                            "Description" = "8:#1108"
+                            "Type" = "3:6"
+                            "ContextData" = "8:"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:2"
+                            "Value" = "8:_9EEDE5EC22224F93A12739DA4FE0D8D7"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "Sunken"
+                            {
+                            "Name" = "8:Sunken"
+                            "DisplayName" = "8:#1007"
+                            "Description" = "8:#1107"
+                            "Type" = "3:5"
+                            "ContextData" = "8:4;True=4;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:4"
+                            "DefaultValue" = "3:4"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }

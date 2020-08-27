@@ -17,15 +17,15 @@ Il existe 2 branches :
 La branche Version_Next est une branche pour les prochaines versions (tests).
 
 La branche master est la branche pour les versions stables.
-## Nouveautés de la version 4.4.0.2007
+## Nouveautés de la version 4.6.0.2009
 ### Ajouts
-- Ajouter l'option d'effectuer un test au démarrage (#104)
-- Redesigner la fenêtre principale (#105)
-- Ajout de nouveaux assets
+- Notification des mises à jour au démarrage (#132)
+- Mettre une page dans le setup pour accepter la licence (#126)
 ### Corrections
-- Faire en sorte que le thème sombre soit compatible (#106)
-- Problème lors du changement de thème (#107)
-- Faire les traductions (#108)
+- Mettre à jour Xalyus Updater (#123)
+- Optimiser certaines fonctionnalités (#124)
+- Mettre à jour LeoCorpLibrary (#125)
+- Le système de recherche de mise à jour crash (#131)
 ## Documentation 
 Dans la documentation, vous trouverez sûrement des réponses à vos questions.
 
