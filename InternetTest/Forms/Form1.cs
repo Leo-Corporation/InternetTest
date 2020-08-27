@@ -41,6 +41,30 @@ namespace InternetTest
             {
                 LaunchTest(); // Lancer un test
             }
+            CheckUpdateOnStart();
+        }
+
+        private async void CheckUpdateOnStart()
+        {
+            if (Properties.Settings.Default.NotifyUpdate)
+            {
+                string lastVersion = await LeoCorpLibrary.Update.GetLastVersionAsync("https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/4.0/version.txt");
+                if (LeoCorpLibrary.Update.IsAvailable(Definitions.Version, lastVersion))
+                {
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.BalloonTipTitle = "InternetTest";
+                    if (new Language().GetCode() == "fr-FR")
+                    {
+                        notifyIcon1.BalloonTipText = "Des mises à jour sont disponibles";
+                    }
+                    else if (new Language().GetCode() == "EN")
+                    {
+                        notifyIcon1.BalloonTipText = "Updates are availables";
+                    }
+
+                    notifyIcon1.ShowBalloonTip(5000);
+                }
+            }
         }
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
