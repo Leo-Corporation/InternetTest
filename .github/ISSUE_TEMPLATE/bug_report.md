@@ -1,34 +1,34 @@
 ---
-name: Reporter un bug
-about: Rapporter un bug pour nous améliorer
+name: Report a bug
+about: Report a bug to help us
 title: "[Bug] "
 labels: bug
 assignees: ''
 
 ---
-<!---Vous pouvez supprimer les sections non-nécessaires--->
+<!---You can remove all the sections that aren't needed--->
 
-<!---Une description claire du bug.--->
-**Description du bug :**
+<!---A precise description of the bug--->
+**Description of the bug:**
 
-<!---Etapes pour reproduire le bug :
-1. Allez à '...'
-2. Cliquez sur '....'
-3. Déscendez jusqu'à '....'
-4. Le problème est là.--->
-**Comment reproduire le bug :**
+<!---Steps to reproduce the bug :
+1. Go to "..."
+2. Click on "..."
+3. Open "..."
+4. The problème is here.--->
+**How to reproduce the bug:**
 
-<!---Une description claire de ce qui est censé ce produire.--->
-**Comportement attendu :**
+<!---A precise description of the expected behaviour--->
+**Expected behaviour:**
 
-<!---Si vous pouvez, joignez des captures d'écrans.--->
-**Captures d'écrans :**
+<!---If you can, join screenshots.--->
+**Screenshots:**
 
-<!---Configuration de l'ordinateur--->
-**Ordinateur :**
- - OS :
- - Version de l'OS :
- - Version du programme :
+<!---Computer's configuration--->
+**Computer:**
+ - OS:
+ - OS Version:
+ - Software's Version:
 
-<!---Ajoutez si nécessaire, des informations supplémentaires.--->
-**Autres informations :**
+<!---If needed, add other informations.--->
+**Other:**

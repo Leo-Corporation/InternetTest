@@ -1,18 +1,21 @@
 ---
-name: Reporter un problème de traduction
-about: Rapporter une erreur de traduction dans le logiciel ou dans un fichier Github.
-title: "[Traduction] "
-labels: traduction
+name: Report a problem of translation
+about: Report an error of translation in the software, or in a GitHub file
+title: "[Translation] "
+labels: translation
 assignees: ''
 
 ---
-<!---Vous pouvez supprimer les sections non-nécessaires--->
+<!---You can remove all the sections that aren't needed--->
 
-<!---Indiquez où se trouve le problème. Ex: Erreur de traduction sur Form1 ou Problème de traduction dans le fichier README.md qui se situe dans le répertoire parent.--->
-**Description du problème traduction :**
+<!---
+Precise where is the problem
+Ex: Translation error in MainWindow in Windows\MainWindow.xaml
+--->
+**Description of the problem:**
 
-<!---Proposer une solution, ex: Je propose de remplacer [...] par [...]--->
-**Proposer une nouvelle traduction :**
+<!---Propose a solution, ex: Replace "Stuf" by "New Translation"--->
+**Proposed translation:**
 
-<!---Ajoutez si possible des captures d'écrans--->
-**Capture(s) d'écran :**
+<!---Add, if possible, a screenshot--->
+**Screenshot:**
