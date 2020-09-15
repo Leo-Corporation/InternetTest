@@ -1,29 +1,82 @@
-# Contribution au projet
-Si vous voulez contribuer au projet, merci de lire les informations ci-dessous.
-## 1. Problèmes (Issues)
-Si vous voulez soummettre une Issue, assuez-vous de respecter ces règles :
-* Le problème doit être reproduisable
-* Le problème doit être lisible
-* Le problème doit être clair et compréhensible
-* Si vous souhaitez soumettre une suggestion, mettez dans l'objet "Suggestion :"
+# Contribution
+## Summary
+- [Knowledge](#knowledge)
+- [Tools](#tools)
+- [Writing code](#writing-code)
+## Knowledge
+To contribute to this project, you will need to have some prerequisites:
 
-## 2. Pull request/modification du code
-Si vous suohaitez modifier du code, rajouter une fonctionnalité, assuez-vous de respecter ces règles :
-* Les modifications doivent être pertinentes, comme corriger un bug
-* Si vous souhaitez rajouter une fonctionnalité, assuerez-vous qu'elle soit utile et cohérente avec le projet
-* N'hésitez pas à commenter votre code pour le rendre plus lisible.
+- A basic knowledge of C# (this project is written in C# 8.0)
+- A basic knowledge of XAML
+- A basic knowledge of Visual Studio and Blend
 
-## 3. Branches
-### a. Branche "master"
-La branche master est la branche de base. Seules les versions stables sont sur cette branche.
-Toute modification doit se faire sur la branche "Version_Next" ou sur une autre branche.
+## Tools
+You will also need to have the following tools:
 
-### b. Branche "Version_Next"
-Cette branche héberge les prochaines versions du logiciel, qui sont généralement instables.
+- Microsoft Visual Studio 2019
+  - .NET Desktop Developpement
+  - Visual Studio Installer Projects
+- Git
+- (*optionnal*) Microsoft Visual Studio Code
 
-## 4. Wiki
-Le wiki est la documentation et l'aide du projet. Vous pouvez y contribuer en respectant les règles suivantes :
-* Votre contribution doit être pertinente
-* Votre contribution doit être vraie : Pas de fausses informations
+## Writing code
+Make you follow the following guidelines:
 
-Ce fichier n'est pas totalement termniné, des modifications peuvent s'appliquer plus tard.
+1) Use Tabs: To format your code, use tabs intead of spaces:
+~~~ cs
+class Car
+{
+    /// <summary>
+    /// The maximum speed of the car.
+    /// </summary>
+    public int MaxSpeed { get; set; }
+    
+    /// <summary>
+    /// This method does stuff.
+    /// </summary>
+    public void DoStuff()
+    {
+        Console.WriteLine("DoStuff"); // Print text
+    }
+}
+~~~
+2) Put your code between `{ }`:
+~~~ cs
+// Do this
+int x = 12; // Define a number
+int y = 45; // Define another number
+
+if (x < y) // If y is bigger than x
+{
+    Console.WriteLine("y is bigger than x"); // Print text
+}
+
+// Dont do this
+if (x < y) // If y is bigger than x
+    Console.WriteLine("y is bigger than x"); // Print text
+~~~
+3) Comment your code:
+~~~ cs
+int a = 10; // Define a number
+int b = 15; // Define another number
+
+if (a > b) // If a is bigger than b
+{
+    //TODO
+}
+else
+{
+    //TODO
+}
+~~~
+4) Use XML Documentation for ``public`` and ``internal`` methods, fields and properties:
+~~~ cs
+/// <summary>
+/// This method does stuff.
+/// </summary>
+internal void DoStuff()
+{
+    Thread.Sleep(2000); // Do nothing for 2 seconds
+}
+~~~
+That's pretty much all you need right now. Keep in mind this document can be updated at any time, so make sure to keep checking these guidelines.
