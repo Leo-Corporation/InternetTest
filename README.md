@@ -1,36 +1,35 @@
 # InternetTest ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest) ![GitHub issues](https://img.shields.io/github/issues-raw/Leo-Corporation/InternetTest?label=issues)
-InternetTest permet de tester votre connexion Internet.
-## Fonctionnalités
-* Mode sombre
-* Permet de vérifier sa connexion Internet
-* Navigateur intégré
-* Système de mise à jour
-* Paramètres
-* Installation des mises à jour automatique
-* Langues (français et anglais)
-* Localisation d'IP
+InternetTest allows you to check if Internet is available or not.
+## Features
+* Dark mode
+* Check your Internet connection
+* Integrated browser to test your connection on websites
+* Automatic update system
+* Settings
+* Multilingual (French and English)
+* IP Localization
 ## Branches
-Il existe 2 branches : 
+There is 2 branches: 
 * master ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest)
 * Version_Next ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest?include_prereleases)
 
-La branche Version_Next est une branche pour les prochaines versions (tests).
+The ``Version_Next`` branch is for test and the next version of InternetTest.
 
-La branche master est la branche pour les versions stables.
-## Nouveautés de la version 4.6.0.2009
-### Ajouts
+The ``master`` branch is for stable versions.
+## What's new in version 4.6.0.2009
+### New
 - Notification des mises à jour au démarrage (#132)
 - Mettre une page dans le setup pour accepter la licence (#126)
-### Corrections
+### Fixed
 - Mettre à jour Xalyus Updater (#123)
 - Optimiser certaines fonctionnalités (#124)
 - Mettre à jour LeoCorpLibrary (#125)
 - Le système de recherche de mise à jour crash (#131)
 ## Documentation 
-Dans la documentation, vous trouverez sûrement des réponses à vos questions.
+In the documentation, you'll find answers to your questions about InternetTest.
 
-Cliquez [ici](https://github.com/Leo-Corporation/InternetTest/wiki) pour accéder à la documentation d'InternetTest.
+Click [here](https://github.com/Leo-Corporation/InternetTest/wiki) to go to the InternetTest's documentation.
 
-Cliquez [ici](https://github.com/Leo-Corporation/LeoCorpLibrary/wiki) pour accèder à la documentation de LeoCorpLibrary.
+Click [here](https://github.com/Leo-Corporation/LeoCorpLibrary/wiki) to go to the LeoCorpLibrary's documentation.
 ## License
-Projet sous [license MPL-2.0](https://github.com/Leo-Corporation/InternetTest/blob/master/LICENSE.md)
+Project under the [MPL-2.0 license](https://github.com/Leo-Corporation/InternetTest/blob/master/LICENSE.md).
