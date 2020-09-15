@@ -16,7 +16,7 @@ There is 2 branches:
 The ``Version_Next`` branch is for test and the next version of InternetTest.
 
 The ``master`` branch is for stable versions.
-## `What's new in version 4.6.0.2009
+## What's new in version 4.6.0.2009
 ### New
 - Notification des mises à jour au démarrage (#132)
 - Mettre une page dans le setup pour accepter la licence (#126)
