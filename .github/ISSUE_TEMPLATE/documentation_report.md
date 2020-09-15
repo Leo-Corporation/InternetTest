@@ -1,18 +1,18 @@
 ---
-name: Reporter un problème de documentation
-about: Rapporter une erreur dans la documentation
+name: Report an error in documentation
+about: Report an error present in the documentation
 title: "[Documentation] "
 labels: documentation
 assignees: ''
 
 ---
-<!---Vous pouvez supprimer les sections non-nécessaires--->
+<!---You can remove all the sections that aren't needed--->
 
-<!---* Indiquez si la nature du problème de manière claire.
-* Indiquez dans quel fichier/page du wiki se trouve le problème 
-* Indiquez où se situe le fichier e nquestion (si possible)
-* Indiquez (si possible) la ligne où se trouve le problème
+<!---
+* Indicate what's the problem is about.
+* Indicate where is(are) the concerned file(s)
+* Indicate the line(s) where is(are) the problem(s)
 
- Ex: Faute d'othographe dans le fichier README.md qui se situe dans le dossier parent à la ligne 4.
+ Ex: Typo error in the README.md file in the parent folder at line 4.
 --->
-**Description du problème :**
+**Problem's description:**
