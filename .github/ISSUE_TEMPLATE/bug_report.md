@@ -6,6 +6,7 @@ labels: bug
 assignees: ''
 
 ---
+
 <!---You can remove all the sections that aren't needed--->
 
 <!---A precise description of the bug--->
