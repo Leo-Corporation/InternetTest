@@ -13,18 +13,15 @@ There is 2 branches:
 * master ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest)
 * Version_Next ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest?include_prereleases)
 
-The ``Version_Next`` branch is for test and the next version of InternetTest.
+The ``Version_Next`` branch is for the next version of InternetTest.
 
 The ``master`` branch is for stable versions.
-## What's new in version 4.6.0.2009
+## What's new in version 4.7.0.2010
 ### New
-- Notification des mises à jour au démarrage (#132)
-- Mettre une page dans le setup pour accepter la licence (#126)
+- Added a menu (#140)
+- Added a prompt before clearing data (#141)
 ### Fixed
-- Mettre à jour Xalyus Updater (#123)
-- Optimiser certaines fonctionnalités (#124)
-- Mettre à jour LeoCorpLibrary (#125)
-- Le système de recherche de mise à jour crash (#131)
+- Removed sites from the browser (#142)
 ## Documentation 
 In the documentation, you'll find answers to your questions about InternetTest.
 

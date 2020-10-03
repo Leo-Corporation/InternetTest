@@ -207,24 +207,38 @@ namespace InternetTest.Forms
 
         private void gunaLinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Properties.Settings.Default.Reset();
-            Properties.Settings.Default.Save();
-            UpdateSite();
-            if (gunaComboBox1.Text.Contains("fr-FR"))
+            string promptBeforeRemove = "";
+
+            if (gunaComboBox1.Text.Contains("fr-FR")) // If the lang is french
             {
-                gunaComboBox1.Text = "Français (fr-FR)";
-                gunaWinSwitch1.Checked = false;
-                gunaWinSwitch2.Checked = true;
-                MessageBox.Show("Les données ont été effacées.", "Terminé", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                promptBeforeRemove = "Êtes-vous sûr de vouloir effacer toutes les données d'InternetTest ?";
             }
-            else if (gunaComboBox1.Text.Contains("EN"))
+            else if (gunaComboBox1.Text.Contains("EN")) // If the lang is english
             {
-                gunaComboBox1.Text = "French (fr-FR)";
-                gunaWinSwitch1.Checked = false;
-                gunaWinSwitch2.Checked = true;
-                MessageBox.Show("Data has been removed.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                promptBeforeRemove = "Are you sure you wanna erase all InternetTest's data?";
             }
-            gunaComboBox2.Text = Properties.Settings.Default.MapsProvider; // Mettre à jour le texte
+
+            if (MessageBox.Show(promptBeforeRemove, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Properties.Settings.Default.Reset();
+                Properties.Settings.Default.Save();
+                UpdateSite();
+                if (gunaComboBox1.Text.Contains("fr-FR"))
+                {
+                    gunaComboBox1.Text = "Français (fr-FR)";
+                    gunaWinSwitch1.Checked = false;
+                    gunaWinSwitch2.Checked = true;
+                    MessageBox.Show("Les données ont été effacées.", "Terminé", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (gunaComboBox1.Text.Contains("EN"))
+                {
+                    gunaComboBox1.Text = "French (fr-FR)";
+                    gunaWinSwitch1.Checked = false;
+                    gunaWinSwitch2.Checked = true;
+                    MessageBox.Show("Data has been removed.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                gunaComboBox2.Text = Properties.Settings.Default.MapsProvider; // Mettre à jour le texte
+            }
         }
 
         private void gunaComboBox1_SelectedIndexChanged(object sender, EventArgs e)

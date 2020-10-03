@@ -70,6 +70,7 @@ namespace InternetTest
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
             LaunchTest();
+            menu1.Visible = false; // Hid the menu
         }
 
         private async void LaunchTest()
@@ -175,6 +176,17 @@ namespace InternetTest
         private void gunaLinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new LocalizeIP().Show();
+        }
+
+        private void gunaGradientButton5_Click(object sender, EventArgs e)
+        {
+            menu1.Visible = !menu1.Visible; // Change the visibility
+            menu1.ChangeTheme(); // Change the theme
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            menu1.Visible = false; // Hid the menu
         }
     }
 }

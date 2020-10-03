@@ -145,6 +145,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AboutForm.en-US.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +260,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\Menu.fr-FR.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -275,6 +287,10 @@
     <Content Include="Internet Test.ico" />
     <Content Include="InternetTest Logo.ico" />
     <Content Include="Lib\Guna.UI.dll" />
+    <None Include="Resources\globe.png" />
+    <None Include="Resources\globe black.png" />
+    <None Include="Resources\localize black.png" />
+    <None Include="Resources\more white.png" />
     <None Include="Resources\map.png" />
     <None Include="Resources\network test.png" />
     <None Include="Resources\network test black.png" />
