@@ -55,8 +55,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Guna.UI.dll</HintPath>
     </Reference>
-    <Reference Include="LeoCorpLibrary, Version=2.1.0.2008, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LeoCorpLibrary.2.1.0.2008\lib\net472\LeoCorpLibrary.dll</HintPath>
+    <Reference Include="LeoCorpLibrary, Version=2.5.0.2010, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LeoCorpLibrary.2.5.0.2010\lib\net472\LeoCorpLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -260,6 +260,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\Menu.en-US.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Menu.fr-FR.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
