@@ -3,7 +3,6 @@ InternetTest allows you to check if Internet is available or not.
 ## Features
 * Dark mode
 * Check your Internet connection
-* Integrated browser to test your connection on websites
 * Automatic update system
 * Settings
 * Multilingual (French and English)
@@ -16,12 +15,8 @@ There is 2 branches:
 The ``Version_Next`` branch is for the next version of InternetTest.
 
 The ``master`` branch is for stable versions.
-## What's new in version 4.7.0.2010
-### New
-- Added a menu (#140)
-- Added a prompt before clearing data (#141)
-### Fixed
-- Removed sites from the browser (#142)
+## Latest release
+[Click here](https://github.com/Leo-Corporation/InternetTest/releases) to show the latest release's changelog.
 ## Documentation 
 In the documentation, you'll find answers to your questions about InternetTest.
 
