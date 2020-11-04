@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using InternetTest.Forms;
 using InternetTest.Classes;
+using System.Diagnostics;
 
 namespace InternetTest.UserControls
 {
@@ -29,7 +30,7 @@ namespace InternetTest.UserControls
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
-            new SitesSelector().Show(); // Open the form
+            Process.Start("https://github.com/Leo-Corporation/InternetTest"); // Open the browser
             Hide(); // Hide the menu
         }
 
@@ -39,13 +40,13 @@ namespace InternetTest.UserControls
             {
                 case "fr-FR": // If the langiuage is french
                     gunaGradientButton3.Text = "Localiser IP"; // Change text
-                    gunaGradientButton1.Text = "Tester dans un navigateur"; // Change text
+                    gunaGradientButton1.Text = "Dépôt"; // Change text
 
                     Width = 232; // Change width
                     break;
                 case "EN": // If the language is english
                     gunaGradientButton3.Text = "Localize IP"; // Change text
-                    gunaGradientButton1.Text = "Test in a browser"; // Change text
+                    gunaGradientButton1.Text = "Repo"; // Change text
 
                     Width = 182; // Change width
                     break;

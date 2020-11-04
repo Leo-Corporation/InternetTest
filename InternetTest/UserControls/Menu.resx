@@ -131,7 +131,7 @@
     <value>Guna.UI.WinForms.GunaGradientButton, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
   <data name="gunaGradientButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 31</value>
+    <value>142, 31</value>
   </data>
   <data name="gunaGradientButton3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10.5pt, style=Bold</value>
@@ -181,10 +181,10 @@
     <value>Top</value>
   </data>
   <data name="gunaGradientButton1.Text" xml:space="preserve">
-    <value>Tester dans un navigateur</value>
+    <value>Dépôt</value>
   </data>
   <data name="gunaGradientButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 31</value>
+    <value>142, 31</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -196,7 +196,7 @@
     <value>Localiser IP</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 64</value>
+    <value>142, 64</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

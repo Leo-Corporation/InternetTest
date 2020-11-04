@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using InternetTest.Classes;
 using InternetTest.Forms;
 using System.Xml;
+using System.Diagnostics;
 
 namespace InternetTest
 {
@@ -154,6 +155,10 @@ namespace InternetTest
                 gunaLabel2.ForeColor = Color.White; // Modifier la couleur des labels
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_32px; // Modifier l'image
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px; // Modifier l'image
+                gunaGradientButton4.BaseColor1 = Color.FromArgb(70, 70, 92); // Change color
+                gunaGradientButton4.BaseColor2 = Color.FromArgb(70, 70, 92); // Change color
+                gunaGradientButton4.ForeColor = Color.White; // Change color
+                gunaGradientButton4.Image = Properties.Resources.globe; // Change image
                 if (!isTestLaunched)
                 {
                     gunaPictureBox2.Image = Properties.Resources.network_test; // Modifier l'image
@@ -166,6 +171,10 @@ namespace InternetTest
                 gunaLabel2.ForeColor = Color.Black; // Modifier la couleur des labels
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1; // Modifier l'image
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1; // Modifier l'image
+                gunaGradientButton4.BaseColor1 = Color.FromArgb(247, 247, 247); // Change color
+                gunaGradientButton4.BaseColor2 = Color.FromArgb(247, 247, 247); // Change color
+                gunaGradientButton4.ForeColor = Color.Black; // Change color
+                gunaGradientButton4.Image = Properties.Resources.globe_black; // Change image
                 if (!isTestLaunched)
                 {
                     gunaPictureBox2.Image = Properties.Resources.network_test_black; // Modifier l'image
@@ -187,6 +196,11 @@ namespace InternetTest
         private void Form1_Click(object sender, EventArgs e)
         {
             menu1.Visible = false; // Hid the menu
+        }
+
+        private void gunaGradientButton4_Click_1(object sender, EventArgs e)
+        {
+            Process.Start(Properties.Settings.Default.TestSite); // Open the browser
         }
     }
 }

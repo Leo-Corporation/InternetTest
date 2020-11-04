@@ -282,7 +282,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.6.0.2009, Culture=en-US, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.8.0.2011, Culture=en-US, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_902E5425AFD84D2FA87278D62CA5459F"
@@ -384,7 +384,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.6.0.2009, Culture=fr-FR, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:InternetTest.resources, Version=4.8.0.2011, Culture=fr-FR, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_D6C9A7328E744E299B1C9E0FCE04FFC6"
@@ -500,15 +500,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InternetTest"
-        "ProductCode" = "8:{78A94A55-A510-4191-A628-74B63C6E58C7}"
-        "PackageCode" = "8:{997D527E-A8CE-4B8B-BFF6-D7BCAF3D3D5E}"
+        "ProductCode" = "8:{D251100A-74B2-47FA-8ABC-1D3C0C6FADFF}"
+        "PackageCode" = "8:{6B613877-083A-4BF5-9675-533ACE81B11D}"
         "UpgradeCode" = "8:{E51467CA-571A-4650-9CE9-EF00E6ECD4A8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:4.7.0"
+        "ProductVersion" = "8:4.8.0"
         "Manufacturer" = "8:Léo Corporation"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://www.leocorp.fr/forum/internettest"
