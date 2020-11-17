@@ -6,14 +6,14 @@ jobs:
     
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         name: Checkout Code
         
       - name: Setup MSBuild Path
-        uses: warrenbuckley/Setup-MSBuild@v1
+        uses: microsoft/setup-msbuild@v1.0.2
        
       - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.2
+        uses: NuGet/setup-nuget@v1.0.5
      
       - name: Restore NuGet Packages
         run: nuget restore "InternetTest\InternetTest.csproj" -PackagesDirectory ..\packages

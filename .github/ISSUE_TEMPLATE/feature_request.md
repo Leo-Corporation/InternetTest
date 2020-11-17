@@ -2,10 +2,11 @@
 name: Suggest a feature
 about: Suggest an idea for the project
 title: "[Suggestion] "
-labels: suggestion enhancement
+labels: enhancement
 assignees: ''
 
 ---
+
 <!---You can remove all the sections that aren't needed--->
 
 <!---A clear description of your idea, ex: I'd like to see...--->
