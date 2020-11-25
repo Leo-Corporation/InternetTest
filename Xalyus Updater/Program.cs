@@ -17,9 +17,9 @@ namespace Xalyus_Updater
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            Application.Run(new DownloadLeoCorpLibrary());
             Application.Run(new DownloadFR());
             Application.Run(new DownloadEN());
-            Application.Run(new DownloadLeoCorpLibrary());
         }
     }
 }
