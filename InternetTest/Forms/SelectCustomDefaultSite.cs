@@ -1,4 +1,5 @@
 ﻿using InternetTest.Classes;
+using InternetTest.UserControls.SettingsPages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,8 @@ namespace InternetTest.Forms
 {
     public partial class SelectCustomDefaultSite : Form
     {
-        Settings settingsForm;
-        public SelectCustomDefaultSite(Settings settings)
+        Test testFrm;
+        public SelectCustomDefaultSite(Test test)
         {
             if (new Language().GetCode() == "fr-FR")
             {
@@ -25,7 +26,7 @@ namespace InternetTest.Forms
             {
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
             }
-            settingsForm = settings;
+            testFrm = test;
             InitializeComponent();
         }
 
@@ -45,7 +46,7 @@ namespace InternetTest.Forms
 
         private void ChangeTheme() // Change le thème
         {
-            if (new Theme().IsDark()) // Si le thème est sombre
+            if (new Classes.Theme().IsDark()) // Si le thème est sombre
             {
                 BackColor = Color.FromArgb(50, 50, 72);
                 gunaLabel1.ForeColor = Color.White;
@@ -88,7 +89,7 @@ namespace InternetTest.Forms
                 Properties.Settings.Default.TestSite = str + url;
             }
             Properties.Settings.Default.Save();
-            settingsForm.UpdateSite();
+            testFrm.UpdateSite();
         }
     }
 }
