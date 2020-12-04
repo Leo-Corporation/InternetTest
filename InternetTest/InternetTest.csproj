@@ -293,14 +293,26 @@
     <EmbeddedResource Include="UserControls\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SettingsPages\Data.en-US.resx">
+      <DependentUpon>Data.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SettingsPages\Data.resx">
       <DependentUpon>Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SettingsPages\Languages.en-US.resx">
+      <DependentUpon>Languages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SettingsPages\Languages.resx">
       <DependentUpon>Languages.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SettingsPages\Test.en-US.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SettingsPages\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SettingsPages\Theme.en-US.resx">
+      <DependentUpon>Theme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SettingsPages\Theme.resx">
       <DependentUpon>Theme.cs</DependentUpon>
