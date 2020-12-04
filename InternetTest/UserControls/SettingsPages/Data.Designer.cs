@@ -29,46 +29,34 @@ namespace InternetTest.UserControls.SettingsPages
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Data));
             this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
             this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // gunaLinkLabel1
             // 
-            this.gunaLinkLabel1.AutoSize = true;
+            resources.ApplyResources(this.gunaLinkLabel1, "gunaLinkLabel1");
             this.gunaLinkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLinkLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.gunaLinkLabel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.gunaLinkLabel1.LinkColor = System.Drawing.Color.RoyalBlue;
-            this.gunaLinkLabel1.Location = new System.Drawing.Point(14, 41);
             this.gunaLinkLabel1.Name = "gunaLinkLabel1";
-            this.gunaLinkLabel1.Size = new System.Drawing.Size(127, 17);
-            this.gunaLinkLabel1.TabIndex = 8;
             this.gunaLinkLabel1.TabStop = true;
-            this.gunaLinkLabel1.Text = "Effacer les données";
             this.gunaLinkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.gunaLinkLabel1_LinkClicked);
             // 
             // gunaLabel10
             // 
-            this.gunaLabel10.AutoSize = true;
+            resources.ApplyResources(this.gunaLabel10, "gunaLabel10");
             this.gunaLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaLabel10.Location = new System.Drawing.Point(12, 13);
             this.gunaLabel10.Name = "gunaLabel10";
-            this.gunaLabel10.Size = new System.Drawing.Size(94, 28);
-            this.gunaLabel10.TabIndex = 7;
-            this.gunaLabel10.Text = "Données";
             // 
             // Data
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gunaLinkLabel1);
             this.Controls.Add(this.gunaLabel10);
             this.Name = "Data";
-            this.Size = new System.Drawing.Size(568, 411);
             this.ResumeLayout(false);
             this.PerformLayout();
 
