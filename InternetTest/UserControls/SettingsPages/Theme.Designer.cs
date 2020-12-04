@@ -29,6 +29,7 @@ namespace InternetTest.UserControls.SettingsPages
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Theme));
             this.gunaWinSwitch1 = new Guna.UI.WinForms.GunaWinSwitch();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -38,57 +39,37 @@ namespace InternetTest.UserControls.SettingsPages
             // 
             // gunaWinSwitch1
             // 
+            resources.ApplyResources(this.gunaWinSwitch1, "gunaWinSwitch1");
             this.gunaWinSwitch1.BackColor = System.Drawing.Color.Transparent;
             this.gunaWinSwitch1.BaseColor = System.Drawing.SystemColors.Control;
             this.gunaWinSwitch1.CheckedOffColor = System.Drawing.Color.DarkGray;
             this.gunaWinSwitch1.CheckedOnColor = System.Drawing.Color.RoyalBlue;
             this.gunaWinSwitch1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaWinSwitch1.FillColor = System.Drawing.Color.White;
-            this.gunaWinSwitch1.Location = new System.Drawing.Point(251, 39);
             this.gunaWinSwitch1.Name = "gunaWinSwitch1";
-            this.gunaWinSwitch1.Size = new System.Drawing.Size(40, 22);
-            this.gunaWinSwitch1.TabIndex = 7;
             this.gunaWinSwitch1.CheckedChanged += new System.EventHandler(this.gunaWinSwitch1_CheckedChanged);
             // 
             // gunaLabel4
             // 
-            this.gunaLabel4.AutoSize = true;
+            resources.ApplyResources(this.gunaLabel4, "gunaLabel4");
             this.gunaLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaLabel4.Location = new System.Drawing.Point(297, 41);
             this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(65, 17);
-            this.gunaLabel4.TabIndex = 4;
-            this.gunaLabel4.Text = "Désactivé";
             // 
             // gunaLabel3
             // 
-            this.gunaLabel3.AutoSize = true;
+            resources.ApplyResources(this.gunaLabel3, "gunaLabel3");
             this.gunaLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaLabel3.Location = new System.Drawing.Point(14, 41);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(156, 17);
-            this.gunaLabel3.TabIndex = 5;
-            this.gunaLabel3.Text = "Utiliser le thème sombre";
             // 
             // gunaLabel2
             // 
-            this.gunaLabel2.AutoSize = true;
+            resources.ApplyResources(this.gunaLabel2, "gunaLabel2");
             this.gunaLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaLabel2.Location = new System.Drawing.Point(12, 13);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(76, 28);
-            this.gunaLabel2.TabIndex = 6;
-            this.gunaLabel2.Text = "Thème";
             // 
             // gunaGradientButton1
             // 
-            this.gunaGradientButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            resources.ApplyResources(this.gunaGradientButton1, "gunaGradientButton1");
             this.gunaGradientButton1.Animated = true;
             this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton1.AnimationSpeed = 0.03F;
@@ -99,11 +80,9 @@ namespace InternetTest.UserControls.SettingsPages
             this.gunaGradientButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton1.Image = global::InternetTest.Properties.Resources.checkmark;
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(221, 362);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.DodgerBlue;
             this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.MediumBlue;
@@ -112,14 +91,11 @@ namespace InternetTest.UserControls.SettingsPages
             this.gunaGradientButton1.OnHoverImage = null;
             this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaGradientButton1.Radius = 6;
-            this.gunaGradientButton1.Size = new System.Drawing.Size(127, 33);
-            this.gunaGradientButton1.TabIndex = 9;
-            this.gunaGradientButton1.Text = "Appliquer";
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
             // Theme
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gunaGradientButton1);
@@ -128,7 +104,6 @@ namespace InternetTest.UserControls.SettingsPages
             this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.gunaLabel2);
             this.Name = "Theme";
-            this.Size = new System.Drawing.Size(568, 411);
             this.ResumeLayout(false);
             this.PerformLayout();
 
