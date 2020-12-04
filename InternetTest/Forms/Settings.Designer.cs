@@ -63,12 +63,12 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.gunaAdvenceTileButton2);
             this.panel1.Controls.Add(this.gunaAdvenceTileButton1);
             this.panel1.Controls.Add(this.gunaPictureBox1);
             this.panel1.Controls.Add(this.gunaLabel1);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // gunaAdvenceTileButton2
@@ -129,9 +129,9 @@
             // 
             // gunaPictureBox1
             // 
+            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::InternetTest.Properties.Resources.InternetTestLogo1;
-            resources.ApplyResources(this.gunaPictureBox1, "gunaPictureBox1");
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.TabStop = false;
             // 
@@ -146,15 +146,16 @@
             // 
             // flowLayoutPanel1
             // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.gunaGradientButton3);
             this.flowLayoutPanel1.Controls.Add(this.gunaGradientButton4);
             this.flowLayoutPanel1.Controls.Add(this.gunaGradientButton5);
             this.flowLayoutPanel1.Controls.Add(this.gunaGradientButton6);
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // gunaGradientButton3
             // 
+            resources.ApplyResources(this.gunaGradientButton3, "gunaGradientButton3");
             this.gunaGradientButton3.Animated = true;
             this.gunaGradientButton3.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton3.AnimationSpeed = 0.03F;
@@ -164,7 +165,6 @@
             this.gunaGradientButton3.BorderColor = System.Drawing.Color.Black;
             this.gunaGradientButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            resources.ApplyResources(this.gunaGradientButton3, "gunaGradientButton3");
             this.gunaGradientButton3.FocusedColor = System.Drawing.Color.Empty;
             this.gunaGradientButton3.ForeColor = System.Drawing.Color.Black;
             this.gunaGradientButton3.Image = null;
@@ -181,6 +181,7 @@
             // 
             // gunaGradientButton4
             // 
+            resources.ApplyResources(this.gunaGradientButton4, "gunaGradientButton4");
             this.gunaGradientButton4.Animated = true;
             this.gunaGradientButton4.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton4.AnimationSpeed = 0.03F;
@@ -190,7 +191,6 @@
             this.gunaGradientButton4.BorderColor = System.Drawing.Color.Black;
             this.gunaGradientButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            resources.ApplyResources(this.gunaGradientButton4, "gunaGradientButton4");
             this.gunaGradientButton4.FocusedColor = System.Drawing.Color.Empty;
             this.gunaGradientButton4.ForeColor = System.Drawing.Color.Black;
             this.gunaGradientButton4.Image = null;
@@ -207,6 +207,7 @@
             // 
             // gunaGradientButton5
             // 
+            resources.ApplyResources(this.gunaGradientButton5, "gunaGradientButton5");
             this.gunaGradientButton5.Animated = true;
             this.gunaGradientButton5.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton5.AnimationSpeed = 0.03F;
@@ -216,7 +217,6 @@
             this.gunaGradientButton5.BorderColor = System.Drawing.Color.Black;
             this.gunaGradientButton5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            resources.ApplyResources(this.gunaGradientButton5, "gunaGradientButton5");
             this.gunaGradientButton5.FocusedColor = System.Drawing.Color.Empty;
             this.gunaGradientButton5.ForeColor = System.Drawing.Color.Black;
             this.gunaGradientButton5.Image = null;
@@ -233,6 +233,7 @@
             // 
             // gunaGradientButton6
             // 
+            resources.ApplyResources(this.gunaGradientButton6, "gunaGradientButton6");
             this.gunaGradientButton6.Animated = true;
             this.gunaGradientButton6.AnimationHoverSpeed = 0.07F;
             this.gunaGradientButton6.AnimationSpeed = 0.03F;
@@ -242,7 +243,6 @@
             this.gunaGradientButton6.BorderColor = System.Drawing.Color.Black;
             this.gunaGradientButton6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientButton6.DialogResult = System.Windows.Forms.DialogResult.None;
-            resources.ApplyResources(this.gunaGradientButton6, "gunaGradientButton6");
             this.gunaGradientButton6.FocusedColor = System.Drawing.Color.Empty;
             this.gunaGradientButton6.ForeColor = System.Drawing.Color.Black;
             this.gunaGradientButton6.Image = null;
@@ -259,26 +259,26 @@
             // 
             // data1
             // 
-            this.data1.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.data1, "data1");
+            this.data1.BackColor = System.Drawing.Color.White;
             this.data1.Name = "data1";
             // 
             // test1
             // 
-            this.test1.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.test1, "test1");
+            this.test1.BackColor = System.Drawing.Color.White;
             this.test1.Name = "test1";
             // 
             // languages1
             // 
-            this.languages1.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.languages1, "languages1");
+            this.languages1.BackColor = System.Drawing.Color.White;
             this.languages1.Name = "languages1";
             // 
             // theme1
             // 
-            this.theme1.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.theme1, "theme1");
+            this.theme1.BackColor = System.Drawing.Color.White;
             this.theme1.Name = "theme1";
             // 
             // Settings

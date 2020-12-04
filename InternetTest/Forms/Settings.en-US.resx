@@ -117,89 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="gunaComboBox2.Items" xml:space="preserve">
-    <value>Bing Maps</value>
+  <data name="gunaGradientButton3.Text" xml:space="preserve">
+    <value>Theme</value>
   </data>
-  <data name="gunaComboBox2.Items1" xml:space="preserve">
-    <value>Google Maps</value>
+  <data name="gunaGradientButton4.Text" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="gunaGradientButton6.Text" xml:space="preserve">
+    <value>Data</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="gunaComboBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 419</value>
-  </data>
-  <data name="gunaLabel17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 17</value>
-  </data>
-  <data name="gunaLabel17.Text" xml:space="preserve">
-    <value>Enabled</value>
-  </data>
-  <data name="gunaLinkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 17</value>
-  </data>
-  <data name="gunaLinkLabel2.Text" xml:space="preserve">
-    <value>Modify</value>
-  </data>
-  <data name="gunaLabel19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 399</value>
-  </data>
-  <data name="gunaLabel19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 17</value>
-  </data>
-  <data name="gunaLabel19.Text" xml:space="preserve">
-    <value>Open the localization of an IP in :</value>
-  </data>
-  <data name="gunaLabel16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
-  </data>
-  <data name="gunaLabel16.Text" xml:space="preserve">
-    <value>Launch a test on start</value>
-  </data>
-  <data name="gunaLabel13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 17</value>
-  </data>
-  <data name="gunaLabel13.Text" xml:space="preserve">
-    <value>Test your connexion on the site:</value>
-  </data>
-  <data name="gunaLinkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 477</value>
-  </data>
-  <data name="gunaLinkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 17</value>
-  </data>
-  <data name="gunaLinkLabel1.Text" xml:space="preserve">
-    <value>Erase all data</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="gunaGradientButton2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="gunaGradientButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 505</value>
-  </data>
-  <data name="gunaGradientButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 33</value>
-  </data>
-  <data name="gunaGradientButton2.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="gunaGradientButton1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 505</value>
-  </data>
-  <data name="gunaGradientButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 33</value>
-  </data>
-  <data name="gunaGradientButton1.Text" xml:space="preserve">
-    <value>Apply</value>
-  </data>
-  <data name="gunaComboBox1.Items" xml:space="preserve">
-    <value>French (fr-FR)</value>
-  </data>
-  <data name="gunaComboBox1.Items1" xml:space="preserve">
-    <value>English (EN)</value>
-  </data>
   <data name="gunaAdvenceTileButton2.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAABmhJREFUaEPt
@@ -271,82 +198,6 @@
   </data>
   <data name="gunaLabel1.Text" xml:space="preserve">
     <value>Settings</value>
-  </data>
-  <data name="gunaLabel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 17</value>
-  </data>
-  <data name="gunaLabel7.Text" xml:space="preserve">
-    <value>Enabled</value>
-  </data>
-  <data name="gunaLabel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 17</value>
-  </data>
-  <data name="gunaLabel4.Text" xml:space="preserve">
-    <value>Disabled</value>
-  </data>
-  <data name="gunaLabel11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 34</value>
-  </data>
-  <data name="gunaLabel11.Text" xml:space="preserve">
-    <value>Restart InternetTest to apply
-the changes</value>
-  </data>
-  <data name="gunaLabel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 17</value>
-  </data>
-  <data name="gunaLabel9.Text" xml:space="preserve">
-    <value>Choose a language</value>
-  </data>
-  <data name="gunaLabel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 17</value>
-  </data>
-  <data name="gunaLabel6.Text" xml:space="preserve">
-    <value>Notify updates</value>
-  </data>
-  <data name="gunaLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
-  </data>
-  <data name="gunaLabel3.Text" xml:space="preserve">
-    <value>Use dark theme</value>
-  </data>
-  <data name="gunaLabel18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 371</value>
-  </data>
-  <data name="gunaLabel18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 28</value>
-  </data>
-  <data name="gunaLabel18.Text" xml:space="preserve">
-    <value>Maps</value>
-  </data>
-  <data name="gunaLabel15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 28</value>
-  </data>
-  <data name="gunaLabel15.Text" xml:space="preserve">
-    <value>On start</value>
-  </data>
-  <data name="gunaLabel12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 28</value>
-  </data>
-  <data name="gunaLabel12.Text" xml:space="preserve">
-    <value>Test site</value>
-  </data>
-  <data name="gunaLabel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 449</value>
-  </data>
-  <data name="gunaLabel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 28</value>
-  </data>
-  <data name="gunaLabel10.Text" xml:space="preserve">
-    <value>Data</value>
-  </data>
-  <data name="gunaLabel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 28</value>
-  </data>
-  <data name="gunaLabel8.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="gunaLabel2.Text" xml:space="preserve">
-    <value>Theme</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2363,9 +2214,6 @@ the changes</value>
         rzXO/6Y7jP+eQCYAAAAAAAAAAAAAAAAAAAAA8A8AAMADAACBgQAAgYEAABPIAAACwAAAIEQAACIEAAAi
         BAAAIEQAABDIAAARiAAAgYEAAIABAADAAwAA8A8AAA==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Settings</value>
