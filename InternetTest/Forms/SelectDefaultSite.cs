@@ -40,7 +40,7 @@ namespace InternetTest.Forms
 
         private void ChangeTheme() // Change le thème
         {
-            if (new Classes.Theme().IsDark()) // Si le thème est sombre
+            if (Classes.Theme.IsDark()) // Si le thème est sombre
             {
                 BackColor = Color.FromArgb(50, 50, 72);
                 gunaLabel1.ForeColor = Color.White;

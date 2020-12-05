@@ -55,7 +55,7 @@ namespace InternetTest.UserControls
 
         internal void ChangeTheme()
         {
-            if (new Theme().IsDark()) // If the dark theme is on
+            if (Theme.IsDark()) // If the dark theme is on
             {
                 BackColor = Color.FromArgb(50, 50, 72); // Change the color
 
