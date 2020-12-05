@@ -8,6 +8,6 @@ namespace InternetTest.Classes
 {
     public static class Definitions
     {
-        public static readonly string Version = "4.8.0.2011"; // Version
+        public static readonly string Version = "4.9.0.2012-pre1"; // Version
     }
 }
