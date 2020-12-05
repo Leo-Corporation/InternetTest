@@ -93,6 +93,7 @@ namespace InternetTest.Forms
 
         private void ChangePage(SettingsPage settingsPage)
         {
+            UnCheckAll(); // Uncheck all buttons
             switch (settingsPage)
             {
                 case SettingsPage.Data:
@@ -100,26 +101,53 @@ namespace InternetTest.Forms
                     languages1.Visible = false; // Hide
                     test1.Visible = false; // Hide
                     theme1.Visible = false; // Hide
+
+                    gunaGradientButton6.BaseColor1 = Color.DeepSkyBlue; // Change BaseColor1
+                    gunaGradientButton6.BaseColor2 = Color.RoyalBlue; // Change BaseColor2
                     break;
                 case SettingsPage.Theme:
                     data1.Visible = false; // Hide
                     languages1.Visible = false; // Hide
                     test1.Visible = false; // Hide
                     theme1.Visible = true; // Show
+
+                    gunaGradientButton3.BaseColor1 = Color.DeepSkyBlue; // Change BaseColor1
+                    gunaGradientButton3.BaseColor2 = Color.RoyalBlue; // Change BaseColor2
                     break;
                 case SettingsPage.Test:
                     data1.Visible = false; // Hide
                     languages1.Visible = false; // Hide
                     test1.Visible = true; // Show
                     theme1.Visible = false; // Hide
+
+                    gunaGradientButton5.BaseColor1 = Color.DeepSkyBlue; // Change BaseColor1
+                    gunaGradientButton5.BaseColor2 = Color.RoyalBlue; // Change BaseColor2
                     break;
                 case SettingsPage.Language:
                     data1.Visible = false; // Hide
                     languages1.Visible = true; // Show
                     test1.Visible = false; // Hide
                     theme1.Visible = false; // Hide
+
+                    gunaGradientButton4.BaseColor1 = Color.DeepSkyBlue; // Change BaseColor1
+                    gunaGradientButton4.BaseColor2 = Color.RoyalBlue; // Change BaseColor2
                     break;
             }
+        }
+
+        private void UnCheckAll()
+        {
+            gunaGradientButton3.BaseColor1 = !Theme.IsDark() ? Color.White : Color.FromArgb(50, 50, 72); // Change BaseColor1
+            gunaGradientButton3.BaseColor2 = !Theme.IsDark() ? Color.White : Color.FromArgb(50, 50, 72); // Change BaseColor2
+
+            gunaGradientButton4.BaseColor1 = !Theme.IsDark() ? Color.White : Color.FromArgb(50, 50, 72); // Change BaseColor1
+            gunaGradientButton4.BaseColor2 = !Theme.IsDark() ? Color.White : Color.FromArgb(50, 50, 72); // Change BaseColor2
+
+            gunaGradientButton5.BaseColor1 = !Theme.IsDark() ? Color.White : Color.FromArgb(50, 50, 72); // Change BaseColor1
+            gunaGradientButton5.BaseColor2 = !Theme.IsDark() ? Color.White : Color.FromArgb(50, 50, 72); // Change BaseColor2
+
+            gunaGradientButton6.BaseColor1 = !Theme.IsDark() ? Color.White : Color.FromArgb(50, 50, 72); // Change BaseColor1
+            gunaGradientButton6.BaseColor2 = !Theme.IsDark() ? Color.White : Color.FromArgb(50, 50, 72); // Change BaseColor2
         }
 
         enum SettingsPage
