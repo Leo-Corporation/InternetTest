@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace InternetTest.Classes
 {
-    public class Theme
+    public static class Theme
     {
-        public bool IsDark()
+        public static bool IsDark()
         {
             return Properties.Settings.Default.IsThemeDark; // Retourne false si le thème est clair
         }
