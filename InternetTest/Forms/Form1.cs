@@ -30,6 +30,7 @@ namespace InternetTest
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
             }
             InitializeComponent();
+            Definitions.Form1 = this;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -143,7 +144,7 @@ namespace InternetTest
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
-            new Settings(this).Show();
+            new Settings().Show();
         }
 
         public void ChangeTheme() // Changer le thème

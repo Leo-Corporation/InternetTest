@@ -18,6 +18,29 @@ namespace InternetTest.UserControls.SettingsPages
         {
             InitializeComponent();
             LoadSettings(); // Load the settings
+            ChangeTheme(); // Change the theme
+        }
+
+        internal void ChangeTheme()
+        {
+            if (Classes.Theme.IsDark()) // If the theme is dark
+            {
+                gunaLabel8.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel9.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel11.ForeColor = Color.White; // Change the ForeColor
+                BackColor = Color.FromArgb(50, 50, 72); // Change the BackColor
+                gunaComboBox1.BaseColor = Color.FromArgb(50, 50, 72); // Change the base color
+                gunaComboBox1.ForeColor = Color.White; // Change the ForeColor
+            }
+            else
+            {
+                gunaLabel8.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel9.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel11.ForeColor = Color.Black; // Change the ForeColor
+                BackColor = Color.White; // Change the BackColor
+                gunaComboBox1.BaseColor = Color.White; // Change the base color
+                gunaComboBox1.ForeColor = Color.Black; // Change the ForeColor
+            }
         }
 
         private void gunaComboBox1_SelectedIndexChanged(object sender, EventArgs e)

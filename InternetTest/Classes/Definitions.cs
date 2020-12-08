@@ -9,5 +9,7 @@ namespace InternetTest.Classes
     public static class Definitions
     {
         public static readonly string Version = "4.9.0.2012-pre1"; // Version
+        public static Form1 Form1 { get; set; }
+        public static Forms.Settings Settings { get; set; }
     }
 }

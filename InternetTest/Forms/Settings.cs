@@ -15,12 +15,11 @@ namespace InternetTest.Forms
 {
     public partial class Settings : Form
     {
-        Form1 form1;
-        public Settings(Form1 frm)
+        public Settings()
         {
             InitializeComponent();
-            form1 = frm;
             ChangePage(SettingsPage.Theme);
+            Definitions.Settings = this;
         }
 
         private void Settings_Load(object sender, EventArgs e)
@@ -46,14 +45,7 @@ namespace InternetTest.Forms
             WindowState = FormWindowState.Minimized; // Minimiser la fenêtre
         }
 
-        private void gunaGradientButton1_Click(object sender, EventArgs e)
-        {
-
-            form1.ChangeTheme();
-            Close();
-        }
-
-        private void ChangeTheme()
+        internal void ChangeTheme()
         {
             if (Properties.Settings.Default.IsThemeDark) // Si le thème est sombre
             {
@@ -69,6 +61,11 @@ namespace InternetTest.Forms
                 gunaAdvenceTileButton1.Image = Properties.Resources.icons8_delete_100px_1;
                 gunaAdvenceTileButton2.Image = Properties.Resources.icons8_subtract_100px_1;
             }
+            data1.ChangeTheme(); // Change theme
+            languages1.ChangeTheme(); // Change theme
+            test1.ChangeTheme(); // Change theme
+            theme1.ChangeTheme(); // Change theme
+            ChangePage(SettingsPage.Theme);
         }
 
         private void gunaGradientButton3_Click(object sender, EventArgs e)
@@ -104,6 +101,8 @@ namespace InternetTest.Forms
 
                     gunaGradientButton6.BaseColor1 = Color.DeepSkyBlue; // Change BaseColor1
                     gunaGradientButton6.BaseColor2 = Color.RoyalBlue; // Change BaseColor2
+
+                    gunaGradientButton6.ForeColor = Color.White; // Change the ForeColor
                     break;
                 case SettingsPage.Theme:
                     data1.Visible = false; // Hide
@@ -113,6 +112,8 @@ namespace InternetTest.Forms
 
                     gunaGradientButton3.BaseColor1 = Color.DeepSkyBlue; // Change BaseColor1
                     gunaGradientButton3.BaseColor2 = Color.RoyalBlue; // Change BaseColor2
+
+                    gunaGradientButton3.ForeColor = Color.White; // Change the ForeColor
                     break;
                 case SettingsPage.Test:
                     data1.Visible = false; // Hide
@@ -122,6 +123,8 @@ namespace InternetTest.Forms
 
                     gunaGradientButton5.BaseColor1 = Color.DeepSkyBlue; // Change BaseColor1
                     gunaGradientButton5.BaseColor2 = Color.RoyalBlue; // Change BaseColor2
+
+                    gunaGradientButton5.ForeColor = Color.White; // Change the ForeColor
                     break;
                 case SettingsPage.Language:
                     data1.Visible = false; // Hide
@@ -131,6 +134,8 @@ namespace InternetTest.Forms
 
                     gunaGradientButton4.BaseColor1 = Color.DeepSkyBlue; // Change BaseColor1
                     gunaGradientButton4.BaseColor2 = Color.RoyalBlue; // Change BaseColor2
+
+                    gunaGradientButton4.ForeColor = Color.White; // Change the ForeColor
                     break;
             }
         }
@@ -148,6 +153,11 @@ namespace InternetTest.Forms
 
             gunaGradientButton6.BaseColor1 = !Theme.IsDark() ? Color.White : Color.FromArgb(50, 50, 72); // Change BaseColor1
             gunaGradientButton6.BaseColor2 = !Theme.IsDark() ? Color.White : Color.FromArgb(50, 50, 72); // Change BaseColor2
+
+            gunaGradientButton3.ForeColor = !Theme.IsDark() ? Color.Black : Color.White; // Change ForeColor
+            gunaGradientButton4.ForeColor = !Theme.IsDark() ? Color.Black : Color.White; // Change ForeColor
+            gunaGradientButton5.ForeColor = !Theme.IsDark() ? Color.Black : Color.White; // Change ForeColor
+            gunaGradientButton6.ForeColor = !Theme.IsDark() ? Color.Black : Color.White; // Change ForeColor
         }
 
         enum SettingsPage

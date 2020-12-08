@@ -16,6 +16,21 @@ namespace InternetTest.UserControls.SettingsPages
         public Data()
         {
             InitializeComponent();
+            ChangeTheme();
+        }
+
+        internal void ChangeTheme()
+        {
+            if (Classes.Theme.IsDark()) // If the theme is dark
+            {
+                gunaLabel10.ForeColor = Color.White; // Change the ForeColor
+                BackColor = Color.FromArgb(50, 50, 72); // Change the BackColor
+            }
+            else
+            {
+                gunaLabel10.ForeColor = Color.Black; // Change the ForeColor
+                BackColor = Color.White; // Change the BackColor
+            }
         }
 
         private void gunaLinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

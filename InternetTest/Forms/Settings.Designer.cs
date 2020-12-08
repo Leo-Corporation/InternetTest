@@ -260,25 +260,29 @@
             // data1
             // 
             resources.ApplyResources(this.data1, "data1");
-            this.data1.BackColor = System.Drawing.Color.White;
+            this.data1.BackColor = System.Drawing.Color.Transparent;
+            this.data1.ForeColor = System.Drawing.Color.Black;
             this.data1.Name = "data1";
             // 
             // test1
             // 
             resources.ApplyResources(this.test1, "test1");
-            this.test1.BackColor = System.Drawing.Color.White;
+            this.test1.BackColor = System.Drawing.Color.Transparent;
+            this.test1.ForeColor = System.Drawing.Color.Black;
             this.test1.Name = "test1";
             // 
             // languages1
             // 
             resources.ApplyResources(this.languages1, "languages1");
-            this.languages1.BackColor = System.Drawing.Color.White;
+            this.languages1.BackColor = System.Drawing.Color.Transparent;
+            this.languages1.ForeColor = System.Drawing.Color.Black;
             this.languages1.Name = "languages1";
             // 
             // theme1
             // 
             resources.ApplyResources(this.theme1, "theme1");
-            this.theme1.BackColor = System.Drawing.Color.White;
+            this.theme1.BackColor = System.Drawing.Color.Transparent;
+            this.theme1.ForeColor = System.Drawing.Color.Black;
             this.theme1.Name = "theme1";
             // 
             // Settings

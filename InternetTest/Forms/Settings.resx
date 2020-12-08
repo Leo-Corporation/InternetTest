@@ -211,7 +211,7 @@
     <value>47, 29</value>
   </data>
   <data name="&gt;&gt;test1.Type" xml:space="preserve">
-    <value>InternetTest.UserControls.SettingsPages.Test, InternetTest, Version=4.8.0.2011, Culture=neutral, PublicKeyToken=null</value>
+    <value>InternetTest.UserControls.SettingsPages.Test, InternetTest, Version=4.9.0.2012, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="data1.Size" type="System.Drawing.Size, System.Drawing">
     <value>503, 410</value>
@@ -258,6 +258,9 @@
   <data name="gunaGradientButton3.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
+  <data name="gunaLabel1.Text" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
   <data name="gunaGradientButton4.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 51</value>
   </data>
@@ -271,7 +274,7 @@
     <value>Top</value>
   </data>
   <data name="&gt;&gt;theme1.Type" xml:space="preserve">
-    <value>InternetTest.UserControls.SettingsPages.Theme, InternetTest, Version=4.8.0.2011, Culture=neutral, PublicKeyToken=null</value>
+    <value>InternetTest.UserControls.SettingsPages.Theme, InternetTest, Version=4.9.0.2012, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="gunaAdvenceTileButton2.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -335,6 +338,9 @@
   </data>
   <data name="languages1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
+  </data>
+  <data name="&gt;&gt;gunaGradientButton6.Name" xml:space="preserve">
+    <value>gunaGradientButton6</value>
   </data>
   <data name="&gt;&gt;data1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -430,7 +436,7 @@
     <value>160, 42</value>
   </data>
   <data name="&gt;&gt;languages1.Type" xml:space="preserve">
-    <value>InternetTest.UserControls.SettingsPages.Languages, InternetTest, Version=4.8.0.2011, Culture=neutral, PublicKeyToken=null</value>
+    <value>InternetTest.UserControls.SettingsPages.Languages, InternetTest, Version=4.9.0.2012, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="theme1.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -495,9 +501,6 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
   <data name="&gt;&gt;gunaGradientButton4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -506,9 +509,6 @@
   </data>
   <data name="&gt;&gt;gunaGradientButton5.Name" xml:space="preserve">
     <value>gunaGradientButton5</value>
-  </data>
-  <data name="gunaAdvenceTileButton2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2560,7 +2560,7 @@
     <value>Langues</value>
   </data>
   <data name="&gt;&gt;data1.Type" xml:space="preserve">
-    <value>InternetTest.UserControls.SettingsPages.Data, InternetTest, Version=4.8.0.2011, Culture=neutral, PublicKeyToken=null</value>
+    <value>InternetTest.UserControls.SettingsPages.Data, InternetTest, Version=4.9.0.2012, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="test1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2616,8 +2616,8 @@
   <data name="&gt;&gt;gunaAdvenceTileButton2.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;gunaGradientButton6.Name" xml:space="preserve">
-    <value>gunaGradientButton6</value>
+  <data name="gunaAdvenceTileButton2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="&gt;&gt;gunaPictureBox1.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaPictureBox, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
@@ -2625,8 +2625,8 @@
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>670, 37</value>
   </data>
-  <data name="gunaLabel1.Text" xml:space="preserve">
-    <value>Paramètres</value>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
   <metadata name="gunaDragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>584, 17</value>

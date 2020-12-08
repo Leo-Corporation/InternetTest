@@ -18,6 +18,45 @@ namespace InternetTest.UserControls.SettingsPages
         {
             InitializeComponent();
             LoadSettings();
+            ChangeTheme();
+        }
+
+        internal void ChangeTheme()
+        {
+            if (Classes.Theme.IsDark()) // If the theme is dark
+            {
+                gunaLabel5.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel6.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel7.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel12.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel13.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel14.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel15.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel16.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel17.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel18.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel19.ForeColor = Color.White; // Change the ForeColor
+                BackColor = Color.FromArgb(50, 50, 72); // Change the BackColor
+                gunaComboBox2.BaseColor = Color.FromArgb(50, 50, 72); // Change the BaseColor
+                gunaComboBox2.ForeColor = Color.White; // Change the ForeColor
+            }
+            else
+            {
+                gunaLabel5.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel6.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel7.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel12.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel13.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel14.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel15.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel16.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel17.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel18.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel19.ForeColor = Color.Black; // Change the ForeColor
+                BackColor = Color.White; // Change the BackColor
+                gunaComboBox2.BaseColor = Color.White; // Change the BaseColor
+                gunaComboBox2.ForeColor = Color.Black; // Change the ForeColor
+            }
         }
 
         private void gunaWinSwitch3_CheckedChanged(object sender, EventArgs e)
