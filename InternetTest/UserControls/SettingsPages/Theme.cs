@@ -17,6 +17,25 @@ namespace InternetTest.UserControls.SettingsPages
         {
             InitializeComponent();
             LoadSettings();
+            ChangeTheme();
+        }
+
+        internal void ChangeTheme()
+        {
+            if (Classes.Theme.IsDark()) // If the theme is dark
+            {
+                gunaLabel2.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel3.ForeColor = Color.White; // Change the ForeColor
+                gunaLabel4.ForeColor = Color.White; // Change the ForeColor
+                BackColor = Color.FromArgb(50, 50, 72); // Change the BackColor
+            }
+            else
+            {
+                gunaLabel2.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel3.ForeColor = Color.Black; // Change the ForeColor
+                gunaLabel4.ForeColor = Color.Black; // Change the ForeColor
+                BackColor = Color.White; // Change the BackColor
+            }
         }
 
         private void gunaWinSwitch1_CheckedChanged(object sender, EventArgs e)
@@ -54,6 +73,8 @@ namespace InternetTest.UserControls.SettingsPages
         {
             Properties.Settings.Default.IsThemeDark = gunaWinSwitch1.Checked; // Set
             Properties.Settings.Default.Save(); // Save
+            Definitions.Form1.ChangeTheme();
+            Definitions.Settings.ChangeTheme(); // Change theme
         }
     }
 }

@@ -121,16 +121,16 @@
     <value>1</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="gunaLabel3.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="gunaLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
+  <data name="gunaLabel4.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="gunaLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 13</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>568, 411</value>
-  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -189,20 +189,17 @@
   <data name="gunaLabel3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="gunaWinSwitch1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
   <data name="&gt;&gt;gunaLabel3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="gunaLabel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 17</value>
   </data>
-  <data name="&gt;&gt;gunaLabel3.Name" xml:space="preserve">
-    <value>gunaLabel3</value>
-  </data>
   <data name="&gt;&gt;gunaGradientButton1.Name" xml:space="preserve">
     <value>gunaGradientButton1</value>
+  </data>
+  <data name="gunaWinSwitch1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 22</value>
   </data>
   <data name="gunaLabel4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -210,8 +207,8 @@
   <data name="gunaLabel4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;gunaLabel2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>568, 411</value>
   </data>
   <data name="gunaLabel3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
@@ -225,11 +222,14 @@
   <data name="gunaLabel4.Location" type="System.Drawing.Point, System.Drawing">
     <value>297, 41</value>
   </data>
+  <data name="&gt;&gt;gunaLabel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;gunaWinSwitch1.Type" xml:space="preserve">
     <value>Guna.UI.WinForms.GunaWinSwitch, Guna.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
   </data>
-  <data name="gunaLabel3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="gunaWinSwitch1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;gunaWinSwitch1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -267,8 +267,8 @@
   <data name="gunaLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 28</value>
   </data>
-  <data name="gunaWinSwitch1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 22</value>
+  <data name="&gt;&gt;gunaLabel3.Name" xml:space="preserve">
+    <value>gunaLabel3</value>
   </data>
   <data name="gunaGradientButton1.Location" type="System.Drawing.Point, System.Drawing">
     <value>221, 362</value>
@@ -276,8 +276,8 @@
   <data name="gunaLabel3.Text" xml:space="preserve">
     <value>Utiliser le thème sombre</value>
   </data>
-  <data name="gunaLabel4.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="gunaLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 13</value>
   </data>
   <data name="gunaLabel2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 15pt, style=Bold</value>
