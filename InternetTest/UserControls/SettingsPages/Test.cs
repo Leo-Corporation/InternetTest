@@ -122,7 +122,7 @@ namespace InternetTest.UserControls.SettingsPages
             gunaLinkLabel2.Location = new Point(gunaLabel14.Width + 15, 116);
         }
 
-        private void LoadSettings()
+        internal void LoadSettings()
         {
             gunaWinSwitch2.Checked = Properties.Settings.Default.NotifyUpdate;
             gunaWinSwitch3.Checked = Properties.Settings.Default.TestOnStart;

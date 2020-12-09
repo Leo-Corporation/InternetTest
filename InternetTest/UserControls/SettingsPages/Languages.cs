@@ -76,7 +76,7 @@ namespace InternetTest.UserControls.SettingsPages
             Properties.Settings.Default.Save(); // Save
         }
 
-        private void LoadSettings()
+        internal void LoadSettings()
         {
             gunaLabel11.Visible = false; // Hide
             if (Properties.Settings.Default.Language == "fr-FR")
@@ -85,7 +85,7 @@ namespace InternetTest.UserControls.SettingsPages
             }
             else if (Properties.Settings.Default.Language == "EN")
             {
-                gunaComboBox1.Text = new Language().GetName("en");
+                gunaComboBox1.Text = new Language().GetName("fr");
             }
         }
     }

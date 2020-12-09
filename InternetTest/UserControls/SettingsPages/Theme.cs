@@ -64,7 +64,7 @@ namespace InternetTest.UserControls.SettingsPages
             }
         }
 
-        private void LoadSettings()
+        internal void LoadSettings()
         {
             gunaWinSwitch1.Checked = Properties.Settings.Default.IsThemeDark;
         }

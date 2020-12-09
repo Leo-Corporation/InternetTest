@@ -30,6 +30,13 @@ namespace InternetTest.Forms
             ChangeTheme();
         }
 
+        internal void LoadSettings()
+        {
+            test1.LoadSettings(); // Load
+            theme1.LoadSettings(); // Load
+            languages1.LoadSettings(); // Load
+        }
+
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
             Close();

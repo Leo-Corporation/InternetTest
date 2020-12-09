@@ -52,7 +52,7 @@ namespace InternetTest.UserControls.SettingsPages
                 Properties.Settings.Default.Save();
                 if (new Language().GetCode() == "fr-FR")
                 {
-                    
+                    Definitions.Settings.LoadSettings();
                     MessageBox.Show("Les données ont été effacées.", "Terminé", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (new Language().GetCode() == "EN")
