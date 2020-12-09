@@ -55,7 +55,7 @@ namespace InternetTest.Forms
 
         private void ChangeTheme()
         {
-            if (new Theme().IsDark())
+            if (Theme.IsDark())
             {
                 BackColor = Color.FromArgb(50, 50, 72); // Modifier la couleur d'arrière-plan
                 gunaLabel1.ForeColor = Color.White; // Modifier la couleur des labels

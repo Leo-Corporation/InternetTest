@@ -1,4 +1,5 @@
 ﻿using InternetTest.Classes;
+using InternetTest.UserControls.SettingsPages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,10 @@ namespace InternetTest.Forms
 {
     public partial class SelectDefaultSite : Form
     {
-        Settings settingsForm; // Fenêtre "Paramètres"
-        public SelectDefaultSite(Settings settings)
+        Test testFrm; // Fenêtre "Paramètres"
+        public SelectDefaultSite(Test test)
         {
-            settingsForm = settings;
+            testFrm = test;
             if (new Language().GetCode() == "fr-FR") // Change la langue en français (France)
             {
                 Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
@@ -39,7 +40,7 @@ namespace InternetTest.Forms
 
         private void ChangeTheme() // Change le thème
         {
-            if (new Theme().IsDark()) // Si le thème est sombre
+            if (Classes.Theme.IsDark()) // Si le thème est sombre
             {
                 BackColor = Color.FromArgb(50, 50, 72);
                 gunaLabel1.ForeColor = Color.White;
@@ -57,7 +58,7 @@ namespace InternetTest.Forms
         {
             Properties.Settings.Default.TestSite = "https://bing.com"; // Met à jour le paramètre
             Properties.Settings.Default.Save(); // Enregistre les paramètres
-            settingsForm.UpdateSite(); // Met à jour le label dans la fenêtre "Paramètres"
+            testFrm.UpdateSite(); // Met à jour le label dans la fenêtre "Paramètres"
             Close(); // Ferme la fenêtre
         }
 
@@ -65,7 +66,7 @@ namespace InternetTest.Forms
         {
             Properties.Settings.Default.TestSite = "https://google.com"; // Met à jour le paramètre
             Properties.Settings.Default.Save(); // Enregistre les paramètres
-            settingsForm.UpdateSite(); // Met à jour le label dans la fenêtre "Paramètres"
+            testFrm.UpdateSite(); // Met à jour le label dans la fenêtre "Paramètres"
             Close(); // Ferme la fenêtre
         }
 
@@ -73,13 +74,13 @@ namespace InternetTest.Forms
         {
             Properties.Settings.Default.TestSite = "https://twitter.com"; // Met à jour le paramètre
             Properties.Settings.Default.Save(); // Enregistre les paramètres
-            settingsForm.UpdateSite(); // Met à jour le label dans la fenêtre "Paramètres"
+            testFrm.UpdateSite(); // Met à jour le label dans la fenêtre "Paramètres"
             Close(); // Ferme la fenêtre
         }
 
         private void gunaGradientTileButton3_Click(object sender, EventArgs e)
         {
-            new SelectCustomDefaultSite(settingsForm).Show(); // Site personnalisé
+            new SelectCustomDefaultSite(testFrm).Show(); // Site personnalisé
             Close(); // Ferme la fenêtre
         }
 

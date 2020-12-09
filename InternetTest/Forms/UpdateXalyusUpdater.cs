@@ -66,7 +66,7 @@ namespace InternetTest.Forms
 
         private void ChangeTheme() // Changer le thème
         {
-            if (new Theme().IsDark()) // Si thème sombre
+            if (Theme.IsDark()) // Si thème sombre
             {
                 BackColor = Color.FromArgb(50, 50, 72);
                 gunaProgressBar1.IdleColor = Color.FromArgb(80, 80, 92);
