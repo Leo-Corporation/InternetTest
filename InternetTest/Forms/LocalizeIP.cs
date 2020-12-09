@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace InternetTest.Forms
 {
@@ -87,19 +89,28 @@ namespace InternetTest.Forms
                     "FAI : "
                     };
 
-                    for (int i = 0; i < nodes.Length; i++) // Obtenir les infos
+                    // Download all the informations
+
+                    WebClient webClient = new WebClient(); // Create WebClient
+                    webClient.Encoding = Encoding.UTF8; // Change the encoding
+
+                    string infos = await webClient.DownloadStringTaskAsync($"http://ip-api.com/line/{ip}?fields=9209&lang=fr");
+
+                    StringReader reader = new StringReader(infos);
+                    List<string> lines = new List<string>();
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        XmlTextReader xmlTextReader = new XmlTextReader(string.Format("http://ip-api.com/xml/{0}?lang=fr", ip));
-                        // Ouvrir document XML de puis l'API
-                        while (xmlTextReader.Read())
-                        {
-                            // Exemple si i = 0 (pays), vérifier  si le node "country" existe
-                            if (xmlTextReader.NodeType == XmlNodeType.Element && xmlTextReader.Name == nodes[i])
-                            {
-                                gunaLabel3.Text += NameFR[i] + xmlTextReader.ReadElementContentAsString() + Environment.NewLine;
-                            }
-                        }
+                        lines.Add(line);
                     }
+
+                    // Treat informations
+
+                    for (int i = 0; i < lines.Count - 1; i++)
+                    {
+                        gunaLabel3.Text += NameFR[i] + lines[i] + "\n";
+                    }
+
                 }
                 else if (new Language().GetCode() == "EN")
                 {
@@ -115,18 +126,26 @@ namespace InternetTest.Forms
                     "ISP : "
                     };
 
-                    for (int i = 0; i < nodes.Length; i++) // Obtenir les infos
+                    // Download all the informations
+
+                    WebClient webClient = new WebClient(); // Create WebClient
+                    webClient.Encoding = Encoding.UTF8; // Change the encoding
+
+                    string infos = await webClient.DownloadStringTaskAsync($"http://ip-api.com/line/{ip}?fields=9209&lang=en");
+
+                    StringReader reader = new StringReader(infos);
+                    List<string> lines = new List<string>();
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        XmlTextReader xmlTextReader = new XmlTextReader(string.Format("http://ip-api.com/xml/{0}?lang=en", ip));
-                        // Ouvrir document XML de puis l'API
-                        while (xmlTextReader.Read())
-                        {
-                            // Exemple si i = 0 (pays), vérifier  si le node "country" existe
-                            if (xmlTextReader.NodeType == XmlNodeType.Element && xmlTextReader.Name == nodes[i])
-                            {
-                                gunaLabel3.Text += NameEN[i] + xmlTextReader.ReadElementContentAsString() + Environment.NewLine;
-                            }
-                        }
+                        lines.Add(line);
+                    }
+
+                    // Treat informations
+
+                    for (int i = 0; i < lines.Count - 1; i++)
+                    {
+                        gunaLabel3.Text += NameEN[i] + lines[i] + "\n";
                     }
                 }
                 lat = await new WebClient().DownloadStringTaskAsync(string.Format("http://ip-api.com/line/{0}?fields=lat", ip)); // Latitude
