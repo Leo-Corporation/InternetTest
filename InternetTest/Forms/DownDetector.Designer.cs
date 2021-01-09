@@ -85,6 +85,7 @@ namespace InternetTest.Forms
             this.gunaAdvenceTileButton2.OnHoverImage = global::InternetTest.Properties.Resources.icons8_subtract_100px;
             this.gunaAdvenceTileButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.gunaAdvenceTileButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.Click += new System.EventHandler(this.gunaAdvenceTileButton2_Click);
             // 
             // gunaAdvenceTileButton1
             // 
@@ -112,6 +113,7 @@ namespace InternetTest.Forms
             this.gunaAdvenceTileButton1.OnHoverImage = global::InternetTest.Properties.Resources.icons8_delete_32px;
             this.gunaAdvenceTileButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.gunaAdvenceTileButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton1.Click += new System.EventHandler(this.gunaAdvenceTileButton1_Click);
             // 
             // gunaPictureBox1
             // 
