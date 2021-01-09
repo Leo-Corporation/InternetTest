@@ -55,8 +55,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Guna.UI.dll</HintPath>
     </Reference>
-    <Reference Include="LeoCorpLibrary, Version=2.5.0.2010, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LeoCorpLibrary.2.5.0.2010\lib\net472\LeoCorpLibrary.dll</HintPath>
+    <Reference Include="LeoCorpLibrary, Version=3.1.0.2012, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LeoCorpLibrary.3.1.0.2012\lib\net472\LeoCorpLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -94,6 +94,12 @@
     </Compile>
     <Compile Include="Forms\Browser.Designer.cs">
       <DependentUpon>Browser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DownDetector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DownDetector.Designer.cs">
+      <DependentUpon>DownDetector.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Browser.resx">
       <DependentUpon>Browser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DownDetector.resx">
+      <DependentUpon>DownDetector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.en-US.resx">
       <DependentUpon>Form1.cs</DependentUpon>
