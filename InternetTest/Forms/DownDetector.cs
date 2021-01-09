@@ -1,5 +1,6 @@
 ﻿using InternetTest.Classes;
 using LeoCorpLibrary;
+using LeoCorpLibrary.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,11 +28,13 @@ namespace InternetTest.Forms
                 if (await NetworkConnection.IsAvailableTestSiteAsync(gunaLineTextBox1.Text)) // Check if the site is available
                 {
                     gunaLabel2.Text = Language.WebSiteNotDownMessage; // Set the text
+                    WinFormsHelpers.CenterControlOnForm(gunaLabel2, this); // Center
                     gunaPictureBox2.Image = Properties.Resources.check; // Set the image
                 }
                 else
                 {
                     gunaLabel2.Text = Language.WebSiteDownMessage; // Set the text
+                    WinFormsHelpers.CenterControlOnForm(gunaLabel2, this); // Center
                     gunaPictureBox2.Image = Properties.Resources.cancel; // Set the image
                 }
             }

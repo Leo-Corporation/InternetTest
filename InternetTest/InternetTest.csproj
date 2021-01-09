@@ -208,6 +208,12 @@
     <EmbeddedResource Include="Forms\Browser.resx">
       <DependentUpon>Browser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DownDetector.en-US.resx">
+      <DependentUpon>DownDetector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DownDetector.fr-FR.resx">
+      <DependentUpon>DownDetector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DownDetector.resx">
       <DependentUpon>DownDetector.cs</DependentUpon>
     </EmbeddedResource>
