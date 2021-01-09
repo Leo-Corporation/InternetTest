@@ -1,0 +1,1118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LeoCorpLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:LeoCorpLibrary.ColorsConverter">
+            <summary>
+            Class containing methods that allows you to convert types of colors.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.ColorsConverter.RGBtoHSV(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Allows you to convert a RGB color into a <see cref="T:LeoCorpLibrary.HSVColor"/>.
+            </summary>
+            <param name="red">Red.</param>
+            <param name="green">Green.</param>
+            <param name="blue">Blue.</param>
+            <returns>A <see cref="T:LeoCorpLibrary.HSVColor"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.ColorsConverter.RGBtoHSV(System.Drawing.Color)">
+            <summary>
+            Allows you to convert a RGB <see cref="T:System.Drawing.Color"/> into a <see cref="T:LeoCorpLibrary.HSVColor"/>.
+            </summary>
+            <param name="color">Couleur (<see cref="T:System.Drawing.Color"/>).</param>
+            <returns>A <see cref="T:LeoCorpLibrary.HSVColor"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.ColorsConverter.RGBtoHEX(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Allows you to convert a RGB color into a <see cref="T:LeoCorpLibrary.HEXColor"/>.
+            </summary>
+            <param name="red">Red.</param>
+            <param name="green">Green.</param>
+            <param name="blue">Blue.</param>
+            <returns>A <see cref="T:LeoCorpLibrary.HEXColor"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.ColorsConverter.RGBtoHEX(System.Drawing.Color)">
+            <summary>
+            Allows you to convert a RGB <see cref="T:System.Drawing.Color"/> into a <see cref="T:LeoCorpLibrary.HEXColor"/>.
+            </summary>
+            <param name="color">Couleur.</param>
+            <returns>A <see cref="T:LeoCorpLibrary.HEXColor"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.ColorsConverter.HEXtoRGB(LeoCorpLibrary.HEXColor)">
+            <summary>
+            Allows you to convert a <see cref="T:LeoCorpLibrary.HEXColor"/> into a RGB <see cref="T:System.Drawing.Color"/>.
+            </summary>
+            <param name="hexColor"><see cref="T:LeoCorpLibrary.HEXColor"/> to convert.</param>
+            <exception cref="T:LeoCorpLibrary.Exceptions.HEXInvalidValueException"/>
+            <returns>A <see cref="T:System.Drawing.Color"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.ColorsConverter.HEXtoHSV(LeoCorpLibrary.HEXColor)">
+            <summary>
+            Allows you to convert a <see cref="T:LeoCorpLibrary.HEXColor"/> into a <see cref="T:LeoCorpLibrary.HSVColor"/>.
+            </summary>
+            <param name="hexColor"><see cref="T:LeoCorpLibrary.HEXColor"/> to convert.</param>
+            <exception cref="T:LeoCorpLibrary.Exceptions.HEXInvalidValueException"/>
+            <returns>A <see cref="T:LeoCorpLibrary.HSVColor"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.HSVColor">
+            <summary>
+            A structure that contains infos and methods for a HSV Color.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.HSVColor.Hue">
+            <summary>
+            Hue.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.HSVColor.Saturation">
+            <summary>
+            Saturation.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.HSVColor.Value">
+            <summary>
+            Value.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.HSVColor.FromRGB(System.Drawing.Color)">
+            <summary>
+            Allows you to create a <see cref="T:LeoCorpLibrary.HSVColor"/> from a <see cref="T:System.Drawing.Color"/>.
+            </summary>
+            <param name="color"><see cref="T:System.Drawing.Color"/> to convert.</param>
+            <returns>A <see cref="T:LeoCorpLibrary.HSVColor"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.HSVColor.FromRGB(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Allows you to create a <see cref="T:LeoCorpLibrary.HSVColor"/> from a RGB color.
+            </summary>
+            <param name="red">Red.</param>
+            <param name="green">Green.</param>
+            <param name="blue">Blue.</param>
+            <exception cref="T:LeoCorpLibrary.Exceptions.RGBInvalidValueException"/>
+            <returns>A <see cref="T:LeoCorpLibrary.HSVColor"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.HEXColor">
+            <summary>
+            A structure that contains infos and methods of a <see cref="T:LeoCorpLibrary.HEXColor"/>.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.HEXColor.Value">
+            <summary>
+            Value of the color.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.HEXColor.FromRGB(System.Drawing.Color)">
+            <summary>
+            Allows you to create a <see cref="T:LeoCorpLibrary.HEXColor"/> from a <see cref="T:System.Drawing.Color"/>.
+            </summary>
+            <param name="color"><see cref="T:System.Drawing.Color"/> to convert.</param>
+            <returns>A <see cref="T:LeoCorpLibrary.HEXColor"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.HEXColor.FromRGB(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Allows you to create a <see cref="T:LeoCorpLibrary.HEXColor"/>) from a RGB Color.
+            </summary>
+            <param name="red">Red.</param>
+            <param name="blue">Blue.</param>
+            <param name="green">Green.</param>
+            <exception cref="T:LeoCorpLibrary.Exceptions.RGBInvalidValueException"/>
+            <returns>A <see cref="T:LeoCorpLibrary.HEXColor"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.Crypt">
+            <summary>
+            Methods to encrypt/decrypt <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Crypt.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypts a <see cref="T:System.String"/>.
+            </summary>
+            <param name="source">The <see cref="T:System.String"/> to encrypt.</param>
+            <param name="key">The key that will be used to encrypt and decrypt the string.</param>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Crypt.Decrypt(System.String,System.String)">
+            <summary>
+            Decrypts an encrypted <see cref="T:System.String"/>.
+            </summary>
+            <param name="encrypt">The encrypted <see cref="T:System.String"/>.</param>
+            <param name="key">The key that will be used to encrypt and decrypt the string.</param>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.Env">
+            <summary>
+            Class that contains methods for the user's environnement.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetFilesCount(System.String)">
+            <summary>
+            Allows you to get the number of files in a directory without including subdirectories.
+            </summary>
+            <param name="directory">Path of the directory</param>
+            <exception cref="T:System.IO.DirectoryNotFoundException"></exception>
+            <returns>A <see cref="T:System.Int32"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetFilesCount(System.String,System.Boolean)">
+            <summary>
+            Allows you to get the number of files in a directory offering the possibility to include subdirectories.
+            </summary>
+            <param name="directory">Path of the directory.</param>
+            <param name="includeSubDirectories">Include or not subdirectories.</param>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <returns>A <see cref="T:System.Int32"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetDirectoriesCount(System.String)">
+            <summary>
+            Allows you to get number of directories in a directory without including subdirectories.
+            </summary>
+            <param name="directory">Path of the directory.</param>
+            <exception cref="T:System.IO.DirectoryNotFoundException"></exception>
+            <returns>A <see cref="T:System.Int32"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetDirectoriesCount(System.String,System.Boolean)">
+            <summary>
+            Allows you to get the number of directories in a directory offering the possibility to include subdirectories.
+            </summary>
+            <param name="directory">Path of the directory.</param>
+            <param name="includeSubDirectories">Include or not subdirectories.</param>
+            <exception cref="T:System.IO.DirectoryNotFoundException"></exception>
+            <returns>A <see cref="T:System.Int32"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetDriveAvailableFreeSpace(System.String,LeoCorpLibrary.UnitType)">
+            <summary>
+            Allows you to get the available space on a specified drive.
+            </summary>
+            <param name="drive">Drive.</param>
+            <param name="unitType">The unit of the value returned (MB, GB...).</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.DriveNotFoundException"></exception>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetTotalDriveSpace(System.String,LeoCorpLibrary.UnitType)">
+            <summary>
+            Allows you to get the total space of a drive.
+            </summary>
+            <param name="drive">Drive.</param>
+            <param name="unitType">The unit of the value returned (MB, GB...).</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.DriveNotFoundException"></exception>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetOccupiedDriveSpace(System.String,LeoCorpLibrary.UnitType)">
+            <summary>
+            Allows you to get the occupied space of a drive.
+            </summary>
+            <param name="drive">Drive.</param>
+            <param name="unitType">The unit of the value returned (MB, GB...).</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.DriveNotFoundException"></exception>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetWindowsVersion">
+            <summary>
+            Allows you to get the Windows version of the user.
+            </summary>
+            <remarks>You can now use the <see cref="P:LeoCorpLibrary.Env.WindowsVersion"/> property instead of this method.</remarks>
+            <returns>A <see cref="P:LeoCorpLibrary.Env.WindowsVersion"/> value.</returns>
+        </member>
+        <member name="P:LeoCorpLibrary.Env.WindowsVersion">
+            <summary>
+            Allows you to get the Windows version of the user.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.ExecuteAsAdmin(System.Diagnostics.Process)">
+            <summary>
+            Allows you to launch a program in administrator mode.
+            </summary>
+            <param name="process">Process to launch as admin.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <remarks>The 'process' parameter must have a valid path to the programm to launch in admin mode in <see cref="P:System.Diagnostics.Process.StartInfo"/>.</remarks>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.ExecuteAsAdmin(System.String)">
+            <summary>
+            Allows you to launch a program in administrator mode.
+            </summary>
+            <param name="filename">Path to the program to launch in admin mode.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.CountFileCharacters(System.String)">
+            <summary>
+            Allows you to count the number of characters in a specified file.
+            </summary>
+            <param name="fileName">Location of the file.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.CountFileCharactersAsync(System.String)">
+            <summary>
+            Allows you to count the number of characters in specified file asynchronously.
+            </summary>
+            <param name="fileName">Location of the file.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetUnixTime">
+            <summary>
+            Allows you to get the current UnixTime.
+            </summary>
+            <remarks>You can now use the <see cref="P:LeoCorpLibrary.Env.UnixTime"/> property instead of this method.</remarks>
+            <returns>A <see cref="T:System.Int32"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetUnixTime(System.DateTime)">
+            <summary>
+            Allows you to get the UnixTime from a specific <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="date">Date.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns>A <see cref="T:System.Int32"/> value.</returns>
+        </member>
+        <member name="P:LeoCorpLibrary.Env.UnixTime">
+            <summary>
+            Allows you to get the current UnixTime.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Env.GetAppDataPath">
+            <summary>
+            Allows you to get the <c>%APPDATA%</c> path.
+            </summary>
+            <remarks>You can now use the <see cref="P:LeoCorpLibrary.Env.AppDataPath"/> property instead of this method.</remarks>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="P:LeoCorpLibrary.Env.AppDataPath">
+            <summary>
+            Allows you to get the <c>%APPDATA%</c> path.
+            </summary>
+        </member>
+        <member name="P:LeoCorpLibrary.Env.CurrentOperatingSystem">
+            <summary>
+            Allows you to get the current Operating system.
+            </summary>
+        </member>
+        <member name="P:LeoCorpLibrary.Env.SystemDrive">
+            <summary>
+            Allows you to get the system drive (<see cref="T:System.IO.DriveInfo"/>).
+            </summary>
+            <remarks>Works only on Windows.</remarks>
+        </member>
+        <member name="T:LeoCorpLibrary.OperatingSystems">
+            <summary>
+            Operating systems.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.OperatingSystems.Windows">
+            <summary>
+            The Windows Operating system.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.OperatingSystems.macOS">
+            <summary>
+            The macOS Operating system.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.OperatingSystems.Linux">
+            <summary>
+            The Linux Operating system.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.OperatingSystems.Unknown">
+            <summary>
+            An unknown Operating system.
+            </summary>
+        </member>
+        <member name="T:LeoCorpLibrary.UnitType">
+            <summary>
+            Size of files/directories.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.UnitType.Byte">
+            <summary>
+            Byte Unit.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.UnitType.Kilobyte">
+            <summary>
+            Kilobyte Unit.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.UnitType.Megabyte">
+            <summary>
+            Megabyte Unit.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.UnitType.Gigabyte">
+            <summary>
+            Gigabyte Unit.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.UnitType.Terabyte">
+            <summary>
+            Terabyte Unit.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.UnitType.Petabyte">
+            <summary>
+            Petabyte Unit.
+            </summary>
+        </member>
+        <member name="T:LeoCorpLibrary.WindowsVersion">
+            <summary>
+            Windows Operating Systems.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.WindowsVersion.Windows7">
+            <summary>
+            Windows 7 (Version 6.1).
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.WindowsVersion.Windows8">
+            <summary>
+            Windows 8 (Version 6.2).
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.WindowsVersion.Windows81">
+            <summary>
+            Windows 8.1 (Version 6.3).
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.WindowsVersion.Windows10">
+            <summary>
+            Windows 10 (Version 10.0)
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.WindowsVersion.Unknown">
+            <summary>
+            Unknown operating system.
+            </summary>
+        </member>
+        <member name="T:LeoCorpLibrary.Exceptions.HEXInvalidValueException">
+            <summary>
+            Is thrown when an HEX color is invalid.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Exceptions.HEXInvalidValueException.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:LeoCorpLibrary.Exceptions.HEXInvalidValueException"/> class.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Exceptions.HEXInvalidValueException.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of the <see cref="T:LeoCorpLibrary.Exceptions.HEXInvalidValueException"/> class with a specified error message.
+            </summary>
+            <param name="message">Message of the error</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Exceptions.HEXInvalidValueException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize a new instance of the <see cref="T:LeoCorpLibrary.Exceptions.HEXInvalidValueException"/> class with a specified error message.
+            </summary>
+            <param name="message">Message of the error.</param>
+            <param name="innerException">The inner exception that cause this exception.</param>
+        </member>
+        <member name="T:LeoCorpLibrary.Exceptions.InvalidGuidLenghtException">
+            <summary>
+            Is thrown when the lenght of a Guid is invalid
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Exceptions.InvalidGuidLenghtException.#ctor">
+            <summary>
+            Initialize a new instance of the class <see cref="T:LeoCorpLibrary.Exceptions.InvalidGuidLenghtException"/>.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Exceptions.InvalidGuidLenghtException.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of the class <see cref="T:LeoCorpLibrary.Exceptions.InvalidGuidLenghtException"/> with a specified error message.
+            </summary>
+            <param name="message">Message of the error</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Exceptions.InvalidGuidLenghtException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize a new instance of the class <see cref="T:LeoCorpLibrary.Exceptions.InvalidGuidLenghtException"/> with a specified error message.
+            </summary>
+            <param name="message">Message of the error</param>
+            <param name="innerException">The inner exception that cause this exception.</param>
+        </member>
+        <member name="T:LeoCorpLibrary.Exceptions.RGBInvalidValueException">
+            <summary>
+            Is thrown when a RGB color is invalid.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Exceptions.RGBInvalidValueException.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:LeoCorpLibrary.Exceptions.RGBInvalidValueException"/> class.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Exceptions.RGBInvalidValueException.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of the <see cref="T:LeoCorpLibrary.Exceptions.RGBInvalidValueException"/> class with a specified error message.
+            </summary>
+            <param name="message">Message of the error.</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Exceptions.RGBInvalidValueException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialize a new instance of the <see cref="T:LeoCorpLibrary.Exceptions.RGBInvalidValueException"/> class with a specified error message.
+            </summary>
+            <param name="message">Message of the error.</param>
+            <param name="innerException">The inner exception that cause this exception.</param>
+        </member>
+        <member name="T:LeoCorpLibrary.Extensions.ArrayExtensions">
+            <summary>
+            Methods that extends arrays.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Extensions.ArrayExtensions.Append``1(``0[],``0)">
+            <summary>
+            Adds an item to an existing array.
+            </summary>
+            <typeparam name="T">The type of the array.</typeparam>
+            <param name="array">The array where the item is going to be append.</param>
+            <param name="item">The item which is going to be append in the array.</param>
+            <returns>An <see cref="T:System.Array"/>.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Extensions.ArrayExtensions.Append``1(``0[],``0[])">
+            <summary>
+            Adds items to an existing array.
+            </summary>
+            <typeparam name="T">The type of the array.</typeparam>
+            <param name="array">The array where the items are going to be append.</param>
+            <param name="items">The items which are going to be append in the array.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns>An <see cref="T:System.Array"/>.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Extensions.ArrayExtensions.RemoveItem``1(``0[],``0)">
+            <summary>
+            Removes a specific item from an array.
+            </summary>
+            <typeparam name="T">The type of the array.</typeparam>
+            <param name="array">The array where the item is going to be removed.</param>
+            <param name="item">The item to remove.</param>
+            <returns>An <see cref="T:System.Array"/>.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Extensions.ArrayExtensions.RemoveItem``1(``0[],``0[])">
+            <summary>
+            Removes a specific item from an array.
+            </summary>
+            <typeparam name="T">The type of the array.</typeparam>
+            <param name="array">The array where the items are going to be removed.</param>
+            <param name="items">The items to remove.</param>
+            <returns>An <see cref="T:System.Array"/>.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.Extensions.IntExtensions">
+            <summary>
+            Methods that extends the <see cref="T:System.Int32"/> type.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Extensions.IntExtensions.IsEven(System.Int32)">
+            <summary>
+            Determines if the <see cref="T:System.Int32"/> value is even.
+            </summary>
+            <param name="value">The <see cref="T:System.Int32"/> to check.</param>
+            <returns>A <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Extensions.IntExtensions.ToDouble(System.Int32)">
+            <summary>
+            Converts an <see cref="T:System.Int32"/> value to a <see cref="T:System.Double"/> value.
+            </summary>
+            <param name="value">The <see cref="T:System.Int32"/> value to convert.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.Extensions.StringExtensions">
+            <summary>
+            Methods that extends the <see cref="T:System.String"/> type.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Extensions.StringExtensions.CountWords(System.String)">
+            <summary>
+            Counts the number of words in a <see cref="T:System.String"/>.
+            </summary>
+            <param name="value">The <see cref="T:System.String"/> where the words should be counted.</param>
+            <returns>A <see cref="T:System.Int32"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Extensions.StringExtensions.CountWords(System.String,System.String[])">
+            <summary>
+            Counts the number of words in a <see cref="T:System.String"/>.
+            </summary>
+            <param name="value">The <see cref="T:System.String"/> where the words should be counted.</param>
+            <param name="wordSeparator">The separator of the words. Example: ", ; : ! ? .  ".</param>
+            <returns>A <see cref="T:System.Int32"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Extensions.StringExtensions.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypts a <see cref="T:System.String"/>.
+            </summary>
+            <param name="source">The <see cref="T:System.String"/> to encrypt.</param>
+            <param name="key">The key that will be used to encrypt and decrypt the string.</param>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Extensions.StringExtensions.Decrypt(System.String,System.String)">
+            <summary>
+            Decrypts an encrypted <see cref="T:System.String"/>.
+            </summary>
+            <param name="encrypt">The encrypted <see cref="T:System.String"/>.</param>
+            <param name="key">The key that will be used to encrypt and decrypt the string.</param>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.GuidGenerator">
+            <summary>
+            A class that contains methods to generate Guids.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.GuidGenerator.Generate">
+            <summary>
+            Generates a new Guid and convert it's value to a string value.
+            </summary>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.GuidGenerator.Generate(System.Int32)">
+            <summary>
+            Generates a new Guid and convert it's value to a string value.
+            </summary>
+            <param name="lenght">Lenght of the Guid.</param>
+            <exception cref="T:LeoCorpLibrary.Exceptions.InvalidGuidLenghtException"></exception>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.GuidGenerator.Generate(System.String)">
+            <summary>
+            Generates a Guid from a specified <see cref="T:System.String"/>.
+            </summary>
+            <param name="fromString">Generate the guid from a specified <see cref="T:System.String"/>.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.GuidGenerator.Generate(LeoCorpLibrary.GuidGeneratorParameters)">
+            <summary>
+            Generates a new Guid from <see cref="T:LeoCorpLibrary.GuidGeneratorParameters"/>.
+            </summary>
+            <param name="guidGeneratorParameters">Parameters of the Guid Generation.</param>
+            <exception cref="T:LeoCorpLibrary.Exceptions.InvalidGuidLenghtException"></exception>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.GuidGenerator.Generate(System.String,LeoCorpLibrary.GuidGeneratorParameters)">
+            <summary>
+            Generates a new Guid from string and from <see cref="T:LeoCorpLibrary.GuidGeneratorParameters"/>.
+            </summary>
+            <param name="fromString">Generate the guid from a specified <see cref="T:System.String"/>.</param>
+            <param name="guidGeneratorParameters">Parameters of the Guid Generation.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:LeoCorpLibrary.Exceptions.InvalidGuidLenghtException"></exception>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.GuidGeneratorParameters">
+            <summary>
+            A class that can be used in <see cref="M:LeoCorpLibrary.GuidGenerator.Generate"/> as an argument.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.GuidGeneratorParameters.#ctor">
+            <summary>
+            The constructor for <see cref="T:LeoCorpLibrary.GuidGeneratorParameters"/>.
+            </summary>
+        </member>
+        <member name="P:LeoCorpLibrary.GuidGeneratorParameters.Lenght">
+            <summary>
+            Lenght of the Guid to generate.
+            </summary>
+        </member>
+        <member name="P:LeoCorpLibrary.GuidGeneratorParameters.WithHyphens">
+            <summary>
+            Include or not hyphens, such as: <c>00000000-0000-0000-0000-00000000</c>
+            </summary>
+        </member>
+        <member name="P:LeoCorpLibrary.GuidGeneratorParameters.WithBraces">
+            <summary>
+            Include or not braces, such as: <c>{00000000-0000-0000-0000-00000000}</c>
+            </summary>
+        </member>
+        <member name="P:LeoCorpLibrary.GuidGeneratorParameters.UseUpperCaseOnly">
+            <summary>
+            Use only upper case if true. Uses only lower case if false.
+            </summary>
+        </member>
+        <member name="T:LeoCorpLibrary.Load">
+            <summary>
+            Class containing methods to load saved file using the methods in <see cref="T:LeoCorpLibrary.Save"/>.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Load.ListViewContent(System.Windows.Forms.ListView,System.String)">
+            <summary>
+            Allows you to load a saved file in a <see cref="T:System.Windows.Forms.ListView"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <param name="listView"><see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="filePath">Location of the file to load in a <see cref="T:System.Windows.Forms.ListView"/>.</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Load.ListViewContent(System.Windows.Forms.ListView,System.String,System.String,System.String)">
+            <summary>
+            Allows you to load a saved file in a <see cref="T:System.Windows.Forms.ListView"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <param name="listView"><see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="filePath">Location of the file to load in a <see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="itemSplit">Elements separator used during saving.</param>
+            <param name="columnSplit">Columns separator used during saving.</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Load.ListViewContentCustom(System.Windows.Forms.ListView,System.String)">
+            <summary>
+            Allows you to load a saved file in a <see cref="T:System.Windows.Forms.ListView"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <param name="listView"><see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="filePath">Location of the file to load in a <see cref="T:System.Windows.Forms.ListView"/>.</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Load.ListViewContentCustom(System.Windows.Forms.ListView,System.String,System.String,System.String)">
+            <summary>
+            Allows you to load a saved file in a <see cref="T:System.Windows.Forms.ListView"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <param name="listView"><see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="filePath">Location of the file to load in a <see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="itemSplit">Elements separator used during saving.</param>
+            <param name="columnSplit">Columns separator used during saving.</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Load.ListViewContentXML(System.Windows.Forms.ListView,System.String)">
+            <summary>
+            Allows you to load a saved file in a <see cref="T:System.Windows.Forms.ListView"/>.
+            </summary>
+            <param name="listView"><see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="filePath">The location of the file where the items are.</param>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+        <member name="T:LeoCorpLibrary.Maths">
+            <summary>
+            Class that contains methods relatives to maths.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Sum(System.Double[])">
+            <summary>
+            Allows you to do a sum of <see cref="T:System.Double"/> numbers.
+            </summary>
+            <param name="args">Numbers.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.GetLowestNumber(System.Double[])">
+            <summary>
+            Allows you to get the lowest number from specified <see cref="T:System.Double"/> numbers.
+            </summary>
+            <param name="numbers">Numbers.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.GetBiggestNumber(System.Double[])">
+            <summary>
+            Allows you to get the biggest number from specified <see cref="T:System.Double"/> numbers.
+            </summary>
+            <param name="numbers">Numbers.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.Maths.Circle">
+            <summary>
+            Class that coontains methods for circles.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Circle.GetArea(System.Double)">
+            <summary>
+            Allows you to get the area of a circle.
+            </summary>
+            <param name="radius">Circle's radius</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Circle.GetPerimeter(System.Double)">
+            <summary>
+            Allows you to get the perimeter of a circle.
+            </summary>
+            <param name="radius">Circle's radius.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.Maths.Triangle">
+            <summary>
+            Class that contains methods for triangles.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Triangle.GetArea(System.Double,System.Double)">
+            <summary>
+            Allows you to get the area of triangle from it's height and width/base.
+            </summary>
+            <param name="height">Triangle's height.</param>
+            <param name="width">Triangle's base/width.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Triangle.GetPerimeter(System.Double,System.Double,System.Double)">
+            <summary>
+            Allows you to get the perimeter of a triangle.
+            </summary>
+            <param name="side1">Triangle's side.</param>
+            <param name="side2">Triangle's side.</param>
+            <param name="side3">Triangle's side.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Triangle.IsBuildable(System.Double,System.Double,System.Double)">
+            <summary>
+            Allows you to know if a triangle is buildable or not.
+            </summary>
+            <param name="side1">Triangle's side.</param>
+            <param name="side2">Triangle's side.</param>
+            <param name="side3">Triangle's side.</param>
+            <returns>A <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.Maths.Cube">
+            <summary>
+            Class that contains methods for cubes.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Cube.GetVolume(System.Double,System.Double)">
+            <summary>
+            Allows you to get the volume of a cube/cuboid.
+            </summary>
+            <param name="side">Cube's side.</param>
+            <param name="height">Cube's height.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Cube.GetVolume(System.Double)">
+            <summary>
+            Allows you to get the volume of cube.
+            </summary>
+            <param name="side">Cube's side.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Cube.GetEdge(System.Double)">
+            <summary>
+            Allows you to get the edge of a cube.
+            </summary>
+            <param name="area">Area.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.Maths.Cylinder">
+            <summary>
+            Class that contains methods for cylinders.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Cylinder.GetVolume(System.Double,System.Double)">
+            <summary>
+            Allows you to get the volume of a cylinder.
+            </summary>
+            <param name="radius">Radius.</param>
+            <param name="height">Height.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Cylinder.GetHeight(System.Double,System.Double)">
+            <summary>
+            Allows you to get the height of cylinder.
+            </summary>
+            <param name="area">Area.</param>
+            <param name="radius">Radius.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Cylinder.GetBaseArea(System.Double)">
+            <summary>
+            Allows you to get the area of cylinder.
+            </summary>
+            <param name="radius">Radius.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.Maths.Pyramid">
+            <summary>
+            Class that contains methods for pyramids.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Pyramid.GetVolume(System.Double,System.Double,System.Double)">
+            <summary>
+            Allows you to get the volume of a pyramid.
+            </summary>
+            <param name="lenght">Lenght of the pyramid.</param>
+            <param name="width">Width of the pyramid.</param>
+            <param name="height">Height of the pyramid.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Pyramid.GetHeight(System.Double,System.Double,System.Double)">
+            <summary>
+            Allows you to get the height of a pyramid.
+            </summary>
+            <param name="width">Width of the pyramid.</param>
+            <param name="lenght">Lenght of the pyramid.</param>
+            <param name="volume">Volume.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Pyramid.GetLenghtBase(System.Double,System.Double)">
+            <summary>
+            Allows you to get the lenght of the base of a pyramid.
+            </summary>
+            <param name="areaBase">Base's area.</param>
+            <param name="width">Width of the pyramid.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Maths.Pyramid.GetWidthBase(System.Double,System.Double)">
+            <summary>
+            Allows you to get hte width of the base of a pyramid.
+            </summary>
+            <param name="areaBase">Base's are.</param>
+            <param name="lenght">Lenght of the pyramid.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.NetworkConnection">
+            <summary>
+            Class that contains methods to get and test the user's Internet connection.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.NetworkConnection.IsAvailable">
+            <summary>
+            <para>Allows you to know if the user is connected to Internet.</para>
+            <para>The connection is tested by default on https://bing.com.</para>
+            </summary>
+            <returns>A <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.NetworkConnection.IsAvailableAsync">
+            <summary>
+            <para>Allows you to know if the user is connected to Internet asynchronously.</para>
+            <para>The connection is tested by default on https://bing.com.</para>
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.NetworkConnection.IsAvailableTestSite(System.String)">
+            <summary>
+            <para>Allows you to know if the user is connected to Internet.</para>
+            <para>The connection is tested on the specified website.</para>
+            </summary>
+            <param name="site">Website where the connection is tested.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns>A <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.NetworkConnection.IsAvailableTestSiteAsync(System.String)">
+            <summary>
+            <para>Allows you to know if the user is connected to Internet asynchronously.</para>
+            <para>The connection is tested on the specified website.</para>
+            </summary>
+            <param name="site">Website where the connection is tested.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.Password">
+            <summary>
+            Class that contains method to generate passwords.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Password.Generate(System.Int32,System.String,System.String)">
+            <summary>
+            Generates a password.
+            </summary>
+            <param name="lenght">Lenght of the password.</param>
+            <param name="chars">Characters that can be in the generated password.</param>
+            <param name="separator">Separator of the characters.</param>
+            <exception cref="T:System.Exception"></exception>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Password.GenerateAsync(System.Int32,System.String,System.String)">
+            <summary>
+            Generates a password asynchronously.
+            </summary>
+            <param name="lenght">Lenght of the password.</param>
+            <param name="chars">Characters that can be in the generated password.</param>
+            <param name="separator">Separator of the characters.</param>
+            <exception cref="T:System.Exception"></exception>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Password.Generate(System.Int32,LeoCorpLibrary.PasswordPresets)">
+            <summary>
+            Generates a password.
+            </summary>
+            <param name="lenght">Lenght of the password.</param>
+            <param name="passwordPresets">The preset used for the password.</param>
+            <exception cref="T:System.Exception"></exception>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Password.GenerateAsync(System.Int32,LeoCorpLibrary.PasswordPresets)">
+            <summary>
+            Generates a password asynchronously.
+            </summary>
+            <param name="lenght">Lenght of the password.</param>
+            <param name="passwordPresets">The preset used for the password.</param>
+            <exception cref="T:System.Exception"></exception>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> value.</returns>
+        </member>
+        <member name="T:LeoCorpLibrary.PasswordPresets">
+            <summary>
+            Presets that can be used for password generation.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.PasswordPresets.Simple">
+            <summary>
+            The "Simple" preset generates a password with simple characters.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.PasswordPresets.Complex">
+            <summary>
+            The "Complex" preset generates a password with unusual, hard and complex characters.
+            </summary>
+        </member>
+        <member name="T:LeoCorpLibrary.Save">
+            <summary>
+            Class containing methods to save files.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Save.ListViewContent(System.Windows.Forms.ListView,System.String)">
+            <summary>
+            Allows you to save the content of a <see cref="T:System.Windows.Forms.ListView"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <param name="listView"><see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="filePath">Location where to save the content of a <see cref="T:System.Windows.Forms.ListView"/>.</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Save.ListViewContent(System.Windows.Forms.ListView,System.String,System.String,System.String)">
+            <summary>
+            Allows you to save the content of a <see cref="T:System.Windows.Forms.ListView"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <param name="listView"><see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="filePath">Location where to save the content of a <see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="itemSplit">Elements separator (ex: /*E*/).</param>
+            <param name="columnSplit">Columns separator (ex: /*C*/).</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Save.ListViewContentCustom(System.Windows.Forms.ListView,System.String)">
+            <summary>
+            Allows you to save the content of a <see cref="T:System.Windows.Forms.ListView"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <param name="listView"><see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="filePath">Location where to save the content of a <see cref="T:System.Windows.Forms.ListView"/>.</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Save.ListViewContentCustom(System.Windows.Forms.ListView,System.String,System.String,System.String)">
+            <summary>
+            Allows you to save the content of a <see cref="T:System.Windows.Forms.ListView"/>.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <param name="listView"><see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="filePath">Location where to save the content of a <see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="itemSplit">Elements separator (ex: /*E*/).</param>
+            <param name="columnSplit">Columns separator (ex: /*C*/).</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Save.ListViewContentXML(System.Windows.Forms.ListView,System.String)">
+            <summary>
+            Allows you to save the content of a <see cref="T:System.Windows.Forms.ListView"/> in a XML file.
+            </summary>
+            <param name="listView"><see cref="T:System.Windows.Forms.ListView"/>.</param>
+            <param name="filePath">Where to save the file.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:LeoCorpLibrary.UI.WinFormsHelpers">
+            <summary>
+            A class that contains method to help you manage the UI of a Windows Forms application.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.UI.WinFormsHelpers.CenterControlOnForm(System.Windows.Forms.Control,System.Windows.Forms.Form)">
+            <summary>
+            Centers a specified <see cref="T:System.Windows.Forms.Control"/> in a <see cref="T:System.Windows.Forms.Form"/>.
+            </summary>
+            <param name="control">The <see cref="T:System.Windows.Forms.Control"/> to center.</param>
+            <param name="form">The <see cref="T:System.Windows.Forms.Form"/> where the control is going to be centered.</param>
+        </member>
+        <member name="M:LeoCorpLibrary.UI.WinFormsHelpers.CenterControlOnForm(System.Windows.Forms.Control,System.Windows.Forms.Form,LeoCorpLibrary.UI.ControlAlignement)">
+            <summary>
+            Centers a specified <see cref="T:System.Windows.Forms.Control"/> in a <see cref="T:System.Windows.Forms.Form"/>.
+            </summary>
+            <param name="control">The <see cref="T:System.Windows.Forms.Control"/> to center.</param>
+            <param name="form">The <see cref="T:System.Windows.Forms.Form"/> where the control is going to be centered.</param>
+            <param name="controlAlignement">If <see cref="F:LeoCorpLibrary.UI.ControlAlignement.Vertical"/>, the <see cref="T:System.Windows.Forms.Control"/> will be centered vertically. If <see cref="F:LeoCorpLibrary.UI.ControlAlignement.Horizontal"/>, the <see cref="T:System.Windows.Forms.Control"/> will be centered horizontally.</param>
+        </member>
+        <member name="M:LeoCorpLibrary.UI.WinFormsHelpers.CenterFormOnScreen(System.Windows.Forms.Form)">
+            <summary>
+            Centers a specified <see cref="T:System.Windows.Forms.Form"/> on the <see cref="T:System.Windows.Forms.Screen"/>.
+            </summary>
+            <param name="form"><see cref="T:System.Windows.Forms.Form"/> to center.</param>
+        </member>
+        <member name="T:LeoCorpLibrary.UI.ControlAlignement">
+            <summary>
+            The alignement of a <see cref="T:System.Windows.Forms.Control"/>.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.UI.ControlAlignement.Horizontal">
+            <summary>
+            The alignement of the <see cref="T:System.Windows.Forms.Control"/> will be horizontal.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.UI.ControlAlignement.Vertical">
+            <summary>
+            The alignement of the <see cref="T:System.Windows.Forms.Control"/> will be vertical.
+            </summary>
+        </member>
+        <member name="F:LeoCorpLibrary.UI.ControlAlignement.Both">
+            <summary>
+            The alignement of the <see cref="T:System.Windows.Forms.Control"/> will be horizontal and vertical.
+            </summary>
+        </member>
+        <member name="T:LeoCorpLibrary.Update">
+            <summary>
+            Class that contains methods to help you implement an update system to your product.
+            </summary>
+        </member>
+        <member name="M:LeoCorpLibrary.Update.IsAvailable(System.String,System.String)">
+            <summary>
+            Allows you to verify if updates are available.
+            </summary>
+            <param name="version">Current software version.</param>
+            <param name="lastVersion">Latest software version.</param>
+            <returns>A <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Update.GetLastVersion(System.String)">
+            <summary>
+            Allows you to get the latest version of the software from a .txt file.
+            </summary>
+            <param name="lastVersionFileLink">Link of the file where the lastest version is stocked.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Update.GetLastVersionAsync(System.String)">
+            <summary>
+            Allows you to get the lastest version of the software from a .txt file asynchronously.
+            </summary>
+            <param name="lastVersionFileLink">Link of the file where the lastest version is stocked.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> value.</returns>
+        </member>
+        <member name="M:LeoCorpLibrary.Update.Check(System.String,System.String,System.Windows.Forms.Form,System.Windows.Forms.Form)">
+            <summary>
+            Allows you to check if updates are available and open a <see cref="T:System.Windows.Forms.Form"/> depending on the result.
+            </summary>
+            <param name="version">Current software version.</param>
+            <param name="lastVersion">Latest software version.</param>
+            <param name="availableUpdateForm"><see cref="T:System.Windows.Forms.Form"/> that opens if updates are available.</param>
+            <param name="noUpdateForm"><see cref="T:System.Windows.Forms.Form"/> that opens if updates aren't available.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:LeoCorpLibrary.Update.CheckWPF(System.String,System.String,System.Windows.Window,System.Windows.Window)">
+            <summary>
+            Allows you to check if updates are available and open a <see cref="T:System.Windows.Window"/> depending on the result.
+            </summary>
+            <param name="version">Current software version.</param>
+            <param name="lastVersion">Latest software version.</param>
+            <param name="availableUpdateWindow"><see cref="T:System.Windows.Window"/> that opens if updates are available.</param>
+            <param name="noUpdateWindow"><see cref="T:System.Windows.Window"/> that opens if updates aren't available.</param>
+        </member>
+        <member name="M:LeoCorpLibrary.Update.Install(System.String,System.String,System.Boolean)">
+            <summary>
+            Allows you to install an update.
+            </summary>
+            <param name="filePath">File location.</param>
+            <param name="newVersionLink">Link of the new file.</param>
+            <param name="fromAppStartupPath">(optionnal) Open the file from the <see cref="P:System.Windows.Forms.Application.StartupPath"/>.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+    </members>
+</doc>
