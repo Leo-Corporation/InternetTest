@@ -129,7 +129,7 @@ namespace InternetTest
 
         private void gunaGradientButton4_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Leo-Corporation/InternetTest");
+            Process.Start("https://github.com/Leo-Corporation/InternetTest");
         }
 
         private void gunaLinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -202,6 +202,11 @@ namespace InternetTest
         private void gunaGradientButton4_Click_1(object sender, EventArgs e)
         {
             Process.Start(Properties.Settings.Default.TestSite); // Open the browser
+        }
+
+        private void gunaGradientButton6_Click(object sender, EventArgs e)
+        {
+            new DownDetector().Show(); // Show
         }
     }
 }
