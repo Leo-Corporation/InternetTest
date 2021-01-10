@@ -39,5 +39,37 @@ namespace InternetTest.Classes
         {
             return Properties.Settings.Default.Language;
         }
+
+        internal static string WebSiteNotDownMessage
+        {
+            get
+            {
+                switch (new Language().GetCode())
+                {
+                    case "fr-FR":
+                        return "Le site n'est pas down";
+                    case "EN":
+                        return "The website is not down";
+                    default:
+                        return "The website is not down";
+                }
+            }
+        }
+
+        internal static string WebSiteDownMessage
+        {
+            get
+            {
+                switch (new Language().GetCode())
+                {
+                    case "fr-FR":
+                        return "Le site est actuellement down.";
+                    case "EN":
+                        return "The website is currently down";
+                    default:
+                        return "The website is currently down";
+                }
+            }
+        }
     }
 }
