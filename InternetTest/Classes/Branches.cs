@@ -8,8 +8,8 @@ namespace InternetTest.Classes
 {
     public class Branches
     {
-        string branch = "Version_Next";
-        // branch peut être égal à
+        string branch = "master";
+        // branch can be equal to:
         //  - master
         //  - Version_Next
         public string GetBranch()
