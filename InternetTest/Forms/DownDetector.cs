@@ -27,7 +27,7 @@ namespace InternetTest.Forms
         {
             if (!string.IsNullOrEmpty(gunaLineTextBox1.Text) && !string.IsNullOrWhiteSpace(gunaLineTextBox1.Text)) // If the textbox isn't null
             {
-                if (!gunaLineTextBox1.Text.Contains("https://")) // If the box doesn't contains https
+                if (!gunaLineTextBox1.Text.Contains("https://") && !gunaLineTextBox1.Text.Contains("http://")) // If the box doesn't contains https or http
                 {
                     gunaLineTextBox1.Text = "https://" + gunaLineTextBox1.Text; // Add the https
                 }
