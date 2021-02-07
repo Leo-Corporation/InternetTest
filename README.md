@@ -35,12 +35,12 @@
 * Down Detector
 ## Branches
 There is 2 branches: 
-* master ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest)
+* main ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest)
 * Version_Next ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest?include_prereleases)
 
 The ``Version_Next`` branch is for the next version of InternetTest.
 
-The ``master`` branch is for stable versions.
+The ``main`` branch is for stable versions.
 ## Latest release
 [Click here](https://github.com/Leo-Corporation/InternetTest/releases) to show the latest release's changelog.
 ## Documentation 
