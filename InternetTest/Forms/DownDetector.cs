@@ -21,6 +21,10 @@ namespace InternetTest.Forms
             Icon = new Branches().IconBranch(); // Icon
             gunaPictureBox1.Image = new Branches().ImageBranch(); // Image
             ChangeTheme(); // Change the window theme
+
+            Guna.UI.Lib.GraphicsHelper.ShadowForm(this); // Add a shadow to the window
+
+            gunaLineTextBox1.Text = "leocorp.fr";
         }
 
         private async void gunaGradientButton1_Click(object sender, EventArgs e)

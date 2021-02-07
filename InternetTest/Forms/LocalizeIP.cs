@@ -193,13 +193,16 @@ namespace InternetTest.Forms
         {
             if (!string.IsNullOrEmpty(lat) && !string.IsNullOrEmpty(lon)) // Vérifier que la localisation a été trouvée
             {
-                switch (Properties.Settings.Default.MapsProvider) // Pouir chaque cas
+                switch (Properties.Settings.Default.MapsProvider) // For each case
                 {
-                    case "Bing Maps": // Si Bing
-                        Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Ouvrir dans une carte
+                    case "Bing Maps": // If Bing
+                        Process.Start(string.Format("https://www.bing.com/maps?q={0} {1}", lat, lon)); // Open the map in the browser
                         break;
-                    case "Google Maps": // Si Google
-                        Process.Start(string.Format("https://www.google.com/maps/place/{0},{1}", lat, lon)); // Ouvrir dans une carte
+                    case "Google Maps": // If Google
+                        Process.Start(string.Format("https://www.google.com/maps/place/{0},{1}", lat, lon)); // Open the map in the browser
+                        break;
+                    case "OpenStreetMap": // If OpenStreetMap
+                        Process.Start($"https://www.openstreetmap.org/#map=12/{lat}/{lon}"); // Open the map in the browser
                         break;
                 }
             }
