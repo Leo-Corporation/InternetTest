@@ -23,6 +23,8 @@ namespace InternetTest.Forms
             ChangeTheme(); // Change the window theme
 
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this); // Add a shadow to the window
+
+            gunaLineTextBox1.Text = "leocorp.fr";
         }
 
         private async void gunaGradientButton1_Click(object sender, EventArgs e)
