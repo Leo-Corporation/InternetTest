@@ -55,8 +55,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Guna.UI.dll</HintPath>
     </Reference>
-    <Reference Include="LeoCorpLibrary, Version=3.1.0.2012, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LeoCorpLibrary.3.1.0.2012\lib\net472\LeoCorpLibrary.dll</HintPath>
+    <Reference Include="LeoCorpLibrary, Version=3.2.0.2101, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LeoCorpLibrary.3.2.0.2101\lib\net472\LeoCorpLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
