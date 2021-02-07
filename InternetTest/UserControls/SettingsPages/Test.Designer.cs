@@ -61,7 +61,8 @@ namespace InternetTest.UserControls.SettingsPages
             this.gunaComboBox2.FormattingEnabled = true;
             this.gunaComboBox2.Items.AddRange(new object[] {
             resources.GetString("gunaComboBox2.Items"),
-            resources.GetString("gunaComboBox2.Items1")});
+            resources.GetString("gunaComboBox2.Items1"),
+            resources.GetString("gunaComboBox2.Items2")});
             this.gunaComboBox2.Name = "gunaComboBox2";
             this.gunaComboBox2.OnHoverItemBaseColor = System.Drawing.Color.RoyalBlue;
             this.gunaComboBox2.OnHoverItemForeColor = System.Drawing.Color.White;
