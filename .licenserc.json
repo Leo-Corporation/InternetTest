@@ -1,0 +1,16 @@
+{
+    "**/*.cs": [
+        "/*",
+        "MIT License",
+        "",
+        "Copyright (c) Léo Corporation"
+    ],
+    "ignore": [
+        "**/*.Designer.cs",
+        "InternetTest/InternetTest/Properties/",
+        "InternetTest/InternetTest/Ressources/",
+        "InternetTest/Xalyus Updater/Properties/",
+        "InternetTest/Xalyus Updater/Resources/",
+        "AssemblyInfo.cs"
+    ]
+}
