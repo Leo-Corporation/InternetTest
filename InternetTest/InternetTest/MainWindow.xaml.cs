@@ -57,5 +57,35 @@ namespace InternetTest
         {
             Environment.Exit(0); // Exit
         }
+
+        private void TabEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void TabLeave(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void ConnectionBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LocalizeIPBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SettingsTabBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DownDetectorBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

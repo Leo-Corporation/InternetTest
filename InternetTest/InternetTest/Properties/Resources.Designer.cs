@@ -104,5 +104,49 @@ namespace InternetTest.Properties {
                 return ResourceManager.GetString("InternetTest", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Settings
+        {
+            get
+            {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Connection.
+        /// </summary>
+        public static string Connection
+        {
+            get
+            {
+                return ResourceManager.GetString("Connection", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to LocalizeIP.
+        /// </summary>
+        public static string LocalizeIP
+        {
+            get
+            {
+                return ResourceManager.GetString("LocalizeIP", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to DownDetector.
+        /// </summary>
+        public static string DownDetector
+        {
+            get
+            {
+                return ResourceManager.GetString("DownDetector", resourceCulture);
+            }
+        }
     }
 }

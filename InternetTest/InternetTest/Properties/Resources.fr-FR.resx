@@ -132,4 +132,16 @@
   <data name="GoodEvening" xml:space="preserve">
     <value>Bonne soirée</value>
   </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="Connection" xml:space="preserve">
+    <value>Connexion</value>
+  </data>
+  <data name="LocalizeIP" xml:space="preserve">
+    <value>Localiser IP</value>
+  </data>
+  <data name="DownDetector" xml:space="preserve">
+    <value>DownDetector</value>
+  </data>
 </root>
