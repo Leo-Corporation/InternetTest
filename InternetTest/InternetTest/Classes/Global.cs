@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Pages;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,6 +90,15 @@ namespace InternetTest.Classes
                     return Properties.Resources.Hi + ", " + Environment.UserName + "."; // Return the correct value
                 }
             }
+        }
+
+        /// <summary>
+        /// Opens a link in a web browser.
+        /// </summary>
+        /// <param name="url">The URL to open.</param>
+        public static void OpenLinkInBrowser(string url)
+        {
+            Process.Start("explorer.exe", url); // Open the URL
         }
 
         /// <summary>
