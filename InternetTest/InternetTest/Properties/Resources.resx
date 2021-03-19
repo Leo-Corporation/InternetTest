@@ -124,4 +124,19 @@
   <data name="DownDetector" xml:space="preserve">
     <value>DownDetector</value>
   </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="OpenBrowser" xml:space="preserve">
+    <value>Open browser</value>
+  </data>
+  <data name="LaunchTestToCheckConnection" xml:space="preserve">
+    <value>Launch a test to check your connection</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>You are connected to Internet</value>
+  </data>
+  <data name="NotConnected" xml:space="preserve">
+    <value>You aren't connected to Internet</value>
+  </data>
 </root>
