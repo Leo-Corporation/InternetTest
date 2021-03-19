@@ -28,7 +28,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace InternetTest
+namespace InternetTest.Classes
 {
     /// <summary>
     /// The <see cref="Global"/> class contains various methods and properties.
