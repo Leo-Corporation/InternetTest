@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\FluentSystemIcons-Filled.ttf" />
     <None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
     <None Remove="Fonts\Montserrat-Bold.ttf" />
     <None Remove="Fonts\Montserrat-Regular.ttf" />
@@ -15,6 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Fonts\FluentSystemIcons-Filled.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Fonts\FluentSystemIcons-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
