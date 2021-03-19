@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,11 @@ namespace InternetTest.Classes
     /// </summary>
     public static class Global
     {
+        /// <summary>
+        /// The <see cref="Pages.ConnectionPage"/>.
+        /// </summary>
+        public static ConnectionPage ConnectionPage { get; set; }
+
         /// <summary>
         /// The current version of InternetTest.
         /// </summary>

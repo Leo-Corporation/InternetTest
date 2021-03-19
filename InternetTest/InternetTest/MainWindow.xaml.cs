@@ -54,6 +54,7 @@ namespace InternetTest
         private void InitUI()
         {
             HelloTxt.Text = Global.GetHiSentence; // Set the "Hello" message
+            PageContent.Content = Global.ConnectionPage; // Go to the home page
 
             CheckButton(ConnectionBtn); // Check the start page button
         }
@@ -112,6 +113,8 @@ namespace InternetTest
         {
             ResetAllCheckStatus(); // Reset the background and foreground of all buttons
             CheckButton(ConnectionBtn); // Check the "Settings" button
+
+            PageContent.Navigate(Global.ConnectionPage); // Navigate
         }
 
         private void LocalizeIPBtn_Click(object sender, RoutedEventArgs e)

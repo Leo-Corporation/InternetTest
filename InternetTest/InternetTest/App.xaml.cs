@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Classes;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -36,5 +37,11 @@ namespace InternetTest
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            Global.ConnectionPage = new(); // Create a new ConnectionPage
+
+            base.OnStartup(e);
+        }
     }
 }
