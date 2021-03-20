@@ -47,5 +47,15 @@ namespace InternetTest.Pages
         {
             InitializeComponent();
         }
+
+        private void LocalizeBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OpenMapBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
