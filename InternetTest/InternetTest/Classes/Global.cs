@@ -134,7 +134,7 @@ namespace InternetTest.Classes
                     TimeZone = lines[9],
                     ISP = lines[10],
                     Org = lines[12],
-                    Query = lines[lines.Length - 1]
+                    Query = lines[13]
                 };
             }
             catch (Exception ex)

@@ -101,8 +101,7 @@ namespace InternetTest.Classes
 
         public override string ToString()
         {
-            return $"{Properties.Resources.MyIP}: {Query}\n" +
-                $"{Properties.Resources.Country}: {Country}\n" +
+            return $"{Properties.Resources.Country}: {Country}\n" +
                 $"{Properties.Resources.Region}: {RegionName}\n" +
                 $"{Properties.Resources.City}: {City}\n" +
                 $"{Properties.Resources.ZIPCode}: {Zip}\n" +

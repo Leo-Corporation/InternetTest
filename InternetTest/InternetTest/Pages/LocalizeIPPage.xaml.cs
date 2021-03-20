@@ -51,13 +51,25 @@ namespace InternetTest.Pages
 
         private async void LocalizeBtn_Click(object sender, RoutedEventArgs e)
         {
-            var ip = await Global.GetIPInfo(IPTxt.Text);
-            IPInfoTxt.Text = ip.ToString();
+            var ip = await Global.GetIPInfo(IPTxt.Text); // Get IP info
+            IPInfoTxt.Text = ip.ToString(); // Show IP info
+
+            if (string.IsNullOrEmpty(IPTxt.Text))
+            {
+                IPTxt.Text = ip.Query;
+            }
         }
 
         private void OpenMapBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private async void MyIPBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var ip = await Global.GetIPInfo(""); // Get IP info
+            IPInfoTxt.Text = ip.ToString(); // Show IP info
+            IPTxt.Text = ip.Query;
         }
     }
 }
