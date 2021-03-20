@@ -159,4 +159,37 @@
   <data name="NotConnected" xml:space="preserve">
     <value>Vous n'êtes pas connecté à Internet</value>
   </data>
+  <data name="OpenMap" xml:space="preserve">
+    <value>Afficher sur une carte</value>
+  </data>
+  <data name="MapProvider" xml:space="preserve">
+    <value>Fournisseur de carte</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>Région</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Ville</value>
+  </data>
+  <data name="ZIPCode" xml:space="preserve">
+    <value>Code postal</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="Timezone" xml:space="preserve">
+    <value>Fuseau horaire</value>
+  </data>
+  <data name="ISP" xml:space="preserve">
+    <value>FAI</value>
+  </data>
+  <data name="MyIP" xml:space="preserve">
+    <value>Mon IP</value>
+  </data>
 </root>

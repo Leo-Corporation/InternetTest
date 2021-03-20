@@ -61,6 +61,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        public static string City {
+            get {
+                return ResourceManager.GetString("City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You are connected to Internet.
         /// </summary>
         public static string Connected {
@@ -75,6 +84,15 @@ namespace InternetTest.Properties {
         public static string Connection {
             get {
                 return ResourceManager.GetString("Connection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string Country {
+            get {
+                return ResourceManager.GetString("Country", resourceCulture);
             }
         }
         
@@ -133,6 +151,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ISP.
+        /// </summary>
+        public static string ISP {
+            get {
+                return ResourceManager.GetString("ISP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latitude.
+        /// </summary>
+        public static string Latitude {
+            get {
+                return ResourceManager.GetString("Latitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Launch a test to check your connection.
         /// </summary>
         public static string LaunchTestToCheckConnection {
@@ -147,6 +183,33 @@ namespace InternetTest.Properties {
         public static string LocalizeIP {
             get {
                 return ResourceManager.GetString("LocalizeIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Longitude.
+        /// </summary>
+        public static string Longitude {
+            get {
+                return ResourceManager.GetString("Longitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map provider.
+        /// </summary>
+        public static string MapProvider {
+            get {
+                return ResourceManager.GetString("MapProvider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My IP.
+        /// </summary>
+        public static string MyIP {
+            get {
+                return ResourceManager.GetString("MyIP", resourceCulture);
             }
         }
         
@@ -169,6 +232,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show on a map.
+        /// </summary>
+        public static string OpenMap {
+            get {
+                return ResourceManager.GetString("OpenMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Region.
+        /// </summary>
+        public static string Region {
+            get {
+                return ResourceManager.GetString("Region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {
@@ -183,6 +264,24 @@ namespace InternetTest.Properties {
         public static string Test {
             get {
                 return ResourceManager.GetString("Test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timezone.
+        /// </summary>
+        public static string Timezone {
+            get {
+                return ResourceManager.GetString("Timezone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ZIP Code.
+        /// </summary>
+        public static string ZIPCode {
+            get {
+                return ResourceManager.GetString("ZIPCode", resourceCulture);
             }
         }
     }
