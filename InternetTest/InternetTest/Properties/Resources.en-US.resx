@@ -192,4 +192,7 @@
   <data name="MyIP" xml:space="preserve">
     <value>My IP</value>
   </data>
+  <data name="WarningIPAPI" xml:space="preserve">
+    <value>InternetTest is using IP-API.com to get IPs' informations.</value>
+  </data>
 </root>

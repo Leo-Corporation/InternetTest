@@ -19,7 +19,7 @@
 
         <StackPanel Margin="10,40,10,10" Grid.Row="0">
             <TextBlock Text="{x:Static lang:Resources.LocalizeIP}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="16"/>
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="230">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="178.8">
                 <StackPanel>
                     <TextBox x:Name="IPTxt" Style="{DynamicResource TextBoxStyle1}" Margin="10" Padding="5" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}"/>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -31,6 +31,13 @@
                 </StackPanel>
             </ScrollViewer>
         </StackPanel>
+
+        <Border x:Name="border" Background="{Binding Source={StaticResource LightAccentColor}}" CornerRadius="5" Padding="10" Margin="10" Grid.Row="2">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Foreground="{Binding Source={StaticResource AccentColor}}"  Text="&#xF4A4;" FontSize="14" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                <TextBlock Foreground="{Binding Source={StaticResource AccentColor}}" Text="{x:Static lang:Resources.WarningIPAPI}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" MaxWidth="766" Width="500"/>
+            </StackPanel>
+        </Border>
 
     </Grid>
 </Page>

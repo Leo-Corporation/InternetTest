@@ -277,6 +277,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to InternetTest is using IP-API.com to get IPs&apos; informations..
+        /// </summary>
+        public static string WarningIPAPI {
+            get {
+                return ResourceManager.GetString("WarningIPAPI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ZIP Code.
         /// </summary>
         public static string ZIPCode {
