@@ -51,8 +51,8 @@ namespace InternetTest.Pages
 
         private async void LocalizeBtn_Click(object sender, RoutedEventArgs e)
         {
-            var ip = await Global.GetIPInfo("");
-            MessageBox.Show(ip.City);
+            var ip = await Global.GetIPInfo(IPTxt.Text);
+            IPInfoTxt.Text = ip.ToString();
         }
 
         private void OpenMapBtn_Click(object sender, RoutedEventArgs e)
