@@ -25,7 +25,9 @@ using InternetTest.Pages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -41,6 +43,11 @@ namespace InternetTest.Classes
         /// The <see cref="Pages.ConnectionPage"/>.
         /// </summary>
         public static ConnectionPage ConnectionPage { get; set; }
+
+        /// <summary>
+        /// The <see cref="Pages.LocalizeIPPage"/>.
+        /// </summary>
+        public static LocalizeIPPage LocalizeIPPage { get; set; }
 
         /// <summary>
         /// The current version of InternetTest.
@@ -99,6 +106,42 @@ namespace InternetTest.Classes
         public static void OpenLinkInBrowser(string url)
         {
             Process.Start("explorer.exe", url); // Open the URL
+        }
+
+        /// <summary>
+        /// Gets IP informations.
+        /// </summary>
+        /// <param name="ip">The IP.</param>
+        /// <returns>An <see cref="IPInfo"/> object.</returns>
+        public async static Task<IPInfo> GetIPInfo(string ip)
+        {
+            try
+            {
+                string content = await new WebClient().DownloadStringTaskAsync($"http://ip-api.com/line/{ip}"); // Get the content
+                string[] lines = content.Split(new string[] { "\n" }, StringSplitOptions.None); // Lines
+
+                return new IPInfo
+                {
+                    Status = lines[0],
+                    Country = lines[1],
+                    CountryCode = lines[2],
+                    Region = lines[3],
+                    RegionName = lines[4],
+                    City = lines[5],
+                    Zip = long.Parse(lines[6]),
+                    Lat = double.Parse(lines[7]),
+                    Lon = double.Parse(lines[8]),
+                    TimeZone = lines[9],
+                    ISP = lines[10],
+                    Org = lines[12],
+                    Query = lines[lines.Length - 1]
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Error); // Error
+                return new IPInfo();
+            }
         }
 
         /// <summary>

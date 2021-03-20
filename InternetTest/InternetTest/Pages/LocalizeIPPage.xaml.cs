@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,9 +49,10 @@ namespace InternetTest.Pages
             InitializeComponent();
         }
 
-        private void LocalizeBtn_Click(object sender, RoutedEventArgs e)
+        private async void LocalizeBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var ip = await Global.GetIPInfo("");
+            MessageBox.Show(ip.City);
         }
 
         private void OpenMapBtn_Click(object sender, RoutedEventArgs e)

@@ -40,6 +40,7 @@ namespace InternetTest
         protected override void OnStartup(StartupEventArgs e)
         {
             Global.ConnectionPage = new(); // Create a new ConnectionPage
+            Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
 
             base.OnStartup(e);
         }

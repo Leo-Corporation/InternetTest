@@ -121,6 +121,8 @@ namespace InternetTest
         {
             ResetAllCheckStatus(); // Reset the background and foreground of all buttons
             CheckButton(LocalizeIPBtn); // Check the "Settings" button
+
+            PageContent.Navigate(Global.LocalizeIPPage); // Navigate
         }
 
         private void SettingsTabBtn_Click(object sender, RoutedEventArgs e)
