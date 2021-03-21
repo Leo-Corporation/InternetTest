@@ -201,4 +201,10 @@
   <data name="OpenInBrowser" xml:space="preserve">
     <value>Open in a browser</value>
   </data>
+  <data name="WebsiteDown" xml:space="preserve">
+    <value>The website is down</value>
+  </data>
+  <data name="WebsiteAvailable" xml:space="preserve">
+    <value>The website is up</value>
+  </data>
 </root>

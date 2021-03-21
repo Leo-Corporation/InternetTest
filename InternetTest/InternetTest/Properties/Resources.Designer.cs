@@ -304,6 +304,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The website is up.
+        /// </summary>
+        public static string WebsiteAvailable {
+            get {
+                return ResourceManager.GetString("WebsiteAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The website is down.
+        /// </summary>
+        public static string WebsiteDown {
+            get {
+                return ResourceManager.GetString("WebsiteDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ZIP Code.
         /// </summary>
         public static string ZIPCode {

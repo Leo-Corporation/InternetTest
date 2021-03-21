@@ -60,13 +60,13 @@ namespace InternetTest.Pages
             {
                 if (await NetworkConnection.IsAvailableAsync()) // If there is Internet
                 {
-                    ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
+                    ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
                     InternetIconTxt.Text = "\uF299"; // Set the icon
                     InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
                 }
                 else
                 {
-                    ConnectionStatusTxt.Text = Properties.Resources.NotConnected; // Set text of the label
+                    ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
                     InternetIconTxt.Text = "\uF36E"; // Set the icon
                     InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
                 }
@@ -75,13 +75,13 @@ namespace InternetTest.Pages
             {
                 if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
                 {
-                    ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
+                    ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
                     InternetIconTxt.Text = "\uF299"; // Set the icon
                     InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
                 }
                 else
                 {
-                    ConnectionStatusTxt.Text = Properties.Resources.NotConnected; // Set text of the label
+                    ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
                     InternetIconTxt.Text = "\uF36E"; // Set the icon
                     InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
                 }
