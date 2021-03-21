@@ -207,4 +207,7 @@
   <data name="WebsiteAvailable" xml:space="preserve">
     <value>Le site est disponible</value>
   </data>
+  <data name="EnterURLToCheck" xml:space="preserve">
+    <value>Entrer une URL pour commencer</value>
+  </data>
 </root>

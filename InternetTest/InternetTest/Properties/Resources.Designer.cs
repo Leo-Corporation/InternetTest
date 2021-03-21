@@ -115,6 +115,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter a URL to get started.
+        /// </summary>
+        public static string EnterURLToCheck {
+            get {
+                return ResourceManager.GetString("EnterURLToCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Good afternoon.
         /// </summary>
         public static string GoodAfternoon {
