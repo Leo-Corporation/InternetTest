@@ -19,7 +19,7 @@
 
         <StackPanel Margin="10,40,10,10" Grid.Row="0">
             <TextBlock Text="{x:Static lang:Resources.LocalizeIP}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="16"/>
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="178.8">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="180" Template="{DynamicResource ScrollViewerControlTemplate}">
                 <StackPanel>
                     <TextBox x:Name="IPTxt" Style="{DynamicResource TextBoxStyle1}" Margin="10" Padding="5" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}"/>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
