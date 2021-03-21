@@ -243,4 +243,25 @@
   <data name="NeedRestartToApplyChanges" xml:space="preserve">
     <value>InternetTest doit redémarrer pour appliquer les changements. Voulez-vous redémarrer maintenant ?</value>
   </data>
+  <data name="Default" xml:space="preserve">
+    <value>Par défaut</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>InternetTest est à jour.</value>
+  </data>
+  <data name="AvailableUpdates" xml:space="preserve">
+    <value>Des mises à jour sont disponibles.</value>
+  </data>
+  <data name="CheckUpdate" xml:space="preserve">
+    <value>Rechercher des mises à jour</value>
+  </data>
+  <data name="InstallConfirmMsg" xml:space="preserve">
+    <value>Pour installer les mises à jour, InternetTest doit redémarrer. Voulez-vous continuer ?</value>
+  </data>
+  <data name="InstallVersion" xml:space="preserve">
+    <value>Installer la version</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
 </root>

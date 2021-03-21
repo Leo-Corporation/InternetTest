@@ -243,4 +243,25 @@
   <data name="NeedRestartToApplyChanges" xml:space="preserve">
     <value>InternetTest needs to restart to apply the changes. Do you want to restart now?</value>
   </data>
+  <data name="Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>InternetTest is up to date.</value>
+  </data>
+  <data name="AvailableUpdates" xml:space="preserve">
+    <value>Updates are available.</value>
+  </data>
+  <data name="CheckUpdate" xml:space="preserve">
+    <value>Check updates</value>
+  </data>
+  <data name="InstallConfirmMsg" xml:space="preserve">
+    <value>To install updates, InternetTest needs to restarts. Do you want to continue?</value>
+  </data>
+  <data name="InstallVersion" xml:space="preserve">
+    <value>Install version</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
 </root>
