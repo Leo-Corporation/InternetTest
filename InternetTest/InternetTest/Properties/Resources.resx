@@ -175,4 +175,10 @@
   <data name="WarningIPAPI" xml:space="preserve">
     <value>InternetTest is using IP-API.com to get IPs' informations.</value>
   </data>
+  <data name="Check" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="OpenInBrowser" xml:space="preserve">
+    <value>Open in a browser</value>
+  </data>
 </root>

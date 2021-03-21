@@ -195,4 +195,10 @@
   <data name="WarningIPAPI" xml:space="preserve">
     <value>InternetTest utilise IP-API.com pour obtenir les informations des IPs.</value>
   </data>
+  <data name="Check" xml:space="preserve">
+    <value>Vérifier</value>
+  </data>
+  <data name="OpenInBrowser" xml:space="preserve">
+    <value>Ouvrir dans un navigateur</value>
+  </data>
 </root>
