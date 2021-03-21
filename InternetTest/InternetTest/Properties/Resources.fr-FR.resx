@@ -210,4 +210,34 @@
   <data name="EnterURLToCheck" xml:space="preserve">
     <value>Entrer une URL pour commencer</value>
   </data>
+  <data name="Updates" xml:space="preserve">
+    <value>Mises à jour</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Installer</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Thème</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>Clair</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Sombre</value>
+  </data>
+  <data name="Licenses" xml:space="preserve">
+    <value>Licences</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Appliquer</value>
+  </data>
+  <data name="SeeLicenses" xml:space="preserve">
+    <value>Voir les licenses</value>
+  </data>
+  <data name="ChangeTheme" xml:space="preserve">
+    <value>Changer le thème d'InternetTest.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Langue</value>
+  </data>
 </root>

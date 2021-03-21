@@ -61,6 +61,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Apply.
+        /// </summary>
+        public static string Apply {
+            get {
+                return ResourceManager.GetString("Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change InternetTest theme..
+        /// </summary>
+        public static string ChangeTheme {
+            get {
+                return ResourceManager.GetString("ChangeTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check.
         /// </summary>
         public static string Check {
@@ -102,6 +120,15 @@ namespace InternetTest.Properties {
         public static string Country {
             get {
                 return ResourceManager.GetString("Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        public static string Dark {
+            get {
+                return ResourceManager.GetString("Dark", resourceCulture);
             }
         }
         
@@ -160,6 +187,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Install.
+        /// </summary>
+        public static string Install {
+            get {
+                return ResourceManager.GetString("Install", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to InternetTest.
         /// </summary>
         public static string InternetTest {
@@ -178,6 +214,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Latitude.
         /// </summary>
         public static string Latitude {
@@ -192,6 +237,24 @@ namespace InternetTest.Properties {
         public static string LaunchTestToCheckConnection {
             get {
                 return ResourceManager.GetString("LaunchTestToCheckConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Licenses.
+        /// </summary>
+        public static string Licenses {
+            get {
+                return ResourceManager.GetString("Licenses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        public static string Light {
+            get {
+                return ResourceManager.GetString("Light", resourceCulture);
             }
         }
         
@@ -277,6 +340,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to See licenses.
+        /// </summary>
+        public static string SeeLicenses {
+            get {
+                return ResourceManager.GetString("SeeLicenses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {
@@ -295,11 +367,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Theme.
+        /// </summary>
+        public static string Theme {
+            get {
+                return ResourceManager.GetString("Theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Timezone.
         /// </summary>
         public static string Timezone {
             get {
                 return ResourceManager.GetString("Timezone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updates.
+        /// </summary>
+        public static string Updates {
+            get {
+                return ResourceManager.GetString("Updates", resourceCulture);
             }
         }
         
