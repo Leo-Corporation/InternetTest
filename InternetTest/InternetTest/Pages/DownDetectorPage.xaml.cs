@@ -103,6 +103,7 @@ namespace InternetTest.Pages
         private void CheckBtn_Click(object sender, RoutedEventArgs e)
         {
             Test(FormatURL(WebsiteTxt.Text)); // Test
+            WebsiteTxt.Text = FormatURL(WebsiteTxt.Text); // Formar
         }
 
         private void OpenBrowserBtn_Click(object sender, RoutedEventArgs e)
