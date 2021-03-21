@@ -50,6 +50,11 @@ namespace InternetTest.Classes
         public static LocalizeIPPage LocalizeIPPage { get; set; }
 
         /// <summary>
+        /// The <see cref="Pages.DownDetectorPage"/>.
+        /// </summary>
+        public static DownDetectorPage DownDetectorPage { get; set; }
+
+        /// <summary>
         /// The current version of InternetTest.
         /// </summary>
         public static string Version => "1.0.0.2103";

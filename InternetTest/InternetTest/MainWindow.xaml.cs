@@ -135,6 +135,8 @@ namespace InternetTest
         {
             ResetAllCheckStatus(); // Reset the background and foreground of all buttons
             CheckButton(DownDetectorBtn); // Check the "Settings" button
+
+            PageContent.Navigate(Global.DownDetectorPage); // Navigate
         }
     }
 }

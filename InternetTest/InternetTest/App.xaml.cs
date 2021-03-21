@@ -41,6 +41,7 @@ namespace InternetTest
         {
             Global.ConnectionPage = new(); // Create a new ConnectionPage
             Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
+            Global.DownDetectorPage = new(); // Create a new DownDetectorPage
 
             base.OnStartup(e);
         }
