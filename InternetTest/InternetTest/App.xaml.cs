@@ -42,6 +42,7 @@ namespace InternetTest
             SettingsManager.Load(); // Load settings
 
             Global.ChangeTheme(); // Change the theme
+            Global.ChangeLanguage(); // Change the language
 
             Global.ConnectionPage = new(); // Create a new ConnectionPage
             Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
