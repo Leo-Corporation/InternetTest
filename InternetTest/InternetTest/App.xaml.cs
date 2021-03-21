@@ -41,6 +41,8 @@ namespace InternetTest
         {
             SettingsManager.Load(); // Load settings
 
+            Global.ChangeTheme(); // Change the theme
+
             Global.ConnectionPage = new(); // Create a new ConnectionPage
             Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
             Global.DownDetectorPage = new(); // Create a new DownDetectorPage

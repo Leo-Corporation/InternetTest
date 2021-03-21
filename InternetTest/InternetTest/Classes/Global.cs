@@ -164,7 +164,19 @@ namespace InternetTest.Classes
         /// </summary>
         public static void ChangeTheme()
         {
-            //TODO
+            App.Current.Resources.MergedDictionaries.Clear();
+            ResourceDictionary resourceDictionary = new(); // Create a resource dictionary
+
+            if (Settings.IsDarkTheme) // If the dark theme is on
+            {
+                resourceDictionary.Source = new Uri("..\\Themes\\Dark.xaml", UriKind.Relative); // Add source
+            }
+            else
+            {
+                resourceDictionary.Source = new Uri("..\\Themes\\Light.xaml", UriKind.Relative); // Add source
+            }
+
+            App.Current.Resources.MergedDictionaries.Add(resourceDictionary); // Add the dictionary
         }
     }
 }
