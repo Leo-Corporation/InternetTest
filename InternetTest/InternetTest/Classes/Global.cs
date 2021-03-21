@@ -60,6 +60,11 @@ namespace InternetTest.Classes
         public static SettingsPage SettingsPage { get; set; }
 
         /// <summary>
+        /// The <see cref="Classes.Settings"/> of InternetTest
+        /// </summary>
+        public static Settings Settings { get; set; }
+
+        /// <summary>
         /// The current version of InternetTest.
         /// </summary>
         public static string Version => "1.0.0.2103";

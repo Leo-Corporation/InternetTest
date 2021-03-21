@@ -39,6 +39,8 @@ namespace InternetTest
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            SettingsManager.Load(); // Load settings
+
             Global.ConnectionPage = new(); // Create a new ConnectionPage
             Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
             Global.DownDetectorPage = new(); // Create a new DownDetectorPage
