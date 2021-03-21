@@ -23,6 +23,8 @@ SOFTWARE.
 */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,26 +41,19 @@ using System.Windows.Shapes;
 namespace InternetTest.Pages
 {
     /// <summary>
-    /// Interaction logic for Settings.xaml
+    /// Interaction logic for SettingsPage.xaml
     /// </summary>
-    public partial class Settings : Page
+    public partial class SettingsPage : Page
     {
-        public Settings()
+        bool isAvailable;
+        public SettingsPage()
         {
             InitializeComponent();
         }
 
+
+
         private void RefreshInstallBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void LightRadioBtn_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DarkRadioBtn_Checked(object sender, RoutedEventArgs e)
         {
 
         }
@@ -81,6 +76,28 @@ namespace InternetTest.Pages
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void LightRadioBtn_Checked(object sender, RoutedEventArgs e)
+        {
+            ThemeApplyBtn.Visibility = Visibility.Visible; // Show the ThemeApplyBtn button
+        }
+
+        private void DarkRadioBtn_Checked(object sender, RoutedEventArgs e)
+        {
+            ThemeApplyBtn.Visibility = Visibility.Visible; // Show the ThemeApplyBtn button
+        }
+
+        /// <summary>
+        /// Restarts InternetTest.
+        /// </summary>
+        private void DisplayRestartMessage()
+        {
+            if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.InternetTest, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                Process.Start(Directory.GetCurrentDirectory() + @"\Gerayis.exe"); // Start
+                Environment.Exit(0); // Close
+            }
         }
     }
 }

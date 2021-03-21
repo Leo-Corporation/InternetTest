@@ -55,6 +55,11 @@ namespace InternetTest.Classes
         public static DownDetectorPage DownDetectorPage { get; set; }
 
         /// <summary>
+        /// The <see cref="Pages.SettingsPage"/>.
+        /// </summary>
+        public static SettingsPage SettingsPage { get; set; }
+
+        /// <summary>
         /// The current version of InternetTest.
         /// </summary>
         public static string Version => "1.0.0.2103";

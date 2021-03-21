@@ -240,4 +240,7 @@
   <data name="Language" xml:space="preserve">
     <value>Langue</value>
   </data>
+  <data name="NeedRestartToApplyChanges" xml:space="preserve">
+    <value>InternetTest doit redémarrer pour appliquer les changements. Voulez-vous redémarrer maintenant ?</value>
+  </data>
 </root>

@@ -129,6 +129,8 @@ namespace InternetTest
         {
             ResetAllCheckStatus(); // Reset the background and foreground of all buttons
             CheckButton(SettingsTabBtn); // Check the "Settings" button
+
+            PageContent.Navigate(Global.SettingsPage); // Navigate
         }
 
         private void DownDetectorBtn_Click(object sender, RoutedEventArgs e)
