@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Classes;
 using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
@@ -106,7 +107,7 @@ namespace InternetTest.Pages
 
         private void OpenBrowserBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Global.OpenLinkInBrowser(FormatURL(WebsiteTxt.Text)); // Open in a browser
         }
     }
 }
