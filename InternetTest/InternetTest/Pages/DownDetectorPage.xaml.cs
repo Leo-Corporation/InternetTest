@@ -102,13 +102,19 @@ namespace InternetTest.Pages
 
         private void CheckBtn_Click(object sender, RoutedEventArgs e)
         {
-            Test(FormatURL(WebsiteTxt.Text)); // Test
-            WebsiteTxt.Text = FormatURL(WebsiteTxt.Text); // Formar
+            if (!string.IsNullOrEmpty(WebsiteTxt.Text) && !string.IsNullOrWhiteSpace(WebsiteTxt.Text))
+            {
+                Test(FormatURL(WebsiteTxt.Text)); // Test
+                WebsiteTxt.Text = FormatURL(WebsiteTxt.Text); // Format 
+            }
         }
 
         private void OpenBrowserBtn_Click(object sender, RoutedEventArgs e)
         {
-            Global.OpenLinkInBrowser(FormatURL(WebsiteTxt.Text)); // Open in a browser
+            if (!string.IsNullOrEmpty(WebsiteTxt.Text) && !string.IsNullOrWhiteSpace(WebsiteTxt.Text))
+            {
+                Global.OpenLinkInBrowser(FormatURL(WebsiteTxt.Text)); // Open in a browser 
+            }
         }
     }
 }
