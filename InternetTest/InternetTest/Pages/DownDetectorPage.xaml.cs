@@ -90,7 +90,7 @@ namespace InternetTest.Pages
 
         private string FormatURL(string url)
         {
-            if (!url.Contains("https://") || !url.Contains("http://")) // If there isn't http(s)
+            if (!url.Contains("https://") && !url.Contains("http://")) // If there isn't http(s)
             {
                 return "https://" + url; // Add the https://
             }
