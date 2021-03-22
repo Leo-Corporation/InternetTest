@@ -331,6 +331,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The map provider used to show an IP localization..
+        /// </summary>
+        public static string MapProviderDescription {
+            get {
+                return ResourceManager.GetString("MapProviderDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My IP.
         /// </summary>
         public static string MyIP {
@@ -417,6 +426,24 @@ namespace InternetTest.Properties {
         public static string Test {
             get {
                 return ResourceManager.GetString("Test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test website.
+        /// </summary>
+        public static string TestSite {
+            get {
+                return ResourceManager.GetString("TestSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The website where the connection is tested..
+        /// </summary>
+        public static string TestSiteDescription {
+            get {
+                return ResourceManager.GetString("TestSiteDescription", resourceCulture);
             }
         }
         

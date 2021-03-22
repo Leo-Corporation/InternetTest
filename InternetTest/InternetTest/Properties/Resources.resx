@@ -244,4 +244,13 @@
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
+  <data name="TestSite" xml:space="preserve">
+    <value>Test website</value>
+  </data>
+  <data name="TestSiteDescription" xml:space="preserve">
+    <value>The website where the connection is tested.</value>
+  </data>
+  <data name="MapProviderDescription" xml:space="preserve">
+    <value>The map provider used to show an IP localization.</value>
+  </data>
 </root>

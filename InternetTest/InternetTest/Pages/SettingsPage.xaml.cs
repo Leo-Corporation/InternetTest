@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.Enums;
 using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
@@ -72,8 +73,21 @@ namespace InternetTest.Pages
 
                 LangComboBox.SelectedIndex = (Global.Settings.Language == "_default") ? 0 : Global.LanguageCodeList.IndexOf(Global.Settings.Language) + 1;
 
-                LangApplyBtn.Visibility = Visibility.Hidden; // Hide
-                ThemeApplyBtn.Visibility = Visibility.Hidden; // Hide
+                // Load MapProviderComboBox
+                MapProviderComboBox.Items.Add("OpenStreetMap"); // Add a map provider
+                MapProviderComboBox.Items.Add("Bing Maps"); // Add a map provider
+                MapProviderComboBox.Items.Add("Google Maps"); // Add a map provider
+
+                MapProviderComboBox.SelectedIndex = Global.Settings.MapProvider switch
+                {
+                    MapProviders.OpenStreetMap => 0,
+                    MapProviders.BingMaps => 1,
+                    MapProviders.GoogleMaps => 2,
+                    _ => 0,
+                };
+
+                // Load the TestSiteTxt
+                TestSiteTxt.Text = Global.Settings.TestSite; // Set text
 
                 // Update the UpdateStatusTxt
                 isAvailable = Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink));
@@ -81,6 +95,11 @@ namespace InternetTest.Pages
                 UpdateStatusTxt.Text = isAvailable ? Properties.Resources.AvailableUpdates : Properties.Resources.UpToDate; // Set the text
                 InstallIconTxt.Text = isAvailable ? "\uF152" : "\uF191"; // Set text 
                 InstallMsgTxt.Text = isAvailable ? Properties.Resources.Install : Properties.Resources.CheckUpdate; // Set text
+
+                LangApplyBtn.Visibility = Visibility.Hidden; // Hide
+                ThemeApplyBtn.Visibility = Visibility.Hidden; // Hide
+                TestSiteApplyBtn.Visibility = Visibility.Hidden; // Hide
+                MapProviderApplyBtn.Visibility = Visibility.Hidden; // Hide
             }
             catch (Exception ex)
             {
@@ -161,6 +180,36 @@ namespace InternetTest.Pages
                 Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe"); // Start
                 Environment.Exit(0); // Close
             }
+        }
+
+        private void TestSiteApplyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Global.Settings.TestSite = TestSiteTxt.Text; // Define
+            SettingsManager.Save(); // Save the changes
+            TestSiteApplyBtn.Visibility = Visibility.Hidden; // Hide
+        }
+
+        private void MapProviderComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MapProviderApplyBtn.Visibility = Visibility.Visible; // Visible
+        }
+
+        private void TestSiteTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TestSiteApplyBtn.Visibility = Visibility.Visible; // Visible
+        }
+
+        private void MapProviderApplyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Global.Settings.MapProvider = MapProviderComboBox.Text switch
+            {
+                "OpenStreetMap" => MapProviders.OpenStreetMap,
+                "Bing Maps"     => MapProviders.BingMaps,
+                "Google Maps"   => MapProviders.GoogleMaps,
+                _               => MapProviders.OpenStreetMap
+            };
+            SettingsManager.Save(); // Save the changes
+            MapProviderApplyBtn.Visibility = Visibility.Hidden; // Hide
         }
     }
 }

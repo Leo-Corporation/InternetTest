@@ -264,4 +264,13 @@
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
+  <data name="TestSite" xml:space="preserve">
+    <value>Site de test</value>
+  </data>
+  <data name="TestSiteDescription" xml:space="preserve">
+    <value>Le site où la connexion est testée.</value>
+  </data>
+  <data name="MapProviderDescription" xml:space="preserve">
+    <value>Le fournisseur de cartes utilisé pour voir la localisation d'une IP.</value>
+  </data>
 </root>
