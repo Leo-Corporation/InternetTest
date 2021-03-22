@@ -48,7 +48,7 @@ namespace InternetTest.Pages
         public ConnectionPage()
         {
             InitializeComponent();
-            Test(""); // Launch a test
+            Test(Global.Settings.TestSite); // Launch a test
         }
 
         /// <summary>
@@ -91,12 +91,12 @@ namespace InternetTest.Pages
 
         private void TestBtn_Click(object sender, RoutedEventArgs e)
         {
-            Test(""); // Launch a test
+            Test(Global.Settings.TestSite); // Launch a test
         }
 
         private void OpenBrowserBtn_Click(object sender, RoutedEventArgs e)
         {
-            Global.OpenLinkInBrowser("https://www.leocorp.fr/"); // Open in a browser
+            Global.OpenLinkInBrowser(Global.Settings.TestSite); // Open in a browser
         }
     }
 }
