@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Enums;
 using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,16 @@ namespace InternetTest.Classes
         /// The language of the app (country code). Can be _default, en-US, fr-FR...
         /// </summary>
         public string Language { get; set; }
+
+        /// <summary>
+        /// The site where the connection is going to be tested.
+        /// </summary>
+        public string TestSite { get; set; }
+
+        /// <summary>
+        /// The map provider for localizing an IP.
+        /// </summary>
+        public MapProviders MapProvider { get; set; }
     }
 
     /// <summary>
@@ -71,7 +82,13 @@ namespace InternetTest.Classes
             }
             else
             {
-                Global.Settings = new Settings { IsDarkTheme = false, Language = "_default" }; // Create a new settings file
+                Global.Settings = new Settings 
+                {
+                    IsDarkTheme = false, 
+                    Language = "_default", 
+                    TestSite = "https://bing.com", 
+                    MapProvider = MapProviders.OpenStreetMap 
+                }; // Create a new settings file
 
                 Save(); // Save the changes
             }
