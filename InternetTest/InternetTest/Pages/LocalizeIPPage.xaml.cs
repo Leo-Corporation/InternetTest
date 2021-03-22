@@ -72,8 +72,8 @@ namespace InternetTest.Pages
                 {
                     case MapProviders.BingMaps: Global.OpenLinkInBrowser($"https://www.bing.com/maps?q={ lat} {lon}"); break;
                     case MapProviders.GoogleMaps: Global.OpenLinkInBrowser($"https://www.google.com/maps/place/{lat},{lon}"); break;
-                    case MapProviders.OpenStreetMap: Global.OpenLinkInBrowser($"https://www.openstreetmap.org/#map=/{lat}/{lon}"); break;
-                    default: Global.OpenLinkInBrowser($"https://www.openstreetmap.org/#map=/{lat}/{lon}"); break;
+                    case MapProviders.OpenStreetMap: Global.OpenLinkInBrowser($"https://www.openstreetmap.org/#map=12/{lat}/{lon}"); break;
+                    default: Global.OpenLinkInBrowser($"https://www.openstreetmap.org/#map=12/{lat}/{lon}"); break;
                 }
             }
         }
