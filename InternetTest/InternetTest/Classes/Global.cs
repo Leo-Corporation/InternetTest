@@ -121,7 +121,13 @@ namespace InternetTest.Classes
         /// <param name="url">The URL to open.</param>
         public static void OpenLinkInBrowser(string url)
         {
-            Process.Start("explorer.exe", url); // Open the URL
+            var ps = new ProcessStartInfo(url)
+            {
+                UseShellExecute = true,
+                Verb = "open"
+            };
+
+            Process.Start(ps); // Open the URL
         }
 
         /// <summary>

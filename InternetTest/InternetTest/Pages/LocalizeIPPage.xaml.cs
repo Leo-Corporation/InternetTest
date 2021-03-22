@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,10 +49,13 @@ namespace InternetTest.Pages
         {
             InitializeComponent();
         }
+        private string lat, lon = "";
 
         private async void LocalizeBtn_Click(object sender, RoutedEventArgs e)
         {
             var ip = await Global.GetIPInfo(IPTxt.Text); // Get IP info
+            lat = ip.Lat; // Define
+            lon = ip.Lon; // Define
             IPInfoTxt.Text = ip.ToString(); // Show IP info
 
             if (string.IsNullOrEmpty(IPTxt.Text))
@@ -62,12 +66,23 @@ namespace InternetTest.Pages
 
         private void OpenMapBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (lat != "" && lon != "")
+            {
+                switch (Global.Settings.MapProvider)
+                {
+                    case MapProviders.BingMaps: Global.OpenLinkInBrowser($"https://www.bing.com/maps?q={ lat} {lon}"); break;
+                    case MapProviders.GoogleMaps: Global.OpenLinkInBrowser($"https://www.google.com/maps/place/{lat},{lon}"); break;
+                    case MapProviders.OpenStreetMap: Global.OpenLinkInBrowser($"https://www.openstreetmap.org/#map=/{lat}/{lon}"); break;
+                    default: Global.OpenLinkInBrowser($"https://www.openstreetmap.org/#map=/{lat}/{lon}"); break;
+                }
+            }
         }
 
         private async void MyIPBtn_Click(object sender, RoutedEventArgs e)
         {
             var ip = await Global.GetIPInfo(""); // Get IP info
+            lat = ip.Lat; // Define
+            lon = ip.Lon; // Define
             IPInfoTxt.Text = ip.ToString(); // Show IP info
             IPTxt.Text = ip.Query;
         }
