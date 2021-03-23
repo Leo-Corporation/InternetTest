@@ -157,7 +157,10 @@ namespace InternetTest.Pages
 
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //TODO: Add licenses
+            MessageBox.Show($"{Properties.Resources.Licenses}\n\n" +
+                "Fluent System Icons - MIT License - © 2020 Microsoft Corporation\n" +
+                "LeoCorpLibrary - MIT License - © 2020-2021 Léo Corporation\n" +
+                "InternetTest - MIT License - © 2021 Léo Corporation", $"{Properties.Resources.InternetTest} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void LightRadioBtn_Checked(object sender, RoutedEventArgs e)
