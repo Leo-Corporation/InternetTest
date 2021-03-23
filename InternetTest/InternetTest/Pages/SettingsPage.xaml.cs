@@ -185,8 +185,21 @@ namespace InternetTest.Pages
             }
         }
 
+        private string FormatURL(string url)
+        {
+            if (!url.Contains("https://") && !url.Contains("http://")) // If there isn't http(s)
+            {
+                return "https://" + url; // Add the https://
+            }
+            else
+            {
+                return url; // Do nothing
+            }
+        }
+
         private void TestSiteApplyBtn_Click(object sender, RoutedEventArgs e)
         {
+            TestSiteTxt.Text = FormatURL(TestSiteTxt.Text); // Format url
             Global.Settings.TestSite = TestSiteTxt.Text; // Define
             SettingsManager.Save(); // Save the changes
             TestSiteApplyBtn.Visibility = Visibility.Hidden; // Hide
