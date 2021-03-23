@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Xalyus_Updater</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Xalyus Updater.ico</ApplicationIcon>
+    <Authors>Léo Corporation</Authors>
+    <Version>1.0.0.2103</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Xalyus Updater.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Xalyus Updater.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
