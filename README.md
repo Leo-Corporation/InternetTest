@@ -14,7 +14,7 @@
   <p align="center">
     InternetTest allows you to check if you're connected to Internet.
     <br />
-    <a href="https://bit.ly/InternetTest4"><strong>Download »</strong></a>
+    <a href="https://bit.ly/DownloadInternetTest"><strong>Download »</strong></a>
     <br />
     <a href="https://github.com/Leo-Corporation/InternetTest/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBug%5D+">Report Bug</a>
     ·
