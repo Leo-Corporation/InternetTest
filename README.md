@@ -26,19 +26,20 @@
 </p>
 
 ## Features
-* Dark mode
 * Check your Internet connection
-* Automatic update system
-* Settings
-* Multilingual (French and English)
 * IP Localization
 * Down Detector
+* Dark mode
+* Automatic update system
+* Settings customization
+* Multilingual (French and English)
+
 ## Branches
 There is 2 branches: 
 * main ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest)
-* Version_Next ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest?include_prereleases)
+* vNext ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest?include_prereleases)
 
-The ``Version_Next`` branch is for the next version of InternetTest.
+The ``vNext`` branch is for the next version of InternetTest.
 
 The ``main`` branch is for stable versions.
 ## Latest release
@@ -49,4 +50,4 @@ In the documentation, you'll find answers to your questions about InternetTest.
 - Click [here](https://github.com/Leo-Corporation/InternetTest/wiki) to go to the InternetTest's documentation.
 - Click [here](https://github.com/Leo-Corporation/LeoCorpLibrary/wiki) to go to the LeoCorpLibrary's documentation.
 ## License
-Project under the [MPL-2.0 license](https://github.com/Leo-Corporation/InternetTest/blob/master/LICENSE.md).
+Project under the [MIT License](https://github.com/Leo-Corporation/InternetTest/blob/main/LICENSE).
