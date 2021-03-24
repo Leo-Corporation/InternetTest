@@ -3,7 +3,7 @@
 
 #define MyAppName "InternetTest"
 #define MyAppVersion "5.0.0.2103"
-#define MyAppFullVersion "5.0.0.2103-rc1"
+#define MyAppFullVersion "5.0.0.2103"
 #define MyAppPublisher "Léo Corporation"
 #define MyAppURL "https://leocorp.fr/"
 #define MyAppExeName "InternetTest.exe"
@@ -15,6 +15,7 @@ AppId={{7D2078FD-4F5D-4B05-A5DD-826D67EABA6F}}
 AppName={#MyAppName}
 AppVersion={#MyAppFullVersion}
 VersionInfoVersion={#MyAppVersion}
+UninstallDisplayIcon={app}\{#MyAppExeName}
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
