@@ -12,7 +12,7 @@
   <h3 align="center">InternetTest</h3>
 
   <p align="center">
-    InternetTest allows you to check if you're connected to Internet.
+    InternetTest is a modern connection utility for Windows.
     <br />
     <a href="https://bit.ly/DownloadInternetTest"><strong>Download »</strong></a>
     <br />
