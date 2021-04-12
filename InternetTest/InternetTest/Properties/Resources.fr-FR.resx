@@ -273,4 +273,34 @@
   <data name="MapProviderDescription" xml:space="preserve">
     <value>Le fournisseur de cartes utilisé pour voir la localisation d'une IP.</value>
   </data>
+  <data name="UnableToCheckUpdates" xml:space="preserve">
+    <value>Impossible de rechercher des mises à jour</value>
+  </data>
+  <data name="CheckUpdatesOnStart" xml:space="preserve">
+    <value>Rechercher des mises à jour lors du démarrage</value>
+  </data>
+  <data name="NotifyUpdates" xml:space="preserve">
+    <value>Montrer une notification quand des mises à jour sont disponibles</value>
+  </data>
+  <data name="CheckUpdatesDisabledOnStart" xml:space="preserve">
+    <value>La recherche de mises à jour lors du démarrage est désactivée.</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>Une erreur s'est produite</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>Données</value>
+  </data>
+  <data name="ResetSettings" xml:space="preserve">
+    <value>Réinitialiser les paramètres</value>
+  </data>
+  <data name="ResetSettingsConfirmMsg" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir réinitialiser tous les paramètres ?</value>
+  </data>
+  <data name="SettingsReset" xml:space="preserve">
+    <value>Tous les paramètres ont été réinitialisés, InternetTest va maintenant redémarrer.</value>
+  </data>
 </root>

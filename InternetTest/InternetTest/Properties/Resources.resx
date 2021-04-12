@@ -253,4 +253,34 @@
   <data name="MapProviderDescription" xml:space="preserve">
     <value>The map provider used to show an IP localization.</value>
   </data>
+  <data name="UnableToCheckUpdates" xml:space="preserve">
+    <value>Unable to check updates</value>
+  </data>
+  <data name="CheckUpdatesOnStart" xml:space="preserve">
+    <value>Check updates on start</value>
+  </data>
+  <data name="NotifyUpdates" xml:space="preserve">
+    <value>Show a notification when updates are available</value>
+  </data>
+  <data name="CheckUpdatesDisabledOnStart" xml:space="preserve">
+    <value>Checking updates on start is disabled.</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>An error has occured</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="ResetSettings" xml:space="preserve">
+    <value>Reset settings</value>
+  </data>
+  <data name="ResetSettingsConfirmMsg" xml:space="preserve">
+    <value>Are you sure you want to reset all settings?</value>
+  </data>
+  <data name="SettingsReset" xml:space="preserve">
+    <value>All settings have been reset, InternetTest will now restart.</value>
+  </data>
 </root>
