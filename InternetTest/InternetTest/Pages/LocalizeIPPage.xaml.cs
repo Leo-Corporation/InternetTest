@@ -64,7 +64,7 @@ namespace InternetTest.Pages
 				if (string.IsNullOrEmpty(IPTxt.Text))
 				{
 					IPTxt.Text = ip.Query;
-				} 
+				}
 			}
 		}
 
@@ -90,7 +90,7 @@ namespace InternetTest.Pages
 				lat = ip.Lat; // Define
 				lon = ip.Lon; // Define
 				IPInfoTxt.Text = ip.ToString(); // Show IP info
-				IPTxt.Text = ip.Query; 
+				IPTxt.Text = ip.Query;
 			}
 		}
 	}
