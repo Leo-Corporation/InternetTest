@@ -121,11 +121,6 @@ namespace InternetTest.Pages
 							notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.AvailableUpdates, System.Windows.Forms.ToolTipIcon.Info);
 							notifyIcon.Visible = false; // Hide
 						}
-
-						LangApplyBtn.Visibility = Visibility.Hidden; // Hide
-						ThemeApplyBtn.Visibility = Visibility.Hidden; // Hide
-						TestSiteApplyBtn.Visibility = Visibility.Hidden; // Hide
-						MapProviderApplyBtn.Visibility = Visibility.Hidden; // Hide 
 					}
 					else
 					{
@@ -140,6 +135,10 @@ namespace InternetTest.Pages
                     InstallMsgTxt.Text = Properties.Resources.CheckUpdate; // Set text
                     InstallIconTxt.Text = "\uF191"; // Set text 
                 }
+                LangApplyBtn.Visibility = Visibility.Hidden; // Hide
+                ThemeApplyBtn.Visibility = Visibility.Hidden; // Hide
+                TestSiteApplyBtn.Visibility = Visibility.Hidden; // Hide
+                MapProviderApplyBtn.Visibility = Visibility.Hidden; // Hide 
             }
             catch (Exception ex)
             {
@@ -294,6 +293,29 @@ namespace InternetTest.Pages
 		{
             Global.Settings.NotifyUpdates = NotifyUpdatesChk.IsChecked; // Set
             SettingsManager.Save(); // Save changes
+        }
+
+		private void ResetSettingsLink_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+            if (MessageBox.Show(Properties.Resources.ResetSettingsConfirmMsg, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                Global.Settings = new()
+                {
+                    CheckUpdatesOnStart = true,
+                    IsDarkTheme = false,
+                    Language = "_default",
+                    NotifyUpdates = true,
+                    TestSite = "https://bing.com",
+                    MapProvider = MapProviders.OpenStreetMap
+                }; // Create default settings
+
+                SettingsManager.Save(); // Save the changes
+                InitUI(); // Reload the page
+
+                MessageBox.Show(Properties.Resources.SettingsReset, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information);
+                Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
+                Environment.Exit(0); // Quit
+            }
         }
 	}
 }
