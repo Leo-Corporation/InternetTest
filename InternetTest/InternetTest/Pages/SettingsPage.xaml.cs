@@ -49,9 +49,20 @@ namespace InternetTest.Pages
     public partial class SettingsPage : Page
     {
         bool isAvailable;
+        System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
         public SettingsPage()
         {
             InitializeComponent();
+            notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(AppDomain.CurrentDomain.BaseDirectory + @"\InternetTest.exe");
+            notifyIcon.BalloonTipClicked += async (o, e) =>
+            {
+                string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink); // Get last version
+                if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+                {
+                    Env.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+                    Environment.Exit(0); // Close
+                }
+            };
             InitUI();
         }
 
@@ -98,7 +109,14 @@ namespace InternetTest.Pages
 					InstallIconTxt.Text = isAvailable ? "\uF152" : "\uF191"; // Set text 
 					InstallMsgTxt.Text = isAvailable ? Properties.Resources.Install : Properties.Resources.CheckUpdate; // Set text
 
-					LangApplyBtn.Visibility = Visibility.Hidden; // Hide
+                    if (isAvailable)
+                    {
+                        notifyIcon.Visible = true; // Show
+                        notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.AvailableUpdates, System.Windows.Forms.ToolTipIcon.Info);
+                        notifyIcon.Visible = false; // Hide
+                    }
+
+                    LangApplyBtn.Visibility = Visibility.Hidden; // Hide
 					ThemeApplyBtn.Visibility = Visibility.Hidden; // Hide
 					TestSiteApplyBtn.Visibility = Visibility.Hidden; // Hide
 					MapProviderApplyBtn.Visibility = Visibility.Hidden; // Hide 
@@ -137,7 +155,14 @@ namespace InternetTest.Pages
 					UpdateStatusTxt.Text = isAvailable ? Properties.Resources.AvailableUpdates : Properties.Resources.UpToDate; // Set the text
 					InstallIconTxt.Text = isAvailable ? "\uF152" : "\uF191"; // Set text 
 					InstallMsgTxt.Text = isAvailable ? Properties.Resources.Install : Properties.Resources.CheckUpdate; // Set text 
-				}
+
+                    if (isAvailable)
+                    {
+                        notifyIcon.Visible = true; // Show
+                        notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.AvailableUpdates, System.Windows.Forms.ToolTipIcon.Info);
+                        notifyIcon.Visible = false; // Hide
+                    }
+                }
 				else
 				{
                     UpdateStatusTxt.Text = Properties.Resources.UnableToCheckUpdates; // Set text
