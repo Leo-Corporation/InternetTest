@@ -89,17 +89,26 @@ namespace InternetTest.Pages
                 // Load the TestSiteTxt
                 TestSiteTxt.Text = Global.Settings.TestSite; // Set text
 
-                // Update the UpdateStatusTxt
-                isAvailable = Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink));
+				// Update the UpdateStatusTxt
+				if (await NetworkConnection.IsAvailableAsync())
+				{
+					isAvailable = Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink));
 
-                UpdateStatusTxt.Text = isAvailable ? Properties.Resources.AvailableUpdates : Properties.Resources.UpToDate; // Set the text
-                InstallIconTxt.Text = isAvailable ? "\uF152" : "\uF191"; // Set text 
-                InstallMsgTxt.Text = isAvailable ? Properties.Resources.Install : Properties.Resources.CheckUpdate; // Set text
+					UpdateStatusTxt.Text = isAvailable ? Properties.Resources.AvailableUpdates : Properties.Resources.UpToDate; // Set the text
+					InstallIconTxt.Text = isAvailable ? "\uF152" : "\uF191"; // Set text 
+					InstallMsgTxt.Text = isAvailable ? Properties.Resources.Install : Properties.Resources.CheckUpdate; // Set text
 
-                LangApplyBtn.Visibility = Visibility.Hidden; // Hide
-                ThemeApplyBtn.Visibility = Visibility.Hidden; // Hide
-                TestSiteApplyBtn.Visibility = Visibility.Hidden; // Hide
-                MapProviderApplyBtn.Visibility = Visibility.Hidden; // Hide
+					LangApplyBtn.Visibility = Visibility.Hidden; // Hide
+					ThemeApplyBtn.Visibility = Visibility.Hidden; // Hide
+					TestSiteApplyBtn.Visibility = Visibility.Hidden; // Hide
+					MapProviderApplyBtn.Visibility = Visibility.Hidden; // Hide 
+				}
+				else
+				{
+                    UpdateStatusTxt.Text = Properties.Resources.UnableToCheckUpdates; // Set text
+                    InstallMsgTxt.Text = Properties.Resources.CheckUpdate; // Set text
+                    InstallIconTxt.Text = "\uF191"; // Set text 
+                }
             }
             catch (Exception ex)
             {
@@ -120,12 +129,21 @@ namespace InternetTest.Pages
             }
             else
             {
-                // Update the UpdateStatusTxt
-                isAvailable = Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink));
+				if (await NetworkConnection.IsAvailableAsync())
+				{
+					// Update the UpdateStatusTxt
+					isAvailable = Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink));
 
-                UpdateStatusTxt.Text = isAvailable ? Properties.Resources.AvailableUpdates : Properties.Resources.UpToDate; // Set the text
-                InstallIconTxt.Text = isAvailable ? "\uF152" : "\uF191"; // Set text 
-                InstallMsgTxt.Text = isAvailable ? Properties.Resources.Install : Properties.Resources.CheckUpdate; // Set text
+					UpdateStatusTxt.Text = isAvailable ? Properties.Resources.AvailableUpdates : Properties.Resources.UpToDate; // Set the text
+					InstallIconTxt.Text = isAvailable ? "\uF152" : "\uF191"; // Set text 
+					InstallMsgTxt.Text = isAvailable ? Properties.Resources.Install : Properties.Resources.CheckUpdate; // Set text 
+				}
+				else
+				{
+                    UpdateStatusTxt.Text = Properties.Resources.UnableToCheckUpdates; // Set text
+                    InstallMsgTxt.Text = Properties.Resources.CheckUpdate; // Set text
+                    InstallIconTxt.Text = "\uF191"; // Set text 
+                }
             }
         }
 
