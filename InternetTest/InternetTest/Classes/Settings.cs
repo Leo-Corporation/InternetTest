@@ -57,6 +57,16 @@ namespace InternetTest.Classes
         /// The map provider for localizing an IP.
         /// </summary>
         public MapProviders MapProvider { get; set; }
+
+        /// <summary>
+		/// True if InternetTest should check for updates on start.
+		/// </summary>
+		public bool? CheckUpdatesOnStart { get; set; }
+
+        /// <summary>
+        /// True if InternetTest should notify the user when updates are available.
+        /// </summary>
+        public bool? NotifyUpdates { get; set; }
     }
 
     /// <summary>
@@ -87,7 +97,9 @@ namespace InternetTest.Classes
                     IsDarkTheme = false, 
                     Language = "_default", 
                     TestSite = "https://bing.com", 
-                    MapProvider = MapProviders.OpenStreetMap 
+                    MapProvider = MapProviders.OpenStreetMap ,
+                    CheckUpdatesOnStart = true,
+                    NotifyUpdates = true
                 }; // Create a new settings file
 
                 Save(); // Save the changes
