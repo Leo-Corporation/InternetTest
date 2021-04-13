@@ -139,7 +139,18 @@ namespace InternetTest.Classes
 		{
 			try
 			{
-				string content = await new WebClient().DownloadStringTaskAsync($"http://ip-api.com/line/{ip}"); // Get the content
+				// Get language
+				string language = Settings.Language switch
+				{
+					"fr-FR"    => "fr", // French
+					"en-US"	   => "en", // English
+					"_default" => System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, // System language
+					_		   => "en" // English
+				};
+
+
+				// Get IP infos
+				string content = await new WebClient().DownloadStringTaskAsync($"http://ip-api.com/line/{ip}?lang={language}"); // Get the content
 				string[] lines = content.Split(new string[] { "\n" }, StringSplitOptions.None); // Lines
 
 				return new IPInfo
