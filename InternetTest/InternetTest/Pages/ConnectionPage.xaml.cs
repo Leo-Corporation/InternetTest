@@ -48,7 +48,16 @@ namespace InternetTest.Pages
 		public ConnectionPage()
 		{
 			InitializeComponent();
-			Test(Global.Settings.TestSite); // Launch a test
+			if (!Global.Settings.LaunchTestOnStart.HasValue ? true : Global.Settings.LaunchTestOnStart.Value)
+			{
+				Test(Global.Settings.TestSite); // Launch a test 
+			}
+			else
+			{
+				ConnectionStatusTxt.Text = Properties.Resources.LaunchTestToCheckConnection; // Set text of the label
+				InternetIconTxt.Text = "\uF4AB"; // Set the icon
+				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
+			}
 		}
 
 		/// <summary>

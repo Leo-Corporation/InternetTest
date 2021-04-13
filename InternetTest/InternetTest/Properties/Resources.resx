@@ -286,4 +286,10 @@
   <data name="InvalidIP" xml:space="preserve">
     <value>The provided IP isn't valid.</value>
   </data>
+  <data name="OnStart" xml:space="preserve">
+    <value>On start</value>
+  </data>
+  <data name="LaunchTestOnStart" xml:space="preserve">
+    <value>Launch a test on start</value>
+  </data>
 </root>

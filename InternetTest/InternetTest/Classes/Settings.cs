@@ -67,6 +67,11 @@ namespace InternetTest.Classes
 		/// True if InternetTest should notify the user when updates are available.
 		/// </summary>
 		public bool? NotifyUpdates { get; set; }
+
+		/// <summary>
+		/// True if InternetTest should launch a test on start.
+		/// </summary>
+		public bool? LaunchTestOnStart { get; set; }
 	}
 
 	/// <summary>
@@ -99,7 +104,8 @@ namespace InternetTest.Classes
 					TestSite = "https://bing.com",
 					MapProvider = MapProviders.OpenStreetMap,
 					CheckUpdatesOnStart = true,
-					NotifyUpdates = true
+					NotifyUpdates = true,
+					LaunchTestOnStart = true
 				}; // Create a new settings file
 
 				Save(); // Save the changes

@@ -331,6 +331,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Launch a test on start.
+        /// </summary>
+        public static string LaunchTestOnStart {
+            get {
+                return ResourceManager.GetString("LaunchTestOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Launch a test to check your connection.
         /// </summary>
         public static string LaunchTestToCheckConnection {
@@ -426,6 +435,15 @@ namespace InternetTest.Properties {
         public static string NotifyUpdates {
             get {
                 return ResourceManager.GetString("NotifyUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On start.
+        /// </summary>
+        public static string OnStart {
+            get {
+                return ResourceManager.GetString("OnStart", resourceCulture);
             }
         }
         

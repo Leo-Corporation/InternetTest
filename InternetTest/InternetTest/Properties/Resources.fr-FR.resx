@@ -306,4 +306,10 @@
   <data name="InvalidIP" xml:space="preserve">
     <value>L'adresse IP entrée n'est pas valide.</value>
   </data>
+  <data name="OnStart" xml:space="preserve">
+    <value>Lors du démarrage</value>
+  </data>
+  <data name="LaunchTestOnStart" xml:space="preserve">
+    <value>Lancer un test lors du démarrage</value>
+  </data>
 </root>

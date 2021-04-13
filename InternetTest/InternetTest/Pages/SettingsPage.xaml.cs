@@ -77,6 +77,7 @@ namespace InternetTest.Pages
 				// Load CheckBoxes
 				CheckUpdatesOnStartChk.IsChecked = Global.Settings.CheckUpdatesOnStart.HasValue ? Global.Settings.CheckUpdatesOnStart.Value : true; // Set
 				NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdates.HasValue ? Global.Settings.NotifyUpdates.Value : true; // Set
+				LaunchTestOnStartChk.IsChecked = Global.Settings.LaunchTestOnStart.HasValue ? Global.Settings.LaunchTestOnStart.Value : true; // Set
 
 				// Load LangComboBox
 				LangComboBox.Items.Add(Properties.Resources.Default); // Add "default"
@@ -316,6 +317,12 @@ namespace InternetTest.Pages
 				Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
 				Environment.Exit(0); // Quit
 			}
+		}
+
+		private void LaunchTestOnStartChk_Checked(object sender, RoutedEventArgs e)
+		{
+			Global.Settings.LaunchTestOnStart = LaunchTestOnStartChk.IsChecked; // Set
+			SettingsManager.Save(); // Save changes
 		}
 	}
 }
