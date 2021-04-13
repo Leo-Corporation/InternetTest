@@ -303,4 +303,7 @@
   <data name="SettingsReset" xml:space="preserve">
     <value>Tous les paramètres ont été réinitialisés, InternetTest va maintenant redémarrer.</value>
   </data>
+  <data name="InvalidIP" xml:space="preserve">
+    <value>L'adresse IP entrée n'est pas valide.</value>
+  </data>
 </root>

@@ -295,6 +295,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The provided IP isn&apos;t valid..
+        /// </summary>
+        public static string InvalidIP {
+            get {
+                return ResourceManager.GetString("InvalidIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ISP.
         /// </summary>
         public static string ISP {
