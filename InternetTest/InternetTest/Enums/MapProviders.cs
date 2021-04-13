@@ -29,24 +29,24 @@ using System.Threading.Tasks;
 
 namespace InternetTest.Enums
 {
-    /// <summary>
-    /// Contains available map providers for IP position.
-    /// </summary>
-    public enum MapProviders
-    {
-        /// <summary>
-        /// The OpenStreetMap map provider.
-        /// </summary>
-        OpenStreetMap,
-        
-        /// <summary>
-        /// The Bing Maps map provider.
-        /// </summary>
-        BingMaps,
-        
-        /// <summary>
-        /// The Google Maps map provider.
-        /// </summary>
-        GoogleMaps
-    }
+	/// <summary>
+	/// Contains available map providers for IP position.
+	/// </summary>
+	public enum MapProviders
+	{
+		/// <summary>
+		/// The OpenStreetMap map provider.
+		/// </summary>
+		OpenStreetMap,
+
+		/// <summary>
+		/// The Bing Maps map provider.
+		/// </summary>
+		BingMaps,
+
+		/// <summary>
+		/// The Google Maps map provider.
+		/// </summary>
+		GoogleMaps
+	}
 }

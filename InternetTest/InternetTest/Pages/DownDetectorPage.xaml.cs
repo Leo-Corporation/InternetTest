@@ -40,81 +40,81 @@ using System.Windows.Shapes;
 
 namespace InternetTest.Pages
 {
-    /// <summary>
-    /// Interaction logic for DownDetectorPage.xaml
-    /// </summary>
-    public partial class DownDetectorPage : Page
-    {
-        public DownDetectorPage()
-        {
-            InitializeComponent();
-        }
+	/// <summary>
+	/// Interaction logic for DownDetectorPage.xaml
+	/// </summary>
+	public partial class DownDetectorPage : Page
+	{
+		public DownDetectorPage()
+		{
+			InitializeComponent();
+		}
 
-        /// <summary>
-        /// Launch a network test.
-        /// </summary>
-        /// <param name="customSite">Leave empty if you don't want to specify a custom website.</param>
-        private async void Test(string customSite)
-        {
-            if (string.IsNullOrEmpty(customSite)) // If a custom site isn't specified
-            {
-                if (await NetworkConnection.IsAvailableAsync()) // If there is Internet
-                {
-                    ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
-                    InternetIconTxt.Text = "\uF299"; // Set the icon
-                    InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
-                }
-                else
-                {
-                    ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
-                    InternetIconTxt.Text = "\uF36E"; // Set the icon
-                    InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
-                }
-            }
-            else
-            {
-                if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
-                {
-                    ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
-                    InternetIconTxt.Text = "\uF299"; // Set the icon
-                    InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
-                }
-                else
-                {
-                    ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
-                    InternetIconTxt.Text = "\uF36E"; // Set the icon
-                    InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
-                }
-            }
-        }
+		/// <summary>
+		/// Launch a network test.
+		/// </summary>
+		/// <param name="customSite">Leave empty if you don't want to specify a custom website.</param>
+		private async void Test(string customSite)
+		{
+			if (string.IsNullOrEmpty(customSite)) // If a custom site isn't specified
+			{
+				if (await NetworkConnection.IsAvailableAsync()) // If there is Internet
+				{
+					ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
+					InternetIconTxt.Text = "\uF299"; // Set the icon
+					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
+				}
+				else
+				{
+					ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
+					InternetIconTxt.Text = "\uF36E"; // Set the icon
+					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
+				}
+			}
+			else
+			{
+				if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
+				{
+					ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
+					InternetIconTxt.Text = "\uF299"; // Set the icon
+					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
+				}
+				else
+				{
+					ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
+					InternetIconTxt.Text = "\uF36E"; // Set the icon
+					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
+				}
+			}
+		}
 
-        private string FormatURL(string url)
-        {
-            if (!url.Contains("https://") && !url.Contains("http://")) // If there isn't http(s)
-            {
-                return "https://" + url; // Add the https://
-            }
-            else
-            {
-                return url; // Do nothing
-            }
-        }
+		private string FormatURL(string url)
+		{
+			if (!url.Contains("https://") && !url.Contains("http://")) // If there isn't http(s)
+			{
+				return "https://" + url; // Add the https://
+			}
+			else
+			{
+				return url; // Do nothing
+			}
+		}
 
-        private void CheckBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(WebsiteTxt.Text) && !string.IsNullOrWhiteSpace(WebsiteTxt.Text))
-            {
-                Test(FormatURL(WebsiteTxt.Text)); // Test
-                WebsiteTxt.Text = FormatURL(WebsiteTxt.Text); // Format 
-            }
-        }
+		private void CheckBtn_Click(object sender, RoutedEventArgs e)
+		{
+			if (!string.IsNullOrEmpty(WebsiteTxt.Text) && !string.IsNullOrWhiteSpace(WebsiteTxt.Text))
+			{
+				Test(FormatURL(WebsiteTxt.Text)); // Test
+				WebsiteTxt.Text = FormatURL(WebsiteTxt.Text); // Format 
+			}
+		}
 
-        private void OpenBrowserBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(WebsiteTxt.Text) && !string.IsNullOrWhiteSpace(WebsiteTxt.Text))
-            {
-                Global.OpenLinkInBrowser(FormatURL(WebsiteTxt.Text)); // Open in a browser 
-            }
-        }
-    }
+		private void OpenBrowserBtn_Click(object sender, RoutedEventArgs e)
+		{
+			if (!string.IsNullOrEmpty(WebsiteTxt.Text) && !string.IsNullOrWhiteSpace(WebsiteTxt.Text))
+			{
+				Global.OpenLinkInBrowser(FormatURL(WebsiteTxt.Text)); // Open in a browser 
+			}
+		}
+	}
 }

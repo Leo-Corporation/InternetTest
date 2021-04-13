@@ -106,6 +106,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Checking updates on start is disabled..
+        /// </summary>
+        public static string CheckUpdatesDisabledOnStart {
+            get {
+                return ResourceManager.GetString("CheckUpdatesDisabledOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check updates on start.
+        /// </summary>
+        public static string CheckUpdatesOnStart {
+            get {
+                return ResourceManager.GetString("CheckUpdatesOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City.
         /// </summary>
         public static string City {
@@ -151,6 +169,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data.
+        /// </summary>
+        public static string Data {
+            get {
+                return ResourceManager.GetString("Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default.
         /// </summary>
         public static string Default {
@@ -174,6 +201,24 @@ namespace InternetTest.Properties {
         public static string EnterURLToCheck {
             get {
                 return ResourceManager.GetString("EnterURLToCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error has occured.
+        /// </summary>
+        public static string ErrorOccured {
+            get {
+                return ResourceManager.GetString("ErrorOccured", resourceCulture);
             }
         }
         
@@ -250,6 +295,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The provided IP isn&apos;t valid..
+        /// </summary>
+        public static string InvalidIP {
+            get {
+                return ResourceManager.GetString("InvalidIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ISP.
         /// </summary>
         public static string ISP {
@@ -273,6 +327,15 @@ namespace InternetTest.Properties {
         public static string Latitude {
             get {
                 return ResourceManager.GetString("Latitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launch a test on start.
+        /// </summary>
+        public static string LaunchTestOnStart {
+            get {
+                return ResourceManager.GetString("LaunchTestOnStart", resourceCulture);
             }
         }
         
@@ -367,6 +430,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show a notification when updates are available.
+        /// </summary>
+        public static string NotifyUpdates {
+            get {
+                return ResourceManager.GetString("NotifyUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On start.
+        /// </summary>
+        public static string OnStart {
+            get {
+                return ResourceManager.GetString("OnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open browser.
         /// </summary>
         public static string OpenBrowser {
@@ -403,6 +484,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset settings.
+        /// </summary>
+        public static string ResetSettings {
+            get {
+                return ResourceManager.GetString("ResetSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to reset all settings?.
+        /// </summary>
+        public static string ResetSettingsConfirmMsg {
+            get {
+                return ResourceManager.GetString("ResetSettingsConfirmMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to See licenses.
         /// </summary>
         public static string SeeLicenses {
@@ -417,6 +516,15 @@ namespace InternetTest.Properties {
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All settings have been reset, InternetTest will now restart..
+        /// </summary>
+        public static string SettingsReset {
+            get {
+                return ResourceManager.GetString("SettingsReset", resourceCulture);
             }
         }
         
@@ -462,6 +570,15 @@ namespace InternetTest.Properties {
         public static string Timezone {
             get {
                 return ResourceManager.GetString("Timezone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to check updates.
+        /// </summary>
+        public static string UnableToCheckUpdates {
+            get {
+                return ResourceManager.GetString("UnableToCheckUpdates", resourceCulture);
             }
         }
         

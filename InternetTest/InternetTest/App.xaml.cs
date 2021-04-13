@@ -32,24 +32,24 @@ using System.Windows;
 
 namespace InternetTest
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
-    {
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            SettingsManager.Load(); // Load settings
+	/// <summary>
+	/// Interaction logic for App.xaml
+	/// </summary>
+	public partial class App : Application
+	{
+		protected override void OnStartup(StartupEventArgs e)
+		{
+			SettingsManager.Load(); // Load settings
 
-            Global.ChangeTheme(); // Change the theme
-            Global.ChangeLanguage(); // Change the language
+			Global.ChangeTheme(); // Change the theme
+			Global.ChangeLanguage(); // Change the language
 
-            Global.ConnectionPage = new(); // Create a new ConnectionPage
-            Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
-            Global.DownDetectorPage = new(); // Create a new DownDetectorPage
-            Global.SettingsPage = new(); // Create a new SettingsPage
+			Global.ConnectionPage = new(); // Create a new ConnectionPage
+			Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
+			Global.DownDetectorPage = new(); // Create a new DownDetectorPage
+			Global.SettingsPage = new(); // Create a new SettingsPage
 
-            base.OnStartup(e);
-        }
-    }
+			base.OnStartup(e);
+		}
+	}
 }

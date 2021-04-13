@@ -39,106 +39,106 @@ using System.Windows.Shapes;
 
 namespace InternetTest
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        private Button CheckedButton { get; set; }
-        public MainWindow()
-        {
-            InitializeComponent();
-            InitUI(); // Init the UI
-        }
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class MainWindow : Window
+	{
+		private Button CheckedButton { get; set; }
+		public MainWindow()
+		{
+			InitializeComponent();
+			InitUI(); // Init the UI
+		}
 
-        private void InitUI()
-        {
-            HelloTxt.Text = Global.GetHiSentence; // Set the "Hello" message
-            PageContent.Content = Global.ConnectionPage; // Go to the home page
+		private void InitUI()
+		{
+			HelloTxt.Text = Global.GetHiSentence; // Set the "Hello" message
+			PageContent.Content = Global.ConnectionPage; // Go to the home page
 
-            CheckButton(ConnectionBtn); // Check the start page button
-        }
+			CheckButton(ConnectionBtn); // Check the start page button
+		}
 
-        private void CheckButton(Button button)
-        {
-            button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["WindowButtonsHoverForeground1"].ToString()) }; // Set the foreground
-            button.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set the background
+		private void CheckButton(Button button)
+		{
+			button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["WindowButtonsHoverForeground1"].ToString()) }; // Set the foreground
+			button.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set the background
 
-            CheckedButton = button; // Set the "checked" button
-        }
+			CheckedButton = button; // Set the "checked" button
+		}
 
-        private void ResetAllCheckStatus()
-        {
-            ConnectionBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
-            ConnectionBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+		private void ResetAllCheckStatus()
+		{
+			ConnectionBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
+			ConnectionBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
 
-            LocalizeIPBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
-            LocalizeIPBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+			LocalizeIPBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
+			LocalizeIPBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
 
-            DownDetectorBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
-            DownDetectorBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+			DownDetectorBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
+			DownDetectorBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
 
-            SettingsTabBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
-            SettingsTabBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
-        }
+			SettingsTabBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
+			SettingsTabBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+		}
 
-        private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized; // Minimize window
-        }
+		private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
+		{
+			WindowState = WindowState.Minimized; // Minimize window
+		}
 
-        private void CloseBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Environment.Exit(0); // Exit
-        }
+		private void CloseBtn_Click(object sender, RoutedEventArgs e)
+		{
+			Environment.Exit(0); // Exit
+		}
 
-        private void TabEnter(object sender, MouseEventArgs e)
-        {
-            Button button = (Button)sender; // Create button
+		private void TabEnter(object sender, MouseEventArgs e)
+		{
+			Button button = (Button)sender; // Create button
 
-            button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["WindowButtonsHoverForeground1"].ToString()) }; // Set the foreground
-        }
+			button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["WindowButtonsHoverForeground1"].ToString()) }; // Set the foreground
+		}
 
-        private void TabLeave(object sender, MouseEventArgs e)
-        {
-            Button button = (Button)sender; // Create button
+		private void TabLeave(object sender, MouseEventArgs e)
+		{
+			Button button = (Button)sender; // Create button
 
-            if (button != CheckedButton)
-            {
-                button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground 
-            }
-        }
+			if (button != CheckedButton)
+			{
+				button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground 
+			}
+		}
 
-        private void ConnectionBtn_Click(object sender, RoutedEventArgs e)
-        {
-            ResetAllCheckStatus(); // Reset the background and foreground of all buttons
-            CheckButton(ConnectionBtn); // Check the "Settings" button
+		private void ConnectionBtn_Click(object sender, RoutedEventArgs e)
+		{
+			ResetAllCheckStatus(); // Reset the background and foreground of all buttons
+			CheckButton(ConnectionBtn); // Check the "Settings" button
 
-            PageContent.Navigate(Global.ConnectionPage); // Navigate
-        }
+			PageContent.Navigate(Global.ConnectionPage); // Navigate
+		}
 
-        private void LocalizeIPBtn_Click(object sender, RoutedEventArgs e)
-        {
-            ResetAllCheckStatus(); // Reset the background and foreground of all buttons
-            CheckButton(LocalizeIPBtn); // Check the "Settings" button
+		private void LocalizeIPBtn_Click(object sender, RoutedEventArgs e)
+		{
+			ResetAllCheckStatus(); // Reset the background and foreground of all buttons
+			CheckButton(LocalizeIPBtn); // Check the "Settings" button
 
-            PageContent.Navigate(Global.LocalizeIPPage); // Navigate
-        }
+			PageContent.Navigate(Global.LocalizeIPPage); // Navigate
+		}
 
-        private void SettingsTabBtn_Click(object sender, RoutedEventArgs e)
-        {
-            ResetAllCheckStatus(); // Reset the background and foreground of all buttons
-            CheckButton(SettingsTabBtn); // Check the "Settings" button
+		private void SettingsTabBtn_Click(object sender, RoutedEventArgs e)
+		{
+			ResetAllCheckStatus(); // Reset the background and foreground of all buttons
+			CheckButton(SettingsTabBtn); // Check the "Settings" button
 
-            PageContent.Navigate(Global.SettingsPage); // Navigate
-        }
+			PageContent.Navigate(Global.SettingsPage); // Navigate
+		}
 
-        private void DownDetectorBtn_Click(object sender, RoutedEventArgs e)
-        {
-            ResetAllCheckStatus(); // Reset the background and foreground of all buttons
-            CheckButton(DownDetectorBtn); // Check the "Settings" button
+		private void DownDetectorBtn_Click(object sender, RoutedEventArgs e)
+		{
+			ResetAllCheckStatus(); // Reset the background and foreground of all buttons
+			CheckButton(DownDetectorBtn); // Check the "Settings" button
 
-            PageContent.Navigate(Global.DownDetectorPage); // Navigate
-        }
-    }
+			PageContent.Navigate(Global.DownDetectorPage); // Navigate
+		}
+	}
 }

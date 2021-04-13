@@ -40,63 +40,72 @@ using System.Windows.Shapes;
 
 namespace InternetTest.Pages
 {
-    /// <summary>
-    /// Interaction logic for ConnectionPage.xaml
-    /// </summary>
-    public partial class ConnectionPage : Page
-    {
-        public ConnectionPage()
-        {
-            InitializeComponent();
-            Test(Global.Settings.TestSite); // Launch a test
-        }
+	/// <summary>
+	/// Interaction logic for ConnectionPage.xaml
+	/// </summary>
+	public partial class ConnectionPage : Page
+	{
+		public ConnectionPage()
+		{
+			InitializeComponent();
+			if (!Global.Settings.LaunchTestOnStart.HasValue ? true : Global.Settings.LaunchTestOnStart.Value)
+			{
+				Test(Global.Settings.TestSite); // Launch a test 
+			}
+			else
+			{
+				ConnectionStatusTxt.Text = Properties.Resources.LaunchTestToCheckConnection; // Set text of the label
+				InternetIconTxt.Text = "\uF4AB"; // Set the icon
+				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
+			}
+		}
 
-        /// <summary>
-        /// Launch a network test.
-        /// </summary>
-        /// <param name="customSite">Leave empty if you don't want to specify a custom website.</param>
-        private async void Test(string customSite)
-        {
-            if (string.IsNullOrEmpty(customSite)) // If a custom site isn't specified
-            {
-                if (await NetworkConnection.IsAvailableAsync()) // If there is Internet
-                {
-                    ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
-                    InternetIconTxt.Text = "\uF299"; // Set the icon
-                    InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
-                }
-                else
-                {
-                    ConnectionStatusTxt.Text = Properties.Resources.NotConnected; // Set text of the label
-                    InternetIconTxt.Text = "\uF36E"; // Set the icon
-                    InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
-                }
-            }
-            else
-            {
-                if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
-                {
-                    ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
-                    InternetIconTxt.Text = "\uF299"; // Set the icon
-                    InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
-                }
-                else
-                {
-                    ConnectionStatusTxt.Text = Properties.Resources.NotConnected; // Set text of the label
-                    InternetIconTxt.Text = "\uF36E"; // Set the icon
-                    InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
-                }
-            }
-        }
+		/// <summary>
+		/// Launch a network test.
+		/// </summary>
+		/// <param name="customSite">Leave empty if you don't want to specify a custom website.</param>
+		private async void Test(string customSite)
+		{
+			if (string.IsNullOrEmpty(customSite)) // If a custom site isn't specified
+			{
+				if (await NetworkConnection.IsAvailableAsync()) // If there is Internet
+				{
+					ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
+					InternetIconTxt.Text = "\uF299"; // Set the icon
+					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
+				}
+				else
+				{
+					ConnectionStatusTxt.Text = Properties.Resources.NotConnected; // Set text of the label
+					InternetIconTxt.Text = "\uF36E"; // Set the icon
+					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
+				}
+			}
+			else
+			{
+				if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
+				{
+					ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
+					InternetIconTxt.Text = "\uF299"; // Set the icon
+					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
+				}
+				else
+				{
+					ConnectionStatusTxt.Text = Properties.Resources.NotConnected; // Set text of the label
+					InternetIconTxt.Text = "\uF36E"; // Set the icon
+					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
+				}
+			}
+		}
 
-        private void TestBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Test(Global.Settings.TestSite); // Launch a test
-        }
+		private void TestBtn_Click(object sender, RoutedEventArgs e)
+		{
+			Test(Global.Settings.TestSite); // Launch a test
+		}
 
-        private void OpenBrowserBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Global.OpenLinkInBrowser(Global.Settings.TestSite); // Open in a browser
-        }
-    }
+		private void OpenBrowserBtn_Click(object sender, RoutedEventArgs e)
+		{
+			Global.OpenLinkInBrowser(Global.Settings.TestSite); // Open in a browser
+		}
+	}
 }
