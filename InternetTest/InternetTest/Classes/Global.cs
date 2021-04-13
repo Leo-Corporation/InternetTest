@@ -178,6 +178,53 @@ namespace InternetTest.Classes
 		}
 
 		/// <summary>
+		/// Checks if an IP is valid.
+		/// </summary>
+		/// <param name="ip">The IP to check.</param>
+		/// <returns>A <see cref="bool"/> value.</returns>
+		public static bool IsIPValid(string ip)
+		{
+			try
+			{
+				if (ip == "")
+				{
+					return true; // Gets your IP, so it's valid
+				}
+
+				if (ip.Contains("http://") || ip.Contains("https://"))
+				{
+					return true; // If it is a website
+				}
+
+				string[] splittedIP = ip.Split(new string[] { "." }, StringSplitOptions.None); // Split
+
+				if (splittedIP.Length != 4)
+				{
+					return false; // IP Invalid
+				}
+
+				for (int i = 0; i < splittedIP.Length; i++)
+				{
+					if (string.IsNullOrEmpty(splittedIP[i]) && string.IsNullOrWhiteSpace(splittedIP[i])) // Check if there is a value
+					{
+						return false; // There is no value, then the IP is invalid
+					}
+
+					if (int.Parse(splittedIP[i]) > 255 || int.Parse(splittedIP[i]) < 0)
+					{
+						return false; // IP Adress is between 0 & 255
+					}
+				}
+
+				return true; // No problems were found, the IP is valid
+			}
+			catch
+			{
+				return false; // The IP isnt't valid because the parser has thrown an exception
+			}
+		}
+
+		/// <summary>
 		/// Changes the application's theme.
 		/// </summary>
 		public static void ChangeTheme()

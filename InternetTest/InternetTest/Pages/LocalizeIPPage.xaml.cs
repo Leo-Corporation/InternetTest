@@ -56,14 +56,21 @@ namespace InternetTest.Pages
 		{
 			if (await NetworkConnection.IsAvailableAsync())
 			{
-				var ip = await Global.GetIPInfo(IPTxt.Text); // Get IP info
-				lat = ip.Lat; // Define
-				lon = ip.Lon; // Define
-				IPInfoTxt.Text = ip.ToString(); // Show IP info
-
-				if (string.IsNullOrEmpty(IPTxt.Text))
+				if (Global.IsIPValid(IPTxt.Text))
 				{
-					IPTxt.Text = ip.Query;
+					var ip = await Global.GetIPInfo(IPTxt.Text); // Get IP info
+					lat = ip.Lat; // Define
+					lon = ip.Lon; // Define
+					IPInfoTxt.Text = ip.ToString(); // Show IP info
+
+					if (string.IsNullOrEmpty(IPTxt.Text))
+					{
+						IPTxt.Text = ip.Query;
+					}
+				}
+				else
+				{
+					MessageBox.Show(Properties.Resources.InvalidIP, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Error); // Show error
 				}
 			}
 		}
