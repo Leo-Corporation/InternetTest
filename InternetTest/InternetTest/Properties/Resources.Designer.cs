@@ -196,6 +196,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The history is empty..
+        /// </summary>
+        public static string EmptyHistory {
+            get {
+                return ResourceManager.GetString("EmptyHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter a URL to get started.
         /// </summary>
         public static string EnterURLToCheck {
@@ -255,6 +264,15 @@ namespace InternetTest.Properties {
         public static string Hi {
             get {
                 return ResourceManager.GetString("Hi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        public static string Historic {
+            get {
+                return ResourceManager.GetString("Historic", resourceCulture);
             }
         }
         

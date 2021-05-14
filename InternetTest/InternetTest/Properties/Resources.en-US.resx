@@ -315,4 +315,10 @@
   <data name="StartupPage" xml:space="preserve">
     <value>Startup page</value>
   </data>
+  <data name="Historic" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="EmptyHistory" xml:space="preserve">
+    <value>The history is empty.</value>
+  </data>
 </root>

@@ -315,4 +315,10 @@
   <data name="StartupPage" xml:space="preserve">
     <value>Page par défaut lors du démarrage</value>
   </data>
+  <data name="Historic" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="EmptyHistory" xml:space="preserve">
+    <value>L'historique est vide.</value>
+  </data>
 </root>

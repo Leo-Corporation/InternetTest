@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.UserControls;
 using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
@@ -86,6 +87,7 @@ namespace InternetTest.Pages
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
 				}
 			}
+			HistoricDisplayer.Children.Add(new HistoricItem(customSite, ConnectionStatusTxt.Text, HistoricDisplayer)); // Add
 		}
 
 		private string FormatURL(string url)
@@ -114,6 +116,32 @@ namespace InternetTest.Pages
 			if (!string.IsNullOrEmpty(WebsiteTxt.Text) && !string.IsNullOrWhiteSpace(WebsiteTxt.Text))
 			{
 				Global.OpenLinkInBrowser(FormatURL(WebsiteTxt.Text)); // Open in a browser 
+			}
+		}
+
+		internal void HistoryBtn_Click(object sender, RoutedEventArgs e)
+		{
+			if (HistoricDisplayer.Children.Count > 0)
+			{
+				if (HistoricPanel.Visibility == Visibility.Visible)
+				{
+					HistoricPanel.Visibility = Visibility.Collapsed; // Set
+					HistoryBtn.Content = "\uF47F"; // Set text
+				}
+				else
+				{
+					HistoricPanel.Visibility = Visibility.Visible; // Set
+					HistoryBtn.Content = "\uF36A"; // Set text
+				}
+			}
+			else
+			{
+				HistoricPanel.Visibility = Visibility.Collapsed; // Set
+				HistoryBtn.Content = "\uF47F"; // Set text
+				if (sender is not HistoricItem)
+				{
+					MessageBox.Show(Properties.Resources.EmptyHistory, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information); // Show message 
+				}
 			}
 		}
 	}
