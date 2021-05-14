@@ -292,4 +292,7 @@
   <data name="LaunchTestOnStart" xml:space="preserve">
     <value>Launch a test on start</value>
   </data>
+  <data name="StartupPage" xml:space="preserve">
+    <value>Startup page</value>
+  </data>
 </root>

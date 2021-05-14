@@ -312,4 +312,7 @@
   <data name="LaunchTestOnStart" xml:space="preserve">
     <value>Lancer un test lors du démarrage</value>
   </data>
+  <data name="StartupPage" xml:space="preserve">
+    <value>Page par défaut lors du démarrage</value>
+  </data>
 </root>

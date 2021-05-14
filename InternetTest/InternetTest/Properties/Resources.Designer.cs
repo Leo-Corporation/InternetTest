@@ -529,6 +529,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Startup page.
+        /// </summary>
+        public static string StartupPage {
+            get {
+                return ResourceManager.GetString("StartupPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Test.
         /// </summary>
         public static string Test {
