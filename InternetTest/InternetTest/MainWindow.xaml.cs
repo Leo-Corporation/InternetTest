@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,9 +55,21 @@ namespace InternetTest
 		private void InitUI()
 		{
 			HelloTxt.Text = Global.GetHiSentence; // Set the "Hello" message
-			PageContent.Content = Global.ConnectionPage; // Go to the home page
+			PageContent.Content = Global.Settings.StartupPage switch
+			{
+				StartPages.Connection => Global.ConnectionPage,
+				StartPages.LocalizeIP => Global.LocalizeIPPage,
+				StartPages.DownDetector => Global.DownDetectorPage,
+				_ => Global.ConnectionPage
+			}; // Go to the default startup page
 
-			CheckButton(ConnectionBtn); // Check the start page button
+			CheckButton(Global.Settings.StartupPage switch
+			{ 
+				StartPages.Connection => ConnectionBtn,
+				StartPages.LocalizeIP => LocalizeIPBtn,
+				StartPages.DownDetector => DownDetectorBtn,
+				_ => ConnectionBtn
+			}); // Check the start page button
 		}
 
 		private void CheckButton(Button button)

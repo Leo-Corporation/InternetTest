@@ -102,6 +102,25 @@ namespace InternetTest.Pages
 					_ => 0,
 				};
 
+				// Load StartupPageComboBox
+				if (Global.Settings.StartupPage is null)
+				{
+					Global.Settings.StartupPage = StartPages.Connection; // Set default startup page
+					SettingsManager.Save(); // Save the changes
+				}
+
+				StartupPageComboBox.Items.Add(Properties.Resources.Connection); // Add item to combobox
+				StartupPageComboBox.Items.Add(Properties.Resources.LocalizeIP); // Add item to combobox
+				StartupPageComboBox.Items.Add(Properties.Resources.DownDetector); // Add item to combobox
+
+				StartupPageComboBox.SelectedIndex = Global.Settings.StartupPage switch
+				{
+					StartPages.Connection => 0,
+					StartPages.LocalizeIP => 1,
+					StartPages.DownDetector => 2,
+					_ => 0
+				}; // Set selected index
+
 				// Load the TestSiteTxt
 				TestSiteTxt.Text = Global.Settings.TestSite; // Set text
 
@@ -307,7 +326,9 @@ namespace InternetTest.Pages
 					Language = "_default",
 					NotifyUpdates = true,
 					TestSite = "https://bing.com",
-					MapProvider = MapProviders.OpenStreetMap
+					MapProvider = MapProviders.OpenStreetMap,
+					LaunchTestOnStart = true,
+					StartupPage = StartPages.Connection
 				}; // Create default settings
 
 				SettingsManager.Save(); // Save the changes
@@ -322,6 +343,18 @@ namespace InternetTest.Pages
 		private void LaunchTestOnStartChk_Checked(object sender, RoutedEventArgs e)
 		{
 			Global.Settings.LaunchTestOnStart = LaunchTestOnStartChk.IsChecked; // Set
+			SettingsManager.Save(); // Save changes
+		}
+
+		private void StartupPageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			Global.Settings.StartupPage = StartupPageComboBox.SelectedIndex switch
+			{
+				0 => StartPages.Connection,
+				1 => StartPages.LocalizeIP,
+				2 => StartPages.DownDetector,
+				_ => StartPages.Connection
+			}; // Set
 			SettingsManager.Save(); // Save changes
 		}
 	}
