@@ -24,32 +24,51 @@ SOFTWARE.
 using InternetTest.Classes;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace InternetTest
+namespace InternetTest.UserControls
 {
 	/// <summary>
-	/// Interaction logic for App.xaml
+	/// Interaction logic for HistoricItem.xaml
 	/// </summary>
-	public partial class App : Application
+	public partial class HistoricItem : UserControl
 	{
-		protected override void OnStartup(StartupEventArgs e)
+		string URL { get; init; }
+		string Status { get; init; }
+		StackPanel StackPanel { get; init; }
+		public HistoricItem(string url, string status, StackPanel stackPanel)
 		{
-			SettingsManager.Load(); // Load settings
+			InitializeComponent();
+			URL = url;
+			Status = status;
+			StackPanel = stackPanel;
+			InitUI();
+		}
 
-			Global.ChangeTheme(); // Change the theme
-			Global.ChangeLanguage(); // Change the language
+		private void InitUI()
+		{
+			SiteNameTxt.Text = URL; // Set text
+			StateTxt.Text = Status; // Set text
+		}
 
-			Global.SettingsPage = new(); // Create a new SettingsPage
-			Global.ConnectionPage = new(); // Create a new ConnectionPage
-			Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
-			Global.DownDetectorPage = new(); // Create a new DownDetectorPage
-
-			base.OnStartup(e);
+		private void DismissBtn_Click(object sender, RoutedEventArgs e)
+		{
+			StackPanel.Children.Remove(this); // Remove
+			if (StackPanel.Children.Count == 0)
+			{
+				Global.DownDetectorPage.HistoryBtn_Click(this, null);
+			}
 		}
 	}
 }

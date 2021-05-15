@@ -21,35 +21,21 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Classes;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
-namespace InternetTest
+namespace InternetTest.Enums
 {
 	/// <summary>
-	/// Interaction logic for App.xaml
+	/// Pages that can be set for startup.
 	/// </summary>
-	public partial class App : Application
+	public enum StartPages
 	{
-		protected override void OnStartup(StartupEventArgs e)
-		{
-			SettingsManager.Load(); // Load settings
-
-			Global.ChangeTheme(); // Change the theme
-			Global.ChangeLanguage(); // Change the language
-
-			Global.SettingsPage = new(); // Create a new SettingsPage
-			Global.ConnectionPage = new(); // Create a new ConnectionPage
-			Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
-			Global.DownDetectorPage = new(); // Create a new DownDetectorPage
-
-			base.OnStartup(e);
-		}
+		Connection,
+		LocalizeIP,
+		DownDetector
 	}
 }

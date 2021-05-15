@@ -68,7 +68,7 @@ namespace InternetTest.Classes
 		/// <summary>
 		/// The current version of InternetTest.
 		/// </summary>
-		public static string Version => "5.1.0.2104";
+		public static string Version => "5.2.0.2105";
 
 		/// <summary>
 		/// List of the available languages.
@@ -193,7 +193,7 @@ namespace InternetTest.Classes
 
 				if (ip.Contains("http://") || ip.Contains("https://"))
 				{
-					return true; // If it is a website
+					return false; // If it is a website
 				}
 
 				string[] splittedIP = ip.Split(new string[] { "." }, StringSplitOptions.None); // Split

@@ -187,11 +187,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default protocol..
+        /// </summary>
+        public static string DefaultProtocol {
+            get {
+                return ResourceManager.GetString("DefaultProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DownDetector.
         /// </summary>
         public static string DownDetector {
             get {
                 return ResourceManager.GetString("DownDetector", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The history is empty..
+        /// </summary>
+        public static string EmptyHistory {
+            get {
+                return ResourceManager.GetString("EmptyHistory", resourceCulture);
             }
         }
         
@@ -259,6 +277,42 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        public static string Historic {
+            get {
+                return ResourceManager.GetString("Historic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HTTP.
+        /// </summary>
+        public static string HTTP {
+            get {
+                return ResourceManager.GetString("HTTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HTTP protocol.
+        /// </summary>
+        public static string HTTPProtocol {
+            get {
+                return ResourceManager.GetString("HTTPProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HTTPS.
+        /// </summary>
+        public static string HTTPS {
+            get {
+                return ResourceManager.GetString("HTTPS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Install.
         /// </summary>
         public static string Install {
@@ -300,6 +354,24 @@ namespace InternetTest.Properties {
         public static string InvalidIP {
             get {
                 return ResourceManager.GetString("InvalidIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The website URL is invalid..
+        /// </summary>
+        public static string InvalidURL {
+            get {
+                return ResourceManager.GetString("InvalidURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IP.
+        /// </summary>
+        public static string IP {
+            get {
+                return ResourceManager.GetString("IP", resourceCulture);
             }
         }
         
@@ -529,6 +601,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Startup page.
+        /// </summary>
+        public static string StartupPage {
+            get {
+                return ResourceManager.GetString("StartupPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Test.
         /// </summary>
         public static string Test {
@@ -615,6 +696,15 @@ namespace InternetTest.Properties {
         public static string WarningIPAPI {
             get {
                 return ResourceManager.GetString("WarningIPAPI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website.
+        /// </summary>
+        public static string Website {
+            get {
+                return ResourceManager.GetString("Website", resourceCulture);
             }
         }
         

@@ -312,4 +312,34 @@
   <data name="LaunchTestOnStart" xml:space="preserve">
     <value>Lancer un test lors du démarrage</value>
   </data>
+  <data name="StartupPage" xml:space="preserve">
+    <value>Page par défaut lors du démarrage</value>
+  </data>
+  <data name="Historic" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="EmptyHistory" xml:space="preserve">
+    <value>L'historique est vide.</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Site internet</value>
+  </data>
+  <data name="InvalidURL" xml:space="preserve">
+    <value>L'URL du site Internet est invalide.</value>
+  </data>
+  <data name="HTTP" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="HTTPS" xml:space="preserve">
+    <value>HTTPS</value>
+  </data>
+  <data name="HTTPProtocol" xml:space="preserve">
+    <value>Protocol HTTP</value>
+  </data>
+  <data name="DefaultProtocol" xml:space="preserve">
+    <value>Protocol par défaut.</value>
+  </data>
 </root>

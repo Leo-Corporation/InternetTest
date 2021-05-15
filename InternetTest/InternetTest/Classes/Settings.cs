@@ -72,6 +72,16 @@ namespace InternetTest.Classes
 		/// True if InternetTest should launch a test on start.
 		/// </summary>
 		public bool? LaunchTestOnStart { get; set; }
+
+		/// <summary>
+		/// The startup page.
+		/// </summary>
+		public StartPages? StartupPage { get; set; }
+
+		/// <summary>
+		/// True if InternetTest should use <c>https</c>.
+		/// </summary>
+		public bool? UseHTTPS { get; set; }
 	}
 
 	/// <summary>
@@ -105,7 +115,9 @@ namespace InternetTest.Classes
 					MapProvider = MapProviders.OpenStreetMap,
 					CheckUpdatesOnStart = true,
 					NotifyUpdates = true,
-					LaunchTestOnStart = true
+					LaunchTestOnStart = true,
+					StartupPage = StartPages.Connection,
+					UseHTTPS = true
 				}; // Create a new settings file
 
 				Save(); // Save the changes

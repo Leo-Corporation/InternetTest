@@ -74,6 +74,15 @@ namespace InternetTest.Pages
 				DarkRadioBtn.IsChecked = Global.Settings.IsDarkTheme; // Change IsChecked property
 				LightRadioBtn.IsChecked = !Global.Settings.IsDarkTheme; // Change IsChecked property
 
+				if (!Global.Settings.UseHTTPS.HasValue)
+				{
+					Global.Settings.UseHTTPS = true; // Set default value
+					SettingsManager.Save(); // Save changes
+				}
+
+				HTTPSRadioBtn.IsChecked = Global.Settings.UseHTTPS.Value; // Set
+				HTTPRadioBtn.IsChecked = !Global.Settings.UseHTTPS.Value; // Set
+
 				// Load CheckBoxes
 				CheckUpdatesOnStartChk.IsChecked = Global.Settings.CheckUpdatesOnStart.HasValue ? Global.Settings.CheckUpdatesOnStart.Value : true; // Set
 				NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdates.HasValue ? Global.Settings.NotifyUpdates.Value : true; // Set
@@ -101,6 +110,25 @@ namespace InternetTest.Pages
 					MapProviders.GoogleMaps => 2,
 					_ => 0,
 				};
+
+				// Load StartupPageComboBox
+				if (Global.Settings.StartupPage is null)
+				{
+					Global.Settings.StartupPage = StartPages.Connection; // Set default startup page
+					SettingsManager.Save(); // Save the changes
+				}
+
+				StartupPageComboBox.Items.Add(Properties.Resources.Connection); // Add item to combobox
+				StartupPageComboBox.Items.Add(Properties.Resources.LocalizeIP); // Add item to combobox
+				StartupPageComboBox.Items.Add(Properties.Resources.DownDetector); // Add item to combobox
+
+				StartupPageComboBox.SelectedIndex = Global.Settings.StartupPage switch
+				{
+					StartPages.Connection => 0,
+					StartPages.LocalizeIP => 1,
+					StartPages.DownDetector => 2,
+					_ => 0
+				}; // Set selected index
 
 				// Load the TestSiteTxt
 				TestSiteTxt.Text = Global.Settings.TestSite; // Set text
@@ -245,7 +273,7 @@ namespace InternetTest.Pages
 		{
 			if (!url.Contains("https://") && !url.Contains("http://")) // If there isn't http(s)
 			{
-				return "https://" + url; // Add the https://
+				return (Global.Settings.UseHTTPS.Value ? "https://" : "http://") + url; // Add the https://
 			}
 			else
 			{
@@ -307,7 +335,10 @@ namespace InternetTest.Pages
 					Language = "_default",
 					NotifyUpdates = true,
 					TestSite = "https://bing.com",
-					MapProvider = MapProviders.OpenStreetMap
+					MapProvider = MapProviders.OpenStreetMap,
+					LaunchTestOnStart = true,
+					StartupPage = StartPages.Connection,
+					UseHTTPS = true
 				}; // Create default settings
 
 				SettingsManager.Save(); // Save the changes
@@ -322,6 +353,30 @@ namespace InternetTest.Pages
 		private void LaunchTestOnStartChk_Checked(object sender, RoutedEventArgs e)
 		{
 			Global.Settings.LaunchTestOnStart = LaunchTestOnStartChk.IsChecked; // Set
+			SettingsManager.Save(); // Save changes
+		}
+
+		private void StartupPageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			Global.Settings.StartupPage = StartupPageComboBox.SelectedIndex switch
+			{
+				0 => StartPages.Connection,
+				1 => StartPages.LocalizeIP,
+				2 => StartPages.DownDetector,
+				_ => StartPages.Connection
+			}; // Set
+			SettingsManager.Save(); // Save changes
+		}
+
+		private void HTTPSRadioBtn_Checked(object sender, RoutedEventArgs e)
+		{
+			Global.Settings.UseHTTPS = HTTPSRadioBtn.IsChecked; // Set value
+			SettingsManager.Save(); // Save changes
+		}
+
+		private void HTTPRadioBtn_Checked(object sender, RoutedEventArgs e)
+		{
+			Global.Settings.UseHTTPS = HTTPSRadioBtn.IsChecked; // Set value
 			SettingsManager.Save(); // Save changes
 		}
 	}
