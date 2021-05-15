@@ -3,7 +3,7 @@
 
 #define MyAppName "InternetTest"
 #define MyAppVersion "5.2.0.2105"
-#define MyAppFullVersion "5.2.0.2105-rc1"
+#define MyAppFullVersion "5.2.0.2105"
 #define MyAppPublisher "Léo Corporation"
 #define MyAppURL "https://leocorporation.dev/"
 #define MyAppExeName "InternetTest.exe"
