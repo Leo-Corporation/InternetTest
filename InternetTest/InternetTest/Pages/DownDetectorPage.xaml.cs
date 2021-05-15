@@ -94,7 +94,7 @@ namespace InternetTest.Pages
 		{
 			if (!url.Contains("https://") && !url.Contains("http://")) // If there isn't http(s)
 			{
-				return "https://" + url; // Add the https://
+				return (Global.Settings.UseHTTPS.Value ? "https://" : "http://") + url; // Add the https://
 			}
 			else
 			{

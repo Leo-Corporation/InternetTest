@@ -77,6 +77,11 @@ namespace InternetTest.Classes
 		/// The startup page.
 		/// </summary>
 		public StartPages? StartupPage { get; set; }
+
+		/// <summary>
+		/// True if InternetTest should use <c>https</c>.
+		/// </summary>
+		public bool? UseHTTPS { get; set; }
 	}
 
 	/// <summary>
@@ -111,7 +116,8 @@ namespace InternetTest.Classes
 					CheckUpdatesOnStart = true,
 					NotifyUpdates = true,
 					LaunchTestOnStart = true,
-					StartupPage = StartPages.Connection
+					StartupPage = StartPages.Connection,
+					UseHTTPS = true
 				}; // Create a new settings file
 
 				Save(); // Save the changes

@@ -330,4 +330,16 @@
   <data name="InvalidURL" xml:space="preserve">
     <value>L'URL du site Internet est invalide.</value>
   </data>
+  <data name="HTTP" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="HTTPS" xml:space="preserve">
+    <value>HTTPS</value>
+  </data>
+  <data name="HTTPProtocol" xml:space="preserve">
+    <value>Protocol HTTP</value>
+  </data>
+  <data name="DefaultProtocol" xml:space="preserve">
+    <value>Protocol par défaut.</value>
+  </data>
 </root>

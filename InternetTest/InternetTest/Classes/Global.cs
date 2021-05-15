@@ -193,7 +193,7 @@ namespace InternetTest.Classes
 
 				if (ip.Contains("http://") || ip.Contains("https://"))
 				{
-					return true; // If it is a website
+					return false; // If it is a website
 				}
 
 				string[] splittedIP = ip.Split(new string[] { "." }, StringSplitOptions.None); // Split

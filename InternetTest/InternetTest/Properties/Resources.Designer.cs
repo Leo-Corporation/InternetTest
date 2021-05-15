@@ -187,6 +187,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default protocol..
+        /// </summary>
+        public static string DefaultProtocol {
+            get {
+                return ResourceManager.GetString("DefaultProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DownDetector.
         /// </summary>
         public static string DownDetector {
@@ -273,6 +282,33 @@ namespace InternetTest.Properties {
         public static string Historic {
             get {
                 return ResourceManager.GetString("Historic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HTTP.
+        /// </summary>
+        public static string HTTP {
+            get {
+                return ResourceManager.GetString("HTTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HTTP protocol.
+        /// </summary>
+        public static string HTTPProtocol {
+            get {
+                return ResourceManager.GetString("HTTPProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HTTPS.
+        /// </summary>
+        public static string HTTPS {
+            get {
+                return ResourceManager.GetString("HTTPS", resourceCulture);
             }
         }
         
