@@ -301,4 +301,13 @@
   <data name="EmptyHistory" xml:space="preserve">
     <value>The history is empty.</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="InvalidURL" xml:space="preserve">
+    <value>The website URL is invalid.</value>
+  </data>
 </root>

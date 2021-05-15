@@ -321,4 +321,13 @@
   <data name="EmptyHistory" xml:space="preserve">
     <value>L'historique est vide.</value>
   </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Site internet</value>
+  </data>
+  <data name="InvalidURL" xml:space="preserve">
+    <value>L'URL du site Internet est invalide.</value>
+  </data>
 </root>

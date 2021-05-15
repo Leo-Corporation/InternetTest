@@ -322,6 +322,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The website URL is invalid..
+        /// </summary>
+        public static string InvalidURL {
+            get {
+                return ResourceManager.GetString("InvalidURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IP.
+        /// </summary>
+        public static string IP {
+            get {
+                return ResourceManager.GetString("IP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ISP.
         /// </summary>
         public static string ISP {
@@ -642,6 +660,15 @@ namespace InternetTest.Properties {
         public static string WarningIPAPI {
             get {
                 return ResourceManager.GetString("WarningIPAPI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website.
+        /// </summary>
+        public static string Website {
+            get {
+                return ResourceManager.GetString("Website", resourceCulture);
             }
         }
         
