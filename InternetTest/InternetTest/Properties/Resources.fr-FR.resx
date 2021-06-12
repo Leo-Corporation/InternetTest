@@ -342,4 +342,16 @@
   <data name="DefaultProtocol" xml:space="preserve">
     <value>Protocol par défaut.</value>
   </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importer les paramètres</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exporter les paramètres</value>
+  </data>
+  <data name="SettingsExportedSucessMsg" xml:space="preserve">
+    <value>Les paramètres ont été exportés avec succès.</value>
+  </data>
+  <data name="SettingsImportedMsg" xml:space="preserve">
+    <value>Les paramètres ont été importés avec succès. Pour finit le processus, InternetTest va redémarrer.</value>
+  </data>
 </root>

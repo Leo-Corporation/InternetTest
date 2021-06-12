@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.Enums;
 using LeoCorpLibrary;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -380,6 +381,38 @@ namespace InternetTest.Pages
 		{
 			Global.Settings.UseHTTPS = HTTPSRadioBtn.IsChecked; // Set value
 			SettingsManager.Save(); // Save changes
+		}
+
+		private void ImportBtn_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void ExportBtn_Click(object sender, RoutedEventArgs e)
+		{
+			SaveFileDialog saveFileDialog = new()
+			{
+				FileName = "InternetTestSettings.xml",
+				Filter = "XML|*.xml",
+				Title = Properties.Resources.Export
+			}; // Create file dialog
+
+			if (saveFileDialog.ShowDialog() ?? true)
+			{
+				SettingsManager.Export(saveFileDialog.FileName); // Export games
+			}
+		}
+
+		private void BtnEnter(object sender, MouseEventArgs e)
+		{
+			Button button = (Button)sender; // Create button
+			button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["WindowButtonsHoverForeground1"].ToString()) }; // Set the foreground
+		}
+
+		private void BtnLeave(object sender, MouseEventArgs e)
+		{
+			Button button = (Button)sender; // Create button
+			button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground 
 		}
 	}
 }

@@ -29,6 +29,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml.Serialization;
 
 namespace InternetTest.Classes
@@ -143,6 +144,29 @@ namespace InternetTest.Classes
 			xmlSerializer.Serialize(streamWriter, Global.Settings);
 
 			streamWriter.Dispose();
+		}
+
+		/// <summary>
+		/// Exports current settings.
+		/// </summary>
+		/// <param name="path">The path where the settings file should be exported.</param>
+		public static void Export(string path)
+		{
+			try
+			{
+				XmlSerializer xmlSerializer = new XmlSerializer(typeof(Settings)); // Create XML Serializer
+
+				StreamWriter streamWriter = new StreamWriter(path); // The place where the file is going to be written
+				xmlSerializer.Serialize(streamWriter, Global.Settings);
+
+				streamWriter.Dispose();
+
+				MessageBox.Show(Properties.Resources.SettingsExportedSucessMsg, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information); // Show message
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Error); // Show error message
+			}
 		}
 	}
 }
