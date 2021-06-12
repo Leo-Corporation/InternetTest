@@ -5,6 +5,7 @@
 
     <sys:String x:Key="Background1">#0A0A1E</sys:String>
     <sys:String x:Key="Background2">#141428</sys:String>
+    <sys:String x:Key="Background3">#141428</sys:String>
     <sys:String x:Key="Foreground1">#FFFFFF</sys:String>
     <sys:String x:Key="WindowButtonsHover1">#141428</sys:String>
     <sys:String x:Key="WindowButtonsPressed1">#1E1E32</sys:String>

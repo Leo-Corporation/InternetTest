@@ -168,6 +168,8 @@ namespace InternetTest.Pages
 				ThemeApplyBtn.Visibility = Visibility.Hidden; // Hide
 				TestSiteApplyBtn.Visibility = Visibility.Hidden; // Hide
 				MapProviderApplyBtn.Visibility = Visibility.Hidden; // Hide 
+
+				VersionTxt.Text = Global.Version; // Set text
 			}
 			catch (Exception ex)
 			{
