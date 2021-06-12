@@ -352,6 +352,6 @@
     <value>Les paramètres ont été exportés avec succès.</value>
   </data>
   <data name="SettingsImportedMsg" xml:space="preserve">
-    <value>Les paramètres ont été importés avec succès. Pour finit le processus, InternetTest va redémarrer.</value>
+    <value>Les paramètres ont été importés avec succès. Pour finir le processus, InternetTest va redémarrer.</value>
   </data>
 </root>
