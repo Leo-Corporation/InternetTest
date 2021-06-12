@@ -38,8 +38,8 @@
 
         <Border x:Name="border" Background="{Binding Source={StaticResource LightAccentColor}}" CornerRadius="5" Padding="10" Margin="10" Grid.Row="2">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                <TextBlock Foreground="{Binding Source={StaticResource AccentColor}}"  Text="&#xF4A4;" FontSize="14" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                <TextBlock Foreground="{Binding Source={StaticResource AccentColor}}" Text="{x:Static lang:Resources.WarningIPAPI}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" MaxWidth="766" Width="500"/>
+                <TextBlock Foreground="{Binding Source={StaticResource DarkFAccentColor}}"  Text="&#xF4A4;" FontSize="14" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                <TextBlock Foreground="{Binding Source={StaticResource DarkFAccentColor}}" Text="{x:Static lang:Resources.WarningIPAPI}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" MaxWidth="766" Width="500"/>
             </StackPanel>
         </Border>
 

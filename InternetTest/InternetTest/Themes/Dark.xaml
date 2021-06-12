@@ -12,6 +12,7 @@
     <sys:String x:Key="MainWindowBackground">/Images/BackgroundBlack.png</sys:String>
     <sys:String x:Key="WindowButtonsHoverForeground1">#ffffff</sys:String>
     <sys:String x:Key="AccentColor">#2153E0</sys:String>
+	<sys:String x:Key="DarkFAccentColor">#7998ec</sys:String>
     <sys:String x:Key="LightAccentColor">#0A1943</sys:String>
     <sys:String x:Key="Gray">#5A5A6E</sys:String>
     <sys:String x:Key="Green">#25DE0F</sys:String>
