@@ -24,8 +24,10 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.Enums;
 using LeoCorpLibrary;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +48,7 @@ namespace InternetTest.Pages
 	/// </summary>
 	public partial class LocalizeIPPage : Page
 	{
+		IPInfo IPInfo { get; set; }
 		public LocalizeIPPage()
 		{
 			InitializeComponent();
@@ -69,6 +72,7 @@ namespace InternetTest.Pages
 						{
 							IPTxt.Text = ip.Query;
 						}
+						IPInfo = ip; // Set
 					}
 					else
 					{
@@ -87,7 +91,8 @@ namespace InternetTest.Pages
 						if (string.IsNullOrEmpty(IPTxt.Text))
 						{
 							IPTxt.Text = ip.Query;
-						} 
+						}
+						IPInfo = ip; // Set
 					}
 					else
 					{
@@ -111,6 +116,27 @@ namespace InternetTest.Pages
 			}
 		}
 
+		private void SaveBtn_Click(object sender, RoutedEventArgs e)
+		{
+			if (IPInfo is not null)
+			{
+				SaveFileDialog saveFileDialog = new()
+				{
+					FileName = $"{IPInfo.Query}.txt",
+					Filter = "TXT|*.txt"
+				}; // Create SaveFileDialog
+
+				if (saveFileDialog.ShowDialog() ?? true)
+				{
+					using (StreamWriter sw = File.CreateText(saveFileDialog.FileName))
+					{
+						sw.WriteLine(IPInfo.ToString()); // Create file
+					}
+					MessageBox.Show(Properties.Resources.IpSavedSuccess, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information);
+				} 
+			}
+		}
+
 		private async void MyIPBtn_Click(object sender, RoutedEventArgs e)
 		{
 			if (await NetworkConnection.IsAvailableAsync())
@@ -121,6 +147,7 @@ namespace InternetTest.Pages
 				IPInfoTxt.Text = ip.ToString(); // Show IP info
 				IPTxt.Text = ip.Query;
 				IPRadioBtn.IsChecked = true;
+				IPInfo = ip; // Set
 			}
 		}
 	}

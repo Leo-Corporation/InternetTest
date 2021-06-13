@@ -360,4 +360,10 @@
   <data name="NotConnectedShort" xml:space="preserve">
     <value>Pas connecté</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="IpSavedSuccess" xml:space="preserve">
+    <value>Les informations de l'IP ont été sauvegardées avec succès.</value>
+  </data>
 </root>

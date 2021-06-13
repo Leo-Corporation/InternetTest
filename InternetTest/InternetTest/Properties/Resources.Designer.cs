@@ -403,6 +403,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IP&apos;s informations were saved sucessfully..
+        /// </summary>
+        public static string IpSavedSuccess {
+            get {
+                return ResourceManager.GetString("IpSavedSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ISP.
         /// </summary>
         public static string ISP {
@@ -606,6 +615,15 @@ namespace InternetTest.Properties {
         public static string ResetSettingsConfirmMsg {
             get {
                 return ResourceManager.GetString("ResetSettingsConfirmMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
         
