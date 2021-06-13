@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/InternetTest"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  target-branch: vNext
+  reviewers:
+  - Leo-Peyronnet
+  assignees:
+  - Leo-Peyronnet
+  ignore:
+  - dependency-name: LeoCorpLibrary
+    versions:
+    - 3.3.0.2102
