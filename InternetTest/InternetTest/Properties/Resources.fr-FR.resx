@@ -354,4 +354,10 @@
   <data name="SettingsImportedMsg" xml:space="preserve">
     <value>Les paramètres ont été importés avec succès. Pour finir le processus, InternetTest va redémarrer.</value>
   </data>
+  <data name="ConnectedShort" xml:space="preserve">
+    <value>Connecté</value>
+  </data>
+  <data name="NotConnectedShort" xml:space="preserve">
+    <value>Pas connecté</value>
+  </data>
 </root>

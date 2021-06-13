@@ -142,6 +142,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connected.
+        /// </summary>
+        public static string ConnectedShort {
+            get {
+                return ResourceManager.GetString("ConnectedShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connection.
         /// </summary>
         public static string Connection {
@@ -516,6 +525,15 @@ namespace InternetTest.Properties {
         public static string NotConnected {
             get {
                 return ResourceManager.GetString("NotConnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not connected.
+        /// </summary>
+        public static string NotConnectedShort {
+            get {
+                return ResourceManager.GetString("NotConnectedShort", resourceCulture);
             }
         }
         
