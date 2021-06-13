@@ -142,6 +142,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connected.
+        /// </summary>
+        public static string ConnectedShort {
+            get {
+                return ResourceManager.GetString("ConnectedShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connection.
         /// </summary>
         public static string Connection {
@@ -241,6 +250,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export settings.
+        /// </summary>
+        public static string Export {
+            get {
+                return ResourceManager.GetString("Export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Good afternoon.
         /// </summary>
         public static string GoodAfternoon {
@@ -313,6 +331,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Import settings.
+        /// </summary>
+        public static string Import {
+            get {
+                return ResourceManager.GetString("Import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Install.
         /// </summary>
         public static string Install {
@@ -372,6 +399,15 @@ namespace InternetTest.Properties {
         public static string IP {
             get {
                 return ResourceManager.GetString("IP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IP&apos;s informations were saved sucessfully..
+        /// </summary>
+        public static string IpSavedSuccess {
+            get {
+                return ResourceManager.GetString("IpSavedSuccess", resourceCulture);
             }
         }
         
@@ -502,6 +538,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not connected.
+        /// </summary>
+        public static string NotConnectedShort {
+            get {
+                return ResourceManager.GetString("NotConnectedShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show a notification when updates are available.
         /// </summary>
         public static string NotifyUpdates {
@@ -574,6 +619,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to See licenses.
         /// </summary>
         public static string SeeLicenses {
@@ -588,6 +642,24 @@ namespace InternetTest.Properties {
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings have been sucessfully exported..
+        /// </summary>
+        public static string SettingsExportedSucessMsg {
+            get {
+                return ResourceManager.GetString("SettingsExportedSucessMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings were sucessfully imported. To finish the process, InternetTest is going to restart..
+        /// </summary>
+        public static string SettingsImportedMsg {
+            get {
+                return ResourceManager.GetString("SettingsImportedMsg", resourceCulture);
             }
         }
         

@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.UserControls;
 using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
@@ -73,12 +74,14 @@ namespace InternetTest.Pages
 					ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
 					InternetIconTxt.Text = "\uF299"; // Set the icon
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
+					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(true, HistoricDisplayer));
 				}
 				else
 				{
 					ConnectionStatusTxt.Text = Properties.Resources.NotConnected; // Set text of the label
 					InternetIconTxt.Text = "\uF36E"; // Set the icon
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
+					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(false, HistoricDisplayer));
 				}
 			}
 			else
@@ -88,12 +91,14 @@ namespace InternetTest.Pages
 					ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
 					InternetIconTxt.Text = "\uF299"; // Set the icon
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
+					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(true, HistoricDisplayer));
 				}
 				else
 				{
 					ConnectionStatusTxt.Text = Properties.Resources.NotConnected; // Set text of the label
 					InternetIconTxt.Text = "\uF36E"; // Set the icon
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
+					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(false, HistoricDisplayer));
 				}
 			}
 		}
@@ -106,6 +111,32 @@ namespace InternetTest.Pages
 		private void OpenBrowserBtn_Click(object sender, RoutedEventArgs e)
 		{
 			Global.OpenLinkInBrowser(Global.Settings.TestSite); // Open in a browser
+		}
+
+		internal void HistoryBtn_Click(object sender, RoutedEventArgs e)
+		{
+			if (HistoricDisplayer.Children.Count > 0)
+			{
+				if (HistoricPanel.Visibility == Visibility.Visible)
+				{
+					HistoricPanel.Visibility = Visibility.Collapsed; // Set
+					HistoryBtn.Content = "\uF47F"; // Set text
+				}
+				else
+				{
+					HistoricPanel.Visibility = Visibility.Visible; // Set
+					HistoryBtn.Content = "\uF36A"; // Set text
+				}
+			}
+			else
+			{
+				HistoricPanel.Visibility = Visibility.Collapsed; // Set
+				HistoryBtn.Content = "\uF47F"; // Set text
+				if (sender is not ConnectionHistoricItem)
+				{
+					MessageBox.Show(Properties.Resources.EmptyHistory, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information); // Show message 
+				}
+			}
 		}
 	}
 }
