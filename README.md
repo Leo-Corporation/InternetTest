@@ -34,16 +34,19 @@
 * Settings customization
 * Multilingual (French and English)
 
-## Branches
-There is 2 branches: 
-* main ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest)
-* vNext ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest?include_prereleases)
-
-The ``vNext`` branch is for the next version of InternetTest.
-
-The ``main`` branch is for stable versions.
 ## Latest release
 [Click here](https://github.com/Leo-Corporation/InternetTest/releases) to show the latest release's changelog.
+
+## Branches
+This Git repo has always two branches:
+
+| Name | Release | Description |
+| :--: | :-----: | :---------: |
+| `main` | ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest) | Stable versions |
+| `vNext` | ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest?include_prereleases) | Next version of InternetTest (unstable) |
+
+> Note: Other branches can also - of course - exists.
+
 ## Documentation 
 In the documentation, you'll find answers to your questions about InternetTest.
 
