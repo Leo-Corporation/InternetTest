@@ -76,6 +76,21 @@ namespace InternetTest.Pages
 				LightRadioBtn.IsChecked = !Global.Settings.IsDarkTheme; // Change IsChecked property
 				SystemRadioBtn.IsChecked = Global.Settings.IsThemeSystem; // Change IsChecked property
 
+				// Borders
+				if (DarkRadioBtn.IsChecked.Value)
+				{
+					CheckedBorder = DarkBorder; // Set
+				}
+				else if (LightRadioBtn.IsChecked.Value)
+				{
+					CheckedBorder = LightBorder; // Set
+				}
+				else if (SystemRadioBtn.IsChecked.Value)
+				{
+					CheckedBorder = SystemBorder; // Set
+				}
+				RefreshBorders();
+
 				if (!Global.Settings.UseHTTPS.HasValue)
 				{
 					Global.Settings.UseHTTPS = true; // Set default value
@@ -431,5 +446,53 @@ namespace InternetTest.Pages
 		{
 			ThemeApplyBtn.Visibility = Visibility.Visible; // Show
 		}
+
+		Border CheckedBorder { get; set; }
+		private void LightBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			LightRadioBtn.IsChecked = true; // Set IsChecked
+			CheckedBorder = LightBorder; // Set
+			RefreshBorders();
+		}
+
+		private void Border_MouseEnter(object sender, MouseEventArgs e)
+		{
+			Border border = (Border)sender;
+			border.BorderBrush = new SolidColorBrush() { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set color
+
+		}
+
+		private void Border_MouseLeave(object sender, MouseEventArgs e)
+		{
+			Border border = (Border)sender;
+			if (border != CheckedBorder)
+			{
+				border.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+			}
+		}
+
+		private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			DarkRadioBtn.IsChecked = true; // Set IsChecked
+			CheckedBorder = DarkBorder; // Set
+			RefreshBorders();
+		}
+
+		private void SystemBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			SystemRadioBtn.IsChecked = true; // Set IsChecked
+			CheckedBorder = SystemBorder; // Set
+			RefreshBorders();
+		}
+
+		private void RefreshBorders()
+		{
+			LightBorder.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+			DarkBorder.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+			SystemBorder.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+
+			CheckedBorder.BorderBrush = new SolidColorBrush() { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set color
+		}
+
 	}
 }
