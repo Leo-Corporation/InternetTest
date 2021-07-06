@@ -346,4 +346,7 @@
   <data name="IpSavedSuccess" xml:space="preserve">
     <value>IP's informations were saved sucessfully.</value>
   </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+  </data>
 </root>

@@ -366,4 +366,7 @@
   <data name="IpSavedSuccess" xml:space="preserve">
     <value>Les informations de l'IP ont été sauvegardées avec succès.</value>
   </data>
+  <data name="System" xml:space="preserve">
+    <value>Système</value>
+  </data>
 </root>
