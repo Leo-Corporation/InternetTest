@@ -84,6 +84,11 @@ namespace InternetTest.Classes
 		/// True if InternetTest should use <c>https</c>.
 		/// </summary>
 		public bool? UseHTTPS { get; set; }
+
+		/// <summary>
+		/// True if InternetTest's theme should match the system theme.
+		/// </summary>
+		public bool? IsThemeSystem { get; set; }
 	}
 
 	/// <summary>
@@ -119,7 +124,8 @@ namespace InternetTest.Classes
 					NotifyUpdates = true,
 					LaunchTestOnStart = true,
 					StartupPage = StartPages.Connection,
-					UseHTTPS = true
+					UseHTTPS = true,
+					IsThemeSystem = false
 				}; // Create a new settings file
 
 				Save(); // Save the changes
