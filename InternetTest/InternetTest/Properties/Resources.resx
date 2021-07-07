@@ -346,4 +346,16 @@
   <data name="IpSavedSuccess" xml:space="preserve">
     <value>IP's informations were saved sucessfully.</value>
   </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="WhenTestExecuted" xml:space="preserve">
+    <value>When a test is executed.</value>
+  </data>
+  <data name="NotifyTest" xml:space="preserve">
+    <value>Show a notification when a test is completed</value>
+  </data>
 </root>

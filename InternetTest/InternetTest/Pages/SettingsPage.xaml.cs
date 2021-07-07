@@ -74,6 +74,28 @@ namespace InternetTest.Pages
 				// Load RadioButtons
 				DarkRadioBtn.IsChecked = Global.Settings.IsDarkTheme; // Change IsChecked property
 				LightRadioBtn.IsChecked = !Global.Settings.IsDarkTheme; // Change IsChecked property
+				SystemRadioBtn.IsChecked = Global.Settings.IsThemeSystem; // Change IsChecked property
+
+				// Borders
+				if (DarkRadioBtn.IsChecked.Value)
+				{
+					CheckedBorder = DarkBorder; // Set
+				}
+				else if (LightRadioBtn.IsChecked.Value)
+				{
+					CheckedBorder = LightBorder; // Set
+				}
+				else if (SystemRadioBtn.IsChecked.Value)
+				{
+					CheckedBorder = SystemBorder; // Set
+				}
+				RefreshBorders();
+
+				if (!Global.Settings.TestNotification.HasValue)
+				{
+					Global.Settings.TestNotification = true; // Set default value
+					SettingsManager.Save(); // Save changes
+				}
 
 				if (!Global.Settings.UseHTTPS.HasValue)
 				{
@@ -88,6 +110,7 @@ namespace InternetTest.Pages
 				CheckUpdatesOnStartChk.IsChecked = Global.Settings.CheckUpdatesOnStart.HasValue ? Global.Settings.CheckUpdatesOnStart.Value : true; // Set
 				NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdates.HasValue ? Global.Settings.NotifyUpdates.Value : true; // Set
 				LaunchTestOnStartChk.IsChecked = Global.Settings.LaunchTestOnStart.HasValue ? Global.Settings.LaunchTestOnStart.Value : true; // Set
+				NotifyTestChk.IsChecked = Global.Settings.TestNotification; // Set
 
 				// Load LangComboBox
 				LangComboBox.Items.Add(Properties.Resources.Default); // Add "default"
@@ -219,6 +242,7 @@ namespace InternetTest.Pages
 		private void ThemeApplyBtn_Click(object sender, RoutedEventArgs e)
 		{
 			Global.Settings.IsDarkTheme = DarkRadioBtn.IsChecked.Value; // Set the settings
+			Global.Settings.IsThemeSystem = SystemRadioBtn.IsChecked; // Set the settings
 			SettingsManager.Save(); // Save the changes
 			ThemeApplyBtn.Visibility = Visibility.Hidden; // Hide
 			DisplayRestartMessage();
@@ -341,7 +365,9 @@ namespace InternetTest.Pages
 					MapProvider = MapProviders.OpenStreetMap,
 					LaunchTestOnStart = true,
 					StartupPage = StartPages.Connection,
-					UseHTTPS = true
+					UseHTTPS = true,
+					IsThemeSystem = false,
+					TestNotification = true
 				}; // Create default settings
 
 				SettingsManager.Save(); // Save the changes
@@ -422,6 +448,64 @@ namespace InternetTest.Pages
 		{
 			Button button = (Button)sender; // Create button
 			button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground 
+		}
+
+		private void SystemRadioBtn_Checked(object sender, RoutedEventArgs e)
+		{
+			ThemeApplyBtn.Visibility = Visibility.Visible; // Show
+		}
+
+		Border CheckedBorder { get; set; }
+		private void LightBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			LightRadioBtn.IsChecked = true; // Set IsChecked
+			CheckedBorder = LightBorder; // Set
+			RefreshBorders();
+		}
+
+		private void Border_MouseEnter(object sender, MouseEventArgs e)
+		{
+			Border border = (Border)sender;
+			border.BorderBrush = new SolidColorBrush() { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set color
+
+		}
+
+		private void Border_MouseLeave(object sender, MouseEventArgs e)
+		{
+			Border border = (Border)sender;
+			if (border != CheckedBorder)
+			{
+				border.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+			}
+		}
+
+		private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			DarkRadioBtn.IsChecked = true; // Set IsChecked
+			CheckedBorder = DarkBorder; // Set
+			RefreshBorders();
+		}
+
+		private void SystemBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			SystemRadioBtn.IsChecked = true; // Set IsChecked
+			CheckedBorder = SystemBorder; // Set
+			RefreshBorders();
+		}
+
+		private void RefreshBorders()
+		{
+			LightBorder.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+			DarkBorder.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+			SystemBorder.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+
+			CheckedBorder.BorderBrush = new SolidColorBrush() { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set color
+		}
+
+		private void NotifyTestChk_Checked(object sender, RoutedEventArgs e)
+		{
+			Global.Settings.TestNotification = NotifyTestChk.IsChecked; // Set
+			SettingsManager.Save(); // Save changes
 		}
 	}
 }

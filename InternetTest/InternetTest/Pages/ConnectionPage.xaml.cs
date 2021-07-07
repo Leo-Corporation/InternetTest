@@ -46,12 +46,14 @@ namespace InternetTest.Pages
 	/// </summary>
 	public partial class ConnectionPage : Page
 	{
+		System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
 		public ConnectionPage()
 		{
 			InitializeComponent();
+			notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(AppDomain.CurrentDomain.BaseDirectory + @"\InternetTest.exe");
 			if (!Global.Settings.LaunchTestOnStart.HasValue ? true : Global.Settings.LaunchTestOnStart.Value)
 			{
-				Test(Global.Settings.TestSite); // Launch a test 
+				Test(Global.Settings.TestSite, true); // Launch a test 
 			}
 			else
 			{
@@ -59,13 +61,14 @@ namespace InternetTest.Pages
 				InternetIconTxt.Text = "\uF4AB"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
 			}
+			Focus();
 		}
 
 		/// <summary>
 		/// Launch a network test.
 		/// </summary>
 		/// <param name="customSite">Leave empty if you don't want to specify a custom website.</param>
-		private async void Test(string customSite)
+		private async void Test(string customSite, bool fromStart = false)
 		{
 			if (string.IsNullOrEmpty(customSite)) // If a custom site isn't specified
 			{
@@ -75,6 +78,13 @@ namespace InternetTest.Pages
 					InternetIconTxt.Text = "\uF299"; // Set the icon
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
 					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(true, HistoricDisplayer));
+
+					if (Global.Settings.TestNotification.Value && !fromStart)
+					{
+						notifyIcon.Visible = true; // Show
+						notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.Connected, System.Windows.Forms.ToolTipIcon.Info);
+						notifyIcon.Visible = false; // Hide 
+					}
 				}
 				else
 				{
@@ -82,6 +92,13 @@ namespace InternetTest.Pages
 					InternetIconTxt.Text = "\uF36E"; // Set the icon
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
 					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(false, HistoricDisplayer));
+
+					if (Global.Settings.TestNotification.Value && !fromStart)
+					{
+						notifyIcon.Visible = true; // Show
+						notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.NotConnected, System.Windows.Forms.ToolTipIcon.Info);
+						notifyIcon.Visible = false; // Hide 
+					}
 				}
 			}
 			else
@@ -92,6 +109,13 @@ namespace InternetTest.Pages
 					InternetIconTxt.Text = "\uF299"; // Set the icon
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
 					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(true, HistoricDisplayer));
+
+					if (Global.Settings.TestNotification.Value && !fromStart)
+					{
+						notifyIcon.Visible = true; // Show
+						notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.Connected, System.Windows.Forms.ToolTipIcon.Info);
+						notifyIcon.Visible = false; // Hide 
+					}
 				}
 				else
 				{
@@ -99,6 +123,13 @@ namespace InternetTest.Pages
 					InternetIconTxt.Text = "\uF36E"; // Set the icon
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
 					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(false, HistoricDisplayer));
+
+					if (Global.Settings.TestNotification.Value && !fromStart)
+					{
+						notifyIcon.Visible = true; // Show
+						notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.NotConnected, System.Windows.Forms.ToolTipIcon.Info);
+						notifyIcon.Visible = false; // Hide 
+					}
 				}
 			}
 		}
