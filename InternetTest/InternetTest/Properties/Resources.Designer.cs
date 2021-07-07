@@ -547,6 +547,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Notifications.
+        /// </summary>
+        public static string Notifications {
+            get {
+                return ResourceManager.GetString("Notifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show a notification when a test is completed.
+        /// </summary>
+        public static string NotifyTest {
+            get {
+                return ResourceManager.GetString("NotifyTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show a notification when updates are available.
         /// </summary>
         public static string NotifyUpdates {
@@ -804,6 +822,15 @@ namespace InternetTest.Properties {
         public static string WebsiteDown {
             get {
                 return ResourceManager.GetString("WebsiteDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When a test is executed..
+        /// </summary>
+        public static string WhenTestExecuted {
+            get {
+                return ResourceManager.GetString("WhenTestExecuted", resourceCulture);
             }
         }
         

@@ -369,4 +369,13 @@
   <data name="System" xml:space="preserve">
     <value>Système</value>
   </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="WhenTestExecuted" xml:space="preserve">
+    <value>Quand un test est exécuté.</value>
+  </data>
+  <data name="NotifyTest" xml:space="preserve">
+    <value>Montrer une notification lorsqu'un test est terminé</value>
+  </data>
 </root>

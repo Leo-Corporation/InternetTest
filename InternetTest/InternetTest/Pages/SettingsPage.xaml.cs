@@ -91,6 +91,12 @@ namespace InternetTest.Pages
 				}
 				RefreshBorders();
 
+				if (!Global.Settings.TestNotification.HasValue)
+				{
+					Global.Settings.TestNotification = true; // Set default value
+					SettingsManager.Save(); // Save changes
+				}
+
 				if (!Global.Settings.UseHTTPS.HasValue)
 				{
 					Global.Settings.UseHTTPS = true; // Set default value
@@ -104,6 +110,7 @@ namespace InternetTest.Pages
 				CheckUpdatesOnStartChk.IsChecked = Global.Settings.CheckUpdatesOnStart.HasValue ? Global.Settings.CheckUpdatesOnStart.Value : true; // Set
 				NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdates.HasValue ? Global.Settings.NotifyUpdates.Value : true; // Set
 				LaunchTestOnStartChk.IsChecked = Global.Settings.LaunchTestOnStart.HasValue ? Global.Settings.LaunchTestOnStart.Value : true; // Set
+				NotifyTestChk.IsChecked = Global.Settings.TestNotification; // Set
 
 				// Load LangComboBox
 				LangComboBox.Items.Add(Properties.Resources.Default); // Add "default"
@@ -359,7 +366,8 @@ namespace InternetTest.Pages
 					LaunchTestOnStart = true,
 					StartupPage = StartPages.Connection,
 					UseHTTPS = true,
-					IsThemeSystem = false
+					IsThemeSystem = false,
+					TestNotification = true
 				}; // Create default settings
 
 				SettingsManager.Save(); // Save the changes
@@ -494,5 +502,10 @@ namespace InternetTest.Pages
 			CheckedBorder.BorderBrush = new SolidColorBrush() { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set color
 		}
 
+		private void NotifyTestChk_Checked(object sender, RoutedEventArgs e)
+		{
+			Global.Settings.TestNotification = NotifyTestChk.IsChecked; // Set
+			SettingsManager.Save(); // Save changes
+		}
 	}
 }

@@ -78,9 +78,12 @@ namespace InternetTest.Pages
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
 					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(true, HistoricDisplayer));
 
-					notifyIcon.Visible = true; // Show
-					notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.Connected, System.Windows.Forms.ToolTipIcon.Info);
-					notifyIcon.Visible = false; // Hide
+					if (Global.Settings.TestNotification.Value)
+					{
+						notifyIcon.Visible = true; // Show
+						notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.Connected, System.Windows.Forms.ToolTipIcon.Info);
+						notifyIcon.Visible = false; // Hide 
+					}
 				}
 				else
 				{
@@ -89,9 +92,12 @@ namespace InternetTest.Pages
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
 					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(false, HistoricDisplayer));
 
-					notifyIcon.Visible = true; // Show
-					notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.NotConnected, System.Windows.Forms.ToolTipIcon.Info);
-					notifyIcon.Visible = false; // Hide
+					if (Global.Settings.TestNotification.Value)
+					{
+						notifyIcon.Visible = true; // Show
+						notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.NotConnected, System.Windows.Forms.ToolTipIcon.Info);
+						notifyIcon.Visible = false; // Hide 
+					}
 				}
 			}
 			else
@@ -103,9 +109,12 @@ namespace InternetTest.Pages
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
 					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(true, HistoricDisplayer));
 
-					notifyIcon.Visible = true; // Show
-					notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.Connected, System.Windows.Forms.ToolTipIcon.Info);
-					notifyIcon.Visible = false; // Hide
+					if (Global.Settings.TestNotification.Value)
+					{
+						notifyIcon.Visible = true; // Show
+						notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.Connected, System.Windows.Forms.ToolTipIcon.Info);
+						notifyIcon.Visible = false; // Hide 
+					}
 				}
 				else
 				{
@@ -114,9 +123,12 @@ namespace InternetTest.Pages
 					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
 					HistoricDisplayer.Children.Add(new ConnectionHistoricItem(false, HistoricDisplayer));
 
-					notifyIcon.Visible = true; // Show
-					notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.NotConnected, System.Windows.Forms.ToolTipIcon.Info);
-					notifyIcon.Visible = false; // Hide
+					if (Global.Settings.TestNotification.Value)
+					{
+						notifyIcon.Visible = true; // Show
+						notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.NotConnected, System.Windows.Forms.ToolTipIcon.Info);
+						notifyIcon.Visible = false; // Hide 
+					}
 				}
 			}
 		}
