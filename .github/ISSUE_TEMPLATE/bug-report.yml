@@ -1,0 +1,56 @@
+name: Bug Report
+description: File a bug report.
+title: "[Bug] "
+labels: [bug]
+body:
+- type: markdown
+  attributes:
+    value: |
+      Thanks for taking the time to fill out this bug report!
+- type: textarea
+  attributes:
+    label: What is the bug?
+    description: Describe the bug, what is happening?
+    placeholder: Tell us what you see!
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: How to reproduce the bug?
+    description: Tell use how to reproduce the bug.
+    placeholder: How to reproduce the bug?
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Screenshots
+    description: Join a screenshot if you can.
+    placeholder: Drag or paste an image here.
+  validations:
+    required: false
+- type: dropdown
+  attributes:
+    label: Operating System
+    description: What operating system are you using?
+    options:
+    - Windows 11
+    - Windows 10
+    - Windows 8.1
+    - Windows 8
+    - Windows 7
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: What is the version of the operating system?
+    description: Tell us the precise version of your operating system (Win+R, winver, Enter).
+    placeholder: Windows 10.0.19043.1110
+  validations:
+    required: false
+- type: input
+  attributes:
+    label: What is the version of the software?
+    description: Tell us the precise version of the software you are using.
+    placeholder: v1.5.0.2108
+  validations:
+    required: true

@@ -1,0 +1,16 @@
+name: Documentation Report
+description: File a documentation issue report.
+title: "[Documentation] "
+labels: [documentation]
+body:
+- type: markdown
+  attributes:
+      value: |
+        Thanks for taking the time to fill this documentation issue report!
+- type: textarea
+  attributes:
+    label: What is the problem?
+    description: Describe the problem.
+    placeholder: There is an issue in...
+  validations:
+    required: true
