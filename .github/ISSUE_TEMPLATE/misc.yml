@@ -1,0 +1,16 @@
+name: Misc
+description: Your issue doesn't fit in any categories.
+title: "[Misc] "
+labels: [misc]
+body:
+- type: markdown
+  attributes:
+      value: |
+        Thanks for taking the time to fill out this issue!
+- type: textarea
+  attributes:
+    label: Description of your issue
+    description: Describe the problem.
+    placeholder: Descirbe here your issue.
+  validations:
+    required: true

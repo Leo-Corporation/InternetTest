@@ -1,0 +1,30 @@
+name: Translation issues
+description: Report a translation issue.
+title: "[Translation] "
+labels: [translation]
+body:
+- type: markdown
+  attributes:
+      value: |
+        Thanks for taking the time to fill out this translation issue report!
+- type: textarea
+  attributes:
+    label: Description of the problem
+    description: Describe the translation problem.
+    placeholder: Error in...
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Propose a translation
+    description: Propose a new translation.
+    placeholder: It should be...
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Screenshot
+    description: If you have a screenshot, paste it here.
+    placeholder: Drag or paste an image here.
+  validations:
+    required: false
