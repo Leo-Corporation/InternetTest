@@ -43,7 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="LeoCorpLibrary" Version="3.8.0.2107" />
+    <PackageReference Include="LeoCorpLibrary" Version="3.9.0.2108" />
   </ItemGroup>
 
   <ItemGroup>
