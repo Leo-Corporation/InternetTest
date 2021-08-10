@@ -47,6 +47,11 @@ namespace InternetTest.Enums
 		/// <summary>
 		/// The Google Maps map provider.
 		/// </summary>
-		GoogleMaps
+		GoogleMaps,
+		
+		/// <summary>
+		/// The Yandex map provider
+		/// </summary>
+		Yandex
 	}
 }
