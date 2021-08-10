@@ -11,7 +11,7 @@
 	  Title="SettingsPage">
 
 	<ScrollViewer HorizontalScrollBarVisibility="Hidden" Template="{DynamicResource ScrollViewerControlTemplate}" CanContentScroll="True" Height="344">
-		<Grid Height="1100">
+		<Grid Height="1130">
 			<Grid.RowDefinitions>
 				<RowDefinition/>
 				<RowDefinition Height="Auto"/>
