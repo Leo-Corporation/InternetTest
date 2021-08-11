@@ -2,8 +2,8 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "InternetTest"
-#define MyAppVersion "5.4.0.2107"
-#define MyAppFullVersion "5.4.0.2107"
+#define MyAppVersion "5.5.0.2108"
+#define MyAppFullVersion "5.5.0.2108"
 #define MyAppPublisher "Léo Corporation"
 #define MyAppURL "https://leocorporation.dev/"
 #define MyAppExeName "InternetTest.exe"
@@ -24,13 +24,13 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DefaultGroupName=Léo Corp
 DisableProgramGroupPage=yes
-LicenseFile=H:\InternetTest\LICENSE
+LicenseFile=..\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=H:\InternetTest\InternetTest.Setup\Output
+OutputDir=Output
 OutputBaseFilename=InternetTestSetup
-SetupIconFile=H:\InternetTest\InternetTest\InternetTest\InternetTest.ico
+SetupIconFile=..\InternetTest\InternetTest\InternetTest.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -43,9 +43,9 @@ Name: "french"; MessagesFile: "compiler:Languages\French.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "H:\InternetTest\InternetTest\InternetTest\bin\Release\net5.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "H:\InternetTest\InternetTest\Xalyus Updater\bin\Release\net5.0-windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "H:\InternetTest\InternetTest\InternetTest\bin\Release\net5.0-windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\InternetTest\InternetTest\bin\Release\net5.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\InternetTest\Xalyus Updater\bin\Release\net5.0-windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\InternetTest\InternetTest\bin\Release\net5.0-windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
