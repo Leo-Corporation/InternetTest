@@ -27,7 +27,7 @@
 
 ## Features
 * Check your Internet connection
-* IP Localization
+* IP Locator
 * Down Detector
 * Dark mode
 * Automatic update system

@@ -139,7 +139,7 @@
     <value>Connection</value>
   </data>
   <data name="LocalizeIP" xml:space="preserve">
-    <value>Localize IP</value>
+    <value>Locate IP</value>
   </data>
   <data name="DownDetector" xml:space="preserve">
     <value>DownDetector</value>

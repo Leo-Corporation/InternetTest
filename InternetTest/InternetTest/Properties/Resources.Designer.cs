@@ -475,7 +475,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Localize IP.
+        ///   Looks up a localized string similar to Locate IP.
         /// </summary>
         public static string LocalizeIP {
             get {
