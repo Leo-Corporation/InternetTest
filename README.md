@@ -9,16 +9,16 @@
     <img src=".github/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">InternetTest</h3>
+  <h1 align="center">InternetTest</h3>
 
   <p align="center">
     InternetTest is a modern connection utility for Windows.
     <br />
     <a href="https://bit.ly/DownloadInternetTest"><strong>Download »</strong></a>
     <br />
-    <a href="https://github.com/Leo-Corporation/InternetTest/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBug%5D+">Report Bug</a>
+    <a href="https://github.com/Leo-Corporation/InternetTest/issues/new?assignees=&labels=bug&template=bug-report.yml&title=%5BBug%5D+">Report Bug</a>
     ·
-    <a href="https://github.com/Leo-Corporation/InternetTest/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BEnhancement%5D+">Request Feature</a>
+    <a href="https://github.com/Leo-Corporation/InternetTest/issues/new?assignees=&labels=enhancement&template=feature-request.yml&title=%5BEnhancement%5D+">Request Feature</a>
     ·
     <a href="https://github.com/Leo-Corporation/InternetTest/releases">Releases</a>
 
