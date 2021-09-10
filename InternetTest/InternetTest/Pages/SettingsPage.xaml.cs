@@ -75,6 +75,9 @@ namespace InternetTest.Pages
 				DarkRadioBtn.IsChecked = Global.Settings.IsDarkTheme; // Change IsChecked property
 				LightRadioBtn.IsChecked = !Global.Settings.IsDarkTheme; // Change IsChecked property
 				SystemRadioBtn.IsChecked = Global.Settings.IsThemeSystem; // Change IsChecked property
+				ConnectionPageRadioBtn.IsChecked = Global.Settings.StartupPage == StartPages.Connection; // Set
+				LocateIPPageRadioBtn.IsChecked = Global.Settings.StartupPage == StartPages.LocalizeIP; // Set
+				DownDetectorPageRadioBtn.IsChecked = Global.Settings.StartupPage == StartPages.DownDetector; // Set
 
 				// Borders
 				if (DarkRadioBtn.IsChecked.Value)
@@ -144,17 +147,20 @@ namespace InternetTest.Pages
 					SettingsManager.Save(); // Save the changes
 				}
 
-				StartupPageComboBox.Items.Add(Properties.Resources.Connection); // Add item to combobox
-				StartupPageComboBox.Items.Add(Properties.Resources.LocalizeIP); // Add item to combobox
-				StartupPageComboBox.Items.Add(Properties.Resources.DownDetector); // Add item to combobox
-
-				StartupPageComboBox.SelectedIndex = Global.Settings.StartupPage switch
+				// Borders
+				if (ConnectionPageRadioBtn.IsChecked.Value)
 				{
-					StartPages.Connection => 0,
-					StartPages.LocalizeIP => 1,
-					StartPages.DownDetector => 2,
-					_ => 0
-				}; // Set selected index
+					PageCheckedBorder = ConnectionPageBorder; // Set
+				}
+				else if (LocateIPPageRadioBtn.IsChecked.Value)
+				{
+					PageCheckedBorder = LocateIPPageBorder; // Set
+				}
+				else if (DownDetectorPageRadioBtn.IsChecked.Value)
+				{
+					PageCheckedBorder = DownDetectorPageBorder; // Set
+				}
+				RefreshStartupBorders();
 
 				// Load the TestSiteTxt
 				TestSiteTxt.Text = Global.Settings.TestSite; // Set text
@@ -388,18 +394,6 @@ namespace InternetTest.Pages
 			SettingsManager.Save(); // Save changes
 		}
 
-		private void StartupPageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			Global.Settings.StartupPage = StartupPageComboBox.SelectedIndex switch
-			{
-				0 => StartPages.Connection,
-				1 => StartPages.LocalizeIP,
-				2 => StartPages.DownDetector,
-				_ => StartPages.Connection
-			}; // Set
-			SettingsManager.Save(); // Save changes
-		}
-
 		private void HTTPSRadioBtn_Checked(object sender, RoutedEventArgs e)
 		{
 			Global.Settings.UseHTTPS = HTTPSRadioBtn.IsChecked; // Set value
@@ -476,7 +470,7 @@ namespace InternetTest.Pages
 		private void Border_MouseLeave(object sender, MouseEventArgs e)
 		{
 			Border border = (Border)sender;
-			if (border != CheckedBorder)
+			if (border != CheckedBorder && border != PageCheckedBorder)
 			{
 				border.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
 			}
@@ -505,9 +499,64 @@ namespace InternetTest.Pages
 			CheckedBorder.BorderBrush = new SolidColorBrush() { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set color
 		}
 
+		private void RefreshStartupBorders()
+		{
+			ConnectionPageBorder.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+			LocateIPPageBorder.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+			DownDetectorPageBorder.BorderBrush = new SolidColorBrush() { Color = Colors.Transparent }; // Set color 
+
+			PageCheckedBorder.BorderBrush = new SolidColorBrush() { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set color
+		}
+
 		private void NotifyTestChk_Checked(object sender, RoutedEventArgs e)
 		{
 			Global.Settings.TestNotification = NotifyTestChk.IsChecked; // Set
+			SettingsManager.Save(); // Save changes
+		}
+
+		Border PageCheckedBorder { get; set; }
+		private void ConnectionPageRadioBtn_Checked(object sender, RoutedEventArgs e)
+		{
+			
+		}
+
+		private void LocateIPPageRadioBtn_Checked(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void DownDetectorPageRadioBtn_Checked(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void ConnectionPageBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			PageCheckedBorder = ConnectionPageBorder; // Set
+			ConnectionPageRadioBtn.IsChecked = true;
+			RefreshStartupBorders(); // Refresh
+
+			Global.Settings.StartupPage = StartPages.Connection;
+			SettingsManager.Save(); // Save changes
+		}
+
+		private void LocateIPPageBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			PageCheckedBorder = LocateIPPageBorder; // Set
+			LocateIPPageRadioBtn.IsChecked = true;
+			RefreshStartupBorders(); // Refresh
+
+			Global.Settings.StartupPage = StartPages.LocalizeIP;
+			SettingsManager.Save(); // Save changes
+		}
+
+		private void DownDetectorPageBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			PageCheckedBorder = DownDetectorPageBorder; // Set
+			DownDetectorPageRadioBtn.IsChecked = true;
+			RefreshStartupBorders(); // Refresh
+
+			Global.Settings.StartupPage = StartPages.DownDetector;
 			SettingsManager.Save(); // Save changes
 		}
 	}
