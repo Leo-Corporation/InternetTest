@@ -60,6 +60,8 @@ namespace InternetTest.UserControls
 		{
 			SiteNameTxt.Text = URL; // Set text
 			StateTxt.Text = Status; // Set text
+			StatusIconTxt.Text = Status == Properties.Resources.WebsiteAvailable ? "\uF299" : "\uF36E"; // Set text
+			StatusIconTxt.Foreground = Status == Properties.Resources.WebsiteAvailable ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
 		}
 
 		private void DismissBtn_Click(object sender, RoutedEventArgs e)
