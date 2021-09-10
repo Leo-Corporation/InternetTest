@@ -151,17 +151,20 @@ namespace InternetTest.Pages
 				if (HistoricPanel.Visibility == Visibility.Visible)
 				{
 					HistoricPanel.Visibility = Visibility.Collapsed; // Set
+					ContentGrid.Visibility = Visibility.Visible; // Set
 					HistoryBtn.Content = "\uF47F"; // Set text
 				}
 				else
 				{
 					HistoricPanel.Visibility = Visibility.Visible; // Set
+					ContentGrid.Visibility = Visibility.Collapsed; // Set
 					HistoryBtn.Content = "\uF36A"; // Set text
 				}
 			}
 			else
 			{
 				HistoricPanel.Visibility = Visibility.Collapsed; // Set
+				ContentGrid.Visibility = Visibility.Visible; // Set
 				HistoryBtn.Content = "\uF47F"; // Set text
 				if (sender is not ConnectionHistoricItem)
 				{
