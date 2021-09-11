@@ -51,6 +51,6 @@ This Git repo has always two branches:
 In the documentation, you'll find answers to your questions about InternetTest.
 
 - Click [here](https://github.com/Leo-Corporation/InternetTest/wiki) to go to the InternetTest's documentation.
-- Click [here](https://github.com/Leo-Corporation/LeoCorpLibrary/wiki) to go to the LeoCorpLibrary's documentation.
+- Click [here](https://leocorplibrary.leocorporation.dev/) to go to the LeoCorpLibrary's documentation.
 ## License
 Project under the [MIT License](https://github.com/Leo-Corporation/InternetTest/blob/main/LICENSE).

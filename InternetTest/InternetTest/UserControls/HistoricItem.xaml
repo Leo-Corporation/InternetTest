@@ -6,20 +6,23 @@
 			 xmlns:local="clr-namespace:InternetTest.UserControls"
 			 xmlns:lang="clr-namespace:InternetTest.Properties"
 			 mc:Ignorable="d" FontFamily="..\Fonts\#Montserrat"
-			 d:DesignHeight="50" d:DesignWidth="200" Margin="0,0,0,5">
+			 d:DesignHeight="50" d:DesignWidth="400" Margin="0,0,0,5">
 	<Border CornerRadius="10" Padding="5" Background="{Binding Source={StaticResource Background2}}">
 		<Grid>
 			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition/>
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 
-			<StackPanel Grid.Column="0" VerticalAlignment="Center">
+			<TextBlock x:Name="StatusIconTxt" Text="&#xF299;" Foreground="{Binding Source={StaticResource Green}}" FontFamily="..\Fonts\#FluentSystemIcons-Regular" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="0 0 10 0"/>
+
+			<StackPanel Grid.Column="1" VerticalAlignment="Center">
 				<TextBlock x:Name="SiteNameTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="https://leocorporation.dev" TextWrapping="Wrap"/>
 				<TextBlock x:Name="StateTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="Up" FontWeight="Bold"/>
 			</StackPanel>
 
-			<Button Content="&#xF36A;" Margin="5" x:Name="DismissBtn" Click="DismissBtn_Click" Grid.Column="1" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" Style="{DynamicResource TabButtonStyle}" Padding="5" Width="25" Height="25"/>
+			<Button Content="&#xF36A;" Margin="5" x:Name="DismissBtn" Click="DismissBtn_Click" Grid.Column="2" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" Style="{DynamicResource TabButtonStyle}" Padding="5" Width="25" Height="25"/>
 		</Grid>
 	</Border>
 </UserControl>
