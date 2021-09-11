@@ -130,7 +130,7 @@ namespace InternetTest.Classes
 					LaunchTestOnStart = true,
 					StartupPage = StartPages.Connection,
 					UseHTTPS = true,
-					IsThemeSystem = false,
+					IsThemeSystem = true,
 					TestNotification = true
 				}; // Create a new settings file
 
