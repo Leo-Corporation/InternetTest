@@ -57,6 +57,9 @@ namespace InternetTest.Pages
 		/// <param name="customSite">Leave empty if you don't want to specify a custom website.</param>
 		private async void Test(string customSite)
 		{
+			ConnectionStatusTxt.Text = Properties.Resources.Testing; // Set text of the label
+			InternetIconTxt.Text = "\uF45F"; // Set the icon
+			InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
 			if (string.IsNullOrEmpty(customSite)) // If a custom site isn't specified
 			{
 				if (await NetworkConnection.IsAvailableAsync()) // If there is Internet
