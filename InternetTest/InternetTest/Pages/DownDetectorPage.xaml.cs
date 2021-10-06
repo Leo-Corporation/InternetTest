@@ -24,22 +24,10 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.UserControls;
 using LeoCorpLibrary;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace InternetTest.Pages
 {
@@ -66,7 +54,7 @@ namespace InternetTest.Pages
 			HistoryBtn.Visibility = Visibility.Visible; // Set visibility
 			InternetIconTxt.Text = "\uF45F"; // Set the icon
 			InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
-			
+
 			if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
 			{
 				ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
