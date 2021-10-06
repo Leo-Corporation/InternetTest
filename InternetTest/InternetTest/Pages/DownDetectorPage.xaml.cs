@@ -49,6 +49,7 @@ namespace InternetTest.Pages
 		public DownDetectorPage()
 		{
 			InitializeComponent();
+			HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 		}
 
 		/// <summary>
@@ -58,6 +59,7 @@ namespace InternetTest.Pages
 		private async void Test(string customSite)
 		{
 			ConnectionStatusTxt.Text = Properties.Resources.Testing; // Set text of the label
+			HistoryBtn.Visibility = Visibility.Visible; // Set visibility
 			InternetIconTxt.Text = "\uF45F"; // Set the icon
 			InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
 			if (string.IsNullOrEmpty(customSite)) // If a custom site isn't specified
@@ -126,6 +128,7 @@ namespace InternetTest.Pages
 		{
 			if (HistoricDisplayer.Children.Count > 0)
 			{
+				HistoryBtn.Visibility = Visibility.Visible; // Set visibility
 				if (HistoricPanel.Visibility == Visibility.Visible)
 				{
 					HistoricPanel.Visibility = Visibility.Collapsed; // Set
@@ -141,6 +144,7 @@ namespace InternetTest.Pages
 			}
 			else
 			{
+				HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 				HistoricPanel.Visibility = Visibility.Collapsed; // Set
 				ContentGrid.Visibility = Visibility.Visible; // Set
 				HistoryBtn.Content = "\uF47F"; // Set text
