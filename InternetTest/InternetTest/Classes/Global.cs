@@ -27,10 +27,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -70,7 +67,7 @@ namespace InternetTest.Classes
 		/// <summary>
 		/// The current version of InternetTest.
 		/// </summary>
-		public static string Version => "5.7.0.2110-pre1";
+		public static string Version => "5.7.0.2110-rc1";
 
 		/// <summary>
 		/// List of the available languages.
@@ -144,10 +141,10 @@ namespace InternetTest.Classes
 				// Get language
 				string language = Settings.Language switch
 				{
-					"fr-FR"    => "fr", // French
-					"en-US"	   => "en", // English
+					"fr-FR" => "fr", // French
+					"en-US" => "en", // English
 					"_default" => System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, // System language
-					_		   => "en" // English
+					_ => "en" // English
 				};
 
 
