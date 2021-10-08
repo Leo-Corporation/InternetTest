@@ -718,6 +718,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Testing, please wait.
+        /// </summary>
+        public static string Testing {
+            get {
+                return ResourceManager.GetString("Testing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Test website.
         /// </summary>
         public static string TestSite {

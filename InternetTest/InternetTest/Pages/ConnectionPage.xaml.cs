@@ -25,19 +25,9 @@ using InternetTest.Classes;
 using InternetTest.UserControls;
 using LeoCorpLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace InternetTest.Pages
 {
@@ -70,6 +60,10 @@ namespace InternetTest.Pages
 		/// <param name="customSite">Leave empty if you don't want to specify a custom website.</param>
 		private async void Test(string customSite, bool fromStart = false)
 		{
+			ConnectionStatusTxt.Text = Properties.Resources.Testing; // Set text of the label
+			HistoryBtn.Visibility = Visibility.Visible; // Set visibility
+			InternetIconTxt.Text = "\uF45F"; // Set the icon
+			InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
 			if (string.IsNullOrEmpty(customSite)) // If a custom site isn't specified
 			{
 				if (await NetworkConnection.IsAvailableAsync()) // If there is Internet
@@ -148,6 +142,7 @@ namespace InternetTest.Pages
 		{
 			if (HistoricDisplayer.Children.Count > 0)
 			{
+				HistoryBtn.Visibility = Visibility.Visible; // Set visibility
 				if (HistoricPanel.Visibility == Visibility.Visible)
 				{
 					HistoricPanel.Visibility = Visibility.Collapsed; // Set
@@ -166,6 +161,7 @@ namespace InternetTest.Pages
 				HistoricPanel.Visibility = Visibility.Collapsed; // Set
 				ContentGrid.Visibility = Visibility.Visible; // Set
 				HistoryBtn.Content = "\uF47F"; // Set text
+				HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 				if (sender is not ConnectionHistoricItem)
 				{
 					MessageBox.Show(Properties.Resources.EmptyHistory, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information); // Show message 

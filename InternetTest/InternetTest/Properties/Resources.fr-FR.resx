@@ -378,4 +378,7 @@
   <data name="NotifyTest" xml:space="preserve">
     <value>Montrer une notification lorsqu'un test est terminé</value>
   </data>
+  <data name="Testing" xml:space="preserve">
+    <value>Test en cours, veuillez patienter</value>
+  </data>
 </root>

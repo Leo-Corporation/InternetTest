@@ -23,20 +23,9 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace InternetTest.UserControls
 {
@@ -47,7 +36,7 @@ namespace InternetTest.UserControls
 	{
 		bool Connected { get; init; }
 		StackPanel StackPanel { get; init; }
-		public ConnectionHistoricItem( bool connected, StackPanel stackPanel)
+		public ConnectionHistoricItem(bool connected, StackPanel stackPanel)
 		{
 			InitializeComponent();
 			Connected = connected;

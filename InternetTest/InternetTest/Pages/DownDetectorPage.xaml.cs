@@ -24,20 +24,10 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.UserControls;
 using LeoCorpLibrary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace InternetTest.Pages
 {
@@ -49,6 +39,8 @@ namespace InternetTest.Pages
 		public DownDetectorPage()
 		{
 			InitializeComponent();
+			HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
+			StatusBorder.Visibility = Visibility.Collapsed; // Hide
 		}
 
 		/// <summary>
@@ -57,37 +49,73 @@ namespace InternetTest.Pages
 		/// <param name="customSite">Leave empty if you don't want to specify a custom website.</param>
 		private async void Test(string customSite)
 		{
-			if (string.IsNullOrEmpty(customSite)) // If a custom site isn't specified
+			StatusBorder.Visibility = Visibility.Collapsed; // Hide
+			ConnectionStatusTxt.Text = Properties.Resources.Testing; // Set text of the label
+			HistoryBtn.Visibility = Visibility.Visible; // Set visibility
+			InternetIconTxt.Text = "\uF45F"; // Set the icon
+			InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
+
+			if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
 			{
-				if (await NetworkConnection.IsAvailableAsync()) // If there is Internet
-				{
-					ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
-					InternetIconTxt.Text = "\uF299"; // Set the icon
-					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
-				}
-				else
-				{
-					ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
-					InternetIconTxt.Text = "\uF36E"; // Set the icon
-					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
-				}
+				ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
+				InternetIconTxt.Text = "\uF299"; // Set the icon
+				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
 			}
 			else
 			{
-				if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
-				{
-					ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
-					InternetIconTxt.Text = "\uF299"; // Set the icon
-					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
-				}
-				else
-				{
-					ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
-					InternetIconTxt.Text = "\uF36E"; // Set the icon
-					InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
-				}
+				ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
+				InternetIconTxt.Text = "\uF36E"; // Set the icon
+				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
 			}
+
+			int status = GetStatusCode(customSite);
+			if (status >= 200 && status <= 299)
+			{
+				StatusBorder.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
+				StatusIconTxt.Text = "\uF299"; // Set text
+			}
+			else if (status >= 400 && status <= 599)
+			{
+				StatusBorder.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
+				StatusIconTxt.Text = "\uF36E"; // Set text
+			}
+			else
+			{
+				StatusBorder.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set the foreground
+				StatusIconTxt.Text = "\uF4AB"; // Set text
+			}
+
+			StatusCodeTxt.Text = status.ToString(); // Set text
+			StatusBorder.Visibility = Visibility.Visible; // Show
+
 			HistoricDisplayer.Children.Add(new HistoricItem(customSite, ConnectionStatusTxt.Text, HistoricDisplayer)); // Add
+		}
+
+		private int GetStatusCode(string website)
+		{
+			try
+			{
+				// Create a web request for an invalid site. Substitute the "invalid site" strong in the Create call with a invalid name.
+				HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(website);
+
+				// Get the associated response for the above request.
+				HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+				myHttpWebResponse.Close();
+				return 200;
+			}
+			catch (WebException e)
+			{
+				if (e.Status == WebExceptionStatus.ProtocolError)
+				{
+					var status = ((HttpWebResponse)e.Response).StatusCode;
+					return (int)status;
+				}
+				return 400;
+			}
+			catch
+			{
+				return 400;
+			}
 		}
 
 		private string FormatURL(string url)
@@ -123,6 +151,7 @@ namespace InternetTest.Pages
 		{
 			if (HistoricDisplayer.Children.Count > 0)
 			{
+				HistoryBtn.Visibility = Visibility.Visible; // Set visibility
 				if (HistoricPanel.Visibility == Visibility.Visible)
 				{
 					HistoricPanel.Visibility = Visibility.Collapsed; // Set
@@ -138,6 +167,7 @@ namespace InternetTest.Pages
 			}
 			else
 			{
+				HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 				HistoricPanel.Visibility = Visibility.Collapsed; // Set
 				ContentGrid.Visibility = Visibility.Visible; // Set
 				HistoryBtn.Content = "\uF47F"; // Set text
