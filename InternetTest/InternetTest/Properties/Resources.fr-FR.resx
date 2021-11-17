@@ -381,4 +381,7 @@
   <data name="Testing" xml:space="preserve">
     <value>Test en cours, veuillez patienter</value>
   </data>
+  <data name="HereWeGo" xml:space="preserve">
+    <value>HERE WeGo</value>
+  </data>
 </root>

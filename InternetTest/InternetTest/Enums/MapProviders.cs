@@ -47,6 +47,11 @@ namespace InternetTest.Enums
 		/// <summary>
 		/// The Yandex map provider
 		/// </summary>
-		Yandex
+		Yandex,
+
+		/// <summary>
+		/// The HERE WeGo map provider
+		/// </summary>
+		HereWeGo
 	}
 }

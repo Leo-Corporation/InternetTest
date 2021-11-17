@@ -100,6 +100,7 @@ namespace InternetTest.Pages
 					case MapProviders.GoogleMaps: Global.OpenLinkInBrowser($"https://www.google.com/maps/place/{lat},{lon}"); break;
 					case MapProviders.OpenStreetMap: Global.OpenLinkInBrowser($"https://www.openstreetmap.org/#map=12/{lat}/{lon}"); break;
 					case MapProviders.Yandex: Global.OpenLinkInBrowser($"https://yandex.com/maps/?ll={lon}%2C{lat}&z=12"); break;
+					case MapProviders.HereWeGo: Global.OpenLinkInBrowser($"https://wego.here.com/directions/mix/{lat},{lon}/?map={lat},{lon},12"); break;
 					default: Global.OpenLinkInBrowser($"https://www.openstreetmap.org/#map=12/{lat}/{lon}"); break;
 				}
 			}

@@ -121,6 +121,7 @@ namespace InternetTest.Pages
 				MapProviderComboBox.Items.Add("Bing Maps"); // Add a map provider
 				MapProviderComboBox.Items.Add("Google Maps"); // Add a map provider
 				MapProviderComboBox.Items.Add("Yandex Maps"); // Add a map provider
+				MapProviderComboBox.Items.Add("HERE WeGo"); // Add a map provider
 
 				MapProviderComboBox.SelectedIndex = Global.Settings.MapProvider switch
 				{
@@ -128,6 +129,7 @@ namespace InternetTest.Pages
 					MapProviders.BingMaps => 1,
 					MapProviders.GoogleMaps => 2,
 					MapProviders.Yandex => 3,
+					MapProviders.HereWeGo => 4,
 					_ => 0,
 				};
 
@@ -333,6 +335,7 @@ namespace InternetTest.Pages
 				"Bing Maps" => MapProviders.BingMaps,
 				"Google Maps" => MapProviders.GoogleMaps,
 				"Yandex Maps" => MapProviders.Yandex,
+				"HERE WeGo" => MapProviders.HereWeGo,
 				_ => MapProviders.OpenStreetMap
 			};
 			SettingsManager.Save(); // Save the changes
