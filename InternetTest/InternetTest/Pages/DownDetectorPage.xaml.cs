@@ -89,6 +89,7 @@ namespace InternetTest.Pages
 			StatusCodeTxt.Text = status.ToString(); // Set text
 			StatusBorder.Visibility = Visibility.Visible; // Show
 			StatusToolTip.Content = $"{statusInfo.StatusCode} - {statusInfo.StatusMessage}"; // Set text
+			StatusMsgTxt.Text = $"- {statusInfo.StatusMessage}"; // Set text
 
 			HistoricDisplayer.Children.Add(new HistoricItem(customSite, ConnectionStatusTxt.Text, HistoricDisplayer)); // Add
 		}
@@ -178,6 +179,11 @@ namespace InternetTest.Pages
 					MessageBox.Show(Properties.Resources.EmptyHistory, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information); // Show message 
 				}
 			}
+		}
+
+		private void StatusBorder_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		{
+			StatusMsgTxt.Visibility = StatusMsgTxt.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed; // Show/hide
 		}
 	}
 }

@@ -25,10 +25,11 @@
 				</Grid.ColumnDefinitions>
 				<TextBlock Text="{x:Static lang:Resources.DownDetector}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="16"/>
 				<StackPanel Orientation="Horizontal" Grid.Column="1">
-					<Border x:Name="StatusBorder" Background="{Binding Source={StaticResource Green}}" CornerRadius="5" Margin="0 1 10 1" Padding="5">
+					<Border x:Name="StatusBorder" Cursor="Hand" MouseLeftButtonUp="StatusBorder_MouseLeftButtonUp" Background="{Binding Source={StaticResource Green}}" CornerRadius="5" Margin="0 1 10 1" Padding="5">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock x:Name="StatusIconTxt" Text="&#xF299;" FontFamily="..\Fonts\#FluentSystemIcons-Filled" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="14"/>
 							<TextBlock x:Name="StatusCodeTxt" d:Text="200" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold"/>
+							<TextBlock x:Name="StatusMsgTxt" d:Text="- OK" Visibility="Collapsed" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold"/>
 						</StackPanel>
                         <Border.ToolTip>
                             <ToolTip x:Name="StatusToolTip" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
