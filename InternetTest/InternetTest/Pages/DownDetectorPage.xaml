@@ -30,6 +30,9 @@
 							<TextBlock x:Name="StatusIconTxt" Text="&#xF299;" FontFamily="..\Fonts\#FluentSystemIcons-Filled" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="14"/>
 							<TextBlock x:Name="StatusCodeTxt" d:Text="200" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold"/>
 						</StackPanel>
+                        <Border.ToolTip>
+                            <ToolTip x:Name="StatusToolTip" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
+                        </Border.ToolTip>
 					</Border>
 					<Button Content="&#xF47F;" Padding="5" x:Name="HistoryBtn" Click="HistoryBtn_Click" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Grid.Column="1" Style="{DynamicResource TabButtonStyle}" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="14"/>
 				</StackPanel>
