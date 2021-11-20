@@ -289,5 +289,28 @@ namespace InternetTest.Classes
 					break;
 			}
 		}
+
+		/// <summary>
+		/// Get the point for the Google Maps map provider.
+		/// </summary>
+		/// <param name="lat">The latitude of the point.</param>
+		/// <param name="lon">The longitude of the point.</param>
+		/// <returns>A <see cref="string"/> value like <c>XX° XX.XXX' N/S, XX° XX' E/W</c>.</returns>
+		public static string GetGoogleMapsPoint(double lat, double lon)
+		{
+			int deg = (int)lat; // Get integer
+			int deg2 = (int)lon; // Get integer
+
+			double d = (lat - deg) * 60d;
+			double d2 = (lon - deg2) * 60d;
+
+			string fDir = lat >= 0 ? "N" : "S"; // Get if the location is in the North or South
+			string sDir = lon >= 0 ? "E" : "W"; // Get if the location is in the East or West
+
+			string sD = d.ToString().Replace(",", "."); // Ensure to use . instead of ,
+			string sD2 = d2.ToString().Replace(",", "."); // Ensure to use . instead of ,
+
+			return $"{deg}° {sD}' {fDir}, {deg2}° {sD2}' {sDir}".Replace("-", "");
+		}
 	}
 }
