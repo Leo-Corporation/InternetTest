@@ -6,7 +6,7 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>InternetTest.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>5.7.0.2110</Version>
+    <Version>5.8.0.2111</Version>
     <Authors>Léo Corporation</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>© 2021</Copyright>
@@ -43,7 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="LeoCorpLibrary" Version="3.11.0.2110" />
+    <PackageReference Include="LeoCorpLibrary" Version="4.0.0.2111" />
   </ItemGroup>
 
   <ItemGroup>

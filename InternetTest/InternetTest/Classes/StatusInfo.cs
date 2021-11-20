@@ -22,36 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-namespace InternetTest.Enums
+namespace InternetTest.Classes
 {
 	/// <summary>
-	/// Contains available map providers for IP position.
+	/// A class that contains the status code, and the status message of request.
 	/// </summary>
-	public enum MapProviders
-	{
-		/// <summary>
-		/// The OpenStreetMap map provider.
-		/// </summary>
-		OpenStreetMap,
-
-		/// <summary>
-		/// The Bing Maps map provider.
-		/// </summary>
-		BingMaps,
-
-		/// <summary>
-		/// The Google Maps map provider.
-		/// </summary>
-		GoogleMaps,
-
-		/// <summary>
-		/// The Yandex map provider
-		/// </summary>
-		Yandex,
-
-		/// <summary>
-		/// The HERE WeGo map provider
-		/// </summary>
-		HereWeGo
-	}
+	/// <param name="StatusCode">The status code of the request.</param>
+	/// <param name="StatusMessage">The status message of the request.</param>
+	public record StatusInfo(int StatusCode, string StatusMessage);
 }

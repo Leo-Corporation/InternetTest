@@ -68,7 +68,8 @@ namespace InternetTest.Pages
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
 			}
 
-			int status = GetStatusCode(customSite);
+			StatusInfo statusInfo = GetStatusCode(customSite);
+			int status = statusInfo.StatusCode;
 			if (status >= 200 && status <= 299)
 			{
 				StatusBorder.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
@@ -87,11 +88,13 @@ namespace InternetTest.Pages
 
 			StatusCodeTxt.Text = status.ToString(); // Set text
 			StatusBorder.Visibility = Visibility.Visible; // Show
+			StatusToolTip.Content = $"{statusInfo.StatusCode} - {statusInfo.StatusMessage}"; // Set text
+			StatusMsgTxt.Text = $"- {statusInfo.StatusMessage}"; // Set text
 
 			HistoricDisplayer.Children.Add(new HistoricItem(customSite, ConnectionStatusTxt.Text, HistoricDisplayer)); // Add
 		}
 
-		private int GetStatusCode(string website)
+		private StatusInfo GetStatusCode(string website)
 		{
 			try
 			{
@@ -101,20 +104,20 @@ namespace InternetTest.Pages
 				// Get the associated response for the above request.
 				HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
 				myHttpWebResponse.Close();
-				return 200;
+				return new StatusInfo(200, "OK"); // Return
 			}
 			catch (WebException e)
 			{
 				if (e.Status == WebExceptionStatus.ProtocolError)
 				{
 					var status = ((HttpWebResponse)e.Response).StatusCode;
-					return (int)status;
+					return new StatusInfo((int)status, ((HttpWebResponse)e.Response).StatusDescription); // Return;
 				}
-				return 400;
+				return new StatusInfo(400, "Bad Request"); // Return
 			}
 			catch
 			{
-				return 400;
+				return new StatusInfo(400, "Bad Request"); // Return
 			}
 		}
 
@@ -176,6 +179,11 @@ namespace InternetTest.Pages
 					MessageBox.Show(Properties.Resources.EmptyHistory, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information); // Show message 
 				}
 			}
+		}
+
+		private void StatusBorder_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		{
+			StatusMsgTxt.Visibility = StatusMsgTxt.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed; // Show/hide
 		}
 	}
 }
