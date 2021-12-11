@@ -24,10 +24,13 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.UserControls;
 using LeoCorpLibrary;
+using System;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace InternetTest.Pages
 {
@@ -36,11 +39,19 @@ namespace InternetTest.Pages
 	/// </summary>
 	public partial class DownDetectorPage : Page
 	{
+		DispatcherTimer dispatcherTimer = new();
+
 		public DownDetectorPage()
 		{
 			InitializeComponent();
 			HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 			StatusBorder.Visibility = Visibility.Collapsed; // Hide
+
+			dispatcherTimer.Tick += (o, e) =>
+			{
+				WebsiteTxt.Text = FormatURL(WebsiteTxt.Text);
+				Test(WebsiteTxt.Text);
+			};
 		}
 
 		/// <summary>
@@ -158,6 +169,7 @@ namespace InternetTest.Pages
 				if (HistoricPanel.Visibility == Visibility.Visible)
 				{
 					HistoricPanel.Visibility = Visibility.Collapsed; // Set
+					TimerPanel.Visibility = Visibility.Collapsed; // Set
 					ContentGrid.Visibility = Visibility.Visible; // Set
 					HistoryBtn.Content = "\uF47F"; // Set text
 				}
@@ -165,6 +177,7 @@ namespace InternetTest.Pages
 				{
 					HistoricPanel.Visibility = Visibility.Visible; // Set
 					ContentGrid.Visibility = Visibility.Collapsed; // Set
+					TimerPanel.Visibility = Visibility.Collapsed; // Set
 					HistoryBtn.Content = "\uF36A"; // Set text
 				}
 			}
@@ -172,6 +185,7 @@ namespace InternetTest.Pages
 			{
 				HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 				HistoricPanel.Visibility = Visibility.Collapsed; // Set
+				TimerPanel.Visibility = Visibility.Collapsed; // Set
 				ContentGrid.Visibility = Visibility.Visible; // Set
 				HistoryBtn.Content = "\uF47F"; // Set text
 				if (sender is not HistoricItem)
@@ -184,6 +198,56 @@ namespace InternetTest.Pages
 		private void StatusBorder_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			StatusMsgTxt.Visibility = StatusMsgTxt.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed; // Show/hide
+		}
+
+		private void AutoCheckWebsiteDownChk_Checked(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+				if (AutoCheckWebsiteDownChk.IsChecked.Value)
+				{
+					if (string.IsNullOrEmpty(SecondsTxt.Text))
+					{
+						//TODO: Error message
+						return;
+					}
+
+					dispatcherTimer.Interval = TimeSpan.FromSeconds(int.Parse(SecondsTxt.Text));
+					dispatcherTimer.Start(); // Start the task
+				}
+				else
+				{
+					dispatcherTimer.Stop();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
+
+		private void TimeIntervalBtn_Click(object sender, RoutedEventArgs e)
+		{
+			if (TimerPanel.Visibility == Visibility.Visible)
+			{
+				HistoricPanel.Visibility = Visibility.Collapsed; // Hide
+				TimerPanel.Visibility = Visibility.Collapsed; // Hide
+				ContentGrid.Visibility = Visibility.Visible; // Show
+				TimeIntervalBtn.Content = "\uF827"; // Set text
+			}
+			else
+			{
+				HistoricPanel.Visibility = Visibility.Collapsed; // Hide
+				TimerPanel.Visibility = Visibility.Visible; // Show
+				ContentGrid.Visibility = Visibility.Collapsed; // Hide
+				TimeIntervalBtn.Content = "\uF36A"; // Set text
+			}
+		}
+
+		private void SecondsTxt_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+		{
+			Regex regex = new("[^0-9]+");
+			e.Handled = regex.IsMatch(e.Text);
 		}
 	}
 }
