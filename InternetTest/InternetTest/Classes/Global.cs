@@ -255,7 +255,7 @@ namespace InternetTest.Classes
 
 		public static bool IsSystemThemeDark()
 		{
-			if (Env.WindowsVersion != WindowsVersion.Windows10)
+			if (Env.WindowsVersion != WindowsVersion.Windows10 && Env.WindowsVersion != WindowsVersion.Windows11)
 			{
 				return false; // Avoid errors on older OSs
 			}
