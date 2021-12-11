@@ -52,6 +52,7 @@ namespace InternetTest.Pages
 				if (string.IsNullOrEmpty(WebsiteTxt.Text))
 				{
 					AutoCheckWebsiteDownChk.IsChecked = false; // Stop
+					MessageBox.Show(Properties.Resources.PleaseSpecifyWebsiteCheck, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Warning);
 					return;
 				}
 
