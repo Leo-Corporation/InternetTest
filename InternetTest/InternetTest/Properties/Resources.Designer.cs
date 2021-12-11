@@ -88,6 +88,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The interval cannot be less than two seconds..
+        /// </summary>
+        public static string CannotLessThanTwoSec {
+            get {
+                return ResourceManager.GetString("CannotLessThanTwoSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change InternetTest theme..
         /// </summary>
         public static string ChangeTheme {
@@ -642,6 +651,15 @@ namespace InternetTest.Properties {
         public static string OpenMap {
             get {
                 return ResourceManager.GetString("OpenMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify an interval..
+        /// </summary>
+        public static string PleaseSpecifyIntervalMsg {
+            get {
+                return ResourceManager.GetString("PleaseSpecifyIntervalMsg", resourceCulture);
             }
         }
         

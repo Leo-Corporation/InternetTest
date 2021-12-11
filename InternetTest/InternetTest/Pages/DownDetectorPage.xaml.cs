@@ -212,7 +212,15 @@ namespace InternetTest.Pages
 						return;
 					}
 
-					dispatcherTimer.Interval = TimeSpan.FromSeconds(int.Parse(SecondsTxt.Text));
+					int seconds = int.Parse(SecondsTxt.Text);
+
+					if (seconds < 2)
+					{
+						MessageBox.Show(Properties.Resources.CannotLessThanTwoSec, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Warning);
+						return;
+					}
+
+					dispatcherTimer.Interval = TimeSpan.FromSeconds(seconds);
 					dispatcherTimer.Start(); // Start the task
 				}
 				else

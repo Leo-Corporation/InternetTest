@@ -399,4 +399,10 @@
   <data name="NextCheck" xml:space="preserve">
     <value>Next check in</value>
   </data>
+  <data name="PleaseSpecifyIntervalMsg" xml:space="preserve">
+    <value>Please specify an interval.</value>
+  </data>
+  <data name="CannotLessThanTwoSec" xml:space="preserve">
+    <value>The interval cannot be less than two seconds.</value>
+  </data>
 </root>
