@@ -82,7 +82,7 @@
                     <TextBlock Text="{x:Static lang:Resources.SecondsDotM}" VerticalAlignment="Center" Margin="0,0,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
                 </StackPanel>
 
-                <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+                <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="0,15,0,0">
                     <TextBlock Text="&#xF2E2;" FontSize="80" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Gray}}" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="NextCheckTxt" Text="{x:Static lang:Resources.NoNextCheck}" FontWeight="Bold" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Center"/>
                 </StackPanel>
