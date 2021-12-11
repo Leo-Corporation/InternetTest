@@ -385,4 +385,7 @@
   <data name="CannotLessThanTwoSec" xml:space="preserve">
     <value>The interval cannot be less than two seconds.</value>
   </data>
+  <data name="PleaseSpecifyWebsiteCheck" xml:space="preserve">
+    <value>Please specify a website to check.</value>
+  </data>
 </root>

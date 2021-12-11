@@ -664,6 +664,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please specify a website to check..
+        /// </summary>
+        public static string PleaseSpecifyWebsiteCheck {
+            get {
+                return ResourceManager.GetString("PleaseSpecifyWebsiteCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Region.
         /// </summary>
         public static string Region {

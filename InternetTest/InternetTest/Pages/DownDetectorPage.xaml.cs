@@ -49,6 +49,12 @@ namespace InternetTest.Pages
 
 			dispatcherTimer.Tick += (o, e) =>
 			{
+				if (string.IsNullOrEmpty(WebsiteTxt.Text))
+				{
+					AutoCheckWebsiteDownChk.IsChecked = false; // Stop
+					return;
+				}
+
 				WebsiteTxt.Text = FormatURL(WebsiteTxt.Text);
 				Test(WebsiteTxt.Text);
 			};
@@ -208,7 +214,8 @@ namespace InternetTest.Pages
 				{
 					if (string.IsNullOrEmpty(SecondsTxt.Text))
 					{
-						//TODO: Error message
+						MessageBox.Show(Properties.Resources.PleaseSpecifyIntervalMsg, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+						AutoCheckWebsiteDownChk.IsChecked = false;
 						return;
 					}
 
@@ -217,6 +224,7 @@ namespace InternetTest.Pages
 					if (seconds < 2)
 					{
 						MessageBox.Show(Properties.Resources.CannotLessThanTwoSec, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Warning);
+						AutoCheckWebsiteDownChk.IsChecked = false;
 						return;
 					}
 
