@@ -18,7 +18,7 @@
 			<TextBlock x:Name="TimeTxt" d:Text="14:25" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,5,0"/>
 
 			<StackPanel Orientation="Horizontal" Grid.Column="1">
-				<TextBlock x:Name="StateIconTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="&#xF299;" FontWeight="Normal" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontSize="14"/>
+				<TextBlock x:Name="StateIconTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="&#xF299;" FontWeight="Normal" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0" FontFamily="..\Fonts\#FluentSystemIcons-Filled" FontSize="14"/>
 				<TextBlock x:Name="StateTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="Up" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0"/>
 			</StackPanel>
 			<Button Content="&#xF36A;" Margin="5" x:Name="DismissBtn" Click="DismissBtn_Click" Grid.Column="2" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" Style="{DynamicResource TabButtonStyle}" Padding="5" Width="25" Height="25"/>

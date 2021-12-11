@@ -15,7 +15,7 @@
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 
-			<TextBlock x:Name="StatusIconTxt" Text="&#xF299;" Foreground="{Binding Source={StaticResource Green}}" FontFamily="..\Fonts\#FluentSystemIcons-Regular" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="0 0 10 0"/>
+			<TextBlock x:Name="StatusIconTxt" Text="&#xF299;" Foreground="{Binding Source={StaticResource Green}}" FontFamily="..\Fonts\#FluentSystemIcons-Filled" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="0 0 10 0"/>
 
 			<StackPanel Grid.Column="1" VerticalAlignment="Center">
 				<TextBlock x:Name="SiteNameTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="https://leocorporation.dev" TextWrapping="Wrap"/>
