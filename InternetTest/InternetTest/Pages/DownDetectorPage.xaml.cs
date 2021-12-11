@@ -40,12 +40,22 @@ namespace InternetTest.Pages
 	public partial class DownDetectorPage : Page
 	{
 		DispatcherTimer dispatcherTimer = new();
+		DispatcherTimer secondsTimer = new();
+		int secondsCheckTime = 30;
+		int updateS = 0;
 
 		public DownDetectorPage()
 		{
 			InitializeComponent();
+			InitUI();
+		}
+
+		private void InitUI()
+		{
 			HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 			StatusBorder.Visibility = Visibility.Collapsed; // Hide
+
+			secondsTimer.Interval = TimeSpan.FromSeconds(1); // Every second
 
 			dispatcherTimer.Tick += (o, e) =>
 			{
@@ -58,6 +68,13 @@ namespace InternetTest.Pages
 
 				WebsiteTxt.Text = FormatURL(WebsiteTxt.Text);
 				Test(WebsiteTxt.Text);
+			};
+
+			secondsTimer.Tick += (o, e) =>
+			{
+				updateS--;
+				if (updateS < 0) updateS = secondsCheckTime - 1;
+				NextCheckTxt.Text = $"{Properties.Resources.NextCheck} {updateS} {Properties.Resources.SecondsDotM}";
 			};
 		}
 
@@ -228,13 +245,20 @@ namespace InternetTest.Pages
 						AutoCheckWebsiteDownChk.IsChecked = false;
 						return;
 					}
+					secondsCheckTime = seconds;
+					updateS = seconds;
 
 					dispatcherTimer.Interval = TimeSpan.FromSeconds(seconds);
 					dispatcherTimer.Start(); // Start the task
+					secondsTimer.Start(); // Start the task
+					SecondsTxt.IsEnabled = false;
 				}
 				else
 				{
 					dispatcherTimer.Stop();
+					secondsTimer.Stop();
+					NextCheckTxt.Text = Properties.Resources.NoNextCheck;
+					SecondsTxt.IsEnabled = true;
 				}
 			}
 			catch (Exception ex)

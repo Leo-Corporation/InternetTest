@@ -574,6 +574,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No next check.
+        /// </summary>
+        public static string NoNextCheck {
+            get {
+                return ResourceManager.GetString("NoNextCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You aren&apos;t connected to Internet.
         /// </summary>
         public static string NotConnected {

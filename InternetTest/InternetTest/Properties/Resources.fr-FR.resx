@@ -408,4 +408,7 @@
   <data name="PleaseSpecifyWebsiteCheck" xml:space="preserve">
     <value>Veuillez spécifier un site web à vérifier.</value>
   </data>
+  <data name="NoNextCheck" xml:space="preserve">
+    <value>Pas de prochaine vérification</value>
+  </data>
 </root>
