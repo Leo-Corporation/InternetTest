@@ -70,6 +70,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatically check if the website is down or not..
+        /// </summary>
+        public static string AutoCheckEverySecondsWebsiteDown {
+            get {
+                return ResourceManager.GetString("AutoCheckEverySecondsWebsiteDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Updates are available..
         /// </summary>
         public static string AvailableUpdates {
@@ -93,6 +102,15 @@ namespace InternetTest.Properties {
         public static string Check {
             get {
                 return ResourceManager.GetString("Check", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check every.
+        /// </summary>
+        public static string CheckEveryXSeconds {
+            get {
+                return ResourceManager.GetString("CheckEveryXSeconds", resourceCulture);
             }
         }
         
@@ -538,6 +556,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next check in.
+        /// </summary>
+        public static string NextCheck {
+            get {
+                return ResourceManager.GetString("NextCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You aren&apos;t connected to Internet.
         /// </summary>
         public static string NotConnected {
@@ -655,6 +682,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to seconds..
+        /// </summary>
+        public static string SecondsDotM {
+            get {
+                return ResourceManager.GetString("SecondsDotM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to See licenses.
         /// </summary>
         public static string SeeLicenses {
@@ -759,6 +795,15 @@ namespace InternetTest.Properties {
         public static string Theme {
             get {
                 return ResourceManager.GetString("Theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time interval.
+        /// </summary>
+        public static string TimeInterval {
+            get {
+                return ResourceManager.GetString("TimeInterval", resourceCulture);
             }
         }
         

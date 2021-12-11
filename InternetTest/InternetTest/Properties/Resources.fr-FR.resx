@@ -384,4 +384,19 @@
   <data name="HereWeGo" xml:space="preserve">
     <value>HERE WeGo</value>
   </data>
+  <data name="TimeInterval" xml:space="preserve">
+    <value>Intervalle de temps</value>
+  </data>
+  <data name="AutoCheckEverySecondsWebsiteDown" xml:space="preserve">
+    <value>Vérifier automatiquement si le site web est down ou non.</value>
+  </data>
+  <data name="CheckEveryXSeconds" xml:space="preserve">
+    <value>Vérifier toutes les</value>
+  </data>
+  <data name="SecondsDotM" xml:space="preserve">
+    <value>secondes.</value>
+  </data>
+  <data name="NextCheck" xml:space="preserve">
+    <value>Prochaine vérification dans</value>
+  </data>
 </root>
