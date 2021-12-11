@@ -217,6 +217,7 @@ namespace InternetTest.Pages
 					MessageBox.Show(Properties.Resources.EmptyHistory, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information); // Show message 
 				}
 			}
+			TimeIntervalBtn.Content = "\uF827"; // Set text
 		}
 
 		private void StatusBorder_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -283,6 +284,7 @@ namespace InternetTest.Pages
 				ContentGrid.Visibility = Visibility.Collapsed; // Hide
 				TimeIntervalBtn.Content = "\uF36A"; // Set text
 			}
+			HistoryBtn.Content = "\uF47F"; // Set text
 		}
 
 		private void SecondsTxt_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
