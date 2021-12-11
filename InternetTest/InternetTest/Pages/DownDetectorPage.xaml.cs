@@ -30,6 +30,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace InternetTest.Pages
@@ -43,6 +44,12 @@ namespace InternetTest.Pages
 		DispatcherTimer secondsTimer = new();
 		int secondsCheckTime = 30;
 		int updateS = 0;
+		DoubleAnimation DoubleAnimation = new DoubleAnimation
+		{
+			From = 80,
+			To = 50,
+			Duration = TimeSpan.FromMilliseconds(100)
+		};
 
 		public DownDetectorPage()
 		{
@@ -50,6 +57,7 @@ namespace InternetTest.Pages
 			InitUI();
 		}
 
+		Storyboard storyboard = new();
 		private void InitUI()
 		{
 			HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
@@ -75,7 +83,13 @@ namespace InternetTest.Pages
 				updateS--;
 				if (updateS < 0) updateS = secondsCheckTime - 1;
 				NextCheckTxt.Text = $"{Properties.Resources.NextCheck} {updateS} {Properties.Resources.SecondsDotM}";
+				storyboard.Begin(AlarmIconTxt, true);
 			};
+
+			Storyboard.SetTargetName(DoubleAnimation, AlarmIconTxt.Name);
+			Storyboard.SetTargetProperty(DoubleAnimation, new(TextBlock.FontSizeProperty));
+			storyboard.Children.Add(DoubleAnimation);
+			storyboard.AutoReverse = true;
 		}
 
 		/// <summary>
@@ -260,6 +274,8 @@ namespace InternetTest.Pages
 					secondsTimer.Stop();
 					NextCheckTxt.Text = Properties.Resources.NoNextCheck;
 					SecondsTxt.IsEnabled = true;
+
+					storyboard.Stop();
 				}
 			}
 			catch (Exception ex)
