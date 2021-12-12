@@ -116,9 +116,12 @@ namespace InternetTest.Pages
 				InternetIconTxt.Text = "\uF299"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
 
-				notifyIcon.Visible = true; // Show
-				notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.WebsiteAvailable, System.Windows.Forms.ToolTipIcon.Info);
-				notifyIcon.Visible = false; // Hide 
+				if (Global.Settings.DownDetectorNotification.Value)
+				{
+					notifyIcon.Visible = true; // Show
+					notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.WebsiteAvailable, System.Windows.Forms.ToolTipIcon.Info);
+					notifyIcon.Visible = false; // Hide  
+				}
 			}
 			else
 			{
@@ -126,9 +129,12 @@ namespace InternetTest.Pages
 				InternetIconTxt.Text = "\uF36E"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
 
-				notifyIcon.Visible = true; // Show
-				notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.WebsiteDown, System.Windows.Forms.ToolTipIcon.Info);
-				notifyIcon.Visible = false; // Hide 
+				if (Global.Settings.DownDetectorNotification.Value)
+				{
+					notifyIcon.Visible = true; // Show
+					notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.WebsiteDown, System.Windows.Forms.ToolTipIcon.Info);
+					notifyIcon.Visible = false; // Hide  
+				}
 			}
 
 			StatusInfo statusInfo = GetStatusCode(customSite);

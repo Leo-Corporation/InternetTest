@@ -411,4 +411,7 @@
   <data name="NoNextCheck" xml:space="preserve">
     <value>Pas de prochaine vérification</value>
   </data>
+  <data name="ShowNotificationDownDetector" xml:space="preserve">
+    <value>Montrer une notification lorsqu'un test DownDetector est terminé</value>
+  </data>
 </root>

@@ -87,9 +87,14 @@ namespace InternetTest.Classes
 		public bool? IsThemeSystem { get; set; }
 
 		/// <summary>
-		/// Trye if InternetTest should show a notification banner when a test is executed.
+		/// True if InternetTest should show a notification banner when a test is executed.
 		/// </summary>
 		public bool? TestNotification { get; set; }
+
+		/// <summary>
+		/// True if InterentTest should show a notification banner when a <see cref="Pages.DownDetectorPage"/> test is done.
+		/// </summary>
+		public bool? DownDetectorNotification { get; set; }
 	}
 
 	/// <summary>
@@ -127,7 +132,8 @@ namespace InternetTest.Classes
 					StartupPage = StartPages.Connection,
 					UseHTTPS = true,
 					IsThemeSystem = true,
-					TestNotification = true
+					TestNotification = true,
+					DownDetectorNotification = true
 				}; // Create a new settings file
 
 				Save(); // Save the changes

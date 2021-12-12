@@ -11,7 +11,7 @@
 	  Title="SettingsPage">
 
 	<ScrollViewer HorizontalScrollBarVisibility="Hidden" Template="{DynamicResource ScrollViewerControlTemplate}" CanContentScroll="True" Height="344">
-		<Grid Height="1240">
+		<Grid Margin="0,0,0,40">
 			<Grid.RowDefinitions>
 				<RowDefinition/>
 				<RowDefinition Height="Auto"/>
@@ -124,6 +124,7 @@
 				<TextBlock Text="{x:Static lang:Resources.WhenTestExecuted}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14"/>
 
 				<CheckBox Margin="0 2 0 2" x:Name="NotifyTestChk" Style="{DynamicResource CheckBoxStyle1}" Content="{x:Static lang:Resources.NotifyTest}" BorderThickness="3" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" VerticalContentAlignment="Center" Unchecked="NotifyTestChk_Checked" Checked="NotifyTestChk_Checked"/>
+				<CheckBox Margin="0 2 0 2" x:Name="NotifyDownDetectorChk" Style="{DynamicResource CheckBoxStyle1}" Content="{x:Static lang:Resources.ShowNotificationDownDetector}" BorderThickness="3" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" VerticalContentAlignment="Center" Unchecked="NotifyDownDetectorChk_Checked" Checked="NotifyDownDetectorChk_Checked"/>
 
 				<TextBlock Text="{x:Static lang:Resources.OnStart}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
 				<CheckBox Margin="0 10 0 2" x:Name="LaunchTestOnStartChk" Style="{DynamicResource CheckBoxStyle1}" Content="{x:Static lang:Resources.LaunchTestOnStart}" BorderThickness="3" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" VerticalContentAlignment="Center" Unchecked="LaunchTestOnStartChk_Checked" Checked="LaunchTestOnStartChk_Checked"/>

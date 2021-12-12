@@ -97,6 +97,12 @@ namespace InternetTest.Pages
 					SettingsManager.Save(); // Save changes
 				}
 
+				if (!Global.Settings.DownDetectorNotification.HasValue)
+				{
+					Global.Settings.DownDetectorNotification = true; // Set default value
+					SettingsManager.Save(); // Save chnages
+				}
+
 				HTTPSRadioBtn.IsChecked = Global.Settings.UseHTTPS.Value; // Set
 				HTTPRadioBtn.IsChecked = !Global.Settings.UseHTTPS.Value; // Set
 
@@ -105,6 +111,7 @@ namespace InternetTest.Pages
 				NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdates.HasValue ? Global.Settings.NotifyUpdates.Value : true; // Set
 				LaunchTestOnStartChk.IsChecked = Global.Settings.LaunchTestOnStart.HasValue ? Global.Settings.LaunchTestOnStart.Value : true; // Set
 				NotifyTestChk.IsChecked = Global.Settings.TestNotification; // Set
+				NotifyDownDetectorChk.IsChecked = Global.Settings.DownDetectorNotification; // Set
 
 				// Load LangComboBox
 				LangComboBox.Items.Add(Properties.Resources.Default); // Add "default"
@@ -370,7 +377,8 @@ namespace InternetTest.Pages
 					StartupPage = StartPages.Connection,
 					UseHTTPS = true,
 					IsThemeSystem = true,
-					TestNotification = true
+					TestNotification = true,
+					DownDetectorNotification = true
 				}; // Create default settings
 
 				SettingsManager.Save(); // Save the changes
@@ -551,6 +559,12 @@ namespace InternetTest.Pages
 			RefreshStartupBorders(); // Refresh
 
 			Global.Settings.StartupPage = StartPages.DownDetector;
+			SettingsManager.Save(); // Save changes
+		}
+
+		private void NotifyDownDetectorChk_Checked(object sender, RoutedEventArgs e)
+		{
+			Global.Settings.DownDetectorNotification = NotifyDownDetectorChk.IsChecked; // Set value
 			SettingsManager.Save(); // Save changes
 		}
 	}

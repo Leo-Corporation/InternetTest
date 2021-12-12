@@ -772,6 +772,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show a notification when a DownDetector test is done.
+        /// </summary>
+        public static string ShowNotificationDownDetector {
+            get {
+                return ResourceManager.GetString("ShowNotificationDownDetector", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Startup page.
         /// </summary>
         public static string StartupPage {
