@@ -40,15 +40,13 @@ namespace InternetTest.Pages
 	/// </summary>
 	public partial class DownDetectorPage : Page
 	{
-		System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
-
-		DispatcherTimer dispatcherTimer = new();
-		DispatcherTimer secondsTimer = new();
+		readonly System.Windows.Forms.NotifyIcon notifyIcon = new();
+		readonly DispatcherTimer dispatcherTimer = new();
+		readonly DispatcherTimer secondsTimer = new();
 
 		int secondsCheckTime = 30;
 		int updateS = 0;
-
-		DoubleAnimation DoubleAnimation = new DoubleAnimation
+		readonly DoubleAnimation DoubleAnimation = new()
 		{
 			From = 80,
 			To = 50,
@@ -63,7 +61,7 @@ namespace InternetTest.Pages
 			InitUI();
 		}
 
-		Storyboard storyboard = new();
+		readonly Storyboard storyboard = new();
 		private void InitUI()
 		{
 			HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility

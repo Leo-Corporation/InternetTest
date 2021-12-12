@@ -36,12 +36,12 @@ namespace InternetTest.Pages
 	/// </summary>
 	public partial class ConnectionPage : Page
 	{
-		System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
+		readonly System.Windows.Forms.NotifyIcon notifyIcon = new();
 		public ConnectionPage()
 		{
 			InitializeComponent();
 			notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(AppDomain.CurrentDomain.BaseDirectory + @"\InternetTest.exe");
-			if (!Global.Settings.LaunchTestOnStart.HasValue ? true : Global.Settings.LaunchTestOnStart.Value)
+			if (Global.Settings.LaunchTestOnStart ?? true)
 			{
 				Test(Global.Settings.TestSite, true); // Launch a test 
 			}

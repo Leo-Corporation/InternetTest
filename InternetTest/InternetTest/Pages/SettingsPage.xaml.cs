@@ -41,7 +41,7 @@ namespace InternetTest.Pages
 	public partial class SettingsPage : Page
 	{
 		bool isAvailable;
-		System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
+		readonly System.Windows.Forms.NotifyIcon notifyIcon = new();
 		public SettingsPage()
 		{
 			InitializeComponent();
@@ -107,9 +107,9 @@ namespace InternetTest.Pages
 				HTTPRadioBtn.IsChecked = !Global.Settings.UseHTTPS.Value; // Set
 
 				// Load CheckBoxes
-				CheckUpdatesOnStartChk.IsChecked = Global.Settings.CheckUpdatesOnStart.HasValue ? Global.Settings.CheckUpdatesOnStart.Value : true; // Set
-				NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdates.HasValue ? Global.Settings.NotifyUpdates.Value : true; // Set
-				LaunchTestOnStartChk.IsChecked = Global.Settings.LaunchTestOnStart.HasValue ? Global.Settings.LaunchTestOnStart.Value : true; // Set
+				CheckUpdatesOnStartChk.IsChecked = Global.Settings.CheckUpdatesOnStart ?? true; // Set
+				NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdates ?? true; // Set
+				LaunchTestOnStartChk.IsChecked = Global.Settings.LaunchTestOnStart ?? true; // Set
 				NotifyTestChk.IsChecked = Global.Settings.TestNotification; // Set
 				NotifyDownDetectorChk.IsChecked = Global.Settings.DownDetectorNotification; // Set
 
