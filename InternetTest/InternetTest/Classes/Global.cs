@@ -67,7 +67,7 @@ namespace InternetTest.Classes
 		/// <summary>
 		/// The current version of InternetTest.
 		/// </summary>
-		public static string Version => "5.9.0.2112-pre1";
+		public static string Version => "5.9.0.2112-rc1";
 
 		/// <summary>
 		/// List of the available languages.
