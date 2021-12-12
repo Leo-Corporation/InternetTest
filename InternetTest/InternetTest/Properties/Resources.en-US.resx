@@ -384,4 +384,34 @@
   <data name="HereWeGo" xml:space="preserve">
     <value>HERE WeGo</value>
   </data>
+  <data name="TimeInterval" xml:space="preserve">
+    <value>Time interval</value>
+  </data>
+  <data name="AutoCheckEverySecondsWebsiteDown" xml:space="preserve">
+    <value>Automatically check if the website is down or not.</value>
+  </data>
+  <data name="CheckEveryXSeconds" xml:space="preserve">
+    <value>Check every</value>
+  </data>
+  <data name="SecondsDotM" xml:space="preserve">
+    <value>seconds.</value>
+  </data>
+  <data name="NextCheck" xml:space="preserve">
+    <value>Next check in</value>
+  </data>
+  <data name="PleaseSpecifyIntervalMsg" xml:space="preserve">
+    <value>Please specify an interval.</value>
+  </data>
+  <data name="CannotLessThanTwoSec" xml:space="preserve">
+    <value>The interval cannot be less than two seconds.</value>
+  </data>
+  <data name="PleaseSpecifyWebsiteCheck" xml:space="preserve">
+    <value>Please specify a website to check.</value>
+  </data>
+  <data name="NoNextCheck" xml:space="preserve">
+    <value>No next check</value>
+  </data>
+  <data name="ShowNotificationDownDetector" xml:space="preserve">
+    <value>Show a notification when a DownDetector test is done</value>
+  </data>
 </root>

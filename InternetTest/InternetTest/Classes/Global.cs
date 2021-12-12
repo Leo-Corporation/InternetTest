@@ -67,7 +67,7 @@ namespace InternetTest.Classes
 		/// <summary>
 		/// The current version of InternetTest.
 		/// </summary>
-		public static string Version => "5.8.0.2111";
+		public static string Version => "5.9.0.2112";
 
 		/// <summary>
 		/// List of the available languages.
@@ -255,7 +255,7 @@ namespace InternetTest.Classes
 
 		public static bool IsSystemThemeDark()
 		{
-			if (Env.WindowsVersion != WindowsVersion.Windows10)
+			if (Env.WindowsVersion != WindowsVersion.Windows10 && Env.WindowsVersion != WindowsVersion.Windows11)
 			{
 				return false; // Avoid errors on older OSs
 			}

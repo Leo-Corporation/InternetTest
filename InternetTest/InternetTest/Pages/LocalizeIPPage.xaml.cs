@@ -94,9 +94,8 @@ namespace InternetTest.Pages
 		{
 			if (lat != "" && lon != "")
 			{
-				double dLat, dLon;
-				double.TryParse(lat.Replace(".", ","), out dLat);
-				double.TryParse(lon.Replace(".", ","), out dLon);
+				double.TryParse(lat.Replace(".", ","), out double dLat);
+				double.TryParse(lon.Replace(".", ","), out double dLon);
 
 				switch (Global.Settings.MapProvider)
 				{

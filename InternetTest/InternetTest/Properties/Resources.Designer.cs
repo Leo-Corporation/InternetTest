@@ -70,11 +70,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatically check if the website is down or not..
+        /// </summary>
+        public static string AutoCheckEverySecondsWebsiteDown {
+            get {
+                return ResourceManager.GetString("AutoCheckEverySecondsWebsiteDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Updates are available..
         /// </summary>
         public static string AvailableUpdates {
             get {
                 return ResourceManager.GetString("AvailableUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The interval cannot be less than two seconds..
+        /// </summary>
+        public static string CannotLessThanTwoSec {
+            get {
+                return ResourceManager.GetString("CannotLessThanTwoSec", resourceCulture);
             }
         }
         
@@ -93,6 +111,15 @@ namespace InternetTest.Properties {
         public static string Check {
             get {
                 return ResourceManager.GetString("Check", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check every.
+        /// </summary>
+        public static string CheckEveryXSeconds {
+            get {
+                return ResourceManager.GetString("CheckEveryXSeconds", resourceCulture);
             }
         }
         
@@ -538,6 +565,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next check in.
+        /// </summary>
+        public static string NextCheck {
+            get {
+                return ResourceManager.GetString("NextCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No next check.
+        /// </summary>
+        public static string NoNextCheck {
+            get {
+                return ResourceManager.GetString("NoNextCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You aren&apos;t connected to Internet.
         /// </summary>
         public static string NotConnected {
@@ -619,6 +664,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please specify an interval..
+        /// </summary>
+        public static string PleaseSpecifyIntervalMsg {
+            get {
+                return ResourceManager.GetString("PleaseSpecifyIntervalMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify a website to check..
+        /// </summary>
+        public static string PleaseSpecifyWebsiteCheck {
+            get {
+                return ResourceManager.GetString("PleaseSpecifyWebsiteCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Region.
         /// </summary>
         public static string Region {
@@ -651,6 +714,15 @@ namespace InternetTest.Properties {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to seconds..
+        /// </summary>
+        public static string SecondsDotM {
+            get {
+                return ResourceManager.GetString("SecondsDotM", resourceCulture);
             }
         }
         
@@ -696,6 +768,15 @@ namespace InternetTest.Properties {
         public static string SettingsReset {
             get {
                 return ResourceManager.GetString("SettingsReset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show a notification when a DownDetector test is done.
+        /// </summary>
+        public static string ShowNotificationDownDetector {
+            get {
+                return ResourceManager.GetString("ShowNotificationDownDetector", resourceCulture);
             }
         }
         
@@ -759,6 +840,15 @@ namespace InternetTest.Properties {
         public static string Theme {
             get {
                 return ResourceManager.GetString("Theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time interval.
+        /// </summary>
+        public static string TimeInterval {
+            get {
+                return ResourceManager.GetString("TimeInterval", resourceCulture);
             }
         }
         

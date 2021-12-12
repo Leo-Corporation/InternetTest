@@ -87,9 +87,14 @@ namespace InternetTest.Classes
 		public bool? IsThemeSystem { get; set; }
 
 		/// <summary>
-		/// Trye if InternetTest should show a notification banner when a test is executed.
+		/// True if InternetTest should show a notification banner when a test is executed.
 		/// </summary>
 		public bool? TestNotification { get; set; }
+
+		/// <summary>
+		/// True if InterentTest should show a notification banner when a <see cref="Pages.DownDetectorPage"/> test is done.
+		/// </summary>
+		public bool? DownDetectorNotification { get; set; }
 	}
 
 	/// <summary>
@@ -106,8 +111,8 @@ namespace InternetTest.Classes
 
 			if (File.Exists(path)) // If the file exist
 			{
-				XmlSerializer xmlSerializer = new XmlSerializer(typeof(Settings)); // XML Serializer
-				StreamReader streamReader = new StreamReader(path); // Where the file is going to be read
+				XmlSerializer xmlSerializer = new(typeof(Settings)); // XML Serializer
+				StreamReader streamReader = new(path); // Where the file is going to be read
 
 				Global.Settings = (Settings)xmlSerializer.Deserialize(streamReader); // Read
 
@@ -127,7 +132,8 @@ namespace InternetTest.Classes
 					StartupPage = StartPages.Connection,
 					UseHTTPS = true,
 					IsThemeSystem = true,
-					TestNotification = true
+					TestNotification = true,
+					DownDetectorNotification = true
 				}; // Create a new settings file
 
 				Save(); // Save the changes
@@ -141,7 +147,7 @@ namespace InternetTest.Classes
 		{
 			string path = Env.AppDataPath + @"\Léo Corporation\InternetTest\Settings.xml"; // The path of the settings file
 
-			XmlSerializer xmlSerializer = new XmlSerializer(typeof(Settings)); // Create XML Serializer
+			XmlSerializer xmlSerializer = new(typeof(Settings)); // Create XML Serializer
 
 			if (!Directory.Exists(Env.AppDataPath + @"\Léo Corporation\InternetTest")) // If the directory doesn't exist
 			{
@@ -149,7 +155,7 @@ namespace InternetTest.Classes
 				Directory.CreateDirectory(Env.AppDataPath + @"\Léo Corporation\InternetTest"); // Create the directory
 			}
 
-			StreamWriter streamWriter = new StreamWriter(path); // The place where the file is going to be written
+			StreamWriter streamWriter = new(path); // The place where the file is going to be written
 			xmlSerializer.Serialize(streamWriter, Global.Settings);
 
 			streamWriter.Dispose();
@@ -163,9 +169,9 @@ namespace InternetTest.Classes
 		{
 			try
 			{
-				XmlSerializer xmlSerializer = new XmlSerializer(typeof(Settings)); // Create XML Serializer
+				XmlSerializer xmlSerializer = new(typeof(Settings)); // Create XML Serializer
 
-				StreamWriter streamWriter = new StreamWriter(path); // The place where the file is going to be written
+				StreamWriter streamWriter = new(path); // The place where the file is going to be written
 				xmlSerializer.Serialize(streamWriter, Global.Settings);
 
 				streamWriter.Dispose();
@@ -188,8 +194,8 @@ namespace InternetTest.Classes
 			{
 				if (File.Exists(path)) // If the file exist
 				{
-					XmlSerializer xmlSerializer = new XmlSerializer(typeof(Settings)); // XML Serializer
-					StreamReader streamReader = new StreamReader(path); // Where the file is going to be read
+					XmlSerializer xmlSerializer = new(typeof(Settings)); // XML Serializer
+					StreamReader streamReader = new(path); // Where the file is going to be read
 
 					Global.Settings = (Settings)xmlSerializer.Deserialize(streamReader); // Read
 

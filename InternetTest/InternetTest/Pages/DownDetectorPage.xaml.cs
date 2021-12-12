@@ -24,10 +24,14 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.UserControls;
 using LeoCorpLibrary;
+using System;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Threading;
 
 namespace InternetTest.Pages
 {
@@ -36,11 +40,60 @@ namespace InternetTest.Pages
 	/// </summary>
 	public partial class DownDetectorPage : Page
 	{
+		readonly System.Windows.Forms.NotifyIcon notifyIcon = new();
+		readonly DispatcherTimer dispatcherTimer = new();
+		readonly DispatcherTimer secondsTimer = new();
+
+		int secondsCheckTime = 30;
+		int updateS = 0;
+		readonly DoubleAnimation DoubleAnimation = new()
+		{
+			From = 80,
+			To = 50,
+			Duration = TimeSpan.FromMilliseconds(100)
+		};
+
 		public DownDetectorPage()
 		{
 			InitializeComponent();
+			notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(AppDomain.CurrentDomain.BaseDirectory + @"\InternetTest.exe");
+
+			InitUI();
+		}
+
+		readonly Storyboard storyboard = new();
+		private void InitUI()
+		{
 			HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 			StatusBorder.Visibility = Visibility.Collapsed; // Hide
+
+			secondsTimer.Interval = TimeSpan.FromSeconds(1); // Every second
+
+			dispatcherTimer.Tick += (o, e) =>
+			{
+				if (string.IsNullOrEmpty(WebsiteTxt.Text))
+				{
+					AutoCheckWebsiteDownChk.IsChecked = false; // Stop
+					MessageBox.Show(Properties.Resources.PleaseSpecifyWebsiteCheck, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Warning);
+					return;
+				}
+
+				WebsiteTxt.Text = FormatURL(WebsiteTxt.Text);
+				Test(WebsiteTxt.Text);
+			};
+
+			secondsTimer.Tick += (o, e) =>
+			{
+				updateS--;
+				if (updateS < 0) updateS = secondsCheckTime - 1;
+				NextCheckTxt.Text = $"{Properties.Resources.NextCheck} {updateS} {Properties.Resources.SecondsDotM}";
+				storyboard.Begin(AlarmIconTxt, true);
+			};
+
+			Storyboard.SetTargetName(DoubleAnimation, AlarmIconTxt.Name);
+			Storyboard.SetTargetProperty(DoubleAnimation, new(TextBlock.FontSizeProperty));
+			storyboard.Children.Add(DoubleAnimation);
+			storyboard.AutoReverse = true;
 		}
 
 		/// <summary>
@@ -55,17 +108,31 @@ namespace InternetTest.Pages
 			InternetIconTxt.Text = "\uF45F"; // Set the icon
 			InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
 
-			if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
+			if (await NetworkConnection.IsAvailableAsync(customSite)) // If there is Internet
 			{
 				ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
 				InternetIconTxt.Text = "\uF299"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
+
+				if (Global.Settings.DownDetectorNotification.Value)
+				{
+					notifyIcon.Visible = true; // Show
+					notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.WebsiteAvailable, System.Windows.Forms.ToolTipIcon.Info);
+					notifyIcon.Visible = false; // Hide  
+				}
 			}
 			else
 			{
 				ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
 				InternetIconTxt.Text = "\uF36E"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
+
+				if (Global.Settings.DownDetectorNotification.Value)
+				{
+					notifyIcon.Visible = true; // Show
+					notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.WebsiteDown, System.Windows.Forms.ToolTipIcon.Info);
+					notifyIcon.Visible = false; // Hide  
+				}
 			}
 
 			StatusInfo statusInfo = GetStatusCode(customSite);
@@ -158,6 +225,7 @@ namespace InternetTest.Pages
 				if (HistoricPanel.Visibility == Visibility.Visible)
 				{
 					HistoricPanel.Visibility = Visibility.Collapsed; // Set
+					TimerPanel.Visibility = Visibility.Collapsed; // Set
 					ContentGrid.Visibility = Visibility.Visible; // Set
 					HistoryBtn.Content = "\uF47F"; // Set text
 				}
@@ -165,6 +233,7 @@ namespace InternetTest.Pages
 				{
 					HistoricPanel.Visibility = Visibility.Visible; // Set
 					ContentGrid.Visibility = Visibility.Collapsed; // Set
+					TimerPanel.Visibility = Visibility.Collapsed; // Set
 					HistoryBtn.Content = "\uF36A"; // Set text
 				}
 			}
@@ -172,6 +241,7 @@ namespace InternetTest.Pages
 			{
 				HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 				HistoricPanel.Visibility = Visibility.Collapsed; // Set
+				TimerPanel.Visibility = Visibility.Collapsed; // Set
 				ContentGrid.Visibility = Visibility.Visible; // Set
 				HistoryBtn.Content = "\uF47F"; // Set text
 				if (sender is not HistoricItem)
@@ -179,11 +249,82 @@ namespace InternetTest.Pages
 					MessageBox.Show(Properties.Resources.EmptyHistory, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information); // Show message 
 				}
 			}
+			TimeIntervalBtn.Content = "\uF827"; // Set text
 		}
 
 		private void StatusBorder_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			StatusMsgTxt.Visibility = StatusMsgTxt.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed; // Show/hide
+		}
+
+		private void AutoCheckWebsiteDownChk_Checked(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+				if (AutoCheckWebsiteDownChk.IsChecked.Value)
+				{
+					if (string.IsNullOrEmpty(SecondsTxt.Text))
+					{
+						MessageBox.Show(Properties.Resources.PleaseSpecifyIntervalMsg, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+						AutoCheckWebsiteDownChk.IsChecked = false;
+						return;
+					}
+
+					int seconds = int.Parse(SecondsTxt.Text);
+
+					if (seconds < 2)
+					{
+						MessageBox.Show(Properties.Resources.CannotLessThanTwoSec, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Warning);
+						AutoCheckWebsiteDownChk.IsChecked = false;
+						return;
+					}
+					secondsCheckTime = seconds;
+					updateS = seconds;
+
+					dispatcherTimer.Interval = TimeSpan.FromSeconds(seconds);
+					dispatcherTimer.Start(); // Start the task
+					secondsTimer.Start(); // Start the task
+					SecondsTxt.IsEnabled = false;
+				}
+				else
+				{
+					dispatcherTimer.Stop();
+					secondsTimer.Stop();
+					NextCheckTxt.Text = Properties.Resources.NoNextCheck;
+					SecondsTxt.IsEnabled = true;
+
+					storyboard.Stop();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
+
+		private void TimeIntervalBtn_Click(object sender, RoutedEventArgs e)
+		{
+			if (TimerPanel.Visibility == Visibility.Visible)
+			{
+				HistoricPanel.Visibility = Visibility.Collapsed; // Hide
+				TimerPanel.Visibility = Visibility.Collapsed; // Hide
+				ContentGrid.Visibility = Visibility.Visible; // Show
+				TimeIntervalBtn.Content = "\uF827"; // Set text
+			}
+			else
+			{
+				HistoricPanel.Visibility = Visibility.Collapsed; // Hide
+				TimerPanel.Visibility = Visibility.Visible; // Show
+				ContentGrid.Visibility = Visibility.Collapsed; // Hide
+				TimeIntervalBtn.Content = "\uF36A"; // Set text
+			}
+			HistoryBtn.Content = "\uF47F"; // Set text
+		}
+
+		private void SecondsTxt_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+		{
+			Regex regex = new("[^0-9]+");
+			e.Handled = regex.IsMatch(e.Text);
 		}
 	}
 }
