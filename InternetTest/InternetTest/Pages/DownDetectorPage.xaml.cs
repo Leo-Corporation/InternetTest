@@ -40,10 +40,14 @@ namespace InternetTest.Pages
 	/// </summary>
 	public partial class DownDetectorPage : Page
 	{
+		System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
+
 		DispatcherTimer dispatcherTimer = new();
 		DispatcherTimer secondsTimer = new();
+
 		int secondsCheckTime = 30;
 		int updateS = 0;
+
 		DoubleAnimation DoubleAnimation = new DoubleAnimation
 		{
 			From = 80,
@@ -54,6 +58,8 @@ namespace InternetTest.Pages
 		public DownDetectorPage()
 		{
 			InitializeComponent();
+			notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(AppDomain.CurrentDomain.BaseDirectory + @"\InternetTest.exe");
+
 			InitUI();
 		}
 
@@ -109,12 +115,20 @@ namespace InternetTest.Pages
 				ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
 				InternetIconTxt.Text = "\uF299"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
+
+				notifyIcon.Visible = true; // Show
+				notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.WebsiteAvailable, System.Windows.Forms.ToolTipIcon.Info);
+				notifyIcon.Visible = false; // Hide 
 			}
 			else
 			{
 				ConnectionStatusTxt.Text = Properties.Resources.WebsiteDown; // Set text of the label
 				InternetIconTxt.Text = "\uF36E"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
+
+				notifyIcon.Visible = true; // Show
+				notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.WebsiteDown, System.Windows.Forms.ToolTipIcon.Info);
+				notifyIcon.Visible = false; // Hide 
 			}
 
 			StatusInfo statusInfo = GetStatusCode(customSite);
