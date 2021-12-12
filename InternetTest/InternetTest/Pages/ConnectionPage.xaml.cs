@@ -97,7 +97,7 @@ namespace InternetTest.Pages
 			}
 			else
 			{
-				if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
+				if (await NetworkConnection.IsAvailableAsync(customSite)) // If there is Internet
 				{
 					ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
 					InternetIconTxt.Text = "\uF299"; // Set the icon

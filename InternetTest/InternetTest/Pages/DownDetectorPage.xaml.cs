@@ -108,7 +108,7 @@ namespace InternetTest.Pages
 			InternetIconTxt.Text = "\uF45F"; // Set the icon
 			InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
 
-			if (await NetworkConnection.IsAvailableTestSiteAsync(customSite)) // If there is Internet
+			if (await NetworkConnection.IsAvailableAsync(customSite)) // If there is Internet
 			{
 				ConnectionStatusTxt.Text = Properties.Resources.WebsiteAvailable; // Set text of the label
 				InternetIconTxt.Text = "\uF299"; // Set the icon
