@@ -565,8 +565,8 @@ namespace InternetTest.Pages
 		{
 			MessageBox.Show($"{Properties.Resources.Licenses}\n\n" +
 				"Fluent System Icons - MIT License - © 2020 Microsoft Corporation\n" +
-				"LeoCorpLibrary - MIT License - © 2020-2021 Léo Corporation\n" +
-				"InternetTest - MIT License - © 2021 Léo Corporation", $"{Properties.Resources.InternetTest} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
+				"LeoCorpLibrary - MIT License - © 2020-2022 Léo Corporation\n" +
+				"InternetTest - MIT License - © 2021-2022 Léo Corporation", $"{Properties.Resources.InternetTest} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
 		}
 	}
 }
