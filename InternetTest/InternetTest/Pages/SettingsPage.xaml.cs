@@ -275,14 +275,6 @@ namespace InternetTest.Pages
 			DisplayRestartMessage();
 		}
 
-		private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-		{
-			MessageBox.Show($"{Properties.Resources.Licenses}\n\n" +
-				"Fluent System Icons - MIT License - © 2020 Microsoft Corporation\n" +
-				"LeoCorpLibrary - MIT License - © 2020-2021 Léo Corporation\n" +
-				"InternetTest - MIT License - © 2021 Léo Corporation", $"{Properties.Resources.InternetTest} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
-		}
-
 		private void LightRadioBtn_Checked(object sender, RoutedEventArgs e)
 		{
 			ThemeApplyBtn.Visibility = Visibility.Visible; // Show the ThemeApplyBtn button
@@ -360,35 +352,6 @@ namespace InternetTest.Pages
 		{
 			Global.Settings.NotifyUpdates = NotifyUpdatesChk.IsChecked; // Set
 			SettingsManager.Save(); // Save changes
-		}
-
-		private void ResetSettingsLink_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-		{
-			if (MessageBox.Show(Properties.Resources.ResetSettingsConfirmMsg, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-			{
-				Global.Settings = new()
-				{
-					CheckUpdatesOnStart = true,
-					IsDarkTheme = false,
-					Language = "_default",
-					NotifyUpdates = true,
-					TestSite = "https://bing.com",
-					MapProvider = MapProviders.OpenStreetMap,
-					LaunchTestOnStart = true,
-					StartupPage = StartPages.Connection,
-					UseHTTPS = true,
-					IsThemeSystem = true,
-					TestNotification = true,
-					DownDetectorNotification = true
-				}; // Create default settings
-
-				SettingsManager.Save(); // Save the changes
-				InitUI(); // Reload the page
-
-				MessageBox.Show(Properties.Resources.SettingsReset, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information);
-				Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
-				Environment.Exit(0); // Quit
-			}
 		}
 
 		private void LaunchTestOnStartChk_Checked(object sender, RoutedEventArgs e)
@@ -567,6 +530,43 @@ namespace InternetTest.Pages
 		{
 			Global.Settings.DownDetectorNotification = NotifyDownDetectorChk.IsChecked; // Set value
 			SettingsManager.Save(); // Save changes
+		}
+
+		private void ResetSettingsLink_Click(object sender, RoutedEventArgs e)
+		{
+			if (MessageBox.Show(Properties.Resources.ResetSettingsConfirmMsg, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+			{
+				Global.Settings = new()
+				{
+					CheckUpdatesOnStart = true,
+					IsDarkTheme = false,
+					Language = "_default",
+					NotifyUpdates = true,
+					TestSite = "https://bing.com",
+					MapProvider = MapProviders.OpenStreetMap,
+					LaunchTestOnStart = true,
+					StartupPage = StartPages.Connection,
+					UseHTTPS = true,
+					IsThemeSystem = true,
+					TestNotification = true,
+					DownDetectorNotification = true
+				}; // Create default settings
+
+				SettingsManager.Save(); // Save the changes
+				InitUI(); // Reload the page
+
+				MessageBox.Show(Properties.Resources.SettingsReset, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information);
+				Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
+				Environment.Exit(0); // Quit
+			}
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			MessageBox.Show($"{Properties.Resources.Licenses}\n\n" +
+				"Fluent System Icons - MIT License - © 2020 Microsoft Corporation\n" +
+				"LeoCorpLibrary - MIT License - © 2020-2021 Léo Corporation\n" +
+				"InternetTest - MIT License - © 2021 Léo Corporation", $"{Properties.Resources.InternetTest} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
 		}
 	}
 }
