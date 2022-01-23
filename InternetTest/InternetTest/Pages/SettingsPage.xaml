@@ -178,18 +178,20 @@
 						</StackPanel>
 					</Button>
 				</StackPanel>
-				<TextBlock x:Name="ResetSettingsLink" Text="{x:Static lang:Resources.ResetSettings}" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="Bold" Cursor="Hand" MouseLeftButtonDown="ResetSettingsLink_MouseLeftButtonDown" HorizontalAlignment="Left">
-					<TextBlock.TextDecorations>
-						<TextDecoration/>
-					</TextBlock.TextDecorations>
-				</TextBlock>
+				<Button x:Name="ResetSettingsLink" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="Bold" Cursor="Hand" Click="ResetSettingsLink_Click" Style="{DynamicResource LinkButtonStyle}" HorizontalAlignment="Left" Padding="5" Background="{x:Null}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xF583;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontWeight="Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{x:Static lang:Resources.ResetSettings}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
 
 				<TextBlock Text="{x:Static lang:Resources.Licenses}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
-				<TextBlock Text="{x:Static lang:Resources.SeeLicenses}" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="Bold" Cursor="Hand" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" HorizontalAlignment="Left">
-					<TextBlock.TextDecorations>
-						<TextDecoration/>
-					</TextBlock.TextDecorations>
-				</TextBlock>
+				<Button Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="Bold" Cursor="Hand" Click="Button_Click" HorizontalAlignment="Left" Style="{DynamicResource LinkButtonStyle}" Padding="5" Background="{x:Null}">
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Text="&#xF583;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontWeight="Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+						<TextBlock Text="{x:Static lang:Resources.SeeLicenses}" VerticalAlignment="Center"/>
+					</StackPanel>
+				</Button>
 
 			</StackPanel>
 		</Grid>

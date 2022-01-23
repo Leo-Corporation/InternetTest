@@ -6,10 +6,10 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>InternetTest.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>5.9.0.2112</Version>
+    <Version>5.9.1.2201</Version>
     <Authors>Léo Corporation</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>© 2021</Copyright>
+    <Copyright>© 2022</Copyright>
     <RepositoryUrl>https://github.com/Leo-Corporation/InternetTest</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/Leo-Corporation/InternetTest</PackageProjectUrl>
