@@ -72,12 +72,12 @@ namespace InternetTest.Classes
 		/// <summary>
 		/// List of the available languages.
 		/// </summary>
-		public static List<string> LanguageList => new() { "English (United States)", "Français (France)" };
+		public static List<string> LanguageList => new() { "English (United States)", "Français (France)", "中文（简体）" };
 
 		/// <summary>
 		/// List of the available languages codes.
 		/// </summary>
-		public static List<string> LanguageCodeList => new() { "en-US", "fr-FR" };
+		public static List<string> LanguageCodeList => new() { "en-US", "fr-FR", "zh-CN" };
 
 		/// <summary>
 		/// GitHub link for the last version (<see cref="string"/>).
@@ -284,6 +284,10 @@ namespace InternetTest.Classes
 
 				case "fr-FR": // French (FR)
 					Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR"); // Change
+					break;
+
+				case "zh-CN": // Chinese (CN)
+					Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-CN"); // Change
 					break;
 				default: // No language
 					break;
