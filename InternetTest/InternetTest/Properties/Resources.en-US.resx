@@ -414,4 +414,19 @@
   <data name="ShowNotificationDownDetector" xml:space="preserve">
     <value>Show a notification when a DownDetector test is done</value>
   </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WelcomeThanks" xml:space="preserve">
+    <value>Thanks for using InternetTest! Lets' get started!</value>
+  </data>
+  <data name="ChangesApplyAfterRestart" xml:space="preserve">
+    <value>Changes will be applied after a restart of InternetTest.</value>
+  </data>
 </root>

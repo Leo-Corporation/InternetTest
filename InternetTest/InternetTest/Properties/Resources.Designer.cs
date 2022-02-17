@@ -88,11 +88,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The interval cannot be less than two seconds..
         /// </summary>
         public static string CannotLessThanTwoSec {
             get {
                 return ResourceManager.GetString("CannotLessThanTwoSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changes will be applied after a restart of InternetTest..
+        /// </summary>
+        public static string ChangesApplyAfterRestart {
+            get {
+                return ResourceManager.GetString("ChangesApplyAfterRestart", resourceCulture);
             }
         }
         
@@ -565,6 +583,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string Next {
+            get {
+                return ResourceManager.GetString("Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next check in.
         /// </summary>
         public static string NextCheck {
@@ -930,6 +957,24 @@ namespace InternetTest.Properties {
         public static string WebsiteDown {
             get {
                 return ResourceManager.GetString("WebsiteDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome.
+        /// </summary>
+        public static string Welcome {
+            get {
+                return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thanks for using InternetTest! Lets&apos; get started!.
+        /// </summary>
+        public static string WelcomeThanks {
+            get {
+                return ResourceManager.GetString("WelcomeThanks", resourceCulture);
             }
         }
         
