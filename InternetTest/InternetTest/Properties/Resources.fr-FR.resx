@@ -441,4 +441,7 @@
   <data name="WelcomeDownDetector" xml:space="preserve">
     <value>Parfois, nous allons tous sur un site Web, mais cela prend beaucoup de temps et nous nous demandons tous s’il n’est pas en panne. Grâce à la fonction DownDetector d’InternetTest, vous pouvez trouver une réponse à cette question. Entrez simplement l’URL d’un site Web et vous obtiendrez son statut.</value>
   </data>
+  <data name="WelcomeThemeTitle" xml:space="preserve">
+    <value>Faites d'InternetTest le vôtre</value>
+  </data>
 </root>

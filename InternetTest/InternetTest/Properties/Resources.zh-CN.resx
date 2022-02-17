@@ -441,4 +441,7 @@
   <data name="WelcomeDownDetector" xml:space="preserve">
     <value>Sometimes, we all go to a website, but it takes a lot of time load, and we all wonder if it's not down. Thanks to the DownDetector feature of InternetTest, you can find an answer to this question. Just enter the URL of a website and you'll get its status.</value>
   </data>
+  <data name="WelcomeThemeTitle" xml:space="preserve">
+    <value>Make InternetTest yours</value>
+  </data>
 </root>

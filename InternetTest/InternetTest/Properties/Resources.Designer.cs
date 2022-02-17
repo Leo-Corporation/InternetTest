@@ -1015,6 +1015,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make InternetTest yours.
+        /// </summary>
+        public static string WelcomeThemeTitle {
+            get {
+                return ResourceManager.GetString("WelcomeThemeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to When a test is executed..
         /// </summary>
         public static string WhenTestExecuted {
