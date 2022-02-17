@@ -21,32 +21,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Pages.FirstRunPages;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace InternetTest.Windows
+namespace InternetTest.Pages.FirstRunPages
 {
 	/// <summary>
-	/// Interaction logic for FirstRunWindow.xaml
+	/// Interaction logic for WelcomePage.xaml
 	/// </summary>
-	public partial class FirstRunWindow : Window
+	public partial class WelcomePage : Page
 	{
-		WelcomePage WelcomePage => new(); // PageID = 0
-
-		int pageID = 0;
-		public FirstRunWindow()
+		public WelcomePage()
 		{
 			InitializeComponent();
 			InitUI(); // Load the UI
@@ -54,22 +39,7 @@ namespace InternetTest.Windows
 
 		private void InitUI()
 		{
-			PageViewer.Navigate(WelcomePage); // Show welcome page
-		}
-
-		private void CloseBtn_Click(object sender, RoutedEventArgs e)
-		{
-			Environment.Exit(0); // Exit and close InternetTest
-		}
-
-		private void NextBtn_Click(object sender, RoutedEventArgs e)
-		{
-			pageID++; // Increment
-			PageViewer.Navigate(pageID switch
-			{
-				0 => WelcomePage,
-				_ => WelcomePage // By default go the home page
-			}); // Navigate to the next page
+			WelcomeTxt.Text = $"{Properties.Resources.Welcome}, {Environment.UserName}."; // Say hello to the user
 		}
 	}
 }
