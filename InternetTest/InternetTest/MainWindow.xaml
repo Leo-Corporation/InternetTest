@@ -153,50 +153,75 @@
 
                         <StackPanel Margin="10" Grid.Column="0">
                             <Button Click="ConnectionBtn_Click" x:Name="ConnectionBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Cursor="Hand">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="ConnectionIcon" Text="&#xF45B;" FontSize="23" FontWeight="Regular" FontFamily="/Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                                    <TextBlock Text="{x:Static lang:Resources.Connection}" VerticalAlignment="Center"/>
-                                </StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="33"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <TextBlock x:Name="ConnectionIcon" Text="&#xF45B;" FontSize="23" FontWeight="Regular" FontFamily="/Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{x:Static lang:Resources.Connection}" VerticalAlignment="Center" Grid.Column="1"/>
+                                </Grid>
 
 								<Button.Triggers>
 									<EventTrigger RoutedEvent="MouseEnter">
 										<BeginStoryboard>
 											<Storyboard>
-												<DoubleAnimation From="15" To="20" Duration="0:0:0.2" Storyboard.TargetName="ConnectionIcon" Storyboard.TargetProperty="FontSize"/>
+												<DoubleAnimation From="5" To="20" Duration="0:0:0.2" Storyboard.TargetName="ConnectionIcon" Storyboard.TargetProperty="FontSize"/>
 												<ColorAnimation From="{Binding Source={StaticResource Background1}}" To="{Binding Source={StaticResource AccentColor}}" Duration="0:0:0.2" Storyboard.TargetName="ConnectionBtn" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"/>
 											</Storyboard>
 										</BeginStoryboard>
 									</EventTrigger>
 								</Button.Triggers>
 							</Button>
-                            <Button Click="LocalizeIPBtn_Click" x:Name="LocalizeIPBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave">
-                                <StackPanel Orientation="Horizontal">
+                            <Button Click="LocalizeIPBtn_Click" x:Name="LocalizeIPBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Height="42.38">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    
                                     <TextBlock x:Name="IPIcon" Text="&#xF4F9;" FontSize="23" FontWeight="Regular" FontFamily="/Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" VerticalAlignment="Center"/>
-                                    <TextBlock Text="{x:Static lang:Resources.LocalizeIP}" VerticalAlignment="Center"/>
-                                </StackPanel>
+                                    <TextBlock Text="{x:Static lang:Resources.LocalizeIP}" VerticalAlignment="Center" Grid.Column="1"/>
+                                </Grid>
 
 								<Button.Triggers>
 									<EventTrigger RoutedEvent="MouseEnter">
 										<BeginStoryboard>
 											<Storyboard>
-												<DoubleAnimation From="15" To="20" Duration="0:0:0.2" Storyboard.TargetName="IPIcon" Storyboard.TargetProperty="FontSize"/>
-												<ColorAnimation From="{Binding Source={StaticResource Background1}}" To="{Binding Source={StaticResource AccentColor}}" Duration="0:0:0.2" Storyboard.TargetName="LocalizeIPBtn" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"/>
+                                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="IPIcon" BeginTime="00:00:00">
+                                                    <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,10,20" />
+                                                    <SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0,0,10,0" />
+                                                </ThicknessAnimationUsingKeyFrames>
+                                                <ColorAnimation From="{Binding Source={StaticResource Background1}}" To="{Binding Source={StaticResource AccentColor}}" Duration="0:0:0.2" Storyboard.TargetName="LocalizeIPBtn" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"/>
 											</Storyboard>
 										</BeginStoryboard>
 									</EventTrigger>
 								</Button.Triggers>
 							</Button>
                             <Button Click="DownDetectorBtn_Click" x:Name="DownDetectorBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="DownIcon" Text="&#xF53D;" FontSize="23" FontWeight="Regular" FontFamily="/Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" VerticalAlignment="Center"/>
-                                    <TextBlock Text="{x:Static lang:Resources.DownDetector}" VerticalAlignment="Center"/>
-                                </StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="33"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <TextBlock x:Name="DownIcon" Text="&#xF53D;" FontSize="23" FontWeight="Regular" FontFamily="/Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                                        <TextBlock.RenderTransform>
+                                            <TransformGroup>
+                                                <RotateTransform x:Name="DownRotator" Angle="0"/>
+                                            </TransformGroup>
+                                        </TextBlock.RenderTransform>
+                                    </TextBlock>
+                                    <TextBlock Text="{x:Static lang:Resources.DownDetector}" VerticalAlignment="Center" Grid.Column="4"/>
+                                </Grid>
 
 								<Button.Triggers>
 									<EventTrigger RoutedEvent="MouseEnter">
 										<BeginStoryboard>
 											<Storyboard>
-												<DoubleAnimation From="15" To="20" Duration="0:0:0.2" Storyboard.TargetName="DownIcon" Storyboard.TargetProperty="FontSize"/>
+                                                <DoubleAnimation From="0" To="360" Duration="0:0:0.2" Storyboard.TargetName="DownRotator" Storyboard.TargetProperty="Angle"/>
+                                                <DoubleAnimation From="5" To="20" Duration="0:0:0.2" Storyboard.TargetName="DownIcon" Storyboard.TargetProperty="FontSize"/>
 												<ColorAnimation From="{Binding Source={StaticResource Background1}}" To="{Binding Source={StaticResource AccentColor}}" Duration="0:0:0.2" Storyboard.TargetName="DownDetectorBtn" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"/>
 											</Storyboard>
 										</BeginStoryboard>
