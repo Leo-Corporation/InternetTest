@@ -21,36 +21,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Pages.FirstRunPages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using InternetTest.Classes;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace InternetTest.Windows
+namespace InternetTest.Pages.FirstRunPages
 {
 	/// <summary>
-	/// Interaction logic for FirstRunWindow.xaml
+	/// Interaction logic for UpdatePage.xaml
 	/// </summary>
-	public partial class FirstRunWindow : Window
+	public partial class UpdatePage : Page
 	{
-		WelcomePage WelcomePage => new(); // PageID = 0
-		TutorialPage TutorialPage => new(); // PageID = 1
-		ThemePage ThemePage => new(); // PageID = 2
-		LanguagePage LanguagePage => new(); // PageID = 3
-		UpdatePage UpdatePage => new(); // PageID = 4
-
-		int pageID = 0;
-		public FirstRunWindow()
+		public UpdatePage()
 		{
 			InitializeComponent();
 			InitUI(); // Load the UI
@@ -58,26 +40,20 @@ namespace InternetTest.Windows
 
 		private void InitUI()
 		{
-			PageViewer.Navigate(WelcomePage); // Show welcome page
+			CheckUpdatesOnStartChk.IsChecked = Global.Settings.CheckUpdatesOnStart; // Set
+			NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdates; // Set
 		}
 
-		private void CloseBtn_Click(object sender, RoutedEventArgs e)
+		private void CheckUpdatesOnStartChk_Checked(object sender, RoutedEventArgs e)
 		{
-			Environment.Exit(0); // Exit and close InternetTest
+			Global.Settings.CheckUpdatesOnStart = CheckUpdatesOnStartChk.IsChecked.Value; // Set
+			SettingsManager.Save(); // Save changes
 		}
 
-		private void NextBtn_Click(object sender, RoutedEventArgs e)
+		private void NotifyUpdatesChk_Checked(object sender, RoutedEventArgs e)
 		{
-			pageID++; // Increment
-			PageViewer.Navigate(pageID switch
-			{
-				0 => WelcomePage,
-				1 => TutorialPage,
-				2 => ThemePage,
-				3 => LanguagePage,
-				4 => UpdatePage,
-				_ => WelcomePage // By default go the home page
-			}); // Navigate to the next page
+			Global.Settings.NotifyUpdates = NotifyUpdatesChk.IsChecked.Value; // Set
+			SettingsManager.Save(); // Save changes
 		}
 	}
 }
