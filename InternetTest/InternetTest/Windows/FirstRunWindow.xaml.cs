@@ -46,6 +46,7 @@ namespace InternetTest.Windows
 		WelcomePage WelcomePage => new(); // PageID = 0
 		TutorialPage TutorialPage => new(); // PageID = 1
 		ThemePage ThemePage => new(); // PageID = 2
+		LanguagePage LanguagePage => new(); // PageID = 3
 
 		int pageID = 0;
 		public FirstRunWindow()
@@ -72,6 +73,7 @@ namespace InternetTest.Windows
 				0 => WelcomePage,
 				1 => TutorialPage,
 				2 => ThemePage,
+				3 => LanguagePage,
 				_ => WelcomePage // By default go the home page
 			}); // Navigate to the next page
 		}
