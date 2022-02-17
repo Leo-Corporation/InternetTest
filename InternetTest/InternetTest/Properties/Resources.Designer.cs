@@ -538,6 +538,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Locate.
+        /// </summary>
+        public static string Locate {
+            get {
+                return ResourceManager.GetString("Locate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Longitude.
         /// </summary>
         public static string Longitude {
@@ -966,6 +975,33 @@ namespace InternetTest.Properties {
         public static string Welcome {
             get {
                 return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sometimes, we all go to a website, but it takes a lot of time load, and we all wonder if it&apos;s not down. Thanks to the DownDetector feature of InternetTest, you can find an answer to this question. Just enter the URL of a website and you&apos;ll get its status..
+        /// </summary>
+        public static string WelcomeDownDetector {
+            get {
+                return ResourceManager.GetString("WelcomeDownDetector", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You want to know more about an IP address? InternetTest can get more informations about the IP, and even get its location! Note that this feature is powered by third-party services..
+        /// </summary>
+        public static string WelcomeLocate {
+            get {
+                return ResourceManager.GetString("WelcomeLocate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unsure about your network connectivity? Don&apos;t worry! You can launch a test through InternetTest to be sure if the problem is from you or not..
+        /// </summary>
+        public static string WelcomeTest {
+            get {
+                return ResourceManager.GetString("WelcomeTest", resourceCulture);
             }
         }
         

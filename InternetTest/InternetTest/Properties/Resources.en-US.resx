@@ -429,4 +429,16 @@
   <data name="ChangesApplyAfterRestart" xml:space="preserve">
     <value>Changes will be applied after a restart of InternetTest.</value>
   </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Locate</value>
+  </data>
+  <data name="WelcomeTest" xml:space="preserve">
+    <value>Unsure about your network connectivity? Don't worry! You can launch a test through InternetTest to be sure if the problem is from you or not.</value>
+  </data>
+  <data name="WelcomeLocate" xml:space="preserve">
+    <value>You want to know more about an IP address? InternetTest can get more informations about the IP, and even get its location! Note that this feature is powered by third-party services.</value>
+  </data>
+  <data name="WelcomeDownDetector" xml:space="preserve">
+    <value>Sometimes, we all go to a website, but it takes a lot of time load, and we all wonder if it's not down. Thanks to the DownDetector feature of InternetTest, you can find an answer to this question. Just enter the URL of a website and you'll get its status.</value>
+  </data>
 </root>
