@@ -69,6 +69,8 @@ namespace InternetTest
 				StartPages.DownDetector => DownDetectorBtn,
 				_ => ConnectionBtn
 			}); // Check the start page button
+
+			PageContent.Navigated += (o, e) => AnimatePage();
 		}
 
 		private void CheckButton(Button button)
@@ -152,6 +154,22 @@ namespace InternetTest
 			CheckButton(DownDetectorBtn); // Check the "Settings" button
 
 			PageContent.Navigate(Global.DownDetectorPage); // Navigate
+		}
+
+		private void AnimatePage()
+		{
+			Storyboard storyboard = new();
+
+			ThicknessAnimationUsingKeyFrames t = new();
+			t.KeyFrames.Add(new SplineThicknessKeyFrame(new(0, 30, 0, 0), KeyTime.FromTimeSpan(TimeSpan.FromSeconds(0))));
+			t.KeyFrames.Add(new SplineThicknessKeyFrame(new(0), KeyTime.FromTimeSpan(TimeSpan.FromSeconds(0.1))));
+			t.AccelerationRatio = 0.5;
+
+			storyboard.Children.Add(t);
+
+			Storyboard.SetTargetName(t, PageContent.Name);
+			Storyboard.SetTargetProperty(t, new(Frame.MarginProperty));
+			storyboard.Begin(this);
 		}
 	}
 }
