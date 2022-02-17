@@ -103,6 +103,12 @@ namespace InternetTest.Pages
 					SettingsManager.Save(); // Save chnages
 				}
 
+				if (!Global.Settings.IsFirstRun.HasValue)
+				{
+					Global.Settings.IsFirstRun = true; // Set default value
+					SettingsManager.Save();
+				}
+
 				HTTPSRadioBtn.IsChecked = Global.Settings.UseHTTPS.Value; // Set
 				HTTPRadioBtn.IsChecked = !Global.Settings.UseHTTPS.Value; // Set
 
@@ -549,7 +555,8 @@ namespace InternetTest.Pages
 					UseHTTPS = true,
 					IsThemeSystem = true,
 					TestNotification = true,
-					DownDetectorNotification = true
+					DownDetectorNotification = true,
+					IsFirstRun = false, // Default is true but the user just want to reset their settings to default, so there is no need to put them back to the start
 				}; // Create default settings
 
 				SettingsManager.Save(); // Save the changes

@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.Windows;
 using System.Windows;
 
 namespace InternetTest
@@ -43,7 +44,14 @@ namespace InternetTest
 			Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
 			Global.DownDetectorPage = new(); // Create a new DownDetectorPage
 
-			base.OnStartup(e);
+			if (Global.Settings.IsFirstRun.Value)
+			{
+				new FirstRunWindow().Show(); // Show the "First run" experience
+			}
+			else
+			{
+				new MainWindow().Show(); // Start InternetTest
+			}
 		}
 	}
 }

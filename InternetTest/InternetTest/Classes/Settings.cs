@@ -95,6 +95,11 @@ namespace InternetTest.Classes
 		/// True if InterentTest should show a notification banner when a <see cref="Pages.DownDetectorPage"/> test is done.
 		/// </summary>
 		public bool? DownDetectorNotification { get; set; }
+
+		/// <summary>
+		/// True if this is the first time InternetTest is launched.
+		/// </summary>
+		public bool? IsFirstRun { get; set; }
 	}
 
 	/// <summary>
@@ -133,7 +138,8 @@ namespace InternetTest.Classes
 					UseHTTPS = true,
 					IsThemeSystem = true,
 					TestNotification = true,
-					DownDetectorNotification = true
+					DownDetectorNotification = true,
+					IsFirstRun = true,
 				}; // Create a new settings file
 
 				Save(); // Save the changes

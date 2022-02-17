@@ -23,6 +23,7 @@
     <None Remove="Images\BackgroundBlack.png" />
     <None Remove="Images\BackgroundWhite.png" />
     <None Remove="Images\DarkTheme.png" />
+    <None Remove="Images\InternetTest.png" />
     <None Remove="Images\LightTheme.png" />
     <None Remove="Images\SystemTheme.png" />
   </ItemGroup>
@@ -75,6 +76,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\DarkTheme.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\InternetTest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\LightTheme.png">
