@@ -444,4 +444,7 @@
   <data name="WelcomeThemeTitle" xml:space="preserve">
     <value>Faites d'InternetTest le vôtre</value>
   </data>
+  <data name="LetsGo" xml:space="preserve">
+    <value>Allons-y</value>
+  </data>
 </root>

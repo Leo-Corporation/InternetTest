@@ -511,6 +511,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Let&apos;s go.
+        /// </summary>
+        public static string LetsGo {
+            get {
+                return ResourceManager.GetString("LetsGo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Licenses.
         /// </summary>
         public static string Licenses {
