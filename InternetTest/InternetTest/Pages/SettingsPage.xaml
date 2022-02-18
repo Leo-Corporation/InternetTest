@@ -239,29 +239,42 @@
                     </StackPanel>
                 </Expander>
 
-                <TextBlock Text="{x:Static lang:Resources.Data}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
-				<StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-					<Button x:Name="ImportBtn" Click="ImportBtn_Click" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Margin="0,0,10,0">
-						<StackPanel Orientation="Horizontal">
-							<TextBlock Text="&#xF151;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="16"/>
-							<TextBlock Text="{x:Static lang:Resources.Import}" VerticalAlignment="Center"/>
-						</StackPanel>
-					</Button>
-					<Button x:Name="ExportBtn" Click="ExportBtn_Click" Background="{Binding Source={StaticResource Background2}}" Foreground="{Binding Source={StaticResource Foreground1}}" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" MouseEnter="BtnEnter" MouseLeave="BtnLeave">
-						<StackPanel Orientation="Horizontal">
-							<TextBlock Text="&#xF1A5;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="16"/>
-							<TextBlock Text="{x:Static lang:Resources.Export}" VerticalAlignment="Center"/>
-						</StackPanel>
-					</Button>
-				</StackPanel>
-				<Button x:Name="ResetSettingsLink" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="Bold" Cursor="Hand" Click="ResetSettingsLink_Click" Style="{DynamicResource LinkButtonStyle}" HorizontalAlignment="Left" Padding="5" Background="{x:Null}">
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="&#xF583;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontWeight="Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
-						<TextBlock Text="{x:Static lang:Resources.ResetSettings}" VerticalAlignment="Center"/>
-					</StackPanel>
-				</Button>
+                <Expander Style="{DynamicResource ExpanderStyle1}" Margin="10,10,10,0" Background="{Binding Source={StaticResource Background2}}" Foreground="{Binding Source={StaticResource Foreground1}}">
+                    <Expander.Header>
+                        <StackPanel Margin="10 15" Orientation="Horizontal">
+                            <TextBlock Text="&#xF419;" FontSize="22" FontFamily="..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+                            <StackPanel>
+                                <TextBlock Text="{x:Static lang:Resources.Data}" FontSize="18" VerticalAlignment="Center" FontWeight="Bold" Margin="10,0,0,0"/>
+                                <TextBlock Text="{x:Static lang:Resources.ManageData}" FontSize="13" VerticalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Expander.Header>
 
-				<TextBlock Text="{x:Static lang:Resources.Licenses}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
+                    <StackPanel Margin="10">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <Button x:Name="ImportBtn" Click="ImportBtn_Click" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Margin="0,0,10,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xF151;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="16"/>
+                                    <TextBlock Text="{x:Static lang:Resources.Import}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="ExportBtn" Click="ExportBtn_Click" Background="{Binding Source={StaticResource Background2}}" Foreground="{Binding Source={StaticResource Foreground1}}" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" MouseEnter="BtnEnter" MouseLeave="BtnLeave">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xF1A5;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="16"/>
+                                    <TextBlock Text="{x:Static lang:Resources.Export}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <Button x:Name="ResetSettingsLink" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="Bold" Cursor="Hand" Click="ResetSettingsLink_Click" Style="{DynamicResource LinkButtonStyle}" HorizontalAlignment="Left" Padding="5" Background="{x:Null}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xF583;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontWeight="Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static lang:Resources.ResetSettings}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Expander>
+
+                <TextBlock Text="{x:Static lang:Resources.Licenses}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
 				<Button Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="Bold" Cursor="Hand" Click="Button_Click" HorizontalAlignment="Left" Style="{DynamicResource LinkButtonStyle}" Padding="5" Background="{x:Null}">
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Text="&#xF583;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontWeight="Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>

@@ -453,4 +453,7 @@
   <data name="NotificationsSettings" xml:space="preserve">
     <value>Paramètres des notifications.</value>
   </data>
+  <data name="ManageData" xml:space="preserve">
+    <value>Gérez vos données.</value>
+  </data>
 </root>
