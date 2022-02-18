@@ -292,6 +292,12 @@
                                 <TextBlock Text="{x:Static lang:Resources.SeeLicenses}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
+                        <Button x:Name="CreditsBtn" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="Bold" Cursor="Hand" Click="CreditsBtn_Click" HorizontalAlignment="Left" Style="{DynamicResource LinkButtonStyle}" Padding="5" Background="{x:Null}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xF583;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontWeight="Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static lang:Resources.CreditsAndThanks}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
                 </Expander>
                 

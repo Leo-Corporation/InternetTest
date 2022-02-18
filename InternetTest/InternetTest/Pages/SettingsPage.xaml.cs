@@ -575,5 +575,14 @@ namespace InternetTest.Pages
 				"LeoCorpLibrary - MIT License - © 2020-2022 Léo Corporation\n" +
 				"InternetTest - MIT License - © 2021-2022 Léo Corporation", $"{Properties.Resources.InternetTest} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
 		}
+
+		private void CreditsBtn_Click(object sender, RoutedEventArgs e)
+		{
+			MessageBox.Show($"{Properties.Resources.CreditsAndThanks}\n\n" +
+				$"@dependabot\n" +
+				$"@Leo-Peyronnet\n" +
+				$"@wcxu21",
+				Properties.Resources.CreditsAndThanks, MessageBoxButton.OK, MessageBoxImage.Information);
+		}
 	}
 }

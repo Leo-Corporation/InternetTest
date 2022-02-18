@@ -436,4 +436,7 @@
   <data name="ManageData" xml:space="preserve">
     <value>Manage your data.</value>
   </data>
+  <data name="CreditsAndThanks" xml:space="preserve">
+    <value>Credits and special thanks</value>
+  </data>
 </root>

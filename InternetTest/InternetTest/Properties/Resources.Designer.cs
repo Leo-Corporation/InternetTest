@@ -223,6 +223,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Credits and special thanks.
+        /// </summary>
+        public static string CreditsAndThanks {
+            get {
+                return ResourceManager.GetString("CreditsAndThanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dark.
         /// </summary>
         public static string Dark {
