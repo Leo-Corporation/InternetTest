@@ -664,6 +664,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Notifications settings..
+        /// </summary>
+        public static string NotificationsSettings {
+            get {
+                return ResourceManager.GetString("NotificationsSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show a notification when a test is completed.
         /// </summary>
         public static string NotifyTest {

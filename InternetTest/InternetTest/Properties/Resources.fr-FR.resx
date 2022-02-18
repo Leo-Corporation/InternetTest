@@ -412,7 +412,7 @@
     <value>Pas de prochaine vérification</value>
   </data>
   <data name="ShowNotificationDownDetector" xml:space="preserve">
-    <value>Montrer une notification lorsqu'un test DownDetector est terminé</value>
+    <value>Montrer une notification lors d'un test DownDetector</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Suivant</value>
@@ -449,5 +449,8 @@
   </data>
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Changer la langue d'InternetTest.</value>
+  </data>
+  <data name="NotificationsSettings" xml:space="preserve">
+    <value>Paramètres des notifications.</value>
   </data>
 </root>

@@ -52,7 +52,7 @@
                         </StackPanel>
                     </Expander.Header>
 
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Margin="10">
                         <Border x:Name="LightBorder" CornerRadius="10" Margin="5" Background="{Binding Source={StaticResource Background1}}" BorderThickness="3" BorderBrush="{x:Null}" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" MouseLeftButtonUp="LightBorder_MouseLeftButtonUp">
                             <StackPanel	Orientation="Vertical">
                                 <Rectangle RadiusX="10" RadiusY="10" Width="100" Height="100" HorizontalAlignment="Center">
@@ -123,8 +123,23 @@
                     </Grid>
                 </Border>
 
-                
-                
+                <Expander Style="{DynamicResource ExpanderStyle1}" Margin="10,10,10,0" Background="{Binding Source={StaticResource Background2}}" Foreground="{Binding Source={StaticResource Foreground1}}">
+                    <Expander.Header>
+                        <StackPanel Margin="10 15" Orientation="Horizontal">
+                            <TextBlock Text="&#xF115;" FontSize="22" FontFamily="..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+                            <StackPanel>
+                                <TextBlock Text="{x:Static lang:Resources.Notifications}" FontSize="18" VerticalAlignment="Center" FontWeight="Bold" Margin="10,0,0,0"/>
+                                <TextBlock Text="{x:Static lang:Resources.NotificationsSettings}" FontSize="13" VerticalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Expander.Header>
+
+                    <StackPanel Margin="10">
+                        <CheckBox Margin="0 2 0 2" x:Name="NotifyTestChk" Style="{DynamicResource CheckBoxStyle1}" Content="{x:Static lang:Resources.NotifyTest}" BorderThickness="3" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" VerticalContentAlignment="Center" Unchecked="NotifyTestChk_Checked" Checked="NotifyTestChk_Checked"/>
+                        <CheckBox Margin="0 2 0 2" x:Name="NotifyDownDetectorChk" Style="{DynamicResource CheckBoxStyle1}" Content="{x:Static lang:Resources.ShowNotificationDownDetector}" BorderThickness="3" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" VerticalContentAlignment="Center" Unchecked="NotifyDownDetectorChk_Checked" Checked="NotifyDownDetectorChk_Checked"/>
+                    </StackPanel>
+                </Expander>
+
                 <TextBlock Text="{x:Static lang:Resources.HTTPProtocol}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
 				<TextBlock Text="{x:Static lang:Resources.DefaultProtocol}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14"/>
 
@@ -136,23 +151,17 @@
                 <TextBlock Text="{x:Static lang:Resources.TestSite}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
 				<TextBlock Text="{x:Static lang:Resources.TestSiteDescription}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14"/>
 
-				<StackPanel Orientation="Horizontal">
-					<TextBox x:Name="TestSiteTxt" TextChanged="TestSiteTxt_TextChanged" Style="{DynamicResource TextBoxStyle1}" Padding="3" Margin="0,5,5,5" Width="197" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" Foreground="{Binding Source={StaticResource Foreground1}}"/>
-					<Button x:Name="TestSiteApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="TestSiteApplyBtn_Click" Visibility="Hidden">
-						<StackPanel Orientation="Horizontal">
-							<TextBlock Text="&#xF296;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="16"/>
-							<TextBlock Text="{x:Static lang:Resources.Apply}" VerticalAlignment="Center"/>
-						</StackPanel>
-					</Button>
-				</StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="TestSiteTxt" TextChanged="TestSiteTxt_TextChanged" Style="{DynamicResource TextBoxStyle1}" Padding="3" Margin="0,5,5,5" Width="197" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+                    <Button x:Name="TestSiteApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="TestSiteApplyBtn_Click" Visibility="Hidden">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xF296;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="16"/>
+                            <TextBlock Text="{x:Static lang:Resources.Apply}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
 
-				<TextBlock Text="{x:Static lang:Resources.Notifications}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
-				<TextBlock Text="{x:Static lang:Resources.WhenTestExecuted}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14"/>
-
-				<CheckBox Margin="0 2 0 2" x:Name="NotifyTestChk" Style="{DynamicResource CheckBoxStyle1}" Content="{x:Static lang:Resources.NotifyTest}" BorderThickness="3" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" VerticalContentAlignment="Center" Unchecked="NotifyTestChk_Checked" Checked="NotifyTestChk_Checked"/>
-				<CheckBox Margin="0 2 0 2" x:Name="NotifyDownDetectorChk" Style="{DynamicResource CheckBoxStyle1}" Content="{x:Static lang:Resources.ShowNotificationDownDetector}" BorderThickness="3" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" VerticalContentAlignment="Center" Unchecked="NotifyDownDetectorChk_Checked" Checked="NotifyDownDetectorChk_Checked"/>
-
-				<TextBlock Text="{x:Static lang:Resources.OnStart}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
+                <TextBlock Text="{x:Static lang:Resources.OnStart}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
 				<CheckBox Margin="0 10 0 2" x:Name="LaunchTestOnStartChk" Style="{DynamicResource CheckBoxStyle1}" Content="{x:Static lang:Resources.LaunchTestOnStart}" BorderThickness="3" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" VerticalContentAlignment="Center" Unchecked="LaunchTestOnStartChk_Checked" Checked="LaunchTestOnStartChk_Checked"/>
 				<TextBlock Text="{x:Static lang:Resources.StartupPage}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" Margin="0,10,0,0"/>
 

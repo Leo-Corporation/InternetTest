@@ -430,4 +430,7 @@
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Change the language of InternetTest.</value>
   </data>
+  <data name="NotificationsSettings" xml:space="preserve">
+    <value>Notifications settings.</value>
+  </data>
 </root>
