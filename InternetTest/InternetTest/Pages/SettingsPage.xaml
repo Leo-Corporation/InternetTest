@@ -41,50 +41,60 @@
 					</StackPanel>
 				</Border>
 
-				<TextBlock Text="{x:Static lang:Resources.Theme}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
-				<TextBlock Text="{x:Static lang:Resources.ChangeTheme}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14"/>
+                <Expander Style="{DynamicResource ExpanderStyle1}" Margin="10,10,10,0" Background="{Binding Source={StaticResource Background2}}" Foreground="{Binding Source={StaticResource Foreground1}}">
+                    <Expander.Header>
+                        <StackPanel Margin="10 15" Orientation="Horizontal">
+                            <TextBlock Text="&#xF33C;" FontSize="22" FontFamily="..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+                            <StackPanel>
+                                <TextBlock Text="{x:Static lang:Resources.Theme}" FontSize="18" VerticalAlignment="Center" FontWeight="Bold" Margin="10,0,0,0"/>
+                                <TextBlock Text="{x:Static lang:Resources.ChangeTheme}" FontSize="13" VerticalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Expander.Header>
 
-				<StackPanel Orientation="Horizontal">
-					<Border x:Name="LightBorder" CornerRadius="10" Margin="5" Background="{Binding Source={StaticResource Background1}}" BorderThickness="3" BorderBrush="{x:Null}" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" MouseLeftButtonUp="LightBorder_MouseLeftButtonUp">
-						<StackPanel	Orientation="Vertical">
-							<Rectangle RadiusX="10" RadiusY="10" Width="100" Height="100" HorizontalAlignment="Center">
-								<Rectangle.Fill>
-									<ImageBrush ImageSource="..\Images\LightTheme.png"/>
-								</Rectangle.Fill>
-							</Rectangle>
-							<RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="LightRadioBtn" Checked="LightRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.Light}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
-						</StackPanel>
-					</Border>
+                    <StackPanel Orientation="Horizontal">
+                        <Border x:Name="LightBorder" CornerRadius="10" Margin="5" Background="{Binding Source={StaticResource Background1}}" BorderThickness="3" BorderBrush="{x:Null}" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" MouseLeftButtonUp="LightBorder_MouseLeftButtonUp">
+                            <StackPanel	Orientation="Vertical">
+                                <Rectangle RadiusX="10" RadiusY="10" Width="100" Height="100" HorizontalAlignment="Center">
+                                    <Rectangle.Fill>
+                                        <ImageBrush ImageSource="..\Images\LightTheme.png"/>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="LightRadioBtn" Checked="LightRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.Light}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
+                            </StackPanel>
+                        </Border>
 
-					<Border x:Name="DarkBorder" CornerRadius="10" Margin="5" Background="{Binding Source={StaticResource Background1}}" BorderThickness="3" BorderBrush="{x:Null}" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" MouseLeftButtonUp="DarkBorder_MouseLeftButtonUp">
-						<StackPanel Orientation="Vertical">
-							<Rectangle RadiusX="10" RadiusY="10" Width="100" Height="100" HorizontalAlignment="Center">
-								<Rectangle.Fill>
-									<ImageBrush ImageSource="..\Images\DarkTheme.png"/>
-								</Rectangle.Fill>
-							</Rectangle>
-							<RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="DarkRadioBtn" Checked="DarkRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.Dark}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
-						</StackPanel>
-					</Border>
+                        <Border x:Name="DarkBorder" CornerRadius="10" Margin="5" Background="{Binding Source={StaticResource Background1}}" BorderThickness="3" BorderBrush="{x:Null}" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" MouseLeftButtonUp="DarkBorder_MouseLeftButtonUp">
+                            <StackPanel Orientation="Vertical">
+                                <Rectangle RadiusX="10" RadiusY="10" Width="100" Height="100" HorizontalAlignment="Center">
+                                    <Rectangle.Fill>
+                                        <ImageBrush ImageSource="..\Images\DarkTheme.png"/>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="DarkRadioBtn" Checked="DarkRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.Dark}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
+                            </StackPanel>
+                        </Border>
 
-					<Border x:Name="SystemBorder" CornerRadius="10" Margin="5" Background="{Binding Source={StaticResource Background1}}" BorderThickness="3" BorderBrush="{x:Null}" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" MouseLeftButtonUp="SystemBorder_MouseLeftButtonUp">
-						<StackPanel Orientation="Vertical">
-							<Rectangle RadiusX="10" RadiusY="10" Width="100" Height="100" HorizontalAlignment="Center">
-								<Rectangle.Fill>
-									<ImageBrush ImageSource="..\Images\SystemTheme.png"/>
-								</Rectangle.Fill>
-							</Rectangle>
-							<RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="SystemRadioBtn" Checked="SystemRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.System}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
-						</StackPanel>
-					</Border>
+                        <Border x:Name="SystemBorder" CornerRadius="10" Margin="5" Background="{Binding Source={StaticResource Background1}}" BorderThickness="3" BorderBrush="{x:Null}" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" MouseLeftButtonUp="SystemBorder_MouseLeftButtonUp">
+                            <StackPanel Orientation="Vertical">
+                                <Rectangle RadiusX="10" RadiusY="10" Width="100" Height="100" HorizontalAlignment="Center">
+                                    <Rectangle.Fill>
+                                        <ImageBrush ImageSource="..\Images\SystemTheme.png"/>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="SystemRadioBtn" Checked="SystemRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.System}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
+                            </StackPanel>
+                        </Border>
 
-					<Button x:Name="ThemeApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="ThemeApplyBtn_Click" Visibility="Hidden">
-						<StackPanel Orientation="Horizontal">
-							<TextBlock Text="&#xF296;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="16"/>
-							<TextBlock Text="{x:Static lang:Resources.Apply}" VerticalAlignment="Center"/>
-						</StackPanel>
-					</Button>
-				</StackPanel>
+                        <Button x:Name="ThemeApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="ThemeApplyBtn_Click" Visibility="Hidden">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xF296;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="16"/>
+                                <TextBlock Text="{x:Static lang:Resources.Apply}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Expander>
+                
 
 				<TextBlock Text="{x:Static lang:Resources.HTTPProtocol}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
 				<TextBlock Text="{x:Static lang:Resources.DefaultProtocol}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14"/>
