@@ -447,4 +447,7 @@
   <data name="LetsGo" xml:space="preserve">
     <value>Allons-y</value>
   </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Changer la langue d'InternetTest.</value>
+  </data>
 </root>

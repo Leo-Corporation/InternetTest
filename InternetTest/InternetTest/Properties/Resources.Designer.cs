@@ -106,6 +106,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change the language of InternetTest..
+        /// </summary>
+        public static string ChangeLanguage {
+            get {
+                return ResourceManager.GetString("ChangeLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Changes will be applied after a restart of InternetTest..
         /// </summary>
         public static string ChangesApplyAfterRestart {

@@ -427,4 +427,7 @@
   <data name="LetsGo" xml:space="preserve">
     <value>Let's go</value>
   </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Change the language of InternetTest.</value>
+  </data>
 </root>
