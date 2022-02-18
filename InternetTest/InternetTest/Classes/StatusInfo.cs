@@ -22,12 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-namespace InternetTest.Classes
-{
-	/// <summary>
-	/// A class that contains the status code, and the status message of request.
-	/// </summary>
-	/// <param name="StatusCode">The status code of the request.</param>
-	/// <param name="StatusMessage">The status message of the request.</param>
-	public record StatusInfo(int StatusCode, string StatusMessage);
-}
+namespace InternetTest.Classes;
+
+/// <summary>
+/// A class that contains the status code, and the status message of request.
+/// </summary>
+/// <param name="StatusCode">The status code of the request.</param>
+/// <param name="StatusMessage">The status message of the request.</param>
+public record StatusInfo(int StatusCode, string StatusMessage);

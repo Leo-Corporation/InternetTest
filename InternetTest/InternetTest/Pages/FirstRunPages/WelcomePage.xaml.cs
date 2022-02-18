@@ -24,22 +24,21 @@ SOFTWARE.
 using System;
 using System.Windows.Controls;
 
-namespace InternetTest.Pages.FirstRunPages
-{
-	/// <summary>
-	/// Interaction logic for WelcomePage.xaml
-	/// </summary>
-	public partial class WelcomePage : Page
-	{
-		public WelcomePage()
-		{
-			InitializeComponent();
-			InitUI(); // Load the UI
-		}
+namespace InternetTest.Pages.FirstRunPages;
 
-		private void InitUI()
-		{
-			WelcomeTxt.Text = $"{Properties.Resources.Welcome}, {Environment.UserName}."; // Say hello to the user
-		}
+/// <summary>
+/// Interaction logic for WelcomePage.xaml
+/// </summary>
+public partial class WelcomePage : Page
+{
+	public WelcomePage()
+	{
+		InitializeComponent();
+		InitUI(); // Load the UI
+	}
+
+	private void InitUI()
+	{
+		WelcomeTxt.Text = $"{Properties.Resources.Welcome}, {Environment.UserName}."; // Say hello to the user
 	}
 }

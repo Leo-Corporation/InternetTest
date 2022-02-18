@@ -28,62 +28,61 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 
-namespace InternetTest.Windows
+namespace InternetTest.Windows;
+
+/// <summary>
+/// Interaction logic for FirstRunWindow.xaml
+/// </summary>
+public partial class FirstRunWindow : Window
 {
-	/// <summary>
-	/// Interaction logic for FirstRunWindow.xaml
-	/// </summary>
-	public partial class FirstRunWindow : Window
+	static WelcomePage WelcomePage => new(); // PageID = 0
+	static TutorialPage TutorialPage => new(); // PageID = 1
+	static ThemePage ThemePage => new(); // PageID = 2
+	static LanguagePage LanguagePage => new(); // PageID = 3
+	static UpdatePage UpdatePage => new(); // PageID = 4
+
+	int pageID = 0;
+	public FirstRunWindow()
 	{
-		WelcomePage WelcomePage => new(); // PageID = 0
-		TutorialPage TutorialPage => new(); // PageID = 1
-		ThemePage ThemePage => new(); // PageID = 2
-		LanguagePage LanguagePage => new(); // PageID = 3
-		UpdatePage UpdatePage => new(); // PageID = 4
+		InitializeComponent();
+		InitUI(); // Load the UI
+	}
 
-		int pageID = 0;
-		public FirstRunWindow()
+	private void InitUI()
+	{
+		PageViewer.Navigate(WelcomePage); // Show welcome page
+	}
+
+	private void CloseBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Environment.Exit(0); // Exit and close InternetTest
+	}
+
+	private void NextBtn_Click(object sender, RoutedEventArgs e)
+	{
+		pageID++; // Increment
+		PageViewer.Navigate(pageID switch
 		{
-			InitializeComponent();
-			InitUI(); // Load the UI
+			0 => WelcomePage,
+			1 => TutorialPage,
+			2 => ThemePage,
+			3 => LanguagePage,
+			4 => UpdatePage,
+			_ => WelcomePage // By default go the home page
+		}); // Navigate to the next page
+
+		if (pageID == 4)
+		{
+			NextTxt.Text = Properties.Resources.LetsGo; // Set text
 		}
 
-		private void InitUI()
+		if (pageID == 5)
 		{
-			PageViewer.Navigate(WelcomePage); // Show welcome page
-		}
+			Global.Settings.IsFirstRun = false;
+			SettingsManager.Save();
 
-		private void CloseBtn_Click(object sender, RoutedEventArgs e)
-		{
-			Environment.Exit(0); // Exit and close InternetTest
-		}
-
-		private void NextBtn_Click(object sender, RoutedEventArgs e)
-		{
-			pageID++; // Increment
-			PageViewer.Navigate(pageID switch
-			{
-				0 => WelcomePage,
-				1 => TutorialPage,
-				2 => ThemePage,
-				3 => LanguagePage,
-				4 => UpdatePage,
-				_ => WelcomePage // By default go the home page
-			}); // Navigate to the next page
-
-			if (pageID == 4)
-			{
-				NextTxt.Text = Properties.Resources.LetsGo; // Set text
-			}
-
-			if (pageID == 5)
-			{
-				Global.Settings.IsFirstRun = false;
-				SettingsManager.Save();
-
-				Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe"); // Start
-				Environment.Exit(0); // Close
-			}
+			Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe"); // Start
+			Environment.Exit(0); // Close
 		}
 	}
 }

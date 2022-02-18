@@ -25,50 +25,49 @@ using InternetTest.Classes;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace InternetTest.Pages.FirstRunPages
+namespace InternetTest.Pages.FirstRunPages;
+
+/// <summary>
+/// Interaction logic for LanguagePage.xaml
+/// </summary>
+public partial class LanguagePage : Page
 {
-	/// <summary>
-	/// Interaction logic for LanguagePage.xaml
-	/// </summary>
-	public partial class LanguagePage : Page
+	public LanguagePage()
 	{
-		public LanguagePage()
+		InitializeComponent();
+		InitUI(); // Load the UI
+	}
+
+	private void InitUI()
+	{
+		// Load LangComboBox
+		LangComboBox.Items.Clear(); // Clear
+		LangComboBox.Items.Add(Properties.Resources.Default); // Add "default"
+
+		for (int i = 0; i < Global.LanguageList.Count; i++)
 		{
-			InitializeComponent();
-			InitUI(); // Load the UI
+			LangComboBox.Items.Add(Global.LanguageList[i]);
 		}
 
-		private void InitUI()
+		LangComboBox.SelectedIndex = (Global.Settings.Language == "_default") ? 0 : Global.LanguageCodeList.IndexOf(Global.Settings.Language) + 1;
+		LangApplyBtn.Visibility = Visibility.Collapsed; // Hide
+	}
+
+	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+		LangApplyBtn.Visibility = Visibility.Visible; // Show
+	}
+
+	private void LangApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.Language = LangComboBox.Text switch
 		{
-			// Load LangComboBox
-			LangComboBox.Items.Clear(); // Clear
-			LangComboBox.Items.Add(Properties.Resources.Default); // Add "default"
-
-			for (int i = 0; i < Global.LanguageList.Count; i++)
-			{
-				LangComboBox.Items.Add(Global.LanguageList[i]);
-			}
-
-			LangComboBox.SelectedIndex = (Global.Settings.Language == "_default") ? 0 : Global.LanguageCodeList.IndexOf(Global.Settings.Language) + 1;
-			LangApplyBtn.Visibility = Visibility.Collapsed; // Hide
-		}
-
-		private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			LangApplyBtn.Visibility = Visibility.Visible; // Show
-		}
-
-		private void LangApplyBtn_Click(object sender, RoutedEventArgs e)
-		{
-			Global.Settings.Language = LangComboBox.Text switch
-			{
-				"English (United States)" => Global.LanguageCodeList[0], // Set the settings value
-				"Français (France)" => Global.LanguageCodeList[1], // Set the settings value
-				"中文（简体）" => Global.LanguageCodeList[2], // Set the settings value
-				_ => "_default" // Set the settings value
-			};
-			SettingsManager.Save(); // Save the changes
-			LangApplyBtn.Visibility = Visibility.Hidden; // Hide
-		}
+			"English (United States)" => Global.LanguageCodeList[0], // Set the settings value
+			"Français (France)" => Global.LanguageCodeList[1], // Set the settings value
+			"中文（简体）" => Global.LanguageCodeList[2], // Set the settings value
+			_ => "_default" // Set the settings value
+		};
+		SettingsManager.Save(); // Save the changes
+		LangApplyBtn.Visibility = Visibility.Hidden; // Hide
 	}
 }

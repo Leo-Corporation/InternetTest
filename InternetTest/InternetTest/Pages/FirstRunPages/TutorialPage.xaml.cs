@@ -23,16 +23,15 @@ SOFTWARE.
 */
 using System.Windows.Controls;
 
-namespace InternetTest.Pages.FirstRunPages
+namespace InternetTest.Pages.FirstRunPages;
+
+/// <summary>
+/// Interaction logic for TutorialPage.xaml
+/// </summary>
+public partial class TutorialPage : Page
 {
-	/// <summary>
-	/// Interaction logic for TutorialPage.xaml
-	/// </summary>
-	public partial class TutorialPage : Page
+	public TutorialPage()
 	{
-		public TutorialPage()
-		{
-			InitializeComponent();
-		}
+		InitializeComponent();
 	}
 }

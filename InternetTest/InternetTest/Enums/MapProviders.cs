@@ -22,36 +22,35 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-namespace InternetTest.Enums
+namespace InternetTest.Enums;
+
+/// <summary>
+/// Contains available map providers for IP position.
+/// </summary>
+public enum MapProviders
 {
 	/// <summary>
-	/// Contains available map providers for IP position.
+	/// The OpenStreetMap map provider.
 	/// </summary>
-	public enum MapProviders
-	{
-		/// <summary>
-		/// The OpenStreetMap map provider.
-		/// </summary>
-		OpenStreetMap,
+	OpenStreetMap,
 
-		/// <summary>
-		/// The Bing Maps map provider.
-		/// </summary>
-		BingMaps,
+	/// <summary>
+	/// The Bing Maps map provider.
+	/// </summary>
+	BingMaps,
 
-		/// <summary>
-		/// The Google Maps map provider.
-		/// </summary>
-		GoogleMaps,
+	/// <summary>
+	/// The Google Maps map provider.
+	/// </summary>
+	GoogleMaps,
 
-		/// <summary>
-		/// The Yandex map provider
-		/// </summary>
-		Yandex,
+	/// <summary>
+	/// The Yandex map provider
+	/// </summary>
+	Yandex,
 
-		/// <summary>
-		/// The HERE WeGo map provider
-		/// </summary>
-		HereWeGo
-	}
+	/// <summary>
+	/// The HERE WeGo map provider
+	/// </summary>
+	HereWeGo
 }

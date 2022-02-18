@@ -22,88 +22,87 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-namespace InternetTest.Classes
+namespace InternetTest.Classes;
+
+/// <summary>
+/// This class contains an IP Information
+/// </summary>
+public class IPInfo
 {
 	/// <summary>
-	/// This class contains an IP Information
+	/// <c>success</c> or <c>fail</c>.
 	/// </summary>
-	public class IPInfo
+	public string Status { get; set; }
+
+	/// <summary>
+	/// Country name.
+	/// </summary>
+	public string Country { get; set; }
+
+	/// <summary>
+	/// Two-letter country code ISO 3166-1 alpha-2.
+	/// </summary>
+	public string CountryCode { get; set; }
+
+	/// <summary>
+	/// Region/state short code (FIPS or ISO).
+	/// </summary>
+	public string Region { get; set; }
+
+	/// <summary>
+	/// Region/state.
+	/// </summary>
+	public string RegionName { get; set; }
+
+	/// <summary>
+	/// City.
+	/// </summary>
+	public string City { get; set; }
+
+	/// <summary>
+	/// Zip code.
+	/// </summary>
+	public string Zip { get; set; }
+
+	/// <summary>
+	/// Latitude.
+	/// </summary>
+	public string Lat { get; set; }
+
+	/// <summary>
+	/// Longitude.
+	/// </summary>
+	public string Lon { get; set; }
+
+	/// <summary>
+	/// Timezone (tz).
+	/// </summary>
+	public string TimeZone { get; set; }
+
+	/// <summary>
+	/// ISP name.
+	/// </summary>
+	public string ISP { get; set; }
+
+	/// <summary>
+	/// Organization name.
+	/// </summary>
+	public string Org { get; set; }
+
+	/// <summary>
+	/// IP used for the query.
+	/// </summary>
+	public string Query { get; set; }
+
+	public override string ToString()
 	{
-		/// <summary>
-		/// <c>success</c> or <c>fail</c>.
-		/// </summary>
-		public string Status { get; set; }
-
-		/// <summary>
-		/// Country name.
-		/// </summary>
-		public string Country { get; set; }
-
-		/// <summary>
-		/// Two-letter country code ISO 3166-1 alpha-2.
-		/// </summary>
-		public string CountryCode { get; set; }
-
-		/// <summary>
-		/// Region/state short code (FIPS or ISO).
-		/// </summary>
-		public string Region { get; set; }
-
-		/// <summary>
-		/// Region/state.
-		/// </summary>
-		public string RegionName { get; set; }
-
-		/// <summary>
-		/// City.
-		/// </summary>
-		public string City { get; set; }
-
-		/// <summary>
-		/// Zip code.
-		/// </summary>
-		public string Zip { get; set; }
-
-		/// <summary>
-		/// Latitude.
-		/// </summary>
-		public string Lat { get; set; }
-
-		/// <summary>
-		/// Longitude.
-		/// </summary>
-		public string Lon { get; set; }
-
-		/// <summary>
-		/// Timezone (tz).
-		/// </summary>
-		public string TimeZone { get; set; }
-
-		/// <summary>
-		/// ISP name.
-		/// </summary>
-		public string ISP { get; set; }
-
-		/// <summary>
-		/// Organization name.
-		/// </summary>
-		public string Org { get; set; }
-
-		/// <summary>
-		/// IP used for the query.
-		/// </summary>
-		public string Query { get; set; }
-
-		public override string ToString()
-		{
-			return $"{Properties.Resources.Country}: {Country}\n" +
-				$"{Properties.Resources.Region}: {RegionName}\n" +
-				$"{Properties.Resources.City}: {City}\n" +
-				$"{Properties.Resources.ZIPCode}: {Zip}\n" +
-				$"{Properties.Resources.Latitude}: {Lat}\n" +
-				$"{Properties.Resources.Longitude}: {Lon}\n" +
-				$"{Properties.Resources.Timezone}: {TimeZone}\n" +
-				$"{Properties.Resources.ISP}: {ISP}\n";
-		}
+		return $"{Properties.Resources.Country}: {Country}\n" +
+			$"{Properties.Resources.Region}: {RegionName}\n" +
+			$"{Properties.Resources.City}: {City}\n" +
+			$"{Properties.Resources.ZIPCode}: {Zip}\n" +
+			$"{Properties.Resources.Latitude}: {Lat}\n" +
+			$"{Properties.Resources.Longitude}: {Lon}\n" +
+			$"{Properties.Resources.Timezone}: {TimeZone}\n" +
+			$"{Properties.Resources.ISP}: {ISP}\n";
 	}
 }

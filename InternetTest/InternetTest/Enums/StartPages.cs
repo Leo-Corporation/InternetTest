@@ -22,15 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-namespace InternetTest.Enums
+namespace InternetTest.Enums;
+
+/// <summary>
+/// Pages that can be set for startup.
+/// </summary>
+public enum StartPages
 {
-	/// <summary>
-	/// Pages that can be set for startup.
-	/// </summary>
-	public enum StartPages
-	{
-		Connection,
-		LocalizeIP,
-		DownDetector
-	}
+	Connection,
+	LocalizeIP,
+	DownDetector
 }

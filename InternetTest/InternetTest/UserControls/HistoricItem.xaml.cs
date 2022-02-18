@@ -26,40 +26,39 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace InternetTest.UserControls
+namespace InternetTest.UserControls;
+
+/// <summary>
+/// Interaction logic for HistoricItem.xaml
+/// </summary>
+public partial class HistoricItem : UserControl
 {
-	/// <summary>
-	/// Interaction logic for HistoricItem.xaml
-	/// </summary>
-	public partial class HistoricItem : UserControl
+	string URL { get; init; }
+	string Status { get; init; }
+	StackPanel StackPanel { get; init; }
+	public HistoricItem(string url, string status, StackPanel stackPanel)
 	{
-		string URL { get; init; }
-		string Status { get; init; }
-		StackPanel StackPanel { get; init; }
-		public HistoricItem(string url, string status, StackPanel stackPanel)
-		{
-			InitializeComponent();
-			URL = url;
-			Status = status;
-			StackPanel = stackPanel;
-			InitUI();
-		}
+		InitializeComponent();
+		URL = url;
+		Status = status;
+		StackPanel = stackPanel;
+		InitUI();
+	}
 
-		private void InitUI()
-		{
-			SiteNameTxt.Text = URL; // Set text
-			StateTxt.Text = Status; // Set text
-			StatusIconTxt.Text = Status == Properties.Resources.WebsiteAvailable ? "\uF299" : "\uF36E"; // Set text
-			StatusIconTxt.Foreground = Status == Properties.Resources.WebsiteAvailable ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
-		}
+	private void InitUI()
+	{
+		SiteNameTxt.Text = URL; // Set text
+		StateTxt.Text = Status; // Set text
+		StatusIconTxt.Text = Status == Properties.Resources.WebsiteAvailable ? "\uF299" : "\uF36E"; // Set text
+		StatusIconTxt.Foreground = Status == Properties.Resources.WebsiteAvailable ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
+	}
 
-		private void DismissBtn_Click(object sender, RoutedEventArgs e)
+	private void DismissBtn_Click(object sender, RoutedEventArgs e)
+	{
+		StackPanel.Children.Remove(this); // Remove
+		if (StackPanel.Children.Count == 0)
 		{
-			StackPanel.Children.Remove(this); // Remove
-			if (StackPanel.Children.Count == 0)
-			{
-				Global.DownDetectorPage.HistoryBtn_Click(this, null);
-			}
+			Global.DownDetectorPage.HistoryBtn_Click(this, null);
 		}
 	}
 }
