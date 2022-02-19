@@ -83,14 +83,14 @@
 				</StackPanel>
 
 				<Grid Grid.Row="2" HorizontalAlignment="Center" Margin="0,15,0,0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="80.96"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    
-                    <TextBlock x:Name="AlarmIconTxt" Text="&#xF2E2;" FontSize="80" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Gray}}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        
-                    </TextBlock>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="80.96"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+					
+					<TextBlock x:Name="AlarmIconTxt" Text="&#xF2E2;" FontSize="80" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Gray}}" HorizontalAlignment="Center" VerticalAlignment="Center">
+						
+					</TextBlock>
 					<TextBlock x:Name="NextCheckTxt" Text="{x:Static lang:Resources.NoNextCheck}" FontWeight="Bold" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Center" Grid.Row="1"/>
 				</Grid>
 			</Grid>

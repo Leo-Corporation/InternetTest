@@ -24,41 +24,35 @@ SOFTWARE.
 using InternetTest.Classes;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
-namespace InternetTest.UserControls;
+namespace InternetTest.Pages.FirstRunPages;
 
 /// <summary>
-/// Interaction logic for HistoricItem.xaml
+/// Interaction logic for UpdatePage.xaml
 /// </summary>
-public partial class HistoricItem : UserControl
+public partial class UpdatePage : Page
 {
-	string URL { get; init; }
-	string Status { get; init; }
-	StackPanel StackPanel { get; init; }
-	public HistoricItem(string url, string status, StackPanel stackPanel)
+	public UpdatePage()
 	{
 		InitializeComponent();
-		URL = url;
-		Status = status;
-		StackPanel = stackPanel;
-		InitUI();
+		InitUI(); // Load the UI
 	}
 
 	private void InitUI()
 	{
-		SiteNameTxt.Text = URL; // Set text
-		StateTxt.Text = Status; // Set text
-		StatusIconTxt.Text = Status == Properties.Resources.WebsiteAvailable ? "\uF299" : "\uF36E"; // Set text
-		StatusIconTxt.Foreground = Status == Properties.Resources.WebsiteAvailable ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
+		CheckUpdatesOnStartChk.IsChecked = Global.Settings.CheckUpdatesOnStart; // Set
+		NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdates; // Set
 	}
 
-	private void DismissBtn_Click(object sender, RoutedEventArgs e)
+	private void CheckUpdatesOnStartChk_Checked(object sender, RoutedEventArgs e)
 	{
-		StackPanel.Children.Remove(this); // Remove
-		if (StackPanel.Children.Count == 0)
-		{
-			Global.DownDetectorPage.HistoryBtn_Click(this, null);
-		}
+		Global.Settings.CheckUpdatesOnStart = CheckUpdatesOnStartChk.IsChecked.Value; // Set
+		SettingsManager.Save(); // Save changes
+	}
+
+	private void NotifyUpdatesChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.NotifyUpdates = NotifyUpdatesChk.IsChecked.Value; // Set
+		SettingsManager.Save(); // Save changes
 	}
 }

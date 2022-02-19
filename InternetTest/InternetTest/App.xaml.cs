@@ -22,28 +22,35 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.Windows;
 using System.Windows;
 
-namespace InternetTest
+namespace InternetTest;
+
+/// <summary>
+/// Interaction logic for App.xaml
+/// </summary>
+public partial class App : Application
 {
-	/// <summary>
-	/// Interaction logic for App.xaml
-	/// </summary>
-	public partial class App : Application
+	protected override void OnStartup(StartupEventArgs e)
 	{
-		protected override void OnStartup(StartupEventArgs e)
+		SettingsManager.Load(); // Load settings
+
+		Global.ChangeTheme(); // Change the theme
+		Global.ChangeLanguage(); // Change the language
+
+		Global.SettingsPage = new(); // Create a new SettingsPage
+		Global.ConnectionPage = new(); // Create a new ConnectionPage
+		Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
+		Global.DownDetectorPage = new(); // Create a new DownDetectorPage
+
+		if (Global.Settings.IsFirstRun.Value)
 		{
-			SettingsManager.Load(); // Load settings
-
-			Global.ChangeTheme(); // Change the theme
-			Global.ChangeLanguage(); // Change the language
-
-			Global.SettingsPage = new(); // Create a new SettingsPage
-			Global.ConnectionPage = new(); // Create a new ConnectionPage
-			Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
-			Global.DownDetectorPage = new(); // Create a new DownDetectorPage
-
-			base.OnStartup(e);
+			new FirstRunWindow().Show(); // Show the "First run" experience
+		}
+		else
+		{
+			new MainWindow().Show(); // Start InternetTest
 		}
 	}
 }

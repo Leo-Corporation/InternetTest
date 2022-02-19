@@ -27,40 +27,39 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace InternetTest.UserControls
+namespace InternetTest.UserControls;
+
+/// <summary>
+/// Interaction logic for ConnectionHistoricItem.xaml
+/// </summary>
+public partial class ConnectionHistoricItem : UserControl
 {
-	/// <summary>
-	/// Interaction logic for ConnectionHistoricItem.xaml
-	/// </summary>
-	public partial class ConnectionHistoricItem : UserControl
+	bool Connected { get; init; }
+	StackPanel StackPanel { get; init; }
+	public ConnectionHistoricItem(bool connected, StackPanel stackPanel)
 	{
-		bool Connected { get; init; }
-		StackPanel StackPanel { get; init; }
-		public ConnectionHistoricItem(bool connected, StackPanel stackPanel)
-		{
-			InitializeComponent();
-			Connected = connected;
-			StackPanel = stackPanel;
-			InitUI(); // Load the UI
-		}
+		InitializeComponent();
+		Connected = connected;
+		StackPanel = stackPanel;
+		InitUI(); // Load the UI
+	}
 
-		private void InitUI()
-		{
-			StateTxt.Text = Connected ? Properties.Resources.ConnectedShort : Properties.Resources.NotConnectedShort; // Set text
-			StateIconTxt.Text = Connected ? "\uF299" : "\uF36E"; // Set text
-			TimeTxt.Text = DateTime.Now.ToString("hh:mm");
+	private void InitUI()
+	{
+		StateTxt.Text = Connected ? Properties.Resources.ConnectedShort : Properties.Resources.NotConnectedShort; // Set text
+		StateIconTxt.Text = Connected ? "\uF299" : "\uF36E"; // Set text
+		TimeTxt.Text = DateTime.Now.ToString("hh:mm");
 
-			StateTxt.Foreground = Connected ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
-			StateIconTxt.Foreground = Connected ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
-		}
+		StateTxt.Foreground = Connected ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
+		StateIconTxt.Foreground = Connected ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
+	}
 
-		private void DismissBtn_Click(object sender, RoutedEventArgs e)
+	private void DismissBtn_Click(object sender, RoutedEventArgs e)
+	{
+		StackPanel.Children.Remove(this); // Remove
+		if (StackPanel.Children.Count == 0)
 		{
-			StackPanel.Children.Remove(this); // Remove
-			if (StackPanel.Children.Count == 0)
-			{
-				Global.ConnectionPage.HistoryBtn_Click(this, null);
-			}
+			Global.ConnectionPage.HistoryBtn_Click(this, null);
 		}
 	}
 }

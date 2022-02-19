@@ -412,6 +412,51 @@
     <value>Pas de prochaine vérification</value>
   </data>
   <data name="ShowNotificationDownDetector" xml:space="preserve">
-    <value>Montrer une notification lorsqu'un test DownDetector est terminé</value>
+    <value>Montrer une notification lors d'un test DownDetector</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Retour</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bienvenue</value>
+  </data>
+  <data name="WelcomeThanks" xml:space="preserve">
+    <value>Merci d'utiliser InternetTest ! Commençons !</value>
+  </data>
+  <data name="ChangesApplyAfterRestart" xml:space="preserve">
+    <value>Les modifications seront appliquées après un redémarrage d’InternetTest.</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Localiser</value>
+  </data>
+  <data name="WelcomeTest" xml:space="preserve">
+    <value>Vous n’êtes pas sûr de votre connectivité réseau ? Ne vous inquiétez pas ! Vous pouvez lancer un test via InternetTest pour être sûr si le problème vient de vous ou non.</value>
+  </data>
+  <data name="WelcomeLocate" xml:space="preserve">
+    <value>Vous voulez en savoir plus sur une adresse IP ? InternetTest peut obtenir plus d’informations sur l’IP, et même obtenir son emplacement ! Notez que cette fonctionnalité est alimentée par des services tiers.</value>
+  </data>
+  <data name="WelcomeDownDetector" xml:space="preserve">
+    <value>Parfois, nous allons tous sur un site Web, mais cela prend beaucoup de temps et nous nous demandons tous s’il n’est pas en panne. Grâce à la fonction DownDetector d’InternetTest, vous pouvez trouver une réponse à cette question. Entrez simplement l’URL d’un site Web et vous obtiendrez son statut.</value>
+  </data>
+  <data name="WelcomeThemeTitle" xml:space="preserve">
+    <value>Faites d'InternetTest le vôtre</value>
+  </data>
+  <data name="LetsGo" xml:space="preserve">
+    <value>Allons-y</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Changer la langue d'InternetTest.</value>
+  </data>
+  <data name="NotificationsSettings" xml:space="preserve">
+    <value>Paramètres des notifications.</value>
+  </data>
+  <data name="ManageData" xml:space="preserve">
+    <value>Gérez vos données.</value>
+  </data>
+  <data name="CreditsAndThanks" xml:space="preserve">
+    <value>Crédits et remerciements</value>
   </data>
 </root>

@@ -414,4 +414,49 @@
   <data name="ShowNotificationDownDetector" xml:space="preserve">
     <value>Show a notification when a DownDetector test is done</value>
   </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WelcomeThanks" xml:space="preserve">
+    <value>Thanks for using InternetTest! Lets' get started!</value>
+  </data>
+  <data name="ChangesApplyAfterRestart" xml:space="preserve">
+    <value>Changes will be applied after a restart of InternetTest.</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Locate</value>
+  </data>
+  <data name="WelcomeTest" xml:space="preserve">
+    <value>Unsure about your network connectivity? Don't worry! You can launch a test through InternetTest to be sure if the problem is from you or not.</value>
+  </data>
+  <data name="WelcomeLocate" xml:space="preserve">
+    <value>You want to know more about an IP address? InternetTest can get more informations about the IP, and even get its location! Note that this feature is powered by third-party services.</value>
+  </data>
+  <data name="WelcomeDownDetector" xml:space="preserve">
+    <value>Sometimes, we all go to a website, but it takes a lot of time load, and we all wonder if it's not down. Thanks to the DownDetector feature of InternetTest, you can find an answer to this question. Just enter the URL of a website and you'll get its status.</value>
+  </data>
+  <data name="WelcomeThemeTitle" xml:space="preserve">
+    <value>Make InternetTest yours</value>
+  </data>
+  <data name="LetsGo" xml:space="preserve">
+    <value>Let's go</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Change the language of InternetTest.</value>
+  </data>
+  <data name="NotificationsSettings" xml:space="preserve">
+    <value>Notifications settings.</value>
+  </data>
+  <data name="ManageData" xml:space="preserve">
+    <value>Manage your data.</value>
+  </data>
+  <data name="CreditsAndThanks" xml:space="preserve">
+    <value>Credits and special thanks</value>
+  </data>
 </root>

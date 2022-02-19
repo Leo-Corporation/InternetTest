@@ -1,0 +1,148 @@
+﻿<Window x:Class="InternetTest.Windows.FirstRunWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:InternetTest.Windows"
+		xmlns:lang="clr-namespace:InternetTest.Properties"
+		mc:Ignorable="d" Foreground="{Binding Source={StaticResource Foreground1}}"
+		FontFamily="/Fonts/#Montserrat"
+		Title="{x:Static lang:Resources.InternetTest}" Height="500" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+	<WindowChrome.WindowChrome>
+		<WindowChrome CaptionHeight="32" ResizeBorderThickness="10"/>
+	</WindowChrome.WindowChrome>
+
+	<Window.Resources>
+		<Style x:Key="WindowMainPanelStyle" TargetType="{x:Type Border}">
+			<Setter Property="BorderBrush" Value="{DynamicResource WindowBorderBrush}" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Style.Triggers>
+				<!--<DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=WindowState}" Value="Maximized">
+					<Setter Property="Margin" Value="6 0 6 0" />
+				</DataTrigger>-->
+			</Style.Triggers>
+		</Style>
+		<Style x:Key="TitleBarButtonStyle" TargetType="Button">
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="Padding" Value="0" />
+			<Setter Property="Height" Value="32"/>
+			<Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+			<Setter Property="IsTabStop" Value="False" />
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Border
+					x:Name="border"
+					Background="{TemplateBinding Background}"
+					BorderThickness="0" CornerRadius="5"
+					SnapsToDevicePixels="true">
+							<ContentPresenter
+						x:Name="contentPresenter"
+						Margin="0"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						Focusable="False"
+						RecognizesAccessKey="True" />
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource WindowButtonsHover1}}" />
+							</Trigger>
+							<Trigger Property="IsPressed" Value="true">
+								<Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource WindowButtonsPressed1}}" />
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+		<Style x:Key="TitleBarCloseButtonStyle" TargetType="Button">
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="Height" Value="32"/>
+			<Setter Property="Padding" Value="0" />
+			<Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+			<Setter Property="IsTabStop" Value="False" />
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Border
+					x:Name="border"
+					Background="Transparent"
+					BorderThickness="0" CornerRadius="5"
+					SnapsToDevicePixels="true">
+							<ContentPresenter
+						x:Name="contentPresenter"
+						Margin="0"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						Focusable="False"
+						RecognizesAccessKey="True" />
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="true">
+								<Setter TargetName="border" Property="Background" Value="Red" />
+								<Setter Property="Foreground" Value="White" />
+							</Trigger>
+							<Trigger Property="IsPressed" Value="true">
+								<Setter TargetName="border" Property="Background" Value="Red" />
+								<Setter Property="Foreground" Value="White" />
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Resources>
+
+	<Window.Effect>
+		<DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity="0.4" RenderingBias="Quality"/>
+	</Window.Effect>
+
+	<Border Name="WindowBorder" Margin="10" BorderThickness="0" Background="{Binding Source={StaticResource Background1}}" CornerRadius="5">
+		<Grid VerticalAlignment="Stretch">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			<Border Height="Auto" Style="{StaticResource WindowMainPanelStyle}">
+				<Grid Height="32" VerticalAlignment="Top">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+					</Grid.ColumnDefinitions>
+					<Button Grid.Column="2" FontSize="14" Content="&#xF36A;" FontFamily="/Fonts/#FluentSystemIcons-Regular" Name="CloseBtn" Click="CloseBtn_Click" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarCloseButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+				</Grid>
+			</Border>
+
+			<Grid Grid.Row="1">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition Width="Auto"/>
+					</Grid.ColumnDefinitions>
+					<TextBlock Text="{x:Static lang:Resources.InternetTest}" FontSize="30" FontWeight="Bold" Margin="15" VerticalAlignment="Center"/>
+					<Image Margin="5,0,5,5" Grid.Column="1" Height="80" Source="{Binding Source={StaticResource MainWindowBackground}}" Stretch="UniformToFill" HorizontalAlignment="Right"/>
+				</Grid>
+
+				<Frame x:Name="PageViewer" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+
+				<Button x:Name="NextBtn" Click="NextBtn_Click" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" Margin="0,10,10,10" Grid.Row="2">
+					<StackPanel Orientation="Horizontal" Margin="5">
+						<TextBlock x:Name="NextTxt" Text="{x:Static lang:Resources.Next}" VerticalAlignment="Center"/>
+						<TextBlock Text="&#xF182;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" Margin="10,0,0,0"/>
+					</StackPanel>
+				</Button>
+
+			</Grid>
+		</Grid>
+	</Border>
+</Window>

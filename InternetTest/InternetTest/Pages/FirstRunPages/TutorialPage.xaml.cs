@@ -21,12 +21,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using System.Windows.Controls;
 
-namespace InternetTest.Classes;
+namespace InternetTest.Pages.FirstRunPages;
 
 /// <summary>
-/// A class that contains the status code, and the status message of request.
+/// Interaction logic for TutorialPage.xaml
 /// </summary>
-/// <param name="StatusCode">The status code of the request.</param>
-/// <param name="StatusMessage">The status message of the request.</param>
-public record StatusInfo(int StatusCode, string StatusMessage);
+public partial class TutorialPage : Page
+{
+	public TutorialPage()
+	{
+		InitializeComponent();
+	}
+}

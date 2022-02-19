@@ -30,128 +30,145 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace InternetTest
+namespace InternetTest;
+
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
-	public partial class MainWindow : Window
+	private Button CheckedButton { get; set; }
+
+	readonly ColorAnimation colorAnimation = new()
 	{
-		private Button CheckedButton { get; set; }
+		From = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()),
+		To = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()),
+		Duration = new(TimeSpan.FromSeconds(0.2d))
+	};
+	public MainWindow()
+	{
+		InitializeComponent();
+		InitUI(); // Init the UI
+	}
 
-		readonly ColorAnimation colorAnimation = new()
+	private void InitUI()
+	{
+		HelloTxt.Text = Global.GetHiSentence; // Set the "Hello" message
+		PageContent.Content = Global.Settings.StartupPage switch
 		{
-			From = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()),
-			To = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()),
-			Duration = new(TimeSpan.FromSeconds(0.2d))
-		};
-		public MainWindow()
+			StartPages.Connection => Global.ConnectionPage,
+			StartPages.LocalizeIP => Global.LocalizeIPPage,
+			StartPages.DownDetector => Global.DownDetectorPage,
+			_ => Global.ConnectionPage
+		}; // Go to the default startup page
+
+		CheckButton(Global.Settings.StartupPage switch
 		{
-			InitializeComponent();
-			InitUI(); // Init the UI
+			StartPages.Connection => ConnectionBtn,
+			StartPages.LocalizeIP => LocalizeIPBtn,
+			StartPages.DownDetector => DownDetectorBtn,
+			_ => ConnectionBtn
+		}); // Check the start page button
+
+		PageContent.Navigated += (o, e) => AnimatePage();
+	}
+
+	private void CheckButton(Button button)
+	{
+		button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["WindowButtonsHoverForeground1"].ToString()) }; // Set the foreground
+		button.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set the background
+
+		CheckedButton = button; // Set the "checked" button
+	}
+
+	private void ResetAllCheckStatus()
+	{
+		ConnectionBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
+		ConnectionBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+
+		LocalizeIPBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
+		LocalizeIPBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+
+		DownDetectorBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
+		DownDetectorBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+
+		SettingsTabBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
+		SettingsTabBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+	}
+
+	private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
+	{
+		WindowState = WindowState.Minimized; // Minimize window
+	}
+
+	private void CloseBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Environment.Exit(0); // Exit
+	}
+
+	private void TabEnter(object sender, MouseEventArgs e)
+	{
+		Button button = (Button)sender; // Create button
+
+		button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["WindowButtonsHoverForeground1"].ToString()) }; // Set the foreground
+	}
+
+	private void TabLeave(object sender, MouseEventArgs e)
+	{
+		Button button = (Button)sender; // Create button
+
+		if (button != CheckedButton)
+		{
+			button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground 
+			button.Background.BeginAnimation(SolidColorBrush.ColorProperty, colorAnimation); // Play animation
 		}
+	}
 
-		private void InitUI()
-		{
-			HelloTxt.Text = Global.GetHiSentence; // Set the "Hello" message
-			PageContent.Content = Global.Settings.StartupPage switch
-			{
-				StartPages.Connection => Global.ConnectionPage,
-				StartPages.LocalizeIP => Global.LocalizeIPPage,
-				StartPages.DownDetector => Global.DownDetectorPage,
-				_ => Global.ConnectionPage
-			}; // Go to the default startup page
+	private void ConnectionBtn_Click(object sender, RoutedEventArgs e)
+	{
+		ResetAllCheckStatus(); // Reset the background and foreground of all buttons
+		CheckButton(ConnectionBtn); // Check the "Settings" button
 
-			CheckButton(Global.Settings.StartupPage switch
-			{
-				StartPages.Connection => ConnectionBtn,
-				StartPages.LocalizeIP => LocalizeIPBtn,
-				StartPages.DownDetector => DownDetectorBtn,
-				_ => ConnectionBtn
-			}); // Check the start page button
-		}
+		PageContent.Navigate(Global.ConnectionPage); // Navigate
+	}
 
-		private void CheckButton(Button button)
-		{
-			button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["WindowButtonsHoverForeground1"].ToString()) }; // Set the foreground
-			button.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["AccentColor"].ToString()) }; // Set the background
+	private void LocalizeIPBtn_Click(object sender, RoutedEventArgs e)
+	{
+		ResetAllCheckStatus(); // Reset the background and foreground of all buttons
+		CheckButton(LocalizeIPBtn); // Check the "Settings" button
 
-			CheckedButton = button; // Set the "checked" button
-		}
+		PageContent.Navigate(Global.LocalizeIPPage); // Navigate
+	}
 
-		private void ResetAllCheckStatus()
-		{
-			ConnectionBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
-			ConnectionBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+	private void SettingsTabBtn_Click(object sender, RoutedEventArgs e)
+	{
+		ResetAllCheckStatus(); // Reset the background and foreground of all buttons
+		CheckButton(SettingsTabBtn); // Check the "Settings" button
 
-			LocalizeIPBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
-			LocalizeIPBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+		PageContent.Navigate(Global.SettingsPage); // Navigate
+	}
 
-			DownDetectorBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
-			DownDetectorBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
+	private void DownDetectorBtn_Click(object sender, RoutedEventArgs e)
+	{
+		ResetAllCheckStatus(); // Reset the background and foreground of all buttons
+		CheckButton(DownDetectorBtn); // Check the "Settings" button
 
-			SettingsTabBtn.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground
-			SettingsTabBtn.Background = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Background1"].ToString()) }; // Set the background
-		}
+		PageContent.Navigate(Global.DownDetectorPage); // Navigate
+	}
 
-		private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
-		{
-			WindowState = WindowState.Minimized; // Minimize window
-		}
+	private void AnimatePage()
+	{
+		Storyboard storyboard = new();
 
-		private void CloseBtn_Click(object sender, RoutedEventArgs e)
-		{
-			Environment.Exit(0); // Exit
-		}
+		ThicknessAnimationUsingKeyFrames t = new();
+		t.KeyFrames.Add(new SplineThicknessKeyFrame(new(0, 30, 0, 0), KeyTime.FromTimeSpan(TimeSpan.FromSeconds(0))));
+		t.KeyFrames.Add(new SplineThicknessKeyFrame(new(0), KeyTime.FromTimeSpan(TimeSpan.FromSeconds(0.1))));
+		t.AccelerationRatio = 0.5;
 
-		private void TabEnter(object sender, MouseEventArgs e)
-		{
-			Button button = (Button)sender; // Create button
+		storyboard.Children.Add(t);
 
-			button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["WindowButtonsHoverForeground1"].ToString()) }; // Set the foreground
-		}
-
-		private void TabLeave(object sender, MouseEventArgs e)
-		{
-			Button button = (Button)sender; // Create button
-
-			if (button != CheckedButton)
-			{
-				button.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Foreground1"].ToString()) }; // Set the foreground 
-				button.Background.BeginAnimation(SolidColorBrush.ColorProperty, colorAnimation); // Play animation
-			}
-		}
-
-		private void ConnectionBtn_Click(object sender, RoutedEventArgs e)
-		{
-			ResetAllCheckStatus(); // Reset the background and foreground of all buttons
-			CheckButton(ConnectionBtn); // Check the "Settings" button
-
-			PageContent.Navigate(Global.ConnectionPage); // Navigate
-		}
-
-		private void LocalizeIPBtn_Click(object sender, RoutedEventArgs e)
-		{
-			ResetAllCheckStatus(); // Reset the background and foreground of all buttons
-			CheckButton(LocalizeIPBtn); // Check the "Settings" button
-
-			PageContent.Navigate(Global.LocalizeIPPage); // Navigate
-		}
-
-		private void SettingsTabBtn_Click(object sender, RoutedEventArgs e)
-		{
-			ResetAllCheckStatus(); // Reset the background and foreground of all buttons
-			CheckButton(SettingsTabBtn); // Check the "Settings" button
-
-			PageContent.Navigate(Global.SettingsPage); // Navigate
-		}
-
-		private void DownDetectorBtn_Click(object sender, RoutedEventArgs e)
-		{
-			ResetAllCheckStatus(); // Reset the background and foreground of all buttons
-			CheckButton(DownDetectorBtn); // Check the "Settings" button
-
-			PageContent.Navigate(Global.DownDetectorPage); // Navigate
-		}
+		Storyboard.SetTargetName(t, PageContent.Name);
+		Storyboard.SetTargetProperty(t, new(Frame.MarginProperty));
+		storyboard.Begin(this);
 	}
 }
