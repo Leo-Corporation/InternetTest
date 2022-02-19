@@ -20,7 +20,7 @@
 			<StackPanel Margin="10,40,10,10" Grid.Row="0">
 				<TextBlock Text="{x:Static lang:Resources.Settings}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="16"/>
 
-				<Border Background="{Binding Source={StaticResource Background3}}" CornerRadius="10" Margin="10" Padding="10" HorizontalAlignment="Left">
+				<Border Background="{Binding Source={StaticResource Background3}}" CornerRadius="10" Margin="10" Padding="10" HorizontalAlignment="Stretch">
 					<Border.Effect>
 						<DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity="0.4" RenderingBias="Quality"/>
 					</Border.Effect>
