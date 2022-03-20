@@ -25,7 +25,6 @@ using InternetTest.Classes;
 using InternetTest.UserControls;
 using LeoCorpLibrary;
 using System;
-using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
