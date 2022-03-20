@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Pages;
 using LeoCorpLibrary;
+using LeoCorpLibrary.Enums;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
