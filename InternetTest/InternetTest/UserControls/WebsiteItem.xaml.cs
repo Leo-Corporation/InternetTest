@@ -76,4 +76,9 @@ public partial class WebsiteItem : UserControl
 		StatusBorder.Visibility = Visibility.Visible; // Show
 		StatusToolTip.Content = $"{statusInfo.StatusCode} - {statusInfo.StatusMessage}"; // Set text
 	}
+
+	private void DismissBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Global.DownDetectorPage.WebsiteItemPanel.Children.Remove(this); // Delete
+	}
 }

@@ -14,6 +14,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="{x:Static lang:Resources.Website}" Margin="0 0 10 0" VerticalAlignment="Center" FontWeight="Normal"/>
             <TextBlock x:Name="WebsiteTxt" Text="{x:Static lang:Resources.Website}" Margin="0 0 10 0" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="1"/>
@@ -29,6 +30,8 @@
             </Border>
 
             <Button x:Name="CheckBtn" Click="CheckBtn_Click" Content="{x:Static lang:Resources.Test}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="3"/>
+            <Button Content="&#xF36A;" Margin="5" x:Name="DismissBtn" Click="DismissBtn_Click" Grid.Column="4" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" Style="{DynamicResource TabButtonStyle}" Padding="5" Width="25" Height="25"/>
+
         </Grid>
     </Border>
 </UserControl>
