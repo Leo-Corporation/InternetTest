@@ -28,6 +28,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -316,5 +317,32 @@ public static class Global
 		string sD2 = d2.ToString().Replace(",", "."); // Ensure to use . instead of ,
 
 		return $"{deg}° {sD}' {fDir}, {deg2}° {sD2}' {sDir}".Replace("-", "");
+	}
+
+	public static StatusInfo GetStatusCode(string website)
+	{
+		try
+		{
+			// Create a web request for an invalid site. Substitute the "invalid site" strong in the Create call with a invalid name.
+			HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(website);
+
+			// Get the associated response for the above request.
+			HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+			myHttpWebResponse.Close();
+			return new StatusInfo(200, "OK"); // Return
+		}
+		catch (WebException e)
+		{
+			if (e.Status == WebExceptionStatus.ProtocolError)
+			{
+				var status = ((HttpWebResponse)e.Response).StatusCode;
+				return new StatusInfo((int)status, ((HttpWebResponse)e.Response).StatusDescription); // Return;
+			}
+			return new StatusInfo(400, "Bad Request"); // Return
+		}
+		catch
+		{
+			return new StatusInfo(400, "Bad Request"); // Return
+		}
 	}
 }

@@ -135,7 +135,7 @@ public partial class DownDetectorPage : Page
 			}
 		}
 
-		StatusInfo statusInfo = GetStatusCode(customSite);
+		StatusInfo statusInfo = Global.GetStatusCode(customSite);
 		int status = statusInfo.StatusCode;
 		if (status >= 200 && status <= 299)
 		{
@@ -161,32 +161,7 @@ public partial class DownDetectorPage : Page
 		HistoricDisplayer.Children.Add(new HistoricItem(customSite, ConnectionStatusTxt.Text, HistoricDisplayer)); // Add
 	}
 
-	private static StatusInfo GetStatusCode(string website)
-	{
-		try
-		{
-			// Create a web request for an invalid site. Substitute the "invalid site" strong in the Create call with a invalid name.
-			HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(website);
-
-			// Get the associated response for the above request.
-			HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
-			myHttpWebResponse.Close();
-			return new StatusInfo(200, "OK"); // Return
-		}
-		catch (WebException e)
-		{
-			if (e.Status == WebExceptionStatus.ProtocolError)
-			{
-				var status = ((HttpWebResponse)e.Response).StatusCode;
-				return new StatusInfo((int)status, ((HttpWebResponse)e.Response).StatusDescription); // Return;
-			}
-			return new StatusInfo(400, "Bad Request"); // Return
-		}
-		catch
-		{
-			return new StatusInfo(400, "Bad Request"); // Return
-		}
-	}
+	
 
 	private static string FormatURL(string url)
 	{
@@ -226,6 +201,8 @@ public partial class DownDetectorPage : Page
 			{
 				HistoricPanel.Visibility = Visibility.Collapsed; // Set
 				TimerPanel.Visibility = Visibility.Collapsed; // Set
+				MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+
 				ContentGrid.Visibility = Visibility.Visible; // Set
 				HistoryBtn.Content = "\uF47F"; // Set text
 			}
@@ -234,6 +211,8 @@ public partial class DownDetectorPage : Page
 				HistoricPanel.Visibility = Visibility.Visible; // Set
 				ContentGrid.Visibility = Visibility.Collapsed; // Set
 				TimerPanel.Visibility = Visibility.Collapsed; // Set
+				MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+
 				HistoryBtn.Content = "\uF36A"; // Set text
 			}
 		}
@@ -242,6 +221,8 @@ public partial class DownDetectorPage : Page
 			HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 			HistoricPanel.Visibility = Visibility.Collapsed; // Set
 			TimerPanel.Visibility = Visibility.Collapsed; // Set
+			MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+
 			ContentGrid.Visibility = Visibility.Visible; // Set
 			HistoryBtn.Content = "\uF47F"; // Set text
 			if (sender is not HistoricItem)
@@ -309,6 +290,8 @@ public partial class DownDetectorPage : Page
 			HistoricPanel.Visibility = Visibility.Collapsed; // Hide
 			TimerPanel.Visibility = Visibility.Collapsed; // Hide
 			ContentGrid.Visibility = Visibility.Visible; // Show
+			MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+
 			TimeIntervalBtn.Content = "\uF827"; // Set text
 		}
 		else
@@ -316,6 +299,8 @@ public partial class DownDetectorPage : Page
 			HistoricPanel.Visibility = Visibility.Collapsed; // Hide
 			TimerPanel.Visibility = Visibility.Visible; // Show
 			ContentGrid.Visibility = Visibility.Collapsed; // Hide
+			MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+
 			TimeIntervalBtn.Content = "\uF36A"; // Set text
 		}
 		HistoryBtn.Content = "\uF47F"; // Set text
@@ -325,5 +310,36 @@ public partial class DownDetectorPage : Page
 	{
 		Regex regex = new("[^0-9]+");
 		e.Handled = regex.IsMatch(e.Text);
+	}
+
+	private void MultipleWebsitesBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (MultipleWebsitesPanel.Visibility == Visibility.Collapsed)
+		{
+			HistoricPanel.Visibility = Visibility.Collapsed; // Hide
+			TimerPanel.Visibility = Visibility.Collapsed; // Hide
+			ContentGrid.Visibility = Visibility.Collapsed; // Hide
+			MultipleWebsitesPanel.Visibility = Visibility.Visible; // Show 
+		}
+		else
+		{
+			MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+			HistoricPanel.Visibility = Visibility.Collapsed; // Hide
+			TimerPanel.Visibility = Visibility.Collapsed; // Hide
+			ContentGrid.Visibility = Visibility.Visible; // Show
+		}
+	}
+
+	private void AddBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (!string.IsNullOrEmpty(WebsiteTextBox.Text))
+		{
+			WebsiteItemPanel.Children.Add(new WebsiteItem(FormatURL(WebsiteTextBox.Text))); // Add website item
+			WebsiteTextBox.Text = ""; // Empty
+		}
+		else
+		{
+			MessageBox.Show(Properties.Resources.PleaseSpecifyWebsiteCheck, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Exclamation); // Show error
+		}
 	}
 }
