@@ -180,8 +180,6 @@ public partial class DownDetectorPage : Page
 		HistoricDisplayer.Children.Add(new HistoricItem(customSite, ConnectionStatusTxt.Text, HistoricDisplayer)); // Add
 	}
 
-	
-
 	private static string FormatURL(string url)
 	{
 		if (!url.Contains("https://") && !url.Contains("http://")) // If there isn't http(s)
@@ -250,6 +248,8 @@ public partial class DownDetectorPage : Page
 			}
 		}
 		TimeIntervalBtn.Content = "\uF827"; // Set text
+		MultipleWebsitesBtn.Content = "\uF788"; // Set text
+
 	}
 
 	private void StatusBorder_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -323,6 +323,8 @@ public partial class DownDetectorPage : Page
 			TimeIntervalBtn.Content = "\uF36A"; // Set text
 		}
 		HistoryBtn.Content = "\uF47F"; // Set text
+		MultipleWebsitesBtn.Content = "\uF788"; // Set text
+
 	}
 
 	private void SecondsTxt_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
@@ -339,6 +341,8 @@ public partial class DownDetectorPage : Page
 			TimerPanel.Visibility = Visibility.Collapsed; // Hide
 			ContentGrid.Visibility = Visibility.Collapsed; // Hide
 			MultipleWebsitesPanel.Visibility = Visibility.Visible; // Show 
+
+			MultipleWebsitesBtn.Content = "\uF36A"; // Set text
 		}
 		else
 		{
@@ -346,7 +350,12 @@ public partial class DownDetectorPage : Page
 			HistoricPanel.Visibility = Visibility.Collapsed; // Hide
 			TimerPanel.Visibility = Visibility.Collapsed; // Hide
 			ContentGrid.Visibility = Visibility.Visible; // Show
+
+			MultipleWebsitesBtn.Content = "\uF788"; // Set text
+
 		}
+		HistoryBtn.Content = "\uF47F"; // Set text
+
 	}
 
 	private void AddBtn_Click(object sender, RoutedEventArgs e)
