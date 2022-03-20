@@ -459,4 +459,13 @@
   <data name="CreditsAndThanks" xml:space="preserve">
     <value>Credits and special thanks</value>
   </data>
+  <data name="TestMultipleWebsites" xml:space="preserve">
+    <value>Test multiple websites.</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
 </root>

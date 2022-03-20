@@ -61,6 +61,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Apply {
@@ -772,6 +781,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset settings.
         /// </summary>
         public static string ResetSettings {
@@ -894,6 +912,15 @@ namespace InternetTest.Properties {
         public static string Testing {
             get {
                 return ResourceManager.GetString("Testing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test multiple websites..
+        /// </summary>
+        public static string TestMultipleWebsites {
+            get {
+                return ResourceManager.GetString("TestMultipleWebsites", resourceCulture);
             }
         }
         
