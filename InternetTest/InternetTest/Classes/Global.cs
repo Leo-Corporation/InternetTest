@@ -321,7 +321,14 @@ public static class Global
 
 	public async static Task<StatusInfo> GetStatusCodeAsync(string website)
 	{
-		var httpMessage = await new HttpClient().GetAsync(website);
-		return new((int)httpMessage.StatusCode, httpMessage.ReasonPhrase);
+		try
+		{
+			var httpMessage = await new HttpClient().GetAsync(website);
+			return new((int)httpMessage.StatusCode, httpMessage.ReasonPhrase);
+		}
+		catch
+		{
+			return new(400, "Bad Request");
+		}
 	}
 }
