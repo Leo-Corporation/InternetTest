@@ -468,4 +468,7 @@
   <data name="Remove" xml:space="preserve">
     <value>Remove</value>
   </data>
+  <data name="LaunchTests" xml:space="preserve">
+    <value>Launch all tests</value>
+  </data>
 </root>

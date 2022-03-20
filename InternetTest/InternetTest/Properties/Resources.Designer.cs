@@ -529,6 +529,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Launch all tests.
+        /// </summary>
+        public static string LaunchTests {
+            get {
+                return ResourceManager.GetString("LaunchTests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Launch a test to check your connection.
         /// </summary>
         public static string LaunchTestToCheckConnection {

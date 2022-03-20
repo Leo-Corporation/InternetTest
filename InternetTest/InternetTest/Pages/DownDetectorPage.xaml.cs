@@ -342,4 +342,13 @@ public partial class DownDetectorPage : Page
 			MessageBox.Show(Properties.Resources.PleaseSpecifyWebsiteCheck, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Exclamation); // Show error
 		}
 	}
+
+	private void LaunchTestsBtn_Click(object sender, RoutedEventArgs e)
+	{
+		for (int i = 0; i < WebsiteItemPanel.Children.Count; i++)
+		{
+			var websiteItem = (WebsiteItem)WebsiteItemPanel.Children[i];
+			websiteItem.Test();
+		}
+	}
 }
