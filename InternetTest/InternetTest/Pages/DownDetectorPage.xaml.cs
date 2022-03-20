@@ -135,7 +135,7 @@ public partial class DownDetectorPage : Page
 			}
 		}
 
-		StatusInfo statusInfo = Global.GetStatusCode(customSite);
+		StatusInfo statusInfo = await Global.GetStatusCodeAsync(customSite);
 		int status = statusInfo.StatusCode;
 		if (status >= 200 && status <= 299)
 		{

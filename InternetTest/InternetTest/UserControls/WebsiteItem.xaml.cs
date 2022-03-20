@@ -52,9 +52,9 @@ public partial class WebsiteItem : UserControl
 		Test();
 	}
 
-	internal void Test()
+	internal async void Test()
 	{
-		StatusInfo statusInfo = Global.GetStatusCode(URL);
+		StatusInfo statusInfo = await Global.GetStatusCodeAsync(URL);
 		int status = statusInfo.StatusCode;
 		if (status >= 200 && status <= 299)
 		{
