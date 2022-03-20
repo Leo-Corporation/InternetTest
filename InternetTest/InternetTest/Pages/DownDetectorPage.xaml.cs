@@ -43,6 +43,8 @@ public partial class DownDetectorPage : Page
 	readonly System.Windows.Forms.NotifyIcon notifyIcon = new();
 	readonly DispatcherTimer dispatcherTimer = new();
 	readonly DispatcherTimer secondsTimer = new();
+	readonly DispatcherTimer dispatcherTimer2 = new();
+	readonly DispatcherTimer secondsTimer2 = new();
 
 	int secondsCheckTime = 30;
 	int updateS = 0;
@@ -68,6 +70,7 @@ public partial class DownDetectorPage : Page
 		StatusBorder.Visibility = Visibility.Collapsed; // Hide
 
 		secondsTimer.Interval = TimeSpan.FromSeconds(1); // Every second
+		secondsTimer2.Interval = TimeSpan.FromSeconds(1); // Every second
 
 		dispatcherTimer.Tick += (o, e) =>
 		{
@@ -82,12 +85,28 @@ public partial class DownDetectorPage : Page
 			Test(WebsiteTxt.Text);
 		};
 
+		dispatcherTimer2.Tick += (o, e) =>
+		{
+			for (int i = 0; i < WebsiteItemPanel.Children.Count; i++)
+			{
+				var websiteItem = (WebsiteItem)WebsiteItemPanel.Children[i];
+				websiteItem.Test();
+			}
+		};
+
 		secondsTimer.Tick += (o, e) =>
 		{
 			updateS--;
 			if (updateS < 0) updateS = secondsCheckTime - 1;
 			NextCheckTxt.Text = $"{Properties.Resources.NextCheck} {updateS} {Properties.Resources.SecondsDotM}";
 			storyboard.Begin(AlarmIconTxt, true);
+		};
+
+		secondsTimer2.Tick += (o, e) =>
+		{
+			updateSMW--;
+			if (updateSMW < 0) updateSMW = secondsMWCheckTime - 1;
+			MWNextCheckTxt.Text = $"{Properties.Resources.NextCheck} {updateSMW} {Properties.Resources.SecondsDotM}";
 		};
 
 		Storyboard.SetTargetName(DoubleAnimation, AlarmIconTxt.Name);
@@ -349,6 +368,51 @@ public partial class DownDetectorPage : Page
 		{
 			var websiteItem = (WebsiteItem)WebsiteItemPanel.Children[i];
 			websiteItem.Test();
+		}
+	}
+
+	int secondsMWCheckTime = 30;
+	int updateSMW = 0;
+	private void AutoCheckMultipleWebsiteDownChk_Checked(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			if (AutoCheckMultipleWebsiteDownChk.IsChecked.Value)
+			{
+				if (string.IsNullOrEmpty(MWSecondsTxt.Text))
+				{
+					MessageBox.Show(Properties.Resources.PleaseSpecifyIntervalMsg, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+					AutoCheckMultipleWebsiteDownChk.IsChecked = false;
+					return;
+				}
+
+				int seconds = int.Parse(MWSecondsTxt.Text);
+
+				if (seconds < 2)
+				{
+					MessageBox.Show(Properties.Resources.CannotLessThanTwoSec, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Warning);
+					AutoCheckMultipleWebsiteDownChk.IsChecked = false;
+					return;
+				}
+				secondsMWCheckTime = seconds;
+				updateSMW = seconds;
+
+				dispatcherTimer2.Interval = TimeSpan.FromSeconds(seconds);
+				dispatcherTimer2.Start(); // Start the task
+				secondsTimer2.Start(); // Start the task
+				MWSecondsTxt.IsEnabled = false;
+			}
+			else
+			{
+				dispatcherTimer2.Stop();
+				secondsTimer2.Stop();
+				MWNextCheckTxt.Text = Properties.Resources.NoNextCheck;
+				MWSecondsTxt.IsEnabled = true;
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 		}
 	}
 }
