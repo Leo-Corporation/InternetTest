@@ -22,36 +22,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Xalyus_Updater
 {
-    /// <summary>
-    /// A class that contains informations about the update status.
-    /// </summary>
-    public static class Global
-    {
-        /// <summary>
-        /// The progress of the update installation.
-        /// </summary>
-        public static int UpdateProgress { get; set; }
+	/// <summary>
+	/// A class that contains informations about the update status.
+	/// </summary>
+	public static class Global
+	{
+		/// <summary>
+		/// The progress of the update installation.
+		/// </summary>
+		public static int UpdateProgress { get; set; }
 
-        /// <summary>
-        /// The link of the file to be updated.
-        /// </summary>
-        public static string ZIPLink { get; set; }
+		/// <summary>
+		/// The link of the file to be updated.
+		/// </summary>
+		public static string ZIPLink { get; set; }
 
-        /// <summary>
-        /// The directory where the file is downloaded.
-        /// </summary>
-        public static string Directory => AppDomain.CurrentDomain.BaseDirectory + @"\UpdatedInternetTestFiles.zip";
+		/// <summary>
+		/// The directory where the file is downloaded.
+		/// </summary>
+		public static string Directory => AppDomain.CurrentDomain.BaseDirectory + @"\UpdatedInternetTestFiles.zip";
 
-        /// <summary>
-        /// The displayed message when the update is installed.
-        /// </summary>
-        public static string InstallMessage { get; set; }
-    }
+		/// <summary>
+		/// The displayed message when the update is installed.
+		/// </summary>
+		public static string InstallMessage { get; set; }
+	}
 }
