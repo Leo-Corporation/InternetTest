@@ -474,4 +474,10 @@
   <data name="HideShowIP" xml:space="preserve">
     <value>Cacher ou montrer l'adresse IP</value>
   </data>
+  <data name="Pin" xml:space="preserve">
+    <value>Epingler</value>
+  </data>
+  <data name="Unpin" xml:space="preserve">
+    <value>Désépingler</value>
+  </data>
 </root>
