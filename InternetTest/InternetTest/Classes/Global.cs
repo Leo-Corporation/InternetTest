@@ -68,7 +68,7 @@ public static class Global
 	/// <summary>
 	/// The current version of InternetTest.
 	/// </summary>
-	public static string Version => "6.1.0.2203-pre1";
+	public static string Version => "6.1.0.2203-rc1";
 
 	/// <summary>
 	/// List of the available languages.
