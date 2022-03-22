@@ -451,4 +451,7 @@
   <data name="LaunchTests" xml:space="preserve">
     <value>Launch all tests</value>
   </data>
+  <data name="HideShowIP" xml:space="preserve">
+    <value>Hide or show the IP address</value>
+  </data>
 </root>

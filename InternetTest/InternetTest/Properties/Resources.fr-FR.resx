@@ -471,4 +471,7 @@
   <data name="LaunchTests" xml:space="preserve">
     <value>Lancer tous les tests</value>
   </data>
+  <data name="HideShowIP" xml:space="preserve">
+    <value>Cacher ou montrer l'adresse IP</value>
+  </data>
 </root>

@@ -376,6 +376,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide or show the IP address.
+        /// </summary>
+        public static string HideShowIP {
+            get {
+                return ResourceManager.GetString("HideShowIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to History.
         /// </summary>
         public static string Historic {
