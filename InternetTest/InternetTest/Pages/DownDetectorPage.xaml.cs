@@ -25,7 +25,6 @@ using InternetTest.Classes;
 using InternetTest.UserControls;
 using LeoCorpLibrary;
 using System;
-using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,6 +42,8 @@ public partial class DownDetectorPage : Page
 	readonly System.Windows.Forms.NotifyIcon notifyIcon = new();
 	readonly DispatcherTimer dispatcherTimer = new();
 	readonly DispatcherTimer secondsTimer = new();
+	readonly DispatcherTimer dispatcherTimer2 = new();
+	readonly DispatcherTimer secondsTimer2 = new();
 
 	int secondsCheckTime = 30;
 	int updateS = 0;
@@ -68,6 +69,7 @@ public partial class DownDetectorPage : Page
 		StatusBorder.Visibility = Visibility.Collapsed; // Hide
 
 		secondsTimer.Interval = TimeSpan.FromSeconds(1); // Every second
+		secondsTimer2.Interval = TimeSpan.FromSeconds(1); // Every second
 
 		dispatcherTimer.Tick += (o, e) =>
 		{
@@ -82,12 +84,28 @@ public partial class DownDetectorPage : Page
 			Test(WebsiteTxt.Text);
 		};
 
+		dispatcherTimer2.Tick += (o, e) =>
+		{
+			for (int i = 0; i < WebsiteItemPanel.Children.Count; i++)
+			{
+				var websiteItem = (WebsiteItem)WebsiteItemPanel.Children[i];
+				websiteItem.Test();
+			}
+		};
+
 		secondsTimer.Tick += (o, e) =>
 		{
 			updateS--;
 			if (updateS < 0) updateS = secondsCheckTime - 1;
 			NextCheckTxt.Text = $"{Properties.Resources.NextCheck} {updateS} {Properties.Resources.SecondsDotM}";
 			storyboard.Begin(AlarmIconTxt, true);
+		};
+
+		secondsTimer2.Tick += (o, e) =>
+		{
+			updateSMW--;
+			if (updateSMW < 0) updateSMW = secondsMWCheckTime - 1;
+			MWNextCheckTxt.Text = $"{Properties.Resources.NextCheck} {updateSMW} {Properties.Resources.SecondsDotM}";
 		};
 
 		Storyboard.SetTargetName(DoubleAnimation, AlarmIconTxt.Name);
@@ -135,7 +153,7 @@ public partial class DownDetectorPage : Page
 			}
 		}
 
-		StatusInfo statusInfo = GetStatusCode(customSite);
+		StatusInfo statusInfo = await Global.GetStatusCodeAsync(customSite);
 		int status = statusInfo.StatusCode;
 		if (status >= 200 && status <= 299)
 		{
@@ -159,33 +177,6 @@ public partial class DownDetectorPage : Page
 		StatusMsgTxt.Text = $"- {statusInfo.StatusMessage}"; // Set text
 
 		HistoricDisplayer.Children.Add(new HistoricItem(customSite, ConnectionStatusTxt.Text, HistoricDisplayer)); // Add
-	}
-
-	private static StatusInfo GetStatusCode(string website)
-	{
-		try
-		{
-			// Create a web request for an invalid site. Substitute the "invalid site" strong in the Create call with a invalid name.
-			HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(website);
-
-			// Get the associated response for the above request.
-			HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
-			myHttpWebResponse.Close();
-			return new StatusInfo(200, "OK"); // Return
-		}
-		catch (WebException e)
-		{
-			if (e.Status == WebExceptionStatus.ProtocolError)
-			{
-				var status = ((HttpWebResponse)e.Response).StatusCode;
-				return new StatusInfo((int)status, ((HttpWebResponse)e.Response).StatusDescription); // Return;
-			}
-			return new StatusInfo(400, "Bad Request"); // Return
-		}
-		catch
-		{
-			return new StatusInfo(400, "Bad Request"); // Return
-		}
 	}
 
 	private static string FormatURL(string url)
@@ -226,6 +217,8 @@ public partial class DownDetectorPage : Page
 			{
 				HistoricPanel.Visibility = Visibility.Collapsed; // Set
 				TimerPanel.Visibility = Visibility.Collapsed; // Set
+				MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+
 				ContentGrid.Visibility = Visibility.Visible; // Set
 				HistoryBtn.Content = "\uF47F"; // Set text
 			}
@@ -234,6 +227,8 @@ public partial class DownDetectorPage : Page
 				HistoricPanel.Visibility = Visibility.Visible; // Set
 				ContentGrid.Visibility = Visibility.Collapsed; // Set
 				TimerPanel.Visibility = Visibility.Collapsed; // Set
+				MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+
 				HistoryBtn.Content = "\uF36A"; // Set text
 			}
 		}
@@ -242,6 +237,8 @@ public partial class DownDetectorPage : Page
 			HistoryBtn.Visibility = Visibility.Collapsed; // Set visibility
 			HistoricPanel.Visibility = Visibility.Collapsed; // Set
 			TimerPanel.Visibility = Visibility.Collapsed; // Set
+			MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+
 			ContentGrid.Visibility = Visibility.Visible; // Set
 			HistoryBtn.Content = "\uF47F"; // Set text
 			if (sender is not HistoricItem)
@@ -250,6 +247,8 @@ public partial class DownDetectorPage : Page
 			}
 		}
 		TimeIntervalBtn.Content = "\uF827"; // Set text
+		MultipleWebsitesBtn.Content = "\uF788"; // Set text
+
 	}
 
 	private void StatusBorder_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -309,6 +308,8 @@ public partial class DownDetectorPage : Page
 			HistoricPanel.Visibility = Visibility.Collapsed; // Hide
 			TimerPanel.Visibility = Visibility.Collapsed; // Hide
 			ContentGrid.Visibility = Visibility.Visible; // Show
+			MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+
 			TimeIntervalBtn.Content = "\uF827"; // Set text
 		}
 		else
@@ -316,14 +317,110 @@ public partial class DownDetectorPage : Page
 			HistoricPanel.Visibility = Visibility.Collapsed; // Hide
 			TimerPanel.Visibility = Visibility.Visible; // Show
 			ContentGrid.Visibility = Visibility.Collapsed; // Hide
+			MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+
 			TimeIntervalBtn.Content = "\uF36A"; // Set text
 		}
 		HistoryBtn.Content = "\uF47F"; // Set text
+		MultipleWebsitesBtn.Content = "\uF788"; // Set text
+
 	}
 
 	private void SecondsTxt_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
 	{
 		Regex regex = new("[^0-9]+");
 		e.Handled = regex.IsMatch(e.Text);
+	}
+
+	private void MultipleWebsitesBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (MultipleWebsitesPanel.Visibility == Visibility.Collapsed)
+		{
+			HistoricPanel.Visibility = Visibility.Collapsed; // Hide
+			TimerPanel.Visibility = Visibility.Collapsed; // Hide
+			ContentGrid.Visibility = Visibility.Collapsed; // Hide
+			MultipleWebsitesPanel.Visibility = Visibility.Visible; // Show 
+
+			MultipleWebsitesBtn.Content = "\uF36A"; // Set text
+		}
+		else
+		{
+			MultipleWebsitesPanel.Visibility = Visibility.Collapsed; // Hide 
+			HistoricPanel.Visibility = Visibility.Collapsed; // Hide
+			TimerPanel.Visibility = Visibility.Collapsed; // Hide
+			ContentGrid.Visibility = Visibility.Visible; // Show
+
+			MultipleWebsitesBtn.Content = "\uF788"; // Set text
+
+		}
+		HistoryBtn.Content = "\uF47F"; // Set text
+
+	}
+
+	private void AddBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (!string.IsNullOrEmpty(WebsiteTextBox.Text))
+		{
+			WebsiteItemPanel.Children.Add(new WebsiteItem(FormatURL(WebsiteTextBox.Text))); // Add website item
+			WebsiteTextBox.Text = ""; // Empty
+		}
+		else
+		{
+			MessageBox.Show(Properties.Resources.PleaseSpecifyWebsiteCheck, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Exclamation); // Show error
+		}
+	}
+
+	private void LaunchTestsBtn_Click(object sender, RoutedEventArgs e)
+	{
+		for (int i = 0; i < WebsiteItemPanel.Children.Count; i++)
+		{
+			var websiteItem = (WebsiteItem)WebsiteItemPanel.Children[i];
+			websiteItem.Test();
+		}
+	}
+
+	int secondsMWCheckTime = 30;
+	int updateSMW = 0;
+	private void AutoCheckMultipleWebsiteDownChk_Checked(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			if (AutoCheckMultipleWebsiteDownChk.IsChecked.Value)
+			{
+				if (string.IsNullOrEmpty(MWSecondsTxt.Text))
+				{
+					MessageBox.Show(Properties.Resources.PleaseSpecifyIntervalMsg, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+					AutoCheckMultipleWebsiteDownChk.IsChecked = false;
+					return;
+				}
+
+				int seconds = int.Parse(MWSecondsTxt.Text);
+
+				if (seconds < 2)
+				{
+					MessageBox.Show(Properties.Resources.CannotLessThanTwoSec, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Warning);
+					AutoCheckMultipleWebsiteDownChk.IsChecked = false;
+					return;
+				}
+				secondsMWCheckTime = seconds;
+				updateSMW = seconds;
+
+				dispatcherTimer2.Interval = TimeSpan.FromSeconds(seconds);
+				dispatcherTimer2.Start(); // Start the task
+				secondsTimer2.Start(); // Start the task
+				MWSecondsTxt.IsEnabled = false;
+			}
+			else
+			{
+				dispatcherTimer2.Stop();
+				secondsTimer2.Stop();
+				MWNextCheckTxt.Text = Properties.Resources.NoNextCheck;
+				MWSecondsTxt.IsEnabled = true;
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
 	}
 }

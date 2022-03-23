@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Pages;
 using LeoCorpLibrary;
+using LeoCorpLibrary.Enums;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -67,7 +68,7 @@ public static class Global
 	/// <summary>
 	/// The current version of InternetTest.
 	/// </summary>
-	public static string Version => "6.0.1.2202";
+	public static string Version => "6.1.0.2203";
 
 	/// <summary>
 	/// List of the available languages.
@@ -315,5 +316,18 @@ public static class Global
 		string sD2 = d2.ToString().Replace(",", "."); // Ensure to use . instead of ,
 
 		return $"{deg}° {sD}' {fDir}, {deg2}° {sD2}' {sDir}".Replace("-", "");
+	}
+
+	public async static Task<StatusInfo> GetStatusCodeAsync(string website)
+	{
+		try
+		{
+			var httpMessage = await new HttpClient().GetAsync(website);
+			return new((int)httpMessage.StatusCode, httpMessage.ReasonPhrase);
+		}
+		catch
+		{
+			return new(400, "Bad Request");
+		}
 	}
 }

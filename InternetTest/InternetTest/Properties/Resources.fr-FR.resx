@@ -459,4 +459,25 @@
   <data name="CreditsAndThanks" xml:space="preserve">
     <value>Crédits et remerciements</value>
   </data>
+  <data name="TestMultipleWebsites" xml:space="preserve">
+    <value>Tester plusieurs sites web.</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Retirer</value>
+  </data>
+  <data name="LaunchTests" xml:space="preserve">
+    <value>Lancer tous les tests</value>
+  </data>
+  <data name="HideShowIP" xml:space="preserve">
+    <value>Cacher ou montrer l'adresse IP</value>
+  </data>
+  <data name="Pin" xml:space="preserve">
+    <value>Epingler</value>
+  </data>
+  <data name="Unpin" xml:space="preserve">
+    <value>Désépingler</value>
+  </data>
 </root>

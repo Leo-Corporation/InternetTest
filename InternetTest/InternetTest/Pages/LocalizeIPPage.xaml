@@ -21,7 +21,15 @@
 			<TextBlock Text="{x:Static lang:Resources.LocalizeIP}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="16"/>
 			<ScrollViewer HorizontalScrollBarVisibility="Auto" Height="180" Template="{DynamicResource ScrollViewerControlTemplate}">
 				<StackPanel>
-					<TextBox x:Name="IPTxt" Style="{DynamicResource TextBoxStyle1}" Margin="10" Padding="5" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+					<StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="IPTxt" Style="{DynamicResource TextBoxStyle1}" Margin="10" Padding="5" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" Foreground="{Binding Source={StaticResource Foreground1}}" Width="450" TextChanged="IPTxt_TextChanged"/>
+                        <PasswordBox Visibility="Collapsed" Style="{DynamicResource PasswordBoxStyle1}" x:Name="IPPwrBox" Margin="10" FontSize="12" Padding="5" FontWeight="Bold" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" SelectionBrush="#FF007AF5" BorderThickness="3" Width="450"/>
+                        <Button x:Name="HideShowPassword" Click="HideShowPassword_Click" Content="&#xF3FC;" Style="{DynamicResource TabButtonStyle}" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="15" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" Padding="7,5,7,5" VerticalAlignment="Center" Height="25" HorizontalAlignment="Right">
+							<Button.ToolTip>
+								<ToolTip Content="{x:Static lang:Resources.HideShowIP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
+							</Button.ToolTip>
+						</Button>
+					</StackPanel>
 					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 						<RadioButton x:Name="IPRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.IP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" IsChecked="True"/>
 						<RadioButton x:Name="WebsiteRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.Website}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" Margin="10,0,10,0"/>

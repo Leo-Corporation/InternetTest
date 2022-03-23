@@ -130,6 +130,29 @@ public partial class LocalizeIPPage : Page
 		}
 	}
 
+	private void HideShowPassword_Click(object sender, RoutedEventArgs e)
+	{
+		if (IPPwrBox.Visibility == Visibility.Collapsed) // If the password is visible
+		{
+			IPPwrBox.Visibility = Visibility.Visible; // Change the visibility
+			IPTxt.Visibility = Visibility.Collapsed; // Change the visibility
+			IPPwrBox.Password = IPTxt.Text; // Set text
+			HideShowPassword.Content = "\uF3F8"; // Change text
+		}
+		else // If the password is hidden
+		{
+			IPPwrBox.Visibility = Visibility.Collapsed; // Change the visibility
+			IPTxt.Visibility = Visibility.Visible; // Change the visibility
+			IPTxt.Text = IPPwrBox.Password; // Set text
+			HideShowPassword.Content = "\uF3FC"; // Change text
+		}
+	}
+
+	private void IPTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		IPPwrBox.Password = IPTxt.Text; // Set text
+	}
+
 	private async void MyIPBtn_Click(object sender, RoutedEventArgs e)
 	{
 		if (await NetworkConnection.IsAvailableAsync())

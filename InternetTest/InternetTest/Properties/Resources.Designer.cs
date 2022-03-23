@@ -61,6 +61,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Apply {
@@ -367,6 +376,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide or show the IP address.
+        /// </summary>
+        public static string HideShowIP {
+            get {
+                return ResourceManager.GetString("HideShowIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to History.
         /// </summary>
         public static string Historic {
@@ -516,6 +534,15 @@ namespace InternetTest.Properties {
         public static string LaunchTestOnStart {
             get {
                 return ResourceManager.GetString("LaunchTestOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launch all tests.
+        /// </summary>
+        public static string LaunchTests {
+            get {
+                return ResourceManager.GetString("LaunchTests", resourceCulture);
             }
         }
         
@@ -745,6 +772,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pin.
+        /// </summary>
+        public static string Pin {
+            get {
+                return ResourceManager.GetString("Pin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please specify an interval..
         /// </summary>
         public static string PleaseSpecifyIntervalMsg {
@@ -768,6 +804,15 @@ namespace InternetTest.Properties {
         public static string Region {
             get {
                 return ResourceManager.GetString("Region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
             }
         }
         
@@ -898,6 +943,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Test multiple websites..
+        /// </summary>
+        public static string TestMultipleWebsites {
+            get {
+                return ResourceManager.GetString("TestMultipleWebsites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Test website.
         /// </summary>
         public static string TestSite {
@@ -948,6 +1002,15 @@ namespace InternetTest.Properties {
         public static string UnableToCheckUpdates {
             get {
                 return ResourceManager.GetString("UnableToCheckUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unpin.
+        /// </summary>
+        public static string Unpin {
+            get {
+                return ResourceManager.GetString("Unpin", resourceCulture);
             }
         }
         
