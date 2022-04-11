@@ -44,7 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="LeoCorpLibrary" Version="4.4.0.2203" />
+    <PackageReference Include="LeoCorpLibrary" Version="4.5.0.2204" />
   </ItemGroup>
 
   <ItemGroup>
