@@ -14,7 +14,7 @@
   <p align="center">
     InternetTest is a modern connection utility for Windows.
     <br />
-    <a href="https://bit.ly/DownloadInternetTest"><strong>Download »</strong></a>
+    <a href="https://tinyurl.com/DownloadInternetTest"><strong>Download »</strong></a>
     <br />
     <a href="https://github.com/Leo-Corporation/InternetTest/issues/new?assignees=&labels=bug&template=bug-report.yml&title=%5BBug%5D+">Report Bug</a>
     ·
