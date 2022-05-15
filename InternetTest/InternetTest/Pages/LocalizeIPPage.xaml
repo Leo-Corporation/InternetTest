@@ -31,8 +31,8 @@
 						</Button>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-						<RadioButton x:Name="IPRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.IP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" IsChecked="True"/>
-						<RadioButton x:Name="WebsiteRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.Website}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" Margin="10,0,10,0"/>
+						<RadioButton x:Name="IPRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.IP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" IsChecked="True" Checked="IPRadioBtn_Checked"/>
+						<RadioButton x:Name="WebsiteRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.Website}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" Margin="10,0,10,0" Checked="IPRadioBtn_Checked"/>
 					</StackPanel>
 					<StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
 						<Button x:Name="LocalizeBtn" Click="LocalizeBtn_Click" Content="{x:Static lang:Resources.LocalizeIP}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" Margin="0,10,10,0"/>

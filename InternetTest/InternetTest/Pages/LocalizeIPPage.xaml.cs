@@ -37,6 +37,7 @@ namespace InternetTest.Pages;
 public partial class LocalizeIPPage : Page
 {
 	IPInfo IPInfo { get; set; }
+	string lastIP, lastWebsite = "";
 	public LocalizeIPPage()
 	{
 		InitializeComponent();
@@ -55,6 +56,7 @@ public partial class LocalizeIPPage : Page
 					lat = ip.Lat; // Define
 					lon = ip.Lon; // Define
 					IPInfoTxt.Text = ip.ToString(); // Show IP info
+					lastIP = IPTxt.Text; // Define
 
 					if (string.IsNullOrEmpty(IPTxt.Text))
 					{
@@ -75,6 +77,7 @@ public partial class LocalizeIPPage : Page
 					lat = ip.Lat; // Define
 					lon = ip.Lon; // Define
 					IPInfoTxt.Text = ip.ToString(); // Show IP info
+					lastWebsite = IPTxt.Text; // Define
 
 					if (string.IsNullOrEmpty(IPTxt.Text))
 					{
@@ -153,6 +156,11 @@ public partial class LocalizeIPPage : Page
 		IPPwrBox.Password = IPTxt.Text; // Set text
 	}
 
+	private void IPRadioBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		IPTxt.Text = IPRadioBtn.IsChecked.Value ? lastIP : lastWebsite; // Clear text
+	}
+
 	private async void MyIPBtn_Click(object sender, RoutedEventArgs e)
 	{
 		if (await NetworkConnection.IsAvailableAsync())
@@ -162,6 +170,7 @@ public partial class LocalizeIPPage : Page
 			lon = ip.Lon; // Define
 			IPInfoTxt.Text = ip.ToString(); // Show IP info
 			IPTxt.Text = ip.Query;
+			lastIP = ip.Query; // Define
 			IPRadioBtn.IsChecked = true;
 			IPInfo = ip; // Set
 		}
