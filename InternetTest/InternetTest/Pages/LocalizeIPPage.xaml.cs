@@ -156,7 +156,7 @@ public partial class LocalizeIPPage : Page
 		IPPwrBox.Password = IPTxt.Text; // Set text
 	}
 
-	private void HistoryBtn_Click(object sender, RoutedEventArgs e)
+	internal void HistoryBtn_Click(object sender, RoutedEventArgs e)
 	{
 		if (MainContent.Visibility == Visibility.Visible)
 		{
