@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using InternetTest.UserControls;
 using LeoCorpLibrary;
 using Microsoft.Win32;
 using System.IO;
@@ -63,6 +64,7 @@ public partial class LocalizeIPPage : Page
 						IPTxt.Text = ip.Query;
 					}
 					IPInfo = ip; // Set
+					HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent));
 				}
 				else
 				{
@@ -84,6 +86,7 @@ public partial class LocalizeIPPage : Page
 						IPTxt.Text = ip.Query;
 					}
 					IPInfo = ip; // Set
+					HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent));					
 				}
 				else
 				{
