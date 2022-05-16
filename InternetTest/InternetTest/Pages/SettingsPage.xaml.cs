@@ -584,4 +584,9 @@ public partial class SettingsPage : Page
 			$"@wcxu21",
 			Properties.Resources.CreditsAndThanks, MessageBoxButton.OK, MessageBoxImage.Information);
 	}
+
+	private void UseHistoryLocateIPChk_Checked(object sender, RoutedEventArgs e)
+	{
+
+	}
 }
