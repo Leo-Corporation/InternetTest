@@ -156,6 +156,22 @@ public partial class LocalizeIPPage : Page
 		IPPwrBox.Password = IPTxt.Text; // Set text
 	}
 
+	private void HistoryBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (MainContent.Visibility == Visibility.Visible)
+		{
+			MainContent.Visibility = Visibility.Collapsed; // Show history
+			HistoryContent.Visibility = Visibility.Visible; // Hide main content
+			HistoryBtn.Content = "\uF36A"; // Change text
+		}
+		else
+		{
+			HistoryContent.Visibility = Visibility.Collapsed; // Hide history
+			MainContent.Visibility = Visibility.Visible; // Show main content
+			HistoryBtn.Content = "\uF47F"; // Set text			
+		}
+	}
+
 	private void IPRadioBtn_Checked(object sender, RoutedEventArgs e)
 	{
 		IPTxt.Text = IPRadioBtn.IsChecked.Value ? lastIP : lastWebsite; // Clear text

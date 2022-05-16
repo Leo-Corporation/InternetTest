@@ -17,35 +17,49 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<StackPanel Margin="10,40,10,10" Grid.Row="0">
-			<TextBlock Text="{x:Static lang:Resources.LocalizeIP}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="16"/>
-			<ScrollViewer HorizontalScrollBarVisibility="Auto" Height="180" Template="{DynamicResource ScrollViewerControlTemplate}">
-				<StackPanel>
-					<StackPanel Orientation="Horizontal">
-                        <TextBox x:Name="IPTxt" Style="{DynamicResource TextBoxStyle1}" Margin="10" Padding="5" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" Foreground="{Binding Source={StaticResource Foreground1}}" Width="450" TextChanged="IPTxt_TextChanged"/>
-                        <PasswordBox Visibility="Collapsed" Style="{DynamicResource PasswordBoxStyle1}" x:Name="IPPwrBox" Margin="10" FontSize="12" Padding="5" FontWeight="Bold" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" SelectionBrush="#FF007AF5" BorderThickness="3" Width="450"/>
-                        <Button x:Name="HideShowPassword" Click="HideShowPassword_Click" Content="&#xF3FC;" Style="{DynamicResource TabButtonStyle}" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="15" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" Padding="7,5,7,5" VerticalAlignment="Center" Height="25" HorizontalAlignment="Right">
-							<Button.ToolTip>
-								<ToolTip Content="{x:Static lang:Resources.HideShowIP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
-							</Button.ToolTip>
-						</Button>
-					</StackPanel>
-					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-						<RadioButton x:Name="IPRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.IP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" IsChecked="True" Checked="IPRadioBtn_Checked"/>
-						<RadioButton x:Name="WebsiteRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.Website}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" Margin="10,0,10,0" Checked="IPRadioBtn_Checked"/>
-					</StackPanel>
-					<StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-						<Button x:Name="LocalizeBtn" Click="LocalizeBtn_Click" Content="{x:Static lang:Resources.LocalizeIP}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" Margin="0,10,10,0"/>
-						<Button x:Name="MyIPBtn" Click="MyIPBtn_Click" Content="{x:Static lang:Resources.MyIP}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,10,0"/>
-						<Button x:Name="OpenMapBtn" Click="OpenMapBtn_Click" Content="{x:Static lang:Resources.OpenMap}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,10,0"/>
-						<Button x:Name="SaveBtn" Click="SaveBtn_Click" Content="{x:Static lang:Resources.Save}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,0,0"/>
-					</StackPanel>
-					<TextBlock x:Name="IPInfoTxt" d:Text="IP infos here" HorizontalAlignment="Left" FontWeight="Bold" FontSize="16" Margin="10,10,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
-				</StackPanel>
-			</ScrollViewer>
-		</StackPanel>
+        <Grid>
+            <StackPanel Margin="10,40,10,10" Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-		<Border x:Name="border" Background="{Binding Source={StaticResource LightAccentColor}}" CornerRadius="5" Padding="10" Margin="10" Grid.Row="2">
+                    <TextBlock Text="{x:Static lang:Resources.LocalizeIP}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="16" VerticalAlignment="Center"/>
+                    <Button Content="&#xF47F;" Padding="5" x:Name="HistoryBtn" Click="HistoryBtn_Click" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Grid.Column="1" Style="{DynamicResource TabButtonStyle}" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="14"/>
+
+                </Grid>
+                <ScrollViewer x:Name="MainContent" HorizontalScrollBarVisibility="Auto" Height="180" Template="{DynamicResource ScrollViewerControlTemplate}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="IPTxt" Style="{DynamicResource TextBoxStyle1}" Margin="10" Padding="5" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" Foreground="{Binding Source={StaticResource Foreground1}}" Width="450" TextChanged="IPTxt_TextChanged"/>
+                            <PasswordBox Visibility="Collapsed" Style="{DynamicResource PasswordBoxStyle1}" x:Name="IPPwrBox" Margin="10" FontSize="12" Padding="5" FontWeight="Bold" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" SelectionBrush="#FF007AF5" BorderThickness="3" Width="450"/>
+                            <Button x:Name="HideShowPassword" Click="HideShowPassword_Click" Content="&#xF3FC;" Style="{DynamicResource TabButtonStyle}" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="15" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" Padding="7,5,7,5" VerticalAlignment="Center" Height="25" HorizontalAlignment="Right">
+                                <Button.ToolTip>
+                                    <ToolTip Content="{x:Static lang:Resources.HideShowIP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
+                                </Button.ToolTip>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <RadioButton x:Name="IPRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.IP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" IsChecked="True" Checked="IPRadioBtn_Checked"/>
+                            <RadioButton x:Name="WebsiteRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.Website}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" Margin="10,0,10,0" Checked="IPRadioBtn_Checked"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Button x:Name="LocalizeBtn" Click="LocalizeBtn_Click" Content="{x:Static lang:Resources.LocalizeIP}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" Margin="0,10,10,0"/>
+                            <Button x:Name="MyIPBtn" Click="MyIPBtn_Click" Content="{x:Static lang:Resources.MyIP}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,10,0"/>
+                            <Button x:Name="OpenMapBtn" Click="OpenMapBtn_Click" Content="{x:Static lang:Resources.OpenMap}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,10,0"/>
+                            <Button x:Name="SaveBtn" Click="SaveBtn_Click" Content="{x:Static lang:Resources.Save}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,0,0"/>
+                        </StackPanel>
+                        <TextBlock x:Name="IPInfoTxt" d:Text="IP infos here" HorizontalAlignment="Left" FontWeight="Bold" FontSize="16" Margin="10,10,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+                    </StackPanel>
+                </ScrollViewer>
+                <Grid x:Name="HistoryContent">
+
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <Border x:Name="border" Background="{Binding Source={StaticResource LightAccentColor}}" CornerRadius="5" Padding="10" Margin="10" Grid.Row="2">
 			<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
 				<TextBlock Foreground="{Binding Source={StaticResource DarkFAccentColor}}"  Text="&#xF4A4;" FontSize="14" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
 				<TextBlock Foreground="{Binding Source={StaticResource DarkFAccentColor}}" Text="{x:Static lang:Resources.WarningIPAPI}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" MaxWidth="766" Width="500"/>
