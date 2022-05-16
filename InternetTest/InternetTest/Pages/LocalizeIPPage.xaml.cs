@@ -45,7 +45,7 @@ public partial class LocalizeIPPage : Page
 	}
 	private string lat, lon = "";
 
-	private async void LocalizeBtn_Click(object sender, RoutedEventArgs e)
+	internal async void LocalizeBtn_Click(object sender, RoutedEventArgs e)
 	{
 		if (await NetworkConnection.IsAvailableAsync())
 		{

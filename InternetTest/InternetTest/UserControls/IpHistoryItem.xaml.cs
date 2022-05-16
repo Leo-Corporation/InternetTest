@@ -53,6 +53,8 @@ public partial class IpHistoryItem : UserControl
 	{
 		Global.LocalizeIPPage.IPTxt.Text = IPInfo.Query; // Set the IP text
 		Global.LocalizeIPPage.HistoryBtn_Click(this, null); // Hide the history
+		Global.LocalizeIPPage.IPRadioBtn.IsChecked = true; // Set the IP radio button as checked
+		Global.LocalizeIPPage.LocalizeBtn_Click(this, null); // Locate the IP
 	}
 
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)
