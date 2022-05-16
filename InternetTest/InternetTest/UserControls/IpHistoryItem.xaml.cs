@@ -40,6 +40,13 @@ public partial class IpHistoryItem : UserControl
 		InitializeComponent();
 		IPInfo = iPInfo; // Set the IPInfo
 		ParentElement = parentElement; // Set the parent element
+
+		InitUI(); // Initialize the UI
+	}
+
+	private void InitUI()
+	{
+		QueryTxt.Text = IPInfo.Query; // Set the query text
 	}
 
 	private void LocateBtn_Click(object sender, RoutedEventArgs e)

@@ -86,7 +86,7 @@ public partial class LocalizeIPPage : Page
 						IPTxt.Text = ip.Query;
 					}
 					IPInfo = ip; // Set
-					HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent));					
+					HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent));
 				}
 				else
 				{

@@ -15,7 +15,7 @@
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 
-			<TextBlock x:Name="SiteNameTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="https://leocorporation.dev" TextWrapping="Wrap" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" FontWeight="Bold"/>
+			<TextBlock x:Name="QueryTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="https://leocorporation.dev" TextWrapping="Wrap" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" FontWeight="Bold"/>
 			<StackPanel Orientation="Horizontal" Grid.Column="2">
 				<Button Content="&#xF4F9;" Margin="5" x:Name="LocateBtn" Click="LocateBtn_Click" Grid.Column="2" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource TabButtonStyle}" Padding="5" Width="25" Height="25"/>
 				<Button Content="&#xF36A;" Margin="5" x:Name="DismissBtn" Click="DismissBtn_Click" Grid.Column="2" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" Style="{DynamicResource TabButtonStyle}" Padding="5" Width="25" Height="25"/>
