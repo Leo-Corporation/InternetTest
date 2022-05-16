@@ -164,12 +164,12 @@ public partial class LocalizeIPPage : Page
 		if (MainContent.Visibility == Visibility.Visible)
 		{
 			MainContent.Visibility = Visibility.Collapsed; // Show history
-			HistoryContent.Visibility = Visibility.Visible; // Hide main content
+			HistoryScrollContent.Visibility = Visibility.Visible; // Hide main content
 			HistoryBtn.Content = "\uF36A"; // Change text
 		}
 		else
 		{
-			HistoryContent.Visibility = Visibility.Collapsed; // Hide history
+			HistoryScrollContent.Visibility = Visibility.Collapsed; // Hide history
 			MainContent.Visibility = Visibility.Visible; // Show main content
 			HistoryBtn.Content = "\uF47F"; // Set text			
 		}

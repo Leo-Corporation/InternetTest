@@ -53,9 +53,11 @@
 						<TextBlock x:Name="IPInfoTxt" d:Text="IP infos here" HorizontalAlignment="Left" FontWeight="Bold" FontSize="16" Margin="10,10,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 					</StackPanel>
 				</ScrollViewer>
-				<StackPanel Visibility="Collapsed" x:Name="HistoryContent" Margin="0,5,0,0">
+				<ScrollViewer x:Name="HistoryScrollContent" Visibility="Collapsed" Height="180" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Template="{DynamicResource ScrollViewerControlTemplate}">
+					<StackPanel x:Name="HistoryContent" Margin="0,5,0,0">
 
-				</StackPanel>
+					</StackPanel>
+				</ScrollViewer>
 			</StackPanel>
 		</Grid>
 
