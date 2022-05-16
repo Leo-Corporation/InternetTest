@@ -109,6 +109,12 @@ public partial class SettingsPage : Page
 				SettingsManager.Save();
 			}
 
+			if (!Global.Settings.UseIpHistory.HasValue)
+			{
+				Global.Settings.UseIpHistory = true; // Set default value
+				SettingsManager.Save(); // Save changes
+			}
+
 			HTTPSRadioBtn.IsChecked = Global.Settings.UseHTTPS.Value; // Set
 			HTTPRadioBtn.IsChecked = !Global.Settings.UseHTTPS.Value; // Set
 
@@ -118,6 +124,7 @@ public partial class SettingsPage : Page
 			LaunchTestOnStartChk.IsChecked = Global.Settings.LaunchTestOnStart ?? true; // Set
 			NotifyTestChk.IsChecked = Global.Settings.TestNotification; // Set
 			NotifyDownDetectorChk.IsChecked = Global.Settings.DownDetectorNotification; // Set
+			UseHistoryLocateIPChk.IsChecked = Global.Settings.UseIpHistory ?? true; // Set
 
 			// Load LangComboBox
 			LangComboBox.Items.Add(Properties.Resources.Default); // Add "default"
@@ -557,6 +564,7 @@ public partial class SettingsPage : Page
 				TestNotification = true,
 				DownDetectorNotification = true,
 				IsFirstRun = false, // Default is true but the user just want to reset their settings to default, so there is no need to put them back to the start
+				UseIpHistory = true,
 			}; // Create default settings
 
 			SettingsManager.Save(); // Save the changes
@@ -587,6 +595,7 @@ public partial class SettingsPage : Page
 
 	private void UseHistoryLocateIPChk_Checked(object sender, RoutedEventArgs e)
 	{
-
+		Global.Settings.UseIpHistory = UseHistoryLocateIPChk.IsChecked; // Set value
+		SettingsManager.Save(); // Save changes
 	}
 }

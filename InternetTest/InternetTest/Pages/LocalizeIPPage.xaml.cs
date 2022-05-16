@@ -64,10 +64,11 @@ public partial class LocalizeIPPage : Page
 						IPTxt.Text = ip.Query;
 					}
 					IPInfo = ip; // Set
-					
-					if (!Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
+
+					if (Global.Settings.UseIpHistory.Value && !Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
 					{
 						HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent)); // Add to the history stack panel
+						HistoryBtn.Visibility = Visibility.Visible; // Show history button
 					}
 				}
 				else
@@ -91,9 +92,10 @@ public partial class LocalizeIPPage : Page
 					}
 					IPInfo = ip; // Set
 
-					if (!Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
+					if (Global.Settings.UseIpHistory.Value && !Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
 					{
 						HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent)); // Add to the history stack panel
+						HistoryBtn.Visibility = Visibility.Visible; // Show history button
 					}
 				}
 				else

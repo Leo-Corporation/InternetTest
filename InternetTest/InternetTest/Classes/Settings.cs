@@ -100,6 +100,11 @@ public class Settings
 	/// True if this is the first time InternetTest is launched.
 	/// </summary>
 	public bool? IsFirstRun { get; set; }
+
+	/// <summary>
+	/// <see langword="true"/> if InternetTest should save a list of located IPs to the history.
+	/// </summary>
+	public bool? UseIpHistory { get; set; }
 }
 
 /// <summary>
@@ -140,6 +145,7 @@ public static class SettingsManager
 				TestNotification = true,
 				DownDetectorNotification = true,
 				IsFirstRun = true,
+				UseIpHistory = true,
 			}; // Create a new settings file
 
 			Save(); // Save the changes
