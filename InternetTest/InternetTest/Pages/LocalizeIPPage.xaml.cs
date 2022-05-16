@@ -64,7 +64,11 @@ public partial class LocalizeIPPage : Page
 						IPTxt.Text = ip.Query;
 					}
 					IPInfo = ip; // Set
-					HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent));
+					
+					if (!Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
+					{
+						HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent)); // Add to the history stack panel
+					}
 				}
 				else
 				{
@@ -86,7 +90,11 @@ public partial class LocalizeIPPage : Page
 						IPTxt.Text = ip.Query;
 					}
 					IPInfo = ip; // Set
-					HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent));
+
+					if (!Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
+					{
+						HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent)); // Add to the history stack panel
+					}
 				}
 				else
 				{

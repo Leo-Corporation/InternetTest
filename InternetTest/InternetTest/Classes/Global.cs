@@ -81,6 +81,11 @@ public static class Global
 	public static List<string> LanguageCodeList => new() { "en-US", "fr-FR", "zh-CN" };
 
 	/// <summary>
+	/// Stores all the IP in history (if enabled).
+	/// </summary>
+	public static List<string> LocatedIPs { get; set; }
+
+	/// <summary>
 	/// GitHub link for the last version (<see cref="string"/>).
 	/// </summary>
 	public static string LastVersionLink { get => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/5.0/Version.txt"; }
