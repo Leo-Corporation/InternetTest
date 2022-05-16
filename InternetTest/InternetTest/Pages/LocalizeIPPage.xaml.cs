@@ -171,6 +171,8 @@ public partial class LocalizeIPPage : Page
 
 	internal void HistoryBtn_Click(object sender, RoutedEventArgs e)
 	{
+		HistoryBtn.Visibility = HistoryContent.Children.Count > 0 ? Visibility.Visible : Visibility.Collapsed; // Show history button
+
 		if (MainContent.Visibility == Visibility.Visible)
 		{
 			MainContent.Visibility = Visibility.Collapsed; // Show history
@@ -181,7 +183,7 @@ public partial class LocalizeIPPage : Page
 		{
 			HistoryScrollContent.Visibility = Visibility.Collapsed; // Hide history
 			MainContent.Visibility = Visibility.Visible; // Show main content
-			HistoryBtn.Content = "\uF47F"; // Set text			
+			HistoryBtn.Content = "\uF47F"; // Set text
 		}
 	}
 
