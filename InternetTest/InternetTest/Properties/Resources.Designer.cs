@@ -394,6 +394,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to History related settings..
+        /// </summary>
+        public static string HistoryDescription {
+            get {
+                return ResourceManager.GetString("HistoryDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to HTTP.
         /// </summary>
         public static string HTTP {
@@ -1029,6 +1038,15 @@ namespace InternetTest.Properties {
         public static string UpToDate {
             get {
                 return ResourceManager.GetString("UpToDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use history in Locate IP page..
+        /// </summary>
+        public static string UseHistory {
+            get {
+                return ResourceManager.GetString("UseHistory", resourceCulture);
             }
         }
         

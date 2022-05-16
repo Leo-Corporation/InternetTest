@@ -480,4 +480,10 @@
   <data name="Unpin" xml:space="preserve">
     <value>Unpin</value>
   </data>
+  <data name="HistoryDescription" xml:space="preserve">
+    <value>History related settings.</value>
+  </data>
+  <data name="UseHistory" xml:space="preserve">
+    <value>Use history in Locate IP page.</value>
+  </data>
 </root>
