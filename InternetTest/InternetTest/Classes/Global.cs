@@ -68,7 +68,7 @@ public static class Global
 	/// <summary>
 	/// The current version of InternetTest.
 	/// </summary>
-	public static string Version => "6.1.0.2203";
+	public static string Version => "6.2.0.2205";
 
 	/// <summary>
 	/// List of the available languages.
@@ -79,6 +79,11 @@ public static class Global
 	/// List of the available languages codes.
 	/// </summary>
 	public static List<string> LanguageCodeList => new() { "en-US", "fr-FR", "zh-CN" };
+
+	/// <summary>
+	/// Stores all the IP in history (if enabled).
+	/// </summary>
+	public static List<string> LocatedIPs { get; set; }
 
 	/// <summary>
 	/// GitHub link for the last version (<see cref="string"/>).

@@ -39,6 +39,8 @@ public partial class App : Application
 		Global.ChangeTheme(); // Change the theme
 		Global.ChangeLanguage(); // Change the language
 
+		Global.LocatedIPs = new(); // Create the list of IPs
+
 		Global.SettingsPage = new(); // Create a new SettingsPage
 		Global.ConnectionPage = new(); // Create a new ConnectionPage
 		Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage

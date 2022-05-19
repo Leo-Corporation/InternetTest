@@ -480,4 +480,10 @@
   <data name="Unpin" xml:space="preserve">
     <value>Désépingler</value>
   </data>
+  <data name="HistoryDescription" xml:space="preserve">
+    <value>Paramètres liés à l'historique.</value>
+  </data>
+  <data name="UseHistory" xml:space="preserve">
+    <value>Utiliser l'historique dans la page "Localiser IP".</value>
+  </data>
 </root>

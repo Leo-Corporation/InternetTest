@@ -359,7 +359,7 @@ public partial class DownDetectorPage : Page
 
 	private void AddBtn_Click(object sender, RoutedEventArgs e)
 	{
-		if (!string.IsNullOrEmpty(WebsiteTextBox.Text))
+		if (!string.IsNullOrEmpty(WebsiteTextBox.Text) && WebsiteTextBox.Text.Split(new string[] { "." }, StringSplitOptions.None).Length >= 2)
 		{
 			WebsiteItemPanel.Children.Add(new WebsiteItem(FormatURL(WebsiteTextBox.Text))); // Add website item
 			WebsiteTextBox.Text = ""; // Empty

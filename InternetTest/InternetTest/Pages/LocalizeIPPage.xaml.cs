@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using InternetTest.UserControls;
 using LeoCorpLibrary;
 using Microsoft.Win32;
 using System.IO;
@@ -37,13 +38,14 @@ namespace InternetTest.Pages;
 public partial class LocalizeIPPage : Page
 {
 	IPInfo IPInfo { get; set; }
+	string lastIP, lastWebsite = "";
 	public LocalizeIPPage()
 	{
 		InitializeComponent();
 	}
 	private string lat, lon = "";
 
-	private async void LocalizeBtn_Click(object sender, RoutedEventArgs e)
+	internal async void LocalizeBtn_Click(object sender, RoutedEventArgs e)
 	{
 		if (await NetworkConnection.IsAvailableAsync())
 		{
@@ -55,12 +57,19 @@ public partial class LocalizeIPPage : Page
 					lat = ip.Lat; // Define
 					lon = ip.Lon; // Define
 					IPInfoTxt.Text = ip.ToString(); // Show IP info
+					lastIP = IPTxt.Text; // Define
 
 					if (string.IsNullOrEmpty(IPTxt.Text))
 					{
 						IPTxt.Text = ip.Query;
 					}
 					IPInfo = ip; // Set
+
+					if (Global.Settings.UseIpHistory.Value && !Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
+					{
+						HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent)); // Add to the history stack panel
+						HistoryBtn.Visibility = Visibility.Visible; // Show history button
+					}
 				}
 				else
 				{
@@ -75,12 +84,19 @@ public partial class LocalizeIPPage : Page
 					lat = ip.Lat; // Define
 					lon = ip.Lon; // Define
 					IPInfoTxt.Text = ip.ToString(); // Show IP info
+					lastWebsite = IPTxt.Text; // Define
 
 					if (string.IsNullOrEmpty(IPTxt.Text))
 					{
 						IPTxt.Text = ip.Query;
 					}
 					IPInfo = ip; // Set
+
+					if (Global.Settings.UseIpHistory.Value && !Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
+					{
+						HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent)); // Add to the history stack panel
+						HistoryBtn.Visibility = Visibility.Visible; // Show history button
+					}
 				}
 				else
 				{
@@ -153,6 +169,29 @@ public partial class LocalizeIPPage : Page
 		IPPwrBox.Password = IPTxt.Text; // Set text
 	}
 
+	internal void HistoryBtn_Click(object sender, RoutedEventArgs e)
+	{
+		HistoryBtn.Visibility = HistoryContent.Children.Count > 0 ? Visibility.Visible : Visibility.Collapsed; // Show history button
+
+		if (MainContent.Visibility == Visibility.Visible)
+		{
+			MainContent.Visibility = Visibility.Collapsed; // Show history
+			HistoryScrollContent.Visibility = Visibility.Visible; // Hide main content
+			HistoryBtn.Content = "\uF36A"; // Change text
+		}
+		else
+		{
+			HistoryScrollContent.Visibility = Visibility.Collapsed; // Hide history
+			MainContent.Visibility = Visibility.Visible; // Show main content
+			HistoryBtn.Content = "\uF47F"; // Set text
+		}
+	}
+
+	private void IPRadioBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		IPTxt.Text = IPRadioBtn.IsChecked.Value ? lastIP : lastWebsite; // Clear text
+	}
+
 	private async void MyIPBtn_Click(object sender, RoutedEventArgs e)
 	{
 		if (await NetworkConnection.IsAvailableAsync())
@@ -162,6 +201,7 @@ public partial class LocalizeIPPage : Page
 			lon = ip.Lon; // Define
 			IPInfoTxt.Text = ip.ToString(); // Show IP info
 			IPTxt.Text = ip.Query;
+			lastIP = ip.Query; // Define
 			IPRadioBtn.IsChecked = true;
 			IPInfo = ip; // Set
 		}

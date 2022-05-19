@@ -460,24 +460,30 @@
     <value>致谢和特别感谢</value>
   </data>
   <data name="TestMultipleWebsites" xml:space="preserve">
-    <value>Test multiple websites.</value>
+    <value>测试多个网站。</value>
   </data>
   <data name="Add" xml:space="preserve">
-    <value>Add</value>
+    <value>添加</value>
   </data>
   <data name="Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>移除</value>
   </data>
   <data name="LaunchTests" xml:space="preserve">
-    <value>Launch all tests</value>
+    <value>启动所有测试</value>
   </data>
   <data name="HideShowIP" xml:space="preserve">
-    <value>Hide or show the IP address</value>
+    <value>隐藏或显示 IP 地址</value>
   </data>
   <data name="Pin" xml:space="preserve">
-    <value>Pin</value>
+    <value>固定</value>
   </data>
   <data name="Unpin" xml:space="preserve">
-    <value>Unpin</value>
+    <value>取消固定</value>
+  </data>
+  <data name="HistoryDescription" xml:space="preserve">
+    <value>History related settings.</value>
+  </data>
+  <data name="UseHistory" xml:space="preserve">
+    <value>Use history in Locate IP page.</value>
   </data>
 </root>
