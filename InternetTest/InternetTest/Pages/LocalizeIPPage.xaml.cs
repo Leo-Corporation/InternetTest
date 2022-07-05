@@ -74,6 +74,8 @@ public partial class LocalizeIPPage : Page
 					TimezoneTxt.Text = ip.TimeZone; // Set text
 					ISPTxt.Text = ip.ISP; // Set text
 
+					DashboardPanel.Visibility = Visibility.Visible;
+					DashPlaceholder.Visibility = Visibility.Collapsed; // Hide placeholder
 
 					if (Global.Settings.UseIpHistory.Value && !Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
 					{
@@ -111,6 +113,9 @@ public partial class LocalizeIPPage : Page
 					TimezoneTxt.Text = ip.TimeZone; // Set text
 					ISPTxt.Text = ip.ISP; // Set text
 
+					DashboardPanel.Visibility = Visibility.Visible;
+					DashPlaceholder.Visibility = Visibility.Collapsed; // Hide placeholder
+					
 					if (Global.Settings.UseIpHistory.Value && !Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
 					{
 						HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent)); // Add to the history stack panel
@@ -232,6 +237,9 @@ public partial class LocalizeIPPage : Page
 			LongitudeTxt.Text = ip.Lon; // Set text
 			TimezoneTxt.Text = ip.TimeZone; // Set text
 			ISPTxt.Text = ip.ISP; // Set text
+
+			DashboardPanel.Visibility = Visibility.Visible;
+			DashPlaceholder.Visibility = Visibility.Collapsed; // Hide placeholder
 		}
 	}
 }
