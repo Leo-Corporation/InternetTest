@@ -486,4 +486,7 @@
   <data name="UseHistory" xml:space="preserve">
     <value>Use history in Locate IP page.</value>
   </data>
+  <data name="LocateIPToSeeData" xml:space="preserve">
+    <value>Locate an IP to see its information appear.</value>
+  </data>
 </root>

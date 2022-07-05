@@ -610,6 +610,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Locate an IP to see its information appear..
+        /// </summary>
+        public static string LocateIPToSeeData {
+            get {
+                return ResourceManager.GetString("LocateIPToSeeData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Longitude.
         /// </summary>
         public static string Longitude {
