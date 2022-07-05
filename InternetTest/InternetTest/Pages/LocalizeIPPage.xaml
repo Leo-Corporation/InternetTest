@@ -30,29 +30,141 @@
 
 				</Grid>
 				<ScrollViewer x:Name="MainContent" HorizontalScrollBarVisibility="Auto" Height="180" Template="{DynamicResource ScrollViewerControlTemplate}">
-					<StackPanel>
-						<StackPanel Orientation="Horizontal">
-							<TextBox x:Name="IPTxt" Style="{DynamicResource TextBoxStyle1}" Margin="10" Padding="5" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" Foreground="{Binding Source={StaticResource Foreground1}}" Width="450" TextChanged="IPTxt_TextChanged"/>
-							<PasswordBox Visibility="Collapsed" Style="{DynamicResource PasswordBoxStyle1}" x:Name="IPPwrBox" Margin="10" FontSize="12" Padding="5" FontWeight="Bold" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" SelectionBrush="#FF007AF5" BorderThickness="3" Width="450"/>
-							<Button x:Name="HideShowPassword" Click="HideShowPassword_Click" Content="&#xF3FC;" Style="{DynamicResource TabButtonStyle}" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="15" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" Padding="7,5,7,5" VerticalAlignment="Center" Height="25" HorizontalAlignment="Right">
-								<Button.ToolTip>
-									<ToolTip Content="{x:Static lang:Resources.HideShowIP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
-								</Button.ToolTip>
-							</Button>
-						</StackPanel>
-						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-							<RadioButton x:Name="IPRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.IP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" IsChecked="True" Checked="IPRadioBtn_Checked"/>
-							<RadioButton x:Name="WebsiteRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.Website}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" Margin="10,0,10,0" Checked="IPRadioBtn_Checked"/>
-						</StackPanel>
-						<StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-							<Button x:Name="LocalizeBtn" Click="LocalizeBtn_Click" Content="{x:Static lang:Resources.LocalizeIP}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" Margin="0,10,10,0"/>
-							<Button x:Name="MyIPBtn" Click="MyIPBtn_Click" Content="{x:Static lang:Resources.MyIP}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,10,0"/>
-							<Button x:Name="OpenMapBtn" Click="OpenMapBtn_Click" Content="{x:Static lang:Resources.OpenMap}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,10,0"/>
-							<Button x:Name="SaveBtn" Click="SaveBtn_Click" Content="{x:Static lang:Resources.Save}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,0,0"/>
-						</StackPanel>
-						<TextBlock x:Name="IPInfoTxt" d:Text="IP infos here" HorizontalAlignment="Left" FontWeight="Bold" FontSize="16" Margin="10,10,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
-					</StackPanel>
-				</ScrollViewer>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="IPTxt" Style="{DynamicResource TextBoxStyle1}" Margin="10" Padding="5" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" Foreground="{Binding Source={StaticResource Foreground1}}" Width="450" TextChanged="IPTxt_TextChanged"/>
+                                <PasswordBox Visibility="Collapsed" Style="{DynamicResource PasswordBoxStyle1}" x:Name="IPPwrBox" Margin="10" FontSize="12" Padding="5" FontWeight="Bold" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" SelectionBrush="#FF007AF5" BorderThickness="3" Width="450"/>
+                                <Button x:Name="HideShowPassword" Click="HideShowPassword_Click" Content="&#xF3FC;" Style="{DynamicResource TabButtonStyle}" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="15" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" Padding="7,5,7,5" VerticalAlignment="Center" Height="25" HorizontalAlignment="Right">
+                                    <Button.ToolTip>
+                                        <ToolTip Content="{x:Static lang:Resources.HideShowIP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
+                                    </Button.ToolTip>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <RadioButton x:Name="IPRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.IP}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" IsChecked="True" Checked="IPRadioBtn_Checked"/>
+                                <RadioButton x:Name="WebsiteRadioBtn" Style="{DynamicResource RadioButtonStyle1}" GroupName="LocalizeRadioGroup" Content="{x:Static lang:Resources.Website}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="#2153E0" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" Margin="10,0,10,0" Checked="IPRadioBtn_Checked"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Button x:Name="LocalizeBtn" Click="LocalizeBtn_Click" Content="{x:Static lang:Resources.LocalizeIP}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" Margin="0,10,10,0"/>
+                                <Button x:Name="MyIPBtn" Click="MyIPBtn_Click" Content="{x:Static lang:Resources.MyIP}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,10,0"/>
+                                <Button x:Name="OpenMapBtn" Click="OpenMapBtn_Click" Content="{x:Static lang:Resources.OpenMap}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,10,0"/>
+                                <Button x:Name="SaveBtn" Click="SaveBtn_Click" Content="{x:Static lang:Resources.Save}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,0,0"/>
+                            </StackPanel>
+                            <TextBlock x:Name="IPInfoTxt" d:Text="IP infos here" HorizontalAlignment="Left" FontWeight="Bold" FontSize="16" Margin="10,10,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+                        </StackPanel>
+                        <WrapPanel Name="DashboardPanel" Grid.Row="1" Orientation="Horizontal" Width="490">
+                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="{x:Static lang:Resources.Country}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="&#xF3DB;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                        <TextBlock d:Text="Text here" x:Name="CountryTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="{x:Static lang:Resources.Region}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="&#xF52E;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                        <TextBlock d:Text="Text here" x:Name="RegionTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="{x:Static lang:Resources.City}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="&#xF2C3;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                        <TextBlock d:Text="Text here" x:Name="CityTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="{x:Static lang:Resources.ZIPCode}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="&#xF7F8;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                        <TextBlock d:Text="Text here" x:Name="ZipTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="{x:Static lang:Resources.Latitude}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="&#xF55F;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                        <TextBlock d:Text="Text here" x:Name="LatitudeTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="{x:Static lang:Resources.Longitude}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="&#xF4F9;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                        <TextBlock d:Text="Text here" x:Name="LongitudeTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="{x:Static lang:Resources.Timezone}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="&#xF823;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                        <TextBlock d:Text="Text here" x:Name="TimezoneTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                </Border.Effect>
+                                <StackPanel>
+                                    <TextBlock Text="{x:Static lang:Resources.ISP}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="&#xF8AD;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                        <TextBlock d:Text="Text here" x:Name="ISPTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                    </Grid>
+                </ScrollViewer>
 				<ScrollViewer x:Name="HistoryScrollContent" Visibility="Collapsed" Height="180" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Template="{DynamicResource ScrollViewerControlTemplate}">
 					<StackPanel x:Name="HistoryContent" Margin="0,5,0,0">
 
