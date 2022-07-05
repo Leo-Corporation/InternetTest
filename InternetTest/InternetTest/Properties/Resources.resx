@@ -469,4 +469,7 @@
   <data name="LocateIPToSeeData" xml:space="preserve">
     <value>Locate an IP to see its information appear.</value>
   </data>
+  <data name="OpenSourceMention" xml:space="preserve">
+    <value>Open Source - Made with ❤️ in France</value>
+  </data>
 </root>

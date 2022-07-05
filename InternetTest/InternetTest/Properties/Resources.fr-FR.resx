@@ -489,4 +489,7 @@
   <data name="LocateIPToSeeData" xml:space="preserve">
     <value>Localisez une adresse IP pour voir ses informations apparaître.</value>
   </data>
+  <data name="OpenSourceMention" xml:space="preserve">
+    <value>Open Source - Made with ❤️ in France</value>
+  </data>
 </root>
