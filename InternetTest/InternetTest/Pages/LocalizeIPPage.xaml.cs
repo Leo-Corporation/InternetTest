@@ -56,7 +56,6 @@ public partial class LocalizeIPPage : Page
 					var ip = await Global.GetIPInfo(IPTxt.Text); // Get IP info
 					lat = ip.Lat; // Define
 					lon = ip.Lon; // Define
-					IPInfoTxt.Text = ip.ToString(); // Show IP info
 					lastIP = IPTxt.Text; // Define
 
 					if (string.IsNullOrEmpty(IPTxt.Text))
@@ -64,6 +63,17 @@ public partial class LocalizeIPPage : Page
 						IPTxt.Text = ip.Query;
 					}
 					IPInfo = ip; // Set
+
+					// Update dashboard UI
+					CountryTxt.Text = ip.Country; // Set text
+					RegionTxt.Text = ip.RegionName; // Set text
+					CityTxt.Text = ip.City; // Set text
+					ZipTxt.Text = ip.Zip; // Set text
+					LatitudeTxt.Text = ip.Lat; // Set text
+					LongitudeTxt.Text = ip.Lon; // Set text
+					TimezoneTxt.Text = ip.TimeZone; // Set text
+					ISPTxt.Text = ip.ISP; // Set text
+
 
 					if (Global.Settings.UseIpHistory.Value && !Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
 					{
@@ -82,8 +92,7 @@ public partial class LocalizeIPPage : Page
 				{
 					var ip = await Global.GetIPInfo(IPTxt.Text); // Get IP info
 					lat = ip.Lat; // Define
-					lon = ip.Lon; // Define
-					IPInfoTxt.Text = ip.ToString(); // Show IP info
+					lon = ip.Lon; // Define				
 					lastWebsite = IPTxt.Text; // Define
 
 					if (string.IsNullOrEmpty(IPTxt.Text))
@@ -91,6 +100,16 @@ public partial class LocalizeIPPage : Page
 						IPTxt.Text = ip.Query;
 					}
 					IPInfo = ip; // Set
+
+					// Update dashboard UI
+					CountryTxt.Text = ip.Country; // Set text
+					RegionTxt.Text = ip.RegionName; // Set text
+					CityTxt.Text = ip.City; // Set text
+					ZipTxt.Text = ip.Zip; // Set text
+					LatitudeTxt.Text = ip.Lat; // Set text
+					LongitudeTxt.Text = ip.Lon; // Set text
+					TimezoneTxt.Text = ip.TimeZone; // Set text
+					ISPTxt.Text = ip.ISP; // Set text
 
 					if (Global.Settings.UseIpHistory.Value && !Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
 					{
@@ -199,11 +218,20 @@ public partial class LocalizeIPPage : Page
 			var ip = await Global.GetIPInfo(""); // Get IP info
 			lat = ip.Lat; // Define
 			lon = ip.Lon; // Define
-			IPInfoTxt.Text = ip.ToString(); // Show IP info
 			IPTxt.Text = ip.Query;
 			lastIP = ip.Query; // Define
 			IPRadioBtn.IsChecked = true;
 			IPInfo = ip; // Set
+
+			// Update dashboard UI
+			CountryTxt.Text = ip.Country; // Set text
+			RegionTxt.Text = ip.RegionName; // Set text
+			CityTxt.Text = ip.City; // Set text
+			ZipTxt.Text = ip.Zip; // Set text
+			LatitudeTxt.Text = ip.Lat; // Set text
+			LongitudeTxt.Text = ip.Lon; // Set text
+			TimezoneTxt.Text = ip.TimeZone; // Set text
+			ISPTxt.Text = ip.ISP; // Set text
 		}
 	}
 }
