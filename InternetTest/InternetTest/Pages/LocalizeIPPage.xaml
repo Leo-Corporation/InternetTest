@@ -6,7 +6,7 @@
 	  xmlns:local="clr-namespace:InternetTest.Pages"
 	  xmlns:lang="clr-namespace:InternetTest.Properties"
 	  mc:Ignorable="d" 
-	  d:DesignHeight="350" d:DesignWidth="560"
+	  d:DesignHeight="350" d:DesignWidth="560" Foreground="{Binding Source={StaticResource Foreground1}}"
 	  FontFamily="../Fonts/#Montserrat"
 	  Title="LocalizeIPPage">
 
@@ -55,110 +55,109 @@
                                 <Button x:Name="OpenMapBtn" Click="OpenMapBtn_Click" Content="{x:Static lang:Resources.OpenMap}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,10,0"/>
                                 <Button x:Name="SaveBtn" Click="SaveBtn_Click" Content="{x:Static lang:Resources.Save}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,0,0"/>
                             </StackPanel>
-                            <TextBlock x:Name="IPInfoTxt" d:Text="IP infos here" HorizontalAlignment="Left" FontWeight="Bold" FontSize="16" Margin="10,10,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
                         </StackPanel>
-                        <WrapPanel Name="DashboardPanel" Grid.Row="1" Orientation="Horizontal" Width="490">
-                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                        <WrapPanel Name="DashboardPanel" Grid.Row="1" Orientation="Horizontal" Width="490" Margin="0,10,0,0">
+                            <Border Margin="5" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
                                 <Border.Effect>
-                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                    <DropShadowEffect Color="#646464" Opacity="0.1" BlurRadius="30" Direction="-90" ShadowDepth="2" />
                                 </Border.Effect>
                                 <StackPanel>
-                                    <TextBlock Text="{x:Static lang:Resources.Country}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+                                    <TextBlock Text="{x:Static lang:Resources.Country}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="12" Margin="0,0,0,3"/>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xF3DB;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                                        <TextBlock d:Text="Text here" x:Name="CountryTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                        <TextBlock Text="&#xF3DB;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                                        <TextBlock d:Text="Text here" x:Name="CountryTxt" FontWeight="Bold" VerticalAlignment="Center" FontSize="16"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                            <Border Margin="5" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
                                 <Border.Effect>
-                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                    <DropShadowEffect Color="#646464" Opacity="0.1" BlurRadius="30" Direction="-90" ShadowDepth="2" />
                                 </Border.Effect>
                                 <StackPanel>
-                                    <TextBlock Text="{x:Static lang:Resources.Region}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+                                    <TextBlock Text="{x:Static lang:Resources.Region}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="12" Margin="0,0,0,3"/>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xF52E;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                                        <TextBlock d:Text="Text here" x:Name="RegionTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                        <TextBlock Text="&#xF52E;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                                        <TextBlock d:Text="Text here" x:Name="RegionTxt" FontWeight="Bold" VerticalAlignment="Center" FontSize="16"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                            <Border Margin="5" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
                                 <Border.Effect>
-                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                    <DropShadowEffect Color="#646464" Opacity="0.1" BlurRadius="30" Direction="-90" ShadowDepth="2" />
                                 </Border.Effect>
                                 <StackPanel>
-                                    <TextBlock Text="{x:Static lang:Resources.City}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+                                    <TextBlock Text="{x:Static lang:Resources.City}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="12" Margin="0,0,0,3"/>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xF2C3;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                                        <TextBlock d:Text="Text here" x:Name="CityTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                        <TextBlock Text="&#xF2C3;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                                        <TextBlock d:Text="Text here" x:Name="CityTxt" FontWeight="Bold" VerticalAlignment="Center" FontSize="16"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                            <Border Margin="5" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
                                 <Border.Effect>
-                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                    <DropShadowEffect Color="#646464" Opacity="0.1" BlurRadius="30" Direction="-90" ShadowDepth="2" />
                                 </Border.Effect>
                                 <StackPanel>
-                                    <TextBlock Text="{x:Static lang:Resources.ZIPCode}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+                                    <TextBlock Text="{x:Static lang:Resources.ZIPCode}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="12" Margin="0,0,0,3"/>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xF7F8;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                                        <TextBlock d:Text="Text here" x:Name="ZipTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                        <TextBlock Text="&#xF7F8;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                                        <TextBlock d:Text="Text here" x:Name="ZipTxt" FontWeight="Bold" VerticalAlignment="Center" FontSize="16"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                            <Border Margin="5" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
                                 <Border.Effect>
-                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                    <DropShadowEffect Color="#646464" Opacity="0.1" BlurRadius="30" Direction="-90" ShadowDepth="2" />
                                 </Border.Effect>
                                 <StackPanel>
-                                    <TextBlock Text="{x:Static lang:Resources.Latitude}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+                                    <TextBlock Text="{x:Static lang:Resources.Latitude}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="12" Margin="0,0,0,3"/>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xF55F;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                                        <TextBlock d:Text="Text here" x:Name="LatitudeTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                        <TextBlock Text="&#xF55F;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                                        <TextBlock d:Text="Text here" x:Name="LatitudeTxt" FontWeight="Bold" VerticalAlignment="Center" FontSize="16"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                            <Border Margin="5" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
                                 <Border.Effect>
-                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                    <DropShadowEffect Color="#646464" Opacity="0.1" BlurRadius="30" Direction="-90" ShadowDepth="2" />
                                 </Border.Effect>
                                 <StackPanel>
-                                    <TextBlock Text="{x:Static lang:Resources.Longitude}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+                                    <TextBlock Text="{x:Static lang:Resources.Longitude}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="12" Margin="0,0,0,3"/>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xF4F9;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                                        <TextBlock d:Text="Text here" x:Name="LongitudeTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                        <TextBlock Text="&#xF4F9;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                                        <TextBlock d:Text="Text here" x:Name="LongitudeTxt" FontWeight="Bold" VerticalAlignment="Center" FontSize="16"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                            <Border Margin="5" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
                                 <Border.Effect>
-                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                    <DropShadowEffect Color="#646464" Opacity="0.1" BlurRadius="30" Direction="-90" ShadowDepth="2" />
                                 </Border.Effect>
                                 <StackPanel>
-                                    <TextBlock Text="{x:Static lang:Resources.Timezone}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+                                    <TextBlock Text="{x:Static lang:Resources.Timezone}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="12" Margin="0,0,0,3"/>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xF823;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                                        <TextBlock d:Text="Text here" x:Name="TimezoneTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                        <TextBlock Text="&#xF823;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                                        <TextBlock d:Text="Text here" x:Name="TimezoneTxt" FontWeight="Bold" VerticalAlignment="Center" FontSize="16"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            <Border Margin="2" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
+                            <Border Margin="5" Padding="5" Background="{Binding Source={StaticResource Background3}}" CornerRadius="5">
                                 <Border.Effect>
-                                    <DropShadowEffect Color="#646464" Opacity="0.5" BlurRadius="50" Direction="-90" ShadowDepth="2" />
+                                    <DropShadowEffect Color="#646464" Opacity="0.1" BlurRadius="30" Direction="-90" ShadowDepth="2" />
                                 </Border.Effect>
                                 <StackPanel>
-                                    <TextBlock Text="{x:Static lang:Resources.ISP}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="8" Margin="0,0,0,3"/>
+                                    <TextBlock Text="{x:Static lang:Resources.ISP}" FontWeight="Bold" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}" FontSize="12" Margin="0,0,0,3"/>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xF8AD;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                                        <TextBlock d:Text="Text here" x:Name="ISPTxt" FontWeight="Bold" VerticalAlignment="Center"/>
+                                        <TextBlock Text="&#xF8AD;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,10,0" VerticalAlignment="Center" FontSize="16"/>
+                                        <TextBlock d:Text="Text here" x:Name="ISPTxt" FontWeight="Bold" VerticalAlignment="Center" FontSize="16"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
