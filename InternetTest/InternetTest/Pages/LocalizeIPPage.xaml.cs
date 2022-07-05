@@ -115,7 +115,7 @@ public partial class LocalizeIPPage : Page
 
 					DashboardPanel.Visibility = Visibility.Visible;
 					DashPlaceholder.Visibility = Visibility.Collapsed; // Hide placeholder
-					
+
 					if (Global.Settings.UseIpHistory.Value && !Global.LocatedIPs.Contains(ip.Query)) // Avoid duplicates
 					{
 						HistoryContent.Children.Add(new IpHistoryItem(ip, HistoryContent)); // Add to the history stack panel
