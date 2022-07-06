@@ -5,7 +5,7 @@
 	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 	  xmlns:local="clr-namespace:InternetTest.Pages.FirstRunPages"
 	  xmlns:lang="clr-namespace:InternetTest.Properties"
-	  mc:Ignorable="d" FontFamily="..\..\Fonts\#Montserrat"
+	  mc:Ignorable="d" FontFamily="..\..\Fonts\#Hauora"
 	  d:DesignHeight="450" d:DesignWidth="800" Foreground="{Binding Source={StaticResource Foreground1}}"
 	  Title="UpdatePage">
 
@@ -17,11 +17,11 @@
 
 		<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 			<TextBlock Text="&#xF191;" Margin="30 0" FontSize="100" FontFamily="..\..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
-			<TextBlock Text="{x:Static lang:Resources.Updates}" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center"/>
+			<TextBlock Text="{x:Static lang:Resources.Updates}" FontWeight="ExtraBold" FontSize="16" HorizontalAlignment="Center"/>
 		</StackPanel>
 
 		<StackPanel Margin="10" Grid.Column="1">
-			<TextBlock Text="{x:Static lang:Resources.Updates}" FontWeight="Bold" FontSize="16"/>
+			<TextBlock Text="{x:Static lang:Resources.Updates}" FontWeight="ExtraBold" FontSize="16"/>
 			<TextBlock Text="{x:Static lang:Resources.Settings}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" Margin="0,0,0,15"/>
 
 			<CheckBox Margin="0 2 0 2" x:Name="CheckUpdatesOnStartChk" Style="{DynamicResource CheckBoxStyle1}" Content="{x:Static lang:Resources.CheckUpdatesOnStart}" BorderThickness="3" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" VerticalContentAlignment="Center" Unchecked="CheckUpdatesOnStartChk_Checked" Checked="CheckUpdatesOnStartChk_Checked"/>

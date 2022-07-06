@@ -7,7 +7,7 @@
 	  xmlns:lang="clr-namespace:InternetTest.Properties"
 	  mc:Ignorable="d" Foreground="{Binding Source={StaticResource Foreground1}}"
 	  d:DesignHeight="350" d:DesignWidth="560"
-	  FontFamily="../Fonts/#Montserrat"
+	  FontFamily="../Fonts/#Hauora"
 	  Title="DownDetectorPage">
 
 	<Grid>
@@ -28,8 +28,8 @@
 					<Border x:Name="StatusBorder" Cursor="Hand" MouseLeftButtonUp="StatusBorder_MouseLeftButtonUp" Background="{Binding Source={StaticResource Green}}" CornerRadius="5" Margin="0 1 10 1" Padding="5">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock x:Name="StatusIconTxt" Text="&#xF299;" FontFamily="..\Fonts\#FluentSystemIcons-Filled" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="14"/>
-							<TextBlock x:Name="StatusCodeTxt" d:Text="200" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold"/>
-							<TextBlock x:Name="StatusMsgTxt" d:Text="- OK" Visibility="Collapsed" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold"/>
+							<TextBlock x:Name="StatusCodeTxt" d:Text="200" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" FontWeight="ExtraBold"/>
+							<TextBlock x:Name="StatusMsgTxt" d:Text="- OK" Visibility="Collapsed" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" FontWeight="ExtraBold"/>
 						</StackPanel>
 						<Border.ToolTip>
 							<ToolTip x:Name="StatusToolTip" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
@@ -51,11 +51,11 @@
 			<Grid x:Name="ContentGrid">
 				<StackPanel Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">
 					<TextBlock x:Name="InternetIconTxt" Text="&#xF4AB;" HorizontalAlignment="Center" FontWeight="Normal" FontSize="78" Margin="0 10 0 0" Foreground="{Binding Source={StaticResource Gray}}" FontFamily="..\Fonts\#FluentSystemIcons-Filled"/>
-					<TextBlock x:Name="ConnectionStatusTxt" Text="{x:Static lang:Resources.EnterURLToCheck}" HorizontalAlignment="Center" FontWeight="Bold" FontSize="16" Margin="0 10 0 0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+					<TextBlock x:Name="ConnectionStatusTxt" Text="{x:Static lang:Resources.EnterURLToCheck}" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="16" Margin="0 10 0 0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 					<TextBox x:Name="WebsiteTxt" Style="{DynamicResource TextBoxStyle1}" Margin="10" Padding="5" Background="{x:Null}" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 					<StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-						<Button x:Name="CheckBtn" Click="CheckBtn_Click" Content="{x:Static lang:Resources.Check}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" Margin="0,10,10,0"/>
-						<Button x:Name="OpenBrowserBtn" Click="OpenBrowserBtn_Click" Content="{x:Static lang:Resources.OpenInBrowser}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="Bold" Margin="0,10,0,0"/>
+						<Button x:Name="CheckBtn" Click="CheckBtn_Click" Content="{x:Static lang:Resources.Check}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" Margin="0,10,10,0"/>
+						<Button x:Name="OpenBrowserBtn" Click="OpenBrowserBtn_Click" Content="{x:Static lang:Resources.OpenInBrowser}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" FontWeight="ExtraBold" Margin="0,10,0,0"/>
 					</StackPanel>
 				</StackPanel>
 			</Grid>
@@ -64,7 +64,7 @@
 					<RowDefinition Height="Auto"/>
 					<RowDefinition/>
 				</Grid.RowDefinitions>
-				<TextBlock Text="{x:Static lang:Resources.Historic}" FontWeight="Bold" Margin="5"/>
+				<TextBlock Text="{x:Static lang:Resources.Historic}" FontWeight="ExtraBold" Margin="5"/>
 
 				<ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1" Height="180">
 					<StackPanel x:Name="HistoricDisplayer" Orientation="Vertical" Grid.Row="1">
@@ -96,7 +96,7 @@
 					<TextBlock x:Name="AlarmIconTxt" Text="&#xF2E2;" FontSize="80" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Gray}}" HorizontalAlignment="Center" VerticalAlignment="Center">
 						
 					</TextBlock>
-					<TextBlock x:Name="NextCheckTxt" Text="{x:Static lang:Resources.NoNextCheck}" FontWeight="Bold" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Center" Grid.Row="1"/>
+					<TextBlock x:Name="NextCheckTxt" Text="{x:Static lang:Resources.NoNextCheck}" FontWeight="ExtraBold" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Center" Grid.Row="1"/>
 				</Grid>
 			</Grid>
 			<Grid x:Name="MultipleWebsitesPanel" Visibility="Collapsed">
@@ -116,12 +116,12 @@
 								</Grid.RowDefinitions>
 
 								<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-									<TextBlock Text="{x:Static lang:Resources.Website}" Margin="0 0 10 0" VerticalAlignment="Center" FontWeight="Bold"/>
+									<TextBlock Text="{x:Static lang:Resources.Website}" Margin="0 0 10 0" VerticalAlignment="Center" FontWeight="ExtraBold"/>
 									<TextBox x:Name="WebsiteTextBox" Style="{DynamicResource TextBoxStyle1}" Padding="0 2" Background="{x:Null}" Foreground="{Binding Source={StaticResource Foreground1}}" Margin="0 0 10 0" VerticalAlignment="Center" Width="300" BorderBrush="{Binding Source={StaticResource AccentColor}}" SelectionBrush="{Binding Source={StaticResource AccentColor}}" CaretBrush="{Binding Source={StaticResource Foreground1}}"/>
-									<Button x:Name="AddBtn" Click="AddBtn_Click" Content="{x:Static lang:Resources.Add}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" VerticalAlignment="Center"/>
+									<Button x:Name="AddBtn" Click="AddBtn_Click" Content="{x:Static lang:Resources.Add}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" VerticalAlignment="Center"/>
 								</StackPanel>
 
-								<Button x:Name="LaunchTestsBtn" Click="LaunchTestsBtn_Click" Content="{x:Static lang:Resources.LaunchTests}" HorizontalAlignment="Left" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="1" Margin="0,5,0,0"/>
+								<Button x:Name="LaunchTestsBtn" Click="LaunchTestsBtn_Click" Content="{x:Static lang:Resources.LaunchTests}" HorizontalAlignment="Left" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" VerticalAlignment="Center" Grid.Row="1" Margin="0,5,0,0"/>
 
 								<StackPanel Grid.Row="2">
 									<CheckBox Margin="0 10 0 2" x:Name="AutoCheckMultipleWebsiteDownChk" Style="{DynamicResource CheckBoxStyle1}" Content="{x:Static lang:Resources.AutoCheckEverySecondsWebsiteDown}" BorderThickness="3" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" VerticalContentAlignment="Center" Unchecked="AutoCheckMultipleWebsiteDownChk_Checked" Checked="AutoCheckMultipleWebsiteDownChk_Checked"/>

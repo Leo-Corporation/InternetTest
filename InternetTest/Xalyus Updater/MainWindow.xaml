@@ -136,7 +136,7 @@
 		VerticalAlignment="Center"
 		FontSize="15"
 		Text="Xalyus Updater"
-        FontWeight="Bold"
+        FontWeight="ExtraBold"
         Foreground="White">
 				<TextBlock.Style>
 					<Style TargetType="TextBlock">
@@ -176,7 +176,7 @@
 
 						<Image Grid.Column="0" Margin="15" Source="\Images\Xalyus Updater.png"/>
 						<StackPanel Margin="10 15 0 0" Grid.Column="1">
-							<TextBlock x:Name="TitleTxt" FontWeight="Bold" FontSize="20" Foreground="White" Text="InternetTest"/>
+							<TextBlock x:Name="TitleTxt" FontWeight="ExtraBold" FontSize="20" Foreground="White" Text="InternetTest"/>
 							<TextBlock x:Name="DescriptionTxt" FontSize="15" TextWrapping="Wrap" Foreground="White" Text="InternetTest"/>
 						</StackPanel>
 					</Grid>
@@ -185,7 +185,7 @@
 				<Border Margin="0" Grid.Row="1" Height="118" Width="508" Background="#FF0A0A1E" CornerRadius="10">
 					<Grid>
 						<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 15 0 0" Grid.Column="1">
-							<TextBlock x:Name="DownloadTxt" TextAlignment="Center" FontWeight="Bold" FontSize="15" Foreground="White" Text="Download in progress"/>
+							<TextBlock x:Name="DownloadTxt" TextAlignment="Center" FontWeight="ExtraBold" FontSize="15" Foreground="White" Text="Download in progress"/>
 							<TextBlock x:Name="ProgressTxt" Margin="0 0 0 10" TextAlignment="Center" FontSize="15" Foreground="White" Text="0%"/>
 							<ProgressBar x:Name="Pgb" Style="{DynamicResource RoundedProgressBar}" BorderThickness="0" Height="10" Width="452" Background="#FF050519">
 								<ProgressBar.Foreground>

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:InternetTest.UserControls"
               xmlns:lang="clr-namespace:InternetTest.Properties"
-			 mc:Ignorable="d" FontFamily="..\Fonts\#Montserrat" Foreground="{Binding Source={StaticResource Foreground1}}"
+			 mc:Ignorable="d" FontFamily="..\Fonts\#Hauora" Foreground="{Binding Source={StaticResource Foreground1}}"
 			 d:DesignHeight="50" d:DesignWidth="200" Margin="0,0,0,5">
 	<Border CornerRadius="10" Padding="5" Background="{Binding Source={StaticResource Background2}}">
 		<Grid>
@@ -15,11 +15,11 @@
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 
-			<TextBlock x:Name="TimeTxt" d:Text="14:25" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,5,0"/>
+			<TextBlock x:Name="TimeTxt" d:Text="14:25" FontWeight="ExtraBold" VerticalAlignment="Center" Margin="0,0,5,0"/>
 
 			<StackPanel Orientation="Horizontal" Grid.Column="1">
 				<TextBlock x:Name="StateIconTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="&#xF299;" FontWeight="Normal" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0" FontFamily="..\Fonts\#FluentSystemIcons-Filled" FontSize="14"/>
-				<TextBlock x:Name="StateTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="Up" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0"/>
+				<TextBlock x:Name="StateTxt" Foreground="{Binding Source={StaticResource Foreground1}}" d:Text="Up" FontWeight="ExtraBold" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0"/>
 			</StackPanel>
 			<Button Content="&#xF36A;" Margin="5" x:Name="DismissBtn" Click="DismissBtn_Click" Grid.Column="2" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" Style="{DynamicResource TabButtonStyle}" Padding="5" Width="25" Height="25"/>
 		</Grid>

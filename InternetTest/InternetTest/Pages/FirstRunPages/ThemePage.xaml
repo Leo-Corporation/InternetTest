@@ -5,7 +5,7 @@
 	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 	  xmlns:local="clr-namespace:InternetTest.Pages.FirstRunPages"
 	  xmlns:lang="clr-namespace:InternetTest.Properties"
-	   mc:Ignorable="d" FontFamily="..\..\Fonts\#Montserrat"
+	   mc:Ignorable="d" FontFamily="..\..\Fonts\#Hauora"
 	  d:DesignHeight="450" d:DesignWidth="800" Foreground="{Binding Source={StaticResource Foreground1}}"
 	  Title="ThemePage">
 
@@ -22,11 +22,11 @@
 
 		<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 			<TextBlock Text="&#xF33C;" Margin="30 0" FontSize="100" FontFamily="..\..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
-			<TextBlock Text="{x:Static lang:Resources.Theme}" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center"/>
+			<TextBlock Text="{x:Static lang:Resources.Theme}" FontWeight="ExtraBold" FontSize="16" HorizontalAlignment="Center"/>
 		</StackPanel>
 
 		<StackPanel Margin="10" Grid.Column="1">
-			<TextBlock Text="{x:Static lang:Resources.WelcomeThemeTitle}" FontWeight="Bold" FontSize="16"/>
+			<TextBlock Text="{x:Static lang:Resources.WelcomeThemeTitle}" FontWeight="ExtraBold" FontSize="16"/>
 			<TextBlock Text="{x:Static lang:Resources.ChangeTheme}" Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="14" Margin="0,0,0,15"/>
 
 			<StackPanel Orientation="Horizontal">
@@ -37,7 +37,7 @@
 								<ImageBrush ImageSource="..\..\Images\LightTheme.png"/>
 							</Rectangle.Fill>
 						</Rectangle>
-						<RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="LightRadioBtn" Checked="LightRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.Light}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
+						<RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="LightRadioBtn" Checked="LightRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.Light}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
 					</StackPanel>
 
 					<Border.Triggers>
@@ -60,7 +60,7 @@
 								<ImageBrush ImageSource="..\..\Images\DarkTheme.png"/>
 							</Rectangle.Fill>
 						</Rectangle>
-						<RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="DarkRadioBtn" Checked="DarkRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.Dark}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
+						<RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="DarkRadioBtn" Checked="DarkRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.Dark}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
 					</StackPanel>
 
 					<Border.Triggers>
@@ -83,7 +83,7 @@
 								<ImageBrush ImageSource="..\..\Images\SystemTheme.png"/>
 							</Rectangle.Fill>
 						</Rectangle>
-						<RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="SystemRadioBtn" Checked="SystemRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.System}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
+						<RadioButton Style="{DynamicResource RadioButtonStyle1}" x:Name="SystemRadioBtn" Checked="SystemRadioBtn_Checked" GroupName="ThemeRadioGroup" Content="{x:Static lang:Resources.System}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderBrush="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,2"/>
 					</StackPanel>
 
 					<Border.Triggers>
@@ -99,7 +99,7 @@
 						</EventTrigger>
 					</Border.Triggers>
 				</Border>
-				<Button x:Name="ThemeApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="ThemeApplyBtn_Click" Visibility="Hidden">
+				<Button x:Name="ThemeApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="ThemeApplyBtn_Click" Visibility="Hidden">
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Text="&#xF295;" FontWeight="Regular" FontFamily="..\..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center"/>
 						<TextBlock Text="{x:Static lang:Resources.Apply}" VerticalAlignment="Center"/>

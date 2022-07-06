@@ -6,7 +6,7 @@
 		xmlns:local="clr-namespace:InternetTest.Windows"
 		xmlns:lang="clr-namespace:InternetTest.Properties"
 		mc:Ignorable="d" Foreground="{Binding Source={StaticResource Foreground1}}"
-		FontFamily="/Fonts/#Montserrat"
+		FontFamily="/Fonts/#Hauora"
 		Title="{x:Static lang:Resources.InternetTest}" Height="500" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
 	<WindowChrome.WindowChrome>
 		<WindowChrome CaptionHeight="32" ResizeBorderThickness="10"/>
@@ -129,13 +129,13 @@
 						<ColumnDefinition/>
 						<ColumnDefinition Width="Auto"/>
 					</Grid.ColumnDefinitions>
-					<TextBlock Text="{x:Static lang:Resources.InternetTest}" FontSize="30" FontWeight="Bold" Margin="15" VerticalAlignment="Center"/>
+					<TextBlock Text="{x:Static lang:Resources.InternetTest}" FontSize="30" FontWeight="ExtraBold" Margin="15" VerticalAlignment="Center"/>
 					<Image Margin="5,0,5,5" Grid.Column="1" Height="80" Source="{Binding Source={StaticResource MainWindowBackground}}" Stretch="UniformToFill" HorizontalAlignment="Right"/>
 				</Grid>
 
 				<Frame x:Name="PageViewer" Grid.Row="1" NavigationUIVisibility="Hidden"/>
 
-				<Button x:Name="NextBtn" Click="NextBtn_Click" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" Margin="0,10,10,10" Grid.Row="2">
+				<Button x:Name="NextBtn" Click="NextBtn_Click" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" Margin="0,10,10,10" Grid.Row="2">
 					<StackPanel Orientation="Horizontal" Margin="5">
 						<TextBlock x:Name="NextTxt" Text="{x:Static lang:Resources.Next}" VerticalAlignment="Center"/>
 						<TextBlock Text="&#xF182;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" Margin="10,0,0,0"/>

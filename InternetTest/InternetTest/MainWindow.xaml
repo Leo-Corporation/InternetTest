@@ -6,7 +6,7 @@
 		xmlns:local="clr-namespace:InternetTest"
 		xmlns:lang="clr-namespace:InternetTest.Properties"
 		mc:Ignorable="d"
-		FontFamily="/Fonts/#Montserrat"
+		FontFamily="/Fonts/#Hauora"
 		Title="{x:Static lang:Resources.InternetTest}" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
 
 	<WindowChrome.WindowChrome>
@@ -145,7 +145,7 @@
 						</Grid.ColumnDefinitions>
 
 						<StackPanel HorizontalAlignment="Left">
-							<TextBlock Grid.Row="0" FontWeight="Bold"  Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="48" Text="{x:Static lang:Resources.InternetTest}" Margin="20,0,0,0"/>
+							<TextBlock Grid.Row="0" FontWeight="ExtraBold"  Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="48" Text="{x:Static lang:Resources.InternetTest}" Margin="20,0,0,0"/>
 							<TextBlock x:Name="HelloTxt" Grid.Row="0" FontWeight="Regular"  Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="16" d:Text="[HelloMessage]" Margin="20,0,0,0"/>
 						</StackPanel>
 						<Image Margin="5,0,5,5" Grid.Column="1" Height="80" Source="{Binding Source={StaticResource MainWindowBackground}}" Stretch="UniformToFill" HorizontalAlignment="Right"/>
@@ -158,7 +158,7 @@
 						</Grid.ColumnDefinitions>
 
 						<StackPanel Margin="10" Grid.Column="0">
-							<Button Click="ConnectionBtn_Click" x:Name="ConnectionBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Cursor="Hand">
+							<Button Click="ConnectionBtn_Click" x:Name="ConnectionBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="ExtraBold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Cursor="Hand">
 								<Grid>
 									<Grid.ColumnDefinitions>
 										<ColumnDefinition Width="33"/>
@@ -180,7 +180,7 @@
 									</EventTrigger>
 								</Button.Triggers>
 							</Button>
-							<Button Click="LocalizeIPBtn_Click" x:Name="LocalizeIPBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Height="42.38">
+							<Button Click="LocalizeIPBtn_Click" x:Name="LocalizeIPBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="ExtraBold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Height="42.38">
 								<Grid>
 									<Grid.ColumnDefinitions>
 										<ColumnDefinition Width="Auto"/>
@@ -205,7 +205,7 @@
 									</EventTrigger>
 								</Button.Triggers>
 							</Button>
-							<Button Click="DownDetectorBtn_Click" x:Name="DownDetectorBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave">
+							<Button Click="DownDetectorBtn_Click" x:Name="DownDetectorBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="ExtraBold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave">
 								<Grid>
 									<Grid.ColumnDefinitions>
 										<ColumnDefinition Width="33"/>
@@ -234,7 +234,7 @@
 									</EventTrigger>
 								</Button.Triggers>
 							</Button>
-							<Button Click="SettingsTabBtn_Click" x:Name="SettingsTabBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="Bold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Cursor="Hand">
+							<Button Click="SettingsTabBtn_Click" x:Name="SettingsTabBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="ExtraBold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Cursor="Hand">
 								<StackPanel Orientation="Horizontal">
 									<TextBlock Text="&#xF6AB;" FontSize="23" FontWeight="Regular" FontFamily="/Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
 										<TextBlock.RenderTransform>
