@@ -1,13 +1,16 @@
 ﻿<UserControl x:Class="InternetTest.UserControls.ConnectionHistoricItem"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:InternetTest.UserControls"
-              xmlns:lang="clr-namespace:InternetTest.Properties"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:InternetTest.UserControls"
+			  xmlns:lang="clr-namespace:InternetTest.Properties"
 			 mc:Ignorable="d" FontFamily="..\Fonts\#Hauora" Foreground="{Binding Source={StaticResource Foreground1}}"
 			 d:DesignHeight="50" d:DesignWidth="200" Margin="0,0,0,5">
 	<Border CornerRadius="10" Padding="5" Background="{Binding Source={StaticResource Background2}}">
+		<Border.ToolTip>
+			<ToolTip x:Name="ToolTip" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" />
+		</Border.ToolTip>
 		<Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto"/>

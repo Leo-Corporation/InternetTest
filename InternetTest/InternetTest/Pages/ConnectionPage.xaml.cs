@@ -64,6 +64,7 @@ public partial class ConnectionPage : Page
 		HistoryBtn.Visibility = Visibility.Visible; // Set visibility
 		InternetIconTxt.Text = "\uF45F"; // Set the icon
 		InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Gray"].ToString()) }; // Set the foreground
+		int status = await NetworkConnection.GetWebPageStatusCodeAsync(customSite);
 		if (string.IsNullOrEmpty(customSite)) // If a custom site isn't specified
 		{
 			if (await NetworkConnection.IsAvailableAsync()) // If there is Internet
@@ -71,7 +72,7 @@ public partial class ConnectionPage : Page
 				ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
 				InternetIconTxt.Text = "\uF299"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
-				HistoricDisplayer.Children.Add(new ConnectionHistoricItem(true, HistoricDisplayer));
+				HistoricDisplayer.Children.Add(new ConnectionHistoricItem(new(customSite, status, DateTime.Now, true), HistoricDisplayer));
 
 				if (Global.Settings.TestNotification.Value && !fromStart)
 				{
@@ -85,7 +86,7 @@ public partial class ConnectionPage : Page
 				ConnectionStatusTxt.Text = Properties.Resources.NotConnected; // Set text of the label
 				InternetIconTxt.Text = "\uF36E"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
-				HistoricDisplayer.Children.Add(new ConnectionHistoricItem(false, HistoricDisplayer));
+				HistoricDisplayer.Children.Add(new ConnectionHistoricItem(new(customSite, status, DateTime.Now, false), HistoricDisplayer));
 
 				if (Global.Settings.TestNotification.Value && !fromStart)
 				{
@@ -102,7 +103,7 @@ public partial class ConnectionPage : Page
 				ConnectionStatusTxt.Text = Properties.Resources.Connected; // Set text of the label
 				InternetIconTxt.Text = "\uF299"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) }; // Set the foreground
-				HistoricDisplayer.Children.Add(new ConnectionHistoricItem(true, HistoricDisplayer));
+				HistoricDisplayer.Children.Add(new ConnectionHistoricItem(new(customSite, status, DateTime.Now, true), HistoricDisplayer));
 
 				if (Global.Settings.TestNotification.Value && !fromStart)
 				{
@@ -116,7 +117,7 @@ public partial class ConnectionPage : Page
 				ConnectionStatusTxt.Text = Properties.Resources.NotConnected; // Set text of the label
 				InternetIconTxt.Text = "\uF36E"; // Set the icon
 				InternetIconTxt.Foreground = new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) }; // Set the foreground
-				HistoricDisplayer.Children.Add(new ConnectionHistoricItem(false, HistoricDisplayer));
+				HistoricDisplayer.Children.Add(new ConnectionHistoricItem(new(customSite, status, DateTime.Now, false), HistoricDisplayer));
 
 				if (Global.Settings.TestNotification.Value && !fromStart)
 				{

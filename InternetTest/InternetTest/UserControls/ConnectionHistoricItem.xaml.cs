@@ -34,24 +34,30 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class ConnectionHistoricItem : UserControl
 {
-	bool Connected { get; init; }
+	WebInfo WebInfo { get; init; }
 	StackPanel StackPanel { get; init; }
-	public ConnectionHistoricItem(bool connected, StackPanel stackPanel)
+	public ConnectionHistoricItem(WebInfo webInfo, StackPanel stackPanel)
 	{
 		InitializeComponent();
-		Connected = connected;
+		WebInfo = webInfo;
 		StackPanel = stackPanel;
 		InitUI(); // Load the UI
 	}
 
 	private void InitUI()
 	{
-		StateTxt.Text = Connected ? Properties.Resources.ConnectedShort : Properties.Resources.NotConnectedShort; // Set text
-		StateIconTxt.Text = Connected ? "\uF299" : "\uF36E"; // Set text
-		TimeTxt.Text = DateTime.Now.ToString("hh:mm");
+		StateTxt.Text = WebInfo.Connected ? Properties.Resources.ConnectedShort : Properties.Resources.NotConnectedShort; // Set text
+		StateIconTxt.Text = WebInfo.Connected ? "\uF299" : "\uF36E"; // Set text
+		TimeTxt.Text = WebInfo.Timestamp.ToString("hh:mm");
 
-		StateTxt.Foreground = Connected ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
-		StateIconTxt.Foreground = Connected ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
+		StateTxt.Foreground = WebInfo.Connected ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
+		StateIconTxt.Foreground = WebInfo.Connected ? new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Green"].ToString()) } : new SolidColorBrush { Color = (Color)ColorConverter.ConvertFromString(App.Current.Resources["Red"].ToString()) };
+
+		// Load tooltip
+		ToolTip.Content = $"{Properties.Resources.Status} - {(WebInfo.Connected ? Properties.Resources.Connected : Properties.Resources.NotConnected)}\n" +
+			$"{Properties.Resources.URL} - {WebInfo.URL}\n" +
+			$"{Properties.Resources.StatusCode} - {WebInfo.StatusCode}\n" +
+			$"{Properties.Resources.Time} - {WebInfo.Timestamp:G}";
 	}
 
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)
