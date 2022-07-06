@@ -17,19 +17,19 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="{x:Static lang:Resources.Website}" Margin="0 0 10 0" VerticalAlignment="Center" FontWeight="Normal"/>
-            <TextBlock x:Name="WebsiteTxt" Text="{x:Static lang:Resources.Website}" Margin="0 0 10 0" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="1"/>
+            <TextBlock x:Name="WebsiteTxt" Text="{x:Static lang:Resources.Website}" Margin="0 0 10 0" VerticalAlignment="Center" FontWeight="ExtraBold" Grid.Column="1"/>
 
             <Border x:Name="StatusBorder" Cursor="Hand" Background="{Binding Source={StaticResource Green}}" CornerRadius="5" Padding="5" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,10,0">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock x:Name="StatusIconTxt" Text="&#xF299;" FontFamily="..\Fonts\#FluentSystemIcons-Filled" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontSize="14"/>
-                    <TextBlock x:Name="StatusCodeTxt" d:Text="200" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold"/>
+                    <TextBlock x:Name="StatusCodeTxt" d:Text="200" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" FontWeight="ExtraBold"/>
                 </StackPanel>
                 <Border.ToolTip>
                     <ToolTip x:Name="StatusToolTip" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
                 </Border.ToolTip>
             </Border>
 
-            <Button x:Name="CheckBtn" Click="CheckBtn_Click" Content="{x:Static lang:Resources.Test}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="3"/>
+            <Button x:Name="CheckBtn" Click="CheckBtn_Click" Content="{x:Static lang:Resources.Test}" HorizontalAlignment="Center" Padding="10,5,10,5" Style="{StaticResource TabButtonStyle}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Background="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" VerticalAlignment="Center" Grid.Column="3"/>
             <Button Content="&#xF36A;" Margin="5" x:Name="DismissBtn" Click="DismissBtn_Click" Grid.Column="4" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background2}}" Style="{DynamicResource TabButtonStyle}" Padding="5" Width="25" Height="25"/>
 
         </Grid>

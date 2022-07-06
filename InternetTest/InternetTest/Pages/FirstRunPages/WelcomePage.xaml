@@ -5,14 +5,14 @@
 	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 	  xmlns:local="clr-namespace:InternetTest.Pages.FirstRunPages"
 	  xmlns:lang="clr-namespace:InternetTest.Properties"
-	  mc:Ignorable="d" FontFamily="..\..\Fonts\#Montserrat"
+	  mc:Ignorable="d" FontFamily="..\..\Fonts\#Hauora"
 	  d:DesignHeight="450" d:DesignWidth="800"
 	  Title="WelcomePage" Foreground="{Binding Source={StaticResource Foreground1}}">
 
 	<Grid>
 		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 			<Image Source="..\..\Images\InternetTest.png" Height="150" Width="150"/>
-			<TextBlock x:Name="WelcomeTxt" d:Text="Welcome, [USER]" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+			<TextBlock x:Name="WelcomeTxt" d:Text="Welcome, [USER]" FontSize="24" FontWeight="ExtraBold" HorizontalAlignment="Center"/>
 			<TextBlock Text="{x:Static lang:Resources.WelcomeThanks}" HorizontalAlignment="Center"/>
 		</StackPanel>
 	</Grid>
