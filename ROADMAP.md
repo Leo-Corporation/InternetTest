@@ -14,9 +14,9 @@ InternetTest Pro (also called InternetTest 7) is the next generation of Internet
     - [ ] Rounded corners
 - [ ] Pages
     - [ ] Home page
-        - [ ] "Get started" section 
-        - [ ] "Suggested actions" section
-        - [ ] "Discover" section
+        - [ ] "Get started" section _(powered by [Synethia](https://github.com/Leo-Corporation/Synethia))_
+        - [ ] "Suggested actions" section _(powered by [Synethia](https://github.com/Leo-Corporation/Synethia))_
+        - [ ] "Discover" section _(powered by [Synethia](https://github.com/Leo-Corporation/Synethia))_
     - [ ] History page
         - [ ] "Status" section
         - [ ] "DownDetector" section
