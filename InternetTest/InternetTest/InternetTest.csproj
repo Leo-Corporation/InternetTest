@@ -1,10 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>True</UseWindowsForms>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Fonts\FluentSystemIcons-Filled.ttf" />
+		<None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
+		<None Remove="Fonts\Hauora-ExtraBold.ttf" />
+		<None Remove="Fonts\Hauora-Regular.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Fonts\FluentSystemIcons-Filled.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\FluentSystemIcons-Regular.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\Hauora-ExtraBold.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\Hauora-Regular.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
 
 </Project>
