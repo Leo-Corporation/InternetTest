@@ -45,5 +45,73 @@ public partial class MainWindow : Window
 	public MainWindow()
 	{
 		InitializeComponent();
+		InitUI();
+	}
+
+	private void InitUI()
+	{
+		StateChanged += (o, e) => HandleWindowStateChanged();
+		Loaded += (o, e) => HandleWindowStateChanged();
+		LocationChanged += (o, e) => HandleWindowStateChanged();
+	}
+
+	private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
+	{
+		WindowState = WindowState.Minimized; // Minimize the window
+	}
+
+	private void MaximizeRestoreBtn_Click(object sender, RoutedEventArgs e)
+	{
+		WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+		HandleWindowStateChanged();
+	}
+
+	private void CloseBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Environment.Exit(0); // Close the app
+	}
+	
+	private void HandleWindowStateChanged()
+	{
+		MaximizeRestoreBtn.Content = WindowState == WindowState.Maximized
+			? "\uF670" // Restore icon
+			: "\uFA40"; // Maximize icon
+		MaximizeRestoreBtn.FontSize = WindowState == WindowState.Maximized
+			? 18
+			: 14;
+		
+		DefineMaximumSize();
+		
+		WindowBorder.Margin = WindowState == WindowState.Maximized ? new(10, 10, 0, 0) : new(10); // Set
+		WindowBorder.CornerRadius = WindowState == WindowState.Maximized ? new(0) : new(5); // Set
+	}
+
+	private void DefineMaximumSize()
+	{
+		System.Windows.Forms.Screen currentScreen = System.Windows.Forms.Screen.FromHandle(new System.Windows.Interop.WindowInteropHelper(this).Handle); // The current screen
+
+		float dpiX, dpiY;
+		double scaling = 100; // Default scaling = 100%
+
+		using (System.Drawing.Graphics graphics = System.Drawing.Graphics.FromHwnd(IntPtr.Zero))
+		{
+			dpiX = graphics.DpiX; // Get the DPI
+			dpiY = graphics.DpiY; // Get the DPI
+
+			scaling = dpiX switch
+			{
+				96 => 100, // Get the %
+				120 => 125, // Get the %
+				144 => 150, // Get the %
+				168 => 175, // Get the %
+				192 => 200, // Get the % 
+				_ => 100
+			};
+		}
+
+		double factor = scaling / 100d; // Calculate factor
+
+		MaxHeight = currentScreen.WorkingArea.Height / factor + 5; // Set max size
+		MaxWidth = currentScreen.WorkingArea.Width / factor + 5; // Set max size
 	}
 }
