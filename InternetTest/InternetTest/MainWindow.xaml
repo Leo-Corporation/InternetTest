@@ -7,7 +7,7 @@
 		xmlns:lang="clr-namespace:InternetTest.Properties"
 		mc:Ignorable="d"
 		FontFamily="/Fonts/#Hauora"
-		Title="MainWindow" Height="570" Width="950" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" ResizeMode="CanResize">
+		Title="MainWindow" MinHeight="500" MinWidth="500" Height="570" Width="950" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" ResizeMode="CanResize">
 	<WindowChrome.WindowChrome>
 		<WindowChrome CaptionHeight="32" ResizeBorderThickness="10"/>
 	</WindowChrome.WindowChrome>
@@ -88,7 +88,7 @@
 		<Border.Background>
 			<ImageBrush ImageSource="{Binding Source={StaticResource BackgroundImg}}"/>
 		</Border.Background>
-		<Grid VerticalAlignment="Top">
+		<Grid VerticalAlignment="Stretch">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="Auto"/>
