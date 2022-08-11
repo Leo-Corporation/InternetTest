@@ -5,7 +5,7 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:InternetTest"
 		mc:Ignorable="d"
-        FontFamily="/Fonts/#Hauora"
+		FontFamily="/Fonts/#Hauora"
 		Title="MainWindow" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" ResizeMode="CanResize">
 	<WindowChrome.WindowChrome>
 		<WindowChrome CaptionHeight="32" ResizeBorderThickness="10"/>
@@ -83,7 +83,10 @@
 		<DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity="0.4" RenderingBias="Quality"/>
 	</Window.Effect>
 
-	<Border Name="WindowBorder" Margin="10" BorderThickness="0" Background="{Binding Source={StaticResource Background1}}" CornerRadius="5">
+	<Border Name="WindowBorder" Margin="10" BorderThickness="0" CornerRadius="5">
+		<Border.Background>
+			<ImageBrush ImageSource="{Binding Source={StaticResource BackgroundImg}}"/>
+		</Border.Background>
 		<Grid VerticalAlignment="Top">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto"/>
@@ -100,7 +103,7 @@
 					</Grid.ColumnDefinitions>
 					
 					<Button Grid.Column="1" FontSize="14" Content="&#xFC75;" FontFamily="/Fonts/#FluentSystemIcons-Regular" x:Name="MinimizeBtn" Click="MinimizeBtn_Click"  RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
-                    <Button Grid.Column="2" FontSize="14" Content="&#xFA40;" FontFamily="/Fonts/#FluentSystemIcons-Regular" x:Name="MaximizeRestoreBtn" Click="MaximizeRestoreBtn_Click"  RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+					<Button Grid.Column="2" FontSize="14" Content="&#xFA40;" FontFamily="/Fonts/#FluentSystemIcons-Regular" x:Name="MaximizeRestoreBtn" Click="MaximizeRestoreBtn_Click"  RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 					<Button Grid.Column="3" FontSize="14" Content="&#xF36B;" FontFamily="/Fonts/#FluentSystemIcons-Regular" x:Name="CloseBtn" Click="CloseBtn_Click" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarCloseButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 				</Grid>
 			</Border>
