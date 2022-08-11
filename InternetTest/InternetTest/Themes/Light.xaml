@@ -11,7 +11,7 @@
     <sys:String x:Key="WindowButtonsHoverForeground1">#ffffff</sys:String>
 	<sys:String x:Key="AccentColor">#2153E0</sys:String>
 	<sys:String x:Key="DarkFAccentColor">#2153E0</sys:String>
-	<sys:String x:Key="LightAccentColor">#D2DDF9</sys:String>
+    <sys:String x:Key="LightAccentColor">#CAD8FF</sys:String>
 	<sys:String x:Key="Gray">#DEDEDE</sys:String>
 	<sys:String x:Key="Green">#25DE0F</sys:String>
 	<sys:String x:Key="Red">#FF321E</sys:String>

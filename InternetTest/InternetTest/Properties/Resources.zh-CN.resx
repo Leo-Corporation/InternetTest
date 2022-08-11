@@ -138,4 +138,22 @@
   <data name="History" xml:space="preserve">
     <value>历史</value>
   </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="Pinned" xml:space="preserve">
+    <value>Pinned</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="WebUtilities" xml:space="preserve">
+    <value>Web Utilities</value>
+  </data>
+  <data name="IPTools" xml:space="preserve">
+    <value>IP Tools</value>
+  </data>
+  <data name="Commands" xml:space="preserve">
+    <value>Commands</value>
+  </data>
 </root>
