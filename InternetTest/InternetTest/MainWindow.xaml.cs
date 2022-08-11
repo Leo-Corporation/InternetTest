@@ -33,6 +33,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -48,6 +49,20 @@ public partial class MainWindow : Window
 		InitializeComponent();
 		InitUI();
 	}
+
+	DoubleAnimation expandAnimation = new()
+	{
+		From = 0,
+		To = 180,
+		Duration = new Duration(TimeSpan.FromSeconds(0.2)),
+	};
+
+	DoubleAnimation collapseAnimation = new()
+	{
+		From = 180,
+		To = 0,
+		Duration = new Duration(TimeSpan.FromSeconds(0.2)),
+	};
 
 	private void InitUI()
 	{
@@ -120,16 +135,42 @@ public partial class MainWindow : Window
 
 	private void WebUtilitiesBtn_Click(object sender, RoutedEventArgs e)
 	{
-		UtilitiesPanel.Visibility = UtilitiesPanel.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible; // Show/hide the utilities panel
+		bool expanded = UtilitiesPanel.Visibility == Visibility.Visible;
+		UtilitiesPanel.Visibility = expanded ? Visibility.Collapsed : Visibility.Visible; // Show/hide the utilities panel
+
+		Storyboard storyboard = new(); // Create a storyboard
+
+		storyboard.Children.Add(expanded ? collapseAnimation : expandAnimation);
+		Storyboard.SetTargetName(expanded ? collapseAnimation : expandAnimation, "UtilRotator");
+		Storyboard.SetTargetProperty(expanded ? collapseAnimation : expandAnimation, new(RotateTransform.AngleProperty));
+
+		storyboard.Begin(this); // Animate the utilities panel
 	}
 
 	private void IPToolsBtn_Click(object sender, RoutedEventArgs e)
 	{
-		IPPanel.Visibility = IPPanel.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible; // Show/hide the IP tools panel
+		bool expanded = IPPanel.Visibility == Visibility.Visible;
+		IPPanel.Visibility = expanded ? Visibility.Collapsed : Visibility.Visible; // Show/hide the IP tools panel
+
+		Storyboard storyboard = new(); // Create a storyboard
+
+		storyboard.Children.Add(expanded ? collapseAnimation : expandAnimation);
+		Storyboard.SetTargetName(expanded ? collapseAnimation : expandAnimation, "IPRotator");
+		Storyboard.SetTargetProperty(expanded ? collapseAnimation : expandAnimation, new(RotateTransform.AngleProperty));
+
+		storyboard.Begin(this); // Animate the utilities panel
 	}
 	
 	private void CommandsBtn_Click(object sender, RoutedEventArgs e)
 	{
-		CommandPanel.Visibility = CommandPanel.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible; // Show/hide the commands panel
+		bool expanded = CommandPanel.Visibility == Visibility.Visible;
+		CommandPanel.Visibility = expanded ? Visibility.Collapsed : Visibility.Visible; // Show/hide the commands panel
+		Storyboard storyboard = new(); // Create a storyboard
+
+		storyboard.Children.Add(expanded ? collapseAnimation : expandAnimation);
+		Storyboard.SetTargetName(expanded ? collapseAnimation : expandAnimation, "CommandRotator");
+		Storyboard.SetTargetProperty(expanded ? collapseAnimation : expandAnimation, new(RotateTransform.AngleProperty));
+
+		storyboard.Begin(this); // Animate the utilities panel
 	}
 }

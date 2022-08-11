@@ -191,8 +191,14 @@
 								</Grid.ColumnDefinitions>
 								<TextBlock Text="&#xF45B;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
 								<TextBlock Text="{x:Static lang:Resources.WebUtilities}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
-								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2"/>
-							</Grid>
+								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+                                    <TextBlock.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform x:Name="UtilRotator" Angle="0"/>
+                                        </TransformGroup>
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                            </Grid>
 						</Button>
 						<StackPanel x:Name="UtilitiesPanel" Visibility="Collapsed">
 							<Button x:Name="StatusPageBtn" Content="{x:Static lang:Resources.Status}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0"/>
@@ -207,7 +213,13 @@
 								</Grid.ColumnDefinitions>
 								<TextBlock Text="&#xF4F9;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
 								<TextBlock Text="{x:Static lang:Resources.IPTools}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
-								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2"/>
+                                <TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+                                    <TextBlock.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform x:Name="IPRotator" Angle="0"/>
+                                        </TransformGroup>
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
 							</Grid>
 						</Button>
 						<StackPanel x:Name="IPPanel" Visibility="Collapsed">
@@ -223,7 +235,13 @@
 								</Grid.ColumnDefinitions>
 								<TextBlock Text="&#xF8B9;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
 								<TextBlock Text="{x:Static lang:Resources.Commands}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
-								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2"/>
+                                <TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+                                    <TextBlock.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform x:Name="CommandRotator" Angle="0"/>
+                                        </TransformGroup>
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
 							</Grid>
 						</Button>
 						<StackPanel x:Name="CommandPanel" Visibility="Collapsed">
