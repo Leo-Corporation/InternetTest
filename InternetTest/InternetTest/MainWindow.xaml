@@ -7,7 +7,7 @@
 		xmlns:lang="clr-namespace:InternetTest.Properties"
 		mc:Ignorable="d"
 		FontFamily="/Fonts/#Hauora"
-		Title="MainWindow" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" ResizeMode="CanResize">
+		Title="MainWindow" Height="570" Width="950" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" ResizeMode="CanResize">
 	<WindowChrome.WindowChrome>
 		<WindowChrome CaptionHeight="32" ResizeBorderThickness="10"/>
 	</WindowChrome.WindowChrome>
@@ -182,7 +182,7 @@
 						</Button>
 						
 						<TextBlock Text="{x:Static lang:Resources.Tools}" FontWeight="Bold" Margin="0 10"/>
-						<Button x:Name="WebUtilitiesBtn" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
+						<Button x:Name="WebUtilitiesBtn" Click="WebUtilitiesBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
 							<Grid>
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition Width="Auto"/>
@@ -194,7 +194,11 @@
 								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2"/>
 							</Grid>
 						</Button>
-                        <Button x:Name="IPToolsBtn" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
+						<StackPanel x:Name="UtilitiesPanel" Visibility="Collapsed">
+							<Button x:Name="StatusPageBtn" Content="{x:Static lang:Resources.Status}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0"/>
+							<Button x:Name="DownDetectorPageBtn" Content="{x:Static lang:Resources.DownDetector}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0"/>
+						</StackPanel>
+						<Button x:Name="IPToolsBtn" Click="IPToolsBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
 							<Grid>
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition Width="Auto"/>
@@ -206,8 +210,11 @@
 								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2"/>
 							</Grid>
 						</Button>
-
-                        <Button x:Name="CommandsBtn" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
+						<StackPanel x:Name="IPPanel" Visibility="Collapsed">
+							<Button x:Name="MyIPPageBtn" Content="{x:Static lang:Resources.MyIP}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0"/>
+							<Button x:Name="LocateIPPageBtn" Content="{x:Static lang:Resources.LocateIP}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0"/>
+						</StackPanel>
+						<Button x:Name="CommandsBtn" Click="CommandsBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
 							<Grid>
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition Width="Auto"/>
@@ -219,6 +226,11 @@
 								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2"/>
 							</Grid>
 						</Button>
+						<StackPanel x:Name="CommandPanel" Visibility="Collapsed">
+							<Button x:Name="PingPageBtn" Content="{x:Static lang:Resources.Ping}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0"/>
+							<Button x:Name="IPConfigPageBtn" Content="{x:Static lang:Resources.IPConfig}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0"/>
+							<Button x:Name="WifiPasswordsPageBtn" Content="{x:Static lang:Resources.WifiPasswords}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0"/>
+						</StackPanel>
 					</StackPanel>
 				</Grid>
 			</Border>

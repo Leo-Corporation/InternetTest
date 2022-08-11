@@ -117,4 +117,19 @@ public partial class MainWindow : Window
 		MaxHeight = currentScreen.WorkingArea.Height / factor + 5; // Set max size
 		MaxWidth = currentScreen.WorkingArea.Width / factor + 5; // Set max size
 	}
+
+	private void WebUtilitiesBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UtilitiesPanel.Visibility = UtilitiesPanel.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible; // Show/hide the utilities panel
+	}
+
+	private void IPToolsBtn_Click(object sender, RoutedEventArgs e)
+	{
+		IPPanel.Visibility = IPPanel.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible; // Show/hide the IP tools panel
+	}
+	
+	private void CommandsBtn_Click(object sender, RoutedEventArgs e)
+	{
+		CommandPanel.Visibility = CommandPanel.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible; // Show/hide the commands panel
+	}
 }

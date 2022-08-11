@@ -156,4 +156,25 @@
   <data name="Commands" xml:space="preserve">
     <value>Commandes</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Statut</value>
+  </data>
+  <data name="DownDetector" xml:space="preserve">
+    <value>DownDetector</value>
+  </data>
+  <data name="MyIP" xml:space="preserve">
+    <value>Mon IP</value>
+  </data>
+  <data name="LocateIP" xml:space="preserve">
+    <value>Localiser une IP</value>
+  </data>
+  <data name="Ping" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="IPConfig" xml:space="preserve">
+    <value>IP Config</value>
+  </data>
+  <data name="WifiPasswords" xml:space="preserve">
+    <value>Mots de passe WiFi</value>
+  </data>
 </root>

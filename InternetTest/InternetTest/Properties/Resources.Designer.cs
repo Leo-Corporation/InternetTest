@@ -70,6 +70,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DownDetector.
+        /// </summary>
+        public static string DownDetector {
+            get {
+                return ResourceManager.GetString("DownDetector", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Good afternoon.
         /// </summary>
         public static string GoodAfternoon {
@@ -133,11 +142,47 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IP Config.
+        /// </summary>
+        public static string IPConfig {
+            get {
+                return ResourceManager.GetString("IPConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IP Tools.
         /// </summary>
         public static string IPTools {
             get {
                 return ResourceManager.GetString("IPTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Locate IP.
+        /// </summary>
+        public static string LocateIP {
+            get {
+                return ResourceManager.GetString("LocateIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My IP.
+        /// </summary>
+        public static string MyIP {
+            get {
+                return ResourceManager.GetString("MyIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ping.
+        /// </summary>
+        public static string Ping {
+            get {
+                return ResourceManager.GetString("Ping", resourceCulture);
             }
         }
         
@@ -160,6 +205,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tools.
         /// </summary>
         public static string Tools {
@@ -174,6 +228,15 @@ namespace InternetTest.Properties {
         public static string WebUtilities {
             get {
                 return ResourceManager.GetString("WebUtilities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WiFi Passwords.
+        /// </summary>
+        public static string WifiPasswords {
+            get {
+                return ResourceManager.GetString("WifiPasswords", resourceCulture);
             }
         }
     }
