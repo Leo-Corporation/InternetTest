@@ -6,6 +6,12 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>True</UseWindowsForms>
+		<Version>7.0.0.2208-pre1</Version>
+		<Copyright>© 2022</Copyright>
+		<Company>Léo Corporation</Company>
+		<Description>InternetTest is a modern connection utility for Windows.</Description>
+		<PackageIcon>InternetTest.ico</PackageIcon>
+		<ApplicationIcon>InternetTest.ico</ApplicationIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -15,6 +21,10 @@
 		<None Remove="Fonts\Hauora-Regular.ttf" />
 		<None Remove="Images\DarkBackground.png" />
 		<None Remove="Images\LightBackground.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="InternetTest.ico" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -60,6 +70,13 @@
 	  <EmbeddedResource Update="Properties\Resources.zh-CN.resx">
 	    <Generator>PublicResXFileCodeGenerator</Generator>
 	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="InternetTest.ico">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>
