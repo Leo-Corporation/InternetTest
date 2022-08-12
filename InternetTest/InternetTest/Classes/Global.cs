@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Enums;
 using InternetTest.Pages;
 using System;
 using System.Collections.Generic;
@@ -61,4 +62,31 @@ public static class Global
 			}
 		}
 	}
+
+	public static Dictionary<AppPages, string> AppPagesFilledIcons => new()
+	{
+		{ AppPages.Home, "\uF488" },
+		{ AppPages.History, "\uF486" },
+		{ AppPages.Settings, "\uF6B3" },
+		{ AppPages.Status, "\uF462" },
+		{ AppPages.DownDetector, "\uFB71" },
+		{ AppPages.MyIP, "\uF503" },
+		{ AppPages.LocateIP, "\uF538" },
+		{ AppPages.Ping, "\uF4FB" },
+		{ AppPages.IPConfig, "\uF848" },
+		{ AppPages.WiFiPasswords, "\uF8CC" },
+	};
+	public static Dictionary<AppPages, string> AppPagesName => new()
+	{
+		{ AppPages.Home, Properties.Resources.Home },
+		{ AppPages.History, Properties.Resources.History },
+		{ AppPages.Settings, Properties.Resources.Settings },
+		{ AppPages.Status, Properties.Resources.Status },
+		{ AppPages.DownDetector, Properties.Resources.DownDetector },
+		{ AppPages.MyIP, Properties.Resources.MyIP },
+		{ AppPages.LocateIP, Properties.Resources.LocateIP },
+		{ AppPages.Ping, Properties.Resources.Ping },
+		{ AppPages.IPConfig, Properties.Resources.IPConfig },
+		{ AppPages.WiFiPasswords, Properties.Resources.WifiPasswords },
+	};
 }
