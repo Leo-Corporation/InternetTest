@@ -22,32 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-using InternetTest.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InternetTest.Classes;
-public class SynethiaConfig
+namespace InternetTest.Enums;
+public enum AppActions
 {
-	public PageInfo StatusPageInfo { get; set; }
-	public PageInfo DownDetectorPageInfo { get; set; }
-	public PageInfo MyIPPageInfo { get; set; }
-	public PageInfo LocateIPPageInfo { get; set; }
-	public PageInfo PingPageInfo { get; set; }
-	public PageInfo IPConfigPageInfo { get; set; }
-	public PageInfo WiFiPasswordsPageInfo { get; set; }
-
-	public List<ActionInfo> ActionInfos { get; set; }
+	Test,
+	DownDetectorRequest,
+	MyIP,
+	LocateIP,
+	Ping,
+	GetIPConfig,
+	GetWiFiPasswords,
 }
-
-public record PageInfo(
-	int EnterUnixTime, 
-	int LeaveUnixTime, 
-	int TotalTimeSpent, 
-	int InteractionCount, 
-	double Score);
-
-public record ActionInfo(AppActions Action, int UsageCount);

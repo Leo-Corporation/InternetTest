@@ -109,6 +109,19 @@ public static class Global
 		return (from item in sorted select item.Key).ToList();
 	}
 
+	public static List<ActionInfo> GetMostRelevantActions(SynethiaConfig synethiaConfig)
+	{
+		Dictionary<ActionInfo, int> relevantActions = new();
+		for (int i = 0; i < synethiaConfig.ActionInfos.Count; i++)
+		{
+			relevantActions.Add(synethiaConfig.ActionInfos[i], synethiaConfig.ActionInfos[i].UsageCount);
+		}
+
+		// Sort each action with its usage count descending
+		var sorted = relevantActions.OrderByDescending(x => x.Value);
+		return (from item in sorted select item.Key).ToList();
+	}
+
 	public static List<AppPages> DefaultRelevantPages => new()
 	{
 		AppPages.Status,
@@ -118,5 +131,38 @@ public static class Global
 		AppPages.MyIP,
 		AppPages.Ping,
 		AppPages.IPConfig		
+	};
+
+	public static List<ActionInfo> DefaultRelevantActions => new()
+	{
+		new(AppActions.MyIP, 12),
+		new(AppActions.Test, 10),
+		new(AppActions.DownDetectorRequest, 7),
+		new(AppActions.LocateIP, 6),
+		new(AppActions.GetWiFiPasswords, 5),
+		new(AppActions.GetIPConfig, 2),
+		new(AppActions.Ping, 1),
+	};
+
+	public static Dictionary<AppActions, string> ActionsIcons => new()
+	{
+		{ AppActions.DownDetectorRequest, "\uF2E9" },
+		{ AppActions.GetIPConfig, "\uF8D1" },
+		{ AppActions.GetWiFiPasswords, "\uF5A8" },
+		{ AppActions.LocateIP, "\uF506" },
+		{ AppActions.MyIP, "\uF569" },
+		{ AppActions.Ping, "\uF4FB" },
+		{ AppActions.Test, "\uF612" },
+	};
+
+	public static Dictionary<AppActions, string> ActionsString => new()
+	{
+		{ AppActions.DownDetectorRequest, "TEXT_HERE" },
+		{ AppActions.GetIPConfig, "TEXT_HERE" },
+		{ AppActions.GetWiFiPasswords, "TEXT_HERE" },
+		{ AppActions.LocateIP, "TEXT_HERE" },
+		{ AppActions.MyIP, "TEXT_HERE" },
+		{ AppActions.Ping, "TEXT_HERE" },
+		{ AppActions.Test, "TEXT_HERE" },
 	};
 }

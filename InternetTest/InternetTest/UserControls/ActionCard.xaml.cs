@@ -23,7 +23,6 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
-using InternetTest.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,50 +38,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InternetTest.Pages;
+namespace InternetTest.UserControls;
 /// <summary>
-/// Interaction logic for HomePage.xaml
+/// Interaction logic for ActionCard.xaml
 /// </summary>
-public partial class HomePage : Page
+public partial class ActionCard : UserControl
 {
-	public HomePage()
+	AppActions AppAction { get; init; }
+	public ActionCard(AppActions appActions)
 	{
 		InitializeComponent();
-		InitUI();
+		AppAction = appActions; // Set value
+
+		InitUI(); // Load the UI
 	}
 
-	internal void InitUI()
+	private void InitUI()
 	{
-		// Load "Get started" section
-		List<AppPages> relevantPages = Enumerable.Empty<AppPages>().ToList();
-		List<AppActions> relevantActions = Enumerable.Empty<AppActions>().ToList();
-		if (Global.SynethiaConfig is not null)
-		{
-			relevantPages = Global.GetMostRelevantPages(Global.SynethiaConfig);
-			Global.GetMostRelevantActions(Global.SynethiaConfig).ForEach((ActionInfo actionInfo) => relevantActions.Add(actionInfo.Action));
-		}
-		else
-		{
-			relevantPages = Global.DefaultRelevantPages;
-			Global.DefaultRelevantActions.ForEach((ActionInfo actionInfo) => relevantActions.Add(actionInfo.Action));
-		}
-
-		for (int i = 0; i < 5; i++)
-		{
-			GetStartedPanel.Children.Add(new PageCard(relevantPages[i]));
-		}
-		relevantPages.RemoveRange(0, 5); // Remove already added pages; the least releavnt remains
-
-		// Load "Discover" section
-		for (int i = 0; i < relevantPages.Count; i++)
-		{
-			DiscoverPanel.Children.Add(new PageCard(relevantPages[i]));
-		}
-
-		// Load "Suggested actions" section
-		for (int i = 0; i < 4; i++)
-		{
-			SuggestedActionsPanel.Children.Add(new ActionCard(relevantActions[i]));
-		}
+		IconTxt.Text = Global.ActionsIcons[AppAction]; // Set text
+		PageNameTxt.Text = Global.ActionsString[AppAction]; // Set text
 	}
 }
