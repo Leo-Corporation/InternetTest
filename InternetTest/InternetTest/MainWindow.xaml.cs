@@ -69,6 +69,10 @@ public partial class MainWindow : Window
 		StateChanged += (o, e) => HandleWindowStateChanged();
 		Loaded += (o, e) => HandleWindowStateChanged();
 		LocationChanged += (o, e) => HandleWindowStateChanged();
+		SizeChanged += (o, e) =>
+		{
+			PageScroller.Height = (ActualHeight - (GridRow1.ActualHeight + 32) > 0) ? ActualHeight - (GridRow1.ActualHeight + 74) : 0; // Set the scroller height
+		};
 
 		HelloTxt.Text = Global.GetHiSentence; // Show greeting message to the user
 

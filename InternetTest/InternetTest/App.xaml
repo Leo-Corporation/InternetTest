@@ -25,11 +25,7 @@
 									<Setter Property="Background" TargetName="border" Value="{Binding Source={StaticResource Background1}}"/>
 									<Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
 									<Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="White"/>
-									<Setter Property="Effect">
-										<Setter.Value>
-											<DropShadowEffect BlurRadius="10" Color="#1F1F1F" Direction="270" Opacity="0.1" ShadowDepth="0"/>
-										</Setter.Value>
-									</Setter>
+									
 								</Trigger>
 								<Trigger Property="IsPressed" Value="true">
 									<Setter Property="Background" TargetName="border" Value="Transparent"/>

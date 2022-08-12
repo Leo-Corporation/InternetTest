@@ -1,4 +1,4 @@
-﻿<Window x:Class="InternetTest.MainWindow"
+﻿<Window x:Name="window" x:Class="InternetTest.MainWindow"
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +7,7 @@
 		xmlns:lang="clr-namespace:InternetTest.Properties"
 		mc:Ignorable="d"
 		FontFamily="/Fonts/#Hauora"
-		Title="MainWindow" MinHeight="500" MinWidth="500" Height="570" Width="950" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" ResizeMode="CanResize">
+		Title="MainWindow" MinHeight="500" MinWidth="500" Height="Auto" Width="950" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" ResizeMode="CanResize">
 	<WindowChrome.WindowChrome>
 		<WindowChrome CaptionHeight="32" ResizeBorderThickness="10"/>
 	</WindowChrome.WindowChrome>
@@ -102,7 +102,7 @@
 						<ColumnDefinition Width="Auto"/>
 						<ColumnDefinition Width="Auto"/>
 					</Grid.ColumnDefinitions>
-					
+
 					<Button Grid.Column="1" FontSize="14" Content="&#xFC75;" FontFamily="/Fonts/#FluentSystemIcons-Regular" x:Name="MinimizeBtn" Click="MinimizeBtn_Click"  RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 					<Button Grid.Column="2" FontSize="14" Content="&#xFA40;" FontFamily="/Fonts/#FluentSystemIcons-Regular" x:Name="MaximizeRestoreBtn" Click="MaximizeRestoreBtn_Click"  RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 					<Button Grid.Column="3" FontSize="14" Content="&#xF36B;" FontFamily="/Fonts/#FluentSystemIcons-Regular" x:Name="CloseBtn" Click="CloseBtn_Click" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarCloseButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
@@ -112,7 +112,7 @@
 			<Border Grid.Row="1" Style="{StaticResource WindowMainPanelStyle}">
 				<Grid>
 					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto"/>
+						<RowDefinition x:Name="GridRow1" Height="Auto"/>
 						<RowDefinition Height="*"/>
 					</Grid.RowDefinitions>
 					<Grid.ColumnDefinitions>
@@ -180,7 +180,7 @@
 								<TextBlock Text="{x:Static lang:Resources.Settings}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0"/>
 							</Grid>
 						</Button>
-						
+
 						<TextBlock Text="{x:Static lang:Resources.Tools}" FontWeight="Bold" Margin="0 10"/>
 						<Button x:Name="WebUtilitiesBtn" Click="WebUtilitiesBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
 							<Grid>
@@ -192,13 +192,13 @@
 								<TextBlock Text="&#xF45B;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
 								<TextBlock Text="{x:Static lang:Resources.WebUtilities}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
 								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
-                                    <TextBlock.RenderTransform>
-                                        <TransformGroup>
-                                            <RotateTransform x:Name="UtilRotator" Angle="0"/>
-                                        </TransformGroup>
-                                    </TextBlock.RenderTransform>
-                                </TextBlock>
-                            </Grid>
+									<TextBlock.RenderTransform>
+										<TransformGroup>
+											<RotateTransform x:Name="UtilRotator" Angle="0"/>
+										</TransformGroup>
+									</TextBlock.RenderTransform>
+								</TextBlock>
+							</Grid>
 						</Button>
 						<StackPanel x:Name="UtilitiesPanel" Visibility="Collapsed">
 							<Button x:Name="StatusPageBtn" Content="{x:Static lang:Resources.Status}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0"/>
@@ -213,13 +213,13 @@
 								</Grid.ColumnDefinitions>
 								<TextBlock Text="&#xF4F9;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
 								<TextBlock Text="{x:Static lang:Resources.IPTools}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
-                                <TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
-                                    <TextBlock.RenderTransform>
-                                        <TransformGroup>
-                                            <RotateTransform x:Name="IPRotator" Angle="0"/>
-                                        </TransformGroup>
-                                    </TextBlock.RenderTransform>
-                                </TextBlock>
+								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+									<TextBlock.RenderTransform>
+										<TransformGroup>
+											<RotateTransform x:Name="IPRotator" Angle="0"/>
+										</TransformGroup>
+									</TextBlock.RenderTransform>
+								</TextBlock>
 							</Grid>
 						</Button>
 						<StackPanel x:Name="IPPanel" Visibility="Collapsed">
@@ -235,13 +235,13 @@
 								</Grid.ColumnDefinitions>
 								<TextBlock Text="&#xF8B9;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
 								<TextBlock Text="{x:Static lang:Resources.Commands}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
-                                <TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
-                                    <TextBlock.RenderTransform>
-                                        <TransformGroup>
-                                            <RotateTransform x:Name="CommandRotator" Angle="0"/>
-                                        </TransformGroup>
-                                    </TextBlock.RenderTransform>
-                                </TextBlock>
+								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+									<TextBlock.RenderTransform>
+										<TransformGroup>
+											<RotateTransform x:Name="CommandRotator" Angle="0"/>
+										</TransformGroup>
+									</TextBlock.RenderTransform>
+								</TextBlock>
 							</Grid>
 						</Button>
 						<StackPanel x:Name="CommandPanel" Visibility="Collapsed">
@@ -250,8 +250,10 @@
 							<Button x:Name="WifiPasswordsPageBtn" Content="{x:Static lang:Resources.WifiPasswords}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0"/>
 						</StackPanel>
 					</StackPanel>
-                    <Frame x:Name="PageDisplayer" Grid.Column="2" Grid.Row="1" NavigationUIVisibility="Hidden" Margin="0,10,0,0"/>
-                </Grid>
+					<ScrollViewer x:Name="PageScroller" Grid.Column="2" Grid.Row="1" Margin="10,10,0,0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+						<Frame x:Name="PageDisplayer" NavigationUIVisibility="Hidden"/>
+					</ScrollViewer>
+				</Grid>
 			</Border>
 		</Grid>
 	</Border>
