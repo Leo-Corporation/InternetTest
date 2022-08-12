@@ -71,6 +71,9 @@ public partial class MainWindow : Window
 		LocationChanged += (o, e) => HandleWindowStateChanged();
 
 		HelloTxt.Text = Global.GetHiSentence; // Show greeting message to the user
+
+		// Show the appropriate page
+		PageDisplayer.Content = Global.HomePage; // Show the Home page
 	}
 
 	private void MinimizeBtn_Click(object sender, RoutedEventArgs e)

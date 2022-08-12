@@ -177,4 +177,13 @@
   <data name="WifiPasswords" xml:space="preserve">
     <value>WiFi Passwords</value>
   </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>Get started</value>
+  </data>
+  <data name="SuggestedActions" xml:space="preserve">
+    <value>Suggested actions</value>
+  </data>
+  <data name="Discover" xml:space="preserve">
+    <value>Discover</value>
+  </data>
 </root>

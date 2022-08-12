@@ -21,44 +21,29 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace InternetTest.Classes;
-public static class Global
+namespace InternetTest.Pages;
+/// <summary>
+/// Interaction logic for HomePage.xaml
+/// </summary>
+public partial class HomePage : Page
 {
-	public static string Version => "7.0.0.2208-pre1";
-
-	public static HomePage HomePage { get; set; } = new();
-	
-	public static string GetHiSentence
+	public HomePage()
 	{
-		get
-		{
-			if (DateTime.Now.Hour >= 21 && DateTime.Now.Hour <= 7) // If between 9PM & 7AM
-			{
-				return Properties.Resources.GoodNight + ", " + Environment.UserName + "."; // Return the correct value
-			}
-			else if (DateTime.Now.Hour >= 7 && DateTime.Now.Hour <= 12) // If between 7AM - 12PM
-			{
-				return Properties.Resources.Hi + ", " + Environment.UserName + "."; // Return the correct value
-			}
-			else if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour <= 17) // If between 12PM - 5PM
-			{
-				return Properties.Resources.GoodAfternoon + ", " + Environment.UserName + "."; // Return the correct value
-			}
-			else if (DateTime.Now.Hour >= 17 && DateTime.Now.Hour <= 21) // If between 5PM - 9PM
-			{
-				return Properties.Resources.GoodEvening + ", " + Environment.UserName + "."; // Return the correct value
-			}
-			else
-			{
-				return Properties.Resources.Hi + ", " + Environment.UserName + "."; // Return the correct value
-			}
-		}
+		InitializeComponent();
 	}
 }
