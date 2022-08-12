@@ -35,7 +35,9 @@ public static class Global
 	public static string Version => "7.0.0.2208-pre1";
 
 	public static HomePage HomePage { get; set; } = new();
-	
+
+	public static SynethiaConfig SynethiaConfig { get; set; }
+
 	public static string GetHiSentence
 	{
 		get
@@ -88,5 +90,33 @@ public static class Global
 		{ AppPages.Ping, Properties.Resources.Ping },
 		{ AppPages.IPConfig, Properties.Resources.IPConfig },
 		{ AppPages.WiFiPasswords, Properties.Resources.WifiPasswords },
+	};
+
+	public static List<AppPages> GetMostRelevantPages(SynethiaConfig synethiaConfig)
+	{
+		Dictionary<AppPages, double> appScores = new()
+		{
+			{ AppPages.Status, synethiaConfig.StatusPageInfo.Score },
+			{ AppPages.DownDetector, synethiaConfig.DownDetectorPageInfo.Score },
+			{ AppPages.MyIP, synethiaConfig.MyIPPageInfo.Score },
+			{ AppPages.LocateIP, synethiaConfig.LocateIPPageInfo.Score },
+			{ AppPages.Ping, synethiaConfig.PingPageInfo.Score },
+			{ AppPages.IPConfig, synethiaConfig.IPConfigPageInfo.Score },
+			{ AppPages.WiFiPasswords, synethiaConfig.WiFiPasswordsPageInfo.Score },
+		};
+
+		var sorted = appScores.OrderByDescending(x => x.Value);
+		return (from item in sorted select item.Key).ToList();
+	}
+
+	public static List<AppPages> DefaultRelevantPages => new()
+	{
+		AppPages.Status,
+		AppPages.LocateIP,
+		AppPages.WiFiPasswords,
+		AppPages.DownDetector,
+		AppPages.MyIP,
+		AppPages.Ping,
+		AppPages.IPConfig		
 	};
 }

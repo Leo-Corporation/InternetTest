@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.Enums;
 using InternetTest.UserControls;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,27 @@ public partial class HomePage : Page
 
 	internal void InitUI()
 	{
-		//TODO
+		// Load "Get started" section
+		List<AppPages> relevantPages = Enumerable.Empty<AppPages>().ToList();
+		if (Global.SynethiaConfig is not null)
+		{
+			relevantPages = Global.GetMostRelevantPages(Global.SynethiaConfig);
+		}
+		else
+		{
+			relevantPages = Global.DefaultRelevantPages;
+		}
+
+		for (int i = 0; i < 5; i++)
+		{
+			GetStartedPanel.Children.Add(new PageCard(relevantPages[i]));
+		}
+		relevantPages.RemoveRange(0, 5); // Remove already added pages; the least releavnt remains
+
+		// Load "Discover" section
+		for (int i = 0; i < relevantPages.Count; i++)
+		{
+			DiscoverPanel.Children.Add(new PageCard(relevantPages[i]));
+		}
 	}
 }
