@@ -68,6 +68,7 @@ public partial class DownDetectorItem : UserControl
 			WebsiteTxt.Text = "https://" + WebsiteTxt.Text;
 		}
 		DownDetectorTestResult = await Global.DownDetectorPage.LaunchTest(WebsiteTxt.Text); // Launch the test
+		URL = WebsiteTxt.Text;
 	}
 
 	private void InfoBtn_Click(object sender, RoutedEventArgs e)
@@ -77,6 +78,7 @@ public partial class DownDetectorItem : UserControl
 			Global.DownDetectorPage.DetailsStatusTxt.Text = DownDetectorTestResult.Code.ToString(); // Set the text
 			Global.DownDetectorPage.DetailsTimeTxt.Text = $"{DownDetectorTestResult.Time}ms"; // Set the text
 			Global.DownDetectorPage.DetailsMessageTxt.Text = DownDetectorTestResult.Message; // Set the text 
+			Global.DownDetectorPage.DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, URL); // Set the text 
 		}
 	}
 

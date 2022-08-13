@@ -63,6 +63,7 @@ namespace InternetTest.Pages
 		{
 			TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.DownDetector}"; // Set the title of the page
 			TimeIntervalTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, 10); // Set the time interval text
+			WebsiteTxt.Text = "https://leocorporation.dev";
 		}
 
 		private async void TestBtn_Click(object sender, RoutedEventArgs e)
@@ -172,6 +173,7 @@ namespace InternetTest.Pages
 				DetailsStatusTxt.Text = CurrentResult.Code.ToString(); // Set the text
 				DetailsTimeTxt.Text = $"{CurrentResult.Time}ms"; // Set the text
 				DetailsMessageTxt.Text = CurrentResult.Message; // Set the text 
+				DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, WebsiteTxt.Text); // Set the text
 			}
 		}
 
@@ -225,12 +227,21 @@ namespace InternetTest.Pages
 				ScheduledTestLaunchBtn.Content = Properties.Resources.StopScheduledTests;
 				TimeIntervalTxt.Visibility = Visibility.Visible;
 
-				timer.Tick += (o, e) =>
+				timer.Tick += async (o, e) =>
 				{
 					timeCounter++;
 					if (timeCounter == secondsRemainingFixed)
 					{
-						_ = LaunchTest(WebsiteTxt.Text); 
+						_ = LaunchTest(WebsiteTxt.Text);
+						for (int i = 0; i < DownDetectorItemDisplayer.Children.Count; i++)
+						{
+							if (DownDetectorItemDisplayer.Children[i] is DownDetectorItem item)
+							{
+								item.WebsiteTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Foreground1"));
+								item.DownDetectorTestResult = await LaunchTest(item.WebsiteTxt.Text);
+								item.WebsiteTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("DarkGray"));
+							}
+						}
 					}
 					if (secondsRemaining > 0)
 					{
