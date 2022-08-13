@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="InternetTest.UserControls.DownDetectorItem"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:InternetTest.UserControls"
+			 mc:Ignorable="d" FontFamily="../Fonts/#Hauora"
+			 Height="Auto" Margin="0" Width="300">
+	<Grid d:Background="#fff">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		<TextBox Background="Transparent" x:Name="WebsiteTxt" Padding="2" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" d:Text="https://bing.com" VerticalAlignment="Center"/>
+		<StackPanel Grid.Column="1" Orientation="Horizontal">
+			<Button x:Name="TestSiteBtn" Content="&#xF606;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="TestSiteBtn_Click"/>
+			<Button x:Name="InfoBtn" Content="&#xF4A4;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="InfoBtn_Click"/>
+			<Button x:Name="DeleteBtn" Content="&#xF34D;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="DeleteBtn_Click"/>
+		</StackPanel>
+	</Grid>
+</UserControl>

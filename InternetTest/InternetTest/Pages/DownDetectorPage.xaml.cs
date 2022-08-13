@@ -22,11 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.UserControls;
 using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -47,6 +49,8 @@ namespace InternetTest.Pages
 	/// </summary>
 	public partial class DownDetectorPage : Page
 	{
+		DownDetectorTestResult CurrentResult { get; set; }
+		internal int TotalWebsites { get; set; } = 1;
 		public DownDetectorPage()
 		{
 			InitializeComponent();
@@ -60,19 +64,43 @@ namespace InternetTest.Pages
 
 		private async void TestBtn_Click(object sender, RoutedEventArgs e)
 		{
+			// Check if the URL is valid
 			if (!WebsiteTxt.Text.StartsWith("http"))
 			{
 				WebsiteTxt.Text = "https://" + WebsiteTxt.Text;
 			}
-			
-			if (!Global.IsUrlValid(WebsiteTxt.Text)) return;
+
+			TotalWebsites = DownDetectorItemDisplayer.Children.Count + ((!string.IsNullOrEmpty(WebsiteTxt.Text)) ? 1 : 0);
+			TestBtn.Content = $"{Properties.Resources.Test} ({TotalWebsites})";
+
+			// Test the current website
+			CurrentResult = await LaunchTest(WebsiteTxt.Text);
+
+			// If there are any ohther websites, test them
+			for (int i = 0; i < DownDetectorItemDisplayer.Children.Count; i++)
+			{
+				if (DownDetectorItemDisplayer.Children[i] is DownDetectorItem item)
+				{
+					item.DownDetectorTestResult = await LaunchTest(item.WebsiteTxt.Text);
+				}
+			}
+		}
+
+		internal async Task<DownDetectorTestResult> LaunchTest(string url)
+		{
+			if (!url.StartsWith("http"))
+			{
+				url = "https://" + url;
+			}
+
+			if (!Global.IsUrlValid(url)) return new(0, 0, "Invalid URL");
 
 			// Show the "Waiting" screen
 			StatusIconTxt.Text = "\uF2DE";
 			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
 			StatusTxt.Text = Properties.Resources.TestInProgress;
 
-			if (await NetworkConnection.IsAvailableAsync(WebsiteTxt.Text))
+			if (await NetworkConnection.IsAvailableAsync(url))
 			{
 				// Update icon and text
 				StatusIconTxt.Text = "\uF299"; // Update the icon
@@ -84,16 +112,17 @@ namespace InternetTest.Pages
 				DispatcherTimer dispatcherTimer = new() { Interval = TimeSpan.FromMilliseconds(1) };
 				dispatcherTimer.Tick += (o, e) => time++;
 				dispatcherTimer.Start();
-				
-				int statusCode = await NetworkConnection.GetWebPageStatusCodeAsync(WebsiteTxt.Text);
+
+				int statusCode = await NetworkConnection.GetWebPageStatusCodeAsync(url);
 
 				dispatcherTimer.Stop();
 				DetailsStatusTxt.Text = statusCode.ToString();
 
-				string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(WebsiteTxt.Text);
+				string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
 				DetailsMessageTxt.Text = message;
 
 				DetailsTimeTxt.Text = $"{time}ms"; // Update the time
+				return new(statusCode, time, message);
 			}
 			else
 			{
@@ -109,15 +138,17 @@ namespace InternetTest.Pages
 				dispatcherTimer.Tick += (o, e) => time++;
 				dispatcherTimer.Start();
 
-				int statusCode = await NetworkConnection.GetWebPageStatusCodeAsync(WebsiteTxt.Text);
+				int statusCode = await NetworkConnection.GetWebPageStatusCodeAsync(url);
 
 				dispatcherTimer.Stop();
 				DetailsStatusTxt.Text = statusCode.ToString();
 
-				string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(WebsiteTxt.Text);
+				string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
 				DetailsMessageTxt.Text = message;
 
 				DetailsTimeTxt.Text = $"{time}ms"; // Update the time
+
+				return new(statusCode, time, message);
 			}
 		}
 
@@ -128,12 +159,21 @@ namespace InternetTest.Pages
 
 		private void InfoBtn_Click(object sender, RoutedEventArgs e)
 		{
-
+			DetailsStatusTxt.Text = CurrentResult.Code.ToString(); // Set the text
+			DetailsTimeTxt.Text = $"{CurrentResult.Time}ms"; // Set the text
+			DetailsMessageTxt.Text = CurrentResult.Message; // Set the text
 		}
 
 		private void AddBtn_Click(object sender, RoutedEventArgs e)
 		{
+			if (!WebsiteTxt.Text.StartsWith("http"))
+			{
+				WebsiteTxt.Text = "https://" + WebsiteTxt.Text;
+			}
+			DownDetectorItemDisplayer.Children.Add(new DownDetectorItem(DownDetectorItemDisplayer, WebsiteTxt.Text, CurrentResult));
 
+			TotalWebsites = DownDetectorItemDisplayer.Children.Count + ((!string.IsNullOrEmpty(WebsiteTxt.Text)) ? 1 : 0);
+			TestBtn.Content = $"{Properties.Resources.Test} ({TotalWebsites})";
 		}
 	}
 }
