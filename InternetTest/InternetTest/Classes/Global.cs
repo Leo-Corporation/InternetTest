@@ -28,6 +28,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 
 namespace InternetTest.Classes;
 public static class Global
@@ -165,4 +167,9 @@ public static class Global
 		{ AppActions.Ping, "TEXT_HERE" },
 		{ AppActions.Test, "TEXT_HERE" },
 	};
+
+	public static Color GetColorFromResource(string resourceName)
+	{
+		return (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());
+	}
 }

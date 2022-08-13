@@ -78,6 +78,7 @@ public partial class MainWindow : Window
 
 		// Show the appropriate page
 		PageDisplayer.Content = Global.HomePage; // Show the Home page
+		CheckButton(HomePageBtn, true);
 	}
 
 	private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
@@ -179,5 +180,102 @@ public partial class MainWindow : Window
 		Storyboard.SetTargetProperty(expanded ? collapseAnimation : expandAnimation, new(RotateTransform.AngleProperty));
 
 		storyboard.Begin(this); // Animate the utilities panel
+	}
+
+	private void CheckButton(Button button, bool isSpecial = false)
+	{
+		if (isSpecial)
+		{
+			button.Background = new SolidColorBrush(Global.GetColorFromResource("Background1"));
+		}
+		else
+		{
+			button.Background = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+			button.Foreground = new SolidColorBrush(Global.GetColorFromResource("WindowButtonsHoverForeground1"));
+		}
+	}
+
+	private void UnCheckAllButton()
+	{
+		// Background
+		HomePageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		HistoryPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		SettingsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		
+		StatusPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		DownDetectorPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		MyIPPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		LocateIPPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		PingPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		IPConfigPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		WifiPasswordsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+
+		StatusPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+		DownDetectorPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+		MyIPPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+		LocateIPPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+		PingPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+		IPConfigPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+		WifiPasswordsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+	}
+
+	private void StatusPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UnCheckAllButton(); // Reset all states
+		CheckButton(StatusPageBtn);
+	}
+
+	private void DownDetectorPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UnCheckAllButton(); // Reset all states
+		CheckButton(DownDetectorPageBtn);
+	}
+
+	private void MyIPPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UnCheckAllButton(); // Reset all states
+		CheckButton(MyIPPageBtn);
+	}
+
+	private void LocateIPPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UnCheckAllButton(); // Reset all states
+		CheckButton(LocateIPPageBtn);
+	}
+
+	private void PingPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UnCheckAllButton(); // Reset all states
+		CheckButton(PingPageBtn);
+	}
+
+	private void IPConfigPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UnCheckAllButton(); // Reset all states
+		CheckButton(IPConfigPageBtn);
+	}
+
+	private void WifiPasswordsPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UnCheckAllButton(); // Reset all states
+		CheckButton(WifiPasswordsPageBtn);
+	}
+
+	private void HomePageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UnCheckAllButton(); // Reset all states
+		CheckButton(HomePageBtn, true);
+	}
+
+	private void HistoryPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UnCheckAllButton(); // Reset all states
+		CheckButton(HistoryPageBtn, true);
+	}
+
+	private void SettingsPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UnCheckAllButton(); // Reset all states
+		CheckButton(SettingsPageBtn, true);
 	}
 }
