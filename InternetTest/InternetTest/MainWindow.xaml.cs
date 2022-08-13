@@ -238,6 +238,7 @@ public partial class MainWindow : Window
 		CheckButton(DownDetectorPageBtn);
 
 		PageDisplayer.Content = Global.DownDetectorPage; // Display the down detector page
+		Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Env.UnixTime; // Update the last entered time
 	}
 
 	private void MyIPPageBtn_Click(object sender, RoutedEventArgs e)
@@ -298,6 +299,12 @@ public partial class MainWindow : Window
 			Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime = Env.UnixTime;
 			Global.SynethiaConfig.StatusPageInfo.TotalTimeSpent += Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime - Global.SynethiaConfig.StatusPageInfo.EnterUnixTime;
 			Global.SynethiaConfig.StatusPageInfo.Score = Global.SynethiaConfig.StatusPageInfo.TotalTimeSpent * (Global.SynethiaConfig.StatusPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.StatusPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+		}
+		else if (PageDisplayer.Content is DownDetectorPage)
+		{
+			Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime = Env.UnixTime;
+			Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent += Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime - Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime;
+			Global.SynethiaConfig.DownDetectorPageInfo.Score = Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent * (Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount / 2d : 1d); // Calculate the score
 		}
 	}
 }

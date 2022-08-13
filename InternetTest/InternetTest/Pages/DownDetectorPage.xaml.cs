@@ -52,11 +52,13 @@ namespace InternetTest.Pages
 	{
 		DownDetectorTestResult CurrentResult { get; set; }
 		internal int TotalWebsites { get; set; } = 1;
-		
+		bool codeInjected = false;
+
 		public DownDetectorPage()
 		{
 			InitializeComponent();
 			InitUI(); // Load the UI
+			Loaded += (o, e) => InjectSynethiaCode();
 		}
 
 		private void InitUI()
@@ -64,6 +66,53 @@ namespace InternetTest.Pages
 			TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.DownDetector}"; // Set the title of the page
 			TimeIntervalTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, 10); // Set the time interval text
 			WebsiteTxt.Text = "https://leocorporation.dev";
+		}
+
+		private void InjectSynethiaCode()
+		{
+			if (codeInjected) return;
+			codeInjected = true;
+			foreach (Button b in Global.FindVisualChildren<Button>(this))
+			{
+				b.Click += (sender, e) =>
+				{
+					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
+				};
+			}
+
+			// For each TextBox of the page
+			foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
+			{
+				textBox.GotFocus += (o, e) =>
+				{
+					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
+				};
+			}
+
+			// For each CheckBox/RadioButton of the page
+			foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
+			{
+				checkBox.Checked += (o, e) =>
+				{
+					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
+				};
+				checkBox.Unchecked += (o, e) =>
+				{
+					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
+				};
+			}
+
+			foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
+			{
+				radioButton.Checked += (o, e) =>
+				{
+					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
+				};
+				radioButton.Unchecked += (o, e) =>
+				{
+					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
+				};
+			}
 		}
 
 		private async void TestBtn_Click(object sender, RoutedEventArgs e)
@@ -90,6 +139,9 @@ namespace InternetTest.Pages
 					item.WebsiteTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("DarkGray"));
 				}
 			}
+
+			// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
+			Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.DownDetectorRequest).UsageCount++;
 		}
 
 		internal async Task<DownDetectorTestResult> LaunchTest(string url)
@@ -214,13 +266,13 @@ namespace InternetTest.Pages
 		int secondsRemainingFixed = 0;
 		int timeCounter = 0;
 		bool scheduledStarted = false;
-		DispatcherTimer timer = new() { Interval = TimeSpan.FromSeconds(1)}; // Create a new timer
+		DispatcherTimer timer = new() { Interval = TimeSpan.FromSeconds(1) }; // Create a new timer
 
 		private void ScheduledTestLaunchBtn_Click(object sender, RoutedEventArgs e)
 		{
 			secondsRemaining = int.Parse(IntervalTxt.Text); // Get the seconds
 			secondsRemainingFixed = int.Parse(IntervalTxt.Text); // Get the seconds			
-			
+
 			if (!scheduledStarted)
 			{
 				scheduledStarted = true;

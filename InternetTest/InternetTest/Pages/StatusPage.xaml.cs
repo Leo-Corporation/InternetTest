@@ -58,7 +58,7 @@ public partial class StatusPage : Page
 	private void InjectSynethiaCode()
 	{
 		if (codeInjected) return;
-
+		codeInjected = true;
 		foreach (Button b in Global.FindVisualChildren<Button>(this))
 		{
 			b.Click += (sender, e) =>
