@@ -219,4 +219,10 @@
   <data name="TestConnection" xml:space="preserve">
     <value>Test your connection</value>
   </data>
+  <data name="WebsiteAvailable" xml:space="preserve">
+    <value>The website is available</value>
+  </data>
+  <data name="WebsiteDown" xml:space="preserve">
+    <value>The website is down</value>
+  </data>
 </root>

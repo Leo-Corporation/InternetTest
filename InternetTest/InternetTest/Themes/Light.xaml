@@ -4,6 +4,7 @@
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <sys:String x:Key="Background1">#ffffff</sys:String>
+    <sys:String x:Key="Background2">#e6e6e6</sys:String>
     <sys:String x:Key="CardBackground">#ffffff</sys:String>
     <sys:String x:Key="Foreground1">#000000</sys:String>
     <sys:String x:Key="BackgroundImg">/Images/LightBackground.png</sys:String>

@@ -219,4 +219,10 @@
   <data name="TestConnection" xml:space="preserve">
     <value>Test your connection</value>
   </data>
+  <data name="WebsiteAvailable" xml:space="preserve">
+    <value>该网站已上线</value>
+  </data>
+  <data name="WebsiteDown" xml:space="preserve">
+    <value>该网站已关闭</value>
+  </data>
 </root>

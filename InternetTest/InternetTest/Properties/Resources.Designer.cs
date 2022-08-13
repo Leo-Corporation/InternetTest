@@ -349,6 +349,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The website is available.
+        /// </summary>
+        public static string WebsiteAvailable {
+            get {
+                return ResourceManager.GetString("WebsiteAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The website is down.
+        /// </summary>
+        public static string WebsiteDown {
+            get {
+                return ResourceManager.GetString("WebsiteDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Web Utilities.
         /// </summary>
         public static string WebUtilities {
