@@ -133,18 +133,18 @@ public static class Global
 		AppPages.DownDetector,
 		AppPages.MyIP,
 		AppPages.Ping,
-		AppPages.IPConfig		
+		AppPages.IPConfig
 	};
 
 	public static List<ActionInfo> DefaultRelevantActions => new()
 	{
-		new(AppActions.MyIP, 12),
-		new(AppActions.Test, 10),
-		new(AppActions.DownDetectorRequest, 7),
-		new(AppActions.LocateIP, 6),
-		new(AppActions.GetWiFiPasswords, 5),
-		new(AppActions.GetIPConfig, 2),
-		new(AppActions.Ping, 1),
+		new() { Action = AppActions.MyIP, UsageCount = 0 },
+		new() { Action = AppActions.Test, UsageCount = 0 },
+		new() { Action = AppActions.DownDetectorRequest, UsageCount = 0 },
+		new() { Action = AppActions.Ping, UsageCount = 0 },
+		new() { Action = AppActions.LocateIP, UsageCount = 0 },
+		new() { Action = AppActions.GetIPConfig, UsageCount = 0 },
+		new() { Action = AppActions.GetWiFiPasswords, UsageCount = 0 },
 	};
 
 	public static Dictionary<AppActions, string> ActionsIcons => new()
@@ -166,7 +166,7 @@ public static class Global
 		{ AppActions.LocateIP, "TEXT_HERE" },
 		{ AppActions.MyIP, "TEXT_HERE" },
 		{ AppActions.Ping, "TEXT_HERE" },
-		{ AppActions.Test, "TEXT_HERE" },
+		{ AppActions.Test, Properties.Resources.TestConnection },
 	};
 
 	public static Color GetColorFromResource(string resourceName) => (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());

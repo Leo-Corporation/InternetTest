@@ -216,4 +216,7 @@
   <data name="LaunchTestToCheckConnection" xml:space="preserve">
     <value>Launch a test to check your connection</value>
   </data>
+  <data name="TestConnection" xml:space="preserve">
+    <value>Test your connection</value>
+  </data>
 </root>

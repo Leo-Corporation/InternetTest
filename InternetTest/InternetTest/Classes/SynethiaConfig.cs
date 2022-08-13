@@ -42,7 +42,7 @@ public class SynethiaConfig
 		IPConfigPageInfo = new();
 		WiFiPasswordsPageInfo = new();
 
-		ActionInfos = Enumerable.Empty<ActionInfo>().ToList();
+		ActionInfos = Global.DefaultRelevantActions;
 	}
 	
 	public PageInfo StatusPageInfo { get; set; }
@@ -74,4 +74,8 @@ public class PageInfo
 	public double Score { get; set; }
 }
 
-public record ActionInfo(AppActions Action, int UsageCount);
+public class ActionInfo
+{
+	public AppActions Action { get; set; }
+	public int UsageCount { get; set; }
+}

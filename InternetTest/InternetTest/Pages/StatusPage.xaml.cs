@@ -162,6 +162,8 @@ public partial class StatusPage : Page
 	private void TestBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LaunchTest();
+		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
+		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.Test).UsageCount++;
 	}
 
 	private void BrowserBtn_Click(object sender, RoutedEventArgs e)
