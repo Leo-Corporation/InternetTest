@@ -6,7 +6,7 @@
 			 xmlns:local="clr-namespace:InternetTest.UserControls"
 			 mc:Ignorable="d" 
 			 Height="75" Margin="5" MinWidth="200" FontFamily="../Fonts/#Hauora">
-	<Border Cursor="Hand" Padding="5" CornerRadius="5" Background="{Binding Source={StaticResource CardBackground}}">
+	<Border Cursor="Hand" MouseLeftButtonUp="Border_MouseLeftButtonUp" Padding="5" CornerRadius="5" Background="{Binding Source={StaticResource CardBackground}}">
         <Border.Effect>
             <DropShadowEffect BlurRadius="10" Color="#1F1F1F" Direction="270" Opacity="0.1" ShadowDepth="0"/>
         </Border.Effect>

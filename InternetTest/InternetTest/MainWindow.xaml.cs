@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.Enums;
 using InternetTest.Pages;
+using InternetTest.UserControls;
 using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
@@ -46,11 +48,12 @@ namespace InternetTest;
 /// </summary>
 public partial class MainWindow : Window
 {
+	
 	public MainWindow()
 	{
 		InitializeComponent();
 		InitUI();
-	}
+	}	
 
 	DoubleAnimation expandAnimation = new()
 	{
@@ -81,6 +84,25 @@ public partial class MainWindow : Window
 		// Show the appropriate page
 		PageDisplayer.Content = Global.HomePage; // Show the Home page
 		CheckButton(HomePageBtn, true);
+
+		PageCard.OnCardClick += (o, e) =>
+		{
+			switch (e.AppPage)
+			{
+				case AppPages.Status:
+					PageDisplayer.Content = Global.StatusPage;
+					UnCheckAllButton();
+					CheckButton(StatusPageBtn);
+					break;
+				case AppPages.DownDetector:
+					PageDisplayer.Content = Global.DownDetectorPage;
+					UnCheckAllButton();
+					CheckButton(DownDetectorPageBtn);
+					break;
+				default:
+					break;
+			}
+		};
 	}
 
 	private void MinimizeBtn_Click(object sender, RoutedEventArgs e)

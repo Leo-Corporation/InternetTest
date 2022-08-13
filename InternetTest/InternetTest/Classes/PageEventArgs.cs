@@ -21,48 +21,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Classes;
 using InternetTest.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace InternetTest.UserControls;
-/// <summary>
-/// Interaction logic for PageCard.xaml
-/// </summary>
-public partial class PageCard : UserControl
+namespace InternetTest.Classes;
+public class PageEventArgs : EventArgs
 {
-
-	internal AppPages AppPage { get; init; }
-	public PageCard(AppPages appPages)
+	public PageEventArgs(AppPages page)
 	{
-		InitializeComponent();
-		AppPage = appPages; // Set value
-		
-		InitUI();
+		AppPage = page;
 	}
-
-	private void InitUI()
-	{
-		IconTxt.Text = Global.AppPagesFilledIcons[AppPage]; // Set text
-		PageNameTxt.Text = Global.AppPagesName[AppPage]; // Set text
-	}
-	public static event EventHandler<PageEventArgs> OnCardClick;
-
-	private void Border_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-	{
-		OnCardClick?.Invoke(this, new(AppPage)); // Invoke event
-	}
+	public AppPages AppPage { get; set; }
 }
