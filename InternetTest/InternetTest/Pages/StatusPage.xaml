@@ -23,8 +23,8 @@
 		</StackPanel>
 
 		<StackPanel Grid.Row="1" VerticalAlignment="Center">
-			<TextBlock x:Name="StatusIconTxt" Text="&#xF299;" FontSize="76" FontFamily="../Fonts/#FluentSystemIcons-Filled" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-			<TextBlock x:Name="StatusTxt" d:Text="{x:Static lang:Resources.GetStarted}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0" HorizontalAlignment="Center"/>
+			<TextBlock x:Name="StatusIconTxt" Text="&#xF4AB;" FontSize="76" FontFamily="../Fonts/#FluentSystemIcons-Filled" Foreground="{Binding Source={StaticResource Gray}}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+			<TextBlock x:Name="StatusTxt" Text="{x:Static lang:Resources.LaunchTestToCheckConnection}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0" HorizontalAlignment="Center"/>
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button x:Name="TestBtn" Click="TestBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Test}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 				<Button x:Name="BrowserBtn" Click="BrowserBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.OpenBrowser}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
@@ -51,7 +51,7 @@
 					<TextBlock Text="{x:Static lang:Resources.Status}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF2F0;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="DetailsStatusTxt" d:Text="200" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock x:Name="DetailsStatusTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -70,7 +70,7 @@
 					<TextBlock Text="{x:Static lang:Resources.TimeElapsed}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF2F0;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="DetailsTimeTxt" d:Text="200" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock x:Name="DetailsTimeTxt" Text="0ms" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -89,7 +89,7 @@
 					<TextBlock Text="{x:Static lang:Resources.StatusMessage}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF2F0;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="DetailsMessageTxt" d:Text="200" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock x:Name="DetailsMessageTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>

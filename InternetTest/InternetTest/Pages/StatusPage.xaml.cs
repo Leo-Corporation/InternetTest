@@ -25,6 +25,7 @@ using InternetTest.Classes;
 using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -116,6 +117,6 @@ public partial class StatusPage : Page
 
 	private void BrowserBtn_Click(object sender, RoutedEventArgs e)
 	{
-
+		Process.Start("explorer.exe", "https://bing.com");
 	}
 }

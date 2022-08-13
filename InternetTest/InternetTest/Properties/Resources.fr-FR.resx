@@ -213,4 +213,7 @@
   <data name="Error" xml:space="preserve">
     <value>Erreur</value>
   </data>
+  <data name="LaunchTestToCheckConnection" xml:space="preserve">
+    <value>Lancez un test pour vérifier votre connexion</value>
+  </data>
 </root>

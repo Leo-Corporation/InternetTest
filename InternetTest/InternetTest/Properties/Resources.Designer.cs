@@ -205,6 +205,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Launch a test to check your connection.
+        /// </summary>
+        public static string LaunchTestToCheckConnection {
+            get {
+                return ResourceManager.GetString("LaunchTestToCheckConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Locate IP.
         /// </summary>
         public static string LocateIP {

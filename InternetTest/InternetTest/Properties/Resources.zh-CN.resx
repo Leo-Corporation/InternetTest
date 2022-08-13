@@ -213,4 +213,7 @@
   <data name="Error" xml:space="preserve">
     <value>错误</value>
   </data>
+  <data name="LaunchTestToCheckConnection" xml:space="preserve">
+    <value>启动测试以检查您的连接</value>
+  </data>
 </root>
