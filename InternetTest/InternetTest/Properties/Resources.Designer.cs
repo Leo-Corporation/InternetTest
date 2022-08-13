@@ -187,6 +187,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Time interval.
+        /// </summary>
+        public static string Interval {
+            get {
+                return ResourceManager.GetString("Interval", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IP Config.
         /// </summary>
         public static string IPConfig {
@@ -201,6 +210,15 @@ namespace InternetTest.Properties {
         public static string IPTools {
             get {
                 return ResourceManager.GetString("IPTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start scheduled tests.
+        /// </summary>
+        public static string LaunchScheduledTest {
+            get {
+                return ResourceManager.GetString("LaunchScheduledTest", resourceCulture);
             }
         }
         
@@ -241,6 +259,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to of {0}.
+        /// </summary>
+        public static string OfWebsite {
+            get {
+                return ResourceManager.GetString("OfWebsite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open in browser.
         /// </summary>
         public static string OpenBrowser {
@@ -268,6 +295,33 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All websites will be tested in {0} seconds..
+        /// </summary>
+        public static string ScheduledTestInterval {
+            get {
+                return ResourceManager.GetString("ScheduledTestInterval", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scheduled Tests.
+        /// </summary>
+        public static string ScheduledTests {
+            get {
+                return ResourceManager.GetString("ScheduledTests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to seconds.
+        /// </summary>
+        public static string SecondsLower {
+            get {
+                return ResourceManager.GetString("SecondsLower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {
@@ -291,6 +345,15 @@ namespace InternetTest.Properties {
         public static string StatusMessage {
             get {
                 return ResourceManager.GetString("StatusMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop scheduled tests.
+        /// </summary>
+        public static string StopScheduledTests {
+            get {
+                return ResourceManager.GetString("StopScheduledTests", resourceCulture);
             }
         }
         

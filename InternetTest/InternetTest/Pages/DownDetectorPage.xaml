@@ -15,6 +15,8 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
 		<StackPanel Margin="10" Orientation="Horizontal">
@@ -47,13 +49,16 @@
 				</Grid>
 			</Border>
 			<StackPanel x:Name="DownDetectorItemDisplayer">
-				
+
 			</StackPanel>
 		</StackPanel>
 
-		<StackPanel Margin="10" Orientation="Horizontal" Grid.Row="2">
-			<TextBlock Text="&#xF4A4;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
-			<TextBlock Text="{x:Static lang:Resources.Details}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
+		<StackPanel Margin="10" Grid.Row="2">
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="&#xF4A4;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
+				<TextBlock Text="{x:Static lang:Resources.Details}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
+			</StackPanel>
+			<TextBlock x:Name="DetailsSiteNameTxt" Text="" FontSize="12" VerticalAlignment="Center" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" FontStyle="Italic"/>
 		</StackPanel>
 
 		<WrapPanel Grid.Row="3" Margin="0,0,0,20" Orientation="Horizontal">
@@ -114,5 +119,20 @@
 				</Grid>
 			</Border>
 		</WrapPanel>
+
+		<StackPanel Margin="10" Orientation="Horizontal" Grid.Row="4">
+			<TextBlock Text="&#xF827;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
+			<TextBlock Text="{x:Static lang:Resources.ScheduledTests}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
+		</StackPanel>
+
+		<StackPanel Grid.Row="5">
+			<StackPanel Margin="10 0 0 0" Orientation="Horizontal">
+				<TextBlock FontWeight="Bold" Text="{x:Static lang:Resources.Interval}" VerticalAlignment="Center"/>
+				<TextBox Background="Transparent" x:Name="IntervalTxt" MinWidth="25" TextAlignment="Center" Padding="2" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" Text="10" VerticalAlignment="Center" PreviewTextInput="IntervalTxt_PreviewTextInput"/>
+				<TextBlock FontWeight="Bold" Text="{x:Static lang:Resources.SecondsLower}" VerticalAlignment="Center"/>
+			</StackPanel>
+			<TextBlock Visibility="Collapsed" x:Name="TimeIntervalTxt" FontWeight="Bold" Text="{x:Static lang:Resources.Interval}" VerticalAlignment="Center" Margin="10,0,0,5"/>
+			<Button x:Name="ScheduledTestLaunchBtn" Click="ScheduledTestLaunchBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.LaunchScheduledTest}" Margin="10 0" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}" HorizontalAlignment="Left"/>
+		</StackPanel>
 	</Grid>
 </Page>

@@ -225,4 +225,25 @@
   <data name="WebsiteDown" xml:space="preserve">
     <value>Le site n'est pas disponible</value>
   </data>
+  <data name="OfWebsite" xml:space="preserve">
+    <value>de {0}</value>
+  </data>
+  <data name="ScheduledTests" xml:space="preserve">
+    <value>Tests Planifiés</value>
+  </data>
+  <data name="LaunchScheduledTest" xml:space="preserve">
+    <value>Lancer les tests planifiés</value>
+  </data>
+  <data name="ScheduledTestInterval" xml:space="preserve">
+    <value>Tous les sites seront testés dans {0} secondes.</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Intervalle de temps</value>
+  </data>
+  <data name="SecondsLower" xml:space="preserve">
+    <value>secondes</value>
+  </data>
+  <data name="StopScheduledTests" xml:space="preserve">
+    <value>Arrêter les tests planifiés</value>
+  </data>
 </root>

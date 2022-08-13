@@ -30,6 +30,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -51,6 +52,7 @@ namespace InternetTest.Pages
 	{
 		DownDetectorTestResult CurrentResult { get; set; }
 		internal int TotalWebsites { get; set; } = 1;
+		
 		public DownDetectorPage()
 		{
 			InitializeComponent();
@@ -60,6 +62,7 @@ namespace InternetTest.Pages
 		private void InitUI()
 		{
 			TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.DownDetector}"; // Set the title of the page
+			TimeIntervalTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, 10); // Set the time interval text
 		}
 
 		private async void TestBtn_Click(object sender, RoutedEventArgs e)
@@ -124,6 +127,8 @@ namespace InternetTest.Pages
 				DetailsMessageTxt.Text = message;
 
 				DetailsTimeTxt.Text = $"{time}ms"; // Update the time
+				DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
+
 				return new(statusCode, time, message);
 			}
 			else
@@ -149,6 +154,7 @@ namespace InternetTest.Pages
 				DetailsMessageTxt.Text = message;
 
 				DetailsTimeTxt.Text = $"{time}ms"; // Update the time
+				DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
 
 				return new(statusCode, time, message);
 			}
@@ -194,6 +200,59 @@ namespace InternetTest.Pages
 
 			// Test the current website
 			CurrentResult = await LaunchTest(WebsiteTxt.Text);
+		}
+
+		private void IntervalTxt_PreviewTextInput(object sender, TextCompositionEventArgs e)
+		{
+			Regex regex = new("[^0-9]+");
+			e.Handled = regex.IsMatch(e.Text);
+		}
+
+		int secondsRemaining = 0;
+		int secondsRemainingFixed = 0;
+		int timeCounter = 0;
+		bool scheduledStarted = false;
+		DispatcherTimer timer = new() { Interval = TimeSpan.FromSeconds(1)}; // Create a new timer
+
+		private void ScheduledTestLaunchBtn_Click(object sender, RoutedEventArgs e)
+		{
+			secondsRemaining = int.Parse(IntervalTxt.Text); // Get the seconds
+			secondsRemainingFixed = int.Parse(IntervalTxt.Text); // Get the seconds			
+			
+			if (!scheduledStarted)
+			{
+				scheduledStarted = true;
+				ScheduledTestLaunchBtn.Content = Properties.Resources.StopScheduledTests;
+				TimeIntervalTxt.Visibility = Visibility.Visible;
+
+				timer.Tick += (o, e) =>
+				{
+					timeCounter++;
+					if (timeCounter == secondsRemainingFixed)
+					{
+						_ = LaunchTest(WebsiteTxt.Text); 
+					}
+					if (secondsRemaining > 0)
+					{
+						secondsRemaining--;
+					}
+					else
+					{
+						secondsRemaining = secondsRemainingFixed;
+						timeCounter = 0;
+					}
+					TimeIntervalTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, secondsRemaining); // Set the time interval text
+
+				};
+				timer.Start();
+			}
+			else
+			{
+				scheduledStarted = false;
+				timer.Stop();
+				ScheduledTestLaunchBtn.Content = Properties.Resources.LaunchScheduledTest;
+				TimeIntervalTxt.Visibility = Visibility.Collapsed;
+			}
 		}
 	}
 }

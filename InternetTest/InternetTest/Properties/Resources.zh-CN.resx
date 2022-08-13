@@ -225,4 +225,25 @@
   <data name="WebsiteDown" xml:space="preserve">
     <value>该网站已关闭</value>
   </data>
+  <data name="OfWebsite" xml:space="preserve">
+    <value>of {0}</value>
+  </data>
+  <data name="ScheduledTests" xml:space="preserve">
+    <value>Scheduled Tests</value>
+  </data>
+  <data name="LaunchScheduledTest" xml:space="preserve">
+    <value>Start scheduled tests</value>
+  </data>
+  <data name="ScheduledTestInterval" xml:space="preserve">
+    <value>All websites will be tested in {0} seconds.</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>时间间隔</value>
+  </data>
+  <data name="SecondsLower" xml:space="preserve">
+    <value>seconds</value>
+  </data>
+  <data name="StopScheduledTests" xml:space="preserve">
+    <value>Stop scheduled tests</value>
+  </data>
 </root>
