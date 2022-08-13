@@ -223,6 +223,8 @@ public partial class MainWindow : Window
 	{
 		UnCheckAllButton(); // Reset all states
 		CheckButton(StatusPageBtn);
+
+		PageDisplayer.Content = Global.StatusPage; // Display the status page
 	}
 
 	private void DownDetectorPageBtn_Click(object sender, RoutedEventArgs e)

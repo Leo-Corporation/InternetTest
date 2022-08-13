@@ -28,6 +28,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="LeoCorpLibrary" Version="4.9.0.2208" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Resource Include="Fonts\FluentSystemIcons-Filled.ttf">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Resource>

@@ -37,6 +37,7 @@ public static class Global
 	public static string Version => "7.0.0.2208-pre1";
 
 	public static HomePage HomePage { get; set; } = new();
+	public static StatusPage StatusPage { get; set; } = new();
 
 	public static SynethiaConfig SynethiaConfig { get; set; }
 
