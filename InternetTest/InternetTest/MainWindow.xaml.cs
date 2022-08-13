@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.Pages;
+using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -221,10 +223,12 @@ public partial class MainWindow : Window
 
 	private void StatusPageBtn_Click(object sender, RoutedEventArgs e)
 	{
+		LeavePage();
 		UnCheckAllButton(); // Reset all states
 		CheckButton(StatusPageBtn);
 
 		PageDisplayer.Content = Global.StatusPage; // Display the status page
+		Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Env.UnixTime; // Update the last entered time
 	}
 
 	private void DownDetectorPageBtn_Click(object sender, RoutedEventArgs e)
@@ -265,6 +269,7 @@ public partial class MainWindow : Window
 
 	private void HomePageBtn_Click(object sender, RoutedEventArgs e)
 	{
+		LeavePage();
 		UnCheckAllButton(); // Reset all states
 		CheckButton(HomePageBtn, true);
 
@@ -281,5 +286,15 @@ public partial class MainWindow : Window
 	{
 		UnCheckAllButton(); // Reset all states
 		CheckButton(SettingsPageBtn, true);
+	}
+
+	private void LeavePage()
+	{
+		if (PageDisplayer.Content is StatusPage)
+		{
+			Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime = Env.UnixTime;
+			Global.SynethiaConfig.StatusPageInfo.TotalTimeSpent += Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime - Global.SynethiaConfig.StatusPageInfo.EnterUnixTime;
+			Global.SynethiaConfig.StatusPageInfo.Score = Global.SynethiaConfig.StatusPageInfo.TotalTimeSpent * (Global.SynethiaConfig.StatusPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.StatusPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+		}
 	}
 }

@@ -47,17 +47,66 @@ namespace InternetTest.Pages;
 /// </summary>
 public partial class StatusPage : Page
 {
+	bool codeInjected = false;
 	public StatusPage()
 	{
 		InitializeComponent();
 		InitUI(); // Load the UI
+		Loaded += (o, e) => InjectSynethiaCode();
+	}
+
+	private void InjectSynethiaCode()
+	{
+		if (codeInjected) return;
+
+		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		{
+			b.Click += (sender, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
+
+		// For each TextBox of the page
+		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
+		{
+			textBox.GotFocus += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
+
+		// For each CheckBox/RadioButton of the page
+		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
+		{
+			checkBox.Checked += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+			checkBox.Unchecked += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
+
+		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
+		{
+			radioButton.Checked += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+			radioButton.Unchecked += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
 	}
 
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.Status}"; // Set the title
 	}
-	
+
 	private async void LaunchTest(string? customSite = null)
 	{
 		try

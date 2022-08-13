@@ -39,7 +39,7 @@ public static class Global
 	public static HomePage HomePage { get; set; } = new();
 	public static StatusPage StatusPage { get; set; } = new();
 
-	public static SynethiaConfig SynethiaConfig { get; set; }
+	public static SynethiaConfig SynethiaConfig { get; set; } = new();
 
 	public static string GetHiSentence
 	{
@@ -169,8 +169,17 @@ public static class Global
 		{ AppActions.Test, "TEXT_HERE" },
 	};
 
-	public static Color GetColorFromResource(string resourceName)
+	public static Color GetColorFromResource(string resourceName) => (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());
+
+	public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
 	{
-		return (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());
+		if (depObj == null) yield return (T)Enumerable.Empty<T>();
+		for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
+		{
+			DependencyObject ithChild = VisualTreeHelper.GetChild(depObj, i);
+			if (ithChild == null) continue;
+			if (ithChild is T t) yield return t;
+			foreach (T childOfChild in FindVisualChildren<T>(ithChild)) yield return childOfChild;
+		}
 	}
 }

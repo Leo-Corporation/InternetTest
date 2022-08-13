@@ -32,6 +32,19 @@ using System.Threading.Tasks;
 namespace InternetTest.Classes;
 public class SynethiaConfig
 {
+	public SynethiaConfig()
+	{
+		StatusPageInfo = new();
+		DownDetectorPageInfo = new();
+		MyIPPageInfo = new();
+		LocateIPPageInfo = new();
+		PingPageInfo = new();
+		IPConfigPageInfo = new();
+		WiFiPasswordsPageInfo = new();
+
+		ActionInfos = Enumerable.Empty<ActionInfo>().ToList();
+	}
+	
 	public PageInfo StatusPageInfo { get; set; }
 	public PageInfo DownDetectorPageInfo { get; set; }
 	public PageInfo MyIPPageInfo { get; set; }
@@ -43,11 +56,22 @@ public class SynethiaConfig
 	public List<ActionInfo> ActionInfos { get; set; }
 }
 
-public record PageInfo(
-	int EnterUnixTime, 
-	int LeaveUnixTime, 
-	int TotalTimeSpent, 
-	int InteractionCount, 
-	double Score);
+public class PageInfo
+{
+	public PageInfo()
+	{
+		EnterUnixTime = 0;
+		LeaveUnixTime = 0;
+		TotalTimeSpent = 0;
+		InteractionCount = 0;
+		Score = 0;
+	}
+	
+	public int EnterUnixTime { get; set; }
+	public int LeaveUnixTime { get; set; }
+	public int TotalTimeSpent { get; set; }
+	public int InteractionCount { get; set; }
+	public double Score { get; set; }
+}
 
 public record ActionInfo(AppActions Action, int UsageCount);
