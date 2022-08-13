@@ -27,20 +27,10 @@ using InternetTest.Pages;
 using InternetTest.UserControls;
 using LeoCorpLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace InternetTest;
 /// <summary>
@@ -48,12 +38,12 @@ namespace InternetTest;
 /// </summary>
 public partial class MainWindow : Window
 {
-	
+
 	public MainWindow()
 	{
 		InitializeComponent();
 		InitUI();
-	}	
+	}
 
 	DoubleAnimation expandAnimation = new()
 	{
@@ -120,7 +110,7 @@ public partial class MainWindow : Window
 	{
 		Environment.Exit(0); // Close the app
 	}
-	
+
 	private void HandleWindowStateChanged()
 	{
 		MaximizeRestoreBtn.Content = WindowState == WindowState.Maximized
@@ -129,9 +119,9 @@ public partial class MainWindow : Window
 		MaximizeRestoreBtn.FontSize = WindowState == WindowState.Maximized
 			? 18
 			: 14;
-		
+
 		DefineMaximumSize();
-		
+
 		WindowBorder.Margin = WindowState == WindowState.Maximized ? new(10, 10, 0, 0) : new(10); // Set
 		WindowBorder.CornerRadius = WindowState == WindowState.Maximized ? new(0) : new(5); // Set
 	}
@@ -192,7 +182,7 @@ public partial class MainWindow : Window
 
 		storyboard.Begin(this); // Animate the utilities panel
 	}
-	
+
 	private void CommandsBtn_Click(object sender, RoutedEventArgs e)
 	{
 		bool expanded = CommandPanel.Visibility == Visibility.Visible;
@@ -225,7 +215,7 @@ public partial class MainWindow : Window
 		HomePageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		HistoryPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		SettingsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		
+
 		StatusPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		DownDetectorPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		MyIPPageBtn.Background = new SolidColorBrush(Colors.Transparent);

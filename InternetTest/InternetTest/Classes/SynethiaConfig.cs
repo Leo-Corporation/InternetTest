@@ -23,11 +23,7 @@ SOFTWARE.
 */
 
 using InternetTest.Enums;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetTest.Classes;
 public class SynethiaConfig
@@ -44,7 +40,7 @@ public class SynethiaConfig
 
 		ActionInfos = Global.DefaultRelevantActions;
 	}
-	
+
 	public PageInfo StatusPageInfo { get; set; }
 	public PageInfo DownDetectorPageInfo { get; set; }
 	public PageInfo MyIPPageInfo { get; set; }
@@ -66,7 +62,7 @@ public class PageInfo
 		InteractionCount = 0;
 		Score = 0;
 	}
-	
+
 	public int EnterUnixTime { get; set; }
 	public int LeaveUnixTime { get; set; }
 	public int TotalTimeSpent { get; set; }

@@ -23,10 +23,6 @@ SOFTWARE.
 */
 using InternetTest.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetTest.Classes;
 public class PageEventArgs : EventArgs
