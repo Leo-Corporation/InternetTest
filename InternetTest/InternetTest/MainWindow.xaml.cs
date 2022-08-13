@@ -267,6 +267,8 @@ public partial class MainWindow : Window
 	{
 		UnCheckAllButton(); // Reset all states
 		CheckButton(HomePageBtn, true);
+
+		PageDisplayer.Content = Global.HomePage; // Display the home page
 	}
 
 	private void HistoryPageBtn_Click(object sender, RoutedEventArgs e)
