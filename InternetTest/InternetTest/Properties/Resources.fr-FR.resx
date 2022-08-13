@@ -186,4 +186,31 @@
   <data name="Discover" xml:space="preserve">
     <value>Découvrir</value>
   </data>
+  <data name="Details" xml:space="preserve">
+    <value>Détails</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Tester</value>
+  </data>
+  <data name="OpenBrowser" xml:space="preserve">
+    <value>Ouvrir dans le navigateur</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>Vous êtes connecté à Internet</value>
+  </data>
+  <data name="NotConnected" xml:space="preserve">
+    <value>Vous n'êtes pas connecté à Internet</value>
+  </data>
+  <data name="TestInProgress" xml:space="preserve">
+    <value>Test en cours, veuillez patienter</value>
+  </data>
+  <data name="TimeElapsed" xml:space="preserve">
+    <value>Temps écoulé</value>
+  </data>
+  <data name="StatusMessage" xml:space="preserve">
+    <value>Message du Status</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
 </root>

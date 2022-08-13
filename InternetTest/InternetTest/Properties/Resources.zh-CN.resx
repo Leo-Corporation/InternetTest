@@ -186,4 +186,31 @@
   <data name="Discover" xml:space="preserve">
     <value>Discover</value>
   </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="OpenBrowser" xml:space="preserve">
+    <value>打开浏览器</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>您已连接到互联网</value>
+  </data>
+  <data name="NotConnected" xml:space="preserve">
+    <value>你没有连接到互联网</value>
+  </data>
+  <data name="TestInProgress" xml:space="preserve">
+    <value>正在测试，请稍候</value>
+  </data>
+  <data name="TimeElapsed" xml:space="preserve">
+    <value>Time elapsed</value>
+  </data>
+  <data name="StatusMessage" xml:space="preserve">
+    <value>Status Message</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
 </root>
