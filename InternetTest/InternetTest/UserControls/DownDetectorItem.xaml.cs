@@ -72,9 +72,12 @@ public partial class DownDetectorItem : UserControl
 
 	private void InfoBtn_Click(object sender, RoutedEventArgs e)
 	{
-		Global.DownDetectorPage.DetailsStatusTxt.Text = DownDetectorTestResult.Code.ToString(); // Set the text
-		Global.DownDetectorPage.DetailsTimeTxt.Text = $"{DownDetectorTestResult.Time}ms"; // Set the text
-		Global.DownDetectorPage.DetailsMessageTxt.Text = DownDetectorTestResult.Message; // Set the text
+		if (DownDetectorTestResult is not null)
+		{
+			Global.DownDetectorPage.DetailsStatusTxt.Text = DownDetectorTestResult.Code.ToString(); // Set the text
+			Global.DownDetectorPage.DetailsTimeTxt.Text = $"{DownDetectorTestResult.Time}ms"; // Set the text
+			Global.DownDetectorPage.DetailsMessageTxt.Text = DownDetectorTestResult.Message; // Set the text 
+		}
 	}
 
 	private void DeleteBtn_Click(object sender, RoutedEventArgs e)

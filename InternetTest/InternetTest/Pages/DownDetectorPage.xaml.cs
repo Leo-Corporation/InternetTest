@@ -81,7 +81,9 @@ namespace InternetTest.Pages
 			{
 				if (DownDetectorItemDisplayer.Children[i] is DownDetectorItem item)
 				{
+					item.WebsiteTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Foreground1"));
 					item.DownDetectorTestResult = await LaunchTest(item.WebsiteTxt.Text);
+					item.WebsiteTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("DarkGray"));
 				}
 			}
 		}
@@ -159,9 +161,12 @@ namespace InternetTest.Pages
 
 		private void InfoBtn_Click(object sender, RoutedEventArgs e)
 		{
-			DetailsStatusTxt.Text = CurrentResult.Code.ToString(); // Set the text
-			DetailsTimeTxt.Text = $"{CurrentResult.Time}ms"; // Set the text
-			DetailsMessageTxt.Text = CurrentResult.Message; // Set the text
+			if (CurrentResult is not null)
+			{
+				DetailsStatusTxt.Text = CurrentResult.Code.ToString(); // Set the text
+				DetailsTimeTxt.Text = $"{CurrentResult.Time}ms"; // Set the text
+				DetailsMessageTxt.Text = CurrentResult.Message; // Set the text 
+			}
 		}
 
 		private void AddBtn_Click(object sender, RoutedEventArgs e)
@@ -174,6 +179,21 @@ namespace InternetTest.Pages
 
 			TotalWebsites = DownDetectorItemDisplayer.Children.Count + ((!string.IsNullOrEmpty(WebsiteTxt.Text)) ? 1 : 0);
 			TestBtn.Content = $"{Properties.Resources.Test} ({TotalWebsites})";
+		}
+
+		private async void TestSiteBtn_Click(object sender, RoutedEventArgs e)
+		{
+			// Check if the URL is valid
+			if (!WebsiteTxt.Text.StartsWith("http"))
+			{
+				WebsiteTxt.Text = "https://" + WebsiteTxt.Text;
+			}
+
+			TotalWebsites = DownDetectorItemDisplayer.Children.Count + ((!string.IsNullOrEmpty(WebsiteTxt.Text)) ? 1 : 0);
+			TestBtn.Content = $"{Properties.Resources.Test} ({TotalWebsites})";
+
+			// Test the current website
+			CurrentResult = await LaunchTest(WebsiteTxt.Text);
 		}
 	}
 }
