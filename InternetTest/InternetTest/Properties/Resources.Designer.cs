@@ -106,6 +106,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Launch a test to see if a website is available or not.
+        /// </summary>
+        public static string DownDetectorPlaceHolder {
+            get {
+                return ResourceManager.GetString("DownDetectorPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Error {
@@ -390,6 +399,15 @@ namespace InternetTest.Properties {
         public static string TestInProgress {
             get {
                 return ResourceManager.GetString("TestInProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test website.
+        /// </summary>
+        public static string TestWebsite {
+            get {
+                return ResourceManager.GetString("TestWebsite", resourceCulture);
             }
         }
         

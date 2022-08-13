@@ -246,4 +246,10 @@
   <data name="StopScheduledTests" xml:space="preserve">
     <value>Stop scheduled tests</value>
   </data>
+  <data name="TestWebsite" xml:space="preserve">
+    <value>Test website</value>
+  </data>
+  <data name="DownDetectorPlaceHolder" xml:space="preserve">
+    <value>Launch a test to see if a website is available or not</value>
+  </data>
 </root>

@@ -159,7 +159,7 @@ public static class Global
 
 	public static Dictionary<AppActions, string> ActionsString => new()
 	{
-		{ AppActions.DownDetectorRequest, "TEXT_HERE" },
+		{ AppActions.DownDetectorRequest, Properties.Resources.TestWebsite },
 		{ AppActions.GetIPConfig, "TEXT_HERE" },
 		{ AppActions.GetWiFiPasswords, "TEXT_HERE" },
 		{ AppActions.LocateIP, "TEXT_HERE" },
