@@ -233,8 +233,11 @@ public partial class MainWindow : Window
 
 	private void DownDetectorPageBtn_Click(object sender, RoutedEventArgs e)
 	{
+		LeavePage();
 		UnCheckAllButton(); // Reset all states
 		CheckButton(DownDetectorPageBtn);
+
+		PageDisplayer.Content = Global.DownDetectorPage; // Display the down detector page
 	}
 
 	private void MyIPPageBtn_Click(object sender, RoutedEventArgs e)

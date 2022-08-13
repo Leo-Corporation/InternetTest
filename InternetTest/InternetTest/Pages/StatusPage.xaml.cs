@@ -111,7 +111,7 @@ public partial class StatusPage : Page
 	{
 		try
 		{
-			// Show the wating screen
+			// Show the waiting screen
 			StatusIconTxt.Text = "\uF2DE";
 			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
 			StatusTxt.Text = Properties.Resources.TestInProgress;

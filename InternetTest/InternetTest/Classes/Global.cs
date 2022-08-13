@@ -38,6 +38,7 @@ public static class Global
 
 	public static HomePage HomePage { get; set; } = new();
 	public static StatusPage StatusPage { get; set; } = new();
+	public static DownDetectorPage DownDetectorPage { get; set; } = new();
 
 	public static SynethiaConfig SynethiaConfig { get; set; } = new();
 
@@ -181,5 +182,11 @@ public static class Global
 			if (ithChild is T t) yield return t;
 			foreach (T childOfChild in FindVisualChildren<T>(ithChild)) yield return childOfChild;
 		}
+	}
+
+	public static bool IsUrlValid(string url)
+	{
+		return Uri.TryCreate(url, UriKind.Absolute, out Uri? uriResult)
+			&& (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 	}
 }
