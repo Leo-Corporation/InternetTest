@@ -7,7 +7,7 @@
 	  xmlns:lang="clr-namespace:InternetTest.Properties"
 	  mc:Ignorable="d" FontFamily="../Fonts/#Hauora"
 	  d:DesignHeight="450" d:DesignWidth="800"
-	  Title="DownDetectorPage" Background="Transparent" d:Background="White">
+	  Title="DownDetectorPage" Background="Transparent" d:Background="White" Foreground="{Binding Source={StaticResource Foreground1}}">
 
 	<Grid>
 		<Grid.RowDefinitions>

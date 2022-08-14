@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:InternetTest.UserControls"
              mc:Ignorable="d" FontFamily="../Fonts/#Hauroa"
-             Height="30" Width="Auto" Margin="5 2">
+             Height="30" Width="Auto" Margin="5 2" Foreground="{Binding Source={StaticResource Foreground1}}">
     <Border Cursor="Hand" CornerRadius="15" Background="{Binding Source={StaticResource LightAccentColor}}">
         <StackPanel Margin="10 5" Orientation="Horizontal" VerticalAlignment="Center">
             <TextBlock x:Name="IconTxt" d:Text="&#xF4DB;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Filled" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>

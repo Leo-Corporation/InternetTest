@@ -7,7 +7,7 @@
 	  xmlns:lang="clr-namespace:InternetTest.Properties"
 	  mc:Ignorable="d" FontFamily="../Fonts/#Hauora"
 	  d:DesignHeight="450" d:DesignWidth="800"
-	  Title="MyIpPage" Background="Transparent" d:Background="White">
+	  Title="MyIpPage" Background="Transparent" d:Background="White" Foreground="{Binding Source={StaticResource Foreground1}}">
 
 	<Grid>
 		<Grid.RowDefinitions>
@@ -18,7 +18,7 @@
 		</Grid.RowDefinitions>
 
 		<StackPanel Margin="10" Orientation="Horizontal">
-            <TextBlock Text="&#xF55F;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
+			<TextBlock Text="&#xF55F;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
 			<TextBlock x:Name="TitleTxt" d:Text="{x:Static lang:Resources.GetStarted}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
 		</StackPanel>
 
