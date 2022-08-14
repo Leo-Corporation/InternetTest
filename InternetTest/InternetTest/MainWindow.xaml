@@ -5,7 +5,7 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:InternetTest"
 		xmlns:lang="clr-namespace:InternetTest.Properties"
-		mc:Ignorable="d"
+		mc:Ignorable="d" Foreground="{Binding Source={StaticResource Foreground1}}"
 		FontFamily="/Fonts/#Hauora"
 		Title="{x:Static lang:Resources.InternetTestPro}" MinHeight="500" MinWidth="500" Height="Auto" Width="950" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" ResizeMode="CanResize">
 	<WindowChrome.WindowChrome>
@@ -141,7 +141,7 @@
 									</Border.Background>
 									<TextBlock Text="&#xF488;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled"/>
 								</Border>
-								<TextBlock Text="{x:Static lang:Resources.Home}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0"/>
+								<TextBlock Text="{x:Static lang:Resources.Home}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 							</Grid>
 						</Button>
 						<Button x:Name="HistoryPageBtn" Background="Transparent" BorderThickness="0" Style="{DynamicResource StandardButton}" Margin="0,5,0,0" HorizontalContentAlignment="Left" Click="HistoryPageBtn_Click">
@@ -159,7 +159,7 @@
 									</Border.Background>
 									<TextBlock Text="&#xF486;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled"/>
 								</Border>
-								<TextBlock Text="{x:Static lang:Resources.History}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0"/>
+								<TextBlock Text="{x:Static lang:Resources.History}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 							</Grid>
 						</Button>
 						<Button x:Name="SettingsPageBtn" Background="Transparent" BorderThickness="0" Style="{DynamicResource StandardButton}" Margin="0,5,0,0" HorizontalContentAlignment="Left" Click="SettingsPageBtn_Click">
@@ -177,7 +177,7 @@
 									</Border.Background>
 									<TextBlock Text="&#xF6B3;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled"/>
 								</Border>
-								<TextBlock Text="{x:Static lang:Resources.Settings}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0"/>
+								<TextBlock Text="{x:Static lang:Resources.Settings}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 							</Grid>
 						</Button>
 

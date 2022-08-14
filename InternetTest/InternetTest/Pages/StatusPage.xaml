@@ -6,7 +6,7 @@
 	  xmlns:local="clr-namespace:InternetTest.Pages"
 	  xmlns:lang="clr-namespace:InternetTest.Properties"
 	  mc:Ignorable="d" FontFamily="../Fonts/#Hauora"
-	  d:DesignHeight="450" d:DesignWidth="800"
+	  d:DesignHeight="450" d:DesignWidth="800" Foreground="{Binding Source={StaticResource Foreground1}}"
 	  Title="StatusPage" Background="Transparent" d:Background="White">
 
 	<Grid>

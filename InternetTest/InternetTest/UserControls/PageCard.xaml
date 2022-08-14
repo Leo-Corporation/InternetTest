@@ -7,12 +7,12 @@
 			 mc:Ignorable="d" Foreground="{Binding Source={StaticResource Foreground1}}" 
 			 Height="75" Margin="5" MinWidth="200" FontFamily="../Fonts/#Hauora">
 	<Border Cursor="Hand" MouseLeftButtonUp="Border_MouseLeftButtonUp" Padding="5" CornerRadius="5" Background="{Binding Source={StaticResource CardBackground}}">
-        <Border.Effect>
-            <DropShadowEffect BlurRadius="10" Color="#1F1F1F" Direction="270" Opacity="0.1" ShadowDepth="0"/>
-        </Border.Effect>
-        <StackPanel Margin="10" Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBlock x:Name="IconTxt" d:Text="&#xF4DB;" FontSize="26" FontFamily="../Fonts/#FluentSystemIcons-Filled" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
-            <TextBlock x:Name="PageNameTxt" d:Text="Status" FontSize="18" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="10,0,0,0"/>
-        </StackPanel>
-    </Border>
+		<Border.Effect>
+			<DropShadowEffect BlurRadius="10" Color="#1F1F1F" Direction="270" Opacity="0.1" ShadowDepth="0"/>
+		</Border.Effect>
+		<StackPanel Margin="10" Orientation="Horizontal" VerticalAlignment="Center">
+			<TextBlock x:Name="IconTxt" d:Text="&#xF4DB;" FontSize="26" FontFamily="../Fonts/#FluentSystemIcons-Filled" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
+			<TextBlock x:Name="PageNameTxt" d:Text="Status" FontSize="18" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="10,0,0,0"/>
+		</StackPanel>
+	</Border>
 </UserControl>

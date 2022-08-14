@@ -13,9 +13,9 @@
 		</Grid.ColumnDefinitions>
 		<TextBox Background="Transparent" x:Name="WebsiteTxt" Padding="2" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" d:Text="https://bing.com" VerticalAlignment="Center"/>
 		<StackPanel Grid.Column="1" Orientation="Horizontal">
-			<Button x:Name="TestSiteBtn" Content="&#xF606;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="TestSiteBtn_Click"/>
-			<Button x:Name="InfoBtn" Content="&#xF4A4;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="InfoBtn_Click"/>
-			<Button x:Name="DeleteBtn" Content="&#xF34D;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="DeleteBtn_Click"/>
+            <Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="TestSiteBtn" Content="&#xF606;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="TestSiteBtn_Click"/>
+			<Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="InfoBtn" Content="&#xF4A4;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="InfoBtn_Click"/>
+			<Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="DeleteBtn" Content="&#xF34D;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="DeleteBtn_Click"/>
 		</StackPanel>
 	</Grid>
 </UserControl>

@@ -43,6 +43,7 @@ public partial class MainWindow : Window
 	{
 		InitializeComponent();
 		InitUI();
+		GC.Collect();
 	}
 
 	DoubleAnimation expandAnimation = new()

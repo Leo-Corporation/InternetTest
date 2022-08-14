@@ -33,7 +33,7 @@
 				<Border.Effect>
 					<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
 				</Border.Effect>
-				<TextBox x:Name="IpTxt" Padding="5" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" d:Text="123.54.132.56"/>
+				<TextBox x:Name="IpTxt" Padding="5" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" d:Text="123.54.132.56" Background="Transparent"/>
 			</Border>
 		</StackPanel>
 
