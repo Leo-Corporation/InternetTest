@@ -28,6 +28,7 @@
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button x:Name="GetMyIPBtn" Click="GetMyIPBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.MyIP}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 				<Button x:Name="MapBtn" Click="MapBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.ShowOnMap}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
+				<Button x:Name="CopyBtn" Click="CopyBtn_Click" Cursor="Hand" Content="&#xF32C;" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" FontFamily="../Fonts/#FluentSystemIcons-Regular" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 			</StackPanel>
 		</StackPanel>
 

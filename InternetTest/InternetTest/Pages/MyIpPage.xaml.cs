@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Classes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,7 +55,7 @@ public partial class MyIpPage : Page
 		GetMyIP(); // Locate the current IP
 		TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.MyIP}";
 	}
-	
+
 	private void GetMyIPBtn_Click(object sender, RoutedEventArgs e)
 	{
 		GetMyIP();
@@ -65,7 +66,7 @@ public partial class MyIpPage : Page
 		StatusIconTxt.Text = "\uF4AB";
 		StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
 		MyIPTxt.Text = Properties.Resources.IPShowHere;
-		
+
 		var ipInfo = await Global.GetIPInfoAsync(""); // Giving an empty IP returns the user's current IP
 		if (ipInfo is not null)
 		{
@@ -74,8 +75,8 @@ public partial class MyIpPage : Page
 			RegionTxt.Text = ipInfo.RegionName;
 			CityTxt.Text = ipInfo.City;
 			ZipCodeTxt.Text = ipInfo.Zip;
-			LatTxt.Text = ipInfo.Lat.ToString();
-			LongitudeTxt.Text = ipInfo.Lon.ToString();
+			LatTxt.Text = ipInfo.Lat.ToString().Replace(",", ".");
+			LongitudeTxt.Text = ipInfo.Lon.ToString().Replace(",", ".");
 			TimezoneTxt.Text = ipInfo.Timezone;
 			IspTxt.Text = ipInfo.Isp;
 
@@ -91,6 +92,18 @@ public partial class MyIpPage : Page
 
 	private void MapBtn_Click(object sender, RoutedEventArgs e)
 	{
+		//TODO: Add different map providers
+		var lat = LatTxt.Text;
+		var lon = LongitudeTxt.Text;
+		Process.Start("explorer.exe", $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\"");
+	}
 
+	private void CopyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			Clipboard.SetDataObject(MyIPTxt.Text); // Copy to clipboard
+		}
+		catch { }
 	}
 }
