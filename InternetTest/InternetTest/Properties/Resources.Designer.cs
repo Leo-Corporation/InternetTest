@@ -61,6 +61,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        public static string City {
+            get {
+                return ResourceManager.GetString("City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Commands.
         /// </summary>
         public static string Commands {
@@ -75,6 +84,15 @@ namespace InternetTest.Properties {
         public static string Connected {
             get {
                 return ResourceManager.GetString("Connected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string Country {
+            get {
+                return ResourceManager.GetString("Country", resourceCulture);
             }
         }
         
@@ -214,11 +232,38 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your IP will show here..
+        /// </summary>
+        public static string IPShowHere {
+            get {
+                return ResourceManager.GetString("IPShowHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IP Tools.
         /// </summary>
         public static string IPTools {
             get {
                 return ResourceManager.GetString("IPTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ISP.
+        /// </summary>
+        public static string ISP {
+            get {
+                return ResourceManager.GetString("ISP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latitude.
+        /// </summary>
+        public static string Latitude {
+            get {
+                return ResourceManager.GetString("Latitude", resourceCulture);
             }
         }
         
@@ -246,6 +291,24 @@ namespace InternetTest.Properties {
         public static string LocateIP {
             get {
                 return ResourceManager.GetString("LocateIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Longitude.
+        /// </summary>
+        public static string Longitude {
+            get {
+                return ResourceManager.GetString("Longitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map provider.
+        /// </summary>
+        public static string MapProvider {
+            get {
+                return ResourceManager.GetString("MapProvider", resourceCulture);
             }
         }
         
@@ -304,6 +367,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Region.
+        /// </summary>
+        public static string Region {
+            get {
+                return ResourceManager.GetString("Region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All websites will be tested in {0} seconds..
         /// </summary>
         public static string ScheduledTestInterval {
@@ -336,6 +408,15 @@ namespace InternetTest.Properties {
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show on a map.
+        /// </summary>
+        public static string ShowOnMap {
+            get {
+                return ResourceManager.GetString("ShowOnMap", resourceCulture);
             }
         }
         
@@ -421,6 +502,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Timezone.
+        /// </summary>
+        public static string Timezone {
+            get {
+                return ResourceManager.GetString("Timezone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tools.
         /// </summary>
         public static string Tools {
@@ -462,6 +552,15 @@ namespace InternetTest.Properties {
         public static string WifiPasswords {
             get {
                 return ResourceManager.GetString("WifiPasswords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ZIP Code.
+        /// </summary>
+        public static string ZIPCode {
+            get {
+                return ResourceManager.GetString("ZIPCode", resourceCulture);
             }
         }
     }
