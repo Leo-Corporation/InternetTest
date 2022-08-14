@@ -26,6 +26,9 @@ using InternetTest.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
@@ -37,6 +40,7 @@ public static class Global
 	public static HomePage HomePage { get; set; } = new();
 	public static StatusPage StatusPage { get; set; } = new();
 	public static DownDetectorPage DownDetectorPage { get; set; } = new();
+	public static MyIpPage MyIpPage { get; set; } = new();
 
 	public static SynethiaConfig SynethiaConfig { get; set; } = new();
 
@@ -186,5 +190,13 @@ public static class Global
 	{
 		return Uri.TryCreate(url, UriKind.Absolute, out Uri? uriResult)
 			&& (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+	}
+
+	public async static Task<IPInfo?> GetIPInfoAsync(string ip)
+	{
+		HttpClient httpClient = new();
+		string result = await httpClient.GetStringAsync($"http://ip-api.com/json/{ip}");
+
+		return JsonSerializer.Deserialize<IPInfo>(result);
 	}
 }
