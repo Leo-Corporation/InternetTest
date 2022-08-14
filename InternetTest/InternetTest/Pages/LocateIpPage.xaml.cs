@@ -44,10 +44,12 @@ namespace InternetTest.Pages;
 /// </summary>
 public partial class LocateIpPage : Page
 {
+	bool codeInjected = false;
 	public LocateIpPage()
 	{
 		InitializeComponent();
 		InitUI(); // Load the UI
+		InjectSynethiaCode();
 	}
 
 	private void InitUI()
@@ -56,10 +58,60 @@ public partial class LocateIpPage : Page
 		LocateIP(""); // Get the current IP of the user
 	}
 
+	private void InjectSynethiaCode()
+	{
+		if (codeInjected) return;
+		codeInjected = true;
+		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		{
+			b.Click += (sender, e) =>
+			{
+				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+			};
+		}
+
+		// For each TextBox of the page
+		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
+		{
+			textBox.GotFocus += (o, e) =>
+			{
+				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+			};
+		}
+
+		// For each CheckBox/RadioButton of the page
+		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
+		{
+			checkBox.Checked += (o, e) =>
+			{
+				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+			};
+			checkBox.Unchecked += (o, e) =>
+			{
+				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+			};
+		}
+
+		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
+		{
+			radioButton.Checked += (o, e) =>
+			{
+				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+			};
+			radioButton.Unchecked += (o, e) =>
+			{
+				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+			};
+		}
+	}
+
 	private void LocateIPBtn_Click(object sender, RoutedEventArgs e)
 	{
 		if (!Global.IsIpValid(IpTxt.Text)) return; // Cancel if the IP isn't valid
 		LocateIP(IpTxt.Text); // Locate IP
+
+		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
+		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.LocateIP).UsageCount++;
 	}
 
 	private void MapBtn_Click(object sender, RoutedEventArgs e)
