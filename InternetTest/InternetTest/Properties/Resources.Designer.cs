@@ -223,6 +223,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to InternetTest Pro.
+        /// </summary>
+        public static string InternetTestPro {
+            get {
+                return ResourceManager.GetString("InternetTestPro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Time interval.
         /// </summary>
         public static string Interval {

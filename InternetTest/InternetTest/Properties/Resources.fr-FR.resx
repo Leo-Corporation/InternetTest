@@ -294,4 +294,7 @@
   <data name="LocateAnIP" xml:space="preserve">
     <value>Localiser une IP</value>
   </data>
+  <data name="InternetTestPro" xml:space="preserve">
+    <value>InternetTest Pro</value>
+  </data>
 </root>
