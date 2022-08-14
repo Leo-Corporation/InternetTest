@@ -167,7 +167,7 @@ public static class Global
 		{ AppActions.GetIPConfig, "TEXT_HERE" },
 		{ AppActions.GetWiFiPasswords, "TEXT_HERE" },
 		{ AppActions.LocateIP, "TEXT_HERE" },
-		{ AppActions.MyIP, "TEXT_HERE" },
+		{ AppActions.MyIP, Properties.Resources.GetMyIP },
 		{ AppActions.Ping, "TEXT_HERE" },
 		{ AppActions.Test, Properties.Resources.TestConnection },
 	};

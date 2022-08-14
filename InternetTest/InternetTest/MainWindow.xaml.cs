@@ -89,6 +89,11 @@ public partial class MainWindow : Window
 					UnCheckAllButton();
 					CheckButton(DownDetectorPageBtn);
 					break;
+				case AppPages.MyIP:
+					PageDisplayer.Content = Global.MyIpPage;
+					UnCheckAllButton();
+					CheckButton(MyIPPageBtn);
+					break;
 				default:
 					break;
 			}

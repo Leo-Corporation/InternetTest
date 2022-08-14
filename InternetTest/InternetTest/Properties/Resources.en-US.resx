@@ -285,4 +285,7 @@
   <data name="IPShowHere" xml:space="preserve">
     <value>Your IP will show here.</value>
   </data>
+  <data name="GetMyIP" xml:space="preserve">
+    <value>Get my IP</value>
+  </data>
 </root>

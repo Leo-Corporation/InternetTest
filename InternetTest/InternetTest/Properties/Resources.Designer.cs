@@ -142,6 +142,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get my IP.
+        /// </summary>
+        public static string GetMyIP {
+            get {
+                return ResourceManager.GetString("GetMyIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get started.
         /// </summary>
         public static string GetStarted {

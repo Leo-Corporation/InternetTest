@@ -18,7 +18,7 @@
 		</Grid.RowDefinitions>
 
 		<StackPanel Margin="10" Orientation="Horizontal">
-			<TextBlock Text="&#xF299;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
+            <TextBlock Text="&#xF55F;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
 			<TextBlock x:Name="TitleTxt" d:Text="{x:Static lang:Resources.GetStarted}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
 		</StackPanel>
 
