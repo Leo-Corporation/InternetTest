@@ -250,6 +250,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The IP will show here..
+        /// </summary>
+        public static string IPShowHere2 {
+            get {
+                return ResourceManager.GetString("IPShowHere2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IP Tools.
         /// </summary>
         public static string IPTools {
@@ -291,6 +300,15 @@ namespace InternetTest.Properties {
         public static string LaunchTestToCheckConnection {
             get {
                 return ResourceManager.GetString("LaunchTestToCheckConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Locate an IP.
+        /// </summary>
+        public static string LocateAnIP {
+            get {
+                return ResourceManager.GetString("LocateAnIP", resourceCulture);
             }
         }
         

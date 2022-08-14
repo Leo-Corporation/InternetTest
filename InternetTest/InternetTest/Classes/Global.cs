@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
@@ -41,6 +42,7 @@ public static class Global
 	public static StatusPage StatusPage { get; set; } = new();
 	public static DownDetectorPage DownDetectorPage { get; set; } = new();
 	public static MyIpPage MyIpPage { get; set; } = new();
+	public static LocateIpPage LocateIpPage { get; set; } = new();
 
 	public static SynethiaConfig SynethiaConfig { get; set; } = new();
 
@@ -166,7 +168,7 @@ public static class Global
 		{ AppActions.DownDetectorRequest, Properties.Resources.TestWebsite },
 		{ AppActions.GetIPConfig, "TEXT_HERE" },
 		{ AppActions.GetWiFiPasswords, "TEXT_HERE" },
-		{ AppActions.LocateIP, "TEXT_HERE" },
+		{ AppActions.LocateIP, Properties.Resources.LocateAnIP },
 		{ AppActions.MyIP, Properties.Resources.GetMyIP },
 		{ AppActions.Ping, "TEXT_HERE" },
 		{ AppActions.Test, Properties.Resources.TestConnection },
@@ -188,6 +190,10 @@ public static class Global
 
 	public static bool IsUrlValid(string url)
 	{
+		if (!url.StartsWith("http://") || !url.StartsWith("https://"))
+		{
+			url = "https://" + url;
+		}
 		return Uri.TryCreate(url, UriKind.Absolute, out Uri? uriResult)
 			&& (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 	}
@@ -198,5 +204,18 @@ public static class Global
 		string result = await httpClient.GetStringAsync($"http://ip-api.com/json/{ip}");
 
 		return JsonSerializer.Deserialize<IPInfo>(result);
+	}
+	
+	public static bool IsIpValid(string ip)
+	{
+		if (ip == "") return true; // This is valid, it will return the user's current IP
+
+		if (IsUrlValid(ip)) return true; // This is valid, it is possible to get IP info from a URL
+
+		// Initialize a regex that checks if an IP is valid
+		Regex ipRegex = new(@"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+
+		// Check if the IP is valid
+		return ipRegex.IsMatch(ip);
 	}
 }

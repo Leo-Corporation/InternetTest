@@ -288,4 +288,10 @@
   <data name="GetMyIP" xml:space="preserve">
     <value>Get my IP</value>
   </data>
+  <data name="IPShowHere2" xml:space="preserve">
+    <value>The IP will show here.</value>
+  </data>
+  <data name="LocateAnIP" xml:space="preserve">
+    <value>Locate an IP</value>
+  </data>
 </root>

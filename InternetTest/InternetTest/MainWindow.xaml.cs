@@ -94,6 +94,11 @@ public partial class MainWindow : Window
 					UnCheckAllButton();
 					CheckButton(MyIPPageBtn);
 					break;
+				case AppPages.LocateIP:
+					PageDisplayer.Content = Global.LocateIpPage;
+					UnCheckAllButton();
+					CheckButton(LocateIPPageBtn);
+					break;
 				default:
 					break;
 			}
@@ -270,8 +275,12 @@ public partial class MainWindow : Window
 
 	private void LocateIPPageBtn_Click(object sender, RoutedEventArgs e)
 	{
+		LeavePage();
 		UnCheckAllButton(); // Reset all states
 		CheckButton(LocateIPPageBtn);
+
+		PageDisplayer.Content = Global.LocateIpPage; // Display the locate IP page
+		Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime = Env.UnixTime; // Update the last entered time
 	}
 
 	private void PingPageBtn_Click(object sender, RoutedEventArgs e)
@@ -332,6 +341,12 @@ public partial class MainWindow : Window
 			Global.SynethiaConfig.MyIPPageInfo.LeaveUnixTime = Env.UnixTime;
 			Global.SynethiaConfig.MyIPPageInfo.TotalTimeSpent += Global.SynethiaConfig.MyIPPageInfo.LeaveUnixTime - Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime;
 			Global.SynethiaConfig.MyIPPageInfo.Score = Global.SynethiaConfig.MyIPPageInfo.TotalTimeSpent * (Global.SynethiaConfig.MyIPPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.MyIPPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+		}
+		else if (PageDisplayer.Content is LocateIpPage)
+		{
+			Global.SynethiaConfig.LocateIPPageInfo.LeaveUnixTime = Env.UnixTime;
+			Global.SynethiaConfig.LocateIPPageInfo.TotalTimeSpent += Global.SynethiaConfig.LocateIPPageInfo.LeaveUnixTime - Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime;
+			Global.SynethiaConfig.LocateIPPageInfo.Score = Global.SynethiaConfig.LocateIPPageInfo.TotalTimeSpent * (Global.SynethiaConfig.LocateIPPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.LocateIPPageInfo.InteractionCount / 2d : 1d); // Calculate the score
 		}
 	}
 }
