@@ -255,8 +255,12 @@ public partial class MainWindow : Window
 
 	private void MyIPPageBtn_Click(object sender, RoutedEventArgs e)
 	{
+		LeavePage();
 		UnCheckAllButton(); // Reset all states
 		CheckButton(MyIPPageBtn);
+
+		PageDisplayer.Content = Global.MyIpPage; // Display the my IP page
+		Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Env.UnixTime; // Update the last entered time
 	}
 
 	private void LocateIPPageBtn_Click(object sender, RoutedEventArgs e)
@@ -317,6 +321,12 @@ public partial class MainWindow : Window
 			Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime = Env.UnixTime;
 			Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent += Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime - Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime;
 			Global.SynethiaConfig.DownDetectorPageInfo.Score = Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent * (Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+		}
+		else if (PageDisplayer.Content is MyIpPage)
+		{
+			Global.SynethiaConfig.MyIPPageInfo.LeaveUnixTime = Env.UnixTime;
+			Global.SynethiaConfig.MyIPPageInfo.TotalTimeSpent += Global.SynethiaConfig.MyIPPageInfo.LeaveUnixTime - Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime;
+			Global.SynethiaConfig.MyIPPageInfo.Score = Global.SynethiaConfig.MyIPPageInfo.TotalTimeSpent * (Global.SynethiaConfig.MyIPPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.MyIPPageInfo.InteractionCount / 2d : 1d); // Calculate the score
 		}
 	}
 }
