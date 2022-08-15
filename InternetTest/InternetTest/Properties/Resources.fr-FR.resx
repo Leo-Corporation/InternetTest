@@ -297,4 +297,10 @@
   <data name="InternetTestPro" xml:space="preserve">
     <value>InternetTest Pro</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="TxtFiles" xml:space="preserve">
+    <value>Fichiers texte</value>
+  </data>
 </root>

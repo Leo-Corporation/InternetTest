@@ -412,6 +412,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All websites will be tested in {0} seconds..
         /// </summary>
         public static string ScheduledTestInterval {
@@ -552,6 +561,15 @@ namespace InternetTest.Properties {
         public static string Tools {
             get {
                 return ResourceManager.GetString("Tools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text files.
+        /// </summary>
+        public static string TxtFiles {
+            get {
+                return ResourceManager.GetString("TxtFiles", resourceCulture);
             }
         }
         

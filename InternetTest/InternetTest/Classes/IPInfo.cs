@@ -26,45 +26,54 @@ using System.Text.Json.Serialization;
 namespace InternetTest.Classes;
 public class IPInfo
 {
-    [JsonPropertyName("query")]
-    public string? Query { get; set; }
+	[JsonPropertyName("query")]
+	public string? Query { get; set; }
 
-    [JsonPropertyName("status")]
-    public string? Status { get; set; }
+	[JsonPropertyName("status")]
+	public string? Status { get; set; }
 
-    [JsonPropertyName("country")]
-    public string? Country { get; set; }
+	[JsonPropertyName("country")]
+	public string? Country { get; set; }
 
-    [JsonPropertyName("countryCode")]
-    public string? CountryCode { get; set; }
+	[JsonPropertyName("countryCode")]
+	public string? CountryCode { get; set; }
 
-    [JsonPropertyName("region")]
-    public string? Region { get; set; }
+	[JsonPropertyName("region")]
+	public string? Region { get; set; }
 
-    [JsonPropertyName("regionName")]
-    public string? RegionName { get; set; }
+	[JsonPropertyName("regionName")]
+	public string? RegionName { get; set; }
 
-    [JsonPropertyName("city")]
-    public string? City { get; set; }
+	[JsonPropertyName("city")]
+	public string? City { get; set; }
 
-    [JsonPropertyName("zip")]
-    public string? Zip { get; set; }
+	[JsonPropertyName("zip")]
+	public string? Zip { get; set; }
 
-    [JsonPropertyName("lat")]
-    public double Lat { get; set; }
+	[JsonPropertyName("lat")]
+	public double Lat { get; set; }
 
-    [JsonPropertyName("lon")]
-    public double Lon { get; set; }
+	[JsonPropertyName("lon")]
+	public double Lon { get; set; }
 
-    [JsonPropertyName("timezone")]
-    public string? Timezone { get; set; }
+	[JsonPropertyName("timezone")]
+	public string? Timezone { get; set; }
 
-    [JsonPropertyName("isp")]
-    public string? Isp { get; set; }
+	[JsonPropertyName("isp")]
+	public string? Isp { get; set; }
 
-    [JsonPropertyName("org")]
-    public string? Org { get; set; }
+	[JsonPropertyName("org")]
+	public string? Org { get; set; }
 
-    [JsonPropertyName("as")]
-    public string? As { get; set; }
+	[JsonPropertyName("as")]
+	public string? As { get; set; }
+
+	public override string ToString() => $"{Properties.Resources.Country}: {Country}\n" +
+			$"{Properties.Resources.Region}: {RegionName}\n" +
+			$"{Properties.Resources.City}: {City}\n" +
+			$"{Properties.Resources.ZIPCode}: {Zip}\n" +
+			$"{Properties.Resources.Latitude}: {Lat}\n" +
+			$"{Properties.Resources.Longitude}: {Lon}\n" +
+			$"{Properties.Resources.Timezone}: {Timezone}\n" +
+			$"{Properties.Resources.ISP}: {Isp}";
 }

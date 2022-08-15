@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +47,7 @@ namespace InternetTest.Pages;
 public partial class LocateIpPage : Page
 {
 	bool codeInjected = false;
+	private IPInfo? CurrentIP { get; set; }
 	public LocateIpPage()
 	{
 		InitializeComponent();
@@ -129,6 +132,7 @@ public partial class LocateIpPage : Page
 		MyIPTxt.Text = Properties.Resources.IPShowHere2;
 
 		var ipInfo = await Global.GetIPInfoAsync(ip); // Giving an empty IP returns the user's current IP
+		CurrentIP = ipInfo;
 		if (ipInfo is not null)
 		{
 			MyIPTxt.Text = ipInfo.Query;
@@ -150,6 +154,24 @@ public partial class LocateIpPage : Page
 		{
 			StatusIconTxt.Text = "\uF36E";
 			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+		}
+	}
+
+	private void SaveBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (CurrentIP is null) return;
+		SaveFileDialog dialog = new()
+		{
+			Title = Properties.Resources.Save,
+			Filter = Properties.Resources.TxtFiles + " (*.txt)|*.txt",
+			InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+			FileName = IpTxt.Text + ".txt",
+			DefaultExt = ".txt"
+		};
+
+		if (dialog.ShowDialog().Value)
+		{
+			File.WriteAllText(dialog.FileName, CurrentIP?.ToString());
 		}
 	}
 }
