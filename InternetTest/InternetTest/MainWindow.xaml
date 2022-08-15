@@ -250,7 +250,7 @@
 							<Button x:Name="WifiPasswordsPageBtn" Content="{x:Static lang:Resources.WifiPasswords}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="WifiPasswordsPageBtn_Click"/>
 						</StackPanel>
 					</StackPanel>
-					<ScrollViewer x:Name="PageScroller" Grid.Column="2" Grid.Row="1" Margin="10,10,0,0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+					<ScrollViewer Style="{DynamicResource ScrollViewerStyle}" x:Name="PageScroller" Grid.Column="2" Grid.Row="1" Margin="10,10,0,0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
 						<Frame x:Name="PageDisplayer" NavigationUIVisibility="Hidden"/>
 					</ScrollViewer>
 				</Grid>
