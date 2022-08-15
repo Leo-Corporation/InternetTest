@@ -61,6 +61,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average duration.
+        /// </summary>
+        public static string AverageTime {
+            get {
+                return ResourceManager.GetString("AverageTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City.
         /// </summary>
         public static string City {
@@ -129,6 +138,15 @@ namespace InternetTest.Properties {
         public static string DownDetectorPlaceHolder {
             get {
                 return ResourceManager.GetString("DownDetectorPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter an IP or URL..
+        /// </summary>
+        public static string EnterIP {
+            get {
+                return ResourceManager.GetString("EnterIP", resourceCulture);
             }
         }
         
@@ -241,6 +259,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IP Address.
+        /// </summary>
+        public static string IPAddress {
+            get {
+                return ResourceManager.GetString("IPAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IP Config.
         /// </summary>
         public static string IPConfig {
@@ -340,11 +367,38 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make a ping.
+        /// </summary>
+        public static string MakePing {
+            get {
+                return ResourceManager.GetString("MakePing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Map provider.
         /// </summary>
         public static string MapProvider {
             get {
                 return ResourceManager.GetString("MapProvider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max duration.
+        /// </summary>
+        public static string MaxTime {
+            get {
+                return ResourceManager.GetString("MaxTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Min duration.
+        /// </summary>
+        public static string MinTime {
+            get {
+                return ResourceManager.GetString("MinTime", resourceCulture);
             }
         }
         
@@ -390,6 +444,33 @@ namespace InternetTest.Properties {
         public static string Ping {
             get {
                 return ResourceManager.GetString("Ping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The ping request failed.
+        /// </summary>
+        public static string PingFail {
+            get {
+                return ResourceManager.GetString("PingFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The ping request was successful.
+        /// </summary>
+        public static string PingSuccess {
+            get {
+                return ResourceManager.GetString("PingSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ping request is in progress, please wait..
+        /// </summary>
+        public static string PingWait {
+            get {
+                return ResourceManager.GetString("PingWait", resourceCulture);
             }
         }
         

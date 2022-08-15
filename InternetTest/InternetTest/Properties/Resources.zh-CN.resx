@@ -303,4 +303,31 @@
   <data name="TxtFiles" xml:space="preserve">
     <value>Text files</value>
   </data>
+  <data name="MakePing" xml:space="preserve">
+    <value>Make a ping</value>
+  </data>
+  <data name="IPAddress" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="MaxTime" xml:space="preserve">
+    <value>Max duration</value>
+  </data>
+  <data name="MinTime" xml:space="preserve">
+    <value>Min duration</value>
+  </data>
+  <data name="AverageTime" xml:space="preserve">
+    <value>Average duration</value>
+  </data>
+  <data name="PingWait" xml:space="preserve">
+    <value>Ping request is in progress, please wait.</value>
+  </data>
+  <data name="PingSuccess" xml:space="preserve">
+    <value>The ping request was successful</value>
+  </data>
+  <data name="PingFail" xml:space="preserve">
+    <value>The ping request failed</value>
+  </data>
+  <data name="EnterIP" xml:space="preserve">
+    <value>Please enter an IP or URL.</value>
+  </data>
 </root>
