@@ -43,6 +43,7 @@ public static class Global
 	public static DownDetectorPage DownDetectorPage { get; set; } = new();
 	public static MyIpPage MyIpPage { get; set; } = new();
 	public static LocateIpPage LocateIpPage { get; set; } = new();
+	public static PingPage PingPage { get; set; } = new();
 
 	public static SynethiaConfig SynethiaConfig { get; set; } = new();
 
