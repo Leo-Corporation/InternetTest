@@ -44,15 +44,64 @@ namespace InternetTest.Pages;
 /// </summary>
 public partial class PingPage : Page
 {
+	bool codeInjected = false;
 	public PingPage()
 	{
 		InitializeComponent();
 		InitUI(); // Load the UI
+		InjectSynethiaCode();
 	}
 
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.Ping}";
+	}
+
+	private void InjectSynethiaCode()
+	{
+		if (codeInjected) return;
+		codeInjected = true;
+		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		{
+			b.Click += (sender, e) =>
+			{
+				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
+			};
+		}
+
+		// For each TextBox of the page
+		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
+		{
+			textBox.GotFocus += (o, e) =>
+			{
+				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
+			};
+		}
+
+		// For each CheckBox/RadioButton of the page
+		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
+		{
+			checkBox.Checked += (o, e) =>
+			{
+				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
+			};
+			checkBox.Unchecked += (o, e) =>
+			{
+				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
+			};
+		}
+
+		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
+		{
+			radioButton.Checked += (o, e) =>
+			{
+				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
+			};
+			radioButton.Unchecked += (o, e) =>
+			{
+				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
+			};
+		}
 	}
 
 	private void PingBtn_Click(object sender, RoutedEventArgs e)
