@@ -12,6 +12,7 @@
 		<Description>InternetTest is a modern connection utility for Windows.</Description>
 		<PackageIcon>InternetTest.ico</PackageIcon>
 		<ApplicationIcon>InternetTest.ico</ApplicationIcon>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
 	</PropertyGroup>
 
 	<ItemGroup>
