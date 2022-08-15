@@ -24,7 +24,7 @@
 
 		<StackPanel Grid.Row="1" VerticalAlignment="Center">
 			<TextBlock x:Name="StatusIconTxt" Text="&#xF4AB;" FontSize="76" FontFamily="../Fonts/#FluentSystemIcons-Filled" Foreground="{Binding Source={StaticResource Gray}}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-			<TextBlock x:Name="StatusTxt" Text="{x:Static lang:Resources.IPShowHere2}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"/>
+			<TextBlock x:Name="StatusTxt" Text="{x:Static lang:Resources.PingStatus}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"/>
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button x:Name="PingBtn" Click="PingBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.MakePing}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 			</StackPanel>
@@ -113,6 +113,63 @@
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF2DD;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
 						<TextBlock x:Name="AverageTimeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
+				<Border.Effect>
+					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
+				</Border.Effect>
+
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<TextBlock Text="{x:Static lang:Resources.PackageSent}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
+					<StackPanel Grid.Row="1" Orientation="Horizontal">
+						<TextBlock Text="&#xFE36;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
+						<TextBlock x:Name="SentTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+
+			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
+				<Border.Effect>
+					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
+				</Border.Effect>
+
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<TextBlock Text="{x:Static lang:Resources.PackageReceived}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
+					<StackPanel Grid.Row="1" Orientation="Horizontal">
+						<TextBlock Text="&#xF2A0;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
+						<TextBlock x:Name="ReceivedTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+			
+			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
+				<Border.Effect>
+					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
+				</Border.Effect>
+
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<TextBlock Text="{x:Static lang:Resources.PackageLost}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
+					<StackPanel Grid.Row="1" Orientation="Horizontal">
+						<TextBlock Text="&#xF36E;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
+						<TextBlock x:Name="LostTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>

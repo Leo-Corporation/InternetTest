@@ -439,6 +439,33 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Package(s) lost.
+        /// </summary>
+        public static string PackageLost {
+            get {
+                return ResourceManager.GetString("PackageLost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Package(s) received.
+        /// </summary>
+        public static string PackageReceived {
+            get {
+                return ResourceManager.GetString("PackageReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Package(s) sent.
+        /// </summary>
+        public static string PackageSent {
+            get {
+                return ResourceManager.GetString("PackageSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ping.
         /// </summary>
         public static string Ping {
@@ -453,6 +480,15 @@ namespace InternetTest.Properties {
         public static string PingFail {
             get {
                 return ResourceManager.GetString("PingFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ping Status will show here.
+        /// </summary>
+        public static string PingStatus {
+            get {
+                return ResourceManager.GetString("PingStatus", resourceCulture);
             }
         }
         

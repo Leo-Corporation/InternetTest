@@ -330,4 +330,16 @@
   <data name="EnterIP" xml:space="preserve">
     <value>Please enter an IP or URL.</value>
   </data>
+  <data name="PackageSent" xml:space="preserve">
+    <value>Package(s) sent</value>
+  </data>
+  <data name="PackageReceived" xml:space="preserve">
+    <value>Package(s) received</value>
+  </data>
+  <data name="PackageLost" xml:space="preserve">
+    <value>Package(s) lost</value>
+  </data>
+  <data name="PingStatus" xml:space="preserve">
+    <value>Ping Status will show here</value>
+  </data>
 </root>

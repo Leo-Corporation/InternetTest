@@ -57,51 +57,68 @@ public partial class PingPage : Page
 
 	private void PingBtn_Click(object sender, RoutedEventArgs e)
 	{
+		IpTxt.Text = IpTxt.Text.Replace("https://", "").Replace("http://", "").TrimEnd('/'); // Remove the http:// or https://
 		MakePing(IpTxt.Text); // Make a ping to the specified IP
 	}
 
 	private async void MakePing(string address)
 	{
-		if (address is null or { Length: 0 } || string.IsNullOrWhiteSpace(address))
+		try
 		{
-			MessageBox.Show(Properties.Resources.EnterIP, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Information);
-			return;
+			if (address is null or { Length: 0 } || string.IsNullOrWhiteSpace(address))
+			{
+				MessageBox.Show(Properties.Resources.EnterIP, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Information);
+				return;
+			}
+
+			// Update UI
+			StatusIconTxt.Text = "\uF2DE";
+			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			StatusTxt.Text = Properties.Resources.PingWait;
+			PingBtn.IsEnabled = false;
+
+			int sent = 0, received = 0;
+
+			long[] times = new long[4]; // Create an array
+			for (int i = 0; i < 4; i++)
+			{
+				var ping = await new Ping().SendPingAsync(address); // Send a ping
+				sent++;
+				times[i] = ping.RoundtripTime; // Get the time of the ping
+				IPAddressTxt.Text = ping.Address.ToString(); // Get the address of the ping
+
+				string nl = (i + 1 < 4) ? $"\n{i + 1}/4" : ""; // Add a new line if it's not the last ping
+				if (ping.Status == IPStatus.Success)
+				{
+					received++;
+					StatusIconTxt.Text = "\uF299";
+					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+					StatusTxt.Text = $"{Properties.Resources.PingSuccess}{nl}";
+				}
+				else
+				{
+					StatusIconTxt.Text = "\uF36E";
+					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+					StatusTxt.Text = $"{Properties.Resources.PingFail}{nl}";
+					IPAddressTxt.Text = ping.Status.ToString();
+				}
+			}
+
+			AverageTimeTxt.Text = $"{times.Average()}ms"; // Get the average of the times
+			MinTimeTxt.Text = $"{times.Min()}ms"; // Get the minimum of the times
+			MaxTimeTxt.Text = $"{times.Max()}ms"; // Get the maximum of the times
+
+			SentTxt.Text = sent.ToString(); // Get the number of sent pings
+			ReceivedTxt.Text = received.ToString(); // Get the number of received pings
+			LostTxt.Text = (sent - received).ToString(); // Get the number of lost pings
 		}
-
-		// Update UI
-		StatusIconTxt.Text = "\uF2DE";
-		StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
-		StatusTxt.Text = Properties.Resources.PingWait;
-
-		int sent = 0, received = 0;
-
-		long[] times = new long[4]; // Create an array
-		for (int i = 0; i < 4; i++)
+		catch (Exception ex)
 		{
-			var ping = await new Ping().SendPingAsync(address); // Send a ping
-			sent++;
-			times[i] = ping.RoundtripTime; // Get the time of the ping
-			IPAddressTxt.Text = ping.Address.ToString(); // Get the address of the ping
-
-			string nl = (i + 1 < 4) ? $"\n{i + 1}/4" : ""; // Add a new line if it's not the last ping
-			if (ping.Status == IPStatus.Success)
-			{
-				received++;
-				StatusIconTxt.Text = "\uF299";
-				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
-				StatusTxt.Text = $"{Properties.Resources.PingSuccess}{nl}";
-			}
-			else
-			{
-				StatusIconTxt.Text = "\uF36E";
-				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
-				StatusTxt.Text = $"{Properties.Resources.PingFail}{nl}";
-				IPAddressTxt.Text = ping.Status.ToString();
-			}
+			StatusIconTxt.Text = "\uF4AB";
+			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			StatusTxt.Text = Properties.Resources.PingStatus;
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 		}
-
-		AverageTimeTxt.Text = $"{times.Average()}ms"; // Get the average of the times
-		MinTimeTxt.Text = $"{times.Min()}ms"; // Get the minimum of the times
-		MaxTimeTxt.Text = $"{times.Max()}ms"; // Get the maximum of the times
+		PingBtn.IsEnabled = true;
 	}
 }

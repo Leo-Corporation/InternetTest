@@ -330,4 +330,16 @@
   <data name="EnterIP" xml:space="preserve">
     <value>Veuillez entrez une IP ou une URL.</value>
   </data>
+  <data name="PackageSent" xml:space="preserve">
+    <value>Paquet(s) envoyé(s)</value>
+  </data>
+  <data name="PackageReceived" xml:space="preserve">
+    <value>Paquet(s) reçu(s)</value>
+  </data>
+  <data name="PackageLost" xml:space="preserve">
+    <value>Paquet(s) perdu(s)</value>
+  </data>
+  <data name="PingStatus" xml:space="preserve">
+    <value>Le statut de la requête ping s'affichera ici</value>
+  </data>
 </root>
