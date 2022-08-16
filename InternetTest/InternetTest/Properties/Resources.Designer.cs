@@ -97,6 +97,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connected.
+        /// </summary>
+        public static string ConnectedS {
+            get {
+                return ResourceManager.GetString("ConnectedS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
         public static string Country {
@@ -115,11 +124,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disconnected.
+        /// </summary>
+        public static string Disconnected {
+            get {
+                return ResourceManager.GetString("Disconnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discover.
         /// </summary>
         public static string Discover {
             get {
                 return ResourceManager.GetString("Discover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DNS Suffix.
+        /// </summary>
+        public static string DNSSuffix {
+            get {
+                return ResourceManager.GetString("DNSSuffix", resourceCulture);
             }
         }
         
@@ -156,6 +183,24 @@ namespace InternetTest.Properties {
         public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default gateway (IPv4).
+        /// </summary>
+        public static string GatewayIPv4 {
+            get {
+                return ResourceManager.GetString("GatewayIPv4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default gateway (IPv6).
+        /// </summary>
+        public static string GatewayIPv6 {
+            get {
+                return ResourceManager.GetString("GatewayIPv6", resourceCulture);
             }
         }
         
@@ -300,6 +345,24 @@ namespace InternetTest.Properties {
         public static string IPTools {
             get {
                 return ResourceManager.GetString("IPTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IPv4 address.
+        /// </summary>
+        public static string IPv4Address {
+            get {
+                return ResourceManager.GetString("IPv4Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IPv6 address.
+        /// </summary>
+        public static string IPv6Address {
+            get {
+                return ResourceManager.GetString("IPv6Address", resourceCulture);
             }
         }
         
@@ -516,6 +579,15 @@ namespace InternetTest.Properties {
         public static string Pinned {
             get {
                 return ResourceManager.GetString("Pinned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh.
+        /// </summary>
+        public static string Refresh {
+            get {
+                return ResourceManager.GetString("Refresh", resourceCulture);
             }
         }
         

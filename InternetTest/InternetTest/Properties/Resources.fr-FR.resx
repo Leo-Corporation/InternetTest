@@ -342,4 +342,28 @@
   <data name="PingStatus" xml:space="preserve">
     <value>Le statut de la requête ping s'affichera ici</value>
   </data>
+  <data name="IPv4Address" xml:space="preserve">
+    <value>Adresse IPv4</value>
+  </data>
+  <data name="IPv6Address" xml:space="preserve">
+    <value>Adresse IPv6</value>
+  </data>
+  <data name="GatewayIPv4" xml:space="preserve">
+    <value>Passerelle par défaut (IPv4)</value>
+  </data>
+  <data name="GatewayIPv6" xml:space="preserve">
+    <value>Passerelle par défaut (IPv6)</value>
+  </data>
+  <data name="DNSSuffix" xml:space="preserve">
+    <value>Suffixe DNS</value>
+  </data>
+  <data name="ConnectedS" xml:space="preserve">
+    <value>Connecté</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+    <value>Déconnecté</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Rafraîchir</value>
+  </data>
 </root>

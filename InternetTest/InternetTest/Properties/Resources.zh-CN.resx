@@ -342,4 +342,28 @@
   <data name="PingStatus" xml:space="preserve">
     <value>Ping Status will show here</value>
   </data>
+  <data name="IPv4Address" xml:space="preserve">
+    <value>IPv4 address</value>
+  </data>
+  <data name="IPv6Address" xml:space="preserve">
+    <value>IPv6 address</value>
+  </data>
+  <data name="GatewayIPv4" xml:space="preserve">
+    <value>Default gateway (IPv4)</value>
+  </data>
+  <data name="GatewayIPv6" xml:space="preserve">
+    <value>Default gateway (IPv6)</value>
+  </data>
+  <data name="DNSSuffix" xml:space="preserve">
+    <value>DNS Suffix</value>
+  </data>
+  <data name="ConnectedS" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+    <value>Disconnected</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
 </root>
