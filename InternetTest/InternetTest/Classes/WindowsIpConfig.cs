@@ -37,4 +37,14 @@ public record WindowsIpConfig(
 	string? IPv6Address,
 	string? IPv6Gateway,
 	string? DNSSuffix,
-	OperationalStatus? Status);
+	OperationalStatus? Status)
+{
+	public override string ToString() => $"{Properties.Resources.Name}: {Name}\n" +
+		$"{Properties.Resources.IPv4Address}: {IPv4Address}\n" +
+		$"{Properties.Resources.SubnetMask}: {IPv4Mask}\n" +
+		$"{Properties.Resources.GatewayIPv4}: {IPv4Gateway ?? Properties.Resources.None}\n" +
+		$"{Properties.Resources.IPv6Address}: {IPv6Address}\n" +
+		$"{Properties.Resources.GatewayIPv6}: {IPv6Gateway ?? Properties.Resources.None}\n" +
+		$"{Properties.Resources.DNSSuffix}: {DNSSuffix ?? Properties.Resources.None}\n" +
+		$"{Properties.Resources.Status}: {(Status == OperationalStatus.Up ? Properties.Resources.ConnectedS : Properties.Resources.Disconnected)}";
+}

@@ -21,7 +21,7 @@
 			<TextBlock x:Name="TitleTxt" d:Text="{x:Static lang:Resources.GetStarted}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
 		</StackPanel>
 
-		<Button x:Name="RefreshBtn" Click="RefreshBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Refresh}" Padding="5" Background="{Binding Source={StaticResource LightAccentColor}}" Margin="5" Style="{DynamicResource PrimaryButton}" Grid.Row="1" FontWeight="ExtraBold" Foreground="{Binding Source={StaticResource AccentColor}}" HorizontalAlignment="Left"/>
+		<Button x:Name="RefreshBtn" Click="RefreshBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Refresh}" Padding="5" Background="{Binding Source={StaticResource LightAccentColor}}" Margin="5" Style="{DynamicResource PrimaryButton}" Grid.Row="1" FontWeight="ExtraBold" Foreground="{Binding Source={StaticResource AccentColor}}" HorizontalAlignment="Right"/>
 
 		<StackPanel x:Name="IpConfigDisplayer" Grid.Row="2" VerticalAlignment="Stretch">
 			

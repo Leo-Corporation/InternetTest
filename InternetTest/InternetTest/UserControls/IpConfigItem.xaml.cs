@@ -69,4 +69,9 @@ public partial class IpConfigItem : UserControl
 		CollapseGrid.Visibility = CollapseGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 		ExpanderBtn.Content = CollapseGrid.Visibility != Visibility.Visible ? "\uF2A4" : "\uF2B7";
 	}
+
+	private void CopyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Clipboard.SetDataObject(WindowsIpConfig.ToString());
+	}
 }

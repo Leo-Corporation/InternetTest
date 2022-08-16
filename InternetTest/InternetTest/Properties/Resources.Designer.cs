@@ -475,6 +475,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string None {
+            get {
+                return ResourceManager.GetString("None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You aren&apos;t connected to the Internet.
         /// </summary>
         public static string NotConnected {
@@ -678,6 +696,15 @@ namespace InternetTest.Properties {
         public static string StopScheduledTests {
             get {
                 return ResourceManager.GetString("StopScheduledTests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subnet Mask.
+        /// </summary>
+        public static string SubnetMask {
+            get {
+                return ResourceManager.GetString("SubnetMask", resourceCulture);
             }
         }
         
