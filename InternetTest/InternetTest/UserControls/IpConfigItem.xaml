@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="InternetTest.UserControls.IpConfigItem"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:InternetTest.UserControls"
+			 xmlns:lang="clr-namespace:InternetTest.Properties"
+			 mc:Ignorable="d"  Foreground="{Binding Source={StaticResource Foreground1}}"
+			 Height="Auto" d:DesignWidth="800" FontFamily="../Fonts/#Hauora">
+	<Border Padding="10" CornerRadius="10" Margin="10" Background="{Binding Source={StaticResource CardBackground}}">
+		<Border.Effect>
+			<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
+		</Border.Effect>
+
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock x:Name="InterfaceNameTxt" d:Text="WiFi" FontSize="16" FontWeight="ExtraBold"/>
+				<Button Click="ExpanderBtn_Click" Content="&#xF2A4;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="ExpanderBtn" Background="Transparent" Style="{DynamicResource DefaultButton}"/>
+			</Grid>
+			<Grid Grid.Row="1" x:Name="CollapseGrid" Visibility="Collapsed">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+
+				<TextBlock Text="{x:Static lang:Resources.Status}" FontWeight="Bold" />
+				<TextBlock x:Name="StatusTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="0" Margin="15,0,0,0"/>
+
+				<TextBlock Text="{x:Static lang:Resources.DNSSuffix}" FontWeight="Bold" Grid.Row="1"/>
+				<TextBlock x:Name="DNSPrefixTxt" d:Text="123.21.43.65" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Margin="15,0,0,0"/>
+
+				<TextBlock Text="{x:Static lang:Resources.IPv4Address}" FontWeight="Bold" Grid.Row="2"/>
+				<TextBlock x:Name="Ipv4Txt" d:Text="123.21.43.65" FontWeight="Bold" Grid.Column="1" Grid.Row="2" Margin="15,0,0,0"/>
+
+				<TextBlock Text="{x:Static lang:Resources.IPv6Address}" FontWeight="Bold" Grid.Row="3"/>
+				<TextBlock x:Name="Ipv6Txt" d:Text="123.21.43.65" FontWeight="Bold" Grid.Column="1" Grid.Row="3" Margin="15,0,0,0"/>
+
+				<TextBlock Text="{x:Static lang:Resources.Commands}" FontWeight="Bold" Grid.Row="4"/>
+				<TextBlock x:Name="MaskIpTxt" d:Text="123.21.43.65" FontWeight="Bold" Grid.Column="1" Grid.Row="4" Margin="15,0,0,0"/>
+
+				<TextBlock x:Name="GatewayIpv4TitleTxt" Text="{x:Static lang:Resources.GatewayIPv4}" FontWeight="Bold" Grid.Row="5"/>
+				<TextBlock x:Name="GatewayIpv4Txt" d:Text="123.21.43.65" FontWeight="Bold" Grid.Column="1" Grid.Row="5" Margin="15,0,0,0"/>
+
+				<TextBlock x:Name="GatewayIpv6TitleTxt" Text="{x:Static lang:Resources.GatewayIPv6}" FontWeight="Bold" Grid.Row="6"/>
+				<TextBlock x:Name="GatewayIpv6Txt" d:Text="123.21.43.65" FontWeight="Bold" Grid.Column="1" Grid.Row="6" Margin="15,0,0,0"/>
+				
+				
+			</Grid>
+		</Grid>
+	</Border>
+</UserControl>
