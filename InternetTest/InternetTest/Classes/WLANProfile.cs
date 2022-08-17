@@ -108,4 +108,10 @@ public class WLANProfile
 
 	[XmlElement(ElementName = "MSM")]
 	public MSM? MSM { get; set; }
+
+	public override string ToString() => $"{Properties.Resources.Authentication}: {MSM?.Security?.AuthEncryption?.Authentication}\n" +
+		$"{Properties.Resources.Key}: {MSM?.Security?.SharedKey?.KeyMaterial}\n" +
+		$"{Properties.Resources.Encryption}: {MSM?.Security?.AuthEncryption?.Encryption}\n" +
+		$"{Properties.Resources.ConnectionMode}: {(ConnectionMode == "auto" ? Properties.Resources.Automatic : ConnectionMode)}\n" +
+		$"{Properties.Resources.ConnectionType}: {ConnectionType switch { "ESS" => Properties.Resources.InfrastructureNetwork, "IBSS" => Properties.Resources.AdHocNetwork, _ => ConnectionType }}";
 }

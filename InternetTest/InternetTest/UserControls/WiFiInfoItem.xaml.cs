@@ -69,7 +69,7 @@ public partial class WiFiInfoItem : UserControl
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)
 	{
-
+		Clipboard.SetDataObject(WLANProfile.ToString());
 	}
 
 	private void ExpanderBtn_Click(object sender, RoutedEventArgs e)
