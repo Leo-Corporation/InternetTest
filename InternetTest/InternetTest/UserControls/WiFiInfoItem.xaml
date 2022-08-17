@@ -47,9 +47,12 @@
 				<TextBlock x:Name="AuthTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="0" Margin="15,0,0,0" TextWrapping="Wrap"/>
 
 				<TextBlock Text="{x:Static lang:Resources.Key}" FontWeight="Bold" Grid.Row="1"/>
-				<TextBlock x:Name="PasswordTxt" d:Text="123.21.43.65" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Margin="15,0,0,0" TextWrapping="Wrap"/>
-
-				<TextBlock Text="{x:Static lang:Resources.Encryption}" FontWeight="Bold" Grid.Row="2"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                    <TextBlock x:Name="PasswordTxt" d:Text="123.21.43.65" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Margin="15,0,0,0" TextWrapping="Wrap"/>
+                    <Button Click="ShowKeyBtn_Click" Content="&#xF3FC;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="ShowKeyBtn" Background="Transparent" Style="{DynamicResource DefaultButton}" Margin="0,0,5,0"/>
+                    <Button Click="CopyKeyBtn_Click" Content="&#xF32C;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="CopyKeyBtn" Background="Transparent" Style="{DynamicResource DefaultButton}" Margin="0,0,5,0"/>
+                </StackPanel>
+                <TextBlock Text="{x:Static lang:Resources.Encryption}" FontWeight="Bold" Grid.Row="2"/>
 				<TextBlock x:Name="EncryptionTxt" d:Text="123.21.43.65" FontWeight="Bold" Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" TextWrapping="Wrap"/>
 
 				<TextBlock Text="{x:Static lang:Resources.ConnectionType}" FontWeight="Bold" Grid.Row="3"/>

@@ -64,7 +64,7 @@ public partial class WiFiInfoItem : UserControl
 		};
 		AuthTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Authentication;
 		EncryptionTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Encryption;
-		PasswordTxt.Text = WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial;
+		PasswordTxt.Text = new string('*', WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial?.Length ?? 0);
 	}
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)
@@ -76,5 +76,18 @@ public partial class WiFiInfoItem : UserControl
 	{
 		CollapseGrid.Visibility = CollapseGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 		ExpanderBtn.Content = CollapseGrid.Visibility != Visibility.Visible ? "\uF2A4" : "\uF2B7";
+	}
+
+	bool keyShown = false;
+	private void ShowKeyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		keyShown = !keyShown; // toggle
+		PasswordTxt.Text = !keyShown ? new string('*', WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial?.Length ?? 0) : WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial;
+		ShowKeyBtn.Content = keyShown ? "\uF3F8" : "\uF3FC"; // Set the icon
+	}
+
+	private void CopyKeyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Clipboard.SetDataObject(WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial);
 	}
 }
