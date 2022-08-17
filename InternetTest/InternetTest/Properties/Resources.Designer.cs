@@ -61,6 +61,33 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ad-hoc network.
+        /// </summary>
+        public static string AdHocNetwork {
+            get {
+                return ResourceManager.GetString("AdHocNetwork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authentication.
+        /// </summary>
+        public static string Authentication {
+            get {
+                return ResourceManager.GetString("Authentication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatic.
+        /// </summary>
+        public static string Automatic {
+            get {
+                return ResourceManager.GetString("Automatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Average duration.
         /// </summary>
         public static string AverageTime {
@@ -102,6 +129,24 @@ namespace InternetTest.Properties {
         public static string ConnectedS {
             get {
                 return ResourceManager.GetString("ConnectedS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connection mode.
+        /// </summary>
+        public static string ConnectionMode {
+            get {
+                return ResourceManager.GetString("ConnectionMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connection type.
+        /// </summary>
+        public static string ConnectionType {
+            get {
+                return ResourceManager.GetString("ConnectionType", resourceCulture);
             }
         }
         
@@ -169,6 +214,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Encryption.
+        /// </summary>
+        public static string Encryption {
+            get {
+                return ResourceManager.GetString("Encryption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter an IP or URL..
         /// </summary>
         public static string EnterIP {
@@ -223,6 +277,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get locally stored networks.
+        /// </summary>
+        public static string GetWiFi {
+            get {
+                return ResourceManager.GetString("GetWiFi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Good afternoon.
         /// </summary>
         public static string GoodAfternoon {
@@ -273,6 +336,15 @@ namespace InternetTest.Properties {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infrastructure network.
+        /// </summary>
+        public static string InfrastructureNetwork {
+            get {
+                return ResourceManager.GetString("InfrastructureNetwork", resourceCulture);
             }
         }
         
@@ -372,6 +444,15 @@ namespace InternetTest.Properties {
         public static string ISP {
             get {
                 return ResourceManager.GetString("ISP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Key.
+        /// </summary>
+        public static string Key {
+            get {
+                return ResourceManager.GetString("Key", resourceCulture);
             }
         }
         

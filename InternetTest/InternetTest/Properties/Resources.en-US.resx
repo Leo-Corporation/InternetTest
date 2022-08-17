@@ -375,4 +375,31 @@
   <data name="None" xml:space="preserve">
     <value>None</value>
   </data>
+  <data name="GetWiFi" xml:space="preserve">
+    <value>Get locally stored networks</value>
+  </data>
+  <data name="ConnectionMode" xml:space="preserve">
+    <value>Connection mode</value>
+  </data>
+  <data name="ConnectionType" xml:space="preserve">
+    <value>Connection type</value>
+  </data>
+  <data name="Automatic" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="Encryption" xml:space="preserve">
+    <value>Encryption</value>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="InfrastructureNetwork" xml:space="preserve">
+    <value>Infrastructure network</value>
+  </data>
+  <data name="AdHocNetwork" xml:space="preserve">
+    <value>Ad-hoc network</value>
+  </data>
 </root>
