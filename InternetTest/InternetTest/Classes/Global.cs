@@ -45,6 +45,7 @@ public static class Global
 	public static LocateIpPage LocateIpPage { get; set; } = new();
 	public static PingPage PingPage { get; set; } = new();
 	public static IpConfigPage IpConfigPage { get; set; } = new();
+	public static WiFiPasswordsPage WiFiPasswordsPage { get; set; } = new();
 
 	public static SynethiaConfig SynethiaConfig { get; set; } = new();
 

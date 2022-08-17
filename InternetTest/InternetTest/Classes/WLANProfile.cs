@@ -32,7 +32,6 @@ namespace InternetTest.Classes;
 [XmlRoot(ElementName = "SSID")]
 public class SSID
 {
-
 	[XmlElement(ElementName = "hex")]
 	public string? Hex { get; set; }
 
@@ -43,7 +42,6 @@ public class SSID
 [XmlRoot(ElementName = "SSIDConfig")]
 public class SSIDConfig
 {
-
 	[XmlElement(ElementName = "SSID")]
 	public SSID? SSID { get; set; }
 }
@@ -51,7 +49,6 @@ public class SSIDConfig
 [XmlRoot(ElementName = "authEncryption")]
 public class AuthEncryption
 {
-
 	[XmlElement(ElementName = "authentication")]
 	public string? Authentication { get; set; }
 
@@ -65,7 +62,6 @@ public class AuthEncryption
 [XmlRoot(ElementName = "sharedKey")]
 public class SharedKey
 {
-
 	[XmlElement(ElementName = "keyType")]
 	public string? KeyType { get; set; }
 
@@ -79,7 +75,6 @@ public class SharedKey
 [XmlRoot(ElementName = "security")]
 public class Security
 {
-
 	[XmlElement(ElementName = "authEncryption")]
 	public AuthEncryption? AuthEncryption { get; set; }
 
@@ -95,10 +90,10 @@ public class MSM
 	public Security? Security { get; set; }
 }
 
-[XmlRoot(ElementName = "WLANProfile")]
+[Serializable, XmlRoot(ElementName = "WLANProfile", Namespace = "http://www.microsoft.com/networking/WLAN/profile/v1")]
+[XmlType("WLANProfile")]
 public class WLANProfile
 {
-
 	[XmlElement(ElementName = "name")]
 	public string? Name { get; set; }
 
@@ -113,10 +108,4 @@ public class WLANProfile
 
 	[XmlElement(ElementName = "MSM")]
 	public MSM? MSM { get; set; }
-
-	[XmlAttribute(AttributeName = "xmlns")]
-	public string? Xmlns { get; set; }
-
-	[XmlText]
-	public string? Text { get; set; }
 }

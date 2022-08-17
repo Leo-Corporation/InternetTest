@@ -110,6 +110,11 @@ public partial class MainWindow : Window
 					UnCheckAllButton();
 					CheckButton(IPConfigPageBtn);
 					break;
+				case AppPages.WiFiPasswords:
+					PageDisplayer.Content = Global.WiFiPasswordsPage;
+					UnCheckAllButton();
+					CheckButton(WifiPasswordsPageBtn);
+					break;
 				default:
 					break;
 			}
@@ -316,8 +321,12 @@ public partial class MainWindow : Window
 
 	private void WifiPasswordsPageBtn_Click(object sender, RoutedEventArgs e)
 	{
+		LeavePage();
 		UnCheckAllButton(); // Reset all states
 		CheckButton(WifiPasswordsPageBtn);
+
+		PageDisplayer.Content = Global.WiFiPasswordsPage; // Display the wifi passwords page
+		Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime = Env.UnixTime; // Update the last entered time
 	}
 
 	private void HomePageBtn_Click(object sender, RoutedEventArgs e)
@@ -378,6 +387,12 @@ public partial class MainWindow : Window
 			Global.SynethiaConfig.IPConfigPageInfo.LeaveUnixTime = Env.UnixTime;
 			Global.SynethiaConfig.IPConfigPageInfo.TotalTimeSpent += Global.SynethiaConfig.IPConfigPageInfo.LeaveUnixTime - Global.SynethiaConfig.IPConfigPageInfo.EnterUnixTime;
 			Global.SynethiaConfig.IPConfigPageInfo.Score = Global.SynethiaConfig.IPConfigPageInfo.TotalTimeSpent * (Global.SynethiaConfig.IPConfigPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.IPConfigPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+		}
+		else if (PageDisplayer.Content is WiFiPasswordsPage)
+		{
+			Global.SynethiaConfig.WiFiPasswordsPageInfo.LeaveUnixTime = Env.UnixTime;
+			Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent += Global.SynethiaConfig.WiFiPasswordsPageInfo.LeaveUnixTime - Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime;
+			Global.SynethiaConfig.WiFiPasswordsPageInfo.Score = Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent * (Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount / 2d : 1d); // Calculate the score
 		}
 	}
 }
