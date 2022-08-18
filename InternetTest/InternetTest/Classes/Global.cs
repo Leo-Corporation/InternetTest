@@ -208,7 +208,7 @@ public static class Global
 
 		return JsonSerializer.Deserialize<IPInfo>(result);
 	}
-	
+
 	public static bool IsIpValid(string ip)
 	{
 		if (ip == "") return true; // This is valid, it will return the user's current IP

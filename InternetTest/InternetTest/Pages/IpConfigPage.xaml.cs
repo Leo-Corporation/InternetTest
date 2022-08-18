@@ -23,22 +23,11 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.UserControls;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -106,7 +95,7 @@ public partial class IpConfigPage : Page
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.IPConfig}";
 
 		IpConfigDisplayer.Children.Clear(); // Clear everything
-		// Get network interfaces
+											// Get network interfaces
 		var networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
 		for (int i = 0; i < networkInterfaces.Length; i++)
 		{
