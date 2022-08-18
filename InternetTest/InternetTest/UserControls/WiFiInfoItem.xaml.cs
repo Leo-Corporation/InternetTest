@@ -90,4 +90,6 @@ public partial class WiFiInfoItem : UserControl
 	{
 		Clipboard.SetDataObject(WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial);
 	}
+
+	public override string ToString() => WLANProfile.SSIDConfig?.SSID?.Name;
 }

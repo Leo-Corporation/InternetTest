@@ -112,17 +112,17 @@ public partial class WiFiPasswordsPage : Page
 	{
 		GetWiFiNetworksInfo(); // Update the UI
 	}
-	
+
 	internal async void GetWiFiNetworksInfo()
 	{
-		
+
 		try
 		{
 			WiFiItemDisplayer.Children.Clear(); // Clear the panel
 
 			// Check if the temp directory exists
 			string path = Env.AppDataPath + @"\Léo Corporation\InternetTest Pro\Temp";
-			
+
 			if (!Directory.Exists(path))
 			{
 				Directory.CreateDirectory(path);
@@ -152,7 +152,7 @@ public partial class WiFiPasswordsPage : Page
 					WiFiItemDisplayer.Children.Add(new WiFiInfoItem(test));
 				}
 				streamReader.Close();
-				
+
 				File.Delete(files[i]); // Remove the temp file
 
 			}
@@ -162,5 +162,30 @@ public partial class WiFiPasswordsPage : Page
 		{
 			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 		}
+	}
+
+	private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		if (!(WiFiItemDisplayer.Children.Count > 0)) return;
+
+		for (int i = 0; i < WiFiItemDisplayer.Children.Count; i++)
+		{
+			if (SearchTxt.Text == "")
+			{
+				((WiFiInfoItem)WiFiItemDisplayer.Children[i]).Visibility = Visibility.Visible;
+				continue;
+			}
+
+			if (WiFiItemDisplayer.Children[i] is WiFiInfoItem wiFiInfoItem)
+			{
+				bool b = wiFiInfoItem.ToString().ToLower().Contains(SearchTxt.Text.ToLower());
+				wiFiInfoItem.Visibility = !b ? Visibility.Collapsed : Visibility.Visible;
+			}
+		}
+	}
+
+	private void DismissBtn_Click(object sender, RoutedEventArgs e)
+	{
+		SearchTxt.Text = "";
 	}
 }
