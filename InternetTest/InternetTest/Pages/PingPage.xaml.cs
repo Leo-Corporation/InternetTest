@@ -99,6 +99,9 @@ public partial class PingPage : Page
 	{
 		IpTxt.Text = IpTxt.Text.Replace("https://", "").Replace("http://", "").TrimEnd('/'); // Remove the http:// or https://
 		MakePing(IpTxt.Text); // Make a ping to the specified IP
+
+		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
+		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.Ping).UsageCount++;
 	}
 
 	private async void MakePing(string address)

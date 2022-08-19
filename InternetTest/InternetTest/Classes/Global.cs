@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Enums;
 using InternetTest.Pages;
+using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,7 @@ namespace InternetTest.Classes;
 public static class Global
 {
 	public static string Version => "7.0.0.2208-pre3";
+	public static SynethiaConfig SynethiaConfig { get; set; } = SynethiaManager.Load();
 
 	public static HomePage HomePage { get; set; } = new();
 	public static StatusPage StatusPage { get; set; } = new();
@@ -47,7 +49,7 @@ public static class Global
 	public static IpConfigPage IpConfigPage { get; set; } = new();
 	public static WiFiPasswordsPage WiFiPasswordsPage { get; set; } = new();
 
-	public static SynethiaConfig SynethiaConfig { get; set; } = new();
+	internal static string SynethiaPath => $@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\SynethiaConfig.json";
 
 	public static string GetHiSentence
 	{
@@ -117,6 +119,7 @@ public static class Global
 		};
 
 		var sorted = appScores.OrderByDescending(x => x.Value);
+		
 		return (from item in sorted select item.Key).ToList();
 	}
 
@@ -169,8 +172,8 @@ public static class Global
 	public static Dictionary<AppActions, string> ActionsString => new()
 	{
 		{ AppActions.DownDetectorRequest, Properties.Resources.TestWebsite },
-		{ AppActions.GetIPConfig, "TEXT_HERE" },
-		{ AppActions.GetWiFiPasswords, "TEXT_HERE" },
+		{ AppActions.GetIPConfig, Properties.Resources.GetIPConfig },
+		{ AppActions.GetWiFiPasswords, Properties.Resources.GetWiFi },
 		{ AppActions.LocateIP, Properties.Resources.LocateAnIP },
 		{ AppActions.MyIP, Properties.Resources.GetMyIP },
 		{ AppActions.Ping, Properties.Resources.MakePing },

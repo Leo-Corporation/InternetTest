@@ -31,6 +31,7 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class DownDetectorItem : UserControl
 {
+	bool codeInjected = false;
 	StackPanel ParentStackPanel { get; init; }
 	internal DownDetectorTestResult DownDetectorTestResult { get; set; }
 	string URL { get; set; }
@@ -46,6 +47,24 @@ public partial class DownDetectorItem : UserControl
 
 	private void InitUI()
 	{
+		if (codeInjected) return;
+		codeInjected = true;
+		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		{
+			b.Click += (sender, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
+		// For each TextBox of the page
+		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
+		{
+			textBox.GotFocus += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
+
 		WebsiteTxt.Text = URL; // Set text
 	}
 

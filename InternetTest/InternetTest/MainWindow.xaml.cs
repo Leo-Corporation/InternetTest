@@ -69,7 +69,6 @@ public partial class MainWindow : Window
 		{
 			PageScroller.Height = (ActualHeight - (GridRow1.ActualHeight + 68) > 0) ? ActualHeight - (GridRow1.ActualHeight + 68) : 0; // Set the scroller height
 		};
-
 		HelloTxt.Text = Global.GetHiSentence; // Show greeting message to the user
 
 		// Show the appropriate page
@@ -82,36 +81,43 @@ public partial class MainWindow : Window
 			{
 				case AppPages.Status:
 					PageDisplayer.Content = Global.StatusPage;
+					Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Env.UnixTime;
 					UnCheckAllButton();
 					CheckButton(StatusPageBtn);
 					break;
 				case AppPages.DownDetector:
 					PageDisplayer.Content = Global.DownDetectorPage;
+					Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Env.UnixTime;
 					UnCheckAllButton();
 					CheckButton(DownDetectorPageBtn);
 					break;
 				case AppPages.MyIP:
 					PageDisplayer.Content = Global.MyIpPage;
+					Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Env.UnixTime;
 					UnCheckAllButton();
 					CheckButton(MyIPPageBtn);
 					break;
 				case AppPages.LocateIP:
 					PageDisplayer.Content = Global.LocateIpPage;
+					Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime = Env.UnixTime;
 					UnCheckAllButton();
 					CheckButton(LocateIPPageBtn);
 					break;
 				case AppPages.Ping:
 					PageDisplayer.Content = Global.PingPage;
+					Global.SynethiaConfig.PingPageInfo.EnterUnixTime = Env.UnixTime;
 					UnCheckAllButton();
 					CheckButton(PingPageBtn);
 					break;
 				case AppPages.IPConfig:
 					PageDisplayer.Content = Global.IpConfigPage;
+					Global.SynethiaConfig.IPConfigPageInfo.EnterUnixTime = Env.UnixTime;
 					UnCheckAllButton();
 					CheckButton(IPConfigPageBtn);
 					break;
 				case AppPages.WiFiPasswords:
 					PageDisplayer.Content = Global.WiFiPasswordsPage;
+					Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime = Env.UnixTime;
 					UnCheckAllButton();
 					CheckButton(WifiPasswordsPageBtn);
 					break;
@@ -134,6 +140,8 @@ public partial class MainWindow : Window
 
 	private void CloseBtn_Click(object sender, RoutedEventArgs e)
 	{
+		LeavePage();
+		SynethiaManager.Save(Global.SynethiaConfig);
 		Environment.Exit(0); // Close the app
 	}
 

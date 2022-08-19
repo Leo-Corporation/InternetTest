@@ -26,6 +26,7 @@ using InternetTest.Enums;
 using InternetTest.UserControls;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace InternetTest.Pages;
@@ -47,7 +48,7 @@ public partial class HomePage : Page
 		List<AppActions> relevantActions = Enumerable.Empty<AppActions>().ToList();
 		if (Global.SynethiaConfig is not null)
 		{
-			relevantPages = Global.GetMostRelevantPages(Global.SynethiaConfig);
+			relevantPages = Global.GetMostRelevantPages(Global.SynethiaConfig);			
 			Global.GetMostRelevantActions(Global.SynethiaConfig).ForEach((ActionInfo actionInfo) => relevantActions.Add(actionInfo.Action));
 		}
 		else

@@ -259,6 +259,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get IP Config.
+        /// </summary>
+        public static string GetIPConfig {
+            get {
+                return ResourceManager.GetString("GetIPConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get my IP.
         /// </summary>
         public static string GetMyIP {

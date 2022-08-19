@@ -32,6 +32,7 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class IpConfigItem : UserControl
 {
+	bool codeInjected = false;
 	private WindowsIpConfig WindowsIpConfig { get; init; }
 	public IpConfigItem(WindowsIpConfig windowsIpConfig)
 	{
@@ -43,6 +44,16 @@ public partial class IpConfigItem : UserControl
 
 	private void InitUI()
 	{
+		if (codeInjected) return;
+		codeInjected = true;
+		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		{
+			b.Click += (sender, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
+
 		StatusTxt.Text = WindowsIpConfig.Status == OperationalStatus.Up ? Properties.Resources.ConnectedS : Properties.Resources.Disconnected;
 		Ipv4Txt.Text = WindowsIpConfig.IPv4Address;
 		GatewayIpv4Txt.Text = WindowsIpConfig.IPv4Gateway;

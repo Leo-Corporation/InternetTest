@@ -31,6 +31,7 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class WiFiInfoItem : UserControl
 {
+	bool codeInjected = false;
 	private WLANProfile WLANProfile { get; init; }
 	public WiFiInfoItem(WLANProfile profile)
 	{
@@ -42,6 +43,16 @@ public partial class WiFiInfoItem : UserControl
 
 	private void InitUI()
 	{
+		if (codeInjected) return;
+		codeInjected = true;
+		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		{
+			b.Click += (sender, e) =>
+			{
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
+			};
+		}
+
 		InterfaceNameTxt.Text = WLANProfile.SSIDConfig?.SSID?.Name;
 		ConnectionModeTxt.Text = WLANProfile.ConnectionMode == "auto" ? Properties.Resources.Automatic : WLANProfile.ConnectionMode;
 		ConnectionTypeTxt.Text = WLANProfile.ConnectionType switch

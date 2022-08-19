@@ -60,7 +60,7 @@ public partial class LocateIpPage : Page
 		{
 			b.Click += (sender, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
 			};
 		}
 
@@ -69,7 +69,7 @@ public partial class LocateIpPage : Page
 		{
 			textBox.GotFocus += (o, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
 			};
 		}
 
@@ -78,11 +78,11 @@ public partial class LocateIpPage : Page
 		{
 			checkBox.Checked += (o, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
 			};
 			checkBox.Unchecked += (o, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
 			};
 		}
 
@@ -90,11 +90,11 @@ public partial class LocateIpPage : Page
 		{
 			radioButton.Checked += (o, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
 			};
 			radioButton.Unchecked += (o, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
 			};
 		}
 	}

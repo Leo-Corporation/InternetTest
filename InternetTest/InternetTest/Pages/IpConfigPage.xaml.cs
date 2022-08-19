@@ -51,7 +51,7 @@ public partial class IpConfigPage : Page
 		{
 			b.Click += (sender, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
 			};
 		}
 
@@ -60,7 +60,7 @@ public partial class IpConfigPage : Page
 		{
 			textBox.GotFocus += (o, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
 			};
 		}
 
@@ -69,11 +69,11 @@ public partial class IpConfigPage : Page
 		{
 			checkBox.Checked += (o, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
 			};
 			checkBox.Unchecked += (o, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
 			};
 		}
 
@@ -81,11 +81,11 @@ public partial class IpConfigPage : Page
 		{
 			radioButton.Checked += (o, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
 			};
 			radioButton.Unchecked += (o, e) =>
 			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
 			};
 		}
 	}
@@ -117,5 +117,8 @@ public partial class IpConfigPage : Page
 	private void RefreshBtn_Click(object sender, RoutedEventArgs e)
 	{
 		InitUI(); // Refresh the UI
+
+		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
+		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.GetIPConfig).UsageCount++;
 	}
 }

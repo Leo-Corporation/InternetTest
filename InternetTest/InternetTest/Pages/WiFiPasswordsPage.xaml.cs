@@ -27,6 +27,7 @@ using LeoCorpLibrary;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Serialization;
@@ -58,7 +59,7 @@ public partial class WiFiPasswordsPage : Page
 		{
 			b.Click += (sender, e) =>
 			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
 			};
 		}
 
@@ -67,7 +68,7 @@ public partial class WiFiPasswordsPage : Page
 		{
 			textBox.GotFocus += (o, e) =>
 			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
 			};
 		}
 
@@ -76,11 +77,11 @@ public partial class WiFiPasswordsPage : Page
 		{
 			checkBox.Checked += (o, e) =>
 			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
 			};
 			checkBox.Unchecked += (o, e) =>
 			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
 			};
 		}
 
@@ -88,11 +89,11 @@ public partial class WiFiPasswordsPage : Page
 		{
 			radioButton.Checked += (o, e) =>
 			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
 			};
 			radioButton.Unchecked += (o, e) =>
 			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
 			};
 		}
 	}
@@ -100,6 +101,9 @@ public partial class WiFiPasswordsPage : Page
 	private void GetWiFiBtn_Click(object sender, RoutedEventArgs e)
 	{
 		GetWiFiNetworksInfo(); // Update the UI
+		
+		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
+		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.GetWiFiPasswords).UsageCount++;
 	}
 
 	internal async void GetWiFiNetworksInfo()
