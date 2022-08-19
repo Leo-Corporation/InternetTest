@@ -408,4 +408,10 @@
   <data name="NothingToShow" xml:space="preserve">
     <value>Il n'y a rien à montrer pour le moment, essayez de rafraîchir la page.</value>
   </data>
+  <data name="Available" xml:space="preserve">
+    <value>Disponible</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Indisponible</value>
+  </data>
 </root>

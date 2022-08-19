@@ -180,7 +180,8 @@ namespace InternetTest.Pages
 
 				DetailsTimeTxt.Text = $"{time}ms"; // Update the time
 				DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
-
+				
+				Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:HH:mm} - {url} - {Properties.Resources.Available} ({statusCode})", StatusIconTxt.Text));
 				return new(statusCode, time, message);
 			}
 			else
@@ -212,6 +213,7 @@ namespace InternetTest.Pages
 				DetailsTimeTxt.Text = $"{time}ms"; // Update the time
 				DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
 
+				Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:HH:mm} - {url} - {Properties.Resources.Down} ({statusCode})", StatusIconTxt.Text));
 				return new(statusCode, time, message);
 			}
 		}
