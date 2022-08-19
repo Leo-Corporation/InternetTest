@@ -75,56 +75,59 @@ public partial class MainWindow : Window
 		PageDisplayer.Content = Global.HomePage; // Show the Home page
 		CheckButton(HomePageBtn, true);
 
-		PageCard.OnCardClick += (o, e) =>
+		PageCard.OnCardClick += PageCard_OnCardClick;
+		ActionCard.OnCardClick += PageCard_OnCardClick;
+	}
+
+	private void PageCard_OnCardClick(object? sender, PageEventArgs e)
+	{
+		switch (e.AppPage)
 		{
-			switch (e.AppPage)
-			{
-				case AppPages.Status:
-					PageDisplayer.Content = Global.StatusPage;
-					Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Env.UnixTime;
-					UnCheckAllButton();
-					CheckButton(StatusPageBtn);
-					break;
-				case AppPages.DownDetector:
-					PageDisplayer.Content = Global.DownDetectorPage;
-					Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Env.UnixTime;
-					UnCheckAllButton();
-					CheckButton(DownDetectorPageBtn);
-					break;
-				case AppPages.MyIP:
-					PageDisplayer.Content = Global.MyIpPage;
-					Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Env.UnixTime;
-					UnCheckAllButton();
-					CheckButton(MyIPPageBtn);
-					break;
-				case AppPages.LocateIP:
-					PageDisplayer.Content = Global.LocateIpPage;
-					Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime = Env.UnixTime;
-					UnCheckAllButton();
-					CheckButton(LocateIPPageBtn);
-					break;
-				case AppPages.Ping:
-					PageDisplayer.Content = Global.PingPage;
-					Global.SynethiaConfig.PingPageInfo.EnterUnixTime = Env.UnixTime;
-					UnCheckAllButton();
-					CheckButton(PingPageBtn);
-					break;
-				case AppPages.IPConfig:
-					PageDisplayer.Content = Global.IpConfigPage;
-					Global.SynethiaConfig.IPConfigPageInfo.EnterUnixTime = Env.UnixTime;
-					UnCheckAllButton();
-					CheckButton(IPConfigPageBtn);
-					break;
-				case AppPages.WiFiPasswords:
-					PageDisplayer.Content = Global.WiFiPasswordsPage;
-					Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime = Env.UnixTime;
-					UnCheckAllButton();
-					CheckButton(WifiPasswordsPageBtn);
-					break;
-				default:
-					break;
-			}
-		};
+			case AppPages.Status:
+				PageDisplayer.Content = Global.StatusPage;
+				Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(StatusPageBtn);
+				break;
+			case AppPages.DownDetector:
+				PageDisplayer.Content = Global.DownDetectorPage;
+				Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(DownDetectorPageBtn);
+				break;
+			case AppPages.MyIP:
+				PageDisplayer.Content = Global.MyIpPage;
+				Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(MyIPPageBtn);
+				break;
+			case AppPages.LocateIP:
+				PageDisplayer.Content = Global.LocateIpPage;
+				Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(LocateIPPageBtn);
+				break;
+			case AppPages.Ping:
+				PageDisplayer.Content = Global.PingPage;
+				Global.SynethiaConfig.PingPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(PingPageBtn);
+				break;
+			case AppPages.IPConfig:
+				PageDisplayer.Content = Global.IpConfigPage;
+				Global.SynethiaConfig.IPConfigPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(IPConfigPageBtn);
+				break;
+			case AppPages.WiFiPasswords:
+				PageDisplayer.Content = Global.WiFiPasswordsPage;
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(WifiPasswordsPageBtn);
+				break;
+			default:
+				break;
+		}
 	}
 
 	private void MinimizeBtn_Click(object sender, RoutedEventArgs e)

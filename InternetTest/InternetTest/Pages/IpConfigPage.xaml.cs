@@ -114,7 +114,7 @@ public partial class IpConfigPage : Page
 		}
 	}
 
-	private void RefreshBtn_Click(object sender, RoutedEventArgs e)
+	internal void RefreshBtn_Click(object sender, RoutedEventArgs e)
 	{
 		InitUI(); // Refresh the UI
 

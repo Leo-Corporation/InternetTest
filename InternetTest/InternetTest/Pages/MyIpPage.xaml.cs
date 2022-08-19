@@ -95,7 +95,7 @@ public partial class MyIpPage : Page
 		}
 	}
 
-	private void GetMyIPBtn_Click(object sender, RoutedEventArgs e)
+	internal void GetMyIPBtn_Click(object sender, RoutedEventArgs e)
 	{
 		GetMyIP();
 

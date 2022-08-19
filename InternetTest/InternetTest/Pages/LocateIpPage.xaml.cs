@@ -99,7 +99,7 @@ public partial class LocateIpPage : Page
 		}
 	}
 
-	private void LocateIPBtn_Click(object sender, RoutedEventArgs e)
+	internal void LocateIPBtn_Click(object sender, RoutedEventArgs e)
 	{
 		if (!Global.IsIpValid(IpTxt.Text)) return; // Cancel if the IP isn't valid
 		LocateIP(IpTxt.Text); // Locate IP

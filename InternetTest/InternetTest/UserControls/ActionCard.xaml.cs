@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using System;
 using System.Windows.Controls;
 
 namespace InternetTest.UserControls;
@@ -44,5 +45,44 @@ public partial class ActionCard : UserControl
 	{
 		IconTxt.Text = Global.ActionsIcons[AppAction]; // Set text
 		PageNameTxt.Text = Global.ActionsString[AppAction]; // Set text
+	}
+	public static event EventHandler<PageEventArgs> OnCardClick;
+
+	private void Border_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+	{
+		switch (AppAction)
+		{
+			case AppActions.Test:
+				Global.StatusPage.TestBtn_Click(this, null);
+				OnCardClick?.Invoke(this, new(AppPages.Status));
+				break;
+			case AppActions.DownDetectorRequest:
+				Global.DownDetectorPage.TestBtn_Click(this, null);
+				OnCardClick?.Invoke(this, new(AppPages.DownDetector));
+				break;
+			case AppActions.MyIP:
+				Global.MyIpPage.GetMyIPBtn_Click(this, null);
+				OnCardClick?.Invoke(this, new(AppPages.MyIP));
+				break;
+			case AppActions.LocateIP:
+				Global.LocateIpPage.LocateIPBtn_Click(this, null);
+				OnCardClick?.Invoke(this, new(AppPages.LocateIP));
+				break;
+			case AppActions.Ping:
+				Global.PingPage.IpTxt.Text = Global.PingPage.IpTxt.Text == "" ? "https://leocorporation.dev" : Global.PingPage.IpTxt.Text;
+				Global.PingPage.PingBtn_Click(this, null);
+				OnCardClick?.Invoke(this, new(AppPages.Ping));
+				break;
+			case AppActions.GetWiFiPasswords:
+				Global.WiFiPasswordsPage.GetWiFiBtn_Click(this, null);
+				OnCardClick?.Invoke(this, new(AppPages.WiFiPasswords));
+				break;
+			case AppActions.GetIPConfig:
+				Global.IpConfigPage.RefreshBtn_Click(this, null);
+				OnCardClick?.Invoke(this, new(AppPages.IPConfig));
+				break;
+			default:
+				break;
+		}
 	}
 }

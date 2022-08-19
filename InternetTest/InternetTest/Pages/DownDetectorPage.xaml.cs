@@ -107,7 +107,7 @@ namespace InternetTest.Pages
 			}
 		}
 
-		private async void TestBtn_Click(object sender, RoutedEventArgs e)
+		internal async void TestBtn_Click(object sender, RoutedEventArgs e)
 		{
 			// Check if the URL is valid
 			if (!WebsiteTxt.Text.StartsWith("http"))

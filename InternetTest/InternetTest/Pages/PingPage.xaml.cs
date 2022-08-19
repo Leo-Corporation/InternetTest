@@ -95,7 +95,7 @@ public partial class PingPage : Page
 		}
 	}
 
-	private void PingBtn_Click(object sender, RoutedEventArgs e)
+	internal void PingBtn_Click(object sender, RoutedEventArgs e)
 	{
 		IpTxt.Text = IpTxt.Text.Replace("https://", "").Replace("http://", "").TrimEnd('/'); // Remove the http:// or https://
 		MakePing(IpTxt.Text); // Make a ping to the specified IP

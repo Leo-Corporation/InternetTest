@@ -98,7 +98,7 @@ public partial class WiFiPasswordsPage : Page
 		}
 	}
 
-	private void GetWiFiBtn_Click(object sender, RoutedEventArgs e)
+	internal void GetWiFiBtn_Click(object sender, RoutedEventArgs e)
 	{
 		GetWiFiNetworksInfo(); // Update the UI
 		
