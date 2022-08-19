@@ -60,13 +60,13 @@ public partial class HistoryPage : Page
 		DownDetectorHistory.Children.Clear();
 		
 		// Load Status history
-		for (int i = 0; i < Global.History.StatusHistory.Count; i++)
+		for (int i = Global.History.StatusHistory.Count - 1; i >= 0; i--)
 		{
 			StatusHistory.Children.Add(new StatusHistoryItem(Global.History.StatusHistory[i], StatusHistory, Enums.AppPages.Status));
 		}
 
 		// Load DownDetector history
-		for (int i = 0; i < Global.History.DownDetectorHistory.Count; i++)
+		for (int i = Global.History.DownDetectorHistory.Count - 1; i >= 0; i--)
 		{
 			DownDetectorHistory.Children.Add(new StatusHistoryItem(Global.History.DownDetectorHistory[i], DownDetectorHistory, Enums.AppPages.DownDetector));
 		}
