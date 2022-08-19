@@ -100,7 +100,7 @@ public partial class WiFiPasswordsPage : Page
 			};
 		}
 	}
-	
+
 	internal async void GetWiFiBtn_Click(object sender, RoutedEventArgs e)
 	{
 		await GetWiFiNetworksInfo(); // Update the UI
@@ -114,7 +114,7 @@ public partial class WiFiPasswordsPage : Page
 			PlaceholderGrid.Visibility = Visibility.Collapsed;
 			Placeholder.Visibility = Visibility.Collapsed;
 		}
-		
+
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
 		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.GetWiFiPasswords).UsageCount++;
 	}

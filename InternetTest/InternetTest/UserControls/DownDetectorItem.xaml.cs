@@ -70,7 +70,7 @@ public partial class DownDetectorItem : UserControl
 
 		if (DownDetectorTestResult.Code == 0) return;
 		UpdateIcon();
-		
+
 	}
 
 	internal void UpdateIcon()
@@ -86,7 +86,7 @@ public partial class DownDetectorItem : UserControl
 			IconTxt.Text = "\uF299"; // Add (up) to the text
 		}
 	}
-	
+
 	private async void TestSiteBtn_Click(object sender, RoutedEventArgs e)
 	{
 		if (!WebsiteTxt.Text.StartsWith("http"))

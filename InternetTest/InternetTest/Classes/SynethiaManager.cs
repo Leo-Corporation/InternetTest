@@ -22,13 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using LeoCorpLibrary;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace InternetTest.Classes;
 public static class SynethiaManager
@@ -39,7 +34,7 @@ public static class SynethiaManager
 		{
 			Directory.CreateDirectory($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\");
 		}
-		
+
 		if (!File.Exists(Global.SynethiaPath)) // If no Synethia config exists
 		{
 			Global.SynethiaConfig = new();

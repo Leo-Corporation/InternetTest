@@ -191,7 +191,7 @@ namespace InternetTest.Pages
 				if (isFirst)
 				{
 					IconTxt.Text = "\uF36E"; // Update the icon
-					IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red")); 
+					IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 				}
 
 				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text

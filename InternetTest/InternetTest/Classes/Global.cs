@@ -119,7 +119,7 @@ public static class Global
 		};
 
 		var sorted = appScores.OrderByDescending(x => x.Value);
-		
+
 		return (from item in sorted select item.Key).ToList();
 	}
 
