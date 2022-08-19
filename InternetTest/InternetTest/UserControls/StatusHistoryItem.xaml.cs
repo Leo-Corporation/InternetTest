@@ -61,6 +61,13 @@ public partial class StatusHistoryItem : UserControl
 	{
 		IconTxt.Text = StatusHistory.Icon;
 		ContentTxt.Text = StatusHistory.Content;
+
+		IconTxt.Foreground = IconTxt.Text switch
+		{
+			"\uF299" => new SolidColorBrush { Color = Global.GetColorFromResource("Green") },
+			"\uF36E" => new SolidColorBrush { Color = Global.GetColorFromResource("Red") },
+			_ => new SolidColorBrush { Color = Global.GetColorFromResource("Gray") }
+		};
 	}
 
 	private void DeleteBtn_Click(object sender, RoutedEventArgs e)
@@ -80,6 +87,6 @@ public partial class StatusHistoryItem : UserControl
 			}
 			ParentStackPanel.Children.Remove(this);
 		}
-		catch {	}
+		catch { }
 	}
 }
