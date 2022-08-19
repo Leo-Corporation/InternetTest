@@ -592,6 +592,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is nothing to show for now, try refreshing the page..
+        /// </summary>
+        public static string NothingToShow {
+            get {
+                return ResourceManager.GetString("NothingToShow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to of {0}.
         /// </summary>
         public static string OfWebsite {

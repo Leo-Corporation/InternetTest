@@ -405,4 +405,7 @@
   <data name="GetIPConfig" xml:space="preserve">
     <value>Get IP Config</value>
   </data>
+  <data name="NothingToShow" xml:space="preserve">
+    <value>There is nothing to show for now, try refreshing the page.</value>
+  </data>
 </root>

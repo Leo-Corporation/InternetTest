@@ -28,6 +28,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Serialization;
@@ -46,9 +47,11 @@ public partial class WiFiPasswordsPage : Page
 		InjectSynethiaCode();
 	}
 
+	Placeholder Placeholder = new(Properties.Resources.NothingToShow, "\uF227");
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.WifiPasswords}";
+		PlaceholderGrid.Children.Add(Placeholder); // Show the placeholder instead of an empty page
 	}
 
 	private void InjectSynethiaCode()
@@ -97,21 +100,33 @@ public partial class WiFiPasswordsPage : Page
 			};
 		}
 	}
-
-	internal void GetWiFiBtn_Click(object sender, RoutedEventArgs e)
+	
+	internal async void GetWiFiBtn_Click(object sender, RoutedEventArgs e)
 	{
-		GetWiFiNetworksInfo(); // Update the UI
+		await GetWiFiNetworksInfo(); // Update the UI
+		if (WiFiItemDisplayer.Children.Count == 0)
+		{
+			PlaceholderGrid.Visibility = Visibility.Visible;
+			Placeholder.Visibility = Visibility.Visible;
+		}
+		else
+		{
+			PlaceholderGrid.Visibility = Visibility.Collapsed;
+			Placeholder.Visibility = Visibility.Collapsed;
+		}
 		
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
 		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.GetWiFiPasswords).UsageCount++;
 	}
 
-	internal async void GetWiFiNetworksInfo()
+	internal async Task GetWiFiNetworksInfo()
 	{
 
 		try
 		{
 			WiFiItemDisplayer.Children.Clear(); // Clear the panel
+			PlaceholderGrid.Visibility = Visibility.Collapsed; // Hide the placeholder
+			Placeholder.Visibility = Visibility.Collapsed; // Hide the placeholder
 
 			// Check if the temp directory exists
 			string path = Env.AppDataPath + @"\Léo Corporation\InternetTest Pro\Temp";
@@ -159,10 +174,14 @@ public partial class WiFiPasswordsPage : Page
 
 	private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
 	{
+		PlaceholderGrid.Visibility = Visibility.Visible;
+		Placeholder.Visibility = Visibility.Visible;
 		if (!(WiFiItemDisplayer.Children.Count > 0)) return;
 
 		for (int i = 0; i < WiFiItemDisplayer.Children.Count; i++)
 		{
+			if (WiFiItemDisplayer.Children[i] is Placeholder) continue;
+
 			if (SearchTxt.Text == "")
 			{
 				((WiFiInfoItem)WiFiItemDisplayer.Children[i]).Visibility = Visibility.Visible;
@@ -173,6 +192,11 @@ public partial class WiFiPasswordsPage : Page
 			{
 				bool b = wiFiInfoItem.ToString().ToLower().Contains(SearchTxt.Text.ToLower());
 				wiFiInfoItem.Visibility = !b ? Visibility.Collapsed : Visibility.Visible;
+				if (wiFiInfoItem.Visibility == Visibility.Visible)
+				{
+					PlaceholderGrid.Visibility = Visibility.Collapsed;
+					Placeholder.Visibility = Visibility.Collapsed;
+				}
 			}
 		}
 	}
