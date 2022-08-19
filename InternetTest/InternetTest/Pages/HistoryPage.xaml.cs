@@ -48,16 +48,19 @@ public partial class HistoryPage : Page
 	{
 		InitializeComponent();
 		Loaded += (o, e) => InitUI();
-		
+
+		HistoryGrid.Children.Add(Placeholder);
 		CheckButton(StatusBtn); // Check the default button
 		InitUI();
 	}
 
+	Placeholder Placeholder = new(Properties.Resources.HistoryEmpty, "\uF47F");
 	private void InitUI()
 	{
 		// Clear
 		StatusHistory.Children.Clear();
 		DownDetectorHistory.Children.Clear();
+		Placeholder.Visibility = Visibility.Visible;
 		
 		// Load Status history
 		for (int i = Global.History.StatusHistory.Count - 1; i >= 0; i--)
@@ -69,6 +72,15 @@ public partial class HistoryPage : Page
 		for (int i = Global.History.DownDetectorHistory.Count - 1; i >= 0; i--)
 		{
 			DownDetectorHistory.Children.Add(new StatusHistoryItem(Global.History.DownDetectorHistory[i], DownDetectorHistory, Enums.AppPages.DownDetector));
+		}
+
+		if (StatusHistory.Children.Count == 0)
+		{
+			Placeholder.Visibility = Visibility.Visible;
+		}
+		else
+		{
+			Placeholder.Visibility = Visibility.Collapsed;
 		}
 	}
 
@@ -88,6 +100,15 @@ public partial class HistoryPage : Page
 		UnCheckAllButtons();
 		CheckButton(StatusBtn);
 		StatusHistory.Visibility = Visibility.Visible;
+
+		if (StatusHistory.Children.Count == 0)
+		{
+			Placeholder.Visibility = Visibility.Visible;
+		}
+		else
+		{
+			Placeholder.Visibility = Visibility.Collapsed;
+		}
 	}
 
 	private void DownDetectorBtn_Click(object sender, RoutedEventArgs e)
@@ -95,5 +116,14 @@ public partial class HistoryPage : Page
 		UnCheckAllButtons();
 		CheckButton(DownDetectorBtn);
 		DownDetectorHistory.Visibility = Visibility.Visible;
+
+		if (DownDetectorHistory.Children.Count == 0)
+		{
+			Placeholder.Visibility = Visibility.Visible;
+		}
+		else
+		{
+			Placeholder.Visibility = Visibility.Collapsed;
+		}
 	}
 }
