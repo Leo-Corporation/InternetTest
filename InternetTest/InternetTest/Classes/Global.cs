@@ -39,8 +39,10 @@ public static class Global
 {
 	public static string Version => "7.0.0.2208-pre3";
 	public static SynethiaConfig SynethiaConfig { get; set; } = SynethiaManager.Load();
+	public static History History { get; set; } = new();
 
 	public static HomePage HomePage { get; set; } = new();
+	public static HistoryPage HistoryPage { get; set; } = new();
 	public static StatusPage StatusPage { get; set; } = new();
 	public static DownDetectorPage DownDetectorPage { get; set; } = new();
 	public static MyIpPage MyIpPage { get; set; } = new();

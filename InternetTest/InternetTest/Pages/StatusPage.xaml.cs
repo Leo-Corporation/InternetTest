@@ -138,6 +138,8 @@ public partial class StatusPage : Page
 				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 				StatusTxt.Text = Properties.Resources.NotConnected;
 			}
+
+			Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:HH:mm} - {Properties.Resources.Connected}", StatusIconTxt.Text));
 		}
 		catch (HttpRequestException)
 		{

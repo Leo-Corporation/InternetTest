@@ -351,8 +351,11 @@ public partial class MainWindow : Window
 
 	private void HistoryPageBtn_Click(object sender, RoutedEventArgs e)
 	{
+		LeavePage();
 		UnCheckAllButton(); // Reset all states
 		CheckButton(HistoryPageBtn, true);
+
+		PageDisplayer.Content = Global.HistoryPage; // Display the history page
 	}
 
 	private void SettingsPageBtn_Click(object sender, RoutedEventArgs e)
