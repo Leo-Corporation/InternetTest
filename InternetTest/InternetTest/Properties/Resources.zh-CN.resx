@@ -417,4 +417,10 @@
   <data name="HistoryEmpty" xml:space="preserve">
     <value>历史是空的。</value>
   </data>
+  <data name="EmptyHistory" xml:space="preserve">
+    <value>Empty History</value>
+  </data>
+  <data name="EmptyHistoryMsg" xml:space="preserve">
+    <value>Are you sure want to empty this history? This action is irreversible.</value>
+  </data>
 </root>

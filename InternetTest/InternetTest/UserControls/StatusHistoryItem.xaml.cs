@@ -45,13 +45,11 @@ namespace InternetTest.UserControls;
 public partial class StatusHistoryItem : UserControl
 {
 	StatusHistory StatusHistory { get; set; }
-	StackPanel ParentStackPanel { get; init; }
 	AppPages AppPage { get; init; }
-	public StatusHistoryItem(StatusHistory statusHistory, StackPanel parent, AppPages appPages)
+	public StatusHistoryItem(StatusHistory statusHistory, AppPages appPages)
 	{
 		InitializeComponent();
 		StatusHistory = statusHistory;
-		ParentStackPanel = parent;
 		AppPage = appPages;
 
 		InitUI();
@@ -85,7 +83,7 @@ public partial class StatusHistoryItem : UserControl
 				default:
 					break;
 			}
-			ParentStackPanel.Children.Remove(this);
+			Global.HistoryPage.InitUI();
 		}
 		catch { }
 	}

@@ -55,7 +55,7 @@ public partial class HistoryPage : Page
 	}
 
 	Placeholder Placeholder = new(Properties.Resources.HistoryEmpty, "\uF47F");
-	private void InitUI()
+	internal void InitUI()
 	{
 		// Clear
 		StatusHistory.Children.Clear();
@@ -65,22 +65,24 @@ public partial class HistoryPage : Page
 		// Load Status history
 		for (int i = Global.History.StatusHistory.Count - 1; i >= 0; i--)
 		{
-			StatusHistory.Children.Add(new StatusHistoryItem(Global.History.StatusHistory[i], StatusHistory, Enums.AppPages.Status));
+			StatusHistory.Children.Add(new StatusHistoryItem(Global.History.StatusHistory[i], Enums.AppPages.Status));
 		}
 
 		// Load DownDetector history
 		for (int i = Global.History.DownDetectorHistory.Count - 1; i >= 0; i--)
 		{
-			DownDetectorHistory.Children.Add(new StatusHistoryItem(Global.History.DownDetectorHistory[i], DownDetectorHistory, Enums.AppPages.DownDetector));
+			DownDetectorHistory.Children.Add(new StatusHistoryItem(Global.History.DownDetectorHistory[i], Enums.AppPages.DownDetector));
 		}
 
 		if (StatusHistory.Children.Count == 0)
 		{
 			Placeholder.Visibility = Visibility.Visible;
+			EmptyHistoryBtn.Visibility = Visibility.Collapsed;
 		}
 		else
 		{
 			Placeholder.Visibility = Visibility.Collapsed;
+			EmptyHistoryBtn.Visibility = Visibility.Visible;
 		}
 	}
 
@@ -104,10 +106,12 @@ public partial class HistoryPage : Page
 		if (StatusHistory.Children.Count == 0)
 		{
 			Placeholder.Visibility = Visibility.Visible;
+			EmptyHistoryBtn.Visibility = Visibility.Collapsed;
 		}
 		else
 		{
 			Placeholder.Visibility = Visibility.Collapsed;
+			EmptyHistoryBtn.Visibility = Visibility.Visible;
 		}
 	}
 
@@ -120,10 +124,31 @@ public partial class HistoryPage : Page
 		if (DownDetectorHistory.Children.Count == 0)
 		{
 			Placeholder.Visibility = Visibility.Visible;
+			EmptyHistoryBtn.Visibility = Visibility.Collapsed;
 		}
 		else
 		{
 			Placeholder.Visibility = Visibility.Collapsed;
+			EmptyHistoryBtn.Visibility = Visibility.Visible;
 		}
+	}
+
+	private void EmptyHistoryBtn_Click(object sender, RoutedEventArgs e)
+	{
+		// If the user doesn't want to empty the history anymore, stop here.
+		if (MessageBox.Show(Properties.Resources.EmptyHistoryMsg, Properties.Resources.EmptyHistory, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+			return;
+		
+		// Get the current selected history
+		if (StatusHistory.Visibility == Visibility.Visible)
+		{
+			Global.History.StatusHistory.Clear(); // Empty history
+		}
+		else if (DownDetectorBtn.Visibility == Visibility.Visible)
+		{
+			Global.History.DownDetectorHistory.Clear(); // Empty history
+		}
+
+		InitUI(); // Refresh the UI
 	}
 }

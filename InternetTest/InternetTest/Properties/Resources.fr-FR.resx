@@ -417,4 +417,10 @@
   <data name="HistoryEmpty" xml:space="preserve">
     <value>L'historique est vide.</value>
   </data>
+  <data name="EmptyHistory" xml:space="preserve">
+    <value>Vider l'Historique</value>
+  </data>
+  <data name="EmptyHistoryMsg" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir vider cette historique ? Cette action est irréversible.</value>
+  </data>
 </root>

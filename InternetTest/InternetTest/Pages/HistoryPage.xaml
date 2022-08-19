@@ -17,7 +17,12 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<StackPanel Margin="10" Orientation="Horizontal">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+
+		<StackPanel Margin="10" Orientation="Horizontal" Grid.ColumnSpan="3">
 			<TextBlock Text="&#xF47F;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
 			<TextBlock Text="{x:Static lang:Resources.History}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
 		</StackPanel>
@@ -44,7 +49,17 @@
 				</Grid>
 			</Button>
 		</StackPanel>
-		<Grid x:Name="HistoryGrid" Grid.Row="2" Margin="10">
+		<Button x:Name="EmptyHistoryBtn" Click="EmptyHistoryBtn_Click" Margin="10,2,0,2" Foreground="{Binding Source={StaticResource Red}}" Style="{DynamicResource StandardButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock Text="&#xFBF6;" FontSize="14" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+				<TextBlock Text="{x:Static lang:Resources.EmptyHistory}" FontWeight="ExtraBold" FontSize="11" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
+			</Grid>
+		</Button>
+		<Grid x:Name="HistoryGrid" Grid.Row="2" Margin="10" Grid.ColumnSpan="3">
 			<StackPanel x:Name="StatusHistory"/>
 			<StackPanel x:Name="DownDetectorHistory" Visibility="Collapsed"/>
 		</Grid>

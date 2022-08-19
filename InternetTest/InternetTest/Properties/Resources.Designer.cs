@@ -232,6 +232,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Empty History.
+        /// </summary>
+        public static string EmptyHistory {
+            get {
+                return ResourceManager.GetString("EmptyHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure want to empty this history? This action is irreversible..
+        /// </summary>
+        public static string EmptyHistoryMsg {
+            get {
+                return ResourceManager.GetString("EmptyHistoryMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encryption.
         /// </summary>
         public static string Encryption {
