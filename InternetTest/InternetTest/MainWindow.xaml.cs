@@ -69,6 +69,7 @@ public partial class MainWindow : Window
 		{
 			PageScroller.Height = (ActualHeight - (GridRow1.ActualHeight + 68) > 0) ? ActualHeight - (GridRow1.ActualHeight + 68) : 0; // Set the scroller height
 		};
+		Closed += (o, e) => LeavePage();
 		HelloTxt.Text = Global.GetHiSentence; // Show greeting message to the user
 
 		// Show the appropriate page
@@ -144,8 +145,7 @@ public partial class MainWindow : Window
 	private void CloseBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		SynethiaManager.Save(Global.SynethiaConfig);
-		Environment.Exit(0); // Close the app
+		Application.Current.Shutdown(); // Close the application
 	}
 
 	private void HandleWindowStateChanged()

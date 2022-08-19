@@ -46,7 +46,7 @@
 		</StackPanel>
 		<Grid Grid.Row="2" Margin="10">
 			<StackPanel x:Name="StatusHistory"/>
-			<StackPanel x:Name="DownDetectorHistory"/>
+			<StackPanel x:Name="DownDetectorHistory" Visibility="Collapsed"/>
 		</Grid>
 	</Grid>
 </Page>

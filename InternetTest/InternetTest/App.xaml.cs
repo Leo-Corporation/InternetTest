@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Classes;
 using System.Windows;
 
 namespace InternetTest;
@@ -32,5 +33,11 @@ public partial class App : Application
 	private void Application_Startup(object sender, StartupEventArgs e)
 	{
 		new MainWindow().Show();
+	}
+
+	private void Application_Exit(object sender, ExitEventArgs e)
+	{
+		SynethiaManager.Save(Global.SynethiaConfig);
+		HistoryManager.Save(Global.History);
 	}
 }

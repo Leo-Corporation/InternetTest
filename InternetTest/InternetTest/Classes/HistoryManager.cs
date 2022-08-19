@@ -22,35 +22,43 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using LeoCorpLibrary;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
-namespace InternetTest.Classes;
-public static class SynethiaManager
+namespace InternetTest.Classes
 {
-	public static SynethiaConfig Load()
-	{
-		if (!Directory.Exists($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\"))
+    public static class HistoryManager
+    {
+		internal static string HistoryPath = $@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\History.json";
+		public static History Load()
 		{
-			Directory.CreateDirectory($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\");
+			if (!Directory.Exists($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\"))
+			{
+				Directory.CreateDirectory($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\");
+			}
+
+			if (!File.Exists(HistoryPath))
+			{
+				Global.History = new();
+				string json = JsonSerializer.Serialize(Global.History, new JsonSerializerOptions { WriteIndented = true });
+				File.WriteAllText(HistoryPath, json);
+				return new();
+			}
+
+			// If History exists
+			// Deserialize the file to History (using JSON)
+			return JsonSerializer.Deserialize<History>(File.ReadAllText(HistoryPath));
 		}
 
-		if (!File.Exists(Global.SynethiaPath)) // If no Synethia config exists
+		public static void Save(History history)
 		{
-			Global.SynethiaConfig = new();
-			string json = JsonSerializer.Serialize(Global.SynethiaConfig, new JsonSerializerOptions { WriteIndented = true });
-			File.WriteAllText(Global.SynethiaPath, json);
-			return new();
+			string json = JsonSerializer.Serialize(history, new JsonSerializerOptions { WriteIndented = true });
+			File.WriteAllText(HistoryPath, json);
 		}
-
-		// If Synethia config exists
-		// Deserialize the file to Synethia config (using JSON)
-		return JsonSerializer.Deserialize<SynethiaConfig>(File.ReadAllText(Global.SynethiaPath));
-	}
-
-	public static void Save(SynethiaConfig synethiaConfig)
-	{
-		string json = JsonSerializer.Serialize(synethiaConfig, new JsonSerializerOptions { WriteIndented = true });
-		File.WriteAllText(Global.SynethiaPath, json);
 	}
 }

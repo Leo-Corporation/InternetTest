@@ -49,13 +49,12 @@ public partial class HistoryPage : Page
 		InitializeComponent();
 		Loaded += (o, e) => InitUI();
 		
+		CheckButton(StatusBtn); // Check the default button
 		InitUI();
 	}
 
 	private void InitUI()
 	{
-		CheckButton(StatusBtn); // Check the default button
-		
 		// Clear
 		StatusHistory.Children.Clear();
 		DownDetectorHistory.Children.Clear();
