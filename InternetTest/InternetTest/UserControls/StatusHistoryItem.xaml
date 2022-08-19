@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="InternetTest.UserControls.StatusHistoryItem"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:InternetTest.UserControls"
+			 xmlns:lang="clr-namespace:InternetTest.Properties"
+			 mc:Ignorable="d" FontFamily="../Fonts/#Hauora" Foreground="{Binding Source={StaticResource Foreground1}}"
+			 Height="55" d:DesignWidth="800">
+	<Border Margin="10" Background="{Binding Source={StaticResource CardBackground}}" CornerRadius="5">
+        <Border.Effect>
+            <DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
+        </Border.Effect>
+        <Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+            <TextBlock d:Text="&#xF299;" FontSize="14" x:Name="IconTxt" FontFamily="../Fonts/#FluentSystemIcons-Filled" VerticalAlignment="Center" Margin="10,0,10,0"/>
+			<TextBlock x:Name="ContentTxt" Grid.Column="1" FontWeight="Bold" VerticalAlignment="Center"/>
+			<Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="DeleteBtn" Content="&#xF34D;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="DeleteBtn_Click" Grid.Column="2"/>
+		</Grid>
+	</Border>
+</UserControl>
