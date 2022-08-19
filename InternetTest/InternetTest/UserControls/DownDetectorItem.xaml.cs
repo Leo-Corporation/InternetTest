@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Classes;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace InternetTest.UserControls;
 /// <summary>
@@ -66,8 +67,26 @@ public partial class DownDetectorItem : UserControl
 		}
 
 		WebsiteTxt.Text = URL; // Set text
+
+		if (DownDetectorTestResult.Code == 0) return;
+		UpdateIcon();
+		
 	}
 
+	internal void UpdateIcon()
+	{
+		if (DownDetectorTestResult.Code >= 400) // If the website is down
+		{
+			IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red")); // Set color to red
+			IconTxt.Text = "\uF36E"; // Add (down) to the text
+		}
+		else // If the website is up
+		{
+			IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green")); // Set color to green
+			IconTxt.Text = "\uF299"; // Add (up) to the text
+		}
+	}
+	
 	private async void TestSiteBtn_Click(object sender, RoutedEventArgs e)
 	{
 		if (!WebsiteTxt.Text.StartsWith("http"))
@@ -76,6 +95,8 @@ public partial class DownDetectorItem : UserControl
 		}
 		DownDetectorTestResult = await Global.DownDetectorPage.LaunchTest(WebsiteTxt.Text); // Launch the test
 		URL = WebsiteTxt.Text;
+
+		UpdateIcon(); // Update the icon
 	}
 
 	private void InfoBtn_Click(object sender, RoutedEventArgs e)

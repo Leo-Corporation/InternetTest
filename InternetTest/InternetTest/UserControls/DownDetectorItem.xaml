@@ -7,12 +7,14 @@
 			 mc:Ignorable="d" FontFamily="../Fonts/#Hauora"
 			 Height="Auto" Margin="0" Width="300" Foreground="{Binding Source={StaticResource Foreground1}}">
 	<Grid d:Background="#fff">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition Width="Auto"/>
-		</Grid.ColumnDefinitions>
-		<TextBox Background="Transparent" x:Name="WebsiteTxt" Padding="2" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" d:Text="https://bing.com" VerticalAlignment="Center"/>
-		<StackPanel Grid.Column="1" Orientation="Horizontal">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="5,2,0,2" Text="&#xF4AB;" x:Name="IconTxt" FontFamily="../Fonts/#FluentSystemIcons-Filled" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Gray}}"/>
+        <TextBox Background="Transparent" x:Name="WebsiteTxt" Padding="2" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" d:Text="https://bing.com" VerticalAlignment="Center" Grid.Column="1"/>
+		<StackPanel Grid.Column="2" Orientation="Horizontal">
             <Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="TestSiteBtn" Content="&#xF606;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="TestSiteBtn_Click"/>
 			<Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="InfoBtn" Content="&#xF4A4;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="InfoBtn_Click"/>
 			<Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="DeleteBtn" Content="&#xF34D;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="DeleteBtn_Click"/>
