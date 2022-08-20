@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.Enums;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
@@ -134,10 +135,20 @@ public partial class MyIpPage : Page
 
 	private void MapBtn_Click(object sender, RoutedEventArgs e)
 	{
-		//TODO: Add different map providers
 		var lat = LatTxt.Text;
 		var lon = LongitudeTxt.Text;
-		Process.Start("explorer.exe", $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\"");
+
+		_ = double.TryParse(lat.Replace(".", ","), out double dLat);
+		_ = double.TryParse(lon.Replace(".", ","), out double dLon);
+		Process.Start("explorer.exe", Global.Settings.MapProvider switch
+		{
+			MapProvider.OpenStreetMap => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\"",
+			MapProvider.Google=> $"\"https://www.google.com/maps/place/{Global.GetGoogleMapsPoint(dLat, dLon)}\"",
+			MapProvider.Microsoft => $"\"https://www.bing.com/maps?q={lat} {lon}\"",
+			MapProvider.Here => $"\"https://wego.here.com/directions/mix/{lat},{lon}/?map={lat},{lon},12\"",
+			MapProvider.Yandex => $"\"https://yandex.com/maps/?ll={lon}%2C{lat}&z=12\"",
+			_ => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\""
+		});
 	}
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)
