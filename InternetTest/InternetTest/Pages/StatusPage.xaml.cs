@@ -98,7 +98,7 @@ public partial class StatusPage : Page
 		TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.Status}"; // Set the title
 	}
 
-	private async void LaunchTest(string? customSite = null)
+	private async void LaunchTest(string customSite)
 	{
 		try
 		{
@@ -114,8 +114,8 @@ public partial class StatusPage : Page
 			dispatcherTimer.Tick += (o, e) => time++;
 			dispatcherTimer.Start();
 
-			int code = await NetworkConnection.GetWebPageStatusCodeAsync(customSite ?? "https://bing.com");
-			string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(customSite ?? "https://bing.com");
+			int code = await NetworkConnection.GetWebPageStatusCodeAsync(customSite);
+			string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(customSite);
 
 			dispatcherTimer.Stop();
 
@@ -156,7 +156,7 @@ public partial class StatusPage : Page
 
 	internal void TestBtn_Click(object sender, RoutedEventArgs e)
 	{
-		LaunchTest();
+		LaunchTest(Global.Settings.TestSite ?? "https://leocorporation.dev");
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
 		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.Test).UsageCount++;
 	}

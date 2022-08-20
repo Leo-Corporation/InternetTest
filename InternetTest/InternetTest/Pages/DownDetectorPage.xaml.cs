@@ -57,7 +57,7 @@ namespace InternetTest.Pages
 		{
 			TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.DownDetector}"; // Set the title of the page
 			TimeIntervalTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, 10); // Set the time interval text
-			WebsiteTxt.Text = "https://leocorporation.dev";
+			WebsiteTxt.Text = Global.Settings.TestSite ?? "https://leocorporation.dev";
 		}
 
 		private void InjectSynethiaCode()

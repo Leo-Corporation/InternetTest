@@ -69,7 +69,9 @@ public partial class ActionCard : UserControl
 				OnCardClick?.Invoke(this, new(AppPages.LocateIP));
 				break;
 			case AppActions.Ping:
-				Global.PingPage.IpTxt.Text = Global.PingPage.IpTxt.Text == "" ? "https://leocorporation.dev" : Global.PingPage.IpTxt.Text;
+				Global.PingPage.IpTxt.Text = Global.PingPage.IpTxt.Text == ""
+					? Global.Settings.TestSite ?? "https://leocorporation.dev" 
+					: Global.PingPage.IpTxt.Text;
 				Global.PingPage.PingBtn_Click(this, null);
 				OnCardClick?.Invoke(this, new(AppPages.Ping));
 				break;

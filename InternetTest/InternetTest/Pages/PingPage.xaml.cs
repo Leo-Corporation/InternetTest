@@ -46,6 +46,7 @@ public partial class PingPage : Page
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.Ping}";
+		IpTxt.Text = Global.Settings.TestSite ?? "https://leocorporation.dev";
 	}
 
 	private void InjectSynethiaCode()
