@@ -43,6 +43,7 @@ public static class Global
 
 	public static HomePage HomePage { get; set; } = new();
 	public static HistoryPage HistoryPage { get; set; } = new();
+	public static SettingsPage SettingsPage { get; set; } = new();
 	public static StatusPage StatusPage { get; set; } = new();
 	public static DownDetectorPage DownDetectorPage { get; set; } = new();
 	public static MyIpPage MyIpPage { get; set; } = new();

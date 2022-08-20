@@ -360,8 +360,11 @@ public partial class MainWindow : Window
 
 	private void SettingsPageBtn_Click(object sender, RoutedEventArgs e)
 	{
+		LeavePage();
 		UnCheckAllButton(); // Reset all states
 		CheckButton(SettingsPageBtn, true);
+
+		PageDisplayer.Content = Global.SettingsPage;
 	}
 
 	private void LeavePage()

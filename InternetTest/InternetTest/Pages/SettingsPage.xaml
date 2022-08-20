@@ -1,0 +1,86 @@
+﻿<Page x:Class="InternetTest.Pages.SettingsPage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:InternetTest.Pages"
+	  xmlns:lang="clr-namespace:InternetTest.Properties" FontFamily="../Fonts/#Hauora"
+	  mc:Ignorable="d" Foreground="{Binding Source={StaticResource Foreground1}}"
+	  d:DesignHeight="450" d:DesignWidth="800" d:Background="White"
+	  Title="SettingsPage">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+
+		<StackPanel Margin="10" Orientation="Horizontal" Grid.ColumnSpan="3">
+			<TextBlock Text="&#xF6AA;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
+			<TextBlock Text="{x:Static lang:Resources.Settings}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
+		</StackPanel>
+
+		<Border Grid.Row="1" Margin="5" Padding="20" CornerRadius="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Center">
+			<Border.Effect>
+				<DropShadowEffect Color="{Binding Source={StaticResource LightAccentColor}}" Opacity="0.5" ShadowDepth="0" BlurRadius="15"/>
+			</Border.Effect>
+			<StackPanel>
+				<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+					<TextBlock Text="{x:Static lang:Resources.InternetTest}" FontSize="32" FontWeight="Bold" Foreground="{Binding Source={StaticResource AccentColor}}"/>
+					<TextBlock Text="{x:Static lang:Resources.Pro}" FontSize="32" FontWeight="Bold" Margin="5,0,0,0"/>
+				</StackPanel>
+				<TextBlock d:Text="7.0.0.2208" FontSize="11" x:Name="VersionTxt" HorizontalAlignment="Center"/>
+				<Button x:Name="CheckUpdateBtn" Click="CheckUpdateBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.CheckUpdate}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}" HorizontalAlignment="Center"/>
+
+			</StackPanel>
+		</Border>
+
+		<StackPanel Grid.Row="2">
+			<Expander Style="{DynamicResource ExpanderStyle1}" Margin="10,10,10,0" Background="{Binding Source={StaticResource CardBackground}}" Foreground="{Binding Source={StaticResource Foreground1}}">
+				<Expander.Header>
+					<StackPanel Margin="10 15" Orientation="Horizontal">
+						<TextBlock Text="&#xF33C;" FontSize="22" FontFamily="..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+						<StackPanel>
+							<TextBlock Text="{x:Static lang:Resources.Theme}" FontSize="18" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="10,0,0,0"/>
+							<TextBlock Text="{x:Static lang:Resources.ChangeTheme}" FontSize="13" VerticalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap"/>
+						</StackPanel>
+					</StackPanel>
+				</Expander.Header>
+				<StackPanel Orientation="Horizontal">
+					<Border x:Name="LightBorder" MouseLeftButtonUp="LightBorder_MouseLeftButtonUp" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" CornerRadius="5" BorderThickness="2" BorderBrush="{x:Null}" Margin="6">
+						<StackPanel Orientation="Horizontal">
+							<Rectangle RadiusX="4" RadiusY="4" Height="50" Width="50">
+								<Rectangle.Fill>
+									<ImageBrush ImageSource="../Images/LightTheme.png"/>
+								</Rectangle.Fill>
+							</Rectangle>
+							<TextBlock Text="{x:Static lang:Resources.Light}" Padding="0 15" FontWeight="Bold" VerticalAlignment="Center" Margin="10 0"/>
+						</StackPanel>
+					</Border>
+					<Border MouseLeftButtonUp="DarkBorder_MouseLeftButtonUp" x:Name="DarkBorder" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" CornerRadius="5" BorderThickness="2" BorderBrush="{x:Null}" Margin="6">
+						<StackPanel Orientation="Horizontal">
+							<Rectangle RadiusX="4" RadiusY="4" Height="50" Width="50">
+								<Rectangle.Fill>
+									<ImageBrush ImageSource="../Images/DarkTheme.png"/>
+								</Rectangle.Fill>
+							</Rectangle>
+							<TextBlock Text="{x:Static lang:Resources.Dark}" Padding="0 15" FontWeight="Bold" VerticalAlignment="Center" Margin="10 0"/>
+						</StackPanel>
+					</Border>
+					<Border MouseLeftButtonUp="SystemBorder_MouseLeftButtonUp" x:Name="SystemBorder" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Cursor="Hand" CornerRadius="5" BorderThickness="2" BorderBrush="{x:Null}" Margin="6">
+						<StackPanel Orientation="Horizontal">
+							<Rectangle RadiusX="4" RadiusY="4" Height="50" Width="50">
+								<Rectangle.Fill>
+									<ImageBrush ImageSource="../Images/SystemTheme.png"/>
+								</Rectangle.Fill>
+							</Rectangle>
+							<TextBlock Text="{x:Static lang:Resources.Default}" Padding="0 15" FontWeight="Bold" VerticalAlignment="Center" Margin="10 0"/>
+						</StackPanel>
+					</Border>
+				</StackPanel>
+			</Expander>
+		</StackPanel>
+	</Grid>
+</Page>
