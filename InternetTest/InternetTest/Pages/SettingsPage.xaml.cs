@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using LeoCorpLibrary;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -50,12 +51,24 @@ public partial class SettingsPage : Page
 	public SettingsPage()
 	{
 		InitializeComponent();
+		notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(AppDomain.CurrentDomain.BaseDirectory + @"\InternetTest.exe");
+		notifyIcon.BalloonTipClicked += async (o, e) =>
+		{
+			string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink); // Get last version
+			if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+			{
+				Env.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+				Environment.Exit(0); // Close
+			}
+		};
 		InitUI();
 	}
 
-	private void InitUI()
+	readonly System.Windows.Forms.NotifyIcon notifyIcon = new();
+	private async void InitUI()
 	{
-		VersionTxt.Text = Global.Version;
+		// About section
+		VersionTxt.Text = Global.Version; // Update the current version label
 
 		// Select the default theme border
 		ThemeSelectedBorder = Global.Settings.Theme switch
@@ -91,11 +104,36 @@ public partial class SettingsPage : Page
 
 		// Data section
 		UseSynethiaChk.IsChecked = Global.Settings.UseSynethia;
+
+		// Check for updates
+		if (!Global.Settings.CheckUpdateOnStart) return;
+		if (!await NetworkConnection.IsAvailableAsync()) return;
+		if (!Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink))) return;
+
+		// If updates are available
+		// Update the UI
+		CheckUpdateBtn.Content = Properties.Resources.Install;
+
+		// Show notification
+		if (!Global.Settings.ShowNotficationWhenUpdateAvailable) return;
+		notifyIcon.Visible = true; // Show
+		notifyIcon.ShowBalloonTip(5000, Properties.Resources.InternetTest, Properties.Resources.AvailableUpdates, System.Windows.Forms.ToolTipIcon.Info);
+		notifyIcon.Visible = false; // Hide
 	}
 
-	private void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
+	private async void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
 	{
-		//TODO: Update system
+		string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink);
+		if (Update.IsAvailable(Global.Version, lastVersion))
+		{
+			if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+			{
+				return;
+			}
+
+			// If the user wants to proceed.
+			//TODO
+		}
 	}
 
 	Border ThemeSelectedBorder;
