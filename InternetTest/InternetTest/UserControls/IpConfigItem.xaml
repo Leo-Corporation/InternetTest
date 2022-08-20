@@ -24,8 +24,8 @@
 				</Grid.ColumnDefinitions>
 				<TextBlock x:Name="InterfaceNameTxt" d:Text="WiFi" FontSize="16" FontWeight="ExtraBold"/>
 				<StackPanel Orientation="Horizontal" Grid.Column="1">
-					<Button Click="CopyBtn_Click" Content="&#xF32C;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="CopyBtn" Background="Transparent" Style="{DynamicResource DefaultButton}" Margin="0,0,5,0"/>
-					<Button Click="ExpanderBtn_Click" Content="&#xF2A4;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="ExpanderBtn" Background="Transparent" Style="{DynamicResource DefaultButton}"/>
+					<Button Click="CopyBtn_Click" Content="&#xF32C;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="CopyBtn" Background="Transparent" Style="{DynamicResource DefaultButton}" Margin="0,0,5,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+					<Button Click="ExpanderBtn_Click" Content="&#xF2A4;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="ExpanderBtn" Background="Transparent" Style="{DynamicResource DefaultButton}" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 				</StackPanel>
 			</Grid>
 			<Grid Grid.Row="1" x:Name="CollapseGrid" Visibility="Collapsed">
