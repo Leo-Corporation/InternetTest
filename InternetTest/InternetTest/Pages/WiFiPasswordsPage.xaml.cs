@@ -25,6 +25,7 @@ using InternetTest.Classes;
 using InternetTest.UserControls;
 using LeoCorpLibrary;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -174,14 +175,13 @@ public partial class WiFiPasswordsPage : Page
 
 	private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
 	{
-		PlaceholderGrid.Visibility = Visibility.Visible;
-		Placeholder.Visibility = Visibility.Visible;
+		PlaceholderGrid.Visibility = Visibility.Collapsed;
+		Placeholder.Visibility = Visibility.Collapsed;
 		if (!(WiFiItemDisplayer.Children.Count > 0)) return;
 
+		List<bool> vis = Enumerable.Empty<bool>().ToList();
 		for (int i = 0; i < WiFiItemDisplayer.Children.Count; i++)
 		{
-			if (WiFiItemDisplayer.Children[i] is Placeholder) continue;
-
 			if (SearchTxt.Text == "")
 			{
 				((WiFiInfoItem)WiFiItemDisplayer.Children[i]).Visibility = Visibility.Visible;
@@ -192,17 +192,28 @@ public partial class WiFiPasswordsPage : Page
 			{
 				bool b = wiFiInfoItem.ToString().ToLower().Contains(SearchTxt.Text.ToLower());
 				wiFiInfoItem.Visibility = !b ? Visibility.Collapsed : Visibility.Visible;
-				if (wiFiInfoItem.Visibility == Visibility.Visible)
-				{
-					PlaceholderGrid.Visibility = Visibility.Collapsed;
-					Placeholder.Visibility = Visibility.Collapsed;
-				}
+				vis.Add(wiFiInfoItem.Visibility == Visibility.Visible);
 			}
 		}
+
+		if (vis.Count == 0 || vis is null) return;
+		if (vis.Contains(true)) return;
+		PlaceholderGrid.Visibility = Visibility.Visible;
+		Placeholder.Visibility = Visibility.Visible;
 	}
 
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)
 	{
 		SearchTxt.Text = "";
+		if (WiFiItemDisplayer.Children.Count > 0)
+		{
+			Placeholder.Visibility = Visibility.Collapsed;
+			PlaceholderGrid.Visibility = Visibility.Collapsed;
+		}
+		else
+		{
+			Placeholder.Visibility = Visibility.Visible;
+			PlaceholderGrid.Visibility = Visibility.Visible;
+		}
 	}
 }
