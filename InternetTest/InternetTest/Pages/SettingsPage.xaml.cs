@@ -46,6 +46,12 @@ public partial class SettingsPage : Page
 	public SettingsPage()
 	{
 		InitializeComponent();
+		InitUI();
+	}
+
+	private void InitUI()
+	{
+		VersionTxt.Text = Global.Version;
 	}
 
 	private void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
