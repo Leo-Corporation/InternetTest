@@ -700,6 +700,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The map provider used to show the location of an IP address..
+        /// </summary>
+        public static string MapProviderDescription {
+            get {
+                return ResourceManager.GetString("MapProviderDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Max duration.
         /// </summary>
         public static string MaxTime {

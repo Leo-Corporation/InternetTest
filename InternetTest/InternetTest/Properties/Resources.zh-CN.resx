@@ -483,4 +483,7 @@
   <data name="ChangeLanguage" xml:space="preserve">
     <value>更改 InternetTest 的语言。</value>
   </data>
+  <data name="MapProviderDescription" xml:space="preserve">
+    <value>地图提供者用于显示 IP 本地化。</value>
+  </data>
 </root>

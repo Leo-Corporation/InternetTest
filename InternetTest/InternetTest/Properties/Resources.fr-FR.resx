@@ -483,4 +483,7 @@
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Changer la langue d'InternetTest.</value>
   </data>
+  <data name="MapProviderDescription" xml:space="preserve">
+    <value>Le fournisseur de carte utilisé pour montrer la position d'une adresse IP.</value>
+  </data>
 </root>

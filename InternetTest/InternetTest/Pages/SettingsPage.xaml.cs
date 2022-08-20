@@ -108,4 +108,9 @@ public partial class SettingsPage : Page
 	{
 
 	}
+
+	private void MapProviderComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+
+	}
 }
