@@ -123,4 +123,24 @@ public partial class SettingsPage : Page
 	{
 
 	}
+
+	private void UpdateOnStartChk_Checked(object sender, RoutedEventArgs e)
+	{
+
+	}
+
+	private void HttpsRadio_Checked(object sender, RoutedEventArgs e)
+	{
+
+	}
+
+	private void HttpRadio_Checked(object sender, RoutedEventArgs e)
+	{
+
+	}
+
+	private void SiteApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+
+	}
 }

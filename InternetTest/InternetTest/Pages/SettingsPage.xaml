@@ -55,7 +55,7 @@
 
 					<StackPanel Orientation="Horizontal" Grid.Column="1">
 						<ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center"/>
-						<Button x:Name="LangApplyBtn" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource PrimaryButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="LangApplyBtn_Click" Visibility="Hidden">
+						<Button x:Name="LangApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource PrimaryButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="LangApplyBtn_Click" Visibility="Hidden">
 							<TextBlock Text="&#xF680;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" VerticalAlignment="Center"/>
 
 							<Button.ToolTip>
@@ -160,6 +160,41 @@
 					<CheckBox Content="{x:Static lang:Resources.CheckUpdatesOnStart}" x:Name="UpdateOnStartChk" Style="{DynamicResource CheckBoxStyle1}" Checked="UpdateOnStartChk_Checked" Unchecked="UpdateOnStartChk_Checked" VerticalContentAlignment="Center" BorderThickness="2" Margin="10,0,0,5"/>
 				</StackPanel>
 			</Expander>
+			<Expander Style="{DynamicResource ExpanderStyle1}" Margin="10,10,10,0" Background="{Binding Source={StaticResource CardBackground}}" Foreground="{Binding Source={StaticResource Foreground1}}">
+				<Expander.Header>
+					<StackPanel Margin="10 15" Orientation="Horizontal">
+						<TextBlock Text="&#xF8AD;" FontSize="22" FontFamily="..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+						<StackPanel>
+							<TextBlock Text="{x:Static lang:Resources.WebSettings}" FontSize="18" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="10,0,0,0"/>
+							<TextBlock Text="{x:Static lang:Resources.WebSettingsDescription}" FontSize="13" VerticalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap"/>
+						</StackPanel>
+					</StackPanel>
+				</Expander.Header>
+				<StackPanel Margin="10,0,0,0">
+					<TextBlock Text="{x:Static lang:Resources.DefaultProtocol}"/>
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+						<RadioButton x:Name="HttpsRadio" GroupName="Protocol" Content="{x:Static lang:Resources.HTTPS}" Checked="HttpsRadio_Checked" Unchecked="HttpsRadio_Checked" Margin="0,0,10,0" VerticalAlignment="Center" Style="{DynamicResource RadioButtonStyle1}" BorderBrush="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold"/>
+						<RadioButton x:Name="HttpRadio" GroupName="Protocol" Content="{x:Static lang:Resources.HTTP}" Checked="HttpRadio_Checked" Unchecked="HttpRadio_Checked" VerticalAlignment="Center" Style="{DynamicResource RadioButtonStyle1}" BorderBrush="{Binding Source={StaticResource AccentColor}}" FontWeight="Bold"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Text="{x:Static lang:Resources.TestSite}" VerticalAlignment="Center"/>
+						<Border Background="{Binding Source={StaticResource CardBackground}}" CornerRadius="5" Padding="3" Margin="10,3,10,3">
+							<Border.Effect>
+								<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
+							</Border.Effect>
+							<TextBox x:Name="SiteTxt" Background="Transparent" BorderThickness="0" Padding="3" MinWidth="150"/>
+						</Border>
+						<Button x:Name="SiteApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource PrimaryButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="SiteApplyBtn_Click" Visibility="Visible">
+							<TextBlock Text="&#xF680;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" VerticalAlignment="Center"/>
+
+							<Button.ToolTip>
+								<ToolTip Content="{x:Static lang:Resources.Apply}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
+							</Button.ToolTip>
+						</Button>
+					</StackPanel>
+				</StackPanel>
+			</Expander>
+
 
 		</StackPanel>
 	</Grid>

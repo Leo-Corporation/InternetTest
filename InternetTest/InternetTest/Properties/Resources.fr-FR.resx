@@ -507,4 +507,22 @@
   <data name="OnStartDescription" xml:space="preserve">
     <value>Paramètres qui s'appliquent lors du démarrage.</value>
   </data>
+  <data name="WebSettingsDescription" xml:space="preserve">
+    <value>Paramètres liés au Web.</value>
+  </data>
+  <data name="WebSettings" xml:space="preserve">
+    <value>Paramètres Web</value>
+  </data>
+  <data name="TestSite" xml:space="preserve">
+    <value>Site de test</value>
+  </data>
+  <data name="DefaultProtocol" xml:space="preserve">
+    <value>Protocole par défaut</value>
+  </data>
+  <data name="HTTP" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="HTTPS" xml:space="preserve">
+    <value>HTTPS</value>
+  </data>
 </root>

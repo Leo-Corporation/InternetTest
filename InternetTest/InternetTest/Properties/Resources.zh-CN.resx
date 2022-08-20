@@ -507,4 +507,22 @@
   <data name="OnStartDescription" xml:space="preserve">
     <value>Settings that applies on start.</value>
   </data>
+  <data name="WebSettingsDescription" xml:space="preserve">
+    <value>Web related settings.</value>
+  </data>
+  <data name="WebSettings" xml:space="preserve">
+    <value>Web settings</value>
+  </data>
+  <data name="TestSite" xml:space="preserve">
+    <value>测试网站</value>
+  </data>
+  <data name="DefaultProtocol" xml:space="preserve">
+    <value>默认协议</value>
+  </data>
+  <data name="HTTP" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="HTTPS" xml:space="preserve">
+    <value>HTTPS</value>
+  </data>
 </root>

@@ -241,6 +241,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default protocol.
+        /// </summary>
+        public static string DefaultProtocol {
+            get {
+                return ResourceManager.GetString("DefaultProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details {
@@ -462,6 +471,24 @@ namespace InternetTest.Properties {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HTTP.
+        /// </summary>
+        public static string HTTP {
+            get {
+                return ResourceManager.GetString("HTTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HTTPS.
+        /// </summary>
+        public static string HTTPS {
+            get {
+                return ResourceManager.GetString("HTTPS", resourceCulture);
             }
         }
         
@@ -1107,6 +1134,15 @@ namespace InternetTest.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Test website.
         /// </summary>
+        public static string TestSite {
+            get {
+                return ResourceManager.GetString("TestSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test website.
+        /// </summary>
         public static string TestWebsite {
             get {
                 return ResourceManager.GetString("TestWebsite", resourceCulture);
@@ -1182,6 +1218,24 @@ namespace InternetTest.Properties {
         public static string Version {
             get {
                 return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web settings.
+        /// </summary>
+        public static string WebSettings {
+            get {
+                return ResourceManager.GetString("WebSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web related settings..
+        /// </summary>
+        public static string WebSettingsDescription {
+            get {
+                return ResourceManager.GetString("WebSettingsDescription", resourceCulture);
             }
         }
         
