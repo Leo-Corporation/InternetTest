@@ -151,6 +151,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check for updates on start.
+        /// </summary>
+        public static string CheckUpdatesOnStart {
+            get {
+                return ResourceManager.GetString("CheckUpdatesOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City.
         /// </summary>
         public static string City {
@@ -817,6 +826,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to On start.
+        /// </summary>
+        public static string OnStart {
+            get {
+                return ResourceManager.GetString("OnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings that applies on start..
+        /// </summary>
+        public static string OnStartDescription {
+            get {
+                return ResourceManager.GetString("OnStartDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open in browser.
         /// </summary>
         public static string OpenBrowser {
@@ -993,6 +1020,15 @@ namespace InternetTest.Properties {
         public static string ShowOnMap {
             get {
                 return ResourceManager.GetString("ShowOnMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default page on start.
+        /// </summary>
+        public static string StartupPage {
+            get {
+                return ResourceManager.GetString("StartupPage", resourceCulture);
             }
         }
         

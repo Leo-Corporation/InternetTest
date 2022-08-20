@@ -495,4 +495,16 @@
   <data name="NotificationsDescription" xml:space="preserve">
     <value>通知设置。</value>
   </data>
+  <data name="CheckUpdatesOnStart" xml:space="preserve">
+    <value>启动时检查更新</value>
+  </data>
+  <data name="StartupPage" xml:space="preserve">
+    <value>启动页面</value>
+  </data>
+  <data name="OnStart" xml:space="preserve">
+    <value>启动时</value>
+  </data>
+  <data name="OnStartDescription" xml:space="preserve">
+    <value>Settings that applies on start.</value>
+  </data>
 </root>

@@ -495,4 +495,16 @@
   <data name="NotificationsDescription" xml:space="preserve">
     <value>Paramètres des notifications.</value>
   </data>
+  <data name="CheckUpdatesOnStart" xml:space="preserve">
+    <value>Rechercher des mises à jour lors du démarrage</value>
+  </data>
+  <data name="StartupPage" xml:space="preserve">
+    <value>Page par défaut lors du démarrage</value>
+  </data>
+  <data name="OnStart" xml:space="preserve">
+    <value>Lors du démarrage</value>
+  </data>
+  <data name="OnStartDescription" xml:space="preserve">
+    <value>Paramètres qui s'appliquent lors du démarrage.</value>
+  </data>
 </root>

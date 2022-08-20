@@ -118,4 +118,9 @@ public partial class SettingsPage : Page
 	{
 
 	}
+
+	private void PageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+
+	}
 }
