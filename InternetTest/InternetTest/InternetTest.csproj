@@ -21,7 +21,10 @@
 		<None Remove="Fonts\Hauora-ExtraBold.ttf" />
 		<None Remove="Fonts\Hauora-Regular.ttf" />
 		<None Remove="Images\DarkBackground.png" />
+		<None Remove="Images\DarkTheme.png" />
 		<None Remove="Images\LightBackground.png" />
+		<None Remove="Images\LightTheme.png" />
+		<None Remove="Images\SystemTheme.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -48,7 +51,16 @@
 		<Resource Include="Images\DarkBackground.png">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Resource>
+		<Resource Include="Images\DarkTheme.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
 		<Resource Include="Images\LightBackground.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\LightTheme.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\SystemTheme.png">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Resource>
 	</ItemGroup>
