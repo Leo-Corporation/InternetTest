@@ -25,6 +25,8 @@ using InternetTest.Classes;
 using InternetTest.Enums;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -119,6 +121,8 @@ public partial class SettingsPage : Page
 		ResetBorders();
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		Global.Settings.Theme = Themes.Light;
+		SettingsManager.Save();
 	}
 
 	private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -126,6 +130,8 @@ public partial class SettingsPage : Page
 		ResetBorders();
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		Global.Settings.Theme = Themes.Dark;
+		SettingsManager.Save();
 	}
 
 	private void SystemBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -133,51 +139,73 @@ public partial class SettingsPage : Page
 		ResetBorders();
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		Global.Settings.Theme = Themes.System;
+		SettingsManager.Save();
 	}
 
 	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 	{
-
+		LangApplyBtn.Visibility = Visibility.Visible; // Show apply button
 	}
 
 	private void LangApplyBtn_Click(object sender, RoutedEventArgs e)
 	{
+		Global.Settings.Language = (Languages)LangComboBox.SelectedIndex;
+		SettingsManager.Save();
+		LangApplyBtn.Visibility = Visibility.Hidden; // Hide apply button
 
+		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+		{
+			return;
+		}
+
+		SynethiaManager.Save(Global.SynethiaConfig);
+		HistoryManager.Save(Global.History);
+
+		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
+		Application.Current.Shutdown();
 	}
-
+	
 	private void MapProviderComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 	{
-
+		Global.Settings.MapProvider = (MapProvider)MapProviderComboBox.SelectedIndex;
+		SettingsManager.Save();
 	}
 
 	private void UpdateNotifChk_Checked(object sender, RoutedEventArgs e)
 	{
-
+		Global.Settings.ShowNotficationWhenUpdateAvailable = UpdateNotifChk.IsChecked ?? true;
+		SettingsManager.Save();
 	}
 
 	private void PageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 	{
-
+		Global.Settings.DefaultPage = (AppPages)PageComboBox.SelectedIndex;
+		SettingsManager.Save();
 	}
 
 	private void UpdateOnStartChk_Checked(object sender, RoutedEventArgs e)
 	{
-
+		Global.Settings.CheckUpdateOnStart = UpdateOnStartChk.IsChecked ?? true;
+		SettingsManager.Save();
 	}
 
 	private void HttpsRadio_Checked(object sender, RoutedEventArgs e)
 	{
-
+		Global.Settings.UseHttps = HttpsRadio.IsChecked ?? true;
+		SettingsManager.Save();
 	}
 
 	private void HttpRadio_Checked(object sender, RoutedEventArgs e)
 	{
-
+		Global.Settings.UseHttps = !HttpRadio.IsChecked ?? false;
+		SettingsManager.Save();
 	}
 
 	private void SiteApplyBtn_Click(object sender, RoutedEventArgs e)
 	{
-
+		Global.Settings.TestSite = SiteTxt.Text;
+		SettingsManager.Save();
 	}
 
 	private void ImportBtn_Click(object sender, RoutedEventArgs e)
@@ -192,11 +220,28 @@ public partial class SettingsPage : Page
 
 	private void ResetSettingsLink_Click(object sender, RoutedEventArgs e)
 	{
+		if (MessageBox.Show(Properties.Resources.ResetSettingsConfirmation, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+		{
+			return;
+		}
 
+		Global.Settings = new() { IsFirstRun = false };
+		SettingsManager.Save();
+
+		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+		{
+			return;
+		}
+
+		SynethiaManager.Save(Global.SynethiaConfig);
+		HistoryManager.Save(Global.History);
+		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
+		Application.Current.Shutdown();
 	}
 
 	private void UseSynethiaChk_Checked(object sender, RoutedEventArgs e)
 	{
-
+		Global.Settings.UseSynethia = UseSynethiaChk.IsChecked ?? true;
+		SettingsManager.Save();
 	}
 }

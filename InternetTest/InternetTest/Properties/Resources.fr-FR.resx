@@ -552,4 +552,7 @@
   <data name="ResetSynethia" xml:space="preserve">
     <value>Réinitialiser les données Synethia</value>
   </data>
+  <data name="ResetSettingsConfirmation" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir réinitialiser tous les paramètres ?</value>
+  </data>
 </root>

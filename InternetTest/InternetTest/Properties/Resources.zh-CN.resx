@@ -552,4 +552,7 @@
   <data name="ResetSynethia" xml:space="preserve">
     <value>Reset Synethia data</value>
   </data>
+  <data name="ResetSettingsConfirmation" xml:space="preserve">
+    <value>要安装更新，需要重新启动 Internet 测试。 你要继续吗？</value>
+  </data>
 </root>

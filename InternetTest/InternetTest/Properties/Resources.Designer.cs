@@ -1370,5 +1370,13 @@ namespace InternetTest.Properties {
                 return ResourceManager.GetString("SynethiaEnable", resourceCulture);
             }
         }
+
+        public static string ResetSettingsConfirmation
+        {
+            get
+            {
+                return ResourceManager.GetString("ResetSettingsConfirmation", resourceCulture);
+            }
+        }
     }
 }
