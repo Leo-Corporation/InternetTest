@@ -73,8 +73,63 @@ public partial class MainWindow : Window
 		HelloTxt.Text = Global.GetHiSentence; // Show greeting message to the user
 
 		// Show the appropriate page
-		PageDisplayer.Content = Global.HomePage; // Show the Home page
-		CheckButton(HomePageBtn, true);
+		switch (Global.Settings.DefaultPage)
+		{
+			case AppPages.Home:
+				PageDisplayer.Content = Global.HomePage;
+				UnCheckAllButton();
+				CheckButton(HomePageBtn, true);
+				break;
+			case AppPages.History:
+				PageDisplayer.Content = Global.HistoryPage;
+				UnCheckAllButton();
+				CheckButton(HistoryPageBtn, true);
+				break;
+			case AppPages.Status:
+				PageDisplayer.Content = Global.StatusPage;
+				Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(StatusPageBtn);
+				break;
+			case AppPages.DownDetector:
+				PageDisplayer.Content = Global.DownDetectorPage;
+				Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(DownDetectorPageBtn);
+				break;
+			case AppPages.MyIP:
+				PageDisplayer.Content = Global.MyIpPage;
+				Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(MyIPPageBtn);
+				break;
+			case AppPages.LocateIP:
+				PageDisplayer.Content = Global.LocateIpPage;
+				Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(LocateIPPageBtn);
+				break;
+			case AppPages.Ping:
+				PageDisplayer.Content = Global.PingPage;
+				Global.SynethiaConfig.PingPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(PingPageBtn);
+				break;
+			case AppPages.IPConfig:
+				PageDisplayer.Content = Global.IpConfigPage;
+				Global.SynethiaConfig.IPConfigPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(IPConfigPageBtn);
+				break;
+			case AppPages.WiFiPasswords:
+				PageDisplayer.Content = Global.WiFiPasswordsPage;
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime = Env.UnixTime;
+				UnCheckAllButton();
+				CheckButton(WifiPasswordsPageBtn);
+				break;
+			default:
+				break;
+		}
 
 		PageCard.OnCardClick += PageCard_OnCardClick;
 		ActionCard.OnCardClick += PageCard_OnCardClick;
