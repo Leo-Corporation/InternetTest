@@ -30,9 +30,9 @@ using System.Threading.Tasks;
 namespace InternetTest.Enums;
 public enum MapProvider
 {
-	Google,
-	Microsoft,
-	Here,
-	OpenStreetMap,
-	Yandex
+	Google = 2,
+	Microsoft = 1,
+	Here = 3,
+	OpenStreetMap = 0,
+	Yandex = 4
 }

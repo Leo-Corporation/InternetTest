@@ -30,8 +30,8 @@ using System.Threading.Tasks;
 namespace InternetTest.Enums;
 public enum Languages
 {
+	Default = 0,
 	en_US,
 	fr_FR,
-	zh_CN,
-	Default
+	zh_CN
 }

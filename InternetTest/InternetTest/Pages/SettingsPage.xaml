@@ -54,7 +54,12 @@
 					</StackPanel>
 
 					<StackPanel Orientation="Horizontal" Grid.Column="1">
-						<ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center"/>
+						<ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center">
+							<ComboBoxItem Content="{x:Static lang:Resources.Default}"/>
+							<ComboBoxItem Content="English (United States)"/>
+							<ComboBoxItem Content="French (France)"/>
+							<ComboBoxItem Content="中文（简体）- WIP"/>
+						</ComboBox>
 						<Button x:Name="LangApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource PrimaryButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="LangApplyBtn_Click" Visibility="Hidden">
 							<TextBlock Text="&#xF680;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" VerticalAlignment="Center"/>
 
@@ -123,7 +128,13 @@
 						</StackPanel>
 					</StackPanel>
 
-					<ComboBox SelectionChanged="MapProviderComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="MapProviderComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Column="1"/>
+					<ComboBox SelectionChanged="MapProviderComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="MapProviderComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Column="1">
+						<ComboBoxItem Content="OpenStreetMap"/>
+						<ComboBoxItem Content="Bing Maps"/>
+						<ComboBoxItem Content="Google Maps"/>
+						<ComboBoxItem Content="HERE WeGo"/>
+						<ComboBoxItem Content="Yandex"/>
+					</ComboBox>
 
 				</Grid>
 			</Border>
@@ -155,7 +166,17 @@
 				<StackPanel>
 					<StackPanel Orientation="Horizontal" Margin="10,0,0,0">
 						<TextBlock Text="{x:Static lang:Resources.StartupPage}" VerticalAlignment="Center" Margin="0,0,10,0"/>
-						<ComboBox SelectionChanged="PageComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="PageComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center"/>
+						<ComboBox SelectionChanged="PageComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="PageComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center">
+							<ComboBoxItem Content="{x:Static lang:Resources.Home}"/>
+							<ComboBoxItem Content="{x:Static lang:Resources.History}"/>
+							<ComboBoxItem Content="{x:Static lang:Resources.Status}"/>
+							<ComboBoxItem Content="{x:Static lang:Resources.DownDetector}"/>
+							<ComboBoxItem Content="{x:Static lang:Resources.MyIP}"/>
+							<ComboBoxItem Content="{x:Static lang:Resources.LocateIP}"/>
+							<ComboBoxItem Content="{x:Static lang:Resources.Ping}"/>
+							<ComboBoxItem Content="{x:Static lang:Resources.IPConfig}"/>
+							<ComboBoxItem Content="{x:Static lang:Resources.WifiPasswords}"/>
+						</ComboBox>
 					</StackPanel>
 					<CheckBox Content="{x:Static lang:Resources.CheckUpdatesOnStart}" x:Name="UpdateOnStartChk" Style="{DynamicResource CheckBoxStyle1}" Checked="UpdateOnStartChk_Checked" Unchecked="UpdateOnStartChk_Checked" VerticalContentAlignment="Center" BorderThickness="2" Margin="10,0,0,5"/>
 				</StackPanel>
@@ -220,6 +241,8 @@
 							</StackPanel>
 						</Button>
 					</StackPanel>
+					<CheckBox Content="{x:Static lang:Resources.SynethiaEnable}" x:Name="UseSynethiaChk" Style="{DynamicResource CheckBoxStyle1}" Checked="UseSynethiaChk_Checked" Unchecked="UseSynethiaChk_Checked" VerticalContentAlignment="Center" BorderThickness="2" Margin="0,0,0,5"/>
+
 					<Button x:Name="ResetSettingsLink" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="ExtraBold" Cursor="Hand" Click="ResetSettingsLink_Click" Style="{DynamicResource StandardButton}" HorizontalAlignment="Left" Padding="5" Background="{x:Null}">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock Text="&#xF583;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontWeight="Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>

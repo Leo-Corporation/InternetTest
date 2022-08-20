@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using InternetTest.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,11 +53,46 @@ public partial class SettingsPage : Page
 	private void InitUI()
 	{
 		VersionTxt.Text = Global.Version;
+
+		// Select the default theme border
+		ThemeSelectedBorder = Global.Settings.Theme switch
+		{
+			Themes.Light => LightBorder,
+			Themes.Dark => DarkBorder,
+			_ => SystemBorder
+		};
+		Border_MouseEnter(Global.Settings.Theme switch
+		{
+			Themes.Light => LightBorder,
+			Themes.Dark => DarkBorder,
+			_ => SystemBorder
+		}, null);
+
+		// Select the language
+		LangComboBox.SelectedIndex = (int)Global.Settings.Language;
+
+		// Select the map provider
+		MapProviderComboBox.SelectedIndex = (int)Global.Settings.MapProvider;
+
+		// Notfication section
+		UpdateNotifChk.IsChecked = Global.Settings.ShowNotficationWhenUpdateAvailable;
+
+		// On Start section
+		UpdateOnStartChk.IsChecked = Global.Settings.CheckUpdateOnStart;
+		PageComboBox.SelectedIndex = (int)Global.Settings.DefaultPage;
+
+		// Web related settings section
+		HttpsRadio.IsChecked = Global.Settings.UseHttps;
+		HttpRadio.IsChecked = !Global.Settings.UseHttps;
+		SiteTxt.Text = Global.Settings.TestSite;
+
+		// Data section
+		UseSynethiaChk.IsChecked = Global.Settings.UseSynethia;
 	}
 
 	private void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
 	{
-
+		//TODO: Update system
 	}
 
 	Border ThemeSelectedBorder;
@@ -155,6 +191,11 @@ public partial class SettingsPage : Page
 	}
 
 	private void ResetSettingsLink_Click(object sender, RoutedEventArgs e)
+	{
+
+	}
+
+	private void UseSynethiaChk_Checked(object sender, RoutedEventArgs e)
 	{
 
 	}

@@ -25,9 +25,9 @@ SOFTWARE.
 namespace InternetTest.Enums;
 public enum AppPages
 {
+	Settings = -1, // Special page
 	Home,
 	History,
-	Settings,
 	Status,
 	DownDetector,
 	MyIP,
