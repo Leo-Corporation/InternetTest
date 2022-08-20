@@ -30,6 +30,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.Diagnostics;
+using System.Windows;
 
 namespace InternetTest.Classes;
 public class Settings
@@ -97,5 +99,58 @@ public static class SettingsManager
 		StreamWriter streamWriter = new(SettingsPath);
 		xmlSerializer.Serialize(streamWriter, Global.Settings);
 		streamWriter.Dispose();
+	}
+
+	/// <summary>
+	/// Exports current settings.
+	/// </summary>
+	/// <param name="path">The path where the settings file should be exported.</param>
+	public static void Export(string path)
+	{
+		try
+		{
+			XmlSerializer xmlSerializer = new(typeof(Settings)); // Create XML Serializer
+
+			StreamWriter streamWriter = new(path); // The place where the file is going to be written
+			xmlSerializer.Serialize(streamWriter, Global.Settings);
+
+			streamWriter.Dispose();
+
+			MessageBox.Show(Properties.Resources.SettingsExportedSucessMsg, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information); // Show message
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Error); // Show error message
+		}
+	}
+
+	/// <summary>
+	/// Imports settings.
+	/// </summary>
+	/// <param name="path">The path to the settings file.</param>
+	public static void Import(string path)
+	{
+		try
+		{
+			if (File.Exists(path)) // If the file exist
+			{
+				XmlSerializer xmlSerializer = new(typeof(Settings)); // XML Serializer
+				StreamReader streamReader = new(path); // Where the file is going to be read
+
+				Global.Settings = (Settings)xmlSerializer.Deserialize(streamReader); // Read
+
+				streamReader.Dispose();
+				Save(); // Save
+				MessageBox.Show(Properties.Resources.SettingsImportedMsg, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Information); // Show error message
+
+				// Restart app
+				Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe"); // Start app
+				Environment.Exit(0); // Quit
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Error); // Show error message
+		}
 	}
 }

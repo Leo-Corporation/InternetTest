@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -210,12 +211,31 @@ public partial class SettingsPage : Page
 
 	private void ImportBtn_Click(object sender, RoutedEventArgs e)
 	{
+		OpenFileDialog openFileDialog = new()
+		{
+			Filter = "XML|*.xml",
+			Title = Properties.Resources.Import
+		}; // Create file dialog
 
+		if (openFileDialog.ShowDialog() ?? true)
+		{
+			SettingsManager.Import(openFileDialog.FileName); // Import games
+		}
 	}
 
 	private void ExportBtn_Click(object sender, RoutedEventArgs e)
 	{
+		SaveFileDialog saveFileDialog = new()
+		{
+			FileName = "InternetTestSettings.xml",
+			Filter = "XML|*.xml",
+			Title = Properties.Resources.Export
+		}; // Create file dialog
 
+		if (saveFileDialog.ShowDialog() ?? true)
+		{
+			SettingsManager.Export(saveFileDialog.FileName); // Export games
+		}
 	}
 
 	private void ResetSettingsLink_Click(object sender, RoutedEventArgs e)
