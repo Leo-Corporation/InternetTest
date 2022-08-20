@@ -96,6 +96,9 @@ public partial class StatusPage : Page
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.Status}"; // Set the title
+
+		if (!Global.Settings.TestOnStart) return;
+		LaunchTest(Global.Settings.TestSite ?? "https://leocorporation"); // Launch the test
 	}
 
 	private async void LaunchTest(string customSite)

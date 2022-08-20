@@ -555,4 +555,7 @@
   <data name="ResetSettingsConfirmation" xml:space="preserve">
     <value>Êtes-vous sûr de vouloir réinitialiser tous les paramètres ?</value>
   </data>
+  <data name="LaunchTestOnStart" xml:space="preserve">
+    <value>Lancer un test lors du démarrage</value>
+  </data>
 </root>

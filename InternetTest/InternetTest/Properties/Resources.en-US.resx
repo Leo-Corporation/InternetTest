@@ -555,4 +555,7 @@
   <data name="ResetSettingsConfirmation" xml:space="preserve">
     <value>Are you sure you want to reset all settings?</value>
   </data>
+  <data name="LaunchTestOnStart" xml:space="preserve">
+    <value>Launch a test on start</value>
+  </data>
 </root>

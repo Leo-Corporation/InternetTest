@@ -700,6 +700,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Launch a test on start.
+        /// </summary>
+        public static string LaunchTestOnStart {
+            get {
+                return ResourceManager.GetString("LaunchTestOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Launch a test to check your connection.
         /// </summary>
         public static string LaunchTestToCheckConnection {
@@ -1024,6 +1033,33 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset settings.
+        /// </summary>
+        public static string ResetSettings {
+            get {
+                return ResourceManager.GetString("ResetSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to reset all settings?.
+        /// </summary>
+        public static string ResetSettingsConfirmation {
+            get {
+                return ResourceManager.GetString("ResetSettingsConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset Synethia data.
+        /// </summary>
+        public static string ResetSynethia {
+            get {
+                return ResourceManager.GetString("ResetSynethia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save {
@@ -1155,6 +1191,15 @@ namespace InternetTest.Properties {
         public static string SuggestedActions {
             get {
                 return ResourceManager.GetString("SuggestedActions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable Synethia customized experience..
+        /// </summary>
+        public static string SynethiaEnable {
+            get {
+                return ResourceManager.GetString("SynethiaEnable", resourceCulture);
             }
         }
         
@@ -1335,47 +1380,6 @@ namespace InternetTest.Properties {
         public static string ZIPCode {
             get {
                 return ResourceManager.GetString("ZIPCode", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to ZIP Code.
-        /// </summary>
-        public static string ResetSettings
-        {
-            get
-            {
-                return ResourceManager.GetString("ResetSettings", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to ZIP Code.
-        /// </summary>
-        public static string ResetSynethia
-        {
-            get
-            {
-                return ResourceManager.GetString("ResetSynethia", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to ZIP Code.
-        /// </summary>
-        public static string SynethiaEnable
-        {
-            get
-            {
-                return ResourceManager.GetString("SynethiaEnable", resourceCulture);
-            }
-        }
-
-        public static string ResetSettingsConfirmation
-        {
-            get
-            {
-                return ResourceManager.GetString("ResetSettingsConfirmation", resourceCulture);
             }
         }
     }

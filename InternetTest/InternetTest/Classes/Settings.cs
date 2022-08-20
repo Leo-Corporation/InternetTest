@@ -48,6 +48,7 @@ public class Settings
 		IsFirstRun = true;
 		TestSite = "https://leocorporation.dev";
 		UseSynethia = true;
+		TestOnStart = true;
 	}
 
 	public Themes Theme { get; set; }
@@ -59,6 +60,7 @@ public class Settings
 	public bool UseHttps { get; set; }
 	public bool UseSynethia { get; set; }
 	public bool IsFirstRun { get; set; }
+	public bool TestOnStart { get; set; }
 	public string? TestSite { get; set; }
 }
 

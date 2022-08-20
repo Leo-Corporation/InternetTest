@@ -555,4 +555,7 @@
   <data name="ResetSettingsConfirmation" xml:space="preserve">
     <value>要安装更新，需要重新启动 Internet 测试。 你要继续吗？</value>
   </data>
+  <data name="LaunchTestOnStart" xml:space="preserve">
+    <value>在启动时启动测试</value>
+  </data>
 </root>

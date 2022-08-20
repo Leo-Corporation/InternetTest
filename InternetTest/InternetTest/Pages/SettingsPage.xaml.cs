@@ -95,6 +95,7 @@ public partial class SettingsPage : Page
 
 		// On Start section
 		UpdateOnStartChk.IsChecked = Global.Settings.CheckUpdateOnStart;
+		TestOnStartChk.IsChecked = Global.Settings.TestOnStart;
 		PageComboBox.SelectedIndex = (int)Global.Settings.DefaultPage;
 
 		// Web related settings section
@@ -333,6 +334,12 @@ public partial class SettingsPage : Page
 	private void UseSynethiaChk_Checked(object sender, RoutedEventArgs e)
 	{
 		Global.Settings.UseSynethia = UseSynethiaChk.IsChecked ?? true;
+		SettingsManager.Save();
+	}
+
+	private void TestOnStartChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.TestOnStart = TestOnStartChk.IsChecked ?? true;
 		SettingsManager.Save();
 	}
 }
