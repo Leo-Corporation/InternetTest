@@ -24,6 +24,8 @@ SOFTWARE.
 using InternetTest.Enums;
 using InternetTest.Pages;
 using LeoCorpLibrary;
+using LeoCorpLibrary.Enums;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,16 +44,16 @@ public static class Global
 	public static History History { get; set; } = HistoryManager.Load();
 	public static Settings Settings { get; set; } = SettingsManager.Load();
 
-	public static HomePage HomePage { get; set; } = new();
-	public static HistoryPage HistoryPage { get; set; } = new();
-	public static SettingsPage SettingsPage { get; set; } = new();
-	public static StatusPage StatusPage { get; set; } = new();
-	public static DownDetectorPage DownDetectorPage { get; set; } = new();
-	public static MyIpPage MyIpPage { get; set; } = new();
-	public static LocateIpPage LocateIpPage { get; set; } = new();
-	public static PingPage PingPage { get; set; } = new();
-	public static IpConfigPage IpConfigPage { get; set; } = new();
-	public static WiFiPasswordsPage WiFiPasswordsPage { get; set; } = new();
+	public static HomePage? HomePage { get; set; }
+	public static HistoryPage? HistoryPage { get; set; }
+	public static SettingsPage? SettingsPage { get; set; }
+	public static StatusPage? StatusPage { get; set; }
+	public static DownDetectorPage? DownDetectorPage { get; set; }
+	public static MyIpPage? MyIpPage { get; set; }
+	public static LocateIpPage? LocateIpPage { get; set; }
+	public static PingPage? PingPage { get; set; }
+	public static IpConfigPage? IpConfigPage { get; set; }
+	public static WiFiPasswordsPage? WiFiPasswordsPage { get; set; }
 
 	internal static string SynethiaPath => $@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\SynethiaConfig.json";
 
@@ -227,5 +229,47 @@ public static class Global
 
 		// Check if the IP is valid
 		return ipRegex.IsMatch(ip);
+	}
+
+	/// <summary>
+	/// Changes the application's theme.
+	/// </summary>
+	public static void ChangeTheme()
+	{
+		App.Current.Resources.MergedDictionaries.Clear();
+		ResourceDictionary resourceDictionary = new(); // Create a resource dictionary
+
+		bool isDark = Settings.Theme == Themes.Dark;
+		if (Settings.Theme == Themes.System)
+		{
+			isDark = IsSystemThemeDark(); // Set
+		}
+
+		if (isDark) // If the dark theme is on
+		{
+			resourceDictionary.Source = new Uri("..\\Themes\\Dark.xaml", UriKind.Relative); // Add source
+		}
+		else
+		{
+			resourceDictionary.Source = new Uri("..\\Themes\\Light.xaml", UriKind.Relative); // Add source
+		}
+
+		App.Current.Resources.MergedDictionaries.Add(resourceDictionary); // Add the dictionary
+	}
+
+	public static bool IsSystemThemeDark()
+	{
+		if (Env.WindowsVersion != WindowsVersion.Windows10 && Env.WindowsVersion != WindowsVersion.Windows11)
+		{
+			return false; // Avoid errors on older OSs
+		}
+
+		var t = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme", "1");
+		return t switch
+		{
+			0 => true,
+			1 => false,
+			_ => false
+		}; // Return
 	}
 }

@@ -124,6 +124,17 @@ public partial class SettingsPage : Page
 		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
 		Global.Settings.Theme = Themes.Light;
 		SettingsManager.Save();
+
+		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+		{
+			return;
+		}
+
+		SynethiaManager.Save(Global.SynethiaConfig);
+		HistoryManager.Save(Global.History);
+
+		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
+		Application.Current.Shutdown();
 	}
 
 	private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -133,6 +144,17 @@ public partial class SettingsPage : Page
 		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
 		Global.Settings.Theme = Themes.Dark;
 		SettingsManager.Save();
+
+		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+		{
+			return;
+		}
+
+		SynethiaManager.Save(Global.SynethiaConfig);
+		HistoryManager.Save(Global.History);
+
+		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
+		Application.Current.Shutdown();
 	}
 
 	private void SystemBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -142,6 +164,17 @@ public partial class SettingsPage : Page
 		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
 		Global.Settings.Theme = Themes.System;
 		SettingsManager.Save();
+
+		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+		{
+			return;
+		}
+
+		SynethiaManager.Save(Global.SynethiaConfig);
+		HistoryManager.Save(Global.History);
+
+		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
+		Application.Current.Shutdown();
 	}
 
 	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

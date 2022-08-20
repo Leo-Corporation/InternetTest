@@ -32,6 +32,20 @@ public partial class App : Application
 {
 	private void Application_Startup(object sender, StartupEventArgs e)
 	{
+		Global.ChangeTheme();
+
+		Global.HomePage = new();
+		Global.HistoryPage = new();
+		Global.SettingsPage = new();
+		Global.StatusPage = new();
+		Global.DownDetectorPage= new();
+		Global.MyIpPage = new();
+		Global.LocateIpPage = new();
+		Global.PingPage = new();
+		Global.IpConfigPage = new();
+		Global.WiFiPasswordsPage= new();
+		
+
 		new MainWindow().Show();
 	}
 
