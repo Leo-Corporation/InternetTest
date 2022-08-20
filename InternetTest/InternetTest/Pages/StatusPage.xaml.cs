@@ -163,6 +163,6 @@ public partial class StatusPage : Page
 
 	private void BrowserBtn_Click(object sender, RoutedEventArgs e)
 	{
-		Process.Start("explorer.exe", "https://bing.com");
+		Process.Start("explorer.exe", Global.Settings.TestSite ?? "https://leocorporation.dev");
 	}
 }

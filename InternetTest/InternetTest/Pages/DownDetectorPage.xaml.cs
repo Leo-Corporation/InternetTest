@@ -113,7 +113,7 @@ namespace InternetTest.Pages
 			// Check if the URL is valid
 			if (!WebsiteTxt.Text.StartsWith("http"))
 			{
-				WebsiteTxt.Text = "https://" + WebsiteTxt.Text;
+				WebsiteTxt.Text = Global.Settings.UseHttps ? "https://" : "http://" + WebsiteTxt.Text;
 			}
 
 			TotalWebsites = DownDetectorItemDisplayer.Children.Count + ((!string.IsNullOrEmpty(WebsiteTxt.Text)) ? 1 : 0);
@@ -144,7 +144,7 @@ namespace InternetTest.Pages
 			{
 				if (!url.StartsWith("http"))
 				{
-					url = "https://" + url;
+					url = Global.Settings.UseHttps ? "https://" : "http://" + url;
 				}
 
 				if (!Global.IsUrlValid(url)) return new(0, 0, "Invalid URL");
@@ -231,7 +231,7 @@ namespace InternetTest.Pages
 					IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 				}
 				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
-
+				
 				DetailsMessageTxt.Text = ex.Message;
 
 				DetailsTimeTxt.Text = $"0ms"; // Update the time
@@ -264,7 +264,7 @@ namespace InternetTest.Pages
 		{
 			if (!WebsiteTxt.Text.StartsWith("http"))
 			{
-				WebsiteTxt.Text = "https://" + WebsiteTxt.Text;
+				WebsiteTxt.Text = Global.Settings.UseHttps ? "https://" : "http://" + WebsiteTxt.Text;
 			}
 			DownDetectorItemDisplayer.Children.Add(new DownDetectorItem(DownDetectorItemDisplayer, WebsiteTxt.Text, CurrentResult));
 
@@ -277,7 +277,7 @@ namespace InternetTest.Pages
 			// Check if the URL is valid
 			if (!WebsiteTxt.Text.StartsWith("http"))
 			{
-				WebsiteTxt.Text = "https://" + WebsiteTxt.Text;
+				WebsiteTxt.Text = Global.Settings.UseHttps ? "https://" : "http://" + WebsiteTxt.Text;
 			}
 
 			TotalWebsites = DownDetectorItemDisplayer.Children.Count + ((!string.IsNullOrEmpty(WebsiteTxt.Text)) ? 1 : 0);
