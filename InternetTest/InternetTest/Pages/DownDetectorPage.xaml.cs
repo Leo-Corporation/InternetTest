@@ -184,7 +184,7 @@ namespace InternetTest.Pages
 					DetailsTimeTxt.Text = $"{time}ms"; // Update the time
 					DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
 
-					Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:HH:mm} - {url} - {Properties.Resources.Available} ({statusCode})", StatusIconTxt.Text));
+					Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:g} - {url} - {Properties.Resources.Available} ({statusCode})", StatusIconTxt.Text));
 					return new(statusCode, time, message);
 				}
 				else
@@ -216,7 +216,7 @@ namespace InternetTest.Pages
 					DetailsTimeTxt.Text = $"{time}ms"; // Update the time
 					DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
 
-					Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:HH:mm} - {url} - {Properties.Resources.Down} ({statusCode})", StatusIconTxt.Text));
+					Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:g} - {url} - {Properties.Resources.Down} ({statusCode})", StatusIconTxt.Text));
 					return new(statusCode, time, message);
 				}
 			}
@@ -237,7 +237,7 @@ namespace InternetTest.Pages
 				DetailsTimeTxt.Text = $"0ms"; // Update the time
 				DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
 
-				Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:HH:mm} - {url} - {Properties.Resources.Down} (Error)", StatusIconTxt.Text));
+				Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:g} - {url} - {Properties.Resources.Down} (Error)", StatusIconTxt.Text));
 
 				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
 				return new(0, 0, ex.Message);

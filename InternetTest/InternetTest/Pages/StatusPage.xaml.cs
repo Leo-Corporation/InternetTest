@@ -139,7 +139,7 @@ public partial class StatusPage : Page
 				StatusTxt.Text = Properties.Resources.NotConnected;
 			}
 
-			Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:HH:mm} - {Properties.Resources.Connected}", StatusIconTxt.Text));
+			Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:g} - {Properties.Resources.Connected}", StatusIconTxt.Text));
 		}
 		catch (HttpRequestException)
 		{
