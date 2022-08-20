@@ -230,9 +230,9 @@ namespace InternetTest.Pages
 					IconTxt.Text = "\uF36E"; // Update the icon
 					IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 				}
+				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
 
-				string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
-				DetailsMessageTxt.Text = message;
+				DetailsMessageTxt.Text = ex.Message;
 
 				DetailsTimeTxt.Text = $"0ms"; // Update the time
 				DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
