@@ -21,24 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Classes;
-using System.Windows;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace InternetTest;
-/// <summary>
-/// Interaction logic for App.xaml
-/// </summary>
-public partial class App : Application
+namespace InternetTest.Enums;
+public enum Themes
 {
-	private void Application_Startup(object sender, StartupEventArgs e)
-	{
-		new MainWindow().Show();
-	}
-
-	private void Application_Exit(object sender, ExitEventArgs e)
-	{
-		SynethiaManager.Save(Global.SynethiaConfig);
-		HistoryManager.Save(Global.History);
-		SettingsManager.Save();
-	}
+	Light,
+	Dark,
+	System
 }
