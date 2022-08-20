@@ -33,6 +33,7 @@ public partial class App : Application
 	private void Application_Startup(object sender, StartupEventArgs e)
 	{
 		Global.ChangeTheme();
+		Global.ChangeLanguage();
 
 		Global.HomePage = new();
 		Global.HistoryPage = new();

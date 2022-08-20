@@ -32,6 +32,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
@@ -271,5 +272,27 @@ public static class Global
 			1 => false,
 			_ => false
 		}; // Return
+	}
+
+	public static void ChangeLanguage()
+	{
+		switch (Settings.Language) // For each case
+		{
+			case Languages.Default: // No language
+				break;
+			case Languages.en_US: // English (US)
+				Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US"); // Change
+				break;
+
+			case Languages.fr_FR: // French (FR)
+				Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR"); // Change
+				break;
+
+			case Languages.zh_CN: // Chinese (CN)
+				Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-CN"); // Change
+				break;
+			default: // No language
+				break;
+		}
 	}
 }
