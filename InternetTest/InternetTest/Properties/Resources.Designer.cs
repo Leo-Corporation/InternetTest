@@ -781,6 +781,33 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Notifications.
+        /// </summary>
+        public static string Notifications {
+            get {
+                return ResourceManager.GetString("Notifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notifications settings..
+        /// </summary>
+        public static string NotificationsDescription {
+            get {
+                return ResourceManager.GetString("NotificationsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show a notification when updates are available.
+        /// </summary>
+        public static string NotifyUpdates {
+            get {
+                return ResourceManager.GetString("NotifyUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to of {0}.
         /// </summary>
         public static string OfWebsite {

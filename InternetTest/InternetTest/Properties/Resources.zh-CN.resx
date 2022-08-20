@@ -486,4 +486,13 @@
   <data name="MapProviderDescription" xml:space="preserve">
     <value>地图提供者用于显示 IP 本地化。</value>
   </data>
+  <data name="NotifyUpdates" xml:space="preserve">
+    <value>有可用更新时显示通知</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="NotificationsDescription" xml:space="preserve">
+    <value>通知设置。</value>
+  </data>
 </root>

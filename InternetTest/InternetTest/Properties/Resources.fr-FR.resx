@@ -486,4 +486,13 @@
   <data name="MapProviderDescription" xml:space="preserve">
     <value>Le fournisseur de carte utilisé pour montrer la position d'une adresse IP.</value>
   </data>
+  <data name="NotifyUpdates" xml:space="preserve">
+    <value>Afficher une notification lorsque des mises à jour sont disponibles</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="NotificationsDescription" xml:space="preserve">
+    <value>Paramètres des notifications.</value>
+  </data>
 </root>

@@ -113,4 +113,9 @@ public partial class SettingsPage : Page
 	{
 
 	}
+
+	private void UpdateNotifChk_Checked(object sender, RoutedEventArgs e)
+	{
+
+	}
 }
