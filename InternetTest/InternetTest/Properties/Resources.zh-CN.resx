@@ -423,4 +423,61 @@
   <data name="EmptyHistoryMsg" xml:space="preserve">
     <value>Are you sure want to empty this history? This action is irreversible.</value>
   </data>
+  <data name="Pro" xml:space="preserve">
+    <value>Pro</value>
+  </data>
+  <data name="CheckUpdate" xml:space="preserve">
+    <value>检查更新</value>
+  </data>
+  <data name="Updates" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>安装</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>浅色模式</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>深色模式</value>
+  </data>
+  <data name="Licenses" xml:space="preserve">
+    <value>许可证</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="SeeLicenses" xml:space="preserve">
+    <value>查看许可证</value>
+  </data>
+  <data name="ChangeTheme" xml:space="preserve">
+    <value>更改 InternetTest 主题。</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="NeedRestartToApplyChanges" xml:space="preserve">
+    <value>Internet 测试需要重新启动以应用更改。 你想现在重新开始吗？</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>Internet Test 是最新的。</value>
+  </data>
+  <data name="AvailableUpdates" xml:space="preserve">
+    <value>有可用更新。</value>
+  </data>
+  <data name="InstallConfirmMsg" xml:space="preserve">
+    <value>要安装更新，需要重新启动 Internet 测试。 你要继续吗？</value>
+  </data>
+  <data name="InstallVersion" xml:space="preserve">
+    <value>安装版本</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>版本</value>
+  </data>
 </root>
