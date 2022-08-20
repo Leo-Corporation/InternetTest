@@ -98,4 +98,14 @@ public partial class SettingsPage : Page
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
 	}
+
+	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+
+	}
+
+	private void LangApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+
+	}
 }

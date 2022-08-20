@@ -124,6 +124,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change the language of InternetTest..
+        /// </summary>
+        public static string ChangeLanguage {
+            get {
+                return ResourceManager.GetString("ChangeLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change InternetTest theme..
         /// </summary>
         public static string ChangeTheme {
@@ -133,7 +142,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Check updates.
+        ///   Looks up a localized string similar to Check for updates.
         /// </summary>
         public static string CheckUpdate {
             get {

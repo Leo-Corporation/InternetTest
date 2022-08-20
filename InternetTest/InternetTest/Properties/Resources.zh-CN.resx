@@ -480,4 +480,7 @@
   <data name="Version" xml:space="preserve">
     <value>版本</value>
   </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>更改 InternetTest 的语言。</value>
+  </data>
 </root>
