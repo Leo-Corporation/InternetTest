@@ -34,6 +34,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace InternetTest.Pages
 {
@@ -139,52 +140,87 @@ namespace InternetTest.Pages
 
 		internal async Task<DownDetectorTestResult> LaunchTest(string url, bool isFirst = false)
 		{
-			if (!url.StartsWith("http"))
+			try
 			{
-				url = "https://" + url;
-			}
-
-			if (!Global.IsUrlValid(url)) return new(0, 0, "Invalid URL");
-
-			// Show the "Waiting" screen
-			StatusIconTxt.Text = "\uF2DE";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
-			StatusTxt.Text = Properties.Resources.TestInProgress;
-
-			int statusCode = await NetworkConnection.GetWebPageStatusCodeAsync(url);
-			if (statusCode < 400)
-			{
-				// Update icon and text
-				StatusIconTxt.Text = "\uF299"; // Update the icon
-				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
-				if (isFirst)
+				if (!url.StartsWith("http"))
 				{
-					IconTxt.Text = "\uF299"; // Update the icon
-					IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+					url = "https://" + url;
 				}
 
-				StatusTxt.Text = Properties.Resources.WebsiteAvailable; // Update the text
+				if (!Global.IsUrlValid(url)) return new(0, 0, "Invalid URL");
 
-				// Update details section
-				int time = 0;
-				DispatcherTimer dispatcherTimer = new() { Interval = TimeSpan.FromMilliseconds(1) };
-				dispatcherTimer.Tick += (o, e) => time++;
-				dispatcherTimer.Start();
+				// Show the "Waiting" screen
+				StatusIconTxt.Text = "\uF2DE";
+				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+				StatusTxt.Text = Properties.Resources.TestInProgress;
+
+				int statusCode = await NetworkConnection.GetWebPageStatusCodeAsync(url);
+				if (statusCode < 400)
+				{
+					// Update icon and text
+					StatusIconTxt.Text = "\uF299"; // Update the icon
+					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+					if (isFirst)
+					{
+						IconTxt.Text = "\uF299"; // Update the icon
+						IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+					}
+
+					StatusTxt.Text = Properties.Resources.WebsiteAvailable; // Update the text
+
+					// Update details section
+					int time = 0;
+					DispatcherTimer dispatcherTimer = new() { Interval = TimeSpan.FromMilliseconds(1) };
+					dispatcherTimer.Tick += (o, e) => time++;
+					dispatcherTimer.Start();
 
 
-				dispatcherTimer.Stop();
-				DetailsStatusTxt.Text = statusCode.ToString();
+					dispatcherTimer.Stop();
+					DetailsStatusTxt.Text = statusCode.ToString();
 
-				string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
-				DetailsMessageTxt.Text = message;
+					string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
+					DetailsMessageTxt.Text = message;
 
-				DetailsTimeTxt.Text = $"{time}ms"; // Update the time
-				DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
-				
-				Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:HH:mm} - {url} - {Properties.Resources.Available} ({statusCode})", StatusIconTxt.Text));
-				return new(statusCode, time, message);
+					DetailsTimeTxt.Text = $"{time}ms"; // Update the time
+					DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
+
+					Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:HH:mm} - {url} - {Properties.Resources.Available} ({statusCode})", StatusIconTxt.Text));
+					return new(statusCode, time, message);
+				}
+				else
+				{
+					// Update icon and text
+					StatusIconTxt.Text = "\uF36E"; // Update the icon
+					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+					if (isFirst)
+					{
+						IconTxt.Text = "\uF36E"; // Update the icon
+						IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+					}
+
+					StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
+
+					// Update details section
+					// Update details section
+					int time = 0;
+					DispatcherTimer dispatcherTimer = new() { Interval = TimeSpan.FromMilliseconds(1) };
+					dispatcherTimer.Tick += (o, e) => time++;
+					dispatcherTimer.Start();
+
+					dispatcherTimer.Stop();
+					DetailsStatusTxt.Text = statusCode.ToString();
+
+					string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
+					DetailsMessageTxt.Text = message;
+
+					DetailsTimeTxt.Text = $"{time}ms"; // Update the time
+					DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
+
+					Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:HH:mm} - {url} - {Properties.Resources.Down} ({statusCode})", StatusIconTxt.Text));
+					return new(statusCode, time, message);
+				}
 			}
-			else
+			catch (Exception ex)
 			{
 				// Update icon and text
 				StatusIconTxt.Text = "\uF36E"; // Update the icon
@@ -195,26 +231,16 @@ namespace InternetTest.Pages
 					IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 				}
 
-				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
-
-				// Update details section
-				// Update details section
-				int time = 0;
-				DispatcherTimer dispatcherTimer = new() { Interval = TimeSpan.FromMilliseconds(1) };
-				dispatcherTimer.Tick += (o, e) => time++;
-				dispatcherTimer.Start();
-
-				dispatcherTimer.Stop();
-				DetailsStatusTxt.Text = statusCode.ToString();
-
 				string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
 				DetailsMessageTxt.Text = message;
 
-				DetailsTimeTxt.Text = $"{time}ms"; // Update the time
+				DetailsTimeTxt.Text = $"0ms"; // Update the time
 				DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
 
-				Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:HH:mm} - {url} - {Properties.Resources.Down} ({statusCode})", StatusIconTxt.Text));
-				return new(statusCode, time, message);
+				Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:HH:mm} - {url} - {Properties.Resources.Down} (Error)", StatusIconTxt.Text));
+
+				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
+				return new(0, 0, ex.Message);
 			}
 		}
 
