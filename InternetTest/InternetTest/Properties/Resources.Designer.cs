@@ -232,6 +232,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manage your data and your privacy..
+        /// </summary>
+        public static string DataDescription {
+            get {
+                return ResourceManager.GetString("DataDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data and Privacy.
+        /// </summary>
+        public static string DataPrivacy {
+            get {
+                return ResourceManager.GetString("DataPrivacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default.
         /// </summary>
         public static string Default {
@@ -354,6 +372,15 @@ namespace InternetTest.Properties {
         public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export settings.
+        /// </summary>
+        public static string Export {
+            get {
+                return ResourceManager.GetString("Export", resourceCulture);
             }
         }
         
@@ -489,6 +516,15 @@ namespace InternetTest.Properties {
         public static string HTTPS {
             get {
                 return ResourceManager.GetString("HTTPS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import settings.
+        /// </summary>
+        public static string Import {
+            get {
+                return ResourceManager.GetString("Import", resourceCulture);
             }
         }
         
@@ -1042,6 +1078,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Settings have been sucessfully exported..
+        /// </summary>
+        public static string SettingsExportedSucessMsg {
+            get {
+                return ResourceManager.GetString("SettingsExportedSucessMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings were sucessfully imported. To finish the process, InternetTest is going to restart..
+        /// </summary>
+        public static string SettingsImportedMsg {
+            get {
+                return ResourceManager.GetString("SettingsImportedMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show on a map.
         /// </summary>
         public static string ShowOnMap {
@@ -1281,6 +1335,39 @@ namespace InternetTest.Properties {
         public static string ZIPCode {
             get {
                 return ResourceManager.GetString("ZIPCode", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ZIP Code.
+        /// </summary>
+        public static string ResetSettings
+        {
+            get
+            {
+                return ResourceManager.GetString("ResetSettings", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ZIP Code.
+        /// </summary>
+        public static string ResetSynethia
+        {
+            get
+            {
+                return ResourceManager.GetString("ResetSynethia", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ZIP Code.
+        /// </summary>
+        public static string SynethiaEnable
+        {
+            get
+            {
+                return ResourceManager.GetString("SynethiaEnable", resourceCulture);
             }
         }
     }

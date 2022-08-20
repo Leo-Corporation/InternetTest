@@ -195,7 +195,45 @@
 				</StackPanel>
 			</Expander>
 
-
+			<Expander Style="{DynamicResource ExpanderStyle1}" Margin="10,10,10,0" Background="{Binding Source={StaticResource CardBackground}}" Foreground="{Binding Source={StaticResource Foreground1}}">
+				<Expander.Header>
+					<StackPanel Margin="10 15" Orientation="Horizontal">
+						<TextBlock Text="&#xF4AB;" FontSize="22" FontFamily="..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+						<StackPanel>
+							<TextBlock Text="{x:Static lang:Resources.DataPrivacy}" FontSize="18" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="10,0,0,0"/>
+							<TextBlock Text="{x:Static lang:Resources.DataDescription}" FontSize="13" VerticalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap"/>
+						</StackPanel>
+					</StackPanel>
+				</Expander.Header>
+				<StackPanel Margin="10,0,0,0">
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+						<Button x:Name="ImportBtn" Click="ImportBtn_Click" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource PrimaryButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Margin="0,0,10,0">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="&#xF151;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="16"/>
+								<TextBlock Text="{x:Static lang:Resources.Import}" VerticalAlignment="Center"/>
+							</StackPanel>
+						</Button>
+						<Button x:Name="ExportBtn" Click="ExportBtn_Click" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" Padding="10,5,10,5" Style="{StaticResource DefaultButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="&#xF1A5;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="16"/>
+								<TextBlock Text="{x:Static lang:Resources.Export}" VerticalAlignment="Center"/>
+							</StackPanel>
+						</Button>
+					</StackPanel>
+					<Button x:Name="ResetSettingsLink" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="ExtraBold" Cursor="Hand" Click="ResetSettingsLink_Click" Style="{DynamicResource StandardButton}" HorizontalAlignment="Left" Padding="5" Background="{x:Null}">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="&#xF583;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontWeight="Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+							<TextBlock Text="{x:Static lang:Resources.ResetSettings}" VerticalAlignment="Center"/>
+						</StackPanel>
+					</Button>
+					<Button x:Name="ResetSynethiaLink" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="ExtraBold" Cursor="Hand" Click="ResetSettingsLink_Click" Style="{DynamicResource StandardButton}" HorizontalAlignment="Left" Padding="5" Background="{x:Null}">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="&#xF583;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontWeight="Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
+							<TextBlock Text="{x:Static lang:Resources.ResetSynethia}" VerticalAlignment="Center"/>
+						</StackPanel>
+					</Button>
+				</StackPanel>
+			</Expander>
 		</StackPanel>
 	</Grid>
 </Page>

@@ -481,48 +481,75 @@
 	<value>Version</value>
   </data>
   <data name="ChangeLanguage" xml:space="preserve">
-    <value>Change the language of InternetTest.</value>
+	<value>Change the language of InternetTest.</value>
   </data>
   <data name="MapProviderDescription" xml:space="preserve">
-    <value>The map provider used to show the location of an IP address.</value>
+	<value>The map provider used to show the location of an IP address.</value>
   </data>
   <data name="NotifyUpdates" xml:space="preserve">
-    <value>Show a notification when updates are available</value>
+	<value>Show a notification when updates are available</value>
   </data>
   <data name="Notifications" xml:space="preserve">
-    <value>Notifications</value>
+	<value>Notifications</value>
   </data>
   <data name="NotificationsDescription" xml:space="preserve">
-    <value>Notifications settings.</value>
+	<value>Notifications settings.</value>
   </data>
   <data name="CheckUpdatesOnStart" xml:space="preserve">
-    <value>Check for updates on start</value>
+	<value>Check for updates on start</value>
   </data>
   <data name="StartupPage" xml:space="preserve">
-    <value>Default page on start</value>
+	<value>Default page on start</value>
   </data>
   <data name="OnStart" xml:space="preserve">
-    <value>On start</value>
+	<value>On start</value>
   </data>
   <data name="OnStartDescription" xml:space="preserve">
-    <value>Settings that applies on start.</value>
+	<value>Settings that applies on start.</value>
   </data>
   <data name="WebSettingsDescription" xml:space="preserve">
-    <value>Web related settings.</value>
+	<value>Web related settings.</value>
   </data>
   <data name="WebSettings" xml:space="preserve">
-    <value>Web settings</value>
+	<value>Web settings</value>
   </data>
   <data name="TestSite" xml:space="preserve">
-    <value>Test website</value>
+	<value>Test website</value>
   </data>
   <data name="DefaultProtocol" xml:space="preserve">
-    <value>Default protocol</value>
+	<value>Default protocol</value>
   </data>
   <data name="HTTP" xml:space="preserve">
-    <value>HTTP</value>
+	<value>HTTP</value>
   </data>
   <data name="HTTPS" xml:space="preserve">
-    <value>HTTPS</value>
+	<value>HTTPS</value>
+  </data>
+  <data name="DataPrivacy" xml:space="preserve">
+	<value>Data and Privacy</value>
+  </data>
+  <data name="DataDescription" xml:space="preserve">
+	<value>Manage your data and your privacy.</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+	<value>Import settings</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+	<value>Export settings</value>
+  </data>
+  <data name="SettingsExportedSucessMsg" xml:space="preserve">
+	<value>Settings have been sucessfully exported.</value>
+  </data>
+  <data name="SettingsImportedMsg" xml:space="preserve">
+	<value>Settings were sucessfully imported. To finish the process, InternetTest is going to restart.</value>
+  </data>
+  <data name="ResetSettings" xml:space="preserve">
+    <value>Reset settings</value>
+  </data>
+  <data name="SynethiaEnable" xml:space="preserve">
+    <value>Enable Synethia customized experience.</value>
+  </data>
+  <data name="ResetSynethia" xml:space="preserve">
+    <value>Reset Synethia data</value>
   </data>
 </root>

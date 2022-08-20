@@ -143,4 +143,19 @@ public partial class SettingsPage : Page
 	{
 
 	}
+
+	private void ImportBtn_Click(object sender, RoutedEventArgs e)
+	{
+
+	}
+
+	private void ExportBtn_Click(object sender, RoutedEventArgs e)
+	{
+
+	}
+
+	private void ResetSettingsLink_Click(object sender, RoutedEventArgs e)
+	{
+
+	}
 }
