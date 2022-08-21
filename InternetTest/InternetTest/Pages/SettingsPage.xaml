@@ -250,7 +250,7 @@
 							<TextBlock Text="{x:Static lang:Resources.ResetSettings}" VerticalAlignment="Center"/>
 						</StackPanel>
 					</Button>
-					<Button x:Name="ResetSynethiaLink" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="ExtraBold" Cursor="Hand" Click="ResetSettingsLink_Click" Style="{DynamicResource StandardButton}" HorizontalAlignment="Left" Padding="5" Background="{x:Null}">
+					<Button x:Name="ResetSynethiaLink" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="14" FontWeight="ExtraBold" Cursor="Hand" Click="ResetSynethiaLink_Click" Style="{DynamicResource StandardButton}" HorizontalAlignment="Left" Padding="5" Background="{x:Null}">
 						<StackPanel Orientation="Horizontal">
 							<TextBlock Text="&#xF583;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontWeight="Regular" Margin="0,0,10,0" VerticalAlignment="Center"/>
 							<TextBlock Text="{x:Static lang:Resources.ResetSynethia}" VerticalAlignment="Center"/>

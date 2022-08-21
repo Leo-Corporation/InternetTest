@@ -1195,6 +1195,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to reset all Synethia data? Your personalized experience will be lost; This action cannot be canceled..
+        /// </summary>
+        public static string SynethiaDeleteMsg {
+            get {
+                return ResourceManager.GetString("SynethiaDeleteMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enable Synethia customized experience..
         /// </summary>
         public static string SynethiaEnable {

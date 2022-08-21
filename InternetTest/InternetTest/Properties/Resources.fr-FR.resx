@@ -558,4 +558,7 @@
   <data name="LaunchTestOnStart" xml:space="preserve">
     <value>Lancer un test lors du démarrage</value>
   </data>
+  <data name="SynethiaDeleteMsg" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir réinitialiser toutes les données de Synethia ? Votre expérience personnalisée sera perdue ; Cette action ne peut être annulée.</value>
+  </data>
 </root>

@@ -558,4 +558,7 @@
   <data name="LaunchTestOnStart" xml:space="preserve">
     <value>Launch a test on start</value>
   </data>
+  <data name="SynethiaDeleteMsg" xml:space="preserve">
+    <value>Are you sure you want to reset all Synethia data? Your personalized experience will be lost; This action cannot be canceled.</value>
+  </data>
 </root>

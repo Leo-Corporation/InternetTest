@@ -346,4 +346,29 @@ public partial class SettingsPage : Page
 		Global.Settings.TestOnStart = TestOnStartChk.IsChecked ?? true;
 		SettingsManager.Save();
 	}
+
+	private void ResetSynethiaLink_Click(object sender, RoutedEventArgs e)
+	{
+		// Ask the user a confirmation
+		if (MessageBox.Show(Properties.Resources.SynethiaDeleteMsg, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+		{
+			return;
+		}
+		
+		// If the user wants to proceed, reset Syenthia config file.
+		Global.SynethiaConfig = new();
+		SynethiaManager.Save(Global.SynethiaConfig);
+
+		// Ask the user if they want to restart the application to apply changes.
+		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+		{
+			return;
+		}
+
+		// If the user wants to restart the app, save and quit the app
+		SettingsManager.Save(); // Save settings
+		HistoryManager.Save(Global.History); // Save history content
+		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe"); // Start a new instance
+		Application.Current.Shutdown(); // Quit this current instance
+	}
 }
