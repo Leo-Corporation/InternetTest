@@ -54,12 +54,16 @@ public partial class SettingsPage : Page
 		notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(AppDomain.CurrentDomain.BaseDirectory + @"\InternetTest.exe");
 		notifyIcon.BalloonTipClicked += async (o, e) =>
 		{
-			string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink); // Get last version
-			if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+			try
 			{
-				Env.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
-				Environment.Exit(0); // Close
+				string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink); // Get last version
+				if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+				{
+					Env.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+					Environment.Exit(0); // Close
+				}
 			}
+			catch { }
 		};
 		InitUI();
 	}
@@ -108,7 +112,7 @@ public partial class SettingsPage : Page
 
 		// Check for updates
 		if (!Global.Settings.CheckUpdateOnStart) return;
-		if (!await NetworkConnection.IsAvailableAsync()) return;
+		try { if (!await NetworkConnection.IsAvailableAsync()) return; } catch { return; }
 		if (!Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink))) return;
 
 		// If updates are available
@@ -238,7 +242,7 @@ public partial class SettingsPage : Page
 		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
 		Application.Current.Shutdown();
 	}
-	
+
 	private void MapProviderComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 	{
 		Global.Settings.MapProvider = (MapProvider)MapProviderComboBox.SelectedIndex;

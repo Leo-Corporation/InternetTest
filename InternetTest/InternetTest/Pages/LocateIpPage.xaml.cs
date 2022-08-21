@@ -128,33 +128,40 @@ public partial class LocateIpPage : Page
 
 	internal async void LocateIP(string ip)
 	{
-		StatusIconTxt.Text = "\uF4AB";
-		StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
-		MyIPTxt.Text = Properties.Resources.IPShowHere2;
-
-		var ipInfo = await Global.GetIPInfoAsync(ip); // Giving an empty IP returns the user's current IP
-		CurrentIP = ipInfo;
-		if (ipInfo is not null)
+		try
 		{
-			MyIPTxt.Text = ipInfo.Query;
-			CountryTxt.Text = ipInfo.Country;
-			RegionTxt.Text = ipInfo.RegionName;
-			CityTxt.Text = ipInfo.City;
-			ZipCodeTxt.Text = ipInfo.Zip;
-			LatTxt.Text = ipInfo.Lat.ToString().Replace(",", ".");
-			LongitudeTxt.Text = ipInfo.Lon.ToString().Replace(",", ".");
-			TimezoneTxt.Text = ipInfo.Timezone;
-			IspTxt.Text = ipInfo.Isp;
+			StatusIconTxt.Text = "\uF4AB";
+			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			MyIPTxt.Text = Properties.Resources.IPShowHere2;
 
-			IpTxt.Text = IpTxt.Text is { Length: 0 } ? ipInfo.Query : IpTxt.Text; // If the IP is empty, use the user's current IP
+			var ipInfo = await Global.GetIPInfoAsync(ip); // Giving an empty IP returns the user's current IP
+			CurrentIP = ipInfo;
+			if (ipInfo is not null)
+			{
+				MyIPTxt.Text = ipInfo.Query;
+				CountryTxt.Text = ipInfo.Country;
+				RegionTxt.Text = ipInfo.RegionName;
+				CityTxt.Text = ipInfo.City;
+				ZipCodeTxt.Text = ipInfo.Zip;
+				LatTxt.Text = ipInfo.Lat.ToString().Replace(",", ".");
+				LongitudeTxt.Text = ipInfo.Lon.ToString().Replace(",", ".");
+				TimezoneTxt.Text = ipInfo.Timezone;
+				IspTxt.Text = ipInfo.Isp;
 
-			StatusIconTxt.Text = "\uF299";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+				IpTxt.Text = IpTxt.Text is { Length: 0 } ? ipInfo.Query : IpTxt.Text; // If the IP is empty, use the user's current IP
+
+				StatusIconTxt.Text = "\uF299";
+				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+			}
+			else
+			{
+				StatusIconTxt.Text = "\uF36E";
+				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+			}
 		}
-		else
+		catch (Exception ex)
 		{
-			StatusIconTxt.Text = "\uF36E";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error); // Show error message
 		}
 	}
 
