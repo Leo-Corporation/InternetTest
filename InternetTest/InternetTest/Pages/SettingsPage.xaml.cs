@@ -59,8 +59,12 @@ public partial class SettingsPage : Page
 				string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink); // Get last version
 				if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
 				{
+					SynethiaManager.Save(Global.SynethiaConfig);
+					HistoryManager.Save(Global.History);
+					SettingsManager.Save();
+
 					Env.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
-					Environment.Exit(0); // Close
+					Application.Current.Shutdown(); // Close
 				}
 			}
 			catch { }
@@ -137,7 +141,12 @@ public partial class SettingsPage : Page
 			}
 
 			// If the user wants to proceed.
-			//TODO
+			SynethiaManager.Save(Global.SynethiaConfig);
+			HistoryManager.Save(Global.History);
+			SettingsManager.Save();
+
+			Env.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+			Application.Current.Shutdown(); // Close
 		}
 	}
 
