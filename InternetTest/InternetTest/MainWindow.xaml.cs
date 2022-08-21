@@ -424,6 +424,7 @@ public partial class MainWindow : Window
 
 	private void LeavePage()
 	{
+		if (!Global.Settings.UseSynethia) return;
 		if (PageDisplayer.Content is StatusPage)
 		{
 			Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime = Env.UnixTime;

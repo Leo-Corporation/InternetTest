@@ -34,7 +34,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace InternetTest.Pages
 {
@@ -45,7 +44,7 @@ namespace InternetTest.Pages
 	{
 		DownDetectorTestResult CurrentResult { get; set; } = new(0, 0, "");
 		internal int TotalWebsites { get; set; } = 1;
-		bool codeInjected = false;
+		bool codeInjected = !Global.Settings.UseSynethia;
 
 		public DownDetectorPage()
 		{

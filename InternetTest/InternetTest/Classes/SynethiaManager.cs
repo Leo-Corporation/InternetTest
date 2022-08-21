@@ -30,6 +30,7 @@ public static class SynethiaManager
 {
 	public static SynethiaConfig Load()
 	{
+		if (!Global.Settings.UseSynethia) return new();
 		if (!Directory.Exists($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\"))
 		{
 			Directory.CreateDirectory($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\");
@@ -50,6 +51,7 @@ public static class SynethiaManager
 
 	public static void Save(SynethiaConfig synethiaConfig)
 	{
+		if (!Global.Settings.UseSynethia) return;
 		string json = JsonSerializer.Serialize(synethiaConfig, new JsonSerializerOptions { WriteIndented = true });
 		File.WriteAllText(Global.SynethiaPath, json);
 	}

@@ -36,135 +36,135 @@ namespace InternetTest.Pages;
 /// </summary>
 public partial class MyIpPage : Page
 {
-	bool codeInjected = false;
-	public MyIpPage()
-	{
-		InitializeComponent();
-		InitUI();
-		InjectSynethiaCode();
-	}
+    bool codeInjected = !Global.Settings.UseSynethia;
+    public MyIpPage()
+    {
+        InitializeComponent();
+        InitUI();
+        InjectSynethiaCode();
+    }
 
-	private void InitUI()
-	{
-		GetMyIP(); // Locate the current IP
-		TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.MyIP}";
-	}
+    private void InitUI()
+    {
+        GetMyIP(); // Locate the current IP
+        TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.MyIP}";
+    }
 
-	private void InjectSynethiaCode()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
-			};
-		}
+    private void InjectSynethiaCode()
+    {
+        if (codeInjected) return;
+        codeInjected = true;
+        foreach (Button b in Global.FindVisualChildren<Button>(this))
+        {
+            b.Click += (sender, e) =>
+            {
+                Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+            };
+        }
 
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
-			};
-		}
+        // For each TextBox of the page
+        foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
+        {
+            textBox.GotFocus += (o, e) =>
+            {
+                Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+            };
+        }
 
-		// For each CheckBox/RadioButton of the page
-		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-		{
-			checkBox.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
-			};
-			checkBox.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
-			};
-		}
+        // For each CheckBox/RadioButton of the page
+        foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
+        {
+            checkBox.Checked += (o, e) =>
+            {
+                Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+            };
+            checkBox.Unchecked += (o, e) =>
+            {
+                Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+            };
+        }
 
-		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-		{
-			radioButton.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
-			};
-			radioButton.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
-			};
-		}
-	}
+        foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
+        {
+            radioButton.Checked += (o, e) =>
+            {
+                Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+            };
+            radioButton.Unchecked += (o, e) =>
+            {
+                Global.SynethiaConfig.MyIPPageInfo.InteractionCount++;
+            };
+        }
+    }
 
-	internal void GetMyIPBtn_Click(object sender, RoutedEventArgs e)
-	{
-		GetMyIP();
+    internal void GetMyIPBtn_Click(object sender, RoutedEventArgs e)
+    {
+        GetMyIP();
 
-		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.MyIP).UsageCount++;
-	}
+        // Increment the interaction count of the ActionInfo in Global.SynethiaConfig
+        Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.MyIP).UsageCount++;
+    }
 
-	internal async void GetMyIP()
-	{
-		try
-		{
-			StatusIconTxt.Text = "\uF4AB";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
-			MyIPTxt.Text = Properties.Resources.IPShowHere;
+    internal async void GetMyIP()
+    {
+        try
+        {
+            StatusIconTxt.Text = "\uF4AB";
+            StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+            MyIPTxt.Text = Properties.Resources.IPShowHere;
 
-			var ipInfo = await Global.GetIPInfoAsync(""); // Giving an empty IP returns the user's current IP
-			if (ipInfo is not null)
-			{
-				MyIPTxt.Text = ipInfo.Query;
-				CountryTxt.Text = ipInfo.Country;
-				RegionTxt.Text = ipInfo.RegionName;
-				CityTxt.Text = ipInfo.City;
-				ZipCodeTxt.Text = ipInfo.Zip;
-				LatTxt.Text = ipInfo.Lat.ToString().Replace(",", ".");
-				LongitudeTxt.Text = ipInfo.Lon.ToString().Replace(",", ".");
-				TimezoneTxt.Text = ipInfo.Timezone;
-				IspTxt.Text = ipInfo.Isp;
+            var ipInfo = await Global.GetIPInfoAsync(""); // Giving an empty IP returns the user's current IP
+            if (ipInfo is not null)
+            {
+                MyIPTxt.Text = ipInfo.Query;
+                CountryTxt.Text = ipInfo.Country;
+                RegionTxt.Text = ipInfo.RegionName;
+                CityTxt.Text = ipInfo.City;
+                ZipCodeTxt.Text = ipInfo.Zip;
+                LatTxt.Text = ipInfo.Lat.ToString().Replace(",", ".");
+                LongitudeTxt.Text = ipInfo.Lon.ToString().Replace(",", ".");
+                TimezoneTxt.Text = ipInfo.Timezone;
+                IspTxt.Text = ipInfo.Isp;
 
-				StatusIconTxt.Text = "\uF299";
-				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
-			}
-			else
-			{
-				StatusIconTxt.Text = "\uF36E";
-				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
-			}
-		}
-		catch (Exception ex)
-		{
-			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
-		}
-	}
+                StatusIconTxt.Text = "\uF299";
+                StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+            }
+            else
+            {
+                StatusIconTxt.Text = "\uF36E";
+                StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
 
-	private void MapBtn_Click(object sender, RoutedEventArgs e)
-	{
-		var lat = LatTxt.Text;
-		var lon = LongitudeTxt.Text;
+    private void MapBtn_Click(object sender, RoutedEventArgs e)
+    {
+        var lat = LatTxt.Text;
+        var lon = LongitudeTxt.Text;
 
-		_ = double.TryParse(lat.Replace(".", ","), out double dLat);
-		_ = double.TryParse(lon.Replace(".", ","), out double dLon);
-		Process.Start("explorer.exe", Global.Settings.MapProvider switch
-		{
-			MapProvider.OpenStreetMap => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\"",
-			MapProvider.Google=> $"\"https://www.google.com/maps/place/{Global.GetGoogleMapsPoint(dLat, dLon)}\"",
-			MapProvider.Microsoft => $"\"https://www.bing.com/maps?q={lat} {lon}\"",
-			MapProvider.Here => $"\"https://wego.here.com/directions/mix/{lat},{lon}/?map={lat},{lon},12\"",
-			MapProvider.Yandex => $"\"https://yandex.com/maps/?ll={lon}%2C{lat}&z=12\"",
-			_ => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\""
-		});
-	}
+        _ = double.TryParse(lat.Replace(".", ","), out double dLat);
+        _ = double.TryParse(lon.Replace(".", ","), out double dLon);
+        Process.Start("explorer.exe", Global.Settings.MapProvider switch
+        {
+            MapProvider.OpenStreetMap => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\"",
+            MapProvider.Google => $"\"https://www.google.com/maps/place/{Global.GetGoogleMapsPoint(dLat, dLon)}\"",
+            MapProvider.Microsoft => $"\"https://www.bing.com/maps?q={lat} {lon}\"",
+            MapProvider.Here => $"\"https://wego.here.com/directions/mix/{lat},{lon}/?map={lat},{lon},12\"",
+            MapProvider.Yandex => $"\"https://yandex.com/maps/?ll={lon}%2C{lat}&z=12\"",
+            _ => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\""
+        });
+    }
 
-	private void CopyBtn_Click(object sender, RoutedEventArgs e)
-	{
-		try
-		{
-			Clipboard.SetDataObject(MyIPTxt.Text); // Copy to clipboard
-		}
-		catch { }
-	}
+    private void CopyBtn_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            Clipboard.SetDataObject(MyIPTxt.Text); // Copy to clipboard
+        }
+        catch { }
+    }
 }

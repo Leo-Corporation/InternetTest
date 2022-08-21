@@ -32,57 +32,57 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class IpConfigItem : UserControl
 {
-	bool codeInjected = false;
-	private WindowsIpConfig WindowsIpConfig { get; init; }
-	public IpConfigItem(WindowsIpConfig windowsIpConfig)
-	{
-		InitializeComponent();
-		WindowsIpConfig = windowsIpConfig;
+    bool codeInjected = !Global.Settings.UseSynethia;
+    private WindowsIpConfig WindowsIpConfig { get; init; }
+    public IpConfigItem(WindowsIpConfig windowsIpConfig)
+    {
+        InitializeComponent();
+        WindowsIpConfig = windowsIpConfig;
 
-		InitUI();
-	}
+        InitUI();
+    }
 
-	private void InitUI()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
-			};
-		}
+    private void InitUI()
+    {
+        if (codeInjected) return;
+        codeInjected = true;
+        foreach (Button b in Global.FindVisualChildren<Button>(this))
+        {
+            b.Click += (sender, e) =>
+            {
+                Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+            };
+        }
 
-		StatusTxt.Text = WindowsIpConfig.Status == OperationalStatus.Up ? Properties.Resources.ConnectedS : Properties.Resources.Disconnected;
-		Ipv4Txt.Text = WindowsIpConfig.IPv4Address;
-		GatewayIpv4Txt.Text = WindowsIpConfig.IPv4Gateway;
-		MaskIpTxt.Text = WindowsIpConfig.IPv4Mask;
-		Ipv6Txt.Text = WindowsIpConfig.IPv6Address;
-		GatewayIpv6Txt.Text = WindowsIpConfig.IPv6Gateway;
-		InterfaceNameTxt.Text = WindowsIpConfig.Name;
-		DNSPrefixTxt.Text = WindowsIpConfig.DNSSuffix;
+        StatusTxt.Text = WindowsIpConfig.Status == OperationalStatus.Up ? Properties.Resources.ConnectedS : Properties.Resources.Disconnected;
+        Ipv4Txt.Text = WindowsIpConfig.IPv4Address;
+        GatewayIpv4Txt.Text = WindowsIpConfig.IPv4Gateway;
+        MaskIpTxt.Text = WindowsIpConfig.IPv4Mask;
+        Ipv6Txt.Text = WindowsIpConfig.IPv6Address;
+        GatewayIpv6Txt.Text = WindowsIpConfig.IPv6Gateway;
+        InterfaceNameTxt.Text = WindowsIpConfig.Name;
+        DNSPrefixTxt.Text = WindowsIpConfig.DNSSuffix;
 
-		GatewayIpv4TitleTxt.Visibility = GatewayIpv4Txt.Text == "" ? Visibility.Collapsed : Visibility.Visible;
-		GatewayIpv6TitleTxt.Visibility = GatewayIpv6Txt.Text == "" ? Visibility.Collapsed : Visibility.Visible;
-		GatewayIpv4Txt.Visibility = GatewayIpv4Txt.Text == "" ? Visibility.Collapsed : Visibility.Visible;
-		GatewayIpv6Txt.Visibility = GatewayIpv6Txt.Text == "" ? Visibility.Collapsed : Visibility.Visible;
+        GatewayIpv4TitleTxt.Visibility = GatewayIpv4Txt.Text == "" ? Visibility.Collapsed : Visibility.Visible;
+        GatewayIpv6TitleTxt.Visibility = GatewayIpv6Txt.Text == "" ? Visibility.Collapsed : Visibility.Visible;
+        GatewayIpv4Txt.Visibility = GatewayIpv4Txt.Text == "" ? Visibility.Collapsed : Visibility.Visible;
+        GatewayIpv6Txt.Visibility = GatewayIpv6Txt.Text == "" ? Visibility.Collapsed : Visibility.Visible;
 
-		if (WindowsIpConfig.Status == OperationalStatus.Up)
-		{
-			CollapseGrid.Visibility = CollapseGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-			ExpanderBtn.Content = CollapseGrid.Visibility != Visibility.Visible ? "\uF2A4" : "\uF2B7";
-		}
-	}
+        if (WindowsIpConfig.Status == OperationalStatus.Up)
+        {
+            CollapseGrid.Visibility = CollapseGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            ExpanderBtn.Content = CollapseGrid.Visibility != Visibility.Visible ? "\uF2A4" : "\uF2B7";
+        }
+    }
 
-	private void ExpanderBtn_Click(object sender, RoutedEventArgs e)
-	{
-		CollapseGrid.Visibility = CollapseGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-		ExpanderBtn.Content = CollapseGrid.Visibility != Visibility.Visible ? "\uF2A4" : "\uF2B7";
-	}
+    private void ExpanderBtn_Click(object sender, RoutedEventArgs e)
+    {
+        CollapseGrid.Visibility = CollapseGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+        ExpanderBtn.Content = CollapseGrid.Visibility != Visibility.Visible ? "\uF2A4" : "\uF2B7";
+    }
 
-	private void CopyBtn_Click(object sender, RoutedEventArgs e)
-	{
-		Clipboard.SetDataObject(WindowsIpConfig.ToString());
-	}
+    private void CopyBtn_Click(object sender, RoutedEventArgs e)
+    {
+        Clipboard.SetDataObject(WindowsIpConfig.ToString());
+    }
 }

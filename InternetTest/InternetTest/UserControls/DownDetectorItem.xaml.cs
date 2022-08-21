@@ -32,88 +32,88 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class DownDetectorItem : UserControl
 {
-	bool codeInjected = false;
-	StackPanel ParentStackPanel { get; init; }
-	internal DownDetectorTestResult DownDetectorTestResult { get; set; }
-	string URL { get; set; }
-	public DownDetectorItem(StackPanel parentElement, string url, DownDetectorTestResult downDetectorTestResult)
-	{
-		InitializeComponent();
-		ParentStackPanel = parentElement; // Save the parent element
-		URL = url; // Save the URL
-		DownDetectorTestResult = downDetectorTestResult; // Save the result
+    bool codeInjected = !Global.Settings.UseSynethia;
+    StackPanel ParentStackPanel { get; init; }
+    internal DownDetectorTestResult DownDetectorTestResult { get; set; }
+    string URL { get; set; }
+    public DownDetectorItem(StackPanel parentElement, string url, DownDetectorTestResult downDetectorTestResult)
+    {
+        InitializeComponent();
+        ParentStackPanel = parentElement; // Save the parent element
+        URL = url; // Save the URL
+        DownDetectorTestResult = downDetectorTestResult; // Save the result
 
-		InitUI(); // load the UI
-	}
+        InitUI(); // load the UI
+    }
 
-	private void InitUI()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
-			};
-		}
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
-			};
-		}
+    private void InitUI()
+    {
+        if (codeInjected) return;
+        codeInjected = true;
+        foreach (Button b in Global.FindVisualChildren<Button>(this))
+        {
+            b.Click += (sender, e) =>
+            {
+                Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+            };
+        }
+        // For each TextBox of the page
+        foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
+        {
+            textBox.GotFocus += (o, e) =>
+            {
+                Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+            };
+        }
 
-		WebsiteTxt.Text = URL; // Set text
+        WebsiteTxt.Text = URL; // Set text
 
-		if (DownDetectorTestResult.Code == 0) return;
-		UpdateIcon();
+        if (DownDetectorTestResult.Code == 0) return;
+        UpdateIcon();
 
-	}
+    }
 
-	internal void UpdateIcon()
-	{
-		if (DownDetectorTestResult.Code >= 400) // If the website is down
-		{
-			IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red")); // Set color to red
-			IconTxt.Text = "\uF36E"; // Add (down) to the text
-		}
-		else // If the website is up
-		{
-			IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green")); // Set color to green
-			IconTxt.Text = "\uF299"; // Add (up) to the text
-		}
-	}
+    internal void UpdateIcon()
+    {
+        if (DownDetectorTestResult.Code >= 400) // If the website is down
+        {
+            IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red")); // Set color to red
+            IconTxt.Text = "\uF36E"; // Add (down) to the text
+        }
+        else // If the website is up
+        {
+            IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green")); // Set color to green
+            IconTxt.Text = "\uF299"; // Add (up) to the text
+        }
+    }
 
-	private async void TestSiteBtn_Click(object sender, RoutedEventArgs e)
-	{
-		if (!WebsiteTxt.Text.StartsWith("http"))
-		{
-			WebsiteTxt.Text = "https://" + WebsiteTxt.Text;
-		}
-		DownDetectorTestResult = await Global.DownDetectorPage.LaunchTest(WebsiteTxt.Text); // Launch the test
-		URL = WebsiteTxt.Text;
+    private async void TestSiteBtn_Click(object sender, RoutedEventArgs e)
+    {
+        if (!WebsiteTxt.Text.StartsWith("http"))
+        {
+            WebsiteTxt.Text = "https://" + WebsiteTxt.Text;
+        }
+        DownDetectorTestResult = await Global.DownDetectorPage.LaunchTest(WebsiteTxt.Text); // Launch the test
+        URL = WebsiteTxt.Text;
 
-		UpdateIcon(); // Update the icon
-	}
+        UpdateIcon(); // Update the icon
+    }
 
-	private void InfoBtn_Click(object sender, RoutedEventArgs e)
-	{
-		if (DownDetectorTestResult is not null)
-		{
-			Global.DownDetectorPage.DetailsStatusTxt.Text = DownDetectorTestResult.Code.ToString(); // Set the text
-			Global.DownDetectorPage.DetailsTimeTxt.Text = $"{DownDetectorTestResult.Time}ms"; // Set the text
-			Global.DownDetectorPage.DetailsMessageTxt.Text = DownDetectorTestResult.Message; // Set the text 
-			Global.DownDetectorPage.DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, URL); // Set the text 
-		}
-	}
+    private void InfoBtn_Click(object sender, RoutedEventArgs e)
+    {
+        if (DownDetectorTestResult is not null)
+        {
+            Global.DownDetectorPage.DetailsStatusTxt.Text = DownDetectorTestResult.Code.ToString(); // Set the text
+            Global.DownDetectorPage.DetailsTimeTxt.Text = $"{DownDetectorTestResult.Time}ms"; // Set the text
+            Global.DownDetectorPage.DetailsMessageTxt.Text = DownDetectorTestResult.Message; // Set the text 
+            Global.DownDetectorPage.DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, URL); // Set the text 
+        }
+    }
 
-	private void DeleteBtn_Click(object sender, RoutedEventArgs e)
-	{
-		ParentStackPanel.Children.Remove(this); // Delete this element from the parent element
-		Global.DownDetectorPage.TotalWebsites--; // Update the total websites
-		Global.DownDetectorPage.TestBtn.Content = $"{Properties.Resources.Test} ({Global.DownDetectorPage.TotalWebsites})"; // Update the text
-	}
+    private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+    {
+        ParentStackPanel.Children.Remove(this); // Delete this element from the parent element
+        Global.DownDetectorPage.TotalWebsites--; // Update the total websites
+        Global.DownDetectorPage.TestBtn.Content = $"{Properties.Resources.Test} ({Global.DownDetectorPage.TotalWebsites})"; // Update the text
+    }
 }
