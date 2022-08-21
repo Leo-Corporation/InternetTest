@@ -152,7 +152,7 @@ public partial class StatusPage : Page
             DetailsStatusTxt.Text = "N/A";
             DetailsMessageTxt.Text = Properties.Resources.Error;
             DetailsTimeTxt.Text = "0ms";
-            Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:HH:mm} - {Properties.Resources.NotConnected}", StatusIconTxt.Text));
+            Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:g} - {Properties.Resources.NotConnected}", StatusIconTxt.Text));
 
         }
     }
