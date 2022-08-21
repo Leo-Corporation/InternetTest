@@ -21,17 +21,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using LeoCorpLibrary;
 using InternetTest.Enums;
+using LeoCorpLibrary;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 using System.Diagnostics;
+using System.IO;
 using System.Windows;
+using System.Xml.Serialization;
 
 namespace InternetTest.Classes;
 public class Settings
@@ -89,7 +85,7 @@ public static class SettingsManager
 		// If there's already a setting file
 		// Deserialize from xml
 		XmlSerializer xmlDeserializer = new(typeof(Settings));
-		
+
 		StreamReader streamReader = new(SettingsPath);
 		return (Settings)xmlDeserializer.Deserialize(streamReader);
 	}

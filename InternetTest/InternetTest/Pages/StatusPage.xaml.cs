@@ -38,134 +38,134 @@ namespace InternetTest.Pages;
 /// </summary>
 public partial class StatusPage : Page
 {
-    bool codeInjected = !Global.Settings.UseSynethia;
-    public StatusPage()
-    {
-        InitializeComponent();
-        InitUI(); // Load the UI
-        Loaded += (o, e) => InjectSynethiaCode();
-    }
+	bool codeInjected = !Global.Settings.UseSynethia;
+	public StatusPage()
+	{
+		InitializeComponent();
+		InitUI(); // Load the UI
+		Loaded += (o, e) => InjectSynethiaCode();
+	}
 
-    private void InjectSynethiaCode()
-    {
-        if (codeInjected) return;
-        codeInjected = true;
-        foreach (Button b in Global.FindVisualChildren<Button>(this))
-        {
-            b.Click += (sender, e) =>
-            {
-                Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
-            };
-        }
+	private void InjectSynethiaCode()
+	{
+		if (codeInjected) return;
+		codeInjected = true;
+		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		{
+			b.Click += (sender, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
 
-        // For each TextBox of the page
-        foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-        {
-            textBox.GotFocus += (o, e) =>
-            {
-                Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
-            };
-        }
+		// For each TextBox of the page
+		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
+		{
+			textBox.GotFocus += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
 
-        // For each CheckBox/RadioButton of the page
-        foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-        {
-            checkBox.Checked += (o, e) =>
-            {
-                Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
-            };
-            checkBox.Unchecked += (o, e) =>
-            {
-                Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
-            };
-        }
+		// For each CheckBox/RadioButton of the page
+		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
+		{
+			checkBox.Checked += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+			checkBox.Unchecked += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
 
-        foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-        {
-            radioButton.Checked += (o, e) =>
-            {
-                Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
-            };
-            radioButton.Unchecked += (o, e) =>
-            {
-                Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
-            };
-        }
-    }
+		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
+		{
+			radioButton.Checked += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+			radioButton.Unchecked += (o, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
+		}
+	}
 
-    private void InitUI()
-    {
-        TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.Status}"; // Set the title
+	private void InitUI()
+	{
+		TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.Status}"; // Set the title
 
-        if (!Global.Settings.TestOnStart) return;
-        LaunchTest(Global.Settings.TestSite ?? "https://leocorporation"); // Launch the test
-    }
+		if (!Global.Settings.TestOnStart) return;
+		LaunchTest(Global.Settings.TestSite ?? "https://leocorporation"); // Launch the test
+	}
 
-    private async void LaunchTest(string customSite)
-    {
-        try
-        {
-            // Show the waiting screen
-            StatusIconTxt.Text = "\uF2DE";
-            StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
-            StatusTxt.Text = Properties.Resources.TestInProgress;
+	private async void LaunchTest(string customSite)
+	{
+		try
+		{
+			// Show the waiting screen
+			StatusIconTxt.Text = "\uF2DE";
+			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			StatusTxt.Text = Properties.Resources.TestInProgress;
 
-            // Launch the test
-            // Part 1: Get the status code and start timer
-            int time = 0;
-            DispatcherTimer dispatcherTimer = new() { Interval = TimeSpan.FromMilliseconds(1) };
-            dispatcherTimer.Tick += (o, e) => time++;
-            dispatcherTimer.Start();
+			// Launch the test
+			// Part 1: Get the status code and start timer
+			int time = 0;
+			DispatcherTimer dispatcherTimer = new() { Interval = TimeSpan.FromMilliseconds(1) };
+			dispatcherTimer.Tick += (o, e) => time++;
+			dispatcherTimer.Start();
 
-            int code = await NetworkConnection.GetWebPageStatusCodeAsync(customSite);
-            string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(customSite);
+			int code = await NetworkConnection.GetWebPageStatusCodeAsync(customSite);
+			string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(customSite);
 
-            dispatcherTimer.Stop();
+			dispatcherTimer.Stop();
 
-            DetailsStatusTxt.Text = code.ToString();
-            DetailsMessageTxt.Text = message;
+			DetailsStatusTxt.Text = code.ToString();
+			DetailsMessageTxt.Text = message;
 
-            // Part 2: Display time
-            DetailsTimeTxt.Text = $"{time}ms";
+			// Part 2: Display time
+			DetailsTimeTxt.Text = $"{time}ms";
 
-            // Part 3: Display the result
-            if (code != 400)
-            {
-                StatusIconTxt.Text = "\uF299";
-                StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
-                StatusTxt.Text = Properties.Resources.Connected;
-            }
-            else
-            {
-                StatusIconTxt.Text = "\uF36E";
-                StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
-                StatusTxt.Text = Properties.Resources.NotConnected;
-            }
+			// Part 3: Display the result
+			if (code != 400)
+			{
+				StatusIconTxt.Text = "\uF299";
+				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+				StatusTxt.Text = Properties.Resources.Connected;
+			}
+			else
+			{
+				StatusIconTxt.Text = "\uF36E";
+				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+				StatusTxt.Text = Properties.Resources.NotConnected;
+			}
 
-            Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:g} - {Properties.Resources.Connected}", StatusIconTxt.Text));
-        }
-        catch (HttpRequestException)
-        {
-            StatusIconTxt.Text = "\uF36E";
-            StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
-            StatusTxt.Text = Properties.Resources.NotConnected;
-            DetailsStatusTxt.Text = "N/A";
-            DetailsMessageTxt.Text = Properties.Resources.Error;
-            DetailsTimeTxt.Text = "0ms";
-            Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:g} - {Properties.Resources.NotConnected}", StatusIconTxt.Text));
+			Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:g} - {Properties.Resources.Connected}", StatusIconTxt.Text));
+		}
+		catch (HttpRequestException)
+		{
+			StatusIconTxt.Text = "\uF36E";
+			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+			StatusTxt.Text = Properties.Resources.NotConnected;
+			DetailsStatusTxt.Text = "N/A";
+			DetailsMessageTxt.Text = Properties.Resources.Error;
+			DetailsTimeTxt.Text = "0ms";
+			Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:g} - {Properties.Resources.NotConnected}", StatusIconTxt.Text));
 
-        }
-    }
+		}
+	}
 
-    internal void TestBtn_Click(object sender, RoutedEventArgs e)
-    {
-        LaunchTest(Global.Settings.TestSite ?? "https://leocorporation.dev");
-        // Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-        Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.Test).UsageCount++;
-    }
+	internal void TestBtn_Click(object sender, RoutedEventArgs e)
+	{
+		LaunchTest(Global.Settings.TestSite ?? "https://leocorporation.dev");
+		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
+		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.Test).UsageCount++;
+	}
 
-    private void BrowserBtn_Click(object sender, RoutedEventArgs e)
-    {
-        Process.Start("explorer.exe", Global.Settings.TestSite ?? "https://leocorporation.dev");
-    }
+	private void BrowserBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Process.Start("explorer.exe", Global.Settings.TestSite ?? "https://leocorporation.dev");
+	}
 }

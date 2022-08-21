@@ -39,13 +39,13 @@ public partial class App : Application
 		Global.HistoryPage = new();
 		Global.SettingsPage = new();
 		Global.StatusPage = new();
-		Global.DownDetectorPage= new();
+		Global.DownDetectorPage = new();
 		Global.MyIpPage = new();
 		Global.LocateIpPage = new();
 		Global.PingPage = new();
 		Global.IpConfigPage = new();
-		Global.WiFiPasswordsPage= new();
-		
+		Global.WiFiPasswordsPage = new();
+
 
 		new MainWindow().Show();
 	}

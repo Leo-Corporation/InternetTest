@@ -70,7 +70,7 @@ public partial class ActionCard : UserControl
 				break;
 			case AppActions.Ping:
 				Global.PingPage.IpTxt.Text = Global.PingPage.IpTxt.Text == ""
-					? Global.Settings.TestSite ?? "https://leocorporation.dev" 
+					? Global.Settings.TestSite ?? "https://leocorporation.dev"
 					: Global.PingPage.IpTxt.Text;
 				Global.PingPage.PingBtn_Click(this, null);
 				OnCardClick?.Invoke(this, new(AppPages.Ping));

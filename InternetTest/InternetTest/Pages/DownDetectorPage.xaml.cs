@@ -230,7 +230,7 @@ namespace InternetTest.Pages
 					IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 				}
 				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
-				
+
 				DetailsMessageTxt.Text = ex.Message;
 
 				DetailsTimeTxt.Text = $"0ms"; // Update the time

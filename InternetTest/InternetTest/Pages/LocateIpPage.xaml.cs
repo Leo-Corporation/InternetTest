@@ -38,148 +38,148 @@ namespace InternetTest.Pages;
 /// </summary>
 public partial class LocateIpPage : Page
 {
-    bool codeInjected = !Global.Settings.UseSynethia;
-    private IPInfo? CurrentIP { get; set; }
-    public LocateIpPage()
-    {
-        InitializeComponent();
-        InitUI(); // Load the UI
-        InjectSynethiaCode();
-    }
+	bool codeInjected = !Global.Settings.UseSynethia;
+	private IPInfo? CurrentIP { get; set; }
+	public LocateIpPage()
+	{
+		InitializeComponent();
+		InitUI(); // Load the UI
+		InjectSynethiaCode();
+	}
 
-    private void InitUI()
-    {
-        TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.LocateIP}";
-        LocateIP(""); // Get the current IP of the user
-    }
+	private void InitUI()
+	{
+		TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.LocateIP}";
+		LocateIP(""); // Get the current IP of the user
+	}
 
-    private void InjectSynethiaCode()
-    {
-        if (codeInjected) return;
-        codeInjected = true;
-        foreach (Button b in Global.FindVisualChildren<Button>(this))
-        {
-            b.Click += (sender, e) =>
-            {
-                Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-            };
-        }
+	private void InjectSynethiaCode()
+	{
+		if (codeInjected) return;
+		codeInjected = true;
+		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		{
+			b.Click += (sender, e) =>
+			{
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
+			};
+		}
 
-        // For each TextBox of the page
-        foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-        {
-            textBox.GotFocus += (o, e) =>
-            {
-                Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-            };
-        }
+		// For each TextBox of the page
+		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
+		{
+			textBox.GotFocus += (o, e) =>
+			{
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
+			};
+		}
 
-        // For each CheckBox/RadioButton of the page
-        foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-        {
-            checkBox.Checked += (o, e) =>
-            {
-                Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-            };
-            checkBox.Unchecked += (o, e) =>
-            {
-                Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-            };
-        }
+		// For each CheckBox/RadioButton of the page
+		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
+		{
+			checkBox.Checked += (o, e) =>
+			{
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
+			};
+			checkBox.Unchecked += (o, e) =>
+			{
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
+			};
+		}
 
-        foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-        {
-            radioButton.Checked += (o, e) =>
-            {
-                Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-            };
-            radioButton.Unchecked += (o, e) =>
-            {
-                Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-            };
-        }
-    }
+		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
+		{
+			radioButton.Checked += (o, e) =>
+			{
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
+			};
+			radioButton.Unchecked += (o, e) =>
+			{
+				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
+			};
+		}
+	}
 
-    internal void LocateIPBtn_Click(object sender, RoutedEventArgs e)
-    {
-        if (!Global.IsIpValid(IpTxt.Text)) return; // Cancel if the IP isn't valid
-        LocateIP(IpTxt.Text); // Locate IP
+	internal void LocateIPBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (!Global.IsIpValid(IpTxt.Text)) return; // Cancel if the IP isn't valid
+		LocateIP(IpTxt.Text); // Locate IP
 
-        // Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-        Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.LocateIP).UsageCount++;
-    }
+		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
+		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.LocateIP).UsageCount++;
+	}
 
-    private void MapBtn_Click(object sender, RoutedEventArgs e)
-    {
-        var lat = LatTxt.Text;
-        var lon = LongitudeTxt.Text;
-        _ = double.TryParse(lat.Replace(".", ","), out double dLat);
-        _ = double.TryParse(lon.Replace(".", ","), out double dLon);
-        Process.Start("explorer.exe", Global.Settings.MapProvider switch
-        {
-            MapProvider.OpenStreetMap => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\"",
-            MapProvider.Google => $"\"https://www.google.com/maps/place/{Global.GetGoogleMapsPoint(dLat, dLon)}\"",
-            MapProvider.Microsoft => $"\"https://www.bing.com/maps?q={lat} {lon}\"",
-            MapProvider.Here => $"\"https://wego.here.com/directions/mix/{lat},{lon}/?map={lat},{lon},12\"",
-            MapProvider.Yandex => $"\"https://yandex.com/maps/?ll={lon}%2C{lat}&z=12\"",
-            _ => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\""
-        });
-    }
+	private void MapBtn_Click(object sender, RoutedEventArgs e)
+	{
+		var lat = LatTxt.Text;
+		var lon = LongitudeTxt.Text;
+		_ = double.TryParse(lat.Replace(".", ","), out double dLat);
+		_ = double.TryParse(lon.Replace(".", ","), out double dLon);
+		Process.Start("explorer.exe", Global.Settings.MapProvider switch
+		{
+			MapProvider.OpenStreetMap => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\"",
+			MapProvider.Google => $"\"https://www.google.com/maps/place/{Global.GetGoogleMapsPoint(dLat, dLon)}\"",
+			MapProvider.Microsoft => $"\"https://www.bing.com/maps?q={lat} {lon}\"",
+			MapProvider.Here => $"\"https://wego.here.com/directions/mix/{lat},{lon}/?map={lat},{lon},12\"",
+			MapProvider.Yandex => $"\"https://yandex.com/maps/?ll={lon}%2C{lat}&z=12\"",
+			_ => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\""
+		});
+	}
 
-    internal async void LocateIP(string ip)
-    {
-        try
-        {
-            StatusIconTxt.Text = "\uF4AB";
-            StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
-            MyIPTxt.Text = Properties.Resources.IPShowHere2;
+	internal async void LocateIP(string ip)
+	{
+		try
+		{
+			StatusIconTxt.Text = "\uF4AB";
+			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			MyIPTxt.Text = Properties.Resources.IPShowHere2;
 
-            var ipInfo = await Global.GetIPInfoAsync(ip); // Giving an empty IP returns the user's current IP
-            CurrentIP = ipInfo;
-            if (ipInfo is not null)
-            {
-                MyIPTxt.Text = ipInfo.Query;
-                CountryTxt.Text = ipInfo.Country;
-                RegionTxt.Text = ipInfo.RegionName;
-                CityTxt.Text = ipInfo.City;
-                ZipCodeTxt.Text = ipInfo.Zip;
-                LatTxt.Text = ipInfo.Lat.ToString().Replace(",", ".");
-                LongitudeTxt.Text = ipInfo.Lon.ToString().Replace(",", ".");
-                TimezoneTxt.Text = ipInfo.Timezone;
-                IspTxt.Text = ipInfo.Isp;
+			var ipInfo = await Global.GetIPInfoAsync(ip); // Giving an empty IP returns the user's current IP
+			CurrentIP = ipInfo;
+			if (ipInfo is not null)
+			{
+				MyIPTxt.Text = ipInfo.Query;
+				CountryTxt.Text = ipInfo.Country;
+				RegionTxt.Text = ipInfo.RegionName;
+				CityTxt.Text = ipInfo.City;
+				ZipCodeTxt.Text = ipInfo.Zip;
+				LatTxt.Text = ipInfo.Lat.ToString().Replace(",", ".");
+				LongitudeTxt.Text = ipInfo.Lon.ToString().Replace(",", ".");
+				TimezoneTxt.Text = ipInfo.Timezone;
+				IspTxt.Text = ipInfo.Isp;
 
-                IpTxt.Text = IpTxt.Text is { Length: 0 } ? ipInfo.Query : IpTxt.Text; // If the IP is empty, use the user's current IP
+				IpTxt.Text = IpTxt.Text is { Length: 0 } ? ipInfo.Query : IpTxt.Text; // If the IP is empty, use the user's current IP
 
-                StatusIconTxt.Text = "\uF299";
-                StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
-            }
-            else
-            {
-                StatusIconTxt.Text = "\uF36E";
-                StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error); // Show error message
-        }
-    }
+				StatusIconTxt.Text = "\uF299";
+				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+			}
+			else
+			{
+				StatusIconTxt.Text = "\uF36E";
+				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error); // Show error message
+		}
+	}
 
-    private void SaveBtn_Click(object sender, RoutedEventArgs e)
-    {
-        if (CurrentIP is null) return;
-        SaveFileDialog dialog = new()
-        {
-            Title = Properties.Resources.Save,
-            Filter = Properties.Resources.TxtFiles + " (*.txt)|*.txt",
-            InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-            FileName = IpTxt.Text + ".txt",
-            DefaultExt = ".txt"
-        };
+	private void SaveBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (CurrentIP is null) return;
+		SaveFileDialog dialog = new()
+		{
+			Title = Properties.Resources.Save,
+			Filter = Properties.Resources.TxtFiles + " (*.txt)|*.txt",
+			InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+			FileName = IpTxt.Text + ".txt",
+			DefaultExt = ".txt"
+		};
 
-        if (dialog.ShowDialog().Value)
-        {
-            File.WriteAllText(dialog.FileName, CurrentIP?.ToString());
-        }
-    }
+		if (dialog.ShowDialog().Value)
+		{
+			File.WriteAllText(dialog.FileName, CurrentIP?.ToString());
+		}
+	}
 }
