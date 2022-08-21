@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>True</UseWindowsForms>
-		<Version>7.0.0.2208-pre3</Version>
+		<Version>7.0.0.2208-pre4</Version>
 		<Copyright>© 2022</Copyright>
 		<Company>Léo Corporation</Company>
 		<Description>InternetTest is a modern connection utility for Windows.</Description>

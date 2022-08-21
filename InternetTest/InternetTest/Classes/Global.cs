@@ -40,7 +40,7 @@ using System.Windows.Media;
 namespace InternetTest.Classes;
 public static class Global
 {
-	public static string Version => "7.0.0.2208-pre3";
+	public static string Version => "7.0.0.2208-pre4";
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	public static Settings Settings { get; set; } = SettingsManager.Load();
 	public static SynethiaConfig SynethiaConfig { get; set; } = SynethiaManager.Load();
