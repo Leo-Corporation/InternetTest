@@ -196,7 +196,7 @@
 	<value>Open in browser</value>
   </data>
   <data name="Connected" xml:space="preserve">
-	<value>You are connected to the InternetTest</value>
+	<value>You are connected to the Internet</value>
   </data>
   <data name="NotConnected" xml:space="preserve">
 	<value>You aren't connected to the Internet</value>

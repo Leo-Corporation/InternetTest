@@ -178,7 +178,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You are connected to the InternetTest.
+        ///   Looks up a localized string similar to You are connected to the Internet.
         /// </summary>
         public static string Connected {
             get {
