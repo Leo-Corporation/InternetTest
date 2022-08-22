@@ -132,17 +132,27 @@
 									<ColumnDefinition Width="Auto"/>
 									<ColumnDefinition Width="*"/>
 								</Grid.ColumnDefinitions>
-								<Border Padding="7" CornerRadius="5">
+								<Border Width="32" Height="32" Padding="7" CornerRadius="5">
 									<Border.Background>
 										<LinearGradientBrush>
 											<GradientStop Color="#0088FF" Offset="0"/>
 											<GradientStop Color="#2153E0" Offset="1"/>
 										</LinearGradientBrush>
 									</Border.Background>
-									<TextBlock Text="&#xF488;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled"/>
+									<TextBlock x:Name="HomeIconTxt" Text="&#xF488;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 								</Border>
 								<TextBlock Text="{x:Static lang:Resources.Home}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 							</Grid>
+
+							<Button.Triggers>
+								<EventTrigger RoutedEvent="MouseEnter">
+									<BeginStoryboard>
+										<Storyboard>
+											<DoubleAnimation From="12" To="18" Storyboard.TargetProperty="FontSize" Storyboard.TargetName="HomeIconTxt" Duration="0:0:0.2"/>
+										</Storyboard>
+									</BeginStoryboard>
+								</EventTrigger>
+							</Button.Triggers>
 						</Button>
 						<Button x:Name="HistoryPageBtn" Background="Transparent" BorderThickness="0" Style="{DynamicResource StandardButton}" Margin="0,5,0,0" HorizontalContentAlignment="Left" Click="HistoryPageBtn_Click">
 							<Grid>
@@ -150,17 +160,37 @@
 									<ColumnDefinition Width="Auto"/>
 									<ColumnDefinition Width="*"/>
 								</Grid.ColumnDefinitions>
-								<Border Padding="7" CornerRadius="5">
+								<Border Padding="7" CornerRadius="5" Width="32" Height="32">
 									<Border.Background>
 										<LinearGradientBrush>
 											<GradientStop Color="#6F00FF" Offset="0"/>
 											<GradientStop Color="#9A21E0" Offset="1"/>
 										</LinearGradientBrush>
 									</Border.Background>
-									<TextBlock Text="&#xF486;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled"/>
+									<TextBlock x:Name="HistoryIconTxt" Text="&#xF486;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+										<TextBlock.RenderTransform>
+											<TransformGroup>
+												<RotateTransform x:Name="HistoryRotator" Angle="0"/>
+											</TransformGroup>
+										</TextBlock.RenderTransform>
+									</TextBlock>
 								</Border>
 								<TextBlock Text="{x:Static lang:Resources.History}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 							</Grid>
+
+							<Button.Triggers>
+								<EventTrigger RoutedEvent="MouseEnter">
+									<BeginStoryboard>
+										<Storyboard>
+											<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="HistoryIconTxt" BeginTime="00:00:00" AccelerationRatio="0.5">
+												<SplineThicknessKeyFrame KeyTime="00:00:00" Value="10,0,0,0" />
+												<SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
+											</ThicknessAnimationUsingKeyFrames>
+											<DoubleAnimation From="180" To="0" Storyboard.TargetProperty="Angle" Storyboard.TargetName="HistoryRotator" Duration="0:0:0.2"/>
+										</Storyboard>
+									</BeginStoryboard>
+								</EventTrigger>
+							</Button.Triggers>
 						</Button>
 						<Button x:Name="SettingsPageBtn" Background="Transparent" BorderThickness="0" Style="{DynamicResource StandardButton}" Margin="0,5,0,0" HorizontalContentAlignment="Left" Click="SettingsPageBtn_Click">
 							<Grid>
@@ -175,21 +205,37 @@
 											<GradientStop Color="#343C51" Offset="1"/>
 										</LinearGradientBrush>
 									</Border.Background>
-									<TextBlock Text="&#xF6B3;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled"/>
+									<TextBlock x:Name="SettingsIconTxt" Text="&#xF6B3;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled" RenderTransformOrigin="0.5,0.5">
+										<TextBlock.RenderTransform>
+											<TransformGroup>
+												<RotateTransform x:Name="SettingsRotator" Angle="0"/>
+											</TransformGroup>
+										</TextBlock.RenderTransform>
+									</TextBlock>
 								</Border>
 								<TextBlock Text="{x:Static lang:Resources.Settings}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 							</Grid>
+
+							<Button.Triggers>
+								<EventTrigger RoutedEvent="MouseEnter">
+									<BeginStoryboard>
+										<Storyboard>
+											<DoubleAnimation From="360" To="0" Storyboard.TargetProperty="Angle" Storyboard.TargetName="SettingsRotator" Duration="0:0:0.4"/>
+										</Storyboard>
+									</BeginStoryboard>
+								</EventTrigger>
+							</Button.Triggers>
 						</Button>
 
 						<TextBlock Text="{x:Static lang:Resources.Tools}" FontWeight="Bold" Margin="0 10"/>
-						<Button x:Name="WebUtilitiesBtn" Click="WebUtilitiesBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
+						<Button x:Name="WebUtilitiesBtn" Click="WebUtilitiesBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch" Height="30">
 							<Grid>
 								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="16"/>
 									<ColumnDefinition Width="*"/>
 									<ColumnDefinition Width="Auto"/>
 								</Grid.ColumnDefinitions>
-								<TextBlock Text="&#xF45B;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+								<TextBlock x:Name="UtilIconTxt" Text="&#xF45B;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
 								<TextBlock Text="{x:Static lang:Resources.WebUtilities}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
 								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
 									<TextBlock.RenderTransform>
@@ -199,19 +245,32 @@
 									</TextBlock.RenderTransform>
 								</TextBlock>
 							</Grid>
+
+							<Button.Triggers>
+								<EventTrigger RoutedEvent="MouseEnter">
+									<BeginStoryboard>
+										<Storyboard>
+											<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="UtilIconTxt" BeginTime="00:00:00">
+												<SplineThicknessKeyFrame KeyTime="00:00:00" Value="20,0,0,0" />
+												<SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
+											</ThicknessAnimationUsingKeyFrames>
+										</Storyboard>
+									</BeginStoryboard>
+								</EventTrigger>
+							</Button.Triggers>
 						</Button>
 						<StackPanel x:Name="UtilitiesPanel" Visibility="Collapsed">
 							<Button x:Name="StatusPageBtn" Content="{x:Static lang:Resources.Status}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="StatusPageBtn_Click"/>
 							<Button x:Name="DownDetectorPageBtn" Content="{x:Static lang:Resources.DownDetector}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="DownDetectorPageBtn_Click"/>
 						</StackPanel>
-						<Button x:Name="IPToolsBtn" Click="IPToolsBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
+						<Button x:Name="IPToolsBtn" Click="IPToolsBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch" Height="30">
 							<Grid>
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition Width="Auto"/>
 									<ColumnDefinition Width="*"/>
 									<ColumnDefinition Width="Auto"/>
 								</Grid.ColumnDefinitions>
-								<TextBlock Text="&#xF4F9;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+								<TextBlock x:Name="IPIconTxt" Text="&#xF4F9;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
 								<TextBlock Text="{x:Static lang:Resources.IPTools}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
 								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
 									<TextBlock.RenderTransform>
@@ -221,6 +280,19 @@
 									</TextBlock.RenderTransform>
 								</TextBlock>
 							</Grid>
+
+							<Button.Triggers>
+								<EventTrigger RoutedEvent="MouseEnter">
+									<BeginStoryboard>
+										<Storyboard>
+											<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="IPIconTxt" BeginTime="00:00:00">
+												<SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,20" />
+												<SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
+											</ThicknessAnimationUsingKeyFrames>
+										</Storyboard>
+									</BeginStoryboard>
+								</EventTrigger>
+							</Button.Triggers>
 						</Button>
 						<StackPanel x:Name="IPPanel" Visibility="Collapsed">
 							<Button x:Name="MyIPPageBtn" Content="{x:Static lang:Resources.MyIP}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="MyIPPageBtn_Click"/>
@@ -229,11 +301,17 @@
 						<Button x:Name="CommandsBtn" Click="CommandsBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
 							<Grid>
 								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="16"/>
 									<ColumnDefinition Width="*"/>
 									<ColumnDefinition Width="Auto"/>
 								</Grid.ColumnDefinitions>
-								<TextBlock Text="&#xF8B9;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+								<TextBlock x:Name="ComIconTxt" Text="&#xF8B9;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+									<TextBlock.RenderTransform>
+										<TransformGroup>
+											<RotateTransform x:Name="ComIconRotator" Angle="0"/>
+										</TransformGroup>
+									</TextBlock.RenderTransform>
+								</TextBlock>
 								<TextBlock Text="{x:Static lang:Resources.Commands}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
 								<TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
 									<TextBlock.RenderTransform>
@@ -243,6 +321,17 @@
 									</TextBlock.RenderTransform>
 								</TextBlock>
 							</Grid>
+
+							<Button.Triggers>
+								<EventTrigger RoutedEvent="MouseEnter">
+									<BeginStoryboard>
+										<Storyboard>
+											<DoubleAnimation From="4" To="18" Storyboard.TargetProperty="FontSize" Storyboard.TargetName="ComIconTxt" Duration="0:0:0.2"/>
+											<DoubleAnimation From="180" To="0" Storyboard.TargetProperty="Angle" Storyboard.TargetName="ComIconRotator" Duration="0:0:0.2"/>
+										</Storyboard>
+									</BeginStoryboard>
+								</EventTrigger>
+							</Button.Triggers>
 						</Button>
 						<StackPanel x:Name="CommandPanel" Visibility="Collapsed">
 							<Button x:Name="PingPageBtn" Content="{x:Static lang:Resources.Ping}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="PingPageBtn_Click"/>
