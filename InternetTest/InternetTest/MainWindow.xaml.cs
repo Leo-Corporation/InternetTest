@@ -68,6 +68,7 @@ public partial class MainWindow : Window
 		SizeChanged += (o, e) =>
 		{
 			PageScroller.Height = (ActualHeight - (GridRow1.ActualHeight + 68) > 0) ? ActualHeight - (GridRow1.ActualHeight + 68) : 0; // Set the scroller height
+			ActionsScrollViewer.Height = ActualHeight - SideBarTop.ActualHeight - GridRow1.ActualHeight - 60;
 		};
 		Closed += (o, e) => LeavePage();
 		HelloTxt.Text = Global.GetHiSentence; // Show greeting message to the user
