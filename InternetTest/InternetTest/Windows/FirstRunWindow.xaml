@@ -6,7 +6,7 @@
 		xmlns:local="clr-namespace:InternetTest.Windows"
 		xmlns:lang="clr-namespace:InternetTest.Properties"
 		mc:Ignorable="d" Foreground="{Binding Source={StaticResource Foreground1}}"
-		FontFamily="/Fonts/#Hauora"
+		FontFamily="/Fonts/#Hauora" x:Name="Window"
 		Title="{x:Static lang:Resources.InternetTestPro}" Height="600" Width="950" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" ResizeMode="NoResize">
 	<WindowChrome.WindowChrome>
 		<WindowChrome CaptionHeight="32" ResizeBorderThickness="10"/>
@@ -84,6 +84,16 @@
 		<DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity="0.4" RenderingBias="Performance"/>
 	</Window.Effect>
 
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="Loaded">
+			<BeginStoryboard>
+				<Storyboard>
+					<DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Window" Duration="0:0:0.5" BeginTime="0:0:0"/>
+				</Storyboard>
+			</BeginStoryboard>
+		</EventTrigger>
+	</Window.Triggers>
+
 	<Border Name="WindowBorder" d:Background="#fff" Margin="10" BorderThickness="0" CornerRadius="5">
 		<Border.Background>
 			<ImageBrush ImageSource="{Binding Source={StaticResource BackgroundImg}}"/>
@@ -105,8 +115,8 @@
 				</Grid>
 			</Border>
 
-            <Frame x:Name="WindowFrame" NavigationUIVisibility="Hidden" Grid.Row="1"/>
-        </Grid>
+			<Frame x:Name="WindowFrame" NavigationUIVisibility="Hidden" Grid.Row="1"/>
+		</Grid>
 	</Border>
 
 </Window>
