@@ -564,4 +564,13 @@
   <data name="FirstRunQuitMsg" xml:space="preserve">
     <value>Voulez-vous ignorer cette fenêtre et continuer sur InternetTest ?</value>
   </data>
+  <data name="WelcomeDesc" xml:space="preserve">
+    <value>Vous emmener à un autre niveau.</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Passer</value>
+  </data>
 </root>

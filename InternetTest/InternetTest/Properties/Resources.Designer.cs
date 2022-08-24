@@ -844,6 +844,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string Next {
+            get {
+                return ResourceManager.GetString("Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
         public static string None {
@@ -1150,6 +1159,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Skip.
+        /// </summary>
+        public static string Skip {
+            get {
+                return ResourceManager.GetString("Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default page on start.
         /// </summary>
         public static string StartupPage {
@@ -1380,6 +1398,15 @@ namespace InternetTest.Properties {
         public static string WebUtilities {
             get {
                 return ResourceManager.GetString("WebUtilities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Taking you to another level..
+        /// </summary>
+        public static string WelcomeDesc {
+            get {
+                return ResourceManager.GetString("WelcomeDesc", resourceCulture);
             }
         }
         

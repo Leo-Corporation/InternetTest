@@ -22,6 +22,7 @@
 		<None Remove="Fonts\Hauora-Regular.ttf" />
 		<None Remove="Images\DarkBackground.png" />
 		<None Remove="Images\DarkTheme.png" />
+		<None Remove="Images\InternetTest.png" />
 		<None Remove="Images\LightBackground.png" />
 		<None Remove="Images\LightTheme.png" />
 		<None Remove="Images\SystemTheme.png" />
@@ -52,6 +53,9 @@
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Resource>
 		<Resource Include="Images\DarkTheme.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\InternetTest.png">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Resource>
 		<Resource Include="Images\LightBackground.png">
