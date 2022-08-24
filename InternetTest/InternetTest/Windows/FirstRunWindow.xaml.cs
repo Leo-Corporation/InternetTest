@@ -21,47 +21,44 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+
 using InternetTest.Classes;
-using InternetTest.Windows;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
-namespace InternetTest;
+namespace InternetTest.Windows;
 /// <summary>
-/// Interaction logic for App.xaml
+/// Interaction logic for FirstRunWindow.xaml
 /// </summary>
-public partial class App : Application
+public partial class FirstRunWindow : Window
 {
-	private void Application_Startup(object sender, StartupEventArgs e)
+	public FirstRunWindow()
 	{
-		Global.ChangeTheme();
-		Global.ChangeLanguage();
+		InitializeComponent();
+	}
 
-		Global.HomePage = new();
-		Global.HistoryPage = new();
-		Global.SettingsPage = new();
-		Global.StatusPage = new();
-		Global.DownDetectorPage = new();
-		Global.MyIpPage = new();
-		Global.LocateIpPage = new();
-		Global.PingPage = new();
-		Global.IpConfigPage = new();
-		Global.WiFiPasswordsPage = new();
-
-
-		if (!Global.Settings.IsFirstRun)
+	private void CloseBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (MessageBox.Show(Properties.Resources.FirstRunQuitMsg, Properties.Resources.InternetTestPro, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
 		{
 			new MainWindow().Show();
+			Global.Settings.IsFirstRun = false;
+			Close();
 		}
 		else
 		{
-			new FirstRunWindow().Show();
+			Application.Current.Shutdown();
 		}
-	}
-
-	private void Application_Exit(object sender, ExitEventArgs e)
-	{
-		SynethiaManager.Save(Global.SynethiaConfig);
-		HistoryManager.Save(Global.History);
-		SettingsManager.Save();
 	}
 }

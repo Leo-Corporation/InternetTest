@@ -385,6 +385,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to ignore this window and continue to InternetTest?.
+        /// </summary>
+        public static string FirstRunQuitMsg {
+            get {
+                return ResourceManager.GetString("FirstRunQuitMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default gateway (IPv4).
         /// </summary>
         public static string GatewayIPv4 {

@@ -561,4 +561,7 @@
   <data name="SynethiaDeleteMsg" xml:space="preserve">
     <value>Are you sure you want to reset all Synethia data? Your personalized experience will be lost; This action cannot be canceled.</value>
   </data>
+  <data name="FirstRunQuitMsg" xml:space="preserve">
+    <value>Do you want to ignore this window and continue to InternetTest?</value>
+  </data>
 </root>
