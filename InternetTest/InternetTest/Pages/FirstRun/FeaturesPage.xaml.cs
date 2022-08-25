@@ -22,8 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-using InternetTest.Classes;
-using InternetTest.Pages.FirstRun;
+using InternetTest.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,45 +35,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InternetTest.Windows;
+namespace InternetTest.Pages.FirstRun;
 /// <summary>
-/// Interaction logic for FirstRunWindow.xaml
+/// Interaction logic for FeaturesPage.xaml
 /// </summary>
-public partial class FirstRunWindow : Window
+public partial class FeaturesPage : Page
 {
-	internal WelcomePage welcomePage;
-	internal FeaturesPage featuresPage;
-	public FirstRunWindow()
+	private FirstRunWindow FirstRunWindow { get; init; }
+	public FeaturesPage(FirstRunWindow firstRunWindow)
 	{
 		InitializeComponent();
-		welcomePage = new(this);
-		featuresPage = new(this);
-		ChangePage(0);
+		FirstRunWindow = firstRunWindow;
 	}
 
-	internal void ChangePage(int pageID)
+	private void NextBtn_Click(object sender, RoutedEventArgs e)
 	{
-		WindowFrame.Content = pageID switch
-		{
-			0 => welcomePage,
-			1 => featuresPage,
-			_ => welcomePage
-		};
-	}
-
-	private void CloseBtn_Click(object sender, RoutedEventArgs e)
-	{
-		if (MessageBox.Show(Properties.Resources.FirstRunQuitMsg, Properties.Resources.InternetTestPro, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-		{
-			new MainWindow().Show();
-			Global.Settings.IsFirstRun = false;
-			Close();
-		}
-		else
-		{
-			Application.Current.Shutdown();
-		}
+		FirstRunWindow.ChangePage(2);
 	}
 }

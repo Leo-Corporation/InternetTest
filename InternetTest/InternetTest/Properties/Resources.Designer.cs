@@ -322,6 +322,16 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wondering whether a website is working or not? Check and get real-time information about specified websites using InternetTest Pro&apos;s DownDetector feature.
+        ///You can get site status, response time and much more!.
+        /// </summary>
+        public static string DownDetectorInfo {
+            get {
+                return ResourceManager.GetString("DownDetectorInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Launch a test to see if a website is available or not.
         /// </summary>
         public static string DownDetectorPlaceHolder {
@@ -381,6 +391,15 @@ namespace InternetTest.Properties {
         public static string Export {
             get {
                 return ResourceManager.GetString("Export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Features.
+        /// </summary>
+        public static string Features {
+            get {
+                return ResourceManager.GetString("Features", resourceCulture);
             }
         }
         
@@ -759,6 +778,16 @@ namespace InternetTest.Properties {
         public static string LocateIP {
             get {
                 return ResourceManager.GetString("LocateIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can locate an IP adress using this feature. You will get information about the city, country, region, timezone, and more!
+        ///You can also locate and get the IP of servers from an URL..
+        /// </summary>
+        public static string LocateIPInfo {
+            get {
+                return ResourceManager.GetString("LocateIPInfo", resourceCulture);
             }
         }
         
@@ -1416,6 +1445,16 @@ namespace InternetTest.Properties {
         public static string WifiPasswords {
             get {
                 return ResourceManager.GetString("WifiPasswords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forgot your WiFi password? Don&apos;t worry, you can recover it using InternetTest Pro &quot;WiFi Passwords&quot; feature!
+        ///Using this feature, you will be able to get information about each wireless networks saved on your computer, such as authentification mode, encyrption algorithm, etc....
+        /// </summary>
+        public static string WiFiPasswordsInfo {
+            get {
+                return ResourceManager.GetString("WiFiPasswordsInfo", resourceCulture);
             }
         }
         

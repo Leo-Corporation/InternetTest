@@ -573,4 +573,19 @@
   <data name="Skip" xml:space="preserve">
     <value>Skip</value>
   </data>
+  <data name="DownDetectorInfo" xml:space="preserve">
+    <value>Wondering whether a website is working or not? Check and get real-time information about specified websites using InternetTest Pro's DownDetector feature.
+You can get site status, response time and much more!</value>
+  </data>
+  <data name="LocateIPInfo" xml:space="preserve">
+    <value>You can locate an IP adress using this feature. You will get information about the city, country, region, timezone, and more!
+You can also locate and get the IP of servers from an URL.</value>
+  </data>
+  <data name="WiFiPasswordsInfo" xml:space="preserve">
+    <value>Forgot your WiFi password? Don't worry, you can recover it using InternetTest Pro "WiFi Passwords" feature!
+Using this feature, you will be able to get information about each wireless networks saved on your computer, such as authentification mode, encyrption algorithm, etc...</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Features</value>
+  </data>
 </root>
