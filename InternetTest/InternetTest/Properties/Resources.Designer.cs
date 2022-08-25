@@ -70,6 +70,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I agree.
+        /// </summary>
+        public static string Agree {
+            get {
+                return ResourceManager.GetString("Agree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Apply {
@@ -620,6 +629,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Introducing Synethia.
+        /// </summary>
+        public static string IntroducingSynethia {
+            get {
+                return ResourceManager.GetString("IntroducingSynethia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IP Address.
         /// </summary>
         public static string IPAddress {
@@ -896,6 +914,15 @@ namespace InternetTest.Properties {
         public static string NotConnected {
             get {
                 return ResourceManager.GetString("NotConnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No thanks.
+        /// </summary>
+        public static string NoThanks {
+            get {
+                return ResourceManager.GetString("NoThanks", resourceCulture);
             }
         }
         
@@ -1251,6 +1278,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Synethia will then analyze this data to provide a unique experience.
+        /// </summary>
+        public static string SynethiaAnalyze {
+            get {
+                return ResourceManager.GetString("SynethiaAnalyze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Synethia collects data in InternetTest only.
+        /// </summary>
+        public static string SynethiaDataInfo {
+            get {
+                return ResourceManager.GetString("SynethiaDataInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to reset all Synethia data? Your personalized experience will be lost; This action cannot be canceled..
         /// </summary>
         public static string SynethiaDeleteMsg {
@@ -1265,6 +1310,33 @@ namespace InternetTest.Properties {
         public static string SynethiaEnable {
             get {
                 return ResourceManager.GetString("SynethiaEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Home dashbord will recommand actions based on your usage.
+        /// </summary>
+        public static string SynethiaHome {
+            get {
+                return ResourceManager.GetString("SynethiaHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Synethia is an algorithm that personnalizes your experience..
+        /// </summary>
+        public static string SynethiaInfo {
+            get {
+                return ResourceManager.GetString("SynethiaInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your data is stored on your device, anonymously. Absolutely NO data is sent to Léo Corporation..
+        /// </summary>
+        public static string SynethiaPrivacy {
+            get {
+                return ResourceManager.GetString("SynethiaPrivacy", resourceCulture);
             }
         }
         

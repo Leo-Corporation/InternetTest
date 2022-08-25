@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
-using InternetTest.Pages.FirstRun;
+using InternetTest.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,51 +36,35 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InternetTest.Windows;
+namespace InternetTest.Pages.FirstRun;
 /// <summary>
-/// Interaction logic for FirstRunWindow.xaml
+/// Interaction logic for SynethiaPage.xaml
 /// </summary>
-public partial class FirstRunWindow : Window
+public partial class SynethiaPage : Page
 {
-	internal WelcomePage welcomePage;
-	internal FeaturesPage featuresPage;
-	internal ThemePage themePage;
-	internal SynethiaPage synethiaPage;
-	public FirstRunWindow()
+	private FirstRunWindow FirstRunWindow { get; init; }
+	public SynethiaPage(FirstRunWindow firstRunWindow)
 	{
 		InitializeComponent();
-		welcomePage = new(this);
-		featuresPage = new(this);
-		themePage = new(this);
-		synethiaPage = new(this);
-		ChangePage(0);
+		FirstRunWindow = firstRunWindow;
 	}
 
-	internal void ChangePage(int pageID)
+	private void NextBtn_Click(object sender, RoutedEventArgs e)
 	{
-		WindowFrame.Content = pageID switch
-		{
-			0 => welcomePage,
-			1 => featuresPage,
-			2 => themePage,
-			3 => synethiaPage,
-			_ => welcomePage
-		};
+		Global.Settings.UseSynethia = true;
+		SettingsManager.Save();
+
+		FirstRunWindow.ChangePage(4);
 	}
 
-	private void CloseBtn_Click(object sender, RoutedEventArgs e)
+	private void DisagreeBtn_Click(object sender, RoutedEventArgs e)
 	{
-		if (MessageBox.Show(Properties.Resources.FirstRunQuitMsg, Properties.Resources.InternetTestPro, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-		{
-			new MainWindow().Show();
-			Global.Settings.IsFirstRun = false;
-			Close();
-		}
-		else
-		{
-			Application.Current.Shutdown();
-		}
+		Global.Settings.UseSynethia = false;
+		SettingsManager.Save();
+
+		FirstRunWindow.ChangePage(4);
 	}
 }

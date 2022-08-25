@@ -588,4 +588,28 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r�
   <data name="Features" xml:space="preserve">
     <value>Fonctionnalités</value>
   </data>
+  <data name="Agree" xml:space="preserve">
+    <value>J'accepte</value>
+  </data>
+  <data name="NoThanks" xml:space="preserve">
+    <value>Non merci</value>
+  </data>
+  <data name="IntroducingSynethia" xml:space="preserve">
+    <value>Voici Synethia</value>
+  </data>
+  <data name="SynethiaInfo" xml:space="preserve">
+    <value>Synethia est un algorithme qui personnalise votre expérience.</value>
+  </data>
+  <data name="SynethiaDataInfo" xml:space="preserve">
+    <value>Synethia collecte des données dans InternetTest uniquement</value>
+  </data>
+  <data name="SynethiaAnalyze" xml:space="preserve">
+    <value>Synethia analysera ensuite ces données pour offrir une expérience unique</value>
+  </data>
+  <data name="SynethiaHome" xml:space="preserve">
+    <value>Le tableau de bord d'accueil recommandera des actions en fonction de votre utilisation</value>
+  </data>
+  <data name="SynethiaPrivacy" xml:space="preserve">
+    <value>Vos données sont stockées sur votre appareil, de manière anonyme. Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
+  </data>
 </root>

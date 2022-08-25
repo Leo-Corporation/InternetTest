@@ -588,4 +588,28 @@ Using this feature, you will be able to get information about each wireless netw
   <data name="Features" xml:space="preserve">
     <value>Features</value>
   </data>
+  <data name="Agree" xml:space="preserve">
+    <value>I agree</value>
+  </data>
+  <data name="NoThanks" xml:space="preserve">
+    <value>No thanks</value>
+  </data>
+  <data name="IntroducingSynethia" xml:space="preserve">
+    <value>Introducing Synethia</value>
+  </data>
+  <data name="SynethiaInfo" xml:space="preserve">
+    <value>Synethia is an algorithm that personnalizes your experience.</value>
+  </data>
+  <data name="SynethiaDataInfo" xml:space="preserve">
+    <value>Synethia collects data in InternetTest only</value>
+  </data>
+  <data name="SynethiaAnalyze" xml:space="preserve">
+    <value>Synethia will then analyze this data to provide a unique experience</value>
+  </data>
+  <data name="SynethiaHome" xml:space="preserve">
+    <value>The Home dashbord will recommand actions based on your usage</value>
+  </data>
+  <data name="SynethiaPrivacy" xml:space="preserve">
+    <value>Your data is stored on your device, anonymously. Absolutely NO data is sent to Léo Corporation.</value>
+  </data>
 </root>
