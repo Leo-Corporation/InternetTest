@@ -14,17 +14,17 @@
 			<BeginStoryboard>
 				<Storyboard>
 					<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="DownDetectorBorder" BeginTime="00:00:00">
-						<SplineThicknessKeyFrame KeyTime="00:00:00" Value="5,5,20,5" />
+						<SplineThicknessKeyFrame KeyTime="00:00:00" Value="80,5,5,5" />
 						<SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="5" />
 					</ThicknessAnimationUsingKeyFrames>
 
 					<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="LocateIpBorder" BeginTime="00:00:0.3">
-						<SplineThicknessKeyFrame KeyTime="00:00:00" Value="5,5,20,5" />
+						<SplineThicknessKeyFrame KeyTime="00:00:00" Value="80,5,5,5" />
 						<SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="5" />
 					</ThicknessAnimationUsingKeyFrames>
 
 					<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="WiFiBorder" BeginTime="00:00:0.6">
-						<SplineThicknessKeyFrame KeyTime="00:00:00" Value="5,5,20,5" />
+						<SplineThicknessKeyFrame KeyTime="00:00:00" Value="80,5,5,5" />
 						<SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="5" />
 					</ThicknessAnimationUsingKeyFrames>
 				</Storyboard>
@@ -43,7 +43,7 @@
 
 		<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Style="{DynamicResource ScrollViewerStyle}" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch">
 			<StackPanel>
-				<Border x:Name="DownDetectorBorder" Width="425" CornerRadius="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" Margin="5" HorizontalAlignment="Center">
+				<Border x:Name="DownDetectorBorder" Width="425" CornerRadius="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" Margin="80,5,5,5" HorizontalAlignment="Center">
 					<Border.Effect>
 						<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
 					</Border.Effect>
@@ -64,7 +64,7 @@
 					</Grid>
 				</Border>
 
-				<Border x:Name="LocateIpBorder" Width="425" CornerRadius="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" Margin="5" HorizontalAlignment="Center">
+				<Border x:Name="LocateIpBorder" Width="425" CornerRadius="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" Margin="80,5,5,5" HorizontalAlignment="Center">
 					<Border.Effect>
 						<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
 					</Border.Effect>
@@ -85,7 +85,7 @@
 					</Grid>
 				</Border>
 
-				<Border x:Name="WiFiBorder" Width="425" CornerRadius="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" Margin="5" HorizontalAlignment="Center">
+				<Border x:Name="WiFiBorder" Width="425" CornerRadius="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" Margin="80,5,5,5" HorizontalAlignment="Center">
 					<Border.Effect>
 						<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
 					</Border.Effect>

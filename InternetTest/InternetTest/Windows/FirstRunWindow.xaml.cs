@@ -46,11 +46,13 @@ public partial class FirstRunWindow : Window
 {
 	internal WelcomePage welcomePage;
 	internal FeaturesPage featuresPage;
+	internal ThemePage themePage;
 	public FirstRunWindow()
 	{
 		InitializeComponent();
 		welcomePage = new(this);
 		featuresPage = new(this);
+		themePage = new(this);
 		ChangePage(0);
 	}
 
@@ -60,6 +62,7 @@ public partial class FirstRunWindow : Window
 		{
 			0 => welcomePage,
 			1 => featuresPage,
+			2 => themePage,
 			_ => welcomePage
 		};
 	}
