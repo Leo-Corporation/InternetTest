@@ -107,12 +107,17 @@ public partial class SettingsPage : Page
 
 		// Check for updates
 		if (!Global.Settings.CheckUpdateOnStart) return;
-		try { if (!await NetworkConnection.IsAvailableAsync()) return; } catch { return; }
-		if (!Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink))) return;
+		try 
+		{ 
+			if (!await NetworkConnection.IsAvailableAsync()) return;
+			if (!Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink))) return;
+		}
+		catch { return; }
 
 		// If updates are available
 		// Update the UI
 		CheckUpdateBtn.Content = Properties.Resources.Install;
+		UpdateTxt.Text = Properties.Resources.AvailableUpdates;
 
 		// Show notification
 		if (!Global.Settings.ShowNotficationWhenUpdateAvailable) return;
@@ -126,6 +131,8 @@ public partial class SettingsPage : Page
 		string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink);
 		if (Update.IsAvailable(Global.Version, lastVersion))
 		{
+			UpdateTxt.Text = Properties.Resources.AvailableUpdates;
+
 			if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
 			{
 				return;
@@ -138,6 +145,10 @@ public partial class SettingsPage : Page
 
 			Env.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
 			Application.Current.Shutdown(); // Close
+		}
+		else
+		{
+			UpdateTxt.Text = Properties.Resources.UpToDate;
 		}
 	}
 

@@ -32,9 +32,9 @@
 					<TextBlock Text="{x:Static lang:Resources.Pro}" FontSize="32" FontWeight="Bold" Margin="5,0,0,0"/>
 				</StackPanel>
 				<TextBlock d:Text="7.0.0.2208" FontSize="11" x:Name="VersionTxt" HorizontalAlignment="Center"/>
+                <TextBlock Text="{x:Static lang:Resources.UpToDate}" FontSize="11" x:Name="UpdateTxt" HorizontalAlignment="Center" FontWeight="Bold"/>
 				<Button x:Name="CheckUpdateBtn" Click="CheckUpdateBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.CheckUpdate}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}" HorizontalAlignment="Center"/>
-
-			</StackPanel>
+            </StackPanel>
 		</Border>
 
 		<StackPanel Grid.Row="2">
