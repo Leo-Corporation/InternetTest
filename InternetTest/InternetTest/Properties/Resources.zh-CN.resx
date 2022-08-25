@@ -612,4 +612,10 @@ Using this feature, you will be able to get information about each wireless netw
   <data name="SynethiaPrivacy" xml:space="preserve">
     <value>Your data is stored on your device, anonymously. Absolutely NO data is sent to Léo Corporation.</value>
   </data>
+  <data name="LetsGo" xml:space="preserve">
+    <value>Let's go!</value>
+  </data>
+  <data name="WelcomeReady" xml:space="preserve">
+    <value>Everyting is ready</value>
+  </data>
 </root>

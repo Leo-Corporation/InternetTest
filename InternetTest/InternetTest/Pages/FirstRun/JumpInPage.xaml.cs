@@ -23,9 +23,10 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
-using InternetTest.Pages.FirstRun;
+using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,53 +37,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InternetTest.Windows;
+namespace InternetTest.Pages.FirstRun;
 /// <summary>
-/// Interaction logic for FirstRunWindow.xaml
+/// Interaction logic for JumpInPage.xaml
 /// </summary>
-public partial class FirstRunWindow : Window
+public partial class JumpInPage : Page
 {
-	internal WelcomePage welcomePage;
-	internal FeaturesPage featuresPage;
-	internal ThemePage themePage;
-	internal SynethiaPage synethiaPage;
-	internal JumpInPage jumpInPage = new();
-	public FirstRunWindow()
+	public JumpInPage()
 	{
 		InitializeComponent();
-		welcomePage = new(this);
-		featuresPage = new(this);
-		themePage = new(this);
-		synethiaPage = new(this);
-		ChangePage(0);
 	}
 
-	internal void ChangePage(int pageID)
+	private void NextBtn_Click(object sender, RoutedEventArgs e)
 	{
-		WindowFrame.Content = pageID switch
-		{
-			0 => welcomePage,
-			1 => featuresPage,
-			2 => themePage,
-			3 => synethiaPage,
-			4 => jumpInPage,
-			_ => welcomePage
-		};
-	}
+		Global.Settings.IsFirstRun = false;
+		SettingsManager.Save();
+		SynethiaManager.Save(Global.SynethiaConfig);
 
-	private void CloseBtn_Click(object sender, RoutedEventArgs e)
-	{
-		if (MessageBox.Show(Properties.Resources.FirstRunQuitMsg, Properties.Resources.InternetTestPro, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-		{
-			new MainWindow().Show();
-			Global.Settings.IsFirstRun = false;
-			Close();
-		}
-		else
-		{
-			Application.Current.Shutdown();
-		}
+		Process.Start(Env.CurrentAppDirectory + @"\InternetTest.exe");
+		Application.Current.Shutdown(); // Quit the app
 	}
 }
