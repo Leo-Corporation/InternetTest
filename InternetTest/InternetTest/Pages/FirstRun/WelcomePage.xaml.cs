@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
+using InternetTest.Enums;
 using InternetTest.Windows;
 using System;
 using System.Collections.Generic;
@@ -50,11 +51,12 @@ public partial class WelcomePage : Page
 	{
 		InitializeComponent();
 		FirstRunWindow = firstRunWindow;
+		LangComboBox.SelectedIndex = (int)Global.Settings.Language;
 	}
 
 	private void NextBtn_Click(object sender, RoutedEventArgs e)
 	{
-		//TODO
+		FirstRunWindow.ChangePage(1);
 	}
 
 	private void SkipBtn_Click(object sender, RoutedEventArgs e)
@@ -62,5 +64,10 @@ public partial class WelcomePage : Page
 		new MainWindow().Show();
 		Global.Settings.IsFirstRun = false;
 		FirstRunWindow.Close();
+	}
+
+	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+		Global.Settings.Language = (Languages)LangComboBox.SelectedIndex;
 	}
 }
