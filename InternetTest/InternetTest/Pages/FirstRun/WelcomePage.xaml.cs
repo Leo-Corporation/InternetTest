@@ -25,8 +25,10 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.Enums;
 using InternetTest.Windows;
+using LeoCorpLibrary;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,9 +63,11 @@ public partial class WelcomePage : Page
 
 	private void SkipBtn_Click(object sender, RoutedEventArgs e)
 	{
-		new MainWindow().Show();
 		Global.Settings.IsFirstRun = false;
-		FirstRunWindow.Close();
+		SettingsManager.Save();
+
+		Process.Start(Env.CurrentAppDirectory + @"\InternetTest.exe");
+		Application.Current.Shutdown();
 	}
 
 	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
