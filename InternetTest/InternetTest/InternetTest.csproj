@@ -6,13 +6,14 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>True</UseWindowsForms>
-		<Version>7.0.0.2208-pre4</Version>
+		<Version>7.0.0.2208</Version>
 		<Copyright>© 2022</Copyright>
 		<Company>Léo Corporation</Company>
-		<Description>InternetTest is a modern connection utility for Windows.</Description>
+		<Description>Taking you to another level. InternetTest can locate IP addresses, send ping request, recover your WiFi passwords and more!</Description>
 		<PackageIcon>InternetTest.ico</PackageIcon>
 		<ApplicationIcon>InternetTest.ico</ApplicationIcon>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<RepositoryUrl>https://github.com/Leo-Corporation/InternetTest</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
