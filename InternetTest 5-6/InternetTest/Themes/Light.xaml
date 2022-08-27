@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:InternetTest.Themes"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="Background1">#ffffff</sys:String>
+    <sys:String x:Key="Background2">#e9e9e9</sys:String>
+    <sys:String x:Key="Background3">#ffffff</sys:String>
+    <sys:String x:Key="Foreground1">#000000</sys:String>
+    <sys:String x:Key="WindowButtonsHover1">#E5E5E5</sys:String>
+    <sys:String x:Key="WindowButtonsPressed1">#DBDBDB</sys:String>
+    <sys:String x:Key="MainWindowBackground">/Images/BackgroundWhite.png</sys:String>
+    <sys:String x:Key="WindowButtonsHoverForeground1">#ffffff</sys:String>
+    <sys:String x:Key="AccentColor">#2153E0</sys:String>
+    <sys:String x:Key="DarkFAccentColor">#2153E0</sys:String>
+    <sys:String x:Key="LightAccentColor">#D2DDF9</sys:String>
+    <sys:String x:Key="Gray">#DEDEDE</sys:String>
+    <sys:String x:Key="Green">#25DE0F</sys:String>
+    <sys:String x:Key="Red">#FF321E</sys:String>
+    <sys:String x:Key="DarkGray">#969696</sys:String>
+
+</ResourceDictionary>

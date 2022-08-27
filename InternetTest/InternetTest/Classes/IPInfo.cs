@@ -21,88 +21,59 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using System.Text.Json.Serialization;
 
 namespace InternetTest.Classes;
-
-/// <summary>
-/// This class contains an IP Information
-/// </summary>
 public class IPInfo
 {
-	/// <summary>
-	/// <c>success</c> or <c>fail</c>.
-	/// </summary>
-	public string Status { get; set; }
+	[JsonPropertyName("query")]
+	public string? Query { get; set; }
 
-	/// <summary>
-	/// Country name.
-	/// </summary>
-	public string Country { get; set; }
+	[JsonPropertyName("status")]
+	public string? Status { get; set; }
 
-	/// <summary>
-	/// Two-letter country code ISO 3166-1 alpha-2.
-	/// </summary>
-	public string CountryCode { get; set; }
+	[JsonPropertyName("country")]
+	public string? Country { get; set; }
 
-	/// <summary>
-	/// Region/state short code (FIPS or ISO).
-	/// </summary>
-	public string Region { get; set; }
+	[JsonPropertyName("countryCode")]
+	public string? CountryCode { get; set; }
 
-	/// <summary>
-	/// Region/state.
-	/// </summary>
-	public string RegionName { get; set; }
+	[JsonPropertyName("region")]
+	public string? Region { get; set; }
 
-	/// <summary>
-	/// City.
-	/// </summary>
-	public string City { get; set; }
+	[JsonPropertyName("regionName")]
+	public string? RegionName { get; set; }
 
-	/// <summary>
-	/// Zip code.
-	/// </summary>
-	public string Zip { get; set; }
+	[JsonPropertyName("city")]
+	public string? City { get; set; }
 
-	/// <summary>
-	/// Latitude.
-	/// </summary>
-	public string Lat { get; set; }
+	[JsonPropertyName("zip")]
+	public string? Zip { get; set; }
 
-	/// <summary>
-	/// Longitude.
-	/// </summary>
-	public string Lon { get; set; }
+	[JsonPropertyName("lat")]
+	public double Lat { get; set; }
 
-	/// <summary>
-	/// Timezone (tz).
-	/// </summary>
-	public string TimeZone { get; set; }
+	[JsonPropertyName("lon")]
+	public double Lon { get; set; }
 
-	/// <summary>
-	/// ISP name.
-	/// </summary>
-	public string ISP { get; set; }
+	[JsonPropertyName("timezone")]
+	public string? Timezone { get; set; }
 
-	/// <summary>
-	/// Organization name.
-	/// </summary>
-	public string Org { get; set; }
+	[JsonPropertyName("isp")]
+	public string? Isp { get; set; }
 
-	/// <summary>
-	/// IP used for the query.
-	/// </summary>
-	public string Query { get; set; }
+	[JsonPropertyName("org")]
+	public string? Org { get; set; }
 
-	public override string ToString()
-	{
-		return $"{Properties.Resources.Country}: {Country}\n" +
+	[JsonPropertyName("as")]
+	public string? As { get; set; }
+
+	public override string ToString() => $"{Properties.Resources.Country}: {Country}\n" +
 			$"{Properties.Resources.Region}: {RegionName}\n" +
 			$"{Properties.Resources.City}: {City}\n" +
 			$"{Properties.Resources.ZIPCode}: {Zip}\n" +
 			$"{Properties.Resources.Latitude}: {Lat}\n" +
 			$"{Properties.Resources.Longitude}: {Lon}\n" +
-			$"{Properties.Resources.Timezone}: {TimeZone}\n" +
-			$"{Properties.Resources.ISP}: {ISP}\n";
-	}
+			$"{Properties.Resources.Timezone}: {Timezone}\n" +
+			$"{Properties.Resources.ISP}: {Isp}";
 }

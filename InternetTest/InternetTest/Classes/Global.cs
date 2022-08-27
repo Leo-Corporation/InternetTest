@@ -21,78 +21,44 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Enums;
 using InternetTest.Pages;
 using LeoCorpLibrary;
 using LeoCorpLibrary.Enums;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace InternetTest.Classes;
-
-/// <summary>
-/// The <see cref="Global"/> class contains various methods and properties.
-/// </summary>
 public static class Global
 {
-	/// <summary>
-	/// The <see cref="Pages.ConnectionPage"/>.
-	/// </summary>
-	public static ConnectionPage ConnectionPage { get; set; }
+	public static string Version => "7.0.0.2208";
+	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
+	public static Settings Settings { get; set; } = SettingsManager.Load();
+	public static SynethiaConfig SynethiaConfig { get; set; } = SynethiaManager.Load();
+	public static History History { get; set; } = HistoryManager.Load();
 
-	/// <summary>
-	/// The <see cref="Pages.LocalizeIPPage"/>.
-	/// </summary>
-	public static LocalizeIPPage LocalizeIPPage { get; set; }
+	public static HomePage? HomePage { get; set; }
+	public static HistoryPage? HistoryPage { get; set; }
+	public static SettingsPage? SettingsPage { get; set; }
+	public static StatusPage? StatusPage { get; set; }
+	public static DownDetectorPage? DownDetectorPage { get; set; }
+	public static MyIpPage? MyIpPage { get; set; }
+	public static LocateIpPage? LocateIpPage { get; set; }
+	public static PingPage? PingPage { get; set; }
+	public static IpConfigPage? IpConfigPage { get; set; }
+	public static WiFiPasswordsPage? WiFiPasswordsPage { get; set; }
 
-	/// <summary>
-	/// The <see cref="Pages.DownDetectorPage"/>.
-	/// </summary>
-	public static DownDetectorPage DownDetectorPage { get; set; }
+	internal static string SynethiaPath => $@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\SynethiaConfig.json";
 
-	/// <summary>
-	/// The <see cref="Pages.SettingsPage"/>.
-	/// </summary>
-	public static SettingsPage SettingsPage { get; set; }
-
-	/// <summary>
-	/// The <see cref="Classes.Settings"/> of InternetTest
-	/// </summary>
-	public static Settings Settings { get; set; }
-
-	/// <summary>
-	/// The current version of InternetTest.
-	/// </summary>
-	public static string Version => "6.3.1.2207";
-
-	/// <summary>
-	/// List of the available languages.
-	/// </summary>
-	public static List<string> LanguageList => new() { "English (United States)", "Français (France)", "中文（简体）" };
-
-	/// <summary>
-	/// List of the available languages codes.
-	/// </summary>
-	public static List<string> LanguageCodeList => new() { "en-US", "fr-FR", "zh-CN" };
-
-	/// <summary>
-	/// Stores all the IP in history (if enabled).
-	/// </summary>
-	public static List<string> LocatedIPs { get; set; }
-
-	/// <summary>
-	/// GitHub link for the last version (<see cref="string"/>).
-	/// </summary>
-	public static string LastVersionLink { get => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/5.0/Version.txt"; }
-
-	/// <summary>
-	/// Gets the "Hi" sentence message.
-	/// </summary>
 	public static string GetHiSentence
 	{
 		get
@@ -120,113 +86,151 @@ public static class Global
 		}
 	}
 
-	/// <summary>
-	/// Opens a link in a web browser.
-	/// </summary>
-	/// <param name="url">The URL to open.</param>
-	public static void OpenLinkInBrowser(string url)
+	public static Dictionary<AppPages, string> AppPagesFilledIcons => new()
 	{
-		var ps = new ProcessStartInfo(url)
+		{ AppPages.Home, "\uF488" },
+		{ AppPages.History, "\uF486" },
+		{ AppPages.Settings, "\uF6B3" },
+		{ AppPages.Status, "\uF462" },
+		{ AppPages.DownDetector, "\uFB71" },
+		{ AppPages.MyIP, "\uF503" },
+		{ AppPages.LocateIP, "\uF538" },
+		{ AppPages.Ping, "\uF4FB" },
+		{ AppPages.IPConfig, "\uF848" },
+		{ AppPages.WiFiPasswords, "\uF8CC" },
+	};
+	public static Dictionary<AppPages, string> AppPagesName => new()
+	{
+		{ AppPages.Home, Properties.Resources.Home },
+		{ AppPages.History, Properties.Resources.History },
+		{ AppPages.Settings, Properties.Resources.Settings },
+		{ AppPages.Status, Properties.Resources.Status },
+		{ AppPages.DownDetector, Properties.Resources.DownDetector },
+		{ AppPages.MyIP, Properties.Resources.MyIP },
+		{ AppPages.LocateIP, Properties.Resources.LocateIP },
+		{ AppPages.Ping, Properties.Resources.Ping },
+		{ AppPages.IPConfig, Properties.Resources.IPConfig },
+		{ AppPages.WiFiPasswords, Properties.Resources.WifiPasswords },
+	};
+
+	public static List<AppPages> GetMostRelevantPages(SynethiaConfig synethiaConfig)
+	{
+		Dictionary<AppPages, double> appScores = new()
 		{
-			UseShellExecute = true,
-			Verb = "open"
+			{ AppPages.Status, synethiaConfig.StatusPageInfo.Score },
+			{ AppPages.DownDetector, synethiaConfig.DownDetectorPageInfo.Score },
+			{ AppPages.MyIP, synethiaConfig.MyIPPageInfo.Score },
+			{ AppPages.LocateIP, synethiaConfig.LocateIPPageInfo.Score },
+			{ AppPages.Ping, synethiaConfig.PingPageInfo.Score },
+			{ AppPages.IPConfig, synethiaConfig.IPConfigPageInfo.Score },
+			{ AppPages.WiFiPasswords, synethiaConfig.WiFiPasswordsPageInfo.Score },
 		};
 
-		Process.Start(ps); // Open the URL
+		var sorted = appScores.OrderByDescending(x => x.Value);
+
+		return (from item in sorted select item.Key).ToList();
 	}
 
-	/// <summary>
-	/// Gets IP informations.
-	/// </summary>
-	/// <param name="ip">The IP.</param>
-	/// <returns>An <see cref="IPInfo"/> object.</returns>
-	public async static Task<IPInfo> GetIPInfo(string ip)
+	public static List<ActionInfo> GetMostRelevantActions(SynethiaConfig synethiaConfig)
 	{
-		try
+		Dictionary<ActionInfo, int> relevantActions = new();
+		for (int i = 0; i < synethiaConfig.ActionInfos.Count; i++)
 		{
-			// Get language
-			string language = Settings.Language switch
-			{
-				"fr-FR" => "fr", // French
-				"en-US" => "en", // English
-				"_default" => System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, // System language
-				_ => "en" // English
-			};
-
-
-			// Get IP infos
-			string content = await new HttpClient().GetStringAsync($"http://ip-api.com/line/{ip}?lang={language}"); // Get the content
-			string[] lines = content.Split(new string[] { "\n" }, StringSplitOptions.None); // Lines
-
-			return new IPInfo
-			{
-				Status = lines[0],
-				Country = lines[1],
-				CountryCode = lines[2],
-				Region = lines[3],
-				RegionName = lines[4],
-				City = lines[5],
-				Zip = lines[6],
-				Lat = lines[7],
-				Lon = lines[8],
-				TimeZone = lines[9],
-				ISP = lines[10],
-				Org = lines[12],
-				Query = lines[13]
-			};
+			relevantActions.Add(synethiaConfig.ActionInfos[i], synethiaConfig.ActionInfos[i].UsageCount);
 		}
-		catch (Exception ex)
+
+		// Sort each action with its usage count descending
+		var sorted = relevantActions.OrderByDescending(x => x.Value);
+		return (from item in sorted select item.Key).ToList();
+	}
+
+	public static List<AppPages> DefaultRelevantPages => new()
+	{
+		AppPages.Status,
+		AppPages.LocateIP,
+		AppPages.WiFiPasswords,
+		AppPages.DownDetector,
+		AppPages.MyIP,
+		AppPages.Ping,
+		AppPages.IPConfig
+	};
+
+	public static List<ActionInfo> DefaultRelevantActions => new()
+	{
+		new() { Action = AppActions.MyIP, UsageCount = 0 },
+		new() { Action = AppActions.Test, UsageCount = 0 },
+		new() { Action = AppActions.DownDetectorRequest, UsageCount = 0 },
+		new() { Action = AppActions.Ping, UsageCount = 0 },
+		new() { Action = AppActions.LocateIP, UsageCount = 0 },
+		new() { Action = AppActions.GetIPConfig, UsageCount = 0 },
+		new() { Action = AppActions.GetWiFiPasswords, UsageCount = 0 },
+	};
+
+	public static Dictionary<AppActions, string> ActionsIcons => new()
+	{
+		{ AppActions.DownDetectorRequest, "\uF2E9" },
+		{ AppActions.GetIPConfig, "\uF8D1" },
+		{ AppActions.GetWiFiPasswords, "\uF5A8" },
+		{ AppActions.LocateIP, "\uF506" },
+		{ AppActions.MyIP, "\uF569" },
+		{ AppActions.Ping, "\uF4FB" },
+		{ AppActions.Test, "\uF612" },
+	};
+
+	public static Dictionary<AppActions, string> ActionsString => new()
+	{
+		{ AppActions.DownDetectorRequest, Properties.Resources.TestWebsite },
+		{ AppActions.GetIPConfig, Properties.Resources.GetIPConfig },
+		{ AppActions.GetWiFiPasswords, Properties.Resources.GetWiFi },
+		{ AppActions.LocateIP, Properties.Resources.LocateAnIP },
+		{ AppActions.MyIP, Properties.Resources.GetMyIP },
+		{ AppActions.Ping, Properties.Resources.MakePing },
+		{ AppActions.Test, Properties.Resources.TestConnection },
+	};
+
+	public static Color GetColorFromResource(string resourceName) => (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());
+
+	public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
+	{
+		if (depObj == null) yield return (T)Enumerable.Empty<T>();
+		for (int i = 0; i < VisualTreeHelper.GetChildrenCount(depObj); i++)
 		{
-			MessageBox.Show(ex.Message, Properties.Resources.InternetTest, MessageBoxButton.OK, MessageBoxImage.Error); // Error
-			return new IPInfo();
+			DependencyObject ithChild = VisualTreeHelper.GetChild(depObj, i);
+			if (ithChild == null) continue;
+			if (ithChild is T t) yield return t;
+			foreach (T childOfChild in FindVisualChildren<T>(ithChild)) yield return childOfChild;
 		}
 	}
 
-	/// <summary>
-	/// Checks if an IP is valid.
-	/// </summary>
-	/// <param name="ip">The IP to check.</param>
-	/// <returns>A <see cref="bool"/> value.</returns>
-	public static bool IsIPValid(string ip)
+	public static bool IsUrlValid(string url)
 	{
-		try
+		if (!url.StartsWith("http://") || !url.StartsWith("https://"))
 		{
-			if (ip == "")
-			{
-				return true; // Gets your IP, so it's valid
-			}
-
-			if (ip.Contains("http://") || ip.Contains("https://"))
-			{
-				return false; // If it is a website
-			}
-
-			string[] splittedIP = ip.Split(new string[] { "." }, StringSplitOptions.None); // Split
-
-			if (splittedIP.Length != 4)
-			{
-				return false; // IP Invalid
-			}
-
-			for (int i = 0; i < splittedIP.Length; i++)
-			{
-				if (string.IsNullOrEmpty(splittedIP[i]) && string.IsNullOrWhiteSpace(splittedIP[i])) // Check if there is a value
-				{
-					return false; // There is no value, then the IP is invalid
-				}
-
-				if (int.Parse(splittedIP[i]) > 255 || int.Parse(splittedIP[i]) < 0)
-				{
-					return false; // IP Adress is between 0 & 255
-				}
-			}
-
-			return true; // No problems were found, the IP is valid
+			url = "https://" + url;
 		}
-		catch
-		{
-			return false; // The IP isnt't valid because the parser has thrown an exception
-		}
+		return Uri.TryCreate(url, UriKind.Absolute, out Uri? uriResult)
+			&& (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+	}
+
+	public async static Task<IPInfo?> GetIPInfoAsync(string ip)
+	{
+		HttpClient httpClient = new();
+		string result = await httpClient.GetStringAsync($"http://ip-api.com/json/{ip}");
+
+		return JsonSerializer.Deserialize<IPInfo>(result);
+	}
+
+	public static bool IsIpValid(string ip)
+	{
+		if (ip == "") return true; // This is valid, it will return the user's current IP
+
+		if (IsUrlValid(ip)) return true; // This is valid, it is possible to get IP info from a URL
+
+		// Initialize a regex that checks if an IP is valid
+		Regex ipRegex = new(@"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+
+		// Check if the IP is valid
+		return ipRegex.IsMatch(ip);
 	}
 
 	/// <summary>
@@ -237,17 +241,13 @@ public static class Global
 		App.Current.Resources.MergedDictionaries.Clear();
 		ResourceDictionary resourceDictionary = new(); // Create a resource dictionary
 
-		if (!Settings.IsThemeSystem.HasValue)
+		bool isDark = Settings.Theme == Themes.Dark;
+		if (Settings.Theme == Themes.System)
 		{
-			Settings.IsThemeSystem = false;
+			isDark = IsSystemThemeDark(); // Set
 		}
 
-		if (Settings.IsThemeSystem.Value)
-		{
-			Settings.IsDarkTheme = IsSystemThemeDark(); // Set
-		}
-
-		if (Settings.IsDarkTheme) // If the dark theme is on
+		if (isDark) // If the dark theme is on
 		{
 			resourceDictionary.Source = new Uri("..\\Themes\\Dark.xaml", UriKind.Relative); // Add source
 		}
@@ -275,24 +275,21 @@ public static class Global
 		}; // Return
 	}
 
-	/// <summary>
-	/// Changes the application's language.
-	/// </summary>
 	public static void ChangeLanguage()
 	{
-		switch (Global.Settings.Language) // For each case
+		switch (Settings.Language) // For each case
 		{
-			case "_default": // No language
+			case Languages.Default: // No language
 				break;
-			case "en-US": // English (US)
+			case Languages.en_US: // English (US)
 				Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US"); // Change
 				break;
 
-			case "fr-FR": // French (FR)
+			case Languages.fr_FR: // French (FR)
 				Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR"); // Change
 				break;
 
-			case "zh-CN": // Chinese (CN)
+			case Languages.zh_CN: // Chinese (CN)
 				Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-CN"); // Change
 				break;
 			default: // No language
@@ -323,16 +320,4 @@ public static class Global
 		return $"{deg}° {sD}' {fDir}, {deg2}° {sD2}' {sDir}".Replace("-", "");
 	}
 
-	public async static Task<StatusInfo> GetStatusCodeAsync(string website)
-	{
-		try
-		{
-			var httpMessage = await new HttpClient().GetAsync(website);
-			return new((int)httpMessage.StatusCode, httpMessage.ReasonPhrase);
-		}
-		catch
-		{
-			return new(400, "Bad Request");
-		}
-	}
 }

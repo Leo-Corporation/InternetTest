@@ -1,11 +1,11 @@
 ﻿<Window x:Class="Xalyus_Updater.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Xalyus_Updater"
-        mc:Ignorable="d"
-       Title="Xalyus Updater" Loaded="Window_Loaded" AllowsTransparency="True" Background="Transparent" Height="310" Width="549" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:Xalyus_Updater"
+		mc:Ignorable="d"
+		Title="Xalyus Updater" Loaded="Window_Loaded" AllowsTransparency="True" Background="Transparent" Height="310" Width="549" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
 	<WindowChrome.WindowChrome>
 		<WindowChrome ResizeBorderThickness="10" CaptionHeight="25"/>
 	</WindowChrome.WindowChrome>
@@ -129,15 +129,15 @@
 				<ColumnDefinition Width="10"/>
 			</Grid.ColumnDefinitions>
 
-			<Image Margin="7 0 -5 0" Name="AppLogo" Source="\Images\Xalyus Updater.png"/>
+			<Image Margin="7 0 -5 0" Name="AppLogo" Source="\Resources\Xalyus Updater.png"/>
 			<TextBlock
 		Grid.Column="1"
 		Margin="10 0 0 0"
 		VerticalAlignment="Center"
 		FontSize="15"
 		Text="Xalyus Updater"
-        FontWeight="ExtraBold"
-        Foreground="White">
+		FontWeight="Bold"
+		Foreground="White">
 				<TextBlock.Style>
 					<Style TargetType="TextBlock">
 						<Style.Triggers>
@@ -150,7 +150,7 @@
 			</TextBlock>
 			<Button
 		Grid.Column="2"
-        Name="CloseBtn"
+		Name="CloseBtn"
 		Click="CloseBtn_Click"
 		Style="{StaticResource TitleBarCloseButtonStyle}">
 				<Path
@@ -174,10 +174,10 @@
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
 
-						<Image Grid.Column="0" Margin="15" Source="\Images\Xalyus Updater.png"/>
+						<Image Grid.Column="0" Margin="15" Source="\Resources\Logo.png"/>
 						<StackPanel Margin="10 15 0 0" Grid.Column="1">
-							<TextBlock x:Name="TitleTxt" FontWeight="ExtraBold" FontSize="20" Foreground="White" Text="InternetTest"/>
-							<TextBlock x:Name="DescriptionTxt" FontSize="15" TextWrapping="Wrap" Foreground="White" Text="InternetTest"/>
+							<TextBlock x:Name="TitleTxt" FontWeight="Bold" FontSize="20" Foreground="White" Text="SOFTWARE_NAME_HERE"/>
+							<TextBlock x:Name="DescriptionTxt" FontSize="15" TextWrapping="Wrap" Foreground="White" Text="SOFTWARE_DESCRIPTION_HERE"/>
 						</StackPanel>
 					</Grid>
 				</Border>
@@ -185,9 +185,9 @@
 				<Border Margin="0" Grid.Row="1" Height="118" Width="508" Background="#FF0A0A1E" CornerRadius="10">
 					<Grid>
 						<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 15 0 0" Grid.Column="1">
-							<TextBlock x:Name="DownloadTxt" TextAlignment="Center" FontWeight="ExtraBold" FontSize="15" Foreground="White" Text="Download in progress"/>
+							<TextBlock x:Name="DownloadTxt" TextAlignment="Center" FontWeight="Bold" FontSize="15" Foreground="White" Text="Download in progress"/>
 							<TextBlock x:Name="ProgressTxt" Margin="0 0 0 10" TextAlignment="Center" FontSize="15" Foreground="White" Text="0%"/>
-							<ProgressBar x:Name="Pgb" Style="{DynamicResource RoundedProgressBar}" BorderThickness="0" Height="10" Width="452" Background="#FF050519">
+							<ProgressBar x:Name="Pgb" Style="{DynamicResource RoundedProgressBar}" BorderThickness="0" Height="10" Width="452" Background="#FF141428">
 								<ProgressBar.Foreground>
 									<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 										<LinearGradientBrush.RelativeTransform>

@@ -30,146 +30,72 @@ using System.Windows;
 using System.Xml.Serialization;
 
 namespace InternetTest.Classes;
-
-/// <summary>
-/// Settings of InternetTest
-/// </summary>
 public class Settings
 {
-	/// <summary>
-	/// True if the theme of InternetTest is set to dark.
-	/// </summary>
-	public bool IsDarkTheme { get; set; }
-
-	/// <summary>
-	/// The language of the app (country code). Can be _default, en-US, fr-FR...
-	/// </summary>
-	public string Language { get; set; }
-
-	/// <summary>
-	/// The site where the connection is going to be tested.
-	/// </summary>
-	public string TestSite { get; set; }
-
-	/// <summary>
-	/// The map provider for localizing an IP.
-	/// </summary>
-	public MapProviders MapProvider { get; set; }
-
-	/// <summary>
-	/// True if InternetTest should check for updates on start.
-	/// </summary>
-	public bool? CheckUpdatesOnStart { get; set; }
-
-	/// <summary>
-	/// True if InternetTest should notify the user when updates are available.
-	/// </summary>
-	public bool? NotifyUpdates { get; set; }
-
-	/// <summary>
-	/// True if InternetTest should launch a test on start.
-	/// </summary>
-	public bool? LaunchTestOnStart { get; set; }
-
-	/// <summary>
-	/// The startup page.
-	/// </summary>
-	public StartPages? StartupPage { get; set; }
-
-	/// <summary>
-	/// True if InternetTest should use <c>https</c>.
-	/// </summary>
-	public bool? UseHTTPS { get; set; }
-
-	/// <summary>
-	/// True if InternetTest's theme should match the system theme.
-	/// </summary>
-	public bool? IsThemeSystem { get; set; }
-
-	/// <summary>
-	/// True if InternetTest should show a notification banner when a test is executed.
-	/// </summary>
-	public bool? TestNotification { get; set; }
-
-	/// <summary>
-	/// True if InterentTest should show a notification banner when a <see cref="Pages.DownDetectorPage"/> test is done.
-	/// </summary>
-	public bool? DownDetectorNotification { get; set; }
-
-	/// <summary>
-	/// True if this is the first time InternetTest is launched.
-	/// </summary>
-	public bool? IsFirstRun { get; set; }
-
-	/// <summary>
-	/// <see langword="true"/> if InternetTest should save a list of located IPs to the history.
-	/// </summary>
-	public bool? UseIpHistory { get; set; }
-}
-
-/// <summary>
-/// Class that contains methods that can manage InternetTest' settings.
-/// </summary>
-public static class SettingsManager
-{
-	/// <summary>
-	/// Loads InternetTest settings.
-	/// </summary>
-	public static void Load()
+	public Settings()
 	{
-		string path = Env.AppDataPath + @"\Léo Corporation\InternetTest\Settings.xml"; // The path of the settings file
-
-		if (File.Exists(path)) // If the file exist
-		{
-			XmlSerializer xmlSerializer = new(typeof(Settings)); // XML Serializer
-			StreamReader streamReader = new(path); // Where the file is going to be read
-
-			Global.Settings = (Settings)xmlSerializer.Deserialize(streamReader); // Read
-
-			streamReader.Dispose();
-		}
-		else
-		{
-			Global.Settings = new Settings
-			{
-				IsDarkTheme = false,
-				Language = "_default",
-				TestSite = "https://bing.com",
-				MapProvider = MapProviders.OpenStreetMap,
-				CheckUpdatesOnStart = true,
-				NotifyUpdates = true,
-				LaunchTestOnStart = true,
-				StartupPage = StartPages.Connection,
-				UseHTTPS = true,
-				IsThemeSystem = true,
-				TestNotification = true,
-				DownDetectorNotification = true,
-				IsFirstRun = true,
-				UseIpHistory = true,
-			}; // Create a new settings file
-
-			Save(); // Save the changes
-		}
+		Theme = Themes.System;
+		Language = Languages.Default;
+		MapProvider = MapProvider.OpenStreetMap;
+		DefaultPage = AppPages.Home;
+		ShowNotficationWhenUpdateAvailable = true;
+		CheckUpdateOnStart = true;
+		UseHttps = true;
+		IsFirstRun = true;
+		TestSite = "https://leocorporation.dev";
+		UseSynethia = true;
+		TestOnStart = true;
 	}
 
-	/// <summary>
-	/// Saves InternetTest settings.
-	/// </summary>
-	public static void Save()
+	public Themes Theme { get; set; }
+	public Languages Language { get; set; }
+	public MapProvider MapProvider { get; set; }
+	public AppPages DefaultPage { get; set; }
+	public bool ShowNotficationWhenUpdateAvailable { get; set; }
+	public bool CheckUpdateOnStart { get; set; }
+	public bool UseHttps { get; set; }
+	public bool UseSynethia { get; set; }
+	public bool IsFirstRun { get; set; }
+	public bool TestOnStart { get; set; }
+	public string? TestSite { get; set; }
+}
+
+public static class SettingsManager
+{
+	private static string SettingsPath => $@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\Settings.xml";
+	public static Settings Load()
 	{
-		string path = Env.AppDataPath + @"\Léo Corporation\InternetTest\Settings.xml"; // The path of the settings file
-
-		XmlSerializer xmlSerializer = new(typeof(Settings)); // Create XML Serializer
-
-		if (!Directory.Exists(Env.AppDataPath + @"\Léo Corporation\InternetTest")) // If the directory doesn't exist
+		if (!Directory.Exists($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\"))
 		{
-			Directory.CreateDirectory(Env.AppDataPath + @"\Léo Corporation\"); // Create the directory
-			Directory.CreateDirectory(Env.AppDataPath + @"\Léo Corporation\InternetTest"); // Create the directory
+			Directory.CreateDirectory($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\");
 		}
 
-		StreamWriter streamWriter = new(path); // The place where the file is going to be written
-		xmlSerializer.Serialize(streamWriter, Global.Settings);
+		if (!File.Exists(SettingsPath))
+		{
+			Global.Settings = new();
 
+			// Serialize to XML
+			XmlSerializer xmlSerializer = new(typeof(Settings));
+			StreamWriter streamWriter = new(SettingsPath);
+			xmlSerializer.Serialize(streamWriter, Global.Settings);
+			streamWriter.Dispose();
+			return new();
+		}
+
+		// If there's already a setting file
+		// Deserialize from xml
+		XmlSerializer xmlDeserializer = new(typeof(Settings));
+
+		StreamReader streamReader = new(SettingsPath);
+		return (Settings)xmlDeserializer.Deserialize(streamReader);
+	}
+
+	public static void Save()
+	{
+		// Serialize to XML
+		XmlSerializer xmlSerializer = new(typeof(Settings));
+		StreamWriter streamWriter = new(SettingsPath);
+		xmlSerializer.Serialize(streamWriter, Global.Settings);
 		streamWriter.Dispose();
 	}
 

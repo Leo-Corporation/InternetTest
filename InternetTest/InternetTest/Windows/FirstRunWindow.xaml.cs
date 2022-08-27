@@ -21,68 +21,56 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+
 using InternetTest.Classes;
-using InternetTest.Pages.FirstRunPages;
-using System;
-using System.Diagnostics;
-using System.IO;
+using InternetTest.Pages.FirstRun;
 using System.Windows;
 
 namespace InternetTest.Windows;
-
 /// <summary>
 /// Interaction logic for FirstRunWindow.xaml
 /// </summary>
 public partial class FirstRunWindow : Window
 {
-	static WelcomePage WelcomePage => new(); // PageID = 0
-	static TutorialPage TutorialPage => new(); // PageID = 1
-	static ThemePage ThemePage => new(); // PageID = 2
-	static LanguagePage LanguagePage => new(); // PageID = 3
-	static UpdatePage UpdatePage => new(); // PageID = 4
-
-	int pageID = 0;
+	internal WelcomePage welcomePage;
+	internal FeaturesPage featuresPage;
+	internal ThemePage themePage;
+	internal SynethiaPage synethiaPage;
+	internal JumpInPage jumpInPage = new();
 	public FirstRunWindow()
 	{
 		InitializeComponent();
-		InitUI(); // Load the UI
+		welcomePage = new(this);
+		featuresPage = new(this);
+		themePage = new(this);
+		synethiaPage = new(this);
+		ChangePage(0);
 	}
 
-	private void InitUI()
+	internal void ChangePage(int pageID)
 	{
-		PageViewer.Navigate(WelcomePage); // Show welcome page
+		WindowFrame.Content = pageID switch
+		{
+			0 => welcomePage,
+			1 => featuresPage,
+			2 => themePage,
+			3 => synethiaPage,
+			4 => jumpInPage,
+			_ => welcomePage
+		};
 	}
 
 	private void CloseBtn_Click(object sender, RoutedEventArgs e)
 	{
-		Environment.Exit(0); // Exit and close InternetTest
-	}
-
-	private void NextBtn_Click(object sender, RoutedEventArgs e)
-	{
-		pageID++; // Increment
-		PageViewer.Navigate(pageID switch
+		if (MessageBox.Show(Properties.Resources.FirstRunQuitMsg, Properties.Resources.InternetTestPro, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
 		{
-			0 => WelcomePage,
-			1 => TutorialPage,
-			2 => ThemePage,
-			3 => LanguagePage,
-			4 => UpdatePage,
-			_ => WelcomePage // By default go the home page
-		}); // Navigate to the next page
-
-		if (pageID == 4)
-		{
-			NextTxt.Text = Properties.Resources.LetsGo; // Set text
-		}
-
-		if (pageID == 5)
-		{
+			new MainWindow().Show();
 			Global.Settings.IsFirstRun = false;
-			SettingsManager.Save();
-
-			Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe"); // Start
-			Environment.Exit(0); // Close
+			Close();
+		}
+		else
+		{
+			Application.Current.Shutdown();
 		}
 	}
 }

@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InternetTest" xml:space="preserve">
+    <value>InternetTest</value>
+  </data>
+  <data name="Hi" xml:space="preserve">
+    <value>Hi</value>
+  </data>
+  <data name="GoodAfternoon" xml:space="preserve">
+    <value>Good afternoon</value>
+  </data>
+  <data name="GoodNight" xml:space="preserve">
+    <value>Good night</value>
+  </data>
+  <data name="GoodEvening" xml:space="preserve">
+    <value>Good evening</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Connection" xml:space="preserve">
+    <value>Connection</value>
+  </data>
+  <data name="LocalizeIP" xml:space="preserve">
+    <value>Locate IP</value>
+  </data>
+  <data name="DownDetector" xml:space="preserve">
+    <value>DownDetector</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="OpenBrowser" xml:space="preserve">
+    <value>Open browser</value>
+  </data>
+  <data name="LaunchTestToCheckConnection" xml:space="preserve">
+    <value>Launch a test to check your connection</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>You are connected to Internet</value>
+  </data>
+  <data name="NotConnected" xml:space="preserve">
+    <value>You aren't connected to Internet</value>
+  </data>
+  <data name="OpenMap" xml:space="preserve">
+    <value>Show on a map</value>
+  </data>
+  <data name="MapProvider" xml:space="preserve">
+    <value>Map provider</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="ZIPCode" xml:space="preserve">
+    <value>ZIP Code</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="Timezone" xml:space="preserve">
+    <value>Timezone</value>
+  </data>
+  <data name="ISP" xml:space="preserve">
+    <value>ISP</value>
+  </data>
+  <data name="MyIP" xml:space="preserve">
+    <value>My IP</value>
+  </data>
+  <data name="WarningIPAPI" xml:space="preserve">
+    <value>InternetTest is using IP-API.com to get IPs' informations.</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="OpenInBrowser" xml:space="preserve">
+    <value>Open in a browser</value>
+  </data>
+  <data name="WebsiteDown" xml:space="preserve">
+    <value>The website is down</value>
+  </data>
+  <data name="WebsiteAvailable" xml:space="preserve">
+    <value>The website is up</value>
+  </data>
+  <data name="EnterURLToCheck" xml:space="preserve">
+    <value>Enter a URL to get started</value>
+  </data>
+  <data name="Updates" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Licenses" xml:space="preserve">
+    <value>Licenses</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="SeeLicenses" xml:space="preserve">
+    <value>See licenses</value>
+  </data>
+  <data name="ChangeTheme" xml:space="preserve">
+    <value>Change InternetTest theme.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="NeedRestartToApplyChanges" xml:space="preserve">
+    <value>InternetTest needs to restart to apply the changes. Do you want to restart now?</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>InternetTest is up to date.</value>
+  </data>
+  <data name="AvailableUpdates" xml:space="preserve">
+    <value>Updates are available.</value>
+  </data>
+  <data name="CheckUpdate" xml:space="preserve">
+    <value>Check updates</value>
+  </data>
+  <data name="InstallConfirmMsg" xml:space="preserve">
+    <value>To install updates, InternetTest needs to restarts. Do you want to continue?</value>
+  </data>
+  <data name="InstallVersion" xml:space="preserve">
+    <value>Install version</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="TestSite" xml:space="preserve">
+    <value>Test website</value>
+  </data>
+  <data name="TestSiteDescription" xml:space="preserve">
+    <value>The website where the connection is tested.</value>
+  </data>
+  <data name="MapProviderDescription" xml:space="preserve">
+    <value>The map provider used to show an IP localization.</value>
+  </data>
+  <data name="UnableToCheckUpdates" xml:space="preserve">
+    <value>Unable to check updates</value>
+  </data>
+  <data name="CheckUpdatesOnStart" xml:space="preserve">
+    <value>Check updates on start</value>
+  </data>
+  <data name="NotifyUpdates" xml:space="preserve">
+    <value>Show a notification when updates are available</value>
+  </data>
+  <data name="CheckUpdatesDisabledOnStart" xml:space="preserve">
+    <value>Checking updates on start is disabled.</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>An error has occured</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="ResetSettings" xml:space="preserve">
+    <value>Reset settings</value>
+  </data>
+  <data name="ResetSettingsConfirmMsg" xml:space="preserve">
+    <value>Are you sure you want to reset all settings?</value>
+  </data>
+  <data name="SettingsReset" xml:space="preserve">
+    <value>All settings have been reset, InternetTest will now restart.</value>
+  </data>
+  <data name="InvalidIP" xml:space="preserve">
+    <value>The provided IP isn't valid.</value>
+  </data>
+  <data name="OnStart" xml:space="preserve">
+    <value>On start</value>
+  </data>
+  <data name="LaunchTestOnStart" xml:space="preserve">
+    <value>Launch a test on start</value>
+  </data>
+  <data name="StartupPage" xml:space="preserve">
+    <value>Startup page</value>
+  </data>
+  <data name="Historic" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="EmptyHistory" xml:space="preserve">
+    <value>The history is empty.</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="InvalidURL" xml:space="preserve">
+    <value>The website URL is invalid.</value>
+  </data>
+  <data name="HTTP" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="HTTPS" xml:space="preserve">
+    <value>HTTPS</value>
+  </data>
+  <data name="HTTPProtocol" xml:space="preserve">
+    <value>HTTP protocol</value>
+  </data>
+  <data name="DefaultProtocol" xml:space="preserve">
+    <value>Default protocol.</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import settings</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export settings</value>
+  </data>
+  <data name="SettingsExportedSucessMsg" xml:space="preserve">
+    <value>Settings have been sucessfully exported.</value>
+  </data>
+  <data name="SettingsImportedMsg" xml:space="preserve">
+    <value>Settings were sucessfully imported. To finish the process, InternetTest is going to restart.</value>
+  </data>
+  <data name="ConnectedShort" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="NotConnectedShort" xml:space="preserve">
+    <value>Not connected</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="IpSavedSuccess" xml:space="preserve">
+    <value>IP's informations were saved sucessfully.</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="WhenTestExecuted" xml:space="preserve">
+    <value>When a test is executed.</value>
+  </data>
+  <data name="NotifyTest" xml:space="preserve">
+    <value>Show a notification when a test is completed</value>
+  </data>
+  <data name="Testing" xml:space="preserve">
+    <value>Testing, please wait</value>
+  </data>
+  <data name="HereWeGo" xml:space="preserve">
+    <value>HERE WeGo</value>
+  </data>
+  <data name="TimeInterval" xml:space="preserve">
+    <value>Time interval</value>
+  </data>
+  <data name="AutoCheckEverySecondsWebsiteDown" xml:space="preserve">
+    <value>Automatically check if the website is down or not.</value>
+  </data>
+  <data name="CheckEveryXSeconds" xml:space="preserve">
+    <value>Check every</value>
+  </data>
+  <data name="SecondsDotM" xml:space="preserve">
+    <value>seconds.</value>
+  </data>
+  <data name="NextCheck" xml:space="preserve">
+    <value>Next check in</value>
+  </data>
+  <data name="PleaseSpecifyIntervalMsg" xml:space="preserve">
+    <value>Please specify an interval.</value>
+  </data>
+  <data name="CannotLessThanTwoSec" xml:space="preserve">
+    <value>The interval cannot be less than two seconds.</value>
+  </data>
+  <data name="PleaseSpecifyWebsiteCheck" xml:space="preserve">
+    <value>Please specify a website to check.</value>
+  </data>
+  <data name="NoNextCheck" xml:space="preserve">
+    <value>No next check</value>
+  </data>
+  <data name="ShowNotificationDownDetector" xml:space="preserve">
+    <value>Show a notification when a DownDetector test is done</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WelcomeThanks" xml:space="preserve">
+    <value>Thanks for using InternetTest! Lets' get started!</value>
+  </data>
+  <data name="ChangesApplyAfterRestart" xml:space="preserve">
+    <value>Changes will be applied after a restart of InternetTest.</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Locate</value>
+  </data>
+  <data name="WelcomeTest" xml:space="preserve">
+    <value>Unsure about your network connectivity? Don't worry! You can launch a test through InternetTest to be sure if the problem is from you or not.</value>
+  </data>
+  <data name="WelcomeLocate" xml:space="preserve">
+    <value>You want to know more about an IP address? InternetTest can get more informations about the IP, and even get its location! Note that this feature is powered by third-party services.</value>
+  </data>
+  <data name="WelcomeDownDetector" xml:space="preserve">
+    <value>Sometimes, we all go to a website, but it takes a lot of time load, and we all wonder if it's not down. Thanks to the DownDetector feature of InternetTest, you can find an answer to this question. Just enter the URL of a website and you'll get its status.</value>
+  </data>
+  <data name="WelcomeThemeTitle" xml:space="preserve">
+    <value>Make InternetTest yours</value>
+  </data>
+  <data name="LetsGo" xml:space="preserve">
+    <value>Let's go</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Change the language of InternetTest.</value>
+  </data>
+  <data name="NotificationsSettings" xml:space="preserve">
+    <value>Notifications settings.</value>
+  </data>
+  <data name="ManageData" xml:space="preserve">
+    <value>Manage your data.</value>
+  </data>
+  <data name="CreditsAndThanks" xml:space="preserve">
+    <value>Credits and special thanks</value>
+  </data>
+  <data name="TestMultipleWebsites" xml:space="preserve">
+    <value>Test multiple websites.</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="LaunchTests" xml:space="preserve">
+    <value>Launch all tests</value>
+  </data>
+  <data name="HideShowIP" xml:space="preserve">
+    <value>Hide or show the IP address</value>
+  </data>
+  <data name="Pin" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="Unpin" xml:space="preserve">
+    <value>Unpin</value>
+  </data>
+  <data name="HistoryDescription" xml:space="preserve">
+    <value>History related settings.</value>
+  </data>
+  <data name="UseHistory" xml:space="preserve">
+    <value>Use history in Locate IP page.</value>
+  </data>
+  <data name="LocateIPToSeeData" xml:space="preserve">
+    <value>Locate an IP to see its information appear.</value>
+  </data>
+  <data name="OpenSourceMention" xml:space="preserve">
+    <value>Open Source - Made with ❤️ in France</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Status code</value>
+  </data>
+</root>

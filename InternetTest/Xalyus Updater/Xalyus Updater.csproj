@@ -2,26 +2,26 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>Xalyus_Updater</RootNamespace>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Xalyus Updater.ico</ApplicationIcon>
-    <Authors>Léo Corporation</Authors>
-    <Version>1.0.0.2103</Version>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Copyright>© 2021</Copyright>
-    <PackageProjectUrl>https://github.com/Leo-Corporation/InternetTest</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Leo-Corporation/InternetTest</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
+    <Version>1.0.0.2208</Version>
+    <Company>Léo Corporation</Company>
+    <Copyright>© 2022</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\Xalyus Updater.png" />
+    <None Remove="Resources\Logo.png" />
+    <None Remove="Resources\Xalyus Updater.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\Xalyus Updater.png">
+    <Resource Include="Resources\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Xalyus Updater.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

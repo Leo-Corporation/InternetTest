@@ -1,14 +1,13 @@
-﻿<Window x:Class="InternetTest.MainWindow"
+﻿<Window x:Name="window" x:Class="InternetTest.MainWindow"
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:InternetTest"
 		xmlns:lang="clr-namespace:InternetTest.Properties"
-		mc:Ignorable="d"
+		mc:Ignorable="d" Foreground="{Binding Source={StaticResource Foreground1}}"
 		FontFamily="/Fonts/#Hauora"
-		Title="{x:Static lang:Resources.InternetTest}" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
-
+		Title="{x:Static lang:Resources.InternetTestPro}" MinHeight="500" MinWidth="500" Height="600" Width="950" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" ResizeMode="CanResize">
 	<WindowChrome.WindowChrome>
 		<WindowChrome CaptionHeight="32" ResizeBorderThickness="10"/>
 	</WindowChrome.WindowChrome>
@@ -17,11 +16,6 @@
 		<Style x:Key="WindowMainPanelStyle" TargetType="{x:Type Border}">
 			<Setter Property="BorderBrush" Value="{DynamicResource WindowBorderBrush}" />
 			<Setter Property="BorderThickness" Value="1" />
-			<Style.Triggers>
-				<!--<DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=WindowState}" Value="Maximized">
-					<Setter Property="Margin" Value="6 0 6 0" />
-				</DataTrigger>-->
-			</Style.Triggers>
 		</Style>
 		<Style x:Key="TitleBarButtonStyle" TargetType="Button">
 			<Setter Property="Foreground" Value="White" />
@@ -32,18 +26,8 @@
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate TargetType="{x:Type Button}">
-						<Border
-					x:Name="border"
-					Background="{TemplateBinding Background}"
-					BorderThickness="0" CornerRadius="5"
-					SnapsToDevicePixels="true">
-							<ContentPresenter
-						x:Name="contentPresenter"
-						Margin="0"
-						HorizontalAlignment="Center"
-						VerticalAlignment="Center"
-						Focusable="False"
-						RecognizesAccessKey="True" />
+						<Border	x:Name="border"	Background="{TemplateBinding Background}" BorderThickness="0" CornerRadius="5" SnapsToDevicePixels="true">
+							<ContentPresenter x:Name="contentPresenter"	Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False" RecognizesAccessKey="True" />
 						</Border>
 						<ControlTemplate.Triggers>
 							<Trigger Property="IsMouseOver" Value="true">
@@ -97,11 +81,14 @@
 	</Window.Resources>
 
 	<Window.Effect>
-		<DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity="0.4" RenderingBias="Quality"/>
+		<DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity="0.4" RenderingBias="Performance"/>
 	</Window.Effect>
 
-	<Border Name="WindowBorder" Margin="10" BorderThickness="0" Background="{Binding Source={StaticResource Background1}}" CornerRadius="5">
-		<Grid VerticalAlignment="Top">
+	<Border Name="WindowBorder" d:Background="#fff" Margin="10" BorderThickness="0" CornerRadius="5">
+		<Border.Background>
+			<ImageBrush ImageSource="{Binding Source={StaticResource BackgroundImg}}"/>
+		</Border.Background>
+		<Grid VerticalAlignment="Stretch">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="Auto"/>
@@ -115,159 +102,252 @@
 						<ColumnDefinition Width="Auto"/>
 						<ColumnDefinition Width="Auto"/>
 					</Grid.ColumnDefinitions>
-					
-					<Button Grid.Column="1" FontSize="14" Content="&#xF602;" FontFamily="/Fonts/#FluentSystemIcons-Regular" Name="PinBtn" Click="PinBtn_Click" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}">
-						<Button.ToolTip>
-							<ToolTip x:Name="PinToolTip" Content="{x:Static lang:Resources.Pin}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}"/>
-						</Button.ToolTip>
-					</Button>
-					<Button Grid.Column="2" FontSize="14" Content="&#xFC75;" FontFamily="/Fonts/#FluentSystemIcons-Regular" Name="MinimizeBtn" Click="MinimizeBtn_Click"  RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
-					<Button Grid.Column="3" FontSize="14" Content="&#xF36B;" FontFamily="/Fonts/#FluentSystemIcons-Regular" Name="CloseBtn" Click="CloseBtn_Click" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarCloseButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+
+					<Button Grid.Column="1" FontSize="14" Content="&#xFC75;" FontFamily="/Fonts/#FluentSystemIcons-Regular" x:Name="MinimizeBtn" Click="MinimizeBtn_Click"  RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+					<Button Grid.Column="2" FontSize="14" Content="&#xFA40;" FontFamily="/Fonts/#FluentSystemIcons-Regular" x:Name="MaximizeRestoreBtn" Click="MaximizeRestoreBtn_Click"  RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+					<Button Grid.Column="3" FontSize="14" Content="&#xF36B;" FontFamily="/Fonts/#FluentSystemIcons-Regular" x:Name="CloseBtn" Click="CloseBtn_Click" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarCloseButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 				</Grid>
 			</Border>
 
 			<Border Grid.Row="1" Style="{StaticResource WindowMainPanelStyle}">
-				<Grid>
+				<Grid x:Name="MainGrid">
 					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto"/>
+						<RowDefinition x:Name="GridRow1" Height="Auto"/>
 						<RowDefinition Height="*"/>
 					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="24"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<StackPanel Grid.ColumnSpan="3" Grid.Column="1">
+						<TextBlock Text="{x:Static lang:Resources.InternetTest}" Margin="0,10,0,0" FontSize="36" FontWeight="ExtraBold" Grid.Column="1"/>
+						<TextBlock x:Name="HelloTxt" Text="{x:Static lang:Resources.InternetTest}" FontSize="16" FontWeight="ExtraBold" Grid.Column="1"/>
+					</StackPanel>
+					<StackPanel x:Name="SideBar" Grid.Row="1" Grid.Column="1">
+                        <StackPanel Name="SideBarTop">
+                            <TextBlock Text="{x:Static lang:Resources.Pinned}" FontWeight="Bold" Margin="0 10"/>
+                            <Button x:Name="HomePageBtn" Background="Transparent" BorderThickness="0" Style="{DynamicResource StandardButton}" HorizontalContentAlignment="Left" Click="HomePageBtn_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Width="32" Height="32" Padding="7" CornerRadius="5">
+                                        <Border.Background>
+                                            <LinearGradientBrush>
+                                                <GradientStop Color="#0088FF" Offset="0"/>
+                                                <GradientStop Color="#2153E0" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock x:Name="HomeIconTxt" Text="&#xF488;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Text="{x:Static lang:Resources.Home}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+                                </Grid>
 
-					<Grid x:Name="Header">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="Auto"/>
-							<RowDefinition/>
-						</Grid.RowDefinitions>
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="12" To="18" Storyboard.TargetProperty="FontSize" Storyboard.TargetName="HomeIconTxt" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <Button x:Name="HistoryPageBtn" Background="Transparent" BorderThickness="0" Style="{DynamicResource StandardButton}" Margin="0,5,0,0" HorizontalContentAlignment="Left" Click="HistoryPageBtn_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Padding="7" CornerRadius="5" Width="32" Height="32">
+                                        <Border.Background>
+                                            <LinearGradientBrush>
+                                                <GradientStop Color="#6F00FF" Offset="0"/>
+                                                <GradientStop Color="#9A21E0" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock x:Name="HistoryIconTxt" Text="&#xF486;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                                            <TextBlock.RenderTransform>
+                                                <TransformGroup>
+                                                    <RotateTransform x:Name="HistoryRotator" Angle="0"/>
+                                                </TransformGroup>
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                    </Border>
+                                    <TextBlock Text="{x:Static lang:Resources.History}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+                                </Grid>
 
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition/>
-							<ColumnDefinition Width="Auto"/>
-						</Grid.ColumnDefinitions>
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="HistoryIconTxt" BeginTime="00:00:00" AccelerationRatio="0.5">
+                                                    <SplineThicknessKeyFrame KeyTime="00:00:00" Value="10,0,0,0" />
+                                                    <SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
+                                                </ThicknessAnimationUsingKeyFrames>
+                                                <DoubleAnimation From="180" To="0" Storyboard.TargetProperty="Angle" Storyboard.TargetName="HistoryRotator" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <Button x:Name="SettingsPageBtn" Background="Transparent" BorderThickness="0" Style="{DynamicResource StandardButton}" Margin="0,5,0,0" HorizontalContentAlignment="Left" Click="SettingsPageBtn_Click">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Padding="7" CornerRadius="5">
+                                        <Border.Background>
+                                            <LinearGradientBrush>
+                                                <GradientStop Color="#B1B1B1" Offset="0"/>
+                                                <GradientStop Color="#343C51" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock x:Name="SettingsIconTxt" Text="&#xF6B3;" FontSize="18" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontFamily="/Fonts/#FluentSystemIcons-Filled" RenderTransformOrigin="0.5,0.5">
+                                            <TextBlock.RenderTransform>
+                                                <TransformGroup>
+                                                    <RotateTransform x:Name="SettingsRotator" Angle="0"/>
+                                                </TransformGroup>
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                    </Border>
+                                    <TextBlock Text="{x:Static lang:Resources.Settings}" FontSize="14" FontWeight="Bold" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+                                </Grid>
 
-						<StackPanel HorizontalAlignment="Left">
-							<TextBlock Grid.Row="0" FontWeight="ExtraBold"  Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="48" Text="{x:Static lang:Resources.InternetTest}" Margin="20,0,0,0"/>
-							<TextBlock x:Name="HelloTxt" Grid.Row="0" FontWeight="Regular"  Foreground="{Binding Source={StaticResource Foreground1}}" FontSize="16" d:Text="[HelloMessage]" Margin="20,0,0,0"/>
-						</StackPanel>
-						<Image Margin="5,0,5,5" Grid.Column="1" Height="80" Source="{Binding Source={StaticResource MainWindowBackground}}" Stretch="UniformToFill" HorizontalAlignment="Right"/>
-					</Grid>
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="360" To="0" Storyboard.TargetProperty="Angle" Storyboard.TargetName="SettingsRotator" Duration="0:0:0.4"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
 
-					<Grid x:Name="WindowContent" Grid.Row="1">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="Auto"/>
-							<ColumnDefinition/>
-						</Grid.ColumnDefinitions>
+                            <TextBlock Text="{x:Static lang:Resources.Tools}" FontWeight="Bold" Margin="0 10"/>
+                        </StackPanel>
+                        <ScrollViewer x:Name="ActionsScrollViewer" Style="{DynamicResource ScrollViewerStyle}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                            <StackPanel x:Name="ToolsStackPanel">
+                                <Button x:Name="WebUtilitiesBtn" Click="WebUtilitiesBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch" Height="30">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="16"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock x:Name="UtilIconTxt" Text="&#xF45B;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static lang:Resources.WebUtilities}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
+                                        <TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+                                            <TextBlock.RenderTransform>
+                                                <TransformGroup>
+                                                    <RotateTransform x:Name="UtilRotator" Angle="0"/>
+                                                </TransformGroup>
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                    </Grid>
 
-						<StackPanel Margin="10" Grid.Column="0">
-							<Button Click="ConnectionBtn_Click" x:Name="ConnectionBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="ExtraBold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Cursor="Hand">
-								<Grid>
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition Width="33"/>
-										<ColumnDefinition/>
-									</Grid.ColumnDefinitions>
-									
-									<TextBlock x:Name="ConnectionIcon" Text="&#xF45B;" FontSize="23" FontWeight="Regular" FontFamily="/Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-									<TextBlock Text="{x:Static lang:Resources.Connection}" VerticalAlignment="Center" Grid.Column="1"/>
-								</Grid>
+                                    <Button.Triggers>
+                                        <EventTrigger RoutedEvent="MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="UtilIconTxt" BeginTime="00:00:00">
+                                                        <SplineThicknessKeyFrame KeyTime="00:00:00" Value="20,0,0,0" />
+                                                        <SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
+                                                    </ThicknessAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                                <StackPanel x:Name="UtilitiesPanel" Visibility="Collapsed">
+                                    <Button x:Name="StatusPageBtn" Content="{x:Static lang:Resources.Status}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="StatusPageBtn_Click"/>
+                                    <Button x:Name="DownDetectorPageBtn" Content="{x:Static lang:Resources.DownDetector}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="DownDetectorPageBtn_Click"/>
+                                </StackPanel>
+                                <Button x:Name="IPToolsBtn" Click="IPToolsBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch" Height="30">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock x:Name="IPIconTxt" Text="&#xF4F9;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static lang:Resources.IPTools}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
+                                        <TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+                                            <TextBlock.RenderTransform>
+                                                <TransformGroup>
+                                                    <RotateTransform x:Name="IPRotator" Angle="0"/>
+                                                </TransformGroup>
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                    </Grid>
 
-								<Button.Triggers>
-									<EventTrigger RoutedEvent="MouseEnter">
-										<BeginStoryboard>
-											<Storyboard>
-												<DoubleAnimation From="5" To="20" Duration="0:0:0.2" Storyboard.TargetName="ConnectionIcon" Storyboard.TargetProperty="FontSize"/>
-												<ColorAnimation From="{Binding Source={StaticResource Background1}}" To="{Binding Source={StaticResource AccentColor}}" Duration="0:0:0.2" Storyboard.TargetName="ConnectionBtn" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"/>
-											</Storyboard>
-										</BeginStoryboard>
-									</EventTrigger>
-								</Button.Triggers>
-							</Button>
-							<Button Click="LocalizeIPBtn_Click" x:Name="LocalizeIPBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="ExtraBold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Height="42.38">
-								<Grid>
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition Width="Auto"/>
-										<ColumnDefinition/>
-									</Grid.ColumnDefinitions>
-									
-									<TextBlock x:Name="IPIcon" Text="&#xF4F9;" FontSize="23" FontWeight="Regular" FontFamily="/Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" VerticalAlignment="Center"/>
-									<TextBlock Text="{x:Static lang:Resources.LocalizeIP}" VerticalAlignment="Center" Grid.Column="1"/>
-								</Grid>
+                                    <Button.Triggers>
+                                        <EventTrigger RoutedEvent="MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="IPIconTxt" BeginTime="00:00:00">
+                                                        <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,20" />
+                                                        <SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
+                                                    </ThicknessAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                                <StackPanel x:Name="IPPanel" Visibility="Collapsed">
+                                    <Button x:Name="MyIPPageBtn" Content="{x:Static lang:Resources.MyIP}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="MyIPPageBtn_Click"/>
+                                    <Button x:Name="LocateIPPageBtn" Content="{x:Static lang:Resources.LocateIP}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="LocateIPPageBtn_Click"/>
+                                </StackPanel>
+                                <Button x:Name="CommandsBtn" Click="CommandsBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="16"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock x:Name="ComIconTxt" Text="&#xF8B9;" FontSize="16" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                                            <TextBlock.RenderTransform>
+                                                <TransformGroup>
+                                                    <RotateTransform x:Name="ComIconRotator" Angle="0"/>
+                                                </TransformGroup>
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                        <TextBlock Text="{x:Static lang:Resources.Commands}" FontWeight="ExtraBold" FontSize="14" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
+                                        <TextBlock Text="&#xF2A4;" FontSize="12" FontFamily="/Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+                                            <TextBlock.RenderTransform>
+                                                <TransformGroup>
+                                                    <RotateTransform x:Name="CommandRotator" Angle="0"/>
+                                                </TransformGroup>
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
+                                    </Grid>
 
-								<Button.Triggers>
-									<EventTrigger RoutedEvent="MouseEnter">
-										<BeginStoryboard>
-											<Storyboard>
-												<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="IPIcon" BeginTime="00:00:00">
-													<SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,10,20" />
-													<SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0,0,10,0" />
-												</ThicknessAnimationUsingKeyFrames>
-												<ColorAnimation From="{Binding Source={StaticResource Background1}}" To="{Binding Source={StaticResource AccentColor}}" Duration="0:0:0.2" Storyboard.TargetName="LocalizeIPBtn" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"/>
-											</Storyboard>
-										</BeginStoryboard>
-									</EventTrigger>
-								</Button.Triggers>
-							</Button>
-							<Button Click="DownDetectorBtn_Click" x:Name="DownDetectorBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="ExtraBold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave">
-								<Grid>
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition Width="33"/>
-										<ColumnDefinition/>
-									</Grid.ColumnDefinitions>
-									
-									<TextBlock x:Name="DownIcon" Text="&#xF53D;" FontSize="23" FontWeight="Regular" FontFamily="/Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
-										<TextBlock.RenderTransform>
-											<TransformGroup>
-												<RotateTransform x:Name="DownRotator" Angle="0"/>
-											</TransformGroup>
-										</TextBlock.RenderTransform>
-									</TextBlock>
-									<TextBlock Text="{x:Static lang:Resources.DownDetector}" VerticalAlignment="Center" Grid.Column="4"/>
-								</Grid>
-
-								<Button.Triggers>
-									<EventTrigger RoutedEvent="MouseEnter">
-										<BeginStoryboard>
-											<Storyboard>
-												<DoubleAnimation From="0" To="360" Duration="0:0:0.2" Storyboard.TargetName="DownRotator" Storyboard.TargetProperty="Angle"/>
-												<DoubleAnimation From="5" To="20" Duration="0:0:0.2" Storyboard.TargetName="DownIcon" Storyboard.TargetProperty="FontSize"/>
-												<ColorAnimation From="{Binding Source={StaticResource Background1}}" To="{Binding Source={StaticResource AccentColor}}" Duration="0:0:0.2" Storyboard.TargetName="DownDetectorBtn" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"/>
-											</Storyboard>
-										</BeginStoryboard>
-									</EventTrigger>
-								</Button.Triggers>
-							</Button>
-							<Button Click="SettingsTabBtn_Click" x:Name="SettingsTabBtn" Margin="5" Background="{Binding Source={StaticResource Background1}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="ExtraBold" Padding="8" Style="{DynamicResource TabButtonStyle}" FontSize="20" HorizontalAlignment="Left" Width="210" HorizontalContentAlignment="Left" MouseEnter="TabEnter" MouseLeave="TabLeave" Cursor="Hand">
-								<StackPanel Orientation="Horizontal">
-									<TextBlock Text="&#xF6AB;" FontSize="23" FontWeight="Regular" FontFamily="/Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
-										<TextBlock.RenderTransform>
-											<TransformGroup>
-												<RotateTransform x:Name="Rotator" Angle="0"/>
-											</TransformGroup>
-										</TextBlock.RenderTransform>
-									</TextBlock>
-									<TextBlock Text="{x:Static lang:Resources.Settings}" VerticalAlignment="Center"/>
-								</StackPanel>
-
-								<Button.Triggers>
-									<EventTrigger RoutedEvent="MouseEnter">
-										<BeginStoryboard>
-											<Storyboard>
-												<DoubleAnimation From="0" To="45" Duration="0:0:0.2" Storyboard.TargetName="Rotator" Storyboard.TargetProperty="Angle"/>
-												<ColorAnimation From="{Binding Source={StaticResource Background1}}" To="{Binding Source={StaticResource AccentColor}}" Duration="0:0:0.2" Storyboard.TargetName="SettingsTabBtn" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"/>
-											</Storyboard>
-										</BeginStoryboard>
-									</EventTrigger>
-									<EventTrigger RoutedEvent="MouseLeave">
-										<BeginStoryboard>
-											<Storyboard>
-												<DoubleAnimation From="45" To="0" Duration="0:0:0.2" Storyboard.TargetName="Rotator" Storyboard.TargetProperty="Angle"/>
-											</Storyboard>
-										</BeginStoryboard>
-									</EventTrigger>
-								</Button.Triggers>
-							</Button>
-						</StackPanel>
-
-						<Frame Name="PageContent" Grid.Column="1" NavigationUIVisibility="Hidden"/>
-					</Grid>
+                                    <Button.Triggers>
+                                        <EventTrigger RoutedEvent="MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="4" To="18" Storyboard.TargetProperty="FontSize" Storyboard.TargetName="ComIconTxt" Duration="0:0:0.2"/>
+                                                    <DoubleAnimation From="180" To="0" Storyboard.TargetProperty="Angle" Storyboard.TargetName="ComIconRotator" Duration="0:0:0.2"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                                <StackPanel x:Name="CommandPanel" Visibility="Collapsed">
+                                    <Button x:Name="PingPageBtn" Content="{x:Static lang:Resources.Ping}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="PingPageBtn_Click"/>
+                                    <Button x:Name="IPConfigPageBtn" Content="{x:Static lang:Resources.IPConfig}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="IPConfigPageBtn_Click"/>
+                                    <Button x:Name="WifiPasswordsPageBtn" Content="{x:Static lang:Resources.WifiPasswords}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="WifiPasswordsPageBtn_Click"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </StackPanel>
+					<ScrollViewer Style="{DynamicResource ScrollViewerStyle}" x:Name="PageScroller" Grid.Column="2" Grid.Row="1" Margin="10,10,0,0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+						<Frame x:Name="PageDisplayer" NavigationUIVisibility="Hidden"/>
+					</ScrollViewer>
 				</Grid>
 			</Border>
 		</Grid>

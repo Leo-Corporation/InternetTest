@@ -26,33 +26,42 @@ using InternetTest.Windows;
 using System.Windows;
 
 namespace InternetTest;
-
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>
 public partial class App : Application
 {
-	protected override void OnStartup(StartupEventArgs e)
+	private void Application_Startup(object sender, StartupEventArgs e)
 	{
-		SettingsManager.Load(); // Load settings
+		Global.ChangeTheme();
+		Global.ChangeLanguage();
 
-		Global.ChangeTheme(); // Change the theme
-		Global.ChangeLanguage(); // Change the language
+		Global.HomePage = new();
+		Global.HistoryPage = new();
+		Global.SettingsPage = new();
+		Global.StatusPage = new();
+		Global.DownDetectorPage = new();
+		Global.MyIpPage = new();
+		Global.LocateIpPage = new();
+		Global.PingPage = new();
+		Global.IpConfigPage = new();
+		Global.WiFiPasswordsPage = new();
 
-		Global.LocatedIPs = new(); // Create the list of IPs
 
-		Global.SettingsPage = new(); // Create a new SettingsPage
-		Global.ConnectionPage = new(); // Create a new ConnectionPage
-		Global.LocalizeIPPage = new(); // Create a new LocalizeIPPage
-		Global.DownDetectorPage = new(); // Create a new DownDetectorPage
-
-		if (Global.Settings.IsFirstRun.Value)
+		if (!Global.Settings.IsFirstRun)
 		{
-			new FirstRunWindow().Show(); // Show the "First run" experience
+			new MainWindow().Show();
 		}
 		else
 		{
-			new MainWindow().Show(); // Start InternetTest
+			new FirstRunWindow().Show();
 		}
+	}
+
+	private void Application_Exit(object sender, ExitEventArgs e)
+	{
+		SynethiaManager.Save(Global.SynethiaConfig);
+		HistoryManager.Save(Global.History);
+		SettingsManager.Save();
 	}
 }

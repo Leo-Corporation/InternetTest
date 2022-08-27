@@ -1,96 +1,106 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <UseWPF>true</UseWPF>
-    <ApplicationIcon>InternetTest.ico</ApplicationIcon>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>6.3.1.2207</Version>
-    <Authors>Léo Corporation</Authors>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>© 2022</Copyright>
-    <RepositoryUrl>https://github.com/Leo-Corporation/InternetTest</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/Leo-Corporation/InternetTest</PackageProjectUrl>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>True</UseWindowsForms>
+		<Version>7.0.0.2208</Version>
+		<Copyright>© 2022</Copyright>
+		<Company>Léo Corporation</Company>
+		<Description>Taking you to another level. InternetTest can locate IP addresses, send ping request, recover your WiFi passwords and more!</Description>
+		<PackageIcon>InternetTest.ico</PackageIcon>
+		<ApplicationIcon>InternetTest.ico</ApplicationIcon>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<RepositoryUrl>https://github.com/Leo-Corporation/InternetTest</RepositoryUrl>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Fonts\FluentSystemIcons-Filled.ttf" />
-    <None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
-    <None Remove="Fonts\Hauora-Bold.ttf" />
-    <None Remove="Fonts\Hauora-ExtraBold.ttf" />
-    <None Remove="Fonts\Hauora-Regular.ttf" />
-    <None Remove="Images\BackgroundBlack.png" />
-    <None Remove="Images\BackgroundWhite.png" />
-    <None Remove="Images\DarkTheme.png" />
-    <None Remove="Images\InternetTest.png" />
-    <None Remove="Images\LightTheme.png" />
-    <None Remove="Images\SystemTheme.png" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Fonts\FluentSystemIcons-Filled.ttf" />
+		<None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
+		<None Remove="Fonts\Hauora-ExtraBold.ttf" />
+		<None Remove="Fonts\Hauora-Regular.ttf" />
+		<None Remove="Images\DarkBackground.png" />
+		<None Remove="Images\DarkTheme.png" />
+		<None Remove="Images\InternetTest.png" />
+		<None Remove="Images\LightBackground.png" />
+		<None Remove="Images\LightTheme.png" />
+		<None Remove="Images\SystemTheme.png" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Include="Fonts\FluentSystemIcons-Filled.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fonts\FluentSystemIcons-Regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fonts\Hauora-Bold.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fonts\Hauora-ExtraBold.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fonts\Hauora-Regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+	<ItemGroup>
+	  <Content Include="InternetTest.ico" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="LeoCorpLibrary" Version="4.8.0.2207" />
-  </ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="LeoCorpLibrary" Version="4.9.0.2208" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Resource Include="Fonts\FluentSystemIcons-Filled.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\FluentSystemIcons-Regular.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\Hauora-ExtraBold.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\Hauora-Regular.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\DarkBackground.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\DarkTheme.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\InternetTest.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\LightBackground.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\LightTheme.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\SystemTheme.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.en-US.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.fr-FR.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="Images\BackgroundBlack.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\BackgroundWhite.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\DarkTheme.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\InternetTest.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\LightTheme.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\SystemTheme.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.en-US.resx">
+	    <CustomToolNamespace></CustomToolNamespace>
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Properties\Resources.fr-FR.resx">
+	    <CustomToolNamespace></CustomToolNamespace>
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Properties\Resources.zh-CN.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="InternetTest.ico">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
 </Project>

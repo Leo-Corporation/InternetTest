@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="InternetTest.UserControls.ActionCard"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:InternetTest.UserControls"
+			 mc:Ignorable="d" FontFamily="../Fonts/#Hauroa"
+			 Height="30" Width="Auto" Margin="5 2" Foreground="{Binding Source={StaticResource Foreground1}}">
+	<Border MouseLeftButtonUp="Border_MouseLeftButtonUp" Cursor="Hand" CornerRadius="15" Background="{Binding Source={StaticResource LightAccentColor}}">
+		<StackPanel Margin="10 5" Orientation="Horizontal" VerticalAlignment="Center">
+			<TextBlock x:Name="IconTxt" d:Text="&#xF4DB;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Filled" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
+			<TextBlock x:Name="PageNameTxt" d:Text="Status" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="10,0,0,0" Foreground="{Binding Source={StaticResource AccentColor}}" FontFamily="../Fonts/#Hauora"/>
+		</StackPanel>
+	</Border>
+</UserControl>
