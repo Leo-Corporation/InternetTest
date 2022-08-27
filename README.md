@@ -12,9 +12,9 @@
   <h1 align="center">InternetTest</h3>
 
   <p align="center">
-    InternetTest is a modern connection utility for Windows.
+    Taking you to another level.<br /> InternetTest can locate IP addresses, send ping request, recover your WiFi passwords and more!
     <br />
-    <a href="https://tinyurl.com/DownloadInternetTest"><strong>Download »</strong></a>
+    <a href="https://tinyurl.com/DownloadITP7"><strong>Download »</strong></a>
     <br />
     <a href="https://github.com/Leo-Corporation/InternetTest/issues/new?assignees=&labels=bug&template=bug-report.yml&title=%5BBug%5D+">Report Bug</a>
     ·
@@ -26,13 +26,24 @@
 </p>
 
 ## Features
+With InternetTest Pro (v7), you can:
+
 * Check your Internet connection
-* IP Locator
-* Down Detector
+* Locate an IP adress
+* Check if websites are working or not (Down Detector)
+* Send a ping request
+* Get your IP Config
+* Recover your WiFi passwords
+
+InternetTest has:
+* A customized dashboard depending on your usage ([Synethia](https://github.com/Leo-Corporation/Synethia))
 * Dark mode
 * Automatic update system
 * Settings customization
-* Multilingual (French and English)
+* Multiple languages 
+  * English (US)
+  * French (France)
+  * Simplified Chinese (PRC - partial support))
 
 ## Latest release
 [Click here](https://github.com/Leo-Corporation/InternetTest/releases) to show the latest release's changelog.
@@ -47,10 +58,8 @@ This Git repo has always two branches:
 
 > Note: Other branches can also - of course - exists.
 
-## Documentation 
-In the documentation, you'll find answers to your questions about InternetTest.
+## InternetTest Pro
+[Click here](https://blog.leocorporation.dev/2022/08/introducing-internettest-pro/) to learn more about InternetTest Pro.
 
-- Click [here](https://github.com/Leo-Corporation/InternetTest/wiki) to go to the InternetTest's documentation.
-- Click [here](https://leocorplibrary.leocorporation.dev/) to go to the LeoCorpLibrary's documentation.
 ## License
 Project under the [MIT License](https://github.com/Leo-Corporation/InternetTest/blob/main/LICENSE).
