@@ -40,10 +40,10 @@ InternetTest has:
 * Dark mode
 * Automatic update system
 * Settings customization
-* Multiple languages 
+* Multiple languages:
   * English (US)
   * French (France)
-  * Simplified Chinese (PRC - partial support))
+  * Simplified Chinese (PRC)
 
 ## Latest release
 [Click here](https://github.com/Leo-Corporation/InternetTest/releases) to show the latest release's changelog.
