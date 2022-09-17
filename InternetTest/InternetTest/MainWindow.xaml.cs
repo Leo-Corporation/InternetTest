@@ -132,8 +132,12 @@ public partial class MainWindow : Window
 				break;
 		}
 
+		// Register event handlers
 		PageCard.OnCardClick += PageCard_OnCardClick;
 		ActionCard.OnCardClick += PageCard_OnCardClick;
+
+		// Restore the previous Window state
+		WindowState = Global.Settings.IsMaximized ?? false ? WindowState.Maximized : WindowState.Normal;
 	}
 
 	private void PageCard_OnCardClick(object? sender, PageEventArgs e)
@@ -195,6 +199,7 @@ public partial class MainWindow : Window
 	private void MaximizeRestoreBtn_Click(object sender, RoutedEventArgs e)
 	{
 		WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+
 		HandleWindowStateChanged();
 	}
 
@@ -217,6 +222,10 @@ public partial class MainWindow : Window
 
 		WindowBorder.Margin = WindowState == WindowState.Maximized ? new(10, 10, 0, 0) : new(10); // Set
 		WindowBorder.CornerRadius = WindowState == WindowState.Maximized ? new(0) : new(5); // Set
+
+		// Update settings information
+		Global.Settings.IsMaximized = WindowState == WindowState.Maximized;
+		SettingsManager.Save();
 	}
 
 	private void DefineMaximumSize()
