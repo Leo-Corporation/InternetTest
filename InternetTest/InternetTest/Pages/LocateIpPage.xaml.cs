@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using LeoCorpLibrary;
 using Microsoft.Win32;
 using System;
 using System.Diagnostics;
@@ -47,10 +48,17 @@ public partial class LocateIpPage : Page
 		InjectSynethiaCode();
 	}
 
-	private void InitUI()
+	private async void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.LocateIP}";
-		LocateIP(""); // Get the current IP of the user
+		try
+		{
+			if (await NetworkConnection.IsAvailableAsync())
+			{
+				LocateIP(""); // Get the current IP of the user
+			}
+		}
+		catch (Exception) {	} // Cancel if there is no internet connection
 	}
 
 	private void InjectSynethiaCode()

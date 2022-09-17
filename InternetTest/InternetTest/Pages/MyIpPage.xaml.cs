@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using LeoCorpLibrary;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -44,9 +45,16 @@ public partial class MyIpPage : Page
 		InjectSynethiaCode();
 	}
 
-	private void InitUI()
+	private async void InitUI()
 	{
-		GetMyIP(); // Locate the current IP
+		try
+		{
+			if (await NetworkConnection.IsAvailableAsync())
+			{
+				GetMyIP(); // Locate the current IP
+			}
+		}
+		catch (Exception) { } // Cancel if there is no internet connection
 		TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.MyIP}";
 	}
 
