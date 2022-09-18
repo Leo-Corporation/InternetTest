@@ -41,7 +41,7 @@ using System.Windows.Media;
 namespace InternetTest.Classes;
 public static class Global
 {
-	public static string Version => "7.1.0.2209-rc1";
+	public static string Version => "7.1.0.2209";
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
 	public static Settings Settings { get; set; } = SettingsManager.Load();
