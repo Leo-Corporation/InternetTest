@@ -53,7 +53,16 @@ public partial class WiFiInfoItem : UserControl
 			"IBSS" => Properties.Resources.AdHocNetwork,
 			_ => WLANProfile.ConnectionType
 		};
-		AuthTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Authentication;
+		AuthTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Authentication switch
+		{
+			"open" => Properties.Resources.OpenNetwork,
+			"shared" => Properties.Resources.SharedNetwork,
+			"WPA" => Properties.Resources.WPANetwork,
+			"WPAPSK" => Properties.Resources.WPAPSKNetwork,
+			"WPA2" => Properties.Resources.WPA2Network,
+			"WPA2PSK" => Properties.Resources.WPA2PSKNetwork,
+			_ => WLANProfile.MSM?.Security?.AuthEncryption?.Authentication
+		};
 		EncryptionTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Encryption;
 		PasswordTxt.Text = new string('*', WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial?.Length ?? 0);
 
