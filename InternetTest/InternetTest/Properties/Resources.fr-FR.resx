@@ -618,4 +618,28 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r�
   <data name="WelcomeReady" xml:space="preserve">
     <value>Tout est prêt</value>
   </data>
+  <data name="ConfidentialModeEnabled" xml:space="preserve">
+    <value>Le Mode Confidentiel est activé</value>
+  </data>
+  <data name="DetailsNotAvailableCM" xml:space="preserve">
+    <value>Les détails ne sont pas disponibles en Mode Confidentiel</value>
+  </data>
+  <data name="OpenNetwork" xml:space="preserve">
+    <value>Réseau ouvert (802.11)</value>
+  </data>
+  <data name="SharedNetwork" xml:space="preserve">
+    <value>Réseau partagé (802.11)</value>
+  </data>
+  <data name="WPANetwork" xml:space="preserve">
+    <value>Réseau d'entreprise (WPA-Enterprise 802.11)</value>
+  </data>
+  <data name="WPAPSKNetwork" xml:space="preserve">
+    <value>Réseau personnel (WPA-Personal 802.11)</value>
+  </data>
+  <data name="WPA2Network" xml:space="preserve">
+    <value>Réseau d'entreprise (WPA2-Enterprise 802.11)</value>
+  </data>
+  <data name="WPA2PSKNetwork" xml:space="preserve">
+    <value>Réseau personnel (WPA2-Personal 802.11)</value>
+  </data>
 </root>

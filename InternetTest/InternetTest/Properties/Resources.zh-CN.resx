@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
+  <!-- 
 	Microsoft ResX Schema 
 	
 	Version 2.0
@@ -59,563 +59,587 @@
 			: using a System.ComponentModel.TypeConverter
 			: and then encoded with base64 encoding.
 	-->
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="metadata">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" />
-							</xsd:sequence>
-							<xsd:attribute name="name" use="required" type="xsd:string" />
-							<xsd:attribute name="type" type="xsd:string" />
-							<xsd:attribute name="mimetype" type="xsd:string" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="assembly">
-						<xsd:complexType>
-							<xsd:attribute name="alias" type="xsd:string" />
-							<xsd:attribute name="name" type="xsd:string" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>2.0</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<data name="InternetTest" xml:space="preserve">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InternetTest" xml:space="preserve">
 	<value>InternetTest</value>
   </data>
-	<data name="Hi" xml:space="preserve">
+  <data name="Hi" xml:space="preserve">
 	<value>嗨</value>
   </data>
-	<data name="GoodAfternoon" xml:space="preserve">
+  <data name="GoodAfternoon" xml:space="preserve">
 	<value>下午好</value>
   </data>
-	<data name="GoodNight" xml:space="preserve">
+  <data name="GoodNight" xml:space="preserve">
 	<value>晚安</value>
   </data>
-	<data name="GoodEvening" xml:space="preserve">
+  <data name="GoodEvening" xml:space="preserve">
 	<value>晚上好</value>
   </data>
-	<data name="Settings" xml:space="preserve">
+  <data name="Settings" xml:space="preserve">
 	<value>设置</value>
   </data>
-	<data name="History" xml:space="preserve">
+  <data name="History" xml:space="preserve">
 	<value>历史</value>
   </data>
-	<data name="Tools" xml:space="preserve">
+  <data name="Tools" xml:space="preserve">
 	<value>工具</value>
   </data>
-	<data name="Pinned" xml:space="preserve">
+  <data name="Pinned" xml:space="preserve">
 	<value>固定</value>
   </data>
-	<data name="Home" xml:space="preserve">
+  <data name="Home" xml:space="preserve">
 	<value>首页</value>
   </data>
-	<data name="WebUtilities" xml:space="preserve">
+  <data name="WebUtilities" xml:space="preserve">
 	<value>网络工具</value>
   </data>
-	<data name="IPTools" xml:space="preserve">
+  <data name="IPTools" xml:space="preserve">
 	<value>IP 工具</value>
   </data>
-	<data name="Commands" xml:space="preserve">
+  <data name="Commands" xml:space="preserve">
 	<value>命令</value>
   </data>
-	<data name="Status" xml:space="preserve">
+  <data name="Status" xml:space="preserve">
 	<value>状态</value>
   </data>
-	<data name="DownDetector" xml:space="preserve">
+  <data name="DownDetector" xml:space="preserve">
 	<value>DownDetector</value>
   </data>
-	<data name="MyIP" xml:space="preserve">
+  <data name="MyIP" xml:space="preserve">
 	<value>我的 IP</value>
   </data>
-	<data name="LocateIP" xml:space="preserve">
+  <data name="LocateIP" xml:space="preserve">
 	<value>定位 IP</value>
   </data>
-	<data name="Ping" xml:space="preserve">
+  <data name="Ping" xml:space="preserve">
 	<value>Ping</value>
   </data>
-	<data name="IPConfig" xml:space="preserve">
+  <data name="IPConfig" xml:space="preserve">
 	<value>IP 配置</value>
   </data>
-	<data name="WifiPasswords" xml:space="preserve">
+  <data name="WifiPasswords" xml:space="preserve">
 	<value>WiFi 密码</value>
   </data>
-	<data name="GetStarted" xml:space="preserve">
+  <data name="GetStarted" xml:space="preserve">
 	<value>开始使用</value>
   </data>
-	<data name="SuggestedActions" xml:space="preserve">
+  <data name="SuggestedActions" xml:space="preserve">
 	<value>推荐操作</value>
   </data>
-	<data name="Discover" xml:space="preserve">
+  <data name="Discover" xml:space="preserve">
 	<value>发现</value>
   </data>
-	<data name="Details" xml:space="preserve">
+  <data name="Details" xml:space="preserve">
 	<value>详细信息</value>
   </data>
-	<data name="Test" xml:space="preserve">
+  <data name="Test" xml:space="preserve">
 	<value>测试</value>
   </data>
-	<data name="OpenBrowser" xml:space="preserve">
+  <data name="OpenBrowser" xml:space="preserve">
 	<value>打开浏览器</value>
   </data>
-	<data name="Connected" xml:space="preserve">
+  <data name="Connected" xml:space="preserve">
 	<value>您已连接到互联网</value>
   </data>
-	<data name="NotConnected" xml:space="preserve">
+  <data name="NotConnected" xml:space="preserve">
 	<value>你没有连接到互联网</value>
   </data>
-	<data name="TestInProgress" xml:space="preserve">
+  <data name="TestInProgress" xml:space="preserve">
 	<value>正在测试，请稍候</value>
   </data>
-	<data name="TimeElapsed" xml:space="preserve">
+  <data name="TimeElapsed" xml:space="preserve">
 	<value>已用时间</value>
   </data>
-	<data name="StatusMessage" xml:space="preserve">
+  <data name="StatusMessage" xml:space="preserve">
 	<value>状态信息</value>
   </data>
-	<data name="Error" xml:space="preserve">
+  <data name="Error" xml:space="preserve">
 	<value>错误</value>
   </data>
-	<data name="LaunchTestToCheckConnection" xml:space="preserve">
+  <data name="LaunchTestToCheckConnection" xml:space="preserve">
 	<value>启动测试以检查您的连接</value>
   </data>
-	<data name="TestConnection" xml:space="preserve">
+  <data name="TestConnection" xml:space="preserve">
 	<value>测试你的连接</value>
   </data>
-	<data name="WebsiteAvailable" xml:space="preserve">
+  <data name="WebsiteAvailable" xml:space="preserve">
 	<value>该网站已上线</value>
   </data>
-	<data name="WebsiteDown" xml:space="preserve">
+  <data name="WebsiteDown" xml:space="preserve">
 	<value>该网站已关闭</value>
   </data>
-	<data name="OfWebsite" xml:space="preserve">
+  <data name="OfWebsite" xml:space="preserve">
 	<value>of {0}</value>
   </data>
-	<data name="ScheduledTests" xml:space="preserve">
+  <data name="ScheduledTests" xml:space="preserve">
 	<value>计划的测试</value>
   </data>
-	<data name="LaunchScheduledTest" xml:space="preserve">
+  <data name="LaunchScheduledTest" xml:space="preserve">
 	<value>开始计划的测试</value>
   </data>
-	<data name="ScheduledTestInterval" xml:space="preserve">
+  <data name="ScheduledTestInterval" xml:space="preserve">
 	<value>所有网站将在 {0} 秒内进行测试。</value>
   </data>
-	<data name="Interval" xml:space="preserve">
+  <data name="Interval" xml:space="preserve">
 	<value>时间间隔</value>
   </data>
-	<data name="SecondsLower" xml:space="preserve">
+  <data name="SecondsLower" xml:space="preserve">
 	<value>秒</value>
   </data>
-	<data name="StopScheduledTests" xml:space="preserve">
+  <data name="StopScheduledTests" xml:space="preserve">
 	<value>停止计划的测试</value>
   </data>
-	<data name="TestWebsite" xml:space="preserve">
+  <data name="TestWebsite" xml:space="preserve">
 	<value>测试网站</value>
   </data>
-	<data name="DownDetectorPlaceHolder" xml:space="preserve">
+  <data name="DownDetectorPlaceHolder" xml:space="preserve">
 	<value>启动测试以查看网站是否可用</value>
   </data>
-	<data name="MapProvider" xml:space="preserve">
+  <data name="MapProvider" xml:space="preserve">
 	<value>地图提供者</value>
   </data>
-	<data name="Country" xml:space="preserve">
+  <data name="Country" xml:space="preserve">
 	<value>国家</value>
   </data>
-	<data name="Region" xml:space="preserve">
+  <data name="Region" xml:space="preserve">
 	<value>区域</value>
   </data>
-	<data name="City" xml:space="preserve">
+  <data name="City" xml:space="preserve">
 	<value>城市</value>
   </data>
-	<data name="ZIPCode" xml:space="preserve">
+  <data name="ZIPCode" xml:space="preserve">
 	<value>邮政编码</value>
   </data>
-	<data name="Latitude" xml:space="preserve">
+  <data name="Latitude" xml:space="preserve">
 	<value>纬度</value>
   </data>
-	<data name="Longitude" xml:space="preserve">
+  <data name="Longitude" xml:space="preserve">
 	<value>经度</value>
   </data>
-	<data name="Timezone" xml:space="preserve">
+  <data name="Timezone" xml:space="preserve">
 	<value>时区</value>
   </data>
-	<data name="ISP" xml:space="preserve">
+  <data name="ISP" xml:space="preserve">
 	<value>ISP</value>
   </data>
-	<data name="ShowOnMap" xml:space="preserve">
+  <data name="ShowOnMap" xml:space="preserve">
 	<value>在地图上显示</value>
   </data>
-	<data name="IPShowHere" xml:space="preserve">
+  <data name="IPShowHere" xml:space="preserve">
 	<value>您的 IP 将显示在此处。</value>
   </data>
-	<data name="GetMyIP" xml:space="preserve">
+  <data name="GetMyIP" xml:space="preserve">
 	<value>获取我的 IP</value>
   </data>
-	<data name="IPShowHere2" xml:space="preserve">
+  <data name="IPShowHere2" xml:space="preserve">
 	<value>IP 将显示在此处。</value>
   </data>
-	<data name="LocateAnIP" xml:space="preserve">
+  <data name="LocateAnIP" xml:space="preserve">
 	<value>定位 IP</value>
   </data>
-	<data name="InternetTestPro" xml:space="preserve">
+  <data name="InternetTestPro" xml:space="preserve">
 	<value>InternetTest Pro</value>
   </data>
-	<data name="Save" xml:space="preserve">
+  <data name="Save" xml:space="preserve">
 	<value>保存</value>
   </data>
-	<data name="TxtFiles" xml:space="preserve">
+  <data name="TxtFiles" xml:space="preserve">
 	<value>文本文件</value>
   </data>
-	<data name="MakePing" xml:space="preserve">
+  <data name="MakePing" xml:space="preserve">
 	<value>做一个 ping</value>
   </data>
-	<data name="IPAddress" xml:space="preserve">
+  <data name="IPAddress" xml:space="preserve">
 	<value>IP 地址</value>
   </data>
-	<data name="MaxTime" xml:space="preserve">
+  <data name="MaxTime" xml:space="preserve">
 	<value>最长持续时间</value>
   </data>
-	<data name="MinTime" xml:space="preserve">
+  <data name="MinTime" xml:space="preserve">
 	<value>最短持续时间</value>
   </data>
-	<data name="AverageTime" xml:space="preserve">
+  <data name="AverageTime" xml:space="preserve">
 	<value>平均持续时间</value>
   </data>
-	<data name="PingWait" xml:space="preserve">
+  <data name="PingWait" xml:space="preserve">
 	<value>Ping 请求正在进行中，请稍候。</value>
   </data>
-	<data name="PingSuccess" xml:space="preserve">
+  <data name="PingSuccess" xml:space="preserve">
 	<value>ping 请求成功</value>
   </data>
-	<data name="PingFail" xml:space="preserve">
+  <data name="PingFail" xml:space="preserve">
 	<value>ping 请求失败</value>
   </data>
-	<data name="EnterIP" xml:space="preserve">
+  <data name="EnterIP" xml:space="preserve">
 	<value>请输入 IP 或 URL。</value>
   </data>
-	<data name="PackageSent" xml:space="preserve">
+  <data name="PackageSent" xml:space="preserve">
 	<value>发送的包</value>
   </data>
-	<data name="PackageReceived" xml:space="preserve">
+  <data name="PackageReceived" xml:space="preserve">
 	<value>收到的包</value>
   </data>
-	<data name="PackageLost" xml:space="preserve">
+  <data name="PackageLost" xml:space="preserve">
 	<value>丢失的包</value>
   </data>
-	<data name="PingStatus" xml:space="preserve">
+  <data name="PingStatus" xml:space="preserve">
 	<value>Ping 状态将在此处显示</value>
   </data>
-	<data name="IPv4Address" xml:space="preserve">
+  <data name="IPv4Address" xml:space="preserve">
 	<value>IPv4 地址</value>
   </data>
-	<data name="IPv6Address" xml:space="preserve">
+  <data name="IPv6Address" xml:space="preserve">
 	<value>IPv6 地址</value>
   </data>
-	<data name="GatewayIPv4" xml:space="preserve">
+  <data name="GatewayIPv4" xml:space="preserve">
 	<value>默认网关 (IPv4)</value>
   </data>
-	<data name="GatewayIPv6" xml:space="preserve">
+  <data name="GatewayIPv6" xml:space="preserve">
 	<value>默认网关 (IPv6)</value>
   </data>
-	<data name="DNSSuffix" xml:space="preserve">
+  <data name="DNSSuffix" xml:space="preserve">
 	<value>DNS 后缀</value>
   </data>
-	<data name="ConnectedS" xml:space="preserve">
+  <data name="ConnectedS" xml:space="preserve">
 	<value>已连接</value>
   </data>
-	<data name="Disconnected" xml:space="preserve">
+  <data name="Disconnected" xml:space="preserve">
 	<value>已断开连接</value>
   </data>
-	<data name="Refresh" xml:space="preserve">
+  <data name="Refresh" xml:space="preserve">
 	<value>刷新</value>
   </data>
-	<data name="SubnetMask" xml:space="preserve">
+  <data name="SubnetMask" xml:space="preserve">
 	<value>子网掩码</value>
   </data>
-	<data name="Name" xml:space="preserve">
+  <data name="Name" xml:space="preserve">
 	<value>名称</value>
   </data>
-	<data name="None" xml:space="preserve">
+  <data name="None" xml:space="preserve">
 	<value>无</value>
   </data>
-	<data name="GetWiFi" xml:space="preserve">
+  <data name="GetWiFi" xml:space="preserve">
 	<value>获取本地存储的网络</value>
   </data>
-	<data name="ConnectionMode" xml:space="preserve">
+  <data name="ConnectionMode" xml:space="preserve">
 	<value>连接方式</value>
   </data>
-	<data name="ConnectionType" xml:space="preserve">
+  <data name="ConnectionType" xml:space="preserve">
 	<value>连接类型</value>
   </data>
-	<data name="Automatic" xml:space="preserve">
+  <data name="Automatic" xml:space="preserve">
 	<value>自动</value>
   </data>
-	<data name="Encryption" xml:space="preserve">
+  <data name="Encryption" xml:space="preserve">
 	<value>加密</value>
   </data>
-	<data name="Authentication" xml:space="preserve">
+  <data name="Authentication" xml:space="preserve">
 	<value>验证</value>
   </data>
-	<data name="Key" xml:space="preserve">
+  <data name="Key" xml:space="preserve">
 	<value>密钥</value>
   </data>
-	<data name="InfrastructureNetwork" xml:space="preserve">
+  <data name="InfrastructureNetwork" xml:space="preserve">
 	<value>基础设施网络</value>
   </data>
-	<data name="AdHocNetwork" xml:space="preserve">
+  <data name="AdHocNetwork" xml:space="preserve">
 	<value>自组织网络</value>
   </data>
-	<data name="GetIPConfig" xml:space="preserve">
+  <data name="GetIPConfig" xml:space="preserve">
 	<value>获取 IP 配置</value>
   </data>
-	<data name="NothingToShow" xml:space="preserve">
+  <data name="NothingToShow" xml:space="preserve">
 	<value>目前没有可显示的内容，请尝试刷新页面。</value>
   </data>
-	<data name="Available" xml:space="preserve">
+  <data name="Available" xml:space="preserve">
 	<value>可用</value>
   </data>
-	<data name="Down" xml:space="preserve">
+  <data name="Down" xml:space="preserve">
 	<value>Down</value>
   </data>
-	<data name="HistoryEmpty" xml:space="preserve">
+  <data name="HistoryEmpty" xml:space="preserve">
 	<value>历史是空的。</value>
   </data>
-	<data name="EmptyHistory" xml:space="preserve">
+  <data name="EmptyHistory" xml:space="preserve">
 	<value>空白历史</value>
   </data>
-	<data name="EmptyHistoryMsg" xml:space="preserve">
+  <data name="EmptyHistoryMsg" xml:space="preserve">
 	<value>您确定要清空此历史记录吗？ 此操作是不可逆转的。</value>
   </data>
-	<data name="Pro" xml:space="preserve">
+  <data name="Pro" xml:space="preserve">
 	<value>Pro</value>
   </data>
-	<data name="CheckUpdate" xml:space="preserve">
+  <data name="CheckUpdate" xml:space="preserve">
 	<value>检查更新</value>
   </data>
-	<data name="Updates" xml:space="preserve">
+  <data name="Updates" xml:space="preserve">
 	<value>更新</value>
   </data>
-	<data name="Install" xml:space="preserve">
+  <data name="Install" xml:space="preserve">
 	<value>安装</value>
   </data>
-	<data name="Theme" xml:space="preserve">
+  <data name="Theme" xml:space="preserve">
 	<value>主题</value>
   </data>
-	<data name="Light" xml:space="preserve">
+  <data name="Light" xml:space="preserve">
 	<value>浅色模式</value>
   </data>
-	<data name="Dark" xml:space="preserve">
+  <data name="Dark" xml:space="preserve">
 	<value>深色模式</value>
   </data>
-	<data name="Licenses" xml:space="preserve">
+  <data name="Licenses" xml:space="preserve">
 	<value>许可证</value>
   </data>
-	<data name="Apply" xml:space="preserve">
+  <data name="Apply" xml:space="preserve">
 	<value>应用</value>
   </data>
-	<data name="SeeLicenses" xml:space="preserve">
+  <data name="SeeLicenses" xml:space="preserve">
 	<value>查看许可证</value>
   </data>
-	<data name="ChangeTheme" xml:space="preserve">
+  <data name="ChangeTheme" xml:space="preserve">
 	<value>更改 InternetTest 主题。</value>
   </data>
-	<data name="Language" xml:space="preserve">
+  <data name="Language" xml:space="preserve">
 	<value>语言</value>
   </data>
-	<data name="NeedRestartToApplyChanges" xml:space="preserve">
+  <data name="NeedRestartToApplyChanges" xml:space="preserve">
 	<value>Internet 测试需要重新启动以应用更改。 你想现在重新开始吗？</value>
   </data>
-	<data name="Default" xml:space="preserve">
+  <data name="Default" xml:space="preserve">
 	<value>默认</value>
   </data>
-	<data name="UpToDate" xml:space="preserve">
+  <data name="UpToDate" xml:space="preserve">
 	<value>Internet Test 是最新的。</value>
   </data>
-	<data name="AvailableUpdates" xml:space="preserve">
+  <data name="AvailableUpdates" xml:space="preserve">
 	<value>有可用更新。</value>
   </data>
-	<data name="InstallConfirmMsg" xml:space="preserve">
+  <data name="InstallConfirmMsg" xml:space="preserve">
 	<value>要安装更新，需要重新启动 Internet 测试。 你要继续吗？</value>
   </data>
-	<data name="InstallVersion" xml:space="preserve">
+  <data name="InstallVersion" xml:space="preserve">
 	<value>安装版本</value>
   </data>
-	<data name="Version" xml:space="preserve">
+  <data name="Version" xml:space="preserve">
 	<value>版本</value>
   </data>
-	<data name="ChangeLanguage" xml:space="preserve">
+  <data name="ChangeLanguage" xml:space="preserve">
 	<value>更改 InternetTest 的语言。</value>
   </data>
-	<data name="MapProviderDescription" xml:space="preserve">
+  <data name="MapProviderDescription" xml:space="preserve">
 	<value>地图提供者用于显示 IP 本地化。</value>
   </data>
-	<data name="NotifyUpdates" xml:space="preserve">
+  <data name="NotifyUpdates" xml:space="preserve">
 	<value>有可用更新时显示通知</value>
   </data>
-	<data name="Notifications" xml:space="preserve">
+  <data name="Notifications" xml:space="preserve">
 	<value>通知</value>
   </data>
-	<data name="NotificationsDescription" xml:space="preserve">
+  <data name="NotificationsDescription" xml:space="preserve">
 	<value>通知设置。</value>
   </data>
-	<data name="CheckUpdatesOnStart" xml:space="preserve">
+  <data name="CheckUpdatesOnStart" xml:space="preserve">
 	<value>启动时检查更新</value>
   </data>
-	<data name="StartupPage" xml:space="preserve">
+  <data name="StartupPage" xml:space="preserve">
 	<value>启动页面</value>
   </data>
-	<data name="OnStart" xml:space="preserve">
+  <data name="OnStart" xml:space="preserve">
 	<value>启动时</value>
   </data>
-	<data name="OnStartDescription" xml:space="preserve">
+  <data name="OnStartDescription" xml:space="preserve">
 	<value>启动时应用的设置。</value>
   </data>
-	<data name="WebSettingsDescription" xml:space="preserve">
+  <data name="WebSettingsDescription" xml:space="preserve">
 	<value>网页相关设置。</value>
   </data>
-	<data name="WebSettings" xml:space="preserve">
+  <data name="WebSettings" xml:space="preserve">
 	<value>网页设置</value>
   </data>
-	<data name="TestSite" xml:space="preserve">
+  <data name="TestSite" xml:space="preserve">
 	<value>测试网站</value>
   </data>
-	<data name="DefaultProtocol" xml:space="preserve">
+  <data name="DefaultProtocol" xml:space="preserve">
 	<value>默认协议</value>
   </data>
-	<data name="HTTP" xml:space="preserve">
+  <data name="HTTP" xml:space="preserve">
 	<value>HTTP</value>
   </data>
-	<data name="HTTPS" xml:space="preserve">
+  <data name="HTTPS" xml:space="preserve">
 	<value>HTTPS</value>
   </data>
-	<data name="DataPrivacy" xml:space="preserve">
+  <data name="DataPrivacy" xml:space="preserve">
 	<value>数据和隐私</value>
   </data>
-	<data name="DataDescription" xml:space="preserve">
+  <data name="DataDescription" xml:space="preserve">
 	<value>管理您的数据和隐私。</value>
   </data>
-	<data name="Import" xml:space="preserve">
+  <data name="Import" xml:space="preserve">
 	<value>导入设置</value>
   </data>
-	<data name="Export" xml:space="preserve">
+  <data name="Export" xml:space="preserve">
 	<value>导出设置</value>
   </data>
-	<data name="SettingsExportedSucessMsg" xml:space="preserve">
+  <data name="SettingsExportedSucessMsg" xml:space="preserve">
 	<value>设置已成功导出。</value>
   </data>
-	<data name="SettingsImportedMsg" xml:space="preserve">
+  <data name="SettingsImportedMsg" xml:space="preserve">
 	<value>设置已成功导入。 为了完成该过程，Internet 测试将重新启动。</value>
   </data>
-	<data name="ResetSettings" xml:space="preserve">
+  <data name="ResetSettings" xml:space="preserve">
     <value>重置设置</value>
   </data>
-	<data name="SynethiaEnable" xml:space="preserve">
+  <data name="SynethiaEnable" xml:space="preserve">
     <value>启用 Synethia 定制体验。</value>
   </data>
-	<data name="ResetSynethia" xml:space="preserve">
+  <data name="ResetSynethia" xml:space="preserve">
     <value>重置 Synethia 数据</value>
   </data>
-	<data name="ResetSettingsConfirmation" xml:space="preserve">
+  <data name="ResetSettingsConfirmation" xml:space="preserve">
     <value>要安装更新，需要重新启动 Internet 测试。 你要继续吗？</value>
   </data>
-	<data name="LaunchTestOnStart" xml:space="preserve">
+  <data name="LaunchTestOnStart" xml:space="preserve">
     <value>在启动时启动测试</value>
   </data>
-	<data name="SynethiaDeleteMsg" xml:space="preserve">
+  <data name="SynethiaDeleteMsg" xml:space="preserve">
     <value>您确定要重置所有 Synethia 数据吗？ 您的个性化体验将会丢失； 此操作无法取消。</value>
   </data>
-	<data name="FirstRunQuitMsg" xml:space="preserve">
+  <data name="FirstRunQuitMsg" xml:space="preserve">
     <value>是否要忽略此窗口并继续进行 InternetTest？</value>
   </data>
-	<data name="WelcomeDesc" xml:space="preserve">
+  <data name="WelcomeDesc" xml:space="preserve">
     <value>带您进入另一个层次。</value>
   </data>
-	<data name="Next" xml:space="preserve">
+  <data name="Next" xml:space="preserve">
     <value>下一步</value>
   </data>
-	<data name="Skip" xml:space="preserve">
+  <data name="Skip" xml:space="preserve">
     <value>跳过</value>
   </data>
-	<data name="DownDetectorInfo" xml:space="preserve">
+  <data name="DownDetectorInfo" xml:space="preserve">
     <value>想知道网站是否正常工作？ 使用 InternetTest Pro 的 DownDetector 功能检查并获取有关指定网站的实时信息。
 您可以获得站点状态、响应时间等等！</value>
   </data>
-	<data name="LocateIPInfo" xml:space="preserve">
+  <data name="LocateIPInfo" xml:space="preserve">
     <value>您可以使用此功能查找 IP 地址。 您将获得有关城市、国家、地区、时区等信息！
 您还可以从 URL 定位和获取服务器的 IP。</value>
   </data>
-	<data name="WiFiPasswordsInfo" xml:space="preserve">
+  <data name="WiFiPasswordsInfo" xml:space="preserve">
     <value>忘记了您的 WiFi 密码？ 别担心，您可以使用 InternetTest Pro“WiFi 密码”功能恢复它！
 使用此功能，您将能够获取有关您计算机上保存的每个无线网络的信息，例如身份验证模式，加密算法等...</value>
   </data>
-	<data name="Features" xml:space="preserve">
+  <data name="Features" xml:space="preserve">
     <value>特色</value>
   </data>
-	<data name="Agree" xml:space="preserve">
+  <data name="Agree" xml:space="preserve">
     <value>我同意</value>
   </data>
-	<data name="NoThanks" xml:space="preserve">
+  <data name="NoThanks" xml:space="preserve">
     <value>不，谢谢</value>
   </data>
-	<data name="IntroducingSynethia" xml:space="preserve">
+  <data name="IntroducingSynethia" xml:space="preserve">
     <value>介绍 Synethia</value>
   </data>
-	<data name="SynethiaInfo" xml:space="preserve">
+  <data name="SynethiaInfo" xml:space="preserve">
     <value>Synethia 是一种将您的体验个性化的算法。</value>
   </data>
-	<data name="SynethiaDataInfo" xml:space="preserve">
+  <data name="SynethiaDataInfo" xml:space="preserve">
     <value>Synethia 仅在 InternetTest 中收集数据</value>
   </data>
-	<data name="SynethiaAnalyze" xml:space="preserve">
+  <data name="SynethiaAnalyze" xml:space="preserve">
     <value>然后 Synethia 将分析这些数据以提供独特的体验</value>
   </data>
-	<data name="SynethiaHome" xml:space="preserve">
+  <data name="SynethiaHome" xml:space="preserve">
     <value>主页仪表板将根据您的使用情况推荐操作</value>
   </data>
-	<data name="SynethiaPrivacy" xml:space="preserve">
+  <data name="SynethiaPrivacy" xml:space="preserve">
     <value>您的数据以匿名方式存储在您的设备上。 绝对不会向 Léo Corporation 发送任何数据。</value>
   </data>
-	<data name="LetsGo" xml:space="preserve">
+  <data name="LetsGo" xml:space="preserve">
     <value>我们开始！</value>
   </data>
-	<data name="WelcomeReady" xml:space="preserve">
+  <data name="WelcomeReady" xml:space="preserve">
     <value>一切准备就绪</value>
+  </data>
+  <data name="ConfidentialModeEnabled" xml:space="preserve">
+    <value>Confidential Mode is enabled</value>
+  </data>
+  <data name="DetailsNotAvailableCM" xml:space="preserve">
+    <value>Details aren't available in Confidential Mode</value>
+  </data>
+  <data name="OpenNetwork" xml:space="preserve">
+    <value>Open Network (802.11)</value>
+  </data>
+  <data name="SharedNetwork" xml:space="preserve">
+    <value>Shared Network (802.11)</value>
+  </data>
+  <data name="WPANetwork" xml:space="preserve">
+    <value>WPA-Enterprise (802.11) Network</value>
+  </data>
+  <data name="WPAPSKNetwork" xml:space="preserve">
+    <value>WPA-Personal (802.11) Network</value>
+  </data>
+  <data name="WPA2Network" xml:space="preserve">
+    <value>WPA2-Enterprise (802.11) Network</value>
+  </data>
+  <data name="WPA2PSKNetwork" xml:space="preserve">
+    <value>WPA2-Personal (802.11) Network</value>
   </data>
 </root>

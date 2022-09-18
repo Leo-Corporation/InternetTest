@@ -41,8 +41,31 @@ public partial class WiFiInfoItem : UserControl
 		InitUI();
 	}
 
-	private void InitUI()
+	internal void InitUI()
 	{
+		InterfaceNameTxt.Text = Global.IsConfidentialModeEnabled 
+			? Global.ReplaceAllCharactersByAnotherOne(WLANProfile.SSIDConfig?.SSID?.Name ?? "", "•") 
+			: WLANProfile.SSIDConfig?.SSID?.Name;
+		ConnectionModeTxt.Text = WLANProfile.ConnectionMode == "auto" ? Properties.Resources.Automatic : WLANProfile.ConnectionMode;
+		ConnectionTypeTxt.Text = WLANProfile.ConnectionType switch
+		{
+			"ESS" => Properties.Resources.InfrastructureNetwork,
+			"IBSS" => Properties.Resources.AdHocNetwork,
+			_ => WLANProfile.ConnectionType
+		};
+		AuthTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Authentication switch
+		{
+			"open" => Properties.Resources.OpenNetwork,
+			"shared" => Properties.Resources.SharedNetwork,
+			"WPA" => Properties.Resources.WPANetwork,
+			"WPAPSK" => Properties.Resources.WPAPSKNetwork,
+			"WPA2" => Properties.Resources.WPA2Network,
+			"WPA2PSK" => Properties.Resources.WPA2PSKNetwork,
+			_ => WLANProfile.MSM?.Security?.AuthEncryption?.Authentication
+		};
+		EncryptionTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Encryption;
+		PasswordTxt.Text = new string('*', WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial?.Length ?? 0);
+
 		if (codeInjected) return;
 		codeInjected = true;
 		foreach (Button b in Global.FindVisualChildren<Button>(this))
@@ -52,18 +75,6 @@ public partial class WiFiInfoItem : UserControl
 				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
 			};
 		}
-
-		InterfaceNameTxt.Text = WLANProfile.SSIDConfig?.SSID?.Name;
-		ConnectionModeTxt.Text = WLANProfile.ConnectionMode == "auto" ? Properties.Resources.Automatic : WLANProfile.ConnectionMode;
-		ConnectionTypeTxt.Text = WLANProfile.ConnectionType switch
-		{
-			"ESS" => Properties.Resources.InfrastructureNetwork,
-			"IBSS" => Properties.Resources.AdHocNetwork,
-			_ => WLANProfile.ConnectionType
-		};
-		AuthTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Authentication;
-		EncryptionTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Encryption;
-		PasswordTxt.Text = new string('*', WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial?.Length ?? 0);
 	}
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)

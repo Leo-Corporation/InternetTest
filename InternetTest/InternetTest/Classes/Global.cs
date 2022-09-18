@@ -35,13 +35,15 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace InternetTest.Classes;
 public static class Global
 {
-	public static string Version => "7.0.1.2208";
+	public static string Version => "7.1.0.2209";
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
+	public static bool IsConfidentialModeEnabled { get; set; } = false;
 	public static Settings Settings { get; set; } = SettingsManager.Load();
 	public static SynethiaConfig SynethiaConfig { get; set; } = SynethiaManager.Load();
 	public static History History { get; set; } = HistoryManager.Load();
@@ -320,4 +322,13 @@ public static class Global
 		return $"{deg}° {sD}' {fDir}, {deg2}° {sD2}' {sDir}".Replace("-", "");
 	}
 
+	public static string ReplaceAllCharactersByAnotherOne(string chars, string replaceChar)
+	{
+		string r = "";
+		for (int i = 0; i < chars.Length; i++)
+		{
+			r += replaceChar;
+		}
+		return r;
+	}
 }

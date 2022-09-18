@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using LeoCorpLibrary;
 using Microsoft.Win32;
 using System;
 using System.Diagnostics;
@@ -47,10 +48,17 @@ public partial class LocateIpPage : Page
 		InjectSynethiaCode();
 	}
 
-	private void InitUI()
+	private async void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.LocateIP}";
-		LocateIP(""); // Get the current IP of the user
+		try
+		{
+			if (await NetworkConnection.IsAvailableAsync())
+			{
+				LocateIP(""); // Get the current IP of the user
+			}
+		}
+		catch (Exception) {	} // Cancel if there is no internet connection
 	}
 
 	private void InjectSynethiaCode()
@@ -100,10 +108,26 @@ public partial class LocateIpPage : Page
 		}
 	}
 
+	internal void ToggleConfidentialMode(bool toggle)
+	{
+		// Change the text
+		MyIPTxt.Text = toggle ? Properties.Resources.ConfidentialModeEnabled : lIp;
+		DetailsInfoTxt.Text = !toggle ? Properties.Resources.Details : Properties.Resources.DetailsNotAvailableCM;
+
+		// Toggle visibility
+		IpTxt.Visibility = toggle ? Visibility.Collapsed : Visibility.Visible;
+		IpPassword.Visibility = !toggle ? Visibility.Collapsed : Visibility.Visible;
+		DetailsWrap.Visibility = toggle ? Visibility.Collapsed : Visibility.Visible;
+
+		// Toggle the password box
+		if (toggle) IpPassword.Password = IpTxt.Text;
+		else IpTxt.Text = IpPassword.Password;
+	}
+
 	internal void LocateIPBtn_Click(object sender, RoutedEventArgs e)
 	{
-		if (!Global.IsIpValid(IpTxt.Text)) return; // Cancel if the IP isn't valid
-		LocateIP(IpTxt.Text); // Locate IP
+		if (!Global.IsIpValid(Global.IsConfidentialModeEnabled ? IpPassword.Password : IpTxt.Text)) return; // Cancel if the IP isn't valid
+		LocateIP(Global.IsConfidentialModeEnabled ? IpPassword.Password : IpTxt.Text); // Locate IP
 
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
 		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.LocateIP).UsageCount++;
@@ -126,6 +150,7 @@ public partial class LocateIpPage : Page
 		});
 	}
 
+	string lIp = "";
 	internal async void LocateIP(string ip)
 	{
 		try
@@ -138,7 +163,8 @@ public partial class LocateIpPage : Page
 			CurrentIP = ipInfo;
 			if (ipInfo is not null)
 			{
-				MyIPTxt.Text = ipInfo.Query;
+				lIp = ipInfo.Query ?? "";
+				MyIPTxt.Text = Global.IsConfidentialModeEnabled ? Properties.Resources.ConfidentialModeEnabled : lIp;
 				CountryTxt.Text = ipInfo.Country;
 				RegionTxt.Text = ipInfo.RegionName;
 				CityTxt.Text = ipInfo.City;

@@ -45,6 +45,7 @@ public class Settings
 		TestSite = "https://leocorporation.dev";
 		UseSynethia = true;
 		TestOnStart = true;
+		IsMaximized = false;
 	}
 
 	public Themes Theme { get; set; }
@@ -58,6 +59,7 @@ public class Settings
 	public bool IsFirstRun { get; set; }
 	public bool TestOnStart { get; set; }
 	public string? TestSite { get; set; }
+	public bool? IsMaximized { get; set; }
 }
 
 public static class SettingsManager
@@ -87,7 +89,12 @@ public static class SettingsManager
 		XmlSerializer xmlDeserializer = new(typeof(Settings));
 
 		StreamReader streamReader = new(SettingsPath);
-		return (Settings)xmlDeserializer.Deserialize(streamReader);
+		var settings = (Settings)xmlDeserializer.Deserialize(streamReader) ?? new();
+
+		// Upgrade the settings file if it comes from an older version
+		settings.IsMaximized ??= false; // Set the default value if none is specified.
+
+		return settings;
 	}
 
 	public static void Save()

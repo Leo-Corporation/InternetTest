@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using LeoCorpLibrary;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -44,9 +45,16 @@ public partial class MyIpPage : Page
 		InjectSynethiaCode();
 	}
 
-	private void InitUI()
+	private async void InitUI()
 	{
-		GetMyIP(); // Locate the current IP
+		try
+		{
+			if (await NetworkConnection.IsAvailableAsync())
+			{
+				GetMyIP(); // Locate the current IP
+			}
+		}
+		catch (Exception) { } // Cancel if there is no internet connection
 		TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.MyIP}";
 	}
 
@@ -105,6 +113,17 @@ public partial class MyIpPage : Page
 		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.MyIP).UsageCount++;
 	}
 
+	internal void ToggleConfidentialMode(bool toggle)
+	{
+		// Change text
+		MyIPTxt.Text = toggle ? Properties.Resources.ConfidentialModeEnabled : ip;
+		DetailsInfoTxt.Text = !toggle ? Properties.Resources.Details : Properties.Resources.DetailsNotAvailableCM;
+
+		// Toggle the details panel
+		DetailsWrap.Visibility = toggle ? Visibility.Collapsed : Visibility.Visible;
+	}
+
+	string ip = "";
 	internal async void GetMyIP()
 	{
 		try
@@ -116,7 +135,8 @@ public partial class MyIpPage : Page
 			var ipInfo = await Global.GetIPInfoAsync(""); // Giving an empty IP returns the user's current IP
 			if (ipInfo is not null)
 			{
-				MyIPTxt.Text = ipInfo.Query;
+				ip = ipInfo.Query ?? "";
+				MyIPTxt.Text = Global.IsConfidentialModeEnabled ? Properties.Resources.ConfidentialModeEnabled : ip;
 				CountryTxt.Text = ipInfo.Country;
 				RegionTxt.Text = ipInfo.RegionName;
 				CityTxt.Text = ipInfo.City;

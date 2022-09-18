@@ -38,7 +38,6 @@ namespace InternetTest;
 /// </summary>
 public partial class MainWindow : Window
 {
-
 	public MainWindow()
 	{
 		InitializeComponent();
@@ -132,8 +131,12 @@ public partial class MainWindow : Window
 				break;
 		}
 
+		// Register event handlers
 		PageCard.OnCardClick += PageCard_OnCardClick;
 		ActionCard.OnCardClick += PageCard_OnCardClick;
+
+		// Restore the previous Window state
+		WindowState = Global.Settings.IsMaximized ?? false ? WindowState.Maximized : WindowState.Normal;
 	}
 
 	private void PageCard_OnCardClick(object? sender, PageEventArgs e)
@@ -195,6 +198,7 @@ public partial class MainWindow : Window
 	private void MaximizeRestoreBtn_Click(object sender, RoutedEventArgs e)
 	{
 		WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+
 		HandleWindowStateChanged();
 	}
 
@@ -217,6 +221,10 @@ public partial class MainWindow : Window
 
 		WindowBorder.Margin = WindowState == WindowState.Maximized ? new(10, 10, 0, 0) : new(10); // Set
 		WindowBorder.CornerRadius = WindowState == WindowState.Maximized ? new(0) : new(5); // Set
+
+		// Update settings information
+		Global.Settings.IsMaximized = WindowState == WindowState.Maximized;
+		SettingsManager.Save();
 	}
 
 	private void DefineMaximumSize()
@@ -468,5 +476,18 @@ public partial class MainWindow : Window
 			Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent += Global.SynethiaConfig.WiFiPasswordsPageInfo.LeaveUnixTime - Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime;
 			Global.SynethiaConfig.WiFiPasswordsPageInfo.Score = Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent * (Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount / 2d : 1d); // Calculate the score
 		}
+	}
+
+	private void ConfidentialModeBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Global.IsConfidentialModeEnabled = !Global.IsConfidentialModeEnabled; // Toggle
+
+		RegularLockTxt.Visibility = Global.IsConfidentialModeEnabled ? Visibility.Collapsed : Visibility.Visible;
+		FilledLockTxt.Visibility = !Global.IsConfidentialModeEnabled ? Visibility.Collapsed : Visibility.Visible;
+
+		Global.MyIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
+		Global.LocateIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
+		Global.IpConfigPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
+		Global.WiFiPasswordsPage?.ToggleConfidentialMode();
 	}
 }
