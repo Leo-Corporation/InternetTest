@@ -490,6 +490,6 @@ public partial class MainWindow : Window
 			? "\uFC2C"
 			: "\uFC25";
 
-		//TODO
+		Global.MyIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 	}
 }

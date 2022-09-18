@@ -113,6 +113,9 @@ public partial class MyIpPage : Page
 		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.MyIP).UsageCount++;
 	}
 
+	internal void ToggleConfidentialMode(bool toggle) => MyIPTxt.Text = toggle ? Properties.Resources.ConfidentialModeEnabled : ip;
+
+	string ip = "";
 	internal async void GetMyIP()
 	{
 		try
@@ -124,7 +127,8 @@ public partial class MyIpPage : Page
 			var ipInfo = await Global.GetIPInfoAsync(""); // Giving an empty IP returns the user's current IP
 			if (ipInfo is not null)
 			{
-				MyIPTxt.Text = ipInfo.Query;
+				ip = ipInfo.Query ?? "";
+				MyIPTxt.Text = Global.IsConfidentialModeEnabled ? Properties.Resources.ConfidentialModeEnabled : ip;
 				CountryTxt.Text = ipInfo.Country;
 				RegionTxt.Text = ipInfo.RegionName;
 				CityTxt.Text = ipInfo.City;
