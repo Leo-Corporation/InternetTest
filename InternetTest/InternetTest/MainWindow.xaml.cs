@@ -482,13 +482,8 @@ public partial class MainWindow : Window
 	{
 		Global.IsConfidentialModeEnabled = !Global.IsConfidentialModeEnabled; // Toggle
 
-		ConfidentialModeBtn.FontFamily = Global.IsConfidentialModeEnabled
-			? new(new("file:///Fonts/FluentSystemIcons-Filled.ttf"), "FluentSystemIcons-Filled")
-			: new(new("file:///Fonts/FluentSystemIcons-Regular.ttf"), "FluentSystemIcons-Regular");
-
-		ConfidentialModeBtn.Content = Global.IsConfidentialModeEnabled
-			? "\uFC2C"
-			: "\uFC25";
+		RegularLockTxt.Visibility = Global.IsConfidentialModeEnabled ? Visibility.Collapsed : Visibility.Visible;
+		FilledLockTxt.Visibility = !Global.IsConfidentialModeEnabled ? Visibility.Collapsed : Visibility.Visible;
 
 		Global.MyIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 		Global.LocateIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
