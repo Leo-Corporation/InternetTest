@@ -493,5 +493,6 @@ public partial class MainWindow : Window
 		Global.MyIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 		Global.LocateIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 		Global.IpConfigPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
+		Global.WiFiPasswordsPage?.ToggleConfidentialMode();
 	}
 }

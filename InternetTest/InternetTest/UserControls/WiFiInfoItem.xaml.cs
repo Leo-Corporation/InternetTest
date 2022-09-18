@@ -41,19 +41,11 @@ public partial class WiFiInfoItem : UserControl
 		InitUI();
 	}
 
-	private void InitUI()
+	internal void InitUI()
 	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-		}
-
-		InterfaceNameTxt.Text = WLANProfile.SSIDConfig?.SSID?.Name;
+		InterfaceNameTxt.Text = Global.IsConfidentialModeEnabled 
+			? Global.ReplaceAllCharactersByAnotherOne(WLANProfile.SSIDConfig?.SSID?.Name ?? "", "•") 
+			: WLANProfile.SSIDConfig?.SSID?.Name;
 		ConnectionModeTxt.Text = WLANProfile.ConnectionMode == "auto" ? Properties.Resources.Automatic : WLANProfile.ConnectionMode;
 		ConnectionTypeTxt.Text = WLANProfile.ConnectionType switch
 		{
@@ -64,6 +56,16 @@ public partial class WiFiInfoItem : UserControl
 		AuthTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Authentication;
 		EncryptionTxt.Text = WLANProfile.MSM?.Security?.AuthEncryption?.Encryption;
 		PasswordTxt.Text = new string('*', WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial?.Length ?? 0);
+
+		if (codeInjected) return;
+		codeInjected = true;
+		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		{
+			b.Click += (sender, e) =>
+			{
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
+			};
+		}
 	}
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)

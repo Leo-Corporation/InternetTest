@@ -216,4 +216,19 @@ public partial class WiFiPasswordsPage : Page
 			PlaceholderGrid.Visibility = Visibility.Visible;
 		}
 	}
+
+	internal void ToggleConfidentialMode()
+	{
+		try
+		{
+			for (int i = 0; i < WiFiItemDisplayer.Children.Count; i++)
+			{
+				if (WiFiItemDisplayer.Children[i] is WiFiInfoItem wiFiInfoItem)
+				{
+					wiFiInfoItem.InitUI();
+				}
+			}
+		}
+		catch { }
+	}
 }

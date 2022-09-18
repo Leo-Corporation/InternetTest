@@ -35,6 +35,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace InternetTest.Classes;
@@ -321,4 +322,13 @@ public static class Global
 		return $"{deg}° {sD}' {fDir}, {deg2}° {sD2}' {sDir}".Replace("-", "");
 	}
 
+	public static string ReplaceAllCharactersByAnotherOne(string chars, string replaceChar)
+	{
+		string r = "";
+		for (int i = 0; i < chars.Length; i++)
+		{
+			r += replaceChar;
+		}
+		return r;
+	}
 }
