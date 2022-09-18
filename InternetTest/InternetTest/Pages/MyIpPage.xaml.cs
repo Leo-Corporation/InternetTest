@@ -113,7 +113,15 @@ public partial class MyIpPage : Page
 		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.MyIP).UsageCount++;
 	}
 
-	internal void ToggleConfidentialMode(bool toggle) => MyIPTxt.Text = toggle ? Properties.Resources.ConfidentialModeEnabled : ip;
+	internal void ToggleConfidentialMode(bool toggle)
+	{
+		// Change text
+		MyIPTxt.Text = toggle ? Properties.Resources.ConfidentialModeEnabled : ip;
+		DetailsInfoTxt.Text = !toggle ? Properties.Resources.Details : Properties.Resources.DetailsNotAvailableCM;
+
+		// Toggle the details panel
+		DetailsWrap.Visibility = toggle ? Visibility.Collapsed : Visibility.Visible;
+	}
 
 	string ip = "";
 	internal async void GetMyIP()
