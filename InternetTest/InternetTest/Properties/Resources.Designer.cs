@@ -1026,6 +1026,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open Network (802.11).
+        /// </summary>
+        public static string OpenNetwork {
+            get {
+                return ResourceManager.GetString("OpenNetwork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Package(s) lost.
         /// </summary>
         public static string PackageLost {
@@ -1229,6 +1238,15 @@ namespace InternetTest.Properties {
         public static string SettingsImportedMsg {
             get {
                 return ResourceManager.GetString("SettingsImportedMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shared Network (802.11).
+        /// </summary>
+        public static string SharedNetwork {
+            get {
+                return ResourceManager.GetString("SharedNetwork", resourceCulture);
             }
         }
         
@@ -1563,6 +1581,42 @@ namespace InternetTest.Properties {
         public static string WiFiPasswordsInfo {
             get {
                 return ResourceManager.GetString("WiFiPasswordsInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WPA2-Enterprise (802.11) Network.
+        /// </summary>
+        public static string WPA2Network {
+            get {
+                return ResourceManager.GetString("WPA2Network", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WPA2-Personal (802.11) Network.
+        /// </summary>
+        public static string WPA2PSKNetwork {
+            get {
+                return ResourceManager.GetString("WPA2PSKNetwork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WPA-Enterprise (802.11) Network.
+        /// </summary>
+        public static string WPANetwork {
+            get {
+                return ResourceManager.GetString("WPANetwork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WPA-Personal (802.11) Network.
+        /// </summary>
+        public static string WPAPSKNetwork {
+            get {
+                return ResourceManager.GetString("WPAPSKNetwork", resourceCulture);
             }
         }
         

@@ -624,4 +624,22 @@ Using this feature, you will be able to get information about each wireless netw
   <data name="DetailsNotAvailableCM" xml:space="preserve">
     <value>Details aren't available in Confidential Mode</value>
   </data>
+  <data name="OpenNetwork" xml:space="preserve">
+    <value>Open Network (802.11)</value>
+  </data>
+  <data name="SharedNetwork" xml:space="preserve">
+    <value>Shared Network (802.11)</value>
+  </data>
+  <data name="WPANetwork" xml:space="preserve">
+    <value>WPA-Enterprise (802.11) Network</value>
+  </data>
+  <data name="WPAPSKNetwork" xml:space="preserve">
+    <value>WPA-Personal (802.11) Network</value>
+  </data>
+  <data name="WPA2Network" xml:space="preserve">
+    <value>WPA2-Enterprise (802.11) Network</value>
+  </data>
+  <data name="WPA2PSKNetwork" xml:space="preserve">
+    <value>WPA2-Personal (802.11) Network</value>
+  </data>
 </root>
