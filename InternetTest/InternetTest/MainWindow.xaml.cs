@@ -38,7 +38,6 @@ namespace InternetTest;
 /// </summary>
 public partial class MainWindow : Window
 {
-
 	public MainWindow()
 	{
 		InitializeComponent();
@@ -477,5 +476,20 @@ public partial class MainWindow : Window
 			Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent += Global.SynethiaConfig.WiFiPasswordsPageInfo.LeaveUnixTime - Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime;
 			Global.SynethiaConfig.WiFiPasswordsPageInfo.Score = Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent * (Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount / 2d : 1d); // Calculate the score
 		}
+	}
+
+	private void ConfidentialModeBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Global.IsConfidentialModeEnabled = !Global.IsConfidentialModeEnabled; // Toggle
+
+		ConfidentialModeBtn.FontFamily = Global.IsConfidentialModeEnabled
+			? new(new("file:///Fonts/FluentSystemIcons-Filled.ttf"), "FluentSystemIcons-Filled")
+			: new(new("file:///Fonts/FluentSystemIcons-Regular.ttf"), "FluentSystemIcons-Regular");
+
+		ConfidentialModeBtn.Content = Global.IsConfidentialModeEnabled
+			? "\uFC2C"
+			: "\uFC25";
+
+		//TODO
 	}
 }
