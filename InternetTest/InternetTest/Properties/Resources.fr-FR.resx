@@ -618,4 +618,7 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r�
   <data name="WelcomeReady" xml:space="preserve">
     <value>Tout est prêt</value>
   </data>
+  <data name="ConfidentialModeEnabled" xml:space="preserve">
+    <value>Le Mode Confidentiel est activé</value>
+  </data>
 </root>

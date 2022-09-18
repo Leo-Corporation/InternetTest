@@ -618,4 +618,7 @@ Using this feature, you will be able to get information about each wireless netw
   <data name="WelcomeReady" xml:space="preserve">
     <value>Everyting is ready</value>
   </data>
+  <data name="ConfidentialModeEnabled" xml:space="preserve">
+    <value>Confidential Mode is enabled</value>
+  </data>
 </root>

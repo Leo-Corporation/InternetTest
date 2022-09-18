@@ -187,6 +187,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confidential Mode is enabled.
+        /// </summary>
+        public static string ConfidentialModeEnabled {
+            get {
+                return ResourceManager.GetString("ConfidentialModeEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You are connected to the Internet.
         /// </summary>
         public static string Connected {
