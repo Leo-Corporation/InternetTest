@@ -114,6 +114,21 @@ public partial class IpConfigPage : Page
 		}
 	}
 
+	internal void ToggleConfidentialMode(bool toggle)
+	{
+		try
+		{
+			for (int i = 0; i < IpConfigDisplayer.Children.Count; i++)
+			{
+				if (IpConfigDisplayer.Children[i] is IpConfigItem ipConfigItem)
+				{
+					ipConfigItem.InitUI();
+				}
+			}
+		}
+		catch { }
+	}
+
 	internal void RefreshBtn_Click(object sender, RoutedEventArgs e)
 	{
 		InitUI(); // Refresh the UI

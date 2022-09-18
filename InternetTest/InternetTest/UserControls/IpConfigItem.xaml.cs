@@ -33,6 +33,7 @@ namespace InternetTest.UserControls;
 public partial class IpConfigItem : UserControl
 {
 	bool codeInjected = !Global.Settings.UseSynethia;
+	bool hideInfo = Global.IsConfidentialModeEnabled;
 	private WindowsIpConfig WindowsIpConfig { get; init; }
 	public IpConfigItem(WindowsIpConfig windowsIpConfig)
 	{
@@ -42,24 +43,16 @@ public partial class IpConfigItem : UserControl
 		InitUI();
 	}
 
-	private void InitUI()
+	internal void InitUI()
 	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
-			};
-		}
+		hideInfo = Global.IsConfidentialModeEnabled;
 
 		StatusTxt.Text = WindowsIpConfig.Status == OperationalStatus.Up ? Properties.Resources.ConnectedS : Properties.Resources.Disconnected;
-		Ipv4Txt.Text = WindowsIpConfig.IPv4Address;
-		GatewayIpv4Txt.Text = WindowsIpConfig.IPv4Gateway;
-		MaskIpTxt.Text = WindowsIpConfig.IPv4Mask;
-		Ipv6Txt.Text = WindowsIpConfig.IPv6Address;
-		GatewayIpv6Txt.Text = WindowsIpConfig.IPv6Gateway;
+		Ipv4Txt.Text = hideInfo ? Properties.Resources.ConfidentialModeEnabled : WindowsIpConfig.IPv4Address;
+		GatewayIpv4Txt.Text = hideInfo ? Properties.Resources.ConfidentialModeEnabled : WindowsIpConfig.IPv4Gateway;
+		MaskIpTxt.Text = hideInfo ? Properties.Resources.ConfidentialModeEnabled : WindowsIpConfig.IPv4Mask;
+		Ipv6Txt.Text = hideInfo ? Properties.Resources.ConfidentialModeEnabled : WindowsIpConfig.IPv6Address;
+		GatewayIpv6Txt.Text = hideInfo ? Properties.Resources.ConfidentialModeEnabled : WindowsIpConfig.IPv6Gateway;
 		InterfaceNameTxt.Text = WindowsIpConfig.Name;
 		DNSPrefixTxt.Text = WindowsIpConfig.DNSSuffix;
 
@@ -68,10 +61,28 @@ public partial class IpConfigItem : UserControl
 		GatewayIpv4Txt.Visibility = GatewayIpv4Txt.Text == "" ? Visibility.Collapsed : Visibility.Visible;
 		GatewayIpv6Txt.Visibility = GatewayIpv6Txt.Text == "" ? Visibility.Collapsed : Visibility.Visible;
 
-		if (WindowsIpConfig.Status == OperationalStatus.Up)
+		if (!hideInfo)
 		{
-			CollapseGrid.Visibility = CollapseGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-			ExpanderBtn.Content = CollapseGrid.Visibility != Visibility.Visible ? "\uF2A4" : "\uF2B7";
+			if (WindowsIpConfig.Status == OperationalStatus.Up)
+			{
+				CollapseGrid.Visibility = CollapseGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+				ExpanderBtn.Content = CollapseGrid.Visibility != Visibility.Visible ? "\uF2A4" : "\uF2B7";
+			}
+		}
+		else
+		{
+			CollapseGrid.Visibility = Visibility.Collapsed;
+			ExpanderBtn.Content = "\uF2A4";
+		}
+
+		if (codeInjected) return;
+		codeInjected = true;
+		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		{
+			b.Click += (sender, e) =>
+			{
+				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+			};
 		}
 	}
 
