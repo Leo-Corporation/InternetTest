@@ -621,4 +621,7 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r�
   <data name="ConfidentialModeEnabled" xml:space="preserve">
     <value>Le Mode Confidentiel est activé</value>
   </data>
+  <data name="DetailsNotAvailableCM" xml:space="preserve">
+    <value>Les détails ne sont pas disponibles en Mode Confidentiel</value>
+  </data>
 </root>

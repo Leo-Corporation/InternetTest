@@ -295,6 +295,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Details aren&apos;t available in Confidential Mode.
+        /// </summary>
+        public static string DetailsNotAvailableCM {
+            get {
+                return ResourceManager.GetString("DetailsNotAvailableCM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disconnected.
         /// </summary>
         public static string Disconnected {

@@ -621,4 +621,7 @@
   <data name="ConfidentialModeEnabled" xml:space="preserve">
     <value>Confidential Mode is enabled</value>
   </data>
+  <data name="DetailsNotAvailableCM" xml:space="preserve">
+    <value>Details aren't available in Confidential Mode</value>
+  </data>
 </root>

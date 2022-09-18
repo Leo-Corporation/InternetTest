@@ -491,5 +491,6 @@ public partial class MainWindow : Window
 			: "\uFC25";
 
 		Global.MyIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
+		Global.LocateIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 	}
 }
