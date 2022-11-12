@@ -107,8 +107,8 @@ public partial class SettingsPage : Page
 
 		// Check for updates
 		if (!Global.Settings.CheckUpdateOnStart) return;
-		try 
-		{ 
+		try
+		{
 			if (!await NetworkConnection.IsAvailableAsync()) return;
 			if (!Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink))) return;
 		}

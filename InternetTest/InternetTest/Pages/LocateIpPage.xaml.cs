@@ -58,7 +58,7 @@ public partial class LocateIpPage : Page
 				LocateIP(""); // Get the current IP of the user
 			}
 		}
-		catch (Exception) {	} // Cancel if there is no internet connection
+		catch (Exception) { } // Cancel if there is no internet connection
 	}
 
 	private void InjectSynethiaCode()
