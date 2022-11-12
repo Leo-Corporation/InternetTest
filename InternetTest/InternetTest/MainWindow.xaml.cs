@@ -490,4 +490,10 @@ public partial class MainWindow : Window
 		Global.IpConfigPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 		Global.WiFiPasswordsPage?.ToggleConfidentialMode();
 	}
+
+	private void PinBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Topmost = !Topmost; // Toggle
+		PinBtn.Content = Topmost ? "\uF604" : "\uF602"; // Set text
+	}
 }
