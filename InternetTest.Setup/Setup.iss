@@ -2,8 +2,8 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "InternetTest Pro"
-#define MyAppVersion "7.1.0.2209"
-#define MyAppFullVersion "7.1.0.2209"
+#define MyAppVersion "7.2.0.2211"
+#define MyAppFullVersion "7.2.0.2211-pre1"
 #define MyAppPublisher "Léo Corporation"
 #define MyAppURL "https://leocorporation.dev/"
 #define MyAppExeName "InternetTest.exe"
