@@ -34,7 +34,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="LeoCorpLibrary" Version="4.9.0.2208" />
+	  <PackageReference Include="PeyrSharp.Core" Version="1.0.0.2211" />
+	  <PackageReference Include="PeyrSharp.Env" Version="1.0.0.2211" />
 	</ItemGroup>
 
 	<ItemGroup>

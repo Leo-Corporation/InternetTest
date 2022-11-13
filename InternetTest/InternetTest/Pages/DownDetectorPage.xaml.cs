@@ -23,8 +23,8 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.UserControls;
-using LeoCorpLibrary;
-using LeoCorpLibrary.Enums;
+using PeyrSharp.Env;
+using PeyrSharp.Enums;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,6 +36,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using PeyrSharp.Core;
 
 namespace InternetTest.Pages
 {
@@ -142,7 +143,7 @@ namespace InternetTest.Pages
 			Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.DownDetectorRequest).UsageCount++;
 		}
 
-		readonly List<StatusCodeType> results = new();
+		readonly List<StatusCodes> results = new();
 		internal async Task<DownDetectorTestResult> LaunchTest(string url, bool isFirst = false)
 		{
 			try
@@ -159,10 +160,10 @@ namespace InternetTest.Pages
 				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
 				StatusTxt.Text = Properties.Resources.TestInProgress;
 
-				int statusCode = await NetworkConnection.GetWebPageStatusCodeAsync(url);
+				int statusCode = await Internet.GetStatusCodeAsync(url);
 				if (statusCode < 400)
 				{
-					results.Add(StatusCodeType.Success);
+					results.Add(StatusCodes.Success);
 
 					// Update icon and text
 					StatusIconTxt.Text = "\uF299"; // Update the icon
@@ -185,7 +186,7 @@ namespace InternetTest.Pages
 					dispatcherTimer.Stop();
 					DetailsStatusTxt.Text = statusCode.ToString();
 
-					string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
+					string message = await Internet.GetStatusDescriptionAsync(url);
 					DetailsMessageTxt.Text = message;
 
 					DetailsTimeTxt.Text = $"{time}ms"; // Update the time
@@ -196,7 +197,7 @@ namespace InternetTest.Pages
 				}
 				else
 				{
-					results.Add(StatusCodeType.ClientError);
+					results.Add(StatusCodes.ClientError);
 
 					// Update icon and text
 					StatusIconTxt.Text = "\uF36E"; // Update the icon
@@ -219,7 +220,7 @@ namespace InternetTest.Pages
 					dispatcherTimer.Stop();
 					DetailsStatusTxt.Text = statusCode.ToString();
 
-					string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
+					string message = await Internet.GetStatusDescriptionAsync(url);
 					DetailsMessageTxt.Text = message;
 
 					DetailsTimeTxt.Text = $"{time}ms"; // Update the time
@@ -231,7 +232,7 @@ namespace InternetTest.Pages
 			}
 			catch (Exception ex)
 			{
-				results.Add(StatusCodeType.ClientError);
+				results.Add(StatusCodes.ClientError);
 
 				// Update icon and text
 				StatusIconTxt.Text = "\uF36E"; // Update the icon
@@ -255,17 +256,17 @@ namespace InternetTest.Pages
 			}
 		}
 
-		private void SetTestIconResult(List<StatusCodeType> statusCodeTypes)
+		private void SetTestIconResult(List<StatusCodes> StatusCodess)
 		{
 			// Init counters
 			int success = 0;
 			int failed = 0;
 
-			for (int i = 0; i < statusCodeTypes.Count; i++) // For each test result
+			for (int i = 0; i < StatusCodess.Count; i++) // For each test result
 			{
-				switch (statusCodeTypes[i])
+				switch (StatusCodess[i])
 				{
-					case StatusCodeType.Success:
+					case StatusCodes.Success:
 						success++;
 						break;
 					default:

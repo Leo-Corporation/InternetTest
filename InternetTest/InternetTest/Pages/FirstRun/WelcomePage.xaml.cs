@@ -25,8 +25,8 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.Enums;
 using InternetTest.Windows;
-using LeoCorpLibrary;
 using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -54,7 +54,7 @@ public partial class WelcomePage : Page
 		Global.Settings.IsFirstRun = false;
 		SettingsManager.Save();
 
-		Process.Start(Env.CurrentAppDirectory + @"\InternetTest.exe");
+		Process.Start(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\InternetTest.exe");
 		Application.Current.Shutdown();
 	}
 

@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
-using LeoCorpLibrary;
+using PeyrSharp.Core;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -117,8 +117,8 @@ public partial class StatusPage : Page
 			dispatcherTimer.Tick += (o, e) => time++;
 			dispatcherTimer.Start();
 
-			int code = await NetworkConnection.GetWebPageStatusCodeAsync(customSite);
-			string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(customSite);
+			int code = await Internet.GetStatusCodeAsync(customSite);
+			string message = await Internet.GetStatusDescriptionAsync(customSite);
 
 			dispatcherTimer.Stop();
 

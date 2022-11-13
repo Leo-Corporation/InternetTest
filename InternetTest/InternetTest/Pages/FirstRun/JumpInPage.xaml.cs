@@ -23,8 +23,8 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
-using LeoCorpLibrary;
 using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -45,7 +45,7 @@ public partial class JumpInPage : Page
 		SettingsManager.Save();
 		SynethiaManager.Save(Global.SynethiaConfig);
 
-		Process.Start(Env.CurrentAppDirectory + @"\InternetTest.exe");
+		Process.Start(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\InternetTest.exe");
 		Application.Current.Shutdown(); // Quit the app
 	}
 }

@@ -23,7 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
-using LeoCorpLibrary;
+using PeyrSharp.Core;
 using Microsoft.Win32;
 using System;
 using System.Diagnostics;
@@ -53,7 +53,7 @@ public partial class LocateIpPage : Page
 		TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.LocateIP}";
 		try
 		{
-			if (await NetworkConnection.IsAvailableAsync())
+			if (await Internet.IsAvailableAsync())
 			{
 				LocateIP(""); // Get the current IP of the user
 			}
@@ -203,7 +203,7 @@ public partial class LocateIpPage : Page
 			DefaultExt = ".txt"
 		};
 
-		if (dialog.ShowDialog().Value)
+		if (dialog.ShowDialog() ?? false)
 		{
 			File.WriteAllText(dialog.FileName, CurrentIP?.ToString());
 		}
