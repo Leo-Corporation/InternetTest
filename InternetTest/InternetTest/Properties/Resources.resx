@@ -642,4 +642,13 @@ Using this feature, you will be able to get information about each wireless netw
   <data name="WPA2PSKNetwork" xml:space="preserve">
     <value>WPA2-Personal (802.11) Network</value>
   </data>
+  <data name="AllSuccess" xml:space="preserve">
+    <value>All tests were successful</value>
+  </data>
+  <data name="AllFailed" xml:space="preserve">
+    <value>All tests have failed</value>
+  </data>
+  <data name="TestSucessAndFailed" xml:space="preserve">
+    <value>Some tests have failed</value>
+  </data>
 </root>
