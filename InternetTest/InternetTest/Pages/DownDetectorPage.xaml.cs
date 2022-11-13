@@ -23,8 +23,10 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.UserControls;
-using LeoCorpLibrary;
+using PeyrSharp.Core;
+using PeyrSharp.Enums;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -109,6 +111,7 @@ namespace InternetTest.Pages
 
 		internal async void TestBtn_Click(object sender, RoutedEventArgs e)
 		{
+			results.Clear();
 			// Check if the URL is valid
 			if (!WebsiteTxt.Text.StartsWith("http"))
 			{
@@ -133,10 +136,13 @@ namespace InternetTest.Pages
 				}
 			}
 
+			SetTestIconResult(results);
+
 			// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
 			Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.DownDetectorRequest).UsageCount++;
 		}
 
+		readonly List<StatusCodes> results = new();
 		internal async Task<DownDetectorTestResult> LaunchTest(string url, bool isFirst = false)
 		{
 			try
@@ -153,19 +159,21 @@ namespace InternetTest.Pages
 				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
 				StatusTxt.Text = Properties.Resources.TestInProgress;
 
-				int statusCode = await NetworkConnection.GetWebPageStatusCodeAsync(url);
+				int statusCode = await Internet.GetStatusCodeAsync(url);
 				if (statusCode < 400)
 				{
+					results.Add(StatusCodes.Success);
+
 					// Update icon and text
 					StatusIconTxt.Text = "\uF299"; // Update the icon
 					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+					StatusTxt.Text = Properties.Resources.WebsiteAvailable; // Update the text
+
 					if (isFirst)
 					{
 						IconTxt.Text = "\uF299"; // Update the icon
 						IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
 					}
-
-					StatusTxt.Text = Properties.Resources.WebsiteAvailable; // Update the text
 
 					// Update details section
 					int time = 0;
@@ -177,7 +185,7 @@ namespace InternetTest.Pages
 					dispatcherTimer.Stop();
 					DetailsStatusTxt.Text = statusCode.ToString();
 
-					string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
+					string message = await Internet.GetStatusDescriptionAsync(url);
 					DetailsMessageTxt.Text = message;
 
 					DetailsTimeTxt.Text = $"{time}ms"; // Update the time
@@ -188,16 +196,18 @@ namespace InternetTest.Pages
 				}
 				else
 				{
+					results.Add(StatusCodes.ClientError);
+
 					// Update icon and text
 					StatusIconTxt.Text = "\uF36E"; // Update the icon
 					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+					StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
+
 					if (isFirst)
 					{
 						IconTxt.Text = "\uF36E"; // Update the icon
 						IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 					}
-
-					StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
 
 					// Update details section
 					// Update details section
@@ -209,7 +219,7 @@ namespace InternetTest.Pages
 					dispatcherTimer.Stop();
 					DetailsStatusTxt.Text = statusCode.ToString();
 
-					string message = await NetworkConnection.GetWebPageStatusDescriptionAsync(url);
+					string message = await Internet.GetStatusDescriptionAsync(url);
 					DetailsMessageTxt.Text = message;
 
 					DetailsTimeTxt.Text = $"{time}ms"; // Update the time
@@ -221,15 +231,18 @@ namespace InternetTest.Pages
 			}
 			catch (Exception ex)
 			{
+				results.Add(StatusCodes.ClientError);
+
 				// Update icon and text
 				StatusIconTxt.Text = "\uF36E"; // Update the icon
 				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
+
 				if (isFirst)
 				{
 					IconTxt.Text = "\uF36E"; // Update the icon
 					IconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 				}
-				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
 
 				DetailsMessageTxt.Text = ex.Message;
 
@@ -238,8 +251,50 @@ namespace InternetTest.Pages
 
 				Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:g} - {url} - {Properties.Resources.Down} (Error)", StatusIconTxt.Text));
 
-				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
 				return new(0, 0, ex.Message);
+			}
+		}
+
+		private void SetTestIconResult(List<StatusCodes> StatusCodess)
+		{
+			// Init counters
+			int success = 0;
+			int failed = 0;
+
+			for (int i = 0; i < StatusCodess.Count; i++) // For each test result
+			{
+				switch (StatusCodess[i])
+				{
+					case StatusCodes.Success:
+						success++;
+						break;
+					default:
+						failed++;
+						break;
+				}
+			}
+
+			// If all tests were sucessful
+			if (success > 0 && failed == 0)
+			{
+				StatusIconTxt.Text = "\uF299"; // Update the icon
+				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+
+				StatusTxt.Text = Properties.Resources.AllSuccess; // Update the text
+			}
+			else if (success == 0 && failed > 0) // If all tests failed
+			{
+				StatusIconTxt.Text = "\uF36E"; // Update the icon
+				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+
+				StatusTxt.Text = Properties.Resources.AllFailed; // Update the text
+			}
+			else // If some tests passed and others failed
+			{
+				StatusIconTxt.Text = "\uF882"; // Update the icon
+				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Orange"));
+
+				StatusTxt.Text = Properties.Resources.TestSucessAndFailed; // Update the text
 			}
 		}
 
@@ -314,7 +369,8 @@ namespace InternetTest.Pages
 					timeCounter++;
 					if (timeCounter == secondsRemainingFixed)
 					{
-						_ = LaunchTest(WebsiteTxt.Text);
+						results.Clear();
+						_ = await LaunchTest(WebsiteTxt.Text);
 						for (int i = 0; i < DownDetectorItemDisplayer.Children.Count; i++)
 						{
 							if (DownDetectorItemDisplayer.Children[i] is DownDetectorItem item)
@@ -324,6 +380,7 @@ namespace InternetTest.Pages
 								item.WebsiteTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("DarkGray"));
 							}
 						}
+						SetTestIconResult(results);
 					}
 					if (secondsRemaining > 0)
 					{
@@ -335,7 +392,6 @@ namespace InternetTest.Pages
 						timeCounter = 0;
 					}
 					TimeIntervalTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, secondsRemaining); // Set the time interval text
-
 				};
 				timer.Start();
 			}

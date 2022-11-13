@@ -23,8 +23,9 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
-using LeoCorpLibrary;
 using Microsoft.Win32;
+using PeyrSharp.Core;
+using PeyrSharp.Env;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -54,7 +55,7 @@ public partial class SettingsPage : Page
 					HistoryManager.Save(Global.History);
 					SettingsManager.Save();
 
-					Env.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+					Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
 					Application.Current.Shutdown(); // Close
 				}
 			}
@@ -107,9 +108,9 @@ public partial class SettingsPage : Page
 
 		// Check for updates
 		if (!Global.Settings.CheckUpdateOnStart) return;
-		try 
-		{ 
-			if (!await NetworkConnection.IsAvailableAsync()) return;
+		try
+		{
+			if (!await Internet.IsAvailableAsync()) return;
 			if (!Update.IsAvailable(Global.Version, await Update.GetLastVersionAsync(Global.LastVersionLink))) return;
 		}
 		catch { return; }
@@ -143,7 +144,7 @@ public partial class SettingsPage : Page
 			HistoryManager.Save(Global.History);
 			SettingsManager.Save();
 
-			Env.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+			Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
 			Application.Current.Shutdown(); // Close
 		}
 		else

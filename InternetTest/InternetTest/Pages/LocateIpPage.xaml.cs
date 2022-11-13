@@ -23,8 +23,8 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
-using LeoCorpLibrary;
 using Microsoft.Win32;
+using PeyrSharp.Core;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -53,12 +53,12 @@ public partial class LocateIpPage : Page
 		TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.LocateIP}";
 		try
 		{
-			if (await NetworkConnection.IsAvailableAsync())
+			if (await Internet.IsAvailableAsync())
 			{
 				LocateIP(""); // Get the current IP of the user
 			}
 		}
-		catch (Exception) {	} // Cancel if there is no internet connection
+		catch (Exception) { } // Cancel if there is no internet connection
 	}
 
 	private void InjectSynethiaCode()
@@ -203,7 +203,7 @@ public partial class LocateIpPage : Page
 			DefaultExt = ".txt"
 		};
 
-		if (dialog.ShowDialog().Value)
+		if (dialog.ShowDialog() ?? false)
 		{
 			File.WriteAllText(dialog.FileName, CurrentIP?.ToString());
 		}

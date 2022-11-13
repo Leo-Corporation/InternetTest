@@ -24,9 +24,11 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.Enums;
 using InternetTest.UserControls;
+using PeyrSharp.Core;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -40,7 +42,7 @@ public partial class HomePage : Page
 		InitUI();
 	}
 
-	internal void InitUI()
+	internal async void InitUI()
 	{
 		// Load "Get started" section
 		List<AppPages> relevantPages = Enumerable.Empty<AppPages>().ToList();
@@ -73,5 +75,11 @@ public partial class HomePage : Page
 		{
 			SuggestedActionsPanel.Children.Add(new ActionCard(relevantActions[i]));
 		}
+
+		// Load "Status" section
+		bool connected = await Internet.GetStatusCodeAsync(Global.Settings.TestSite) != 400; // Check if Internet is available
+		StatusTxt.Text = connected ? Properties.Resources.Connected : Properties.Resources.NotConnected; // Set text
+		StatusIconTxt.Text = connected ? "\uF299" : "\uF36E";
+		StatusIconTxt.Foreground = connected ? new SolidColorBrush(Global.GetColorFromResource("Green")) : new SolidColorBrush(Global.GetColorFromResource("Red"));
 	}
 }

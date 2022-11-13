@@ -17,32 +17,38 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<StackPanel Margin="10" Orientation="Horizontal">
+		<StackPanel Grid.Row="0" Margin="10" Orientation="Horizontal">
+			<TextBlock x:Name="StatusIconTxt" Text="&#xF484;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Filled" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
+			<TextBlock x:Name="StatusTxt" Text="{x:Static lang:Resources.Connected}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
+		</StackPanel>
+		
+		<StackPanel Margin="10" Orientation="Horizontal" Grid.Row="1">
 			<TextBlock Text="&#xF484;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
 			<TextBlock Text="{x:Static lang:Resources.GetStarted}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
 		</StackPanel>
 
-		<WrapPanel Grid.Row="1" x:Name="GetStartedPanel" Orientation="Horizontal">
+		<WrapPanel Grid.Row="2" x:Name="GetStartedPanel" Orientation="Horizontal">
 
 		</WrapPanel>
 
-		<StackPanel Margin="10" Orientation="Horizontal" Grid.Row="2">
+		<StackPanel Margin="10" Orientation="Horizontal" Grid.Row="3">
 			<TextBlock Text="&#xF4DB;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
 			<TextBlock Text="{x:Static lang:Resources.SuggestedActions}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
 		</StackPanel>
 
-		<WrapPanel Grid.Row="3" x:Name="SuggestedActionsPanel" Orientation="Horizontal">
+		<WrapPanel Grid.Row="4" x:Name="SuggestedActionsPanel" Orientation="Horizontal">
 
 		</WrapPanel>
 
-		<StackPanel Margin="10" Orientation="Horizontal" Grid.Row="4">
+		<StackPanel Margin="10" Orientation="Horizontal" Grid.Row="5">
 			<TextBlock Text="&#xF311;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
 			<TextBlock Text="{x:Static lang:Resources.Discover}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
 		</StackPanel>
 
-		<WrapPanel Grid.Row="5" x:Name="DiscoverPanel" Orientation="Horizontal">
+		<WrapPanel Grid.Row="6" x:Name="DiscoverPanel" Orientation="Horizontal">
 
 		</WrapPanel>
 	</Grid>

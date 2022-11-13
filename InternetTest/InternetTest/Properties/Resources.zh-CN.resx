@@ -415,13 +415,13 @@
 	<value>Down</value>
   </data>
   <data name="HistoryEmpty" xml:space="preserve">
-	<value>历史是空的。</value>
+	<value>历史记录是空的。</value>
   </data>
   <data name="EmptyHistory" xml:space="preserve">
-	<value>空白历史</value>
+	<value>历史记录空白</value>
   </data>
   <data name="EmptyHistoryMsg" xml:space="preserve">
-	<value>您确定要清空此历史记录吗？ 此操作是不可逆转的。</value>
+	<value>您确定要清空此历史记录吗？ 此操作是不可恢复的。</value>
   </data>
   <data name="Pro" xml:space="preserve">
 	<value>Pro</value>
@@ -547,7 +547,7 @@
     <value>重置设置</value>
   </data>
   <data name="SynethiaEnable" xml:space="preserve">
-    <value>启用 Synethia 定制体验。</value>
+    <value>启用 Synethia 自定义体验。</value>
   </data>
   <data name="ResetSynethia" xml:space="preserve">
     <value>重置 Synethia 数据</value>
@@ -619,27 +619,36 @@
     <value>一切准备就绪</value>
   </data>
   <data name="ConfidentialModeEnabled" xml:space="preserve">
-    <value>Confidential Mode is enabled</value>
+    <value>已启用机密模式</value>
   </data>
   <data name="DetailsNotAvailableCM" xml:space="preserve">
-    <value>Details aren't available in Confidential Mode</value>
+    <value>机密模式下不提供详细信息</value>
   </data>
   <data name="OpenNetwork" xml:space="preserve">
-    <value>Open Network (802.11)</value>
+    <value>开放网络 (802.11)</value>
   </data>
   <data name="SharedNetwork" xml:space="preserve">
-    <value>Shared Network (802.11)</value>
+    <value>共享网络 (802.11)</value>
   </data>
   <data name="WPANetwork" xml:space="preserve">
-    <value>WPA-Enterprise (802.11) Network</value>
+    <value>WPA-企业 (802.11) 网络</value>
   </data>
   <data name="WPAPSKNetwork" xml:space="preserve">
-    <value>WPA-Personal (802.11) Network</value>
+    <value>WPA-个人 (802.11) 网络</value>
   </data>
   <data name="WPA2Network" xml:space="preserve">
-    <value>WPA2-Enterprise (802.11) Network</value>
+    <value>WPA2-企业 (802.11) 网络</value>
   </data>
   <data name="WPA2PSKNetwork" xml:space="preserve">
-    <value>WPA2-Personal (802.11) Network</value>
+    <value>WPA2-个人 (802.11) 网络</value>
+  </data>
+  <data name="AllSuccess" xml:space="preserve">
+    <value>All tests were successful</value>
+  </data>
+  <data name="AllFailed" xml:space="preserve">
+    <value>All tests have failed</value>
+  </data>
+  <data name="TestSucessAndFailed" xml:space="preserve">
+    <value>Some tests have failed</value>
   </data>
 </root>

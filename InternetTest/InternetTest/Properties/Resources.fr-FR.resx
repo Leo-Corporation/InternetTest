@@ -642,4 +642,13 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r�
   <data name="WPA2PSKNetwork" xml:space="preserve">
     <value>Réseau personnel (WPA2-Personal 802.11)</value>
   </data>
+  <data name="AllSuccess" xml:space="preserve">
+    <value>Tous les tests ont réussi</value>
+  </data>
+  <data name="AllFailed" xml:space="preserve">
+    <value>Tous les tests ont échoué</value>
+  </data>
+  <data name="TestSucessAndFailed" xml:space="preserve">
+    <value>Certains tests ont échoué</value>
+  </data>
 </root>

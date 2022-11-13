@@ -79,6 +79,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All tests have failed.
+        /// </summary>
+        public static string AllFailed {
+            get {
+                return ResourceManager.GetString("AllFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All tests were successful.
+        /// </summary>
+        public static string AllSuccess {
+            get {
+                return ResourceManager.GetString("AllSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
         public static string Apply {
@@ -1418,6 +1436,15 @@ namespace InternetTest.Properties {
         public static string TestSite {
             get {
                 return ResourceManager.GetString("TestSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some tests have failed.
+        /// </summary>
+        public static string TestSucessAndFailed {
+            get {
+                return ResourceManager.GetString("TestSucessAndFailed", resourceCulture);
             }
         }
         

@@ -43,8 +43,8 @@ public partial class WiFiInfoItem : UserControl
 
 	internal void InitUI()
 	{
-		InterfaceNameTxt.Text = Global.IsConfidentialModeEnabled 
-			? Global.ReplaceAllCharactersByAnotherOne(WLANProfile.SSIDConfig?.SSID?.Name ?? "", "•") 
+		InterfaceNameTxt.Text = Global.IsConfidentialModeEnabled
+			? Global.ReplaceAllCharactersByAnotherOne(WLANProfile.SSIDConfig?.SSID?.Name ?? "", "•")
 			: WLANProfile.SSIDConfig?.SSID?.Name;
 		ConnectionModeTxt.Text = WLANProfile.ConnectionMode == "auto" ? Properties.Resources.Automatic : WLANProfile.ConnectionMode;
 		ConnectionTypeTxt.Text = WLANProfile.ConnectionType switch
@@ -101,5 +101,5 @@ public partial class WiFiInfoItem : UserControl
 		Clipboard.SetDataObject(WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial);
 	}
 
-	public override string ToString() => WLANProfile.SSIDConfig?.SSID?.Name;
+	public override string ToString() => WLANProfile.SSIDConfig?.SSID?.Name ?? "";
 }

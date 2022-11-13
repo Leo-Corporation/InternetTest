@@ -17,6 +17,7 @@
 	<sys:String x:Key="Gray">#DEDEDE</sys:String>
 	<sys:String x:Key="Green">#25DE0F</sys:String>
 	<sys:String x:Key="Red">#FF321E</sys:String>
+    <sys:String x:Key="Orange">#ff7a00</sys:String>
 	<sys:String x:Key="DarkGray">#969696</sys:String>
 
 </ResourceDictionary>

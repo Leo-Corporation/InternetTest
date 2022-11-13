@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Enums;
-using LeoCorpLibrary;
+using PeyrSharp.Env;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -64,12 +64,12 @@ public class Settings
 
 public static class SettingsManager
 {
-	private static string SettingsPath => $@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\Settings.xml";
+	private static string SettingsPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\Settings.xml";
 	public static Settings Load()
 	{
-		if (!Directory.Exists($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\"))
+		if (!Directory.Exists($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\"))
 		{
-			Directory.CreateDirectory($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\");
+			Directory.CreateDirectory($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\");
 		}
 
 		if (!File.Exists(SettingsPath))
@@ -89,7 +89,7 @@ public static class SettingsManager
 		XmlSerializer xmlDeserializer = new(typeof(Settings));
 
 		StreamReader streamReader = new(SettingsPath);
-		var settings = (Settings)xmlDeserializer.Deserialize(streamReader) ?? new();
+		var settings = (Settings?)xmlDeserializer.Deserialize(streamReader) ?? new();
 
 		// Upgrade the settings file if it comes from an older version
 		settings.IsMaximized ??= false; // Set the default value if none is specified.

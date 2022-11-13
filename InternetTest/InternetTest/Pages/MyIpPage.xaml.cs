@@ -23,7 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
-using LeoCorpLibrary;
+using PeyrSharp.Core;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -49,7 +49,7 @@ public partial class MyIpPage : Page
 	{
 		try
 		{
-			if (await NetworkConnection.IsAvailableAsync())
+			if (await Internet.IsAvailableAsync())
 			{
 				GetMyIP(); // Locate the current IP
 			}

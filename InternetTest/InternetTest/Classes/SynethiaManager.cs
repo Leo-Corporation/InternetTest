@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using LeoCorpLibrary;
+using PeyrSharp.Env;
 using System.IO;
 using System.Text.Json;
 
@@ -31,9 +31,9 @@ public static class SynethiaManager
 	public static SynethiaConfig Load()
 	{
 		if (!Global.Settings.UseSynethia) return new();
-		if (!Directory.Exists($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\"))
+		if (!Directory.Exists($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\"))
 		{
-			Directory.CreateDirectory($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\");
+			Directory.CreateDirectory($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\");
 		}
 
 		if (!File.Exists(Global.SynethiaPath)) // If no Synethia config exists
@@ -46,7 +46,7 @@ public static class SynethiaManager
 
 		// If Synethia config exists
 		// Deserialize the file to Synethia config (using JSON)
-		return JsonSerializer.Deserialize<SynethiaConfig>(File.ReadAllText(Global.SynethiaPath));
+		return JsonSerializer.Deserialize<SynethiaConfig>(File.ReadAllText(Global.SynethiaPath)) ?? new();
 	}
 
 	public static void Save(SynethiaConfig synethiaConfig)

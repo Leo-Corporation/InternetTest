@@ -23,7 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.UserControls;
-using LeoCorpLibrary;
+using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -130,7 +130,7 @@ public partial class WiFiPasswordsPage : Page
 			Placeholder.Visibility = Visibility.Collapsed; // Hide the placeholder
 
 			// Check if the temp directory exists
-			string path = Env.AppDataPath + @"\Léo Corporation\InternetTest Pro\Temp";
+			string path = FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\Temp";
 
 			if (!Directory.Exists(path))
 			{

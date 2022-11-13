@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>True</UseWindowsForms>
-		<Version>7.1.0.2209</Version>
+		<Version>7.2.0.2211</Version>
 		<Copyright>© 2022</Copyright>
 		<Company>Léo Corporation</Company>
 		<Description>Taking you to another level. InternetTest can locate IP addresses, send ping request, recover your WiFi passwords and more!</Description>
@@ -34,7 +34,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="LeoCorpLibrary" Version="4.9.0.2208" />
+	  <PackageReference Include="PeyrSharp.Core" Version="1.0.0.2211" />
+	  <PackageReference Include="PeyrSharp.Env" Version="1.0.0.2211" />
 	</ItemGroup>
 
 	<ItemGroup>

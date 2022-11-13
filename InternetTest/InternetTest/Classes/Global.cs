@@ -23,9 +23,9 @@ SOFTWARE.
 */
 using InternetTest.Enums;
 using InternetTest.Pages;
-using LeoCorpLibrary;
-using LeoCorpLibrary.Enums;
 using Microsoft.Win32;
+using PeyrSharp.Enums;
+using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,13 +35,12 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace InternetTest.Classes;
 public static class Global
 {
-	public static string Version => "7.1.0.2209";
+	public static string Version => "7.2.0.2211";
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
 	public static Settings Settings { get; set; } = SettingsManager.Load();
@@ -59,7 +58,7 @@ public static class Global
 	public static IpConfigPage? IpConfigPage { get; set; }
 	public static WiFiPasswordsPage? WiFiPasswordsPage { get; set; }
 
-	internal static string SynethiaPath => $@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\SynethiaConfig.json";
+	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\SynethiaConfig.json";
 
 	public static string GetHiSentence
 	{
@@ -263,7 +262,7 @@ public static class Global
 
 	public static bool IsSystemThemeDark()
 	{
-		if (Env.WindowsVersion != WindowsVersion.Windows10 && Env.WindowsVersion != WindowsVersion.Windows11)
+		if (Sys.CurrentWindowsVersion != WindowsVersion.Windows10 && Sys.CurrentWindowsVersion != WindowsVersion.Windows11)
 		{
 			return false; // Avoid errors on older OSs
 		}

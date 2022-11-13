@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using LeoCorpLibrary;
+using PeyrSharp.Env;
 using System.IO;
 using System.Text.Json;
 
@@ -29,12 +29,12 @@ namespace InternetTest.Classes
 {
 	public static class HistoryManager
 	{
-		internal static string HistoryPath = $@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\History.json";
+		internal static string HistoryPath = $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\History.json";
 		public static History Load()
 		{
-			if (!Directory.Exists($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\"))
+			if (!Directory.Exists($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\"))
 			{
-				Directory.CreateDirectory($@"{Env.AppDataPath}\Léo Corporation\InternetTest Pro\");
+				Directory.CreateDirectory($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\");
 			}
 
 			if (!File.Exists(HistoryPath))
@@ -47,7 +47,7 @@ namespace InternetTest.Classes
 
 			// If History exists
 			// Deserialize the file to History (using JSON)
-			return JsonSerializer.Deserialize<History>(File.ReadAllText(HistoryPath));
+			return JsonSerializer.Deserialize<History>(File.ReadAllText(HistoryPath)) ?? new();
 		}
 
 		public static void Save(History history)
