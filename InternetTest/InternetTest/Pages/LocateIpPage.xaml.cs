@@ -23,8 +23,8 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
-using PeyrSharp.Core;
 using Microsoft.Win32;
+using PeyrSharp.Core;
 using System;
 using System.Diagnostics;
 using System.IO;

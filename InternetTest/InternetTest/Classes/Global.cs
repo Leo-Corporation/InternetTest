@@ -23,9 +23,9 @@ SOFTWARE.
 */
 using InternetTest.Enums;
 using InternetTest.Pages;
-using PeyrSharp.Env;
-using PeyrSharp.Enums;
 using Microsoft.Win32;
+using PeyrSharp.Enums;
+using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
 using System.Linq;

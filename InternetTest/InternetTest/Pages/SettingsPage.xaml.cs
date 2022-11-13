@@ -23,9 +23,9 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using Microsoft.Win32;
 using PeyrSharp.Core;
 using PeyrSharp.Env;
-using Microsoft.Win32;
 using System;
 using System.Diagnostics;
 using System.IO;

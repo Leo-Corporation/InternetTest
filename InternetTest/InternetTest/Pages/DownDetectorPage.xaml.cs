@@ -23,7 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.UserControls;
-using PeyrSharp.Env;
+using PeyrSharp.Core;
 using PeyrSharp.Enums;
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using PeyrSharp.Core;
 
 namespace InternetTest.Pages
 {
@@ -294,7 +293,7 @@ namespace InternetTest.Pages
 			{
 				StatusIconTxt.Text = "\uF882"; // Update the icon
 				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Orange"));
-				
+
 				StatusTxt.Text = Properties.Resources.TestSucessAndFailed; // Update the text
 			}
 		}
