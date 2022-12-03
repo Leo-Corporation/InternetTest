@@ -2,7 +2,8 @@
 ![GitHub issues](https://img.shields.io/github/issues/Leo-Corporation/InternetTest)
 ![GitHub](https://img.shields.io/github/license/Leo-Corporation/InternetTest)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Leo-Corporation/InternetTest/.NET%20Framework%20CI)
-![Using LeoCorpLibrary](https://img.shields.io/badge/using-LeoCorpLibrary-blue)
+![Using PeyrSharp](https://img.shields.io/badge/using-PeyrSharp-DD00FF?logo=nuget)
+
 <br />
 <p align="center">
   <a href="https://github.com/Leo-Corporation/InternetTest">
