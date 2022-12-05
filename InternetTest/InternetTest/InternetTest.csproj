@@ -34,7 +34,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="PeyrSharp.Core" Version="1.0.0.2211" />
+	  <PackageReference Include="PeyrSharp.Core" Version="1.1.0.2212" />
 	  <PackageReference Include="PeyrSharp.Env" Version="1.0.0.2211" />
 	</ItemGroup>
 
