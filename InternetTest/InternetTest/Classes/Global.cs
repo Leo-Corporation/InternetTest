@@ -293,6 +293,10 @@ public static class Global
 			case Languages.zh_CN: // Chinese (CN)
 				Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-CN"); // Change
 				break;
+			
+			case Languages.it_IT: // Italian (Italy)
+				Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("it-IT"); // Change
+				break;
 			default: // No language
 				break;
 		}
