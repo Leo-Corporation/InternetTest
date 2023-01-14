@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Enums;
+using PeyrSharp.Core.Converters;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -33,12 +34,12 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class StatusHistoryItem : UserControl
 {
-	StatusHistory StatusHistory { get; set; }
+	HistoryItem HistoryItem { get; set; }
 	AppPages AppPage { get; init; }
-	public StatusHistoryItem(StatusHistory statusHistory, AppPages appPages)
+	public StatusHistoryItem(HistoryItem historyItem, AppPages appPages)
 	{
 		InitializeComponent();
-		StatusHistory = statusHistory;
+		HistoryItem = historyItem;
 		AppPage = appPages;
 
 		InitUI();
@@ -46,8 +47,12 @@ public partial class StatusHistoryItem : UserControl
 
 	private void InitUI()
 	{
-		IconTxt.Text = StatusHistory.Icon;
-		ContentTxt.Text = StatusHistory.Content;
+		IconTxt.Text = HistoryItem.Icon;
+		ContentTxt.Text = HistoryItem switch
+		{
+			DownHistory => $"{Time.UnixTimeToDateTime(HistoryItem.Date):g} - {((DownHistory)HistoryItem).Website} - {((DownHistory)HistoryItem).StatusText} ({((DownHistory)HistoryItem).StatusCode})",
+			_ => $"{Time.UnixTimeToDateTime(HistoryItem.Date):g} - {(((StatusHistory)HistoryItem).Status ? Properties.Resources.Connected : Properties.Resources.NotConnected)}"
+		};
 
 		IconTxt.Foreground = IconTxt.Text switch
 		{
@@ -64,15 +69,15 @@ public partial class StatusHistoryItem : UserControl
 			switch (AppPage)
 			{
 				case AppPages.DownDetector:
-					Global.History.DownDetectorHistory.Remove(StatusHistory);
+					Global.History.DownDetectorHistory.Remove((DownHistory)HistoryItem);
 					break;
 				case AppPages.Status:
-					Global.History.StatusHistory.Remove(StatusHistory);
+					Global.History.StatusHistory.Remove((StatusHistory)HistoryItem);
 					break;
 				default:
 					break;
 			}
-			Global.HistoryPage.InitUI();
+			Global.HistoryPage?.InitUI();
 		}
 		catch { }
 	}

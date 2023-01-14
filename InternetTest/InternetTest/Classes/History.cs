@@ -22,13 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace InternetTest.Classes;
 
 public class History
 {
 	public List<StatusHistory> StatusHistory { get; set; }
-	public List<StatusHistory> DownDetectorHistory { get; set; }
+	public List<DownHistory> DownDetectorHistory { get; set; }
 	public History()
 	{
 		StatusHistory = new();
@@ -38,19 +39,45 @@ public class History
 
 public class HistoryItem
 {
-	public string Content { get; set; }
-	public HistoryItem(string content)
+	public int Date { get; set; }
+	public string Icon { get; set; }
+	public HistoryItem(int date, string icon)
 	{
-		Content = content;
+		Date = date;
+		Icon = icon;
 	}
 }
 
 public class StatusHistory : HistoryItem
-{
-	public string Icon { get; set; }
+{	
+	public bool Status { get; set; }
 
-	public StatusHistory(string content, string icon) : base(content)
+	[JsonConstructor]
+	public StatusHistory() : base(0, "")
 	{
-		Icon = icon;
+	}
+
+	public StatusHistory(int date, string icon, bool sucessful) : base(date, icon)
+	{
+		Status = sucessful;
+	}
+}
+
+public class DownHistory : HistoryItem
+{
+	public int StatusCode { get; set; }
+	public string? StatusText { get; set; }
+	public string? Website { get; set; }
+
+	[JsonConstructor]
+	public DownHistory() : base(0, "")
+	{
+	}
+
+	public DownHistory(int date, string icon, int statusCode, string msg, string website) : base(date, icon)
+	{
+		StatusCode = statusCode;
+		StatusText = msg;
+		Website = website;
 	}
 }

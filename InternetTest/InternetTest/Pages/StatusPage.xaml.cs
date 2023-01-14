@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using PeyrSharp.Core;
+using PeyrSharp.Core.Converters;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -142,7 +143,7 @@ public partial class StatusPage : Page
 				StatusTxt.Text = Properties.Resources.NotConnected;
 			}
 
-			Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:g} - {Properties.Resources.Connected}", StatusIconTxt.Text));
+			Global.History.StatusHistory.Add(new StatusHistory(Time.DateTimeToUnixTime(DateTime.Now), StatusIconTxt.Text, true));
 		}
 		catch (HttpRequestException)
 		{
@@ -152,7 +153,7 @@ public partial class StatusPage : Page
 			DetailsStatusTxt.Text = "N/A";
 			DetailsMessageTxt.Text = Properties.Resources.Error;
 			DetailsTimeTxt.Text = "0ms";
-			Global.History.StatusHistory.Add(new StatusHistory($"{DateTime.Now:g} - {Properties.Resources.NotConnected}", StatusIconTxt.Text));
+			Global.History.StatusHistory.Add(new StatusHistory(Time.DateTimeToUnixTime(DateTime.Now), StatusIconTxt.Text, false));
 
 		}
 	}
