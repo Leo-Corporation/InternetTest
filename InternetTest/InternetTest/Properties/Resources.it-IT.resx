@@ -663,4 +663,7 @@ Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiF
   <data name="ToDate" xml:space="preserve">
     <value>Al</value>
   </data>
+  <data name="InvalidDateMsg" xml:space="preserve">
+    <value>Si prega di fornire una data valida.</value>
+  </data>
 </root>

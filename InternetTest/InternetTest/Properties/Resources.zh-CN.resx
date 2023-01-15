@@ -663,4 +663,7 @@
   <data name="ToDate" xml:space="preserve">
     <value>To</value>
   </data>
+  <data name="InvalidDateMsg" xml:space="preserve">
+    <value>Please provide a valid date.</value>
+  </data>
 </root>

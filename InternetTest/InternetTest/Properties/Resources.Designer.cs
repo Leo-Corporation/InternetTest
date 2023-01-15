@@ -701,6 +701,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please provide a valid date..
+        /// </summary>
+        public static string InvalidDateMsg {
+            get {
+                return ResourceManager.GetString("InvalidDateMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IP Address.
         /// </summary>
         public static string IPAddress {
