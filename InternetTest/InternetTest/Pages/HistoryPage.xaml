@@ -51,7 +51,7 @@
 			</Button>
 		</StackPanel>
 		<Popup x:Name="FilterPopup" AllowsTransparency="True" Placement="Bottom" StaysOpen="False" PopupAnimation="Slide" PlacementTarget="{Binding ElementName=FilterBtn}">
-			<Border Background="{Binding Source={StaticResource Background2}}" Padding="10" CornerRadius="5" Margin="8">
+			<Border Background="{Binding Source={StaticResource Background1}}" Padding="10" CornerRadius="5" Margin="8">
 				<StackPanel>
 					<TextBlock Text="{x:Static lang:Resources.Filters}" FontWeight="ExtraBold" FontSize="11" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
 					<ComboBox SelectedIndex="0" SelectionChanged="FilterComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="FilterComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="5,5,5,0" VerticalAlignment="Center">
