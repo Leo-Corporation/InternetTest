@@ -34,7 +34,7 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class StatusHistoryItem : UserControl
 {
-	HistoryItem HistoryItem { get; set; }
+	internal HistoryItem HistoryItem { get; set; }
 	AppPages AppPage { get; init; }
 	public StatusHistoryItem(HistoryItem historyItem, AppPages appPages)
 	{

@@ -334,4 +334,6 @@ public static class Global
 		}
 		return r;
 	}
+
+	public static bool DateIsInRange(int startDate, int endDate, int checkDate) => (startDate <= checkDate && checkDate <= endDate);
 }

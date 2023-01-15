@@ -23,6 +23,8 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.UserControls;
+using PeyrSharp.Core.Converters;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -73,6 +75,8 @@ public partial class HistoryPage : Page
 			Placeholder.Visibility = Visibility.Collapsed;
 			EmptyHistoryBtn.Visibility = Visibility.Visible;
 		}
+
+		SearchTxt_TextChanged(this, null);
 	}
 
 	private void UnCheckAllButtons()
@@ -103,7 +107,7 @@ public partial class HistoryPage : Page
 			EmptyHistoryBtn.Visibility = Visibility.Visible;
 		}
 		SearchTxt.Text = "";
-		SearchHistory("");
+		SearchTxt_TextChanged(this, null);
 	}
 
 	private void DownDetectorBtn_Click(object sender, RoutedEventArgs e)
@@ -123,7 +127,7 @@ public partial class HistoryPage : Page
 			EmptyHistoryBtn.Visibility = Visibility.Visible;
 		}
 		SearchTxt.Text = "";
-		SearchHistory("");	
+		SearchTxt_TextChanged(this, null);	
 	}
 
 	private void EmptyHistoryBtn_Click(object sender, RoutedEventArgs e)
@@ -147,6 +151,11 @@ public partial class HistoryPage : Page
 
 	private void SearchTxt_TextChanged(object sender, TextChangedEventArgs e)
 	{
+		if (FilterComboBox.SelectedIndex == 1 && FromDatePicker.SelectedDate is not null && ToDatePicker.SelectedDate is not null)
+		{
+			SearchHistory(SearchTxt.Text, FromDatePicker.SelectedDate.Value, ToDatePicker.SelectedDate.Value);
+			return;
+		}
 		SearchHistory(SearchTxt.Text);
 	}
 
@@ -170,6 +179,33 @@ public partial class HistoryPage : Page
 		}
 	}
 
+	internal void SearchHistory(string req, DateTime start, DateTime end)
+	{
+		// Convert to Unix Time
+		int s = Time.DateTimeToUnixTime(start);
+		int e = Time.DateTimeToUnixTime(end) + 24 * 3600;
+
+		if (e - 24 * 3600 < s) MessageBox.Show(Properties.Resources.InvalidDateMsg, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+
+		if (StatusHistory.Visibility == Visibility.Visible) // Search in "Status" history
+		{
+			for (int i = 0; i < StatusHistory.Children.Count; i++)
+			{
+				var item = (StatusHistoryItem)StatusHistory.Children[i];
+
+				item.Visibility = item.ContentTxt.Text.Contains(req) && Global.DateIsInRange(s, e, item.HistoryItem.Date) ? Visibility.Visible : Visibility.Collapsed;
+			}
+		}
+		else // Search in "DownDetector" history
+		{
+			for (int i = 0; i < DownDetectorHistory.Children.Count; i++)
+			{
+				var item = (StatusHistoryItem)DownDetectorHistory.Children[i];
+				item.Visibility = item.ContentTxt.Text.Contains(req) && Global.DateIsInRange(s, e, item.HistoryItem.Date) ? Visibility.Visible : Visibility.Collapsed;
+			}
+		}
+	}
+
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)
 	{
 		SearchTxt.Text = "";
@@ -182,6 +218,20 @@ public partial class HistoryPage : Page
 
 	private void FilterComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 	{
+		try
+		{
+			DateFilters.Visibility = (FilterComboBox.SelectedIndex == 1) ? Visibility.Visible : Visibility.Collapsed;
+			SearchTxt_TextChanged(this, null);
+		} catch { }
+	}
 
+	private void DateApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (FromDatePicker.SelectedDate is not null && ToDatePicker.SelectedDate is not null)
+		{
+			SearchHistory(SearchTxt.Text, FromDatePicker.SelectedDate.Value, ToDatePicker.SelectedDate.Value);
+			return;
+		}
+		MessageBox.Show(Properties.Resources.InvalidDateMsg, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 	}
 }
