@@ -15,6 +15,7 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
 		<Grid.ColumnDefinitions>
@@ -59,7 +60,20 @@
 				<TextBlock Text="{x:Static lang:Resources.EmptyHistory}" FontWeight="ExtraBold" FontSize="11" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
 			</Grid>
 		</Button>
-		<Grid x:Name="HistoryGrid" Grid.Row="2" Margin="10" Grid.ColumnSpan="3">
+		<Border Margin="10,3,3,3" Background="{Binding Source={StaticResource CardBackground}}" Width="300" CornerRadius="5" HorizontalAlignment="Left" Grid.Row="2">
+			<Border.Effect>
+				<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
+			</Border.Effect>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<TextBox TextChanged="SearchTxt_TextChanged" x:Name="SearchTxt" Padding="1" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" d:Text="123.54.132.56" Background="Transparent"/>
+				<Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="DismissBtn" Content="&#xF36A;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="DismissBtn_Click" HorizontalAlignment="Stretch" Grid.Column="1"/>
+			</Grid>
+		</Border>
+		<Grid x:Name="HistoryGrid" Grid.Row="3" Margin="10" Grid.ColumnSpan="3">
 			<StackPanel x:Name="StatusHistory"/>
 			<StackPanel x:Name="DownDetectorHistory" Visibility="Collapsed"/>
 		</Grid>

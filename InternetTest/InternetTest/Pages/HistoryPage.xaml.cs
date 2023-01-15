@@ -102,6 +102,8 @@ public partial class HistoryPage : Page
 			Placeholder.Visibility = Visibility.Collapsed;
 			EmptyHistoryBtn.Visibility = Visibility.Visible;
 		}
+		SearchTxt.Text = "";
+		SearchHistory("");
 	}
 
 	private void DownDetectorBtn_Click(object sender, RoutedEventArgs e)
@@ -120,6 +122,8 @@ public partial class HistoryPage : Page
 			Placeholder.Visibility = Visibility.Collapsed;
 			EmptyHistoryBtn.Visibility = Visibility.Visible;
 		}
+		SearchTxt.Text = "";
+		SearchHistory("");	
 	}
 
 	private void EmptyHistoryBtn_Click(object sender, RoutedEventArgs e)
@@ -139,5 +143,35 @@ public partial class HistoryPage : Page
 		}
 
 		InitUI(); // Refresh the UI
+	}
+
+	private void SearchTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		SearchHistory(SearchTxt.Text);
+	}
+
+	internal void SearchHistory(string req)
+	{
+		if (StatusHistory.Visibility == Visibility.Visible) // Search in "Status" history
+		{
+			for (int i = 0; i < StatusHistory.Children.Count; i++)
+			{
+				var item = (StatusHistoryItem)StatusHistory.Children[i];
+				item.Visibility = item.ContentTxt.Text.Contains(req) ? Visibility.Visible : Visibility.Collapsed;
+			}
+		}
+		else // Search in "DownDetector" history
+		{
+			for (int i = 0; i < DownDetectorHistory.Children.Count; i++)
+			{
+				var item = (StatusHistoryItem)DownDetectorHistory.Children[i];
+				item.Visibility = item.ContentTxt.Text.Contains(req) ? Visibility.Visible : Visibility.Collapsed;
+			}
+		}
+	}
+
+	private void DismissBtn_Click(object sender, RoutedEventArgs e)
+	{
+		SearchTxt.Text = "";
 	}
 }
