@@ -651,4 +651,16 @@ Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiF
   <data name="TestSucessAndFailed" xml:space="preserve">
     <value>Alcuni test sono falliti</value>
   </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filtri</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>Dal</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>Al</value>
+  </data>
 </root>

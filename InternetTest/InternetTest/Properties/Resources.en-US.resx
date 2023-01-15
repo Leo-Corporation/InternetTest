@@ -651,4 +651,16 @@ Using this feature, you will be able to get information about each wireless netw
   <data name="TestSucessAndFailed" xml:space="preserve">
     <value>Some tests have failed</value>
   </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>To</value>
+  </data>
 </root>
