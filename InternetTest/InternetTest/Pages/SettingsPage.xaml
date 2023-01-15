@@ -57,8 +57,9 @@
 						<ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center">
 							<ComboBoxItem Content="{x:Static lang:Resources.Default}"/>
 							<ComboBoxItem Content="English (United States)"/>
-							<ComboBoxItem Content="French (France)"/>
+							<ComboBoxItem Content="Français (France)"/>
 							<ComboBoxItem Content="中文（简体）"/>
+							<ComboBoxItem Content="Italiano (Italia)"/>
 						</ComboBox>
 						<Button x:Name="LangApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource PrimaryButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="LangApplyBtn_Click" Visibility="Hidden">
 							<TextBlock Text="&#xF680;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" VerticalAlignment="Center"/>

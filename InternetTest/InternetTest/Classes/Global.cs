@@ -40,7 +40,7 @@ using System.Windows.Media;
 namespace InternetTest.Classes;
 public static class Global
 {
-	public static string Version => "7.2.1.2212";
+	public static string Version => "7.3.0.2301";
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
 	public static Settings Settings { get; set; } = SettingsManager.Load();
@@ -293,6 +293,10 @@ public static class Global
 			case Languages.zh_CN: // Chinese (CN)
 				Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("zh-CN"); // Change
 				break;
+			
+			case Languages.it_IT: // Italian (Italy)
+				Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("it-IT"); // Change
+				break;
 			default: // No language
 				break;
 		}
@@ -330,4 +334,6 @@ public static class Global
 		}
 		return r;
 	}
+
+	public static bool DateIsInRange(int startDate, int endDate, int checkDate) => (startDate <= checkDate && checkDate <= endDate);
 }

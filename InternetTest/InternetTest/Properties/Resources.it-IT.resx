@@ -121,52 +121,52 @@
 	<value>InternetTest</value>
   </data>
   <data name="Hi" xml:space="preserve">
-	<value>Hi</value>
+	<value>Ciao</value>
   </data>
   <data name="GoodAfternoon" xml:space="preserve">
-	<value>Good afternoon</value>
+	<value>Buon pomeriggio</value>
   </data>
   <data name="GoodNight" xml:space="preserve">
-	<value>Good night</value>
+	<value>Buona notte</value>
   </data>
   <data name="GoodEvening" xml:space="preserve">
-	<value>Good evening</value>
+	<value>Buona sera</value>
   </data>
   <data name="Pinned" xml:space="preserve">
-	<value>Pinned</value>
+	<value>Appuntato</value>
   </data>
   <data name="Home" xml:space="preserve">
 	<value>Home</value>
   </data>
   <data name="Settings" xml:space="preserve">
-	<value>Settings</value>
+	<value>Impostazioni</value>
   </data>
   <data name="History" xml:space="preserve">
-	<value>History</value>
+	<value>Cronologia</value>
   </data>
   <data name="Tools" xml:space="preserve">
-	<value>Tools</value>
+	<value>Strumenti</value>
   </data>
   <data name="WebUtilities" xml:space="preserve">
-	<value>Web Utilities</value>
+	<value>Strumenti web</value>
   </data>
   <data name="IPTools" xml:space="preserve">
-	<value>IP Tools</value>
+	<value>Strumenti IP</value>
   </data>
   <data name="Commands" xml:space="preserve">
-	<value>Commands</value>
+	<value>Comandi</value>
   </data>
   <data name="Status" xml:space="preserve">
-	<value>Status</value>
+	<value>Stato</value>
   </data>
   <data name="DownDetector" xml:space="preserve">
 	<value>DownDetector</value>
   </data>
   <data name="MyIP" xml:space="preserve">
-	<value>My IP</value>
+	<value>Mio IP</value>
   </data>
   <data name="LocateIP" xml:space="preserve">
-	<value>Locate IP</value>
+	<value>Individua IP</value>
   </data>
   <data name="Ping" xml:space="preserve">
 	<value>Ping</value>
@@ -175,349 +175,349 @@
 	<value>IP Config</value>
   </data>
   <data name="WifiPasswords" xml:space="preserve">
-	<value>WiFi Passwords</value>
+	<value>Password WiFi</value>
   </data>
   <data name="GetStarted" xml:space="preserve">
-	<value>Get started</value>
+	<value>Per iniziare</value>
   </data>
   <data name="SuggestedActions" xml:space="preserve">
-	<value>Suggested actions</value>
+	<value>Azioni suggerite</value>
   </data>
   <data name="Discover" xml:space="preserve">
-	<value>Discover</value>
+	<value>Rileva</value>
   </data>
   <data name="Details" xml:space="preserve">
-	<value>Details</value>
+	<value>Dettagli</value>
   </data>
   <data name="Test" xml:space="preserve">
 	<value>Test</value>
   </data>
   <data name="OpenBrowser" xml:space="preserve">
-	<value>Open in browser</value>
+	<value>Apri nel browser</value>
   </data>
   <data name="Connected" xml:space="preserve">
-	<value>You are connected to the Internet</value>
+	<value>Sei connesso ad internet</value>
   </data>
   <data name="NotConnected" xml:space="preserve">
-	<value>You aren't connected to the Internet</value>
+	<value>Non sei connesso ad internet</value>
   </data>
   <data name="TestInProgress" xml:space="preserve">
-	<value>Testing, please wait</value>
+	<value>Test in corso. Attendi...</value>
   </data>
   <data name="TimeElapsed" xml:space="preserve">
-	<value>Time elapsed</value>
+	<value>Tempo trascorso</value>
   </data>
   <data name="StatusMessage" xml:space="preserve">
-	<value>Status Message</value>
+	<value>Messaggio di stato</value>
   </data>
   <data name="Error" xml:space="preserve">
-	<value>Error</value>
+	<value>Errore</value>
   </data>
   <data name="LaunchTestToCheckConnection" xml:space="preserve">
-	<value>Launch a test to check your connection</value>
+	<value>Esegui un test per verificare la connessione</value>
   </data>
   <data name="TestConnection" xml:space="preserve">
-	<value>Test your connection</value>
+	<value>Test della connessione</value>
   </data>
   <data name="WebsiteAvailable" xml:space="preserve">
-	<value>The website is available</value>
+	<value>Il sito web è disponibile</value>
   </data>
   <data name="WebsiteDown" xml:space="preserve">
-	<value>The website is down</value>
+	<value>Il sito web non è disponibile</value>
   </data>
   <data name="OfWebsite" xml:space="preserve">
-	<value>of {0}</value>
+	<value>di {0}</value>
   </data>
   <data name="ScheduledTests" xml:space="preserve">
-	<value>Scheduled Tests</value>
+	<value>Test pianificati</value>
   </data>
   <data name="LaunchScheduledTest" xml:space="preserve">
-	<value>Start scheduled tests</value>
+	<value>Esegui test pianificati</value>
   </data>
   <data name="ScheduledTestInterval" xml:space="preserve">
-	<value>All websites will be tested in {0} seconds.</value>
+	<value>Tutti i siti web saranno testati in {0} secondi.</value>
   </data>
   <data name="Interval" xml:space="preserve">
-	<value>Time interval</value>
+	<value>Intervallo di tempo</value>
   </data>
   <data name="SecondsLower" xml:space="preserve">
-	<value>seconds</value>
+	<value>secondi</value>
   </data>
   <data name="StopScheduledTests" xml:space="preserve">
-	<value>Stop scheduled tests</value>
+	<value>Ferma test pianificati</value>
   </data>
   <data name="TestWebsite" xml:space="preserve">
-	<value>Test website</value>
+	<value>Test sito web</value>
   </data>
   <data name="DownDetectorPlaceHolder" xml:space="preserve">
-	<value>Launch a test to see if a website is available or not</value>
+	<value>Esegui un test per verificare se un sito web è disponibile o meno</value>
   </data>
   <data name="MapProvider" xml:space="preserve">
-	<value>Map provider</value>
+	<value>Fornitore mappe</value>
   </data>
   <data name="Country" xml:space="preserve">
-	<value>Country</value>
+	<value>Nazione</value>
   </data>
   <data name="Region" xml:space="preserve">
-	<value>Region</value>
+	<value>Regione</value>
   </data>
   <data name="City" xml:space="preserve">
-	<value>City</value>
+	<value>Città</value>
   </data>
   <data name="ZIPCode" xml:space="preserve">
-	<value>ZIP Code</value>
+	<value>CAP</value>
   </data>
   <data name="Latitude" xml:space="preserve">
-	<value>Latitude</value>
+	<value>Latitudine</value>
   </data>
   <data name="Longitude" xml:space="preserve">
-	<value>Longitude</value>
+	<value>Longitudine</value>
   </data>
   <data name="Timezone" xml:space="preserve">
-	<value>Timezone</value>
+	<value>Fuso orario</value>
   </data>
   <data name="ISP" xml:space="preserve">
 	<value>ISP</value>
   </data>
   <data name="ShowOnMap" xml:space="preserve">
-	<value>Show on a map</value>
+	<value>Visualizza su una mappa</value>
   </data>
   <data name="IPShowHere" xml:space="preserve">
-	<value>Your IP will show here.</value>
+	<value>Il tuo IP verrà visualizzato qui.</value>
   </data>
   <data name="GetMyIP" xml:space="preserve">
-	<value>Get my IP</value>
+	<value>Ottieni il mio IP</value>
   </data>
   <data name="IPShowHere2" xml:space="preserve">
-	<value>The IP will show here.</value>
+	<value>L'IP verrà visualizzato qui.</value>
   </data>
   <data name="LocateAnIP" xml:space="preserve">
-	<value>Locate an IP</value>
+	<value>Localizza un IP</value>
   </data>
   <data name="InternetTestPro" xml:space="preserve">
 	<value>InternetTest Pro</value>
   </data>
   <data name="Save" xml:space="preserve">
-	<value>Save</value>
+	<value>Salva</value>
   </data>
   <data name="TxtFiles" xml:space="preserve">
-	<value>Text files</value>
+	<value>File testo</value>
   </data>
   <data name="MakePing" xml:space="preserve">
-	<value>Make a ping</value>
+	<value>Esegui un ping</value>
   </data>
   <data name="IPAddress" xml:space="preserve">
-	<value>IP Address</value>
+	<value>Indirizzo IP</value>
   </data>
   <data name="MaxTime" xml:space="preserve">
-	<value>Max duration</value>
+	<value>Tempo max</value>
   </data>
   <data name="MinTime" xml:space="preserve">
-	<value>Min duration</value>
+	<value>Tempo min</value>
   </data>
   <data name="AverageTime" xml:space="preserve">
-	<value>Average duration</value>
+	<value>Tempo medio</value>
   </data>
   <data name="PingWait" xml:space="preserve">
-	<value>Ping request is in progress, please wait.</value>
+	<value>La richiesta di ping è in corso. Attendi.</value>
   </data>
   <data name="PingSuccess" xml:space="preserve">
-	<value>The ping request was successful</value>
+	<value>La richiesta ping è andata a buon fine</value>
   </data>
   <data name="PingFail" xml:space="preserve">
-	<value>The ping request failed</value>
+	<value>La richiesta ping non è riuscita</value>
   </data>
   <data name="EnterIP" xml:space="preserve">
-	<value>Please enter an IP or URL.</value>
+	<value>Inserisci un IP o una URL.</value>
   </data>
   <data name="PackageSent" xml:space="preserve">
-	<value>Package(s) sent</value>
+	<value>Pacchetto/i inviato/i</value>
   </data>
   <data name="PackageReceived" xml:space="preserve">
-	<value>Package(s) received</value>
+	<value>Pacchetto/i ricevuto/i</value>
   </data>
   <data name="PackageLost" xml:space="preserve">
-	<value>Package(s) lost</value>
+	<value>Pacchetto/i perso/i</value>
   </data>
   <data name="PingStatus" xml:space="preserve">
-	<value>Ping Status will show here</value>
+	<value>Lo stato del ping verrà visualizzato qui</value>
   </data>
   <data name="IPv4Address" xml:space="preserve">
-	<value>IPv4 address</value>
+	<value>Indirizzo IPv4</value>
   </data>
   <data name="IPv6Address" xml:space="preserve">
-	<value>IPv6 address</value>
+	<value>Indirizzo IPv6</value>
   </data>
   <data name="GatewayIPv4" xml:space="preserve">
-	<value>Default gateway (IPv4)</value>
+	<value>Gateway predefinito (IPv4)</value>
   </data>
   <data name="GatewayIPv6" xml:space="preserve">
-	<value>Default gateway (IPv6)</value>
+	<value>Gateway predefinito (IPv6)</value>
   </data>
   <data name="DNSSuffix" xml:space="preserve">
-	<value>DNS Suffix</value>
+	<value>Suffisso DNS</value>
   </data>
   <data name="ConnectedS" xml:space="preserve">
-	<value>Connected</value>
+	<value>Connesso</value>
   </data>
   <data name="Disconnected" xml:space="preserve">
-	<value>Disconnected</value>
+	<value>Disconnesso</value>
   </data>
   <data name="Refresh" xml:space="preserve">
-	<value>Refresh</value>
+	<value>Aggiorna</value>
   </data>
   <data name="SubnetMask" xml:space="preserve">
-	<value>Subnet Mask</value>
+	<value>Maschera sottorete</value>
   </data>
   <data name="Name" xml:space="preserve">
-	<value>Name</value>
+	<value>Nome</value>
   </data>
   <data name="None" xml:space="preserve">
-	<value>None</value>
+	<value>Nessuno</value>
   </data>
   <data name="GetWiFi" xml:space="preserve">
-	<value>Get locally stored networks</value>
+	<value>Verifica reti archiviate localmente</value>
   </data>
   <data name="ConnectionMode" xml:space="preserve">
-	<value>Connection mode</value>
+	<value>Modo connessione</value>
   </data>
   <data name="ConnectionType" xml:space="preserve">
-	<value>Connection type</value>
+	<value>Tipo connessione</value>
   </data>
   <data name="Automatic" xml:space="preserve">
-	<value>Automatic</value>
+	<value>Automatico</value>
   </data>
   <data name="Encryption" xml:space="preserve">
-	<value>Encryption</value>
+	<value>Criptazione</value>
   </data>
   <data name="Authentication" xml:space="preserve">
-	<value>Authentication</value>
+	<value>Autenticazione</value>
   </data>
   <data name="Key" xml:space="preserve">
-	<value>Key</value>
+	<value>Chiave</value>
   </data>
   <data name="InfrastructureNetwork" xml:space="preserve">
-	<value>Infrastructure network</value>
+	<value>Rete infrastrutturale</value>
   </data>
   <data name="AdHocNetwork" xml:space="preserve">
-	<value>Ad-hoc network</value>
+	<value>Rete ad-hoc</value>
   </data>
   <data name="GetIPConfig" xml:space="preserve">
-	<value>Get IP Config</value>
+	<value>Ottieni IP Config</value>
   </data>
   <data name="NothingToShow" xml:space="preserve">
-	<value>There is nothing to show for now, try refreshing the page.</value>
+	<value>Non c'è niente da visualizzare per ora, prova ad aggiornare la pagina.</value>
   </data>
   <data name="Available" xml:space="preserve">
-	<value>Available</value>
+	<value>Disponibile</value>
   </data>
   <data name="Down" xml:space="preserve">
-	<value>Down</value>
+	<value>Offline</value>
   </data>
   <data name="HistoryEmpty" xml:space="preserve">
-	<value>The history is empty.</value>
+	<value>La cronologia è vuota.</value>
   </data>
   <data name="EmptyHistory" xml:space="preserve">
-	<value>Empty History</value>
+	<value>Azzera cronologia</value>
   </data>
   <data name="EmptyHistoryMsg" xml:space="preserve">
-	<value>Are you sure want to empty this history? This action is irreversible.</value>
+	<value>Sei sicuro di voler azzerare la cronologia? Questa azione è irreversibile.</value>
   </data>
   <data name="Pro" xml:space="preserve">
 	<value>Pro</value>
   </data>
   <data name="CheckUpdate" xml:space="preserve">
-	<value>Check for updates</value>
+	<value>Controlla aggiornamenti</value>
   </data>
   <data name="Updates" xml:space="preserve">
-	<value>Updates</value>
+	<value>Aggiornamenti</value>
   </data>
   <data name="Install" xml:space="preserve">
-	<value>Install</value>
+	<value>Installa</value>
   </data>
   <data name="Theme" xml:space="preserve">
-	<value>Theme</value>
+	<value>Tema</value>
   </data>
   <data name="Light" xml:space="preserve">
-	<value>Light</value>
+	<value>Chiaro</value>
   </data>
   <data name="Dark" xml:space="preserve">
-	<value>Dark</value>
+	<value>Scuro</value>
   </data>
   <data name="Licenses" xml:space="preserve">
-	<value>Licenses</value>
+	<value>Licenze</value>
   </data>
   <data name="Apply" xml:space="preserve">
-	<value>Apply</value>
+	<value>Applica</value>
   </data>
   <data name="SeeLicenses" xml:space="preserve">
-	<value>See licenses</value>
+	<value>Vedi licenze</value>
   </data>
   <data name="ChangeTheme" xml:space="preserve">
-	<value>Change InternetTest theme.</value>
+	<value>Modifica tema InternetTest.</value>
   </data>
   <data name="Language" xml:space="preserve">
-	<value>Language</value>
+	<value>Lingua</value>
   </data>
   <data name="NeedRestartToApplyChanges" xml:space="preserve">
-	<value>InternetTest needs to restart to apply the changes. Do you want to restart now?</value>
+	<value>Per applicare le modifiche InternetTest deve essere riavviato. Vuoi riavviare InternetTest ora?</value>
   </data>
   <data name="Default" xml:space="preserve">
-	<value>Default</value>
+	<value>Predefinito</value>
   </data>
   <data name="UpToDate" xml:space="preserve">
-	<value>InternetTest is up to date.</value>
+	<value>InternetTest è aggiornato.</value>
   </data>
   <data name="AvailableUpdates" xml:space="preserve">
-	<value>Updates are available.</value>
+	<value>Sono disponibili aggiornamenti.</value>
   </data>
   <data name="InstallConfirmMsg" xml:space="preserve">
-	<value>To install updates, InternetTest needs to restarts. Do you want to continue?</value>
+	<value>Per installare gli aggiornamenti, InternetTest deve essere riavviato. Vuoi continuare?</value>
   </data>
   <data name="InstallVersion" xml:space="preserve">
-	<value>Install version</value>
+	<value>Installa versione</value>
   </data>
   <data name="Version" xml:space="preserve">
-	<value>Version</value>
+	<value>Versione</value>
   </data>
   <data name="ChangeLanguage" xml:space="preserve">
-	<value>Change the language of InternetTest.</value>
+	<value>Modifica lingua interfaccia di InternetTest.</value>
   </data>
   <data name="MapProviderDescription" xml:space="preserve">
-	<value>The map provider used to show the location of an IP address.</value>
+	<value>Il provider di mappe usato per visualizzare la posizione di un indirizzo IP.</value>
   </data>
   <data name="NotifyUpdates" xml:space="preserve">
-	<value>Show a notification when updates are available</value>
+	<value>Visualizza una notifica quando sono disponibili aggiornamenti</value>
   </data>
   <data name="Notifications" xml:space="preserve">
-	<value>Notifications</value>
+	<value>Notifiche</value>
   </data>
   <data name="NotificationsDescription" xml:space="preserve">
-	<value>Notifications settings.</value>
+	<value>Impostazioni notifiche.</value>
   </data>
   <data name="CheckUpdatesOnStart" xml:space="preserve">
-	<value>Check for updates on start</value>
+	<value>Controlla gli aggiornamenti all'avvio</value>
   </data>
   <data name="StartupPage" xml:space="preserve">
-	<value>Default page on start</value>
+	<value>Pagina predefinita all'avvio</value>
   </data>
   <data name="OnStart" xml:space="preserve">
-	<value>On start</value>
+	<value>All'avvio</value>
   </data>
   <data name="OnStartDescription" xml:space="preserve">
-	<value>Settings that applies on start.</value>
+	<value>Impostazioni da applicare all'avvio.</value>
   </data>
   <data name="WebSettingsDescription" xml:space="preserve">
-	<value>Web related settings.</value>
+	<value>Impostazioni relative al web.</value>
   </data>
   <data name="WebSettings" xml:space="preserve">
-	<value>Web settings</value>
+	<value>Impostazioni web</value>
   </data>
   <data name="TestSite" xml:space="preserve">
-	<value>Test website</value>
+	<value>Test sito web</value>
   </data>
   <data name="DefaultProtocol" xml:space="preserve">
-	<value>Default protocol</value>
+	<value>Protocollo predefinito</value>
   </data>
   <data name="HTTP" xml:space="preserve">
 	<value>HTTP</value>
@@ -526,144 +526,144 @@
 	<value>HTTPS</value>
   </data>
   <data name="DataPrivacy" xml:space="preserve">
-	<value>Data and Privacy</value>
+	<value>Dati e privacy</value>
   </data>
   <data name="DataDescription" xml:space="preserve">
-	<value>Manage your data and your privacy.</value>
+	<value>Gestione dei dati e della privacy.</value>
   </data>
   <data name="Import" xml:space="preserve">
-	<value>Import settings</value>
+	<value>Importa imposatzioni</value>
   </data>
   <data name="Export" xml:space="preserve">
-	<value>Export settings</value>
+	<value>Esporta impostazioni</value>
   </data>
   <data name="SettingsExportedSucessMsg" xml:space="preserve">
-	<value>Settings have been sucessfully exported.</value>
+	<value>Le impostazioni sono state esportate correttamente.</value>
   </data>
   <data name="SettingsImportedMsg" xml:space="preserve">
-	<value>Settings were sucessfully imported. To finish the process, InternetTest is going to restart.</value>
+	<value>Le impostazioni sono state importate correttamente. Per completare il processo, InternetTest si riavvierà.</value>
   </data>
   <data name="ResetSettings" xml:space="preserve">
-    <value>Reset settings</value>
+    <value>Ripristina impostazioni</value>
   </data>
   <data name="SynethiaEnable" xml:space="preserve">
-    <value>Enable Synethia customized experience.</value>
+    <value>Abilita l'esperienza personalizzata Synethia.</value>
   </data>
   <data name="ResetSynethia" xml:space="preserve">
-    <value>Reset Synethia data</value>
+    <value>Ripristina dati Synethia</value>
   </data>
   <data name="ResetSettingsConfirmation" xml:space="preserve">
-    <value>Are you sure you want to reset all settings?</value>
+    <value>Sei sicuro di voler ripristinare tutte le impostazioni?</value>
   </data>
   <data name="LaunchTestOnStart" xml:space="preserve">
-    <value>Launch a test on start</value>
+    <value>Esegui un test all'avvio</value>
   </data>
   <data name="SynethiaDeleteMsg" xml:space="preserve">
-    <value>Are you sure you want to reset all Synethia data? Your personalized experience will be lost; This action cannot be canceled.</value>
+    <value>Sei sicuro di voler ripristinare tutti i dati di Synethia? La tua esperienza personalizzata andrà persa. Questa azione non può essere annullata.</value>
   </data>
   <data name="FirstRunQuitMsg" xml:space="preserve">
-    <value>Do you want to ignore this window and continue to InternetTest?</value>
+    <value>Vuoi ignorare questa finestra e continuare con InternetTest?</value>
   </data>
   <data name="WelcomeDesc" xml:space="preserve">
-    <value>Taking you to another level.</value>
+    <value>Portandoti ad un altro livello.</value>
   </data>
   <data name="Next" xml:space="preserve">
-    <value>Next</value>
+    <value>Avanti</value>
   </data>
   <data name="Skip" xml:space="preserve">
-    <value>Skip</value>
+    <value>Salta</value>
   </data>
   <data name="DownDetectorInfo" xml:space="preserve">
-    <value>Wondering whether a website is working or not? Check and get real-time information about specified websites using InternetTest Pro's DownDetector feature.
-You can get site status, response time and much more!</value>
+    <value>Ti stai chiedendo se un sito web funziona o no? Controlla e ottieni informazioni in tempo reale sui siti web specificati usando la funzione DownDetector di InternetTest Pro.
+Puoi ottenere lo stato del sito, i tempi di risposta e molto altro!</value>
   </data>
   <data name="LocateIPInfo" xml:space="preserve">
-    <value>You can locate an IP adress using this feature. You will get information about the city, country, region, timezone, and more!
-You can also locate and get the IP of servers from an URL.</value>
+    <value>È possibile individuare un indirizzo IP usando questa funzione. Riceverai informazioni su città, paese, regione, fuso orario e altro ancora!
+Puoi anche individuare e ottenere l'IP dei server da una URL.</value>
   </data>
   <data name="WiFiPasswordsInfo" xml:space="preserve">
-    <value>Forgot your WiFi password? Don't worry, you can recover it using InternetTest Pro "WiFi Passwords" feature!
-Using this feature, you will be able to get information about each wireless networks saved on your computer, such as authentification mode, encyrption algorithm, etc...</value>
+    <value>Hai dimenticato la password del Wi-Fi? Non preoccuparti, puoi recuperarla usando la funzione "Password WiFi" di InternetTest Pro!
+Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiFi salvata nel computer, come la modalità di autenticazione, l'algoritmo di crittografia, ecc.</value>
   </data>
   <data name="Features" xml:space="preserve">
-    <value>Features</value>
+    <value>Caratteristiche</value>
   </data>
   <data name="Agree" xml:space="preserve">
-    <value>I agree</value>
+    <value>Sono d'accordo</value>
   </data>
   <data name="NoThanks" xml:space="preserve">
-    <value>No thanks</value>
+    <value>No grazie</value>
   </data>
   <data name="IntroducingSynethia" xml:space="preserve">
-    <value>Introducing Synethia</value>
+    <value>Introduzione a Synethia</value>
   </data>
   <data name="SynethiaInfo" xml:space="preserve">
-    <value>Synethia is an algorithm that personnalizes your experience.</value>
+    <value>Synethia è un algoritmo che personalizza la tua esperienza.</value>
   </data>
   <data name="SynethiaDataInfo" xml:space="preserve">
-    <value>Synethia collects data in InternetTest only</value>
+    <value>Synethia raccoglie i dati solo in InternetTest</value>
   </data>
   <data name="SynethiaAnalyze" xml:space="preserve">
-    <value>Synethia will then analyze this data to provide a unique experience</value>
+    <value>Synethia analizzerà quindi questi dati per fornire un'esperienza unica</value>
   </data>
   <data name="SynethiaHome" xml:space="preserve">
-    <value>The Home dashbord will recommand actions based on your usage</value>
+    <value>Il pannello Home consiglierà le azioni in base al tuo uso</value>
   </data>
   <data name="SynethiaPrivacy" xml:space="preserve">
-    <value>Your data is stored on your device, anonymously. Absolutely NO data is sent to Léo Corporation.</value>
+    <value>I dati sono memorizzati nel dispositivo in forma anonima. Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   </data>
   <data name="LetsGo" xml:space="preserve">
-    <value>Let's go!</value>
+    <value>Andiamo!</value>
   </data>
   <data name="WelcomeReady" xml:space="preserve">
-    <value>Everyting is ready</value>
+    <value>Tutto è pronto</value>
   </data>
   <data name="ConfidentialModeEnabled" xml:space="preserve">
-    <value>Confidential Mode is enabled</value>
+    <value>È abilitata la modalità riservata</value>
   </data>
   <data name="DetailsNotAvailableCM" xml:space="preserve">
-    <value>Details aren't available in Confidential Mode</value>
+    <value>In modalità riservata i dettagli non sono disponibili </value>
   </data>
   <data name="OpenNetwork" xml:space="preserve">
-    <value>Open Network (802.11)</value>
+    <value>Rete aperta (802.11)</value>
   </data>
   <data name="SharedNetwork" xml:space="preserve">
-    <value>Shared Network (802.11)</value>
+    <value>Rete condivisa (802.11)</value>
   </data>
   <data name="WPANetwork" xml:space="preserve">
-    <value>WPA-Enterprise (802.11) Network</value>
+    <value>Rete WPA-Enterprise (802.11)</value>
   </data>
   <data name="WPAPSKNetwork" xml:space="preserve">
-    <value>WPA-Personal (802.11) Network</value>
+    <value>Rete WPA-Personal (802.11)</value>
   </data>
   <data name="WPA2Network" xml:space="preserve">
-    <value>WPA2-Enterprise (802.11) Network</value>
+    <value>Rete WPA2-Enterprise (802.11)</value>
   </data>
   <data name="WPA2PSKNetwork" xml:space="preserve">
-    <value>WPA2-Personal (802.11) Network</value>
+    <value>Rete WPA2-Personal (802.11)</value>
   </data>
   <data name="AllSuccess" xml:space="preserve">
-    <value>All tests were successful</value>
+    <value>Tutti i test sono stati completati corretamente</value>
   </data>
   <data name="AllFailed" xml:space="preserve">
-    <value>All tests have failed</value>
+    <value>Tutti i test sono falliti</value>
   </data>
   <data name="TestSucessAndFailed" xml:space="preserve">
-    <value>Some tests have failed</value>
+    <value>Alcuni test sono falliti</value>
   </data>
   <data name="Filters" xml:space="preserve">
-    <value>Filters</value>
+    <value>Filtri</value>
   </data>
   <data name="Date" xml:space="preserve">
-    <value>Date</value>
+    <value>Data</value>
   </data>
   <data name="FromDate" xml:space="preserve">
-    <value>From</value>
+    <value>Dal</value>
   </data>
   <data name="ToDate" xml:space="preserve">
-    <value>To</value>
+    <value>Al</value>
   </data>
   <data name="InvalidDateMsg" xml:space="preserve">
-    <value>Please provide a valid date.</value>
+    <value>Si prega di fornire una data valida.</value>
   </data>
 </root>

@@ -29,7 +29,7 @@ namespace InternetTest.Classes
 {
 	public static class HistoryManager
 	{
-		internal static string HistoryPath = $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\History.json";
+		internal static string HistoryPath = $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\History2.json";
 		public static History Load()
 		{
 			if (!Directory.Exists($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\"))

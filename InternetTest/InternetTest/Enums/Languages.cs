@@ -28,5 +28,6 @@ public enum Languages
 	Default = 0,
 	en_US,
 	fr_FR,
-	zh_CN
+	zh_CN,
+	it_IT
 }

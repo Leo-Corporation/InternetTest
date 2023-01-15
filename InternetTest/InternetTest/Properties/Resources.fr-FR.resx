@@ -651,4 +651,19 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r�
   <data name="TestSucessAndFailed" xml:space="preserve">
     <value>Certains tests ont échoué</value>
   </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filtres</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>Du</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>Au</value>
+  </data>
+  <data name="InvalidDateMsg" xml:space="preserve">
+    <value>Veuillez spécifier une date valide.</value>
+  </data>
 </root>

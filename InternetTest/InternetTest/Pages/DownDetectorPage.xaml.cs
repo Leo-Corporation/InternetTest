@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.UserControls;
 using PeyrSharp.Core;
+using PeyrSharp.Core.Converters;
 using PeyrSharp.Enums;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace InternetTest.Pages
@@ -191,7 +193,7 @@ namespace InternetTest.Pages
 					DetailsTimeTxt.Text = $"{time}ms"; // Update the time
 					DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
 
-					Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:g} - {url} - {Properties.Resources.Available} ({statusCode})", StatusIconTxt.Text));
+					Global.History.DownDetectorHistory.Add(new(Time.DateTimeToUnixTime(DateTime.Now), StatusIconTxt.Text, statusCode, Properties.Resources.Available, url));
 					return new(statusCode, time, message);
 				}
 				else
@@ -225,7 +227,7 @@ namespace InternetTest.Pages
 					DetailsTimeTxt.Text = $"{time}ms"; // Update the time
 					DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
 
-					Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:g} - {url} - {Properties.Resources.Down} ({statusCode})", StatusIconTxt.Text));
+					Global.History.DownDetectorHistory.Add(new(Time.DateTimeToUnixTime(DateTime.Now), StatusIconTxt.Text, statusCode, Properties.Resources.Down, url));
 					return new(statusCode, time, message);
 				}
 			}
@@ -249,7 +251,7 @@ namespace InternetTest.Pages
 				DetailsTimeTxt.Text = $"0ms"; // Update the time
 				DetailsSiteNameTxt.Text = string.Format(Properties.Resources.OfWebsite, url);
 
-				Global.History.DownDetectorHistory.Add(new($"{DateTime.Now:g} - {url} - {Properties.Resources.Down} (Error)", StatusIconTxt.Text));
+				Global.History.DownDetectorHistory.Add(new(Time.DateTimeToUnixTime(DateTime.Now), StatusIconTxt.Text, 400, Properties.Resources.Down, url));
 
 				return new(0, 0, ex.Message);
 			}

@@ -937,6 +937,78 @@
 					</Setter.Value>
 				</Setter>
 			</Style>
+
+			<Style x:Key="DatePickerStyle" TargetType="{x:Type DatePicker}">
+				<Setter Property="IsTodayHighlighted" Value="True"/>
+				<Setter Property="SelectedDateFormat" Value="Short"/>
+				<Setter Property="Background" Value="Transparent"/>
+				<Setter Property="Padding" Value="2"/>
+				<Setter Property="BorderBrush" Value="{x:Null}"/>
+				<Setter Property="BorderThickness" Value="1"/>
+				<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type DatePicker}">
+							<Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2" Padding="{TemplateBinding Padding}" CornerRadius="5,5,5,5">
+								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualState x:Name="Normal"/>
+										<VisualState x:Name="Disabled">
+											<Storyboard>
+												<DoubleAnimation Duration="0" Storyboard.TargetName="PART_DisabledVisual" To="1" Storyboard.TargetProperty="Opacity"/>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+								</VisualStateManager.VisualStateGroups>
+								<Grid x:Name="PART_Root" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+									<Grid.Resources>
+										<SolidColorBrush x:Key="DisabledBrush" Color="Transparent"/>
+										<ControlTemplate x:Key="DropDownButtonTemplate" TargetType="{x:Type Button}">
+											<Grid>
+												<VisualStateManager.VisualStateGroups>
+													<VisualStateGroup x:Name="CommonStates">
+														<VisualStateGroup.Transitions>
+															<VisualTransition GeneratedDuration="0"/>
+															<VisualTransition GeneratedDuration="0:0:0.1" To="MouseOver"/>
+															<VisualTransition GeneratedDuration="0:0:0.1" To="Pressed"/>
+														</VisualStateGroup.Transitions>
+														<VisualState x:Name="Normal"/>
+														<VisualState x:Name="MouseOver">
+
+														</VisualState>
+														<VisualState x:Name="Pressed">
+
+														</VisualState>
+														<VisualState x:Name="Disabled"/>
+													</VisualStateGroup>
+												</VisualStateManager.VisualStateGroups>
+												<Grid FlowDirection="LeftToRight" HorizontalAlignment="Center" Height="18" Margin="0" VerticalAlignment="Center" Width="19">
+													<TextBlock FontFamily="/Fonts/#FluentSystemIcons-Regular" Text="&#xF22B;" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource AccentColor}}" FontSize="18"/>
+												</Grid>
+											</Grid>
+										</ControlTemplate>
+									</Grid.Resources>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*"/>
+										<ColumnDefinition Width="Auto"/>
+									</Grid.ColumnDefinitions>
+									<Button x:Name="PART_Button" Grid.Column="1" Foreground="{TemplateBinding Foreground}" Focusable="False" HorizontalAlignment="Left" Margin="3,0,3,0" Grid.Row="0" Template="{StaticResource DropDownButtonTemplate}" VerticalAlignment="Top" Width="20" Background="{x:Null}"/>
+									<DatePickerTextBox x:Name="PART_TextBox" Grid.Column="0" Focusable="{TemplateBinding Focusable}" HorizontalContentAlignment="Stretch" Grid.Row="0" VerticalContentAlignment="Stretch" Background="{x:Null}" BorderThickness="0" Foreground="{Binding Source={StaticResource Foreground1}}" SelectionTextBrush="{x:Null}"/>
+									<Grid x:Name="PART_DisabledVisual" Grid.Column="0" Grid.ColumnSpan="2" IsHitTestVisible="False" Opacity="0" Grid.Row="0">
+
+										<Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Bottom" PlacementTarget="{Binding ElementName=PART_TextBox}" StaysOpen="False"/>
+									</Grid>
+								</Grid>
+							</Border>
+							<ControlTemplate.Triggers>
+								<DataTrigger Binding="{Binding Source={x:Static SystemParameters.HighContrast}}" Value="false">
+									<Setter Property="Foreground" TargetName="PART_TextBox" Value="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"/>
+								</DataTrigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>
