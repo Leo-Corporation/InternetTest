@@ -174,4 +174,14 @@ public partial class HistoryPage : Page
 	{
 		SearchTxt.Text = "";
 	}
+
+	private void FilterBtn_Click(object sender, RoutedEventArgs e)
+	{
+		FilterPopup.IsOpen = true;
+	}
+
+	private void FilterComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+
+	}
 }

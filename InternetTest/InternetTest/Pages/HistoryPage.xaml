@@ -50,6 +50,52 @@
 				</Grid>
 			</Button>
 		</StackPanel>
+		<Popup x:Name="FilterPopup" AllowsTransparency="True" Placement="Bottom" StaysOpen="False" PopupAnimation="Slide" PlacementTarget="{Binding ElementName=FilterBtn}">
+			<Border Background="{Binding Source={StaticResource Background2}}" Padding="10" CornerRadius="5" Margin="8">
+				<StackPanel>
+					<TextBlock Text="{x:Static lang:Resources.Filters}" FontWeight="ExtraBold" FontSize="11" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
+					<ComboBox SelectedIndex="0" SelectionChanged="FilterComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="FilterComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="5,5,5,0" VerticalAlignment="Center">
+						<ComboBoxItem Content="{x:Static lang:Resources.Default}"/>
+						<ComboBoxItem Content="{x:Static lang:Resources.Date}"/>
+					</ComboBox>
+
+					<StackPanel x:Name="DateFilters" Visibility="Collapsed" Orientation="Horizontal" Margin="0,10,0,0">
+						<TextBlock Text="{x:Static lang:Resources.FromDate}" FontWeight="ExtraBold" FontSize="11" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
+						<DatePicker Style="{DynamicResource DatePickerStyle}" x:Name="FromDatePicker" BorderBrush="{Binding Source={StaticResource AccentColor}}" Background="{Binding Source={StaticResource Background1}}" FontWeight="SemiBold" Foreground="{Binding Source={StaticResource Foreground1}}">
+							<DatePicker.Resources>
+								<Style TargetType="{x:Type DatePickerTextBox}">
+									<Setter Property="Control.Template">
+										<Setter.Value>
+											<ControlTemplate>
+												<TextBox x:Name="PART_TextBox" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderThickness="0" Text="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" VerticalAlignment="Center" />
+											</ControlTemplate>
+										</Setter.Value>
+									</Setter>
+								</Style>
+							</DatePicker.Resources>
+						</DatePicker>
+						<TextBlock Text="{x:Static lang:Resources.ToDate}" FontWeight="ExtraBold" FontSize="11" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
+						<DatePicker Style="{DynamicResource DatePickerStyle}" x:Name="ToDatePicker" BorderBrush="{Binding Source={StaticResource AccentColor}}" Background="{Binding Source={StaticResource Background1}}" FontWeight="SemiBold" Foreground="{Binding Source={StaticResource Foreground1}}">
+							<DatePicker.Resources>
+								<Style TargetType="{x:Type DatePickerTextBox}">
+									<Setter Property="Control.Template">
+										<Setter.Value>
+											<ControlTemplate>
+												<TextBox x:Name="PART_TextBox" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" BorderThickness="0" Text="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" VerticalAlignment="Center" />
+											</ControlTemplate>
+										</Setter.Value>
+									</Setter>
+								</Style>
+							</DatePicker.Resources>
+						</DatePicker>
+					</StackPanel>
+				</StackPanel>
+
+				<Border.Effect>
+					<DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity="0.4" RenderingBias="Quality" />
+				</Border.Effect>
+			</Border>
+		</Popup>
 		<Button x:Name="EmptyHistoryBtn" Click="EmptyHistoryBtn_Click" Margin="10,2,0,2" Foreground="{Binding Source={StaticResource Red}}" Style="{DynamicResource StandardButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
 			<Grid>
 				<Grid.ColumnDefinitions>
@@ -60,19 +106,22 @@
 				<TextBlock Text="{x:Static lang:Resources.EmptyHistory}" FontWeight="ExtraBold" FontSize="11" VerticalAlignment="Center" Grid.Column="1" Margin="5 0" HorizontalAlignment="Left" />
 			</Grid>
 		</Button>
-		<Border Margin="10,3,3,3" Background="{Binding Source={StaticResource CardBackground}}" Width="300" CornerRadius="5" HorizontalAlignment="Left" Grid.Row="2">
-			<Border.Effect>
-				<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
-			</Border.Effect>
-			<Grid>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*"/>
-					<ColumnDefinition Width="Auto"/>
-				</Grid.ColumnDefinitions>
-				<TextBox TextChanged="SearchTxt_TextChanged" x:Name="SearchTxt" Padding="1" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" d:Text="123.54.132.56" Background="Transparent"/>
-				<Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="DismissBtn" Content="&#xF36A;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="DismissBtn_Click" HorizontalAlignment="Stretch" Grid.Column="1"/>
-			</Grid>
-		</Border>
+		<StackPanel Orientation="Horizontal" Grid.Row="2">
+			<Border Margin="10,3,3,3" Background="{Binding Source={StaticResource CardBackground}}" Width="300" CornerRadius="5" HorizontalAlignment="Left" Grid.Row="2">
+				<Border.Effect>
+					<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
+				</Border.Effect>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="Auto"/>
+					</Grid.ColumnDefinitions>
+					<TextBox TextChanged="SearchTxt_TextChanged" x:Name="SearchTxt" Padding="1" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" d:Text="123.54.132.56" Background="Transparent"/>
+					<Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="DismissBtn" Content="&#xF36A;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="DismissBtn_Click" HorizontalAlignment="Stretch" Grid.Column="1"/>
+				</Grid>
+			</Border>
+			<Button x:Name="FilterBtn" Click="FilterBtn_Click" Margin="10,2,0,2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch" Content="&#xF407;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontSize="16"/>
+		</StackPanel>
 		<Grid x:Name="HistoryGrid" Grid.Row="3" Margin="10" Grid.ColumnSpan="3">
 			<StackPanel x:Name="StatusHistory"/>
 			<StackPanel x:Name="DownDetectorHistory" Visibility="Collapsed"/>
