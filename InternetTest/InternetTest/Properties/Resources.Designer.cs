@@ -449,6 +449,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed.
+        /// </summary>
+        public static string Failed {
+            get {
+                return ResourceManager.GetString("Failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Features.
         /// </summary>
         public static string Features {
@@ -1364,6 +1373,15 @@ namespace InternetTest.Properties {
         public static string SubnetMask {
             get {
                 return ResourceManager.GetString("SubnetMask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successful.
+        /// </summary>
+        public static string Successful {
+            get {
+                return ResourceManager.GetString("Successful", resourceCulture);
             }
         }
         

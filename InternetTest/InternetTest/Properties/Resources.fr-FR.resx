@@ -666,4 +666,10 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r�
   <data name="InvalidDateMsg" xml:space="preserve">
     <value>Veuillez spécifier une date valide.</value>
   </data>
+  <data name="Successful" xml:space="preserve">
+    <value>Réussi</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Échec</value>
+  </data>
 </root>

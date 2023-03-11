@@ -666,4 +666,10 @@ Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiF
   <data name="InvalidDateMsg" xml:space="preserve">
     <value>Si prega di fornire una data valida.</value>
   </data>
+  <data name="Successful" xml:space="preserve">
+    <value>Successo</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Fallito</value>
+  </data>
 </root>

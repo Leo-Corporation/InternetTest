@@ -666,4 +666,10 @@
   <data name="InvalidDateMsg" xml:space="preserve">
     <value>Please provide a valid date.</value>
   </data>
+  <data name="Successful" xml:space="preserve">
+    <value>成功的</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>失败</value>
+  </data>
 </root>

@@ -666,4 +666,10 @@ Using this feature, you will be able to get information about each wireless netw
   <data name="InvalidDateMsg" xml:space="preserve">
     <value>Please provide a valid date.</value>
   </data>
+  <data name="Successful" xml:space="preserve">
+    <value>Successful</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
 </root>
