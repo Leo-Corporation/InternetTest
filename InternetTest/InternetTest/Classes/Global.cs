@@ -336,4 +336,6 @@ public static class Global
 	}
 
 	public static bool DateIsInRange(int startDate, int endDate, int checkDate) => (startDate <= checkDate && checkDate <= endDate);
+
+	public static bool IsSuccessfulCode(int code) => code >= 200 && code < 400;
 }

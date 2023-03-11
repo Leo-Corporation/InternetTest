@@ -127,7 +127,7 @@ public partial class HistoryPage : Page
 			EmptyHistoryBtn.Visibility = Visibility.Visible;
 		}
 		SearchTxt.Text = "";
-		SearchTxt_TextChanged(this, null);	
+		SearchTxt_TextChanged(this, null);
 	}
 
 	private void EmptyHistoryBtn_Click(object sender, RoutedEventArgs e)
@@ -156,6 +156,11 @@ public partial class HistoryPage : Page
 			SearchHistory(SearchTxt.Text, FromDatePicker.SelectedDate.Value, ToDatePicker.SelectedDate.Value);
 			return;
 		}
+		if (FilterComboBox.SelectedIndex == 2)
+		{
+			SearchHistory(SearchTxt.Text, SuccessfulRadioBtn.IsChecked ?? true);
+			return;
+		}
 		SearchHistory(SearchTxt.Text);
 	}
 
@@ -175,6 +180,26 @@ public partial class HistoryPage : Page
 			{
 				var item = (StatusHistoryItem)DownDetectorHistory.Children[i];
 				item.Visibility = item.ContentTxt.Text.Contains(req) ? Visibility.Visible : Visibility.Collapsed;
+			}
+		}
+	}
+
+	internal void SearchHistory(string req, bool sucessful)
+	{
+		if (StatusHistory.Visibility == Visibility.Visible) // Search in "Status" history
+		{
+			for (int i = 0; i < StatusHistory.Children.Count; i++)
+			{
+				var item = (StatusHistoryItem)StatusHistory.Children[i];
+				item.Visibility = item.ContentTxt.Text.Contains(req) && ((StatusHistory)item.HistoryItem).Status == sucessful ? Visibility.Visible : Visibility.Collapsed;
+			}
+		}
+		else // Search in "DownDetector" history
+		{
+			for (int i = 0; i < DownDetectorHistory.Children.Count; i++)
+			{
+				var item = (StatusHistoryItem)DownDetectorHistory.Children[i];
+				item.Visibility = item.ContentTxt.Text.Contains(req) && Global.IsSuccessfulCode(((DownHistory)item.HistoryItem).StatusCode) == sucessful ? Visibility.Visible : Visibility.Collapsed;
 			}
 		}
 	}
@@ -221,8 +246,10 @@ public partial class HistoryPage : Page
 		try
 		{
 			DateFilters.Visibility = (FilterComboBox.SelectedIndex == 1) ? Visibility.Visible : Visibility.Collapsed;
+			StateFilters.Visibility = (FilterComboBox.SelectedIndex == 2) ? Visibility.Visible : Visibility.Collapsed;
 			SearchTxt_TextChanged(this, null);
-		} catch { }
+		}
+		catch { }
 	}
 
 	private void DateApplyBtn_Click(object sender, RoutedEventArgs e)
@@ -233,5 +260,19 @@ public partial class HistoryPage : Page
 			return;
 		}
 		MessageBox.Show(Properties.Resources.InvalidDateMsg, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+	}
+
+	private void SuccessfulRadioBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			SearchHistory(SearchTxt.Text, SuccessfulRadioBtn.IsChecked ?? true);
+		}
+		catch { }
+	}
+
+	private void FailRadioBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		SearchHistory(SearchTxt.Text, SuccessfulRadioBtn.IsChecked ?? true);
 	}
 }
