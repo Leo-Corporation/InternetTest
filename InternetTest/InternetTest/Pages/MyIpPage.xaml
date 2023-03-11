@@ -52,7 +52,7 @@
 					<TextBlock Text="{x:Static lang:Resources.Country}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF3DB;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="CountryTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="CountryTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -71,7 +71,7 @@
 					<TextBlock Text="{x:Static lang:Resources.Region}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF52E;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="RegionTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="RegionTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -90,7 +90,7 @@
 					<TextBlock Text="{x:Static lang:Resources.City}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF2C3;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="CityTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="CityTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -108,7 +108,7 @@
 					<TextBlock Text="{x:Static lang:Resources.ZIPCode}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF507;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="ZipCodeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="ZipCodeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -127,7 +127,7 @@
 					<TextBlock Text="{x:Static lang:Resources.Latitude}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF55F;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="LatTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="LatTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -146,7 +146,7 @@
 					<TextBlock Text="{x:Static lang:Resources.Longitude}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF4F9;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="LongitudeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="LongitudeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -165,7 +165,7 @@
 					<TextBlock Text="{x:Static lang:Resources.Timezone}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF823;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="TimezoneTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="TimezoneTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -183,7 +183,7 @@
 					<TextBlock Text="{x:Static lang:Resources.ISP}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF8AD;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="IspTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="IspTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
