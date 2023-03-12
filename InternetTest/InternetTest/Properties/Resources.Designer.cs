@@ -1476,7 +1476,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Testing, please wait.
+        ///   Looks up a localized string similar to Testing, please wait....
         /// </summary>
         public static string TestInProgress {
             get {
@@ -1544,6 +1544,15 @@ namespace InternetTest.Properties {
         public static string ToDate {
             get {
                 return ResourceManager.GetString("ToDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toggle confidential mode.
+        /// </summary>
+        public static string ToggleConfidentialModeOnStart {
+            get {
+                return ResourceManager.GetString("ToggleConfidentialModeOnStart", resourceCulture);
             }
         }
         

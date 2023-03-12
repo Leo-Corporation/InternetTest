@@ -181,6 +181,7 @@
 					</StackPanel>
 					<CheckBox Foreground="{Binding Source={StaticResource Foreground1}}" Content="{x:Static lang:Resources.CheckUpdatesOnStart}" x:Name="UpdateOnStartChk" Style="{DynamicResource CheckBoxStyle1}" Checked="UpdateOnStartChk_Checked" Unchecked="UpdateOnStartChk_Checked" VerticalContentAlignment="Center" BorderThickness="2" Margin="10,0,0,5"/>
 					<CheckBox Foreground="{Binding Source={StaticResource Foreground1}}" Content="{x:Static lang:Resources.LaunchTestOnStart}" x:Name="TestOnStartChk" Style="{DynamicResource CheckBoxStyle1}" Checked="TestOnStartChk_Checked" Unchecked="TestOnStartChk_Checked" VerticalContentAlignment="Center" BorderThickness="2" Margin="10,0,0,5"/>
+					<CheckBox Foreground="{Binding Source={StaticResource Foreground1}}" Content="{x:Static lang:Resources.ToggleConfidentialModeOnStart}" x:Name="ToggleConfModeOnStartChk" Style="{DynamicResource CheckBoxStyle1}" Checked="ToggleConfModeOnStartChk_Checked" Unchecked="ToggleConfModeOnStartChk_Checked" VerticalContentAlignment="Center" BorderThickness="2" Margin="10,0,0,5"/>
 				</StackPanel>
 			</Expander>
 			<Expander Style="{DynamicResource ExpanderStyle1}" Margin="10,10,10,0" Background="{Binding Source={StaticResource CardBackground}}" Foreground="{Binding Source={StaticResource Foreground1}}">

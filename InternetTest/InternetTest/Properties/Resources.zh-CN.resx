@@ -202,7 +202,7 @@
 	<value>你没有连接到互联网</value>
   </data>
   <data name="TestInProgress" xml:space="preserve">
-	<value>正在测试，请稍候</value>
+	<value>正在测试，请稍候...</value>
   </data>
   <data name="TimeElapsed" xml:space="preserve">
 	<value>已用时间</value>
@@ -671,5 +671,8 @@
   </data>
   <data name="Failed" xml:space="preserve">
     <value>失败</value>
+  </data>
+  <data name="ToggleConfidentialModeOnStart" xml:space="preserve">
+    <value>切换保密模式</value>
   </data>
 </root>

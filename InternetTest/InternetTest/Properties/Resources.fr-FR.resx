@@ -202,7 +202,7 @@
 	<value>Vous n'êtes pas connecté à Internet</value>
   </data>
   <data name="TestInProgress" xml:space="preserve">
-	<value>Test en cours, veuillez patienter</value>
+	<value>Test en cours, veuillez patienter...</value>
   </data>
   <data name="TimeElapsed" xml:space="preserve">
 	<value>Temps écoulé</value>
@@ -671,5 +671,8 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r�
   </data>
   <data name="Failed" xml:space="preserve">
     <value>Échec</value>
+  </data>
+  <data name="ToggleConfidentialModeOnStart" xml:space="preserve">
+    <value>Activer le mode confidentiel</value>
   </data>
 </root>

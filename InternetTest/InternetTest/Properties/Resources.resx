@@ -202,7 +202,7 @@
 	<value>You aren't connected to the Internet</value>
   </data>
   <data name="TestInProgress" xml:space="preserve">
-	<value>Testing, please wait</value>
+	<value>Testing, please wait...</value>
   </data>
   <data name="TimeElapsed" xml:space="preserve">
 	<value>Time elapsed</value>
@@ -671,5 +671,8 @@ Using this feature, you will be able to get information about each wireless netw
   </data>
   <data name="Failed" xml:space="preserve">
     <value>Failed</value>
+  </data>
+  <data name="ToggleConfidentialModeOnStart" xml:space="preserve">
+    <value>Toggle confidential mode</value>
   </data>
 </root>

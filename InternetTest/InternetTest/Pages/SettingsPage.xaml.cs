@@ -96,6 +96,7 @@ public partial class SettingsPage : Page
 		// On Start section
 		UpdateOnStartChk.IsChecked = Global.Settings.CheckUpdateOnStart;
 		TestOnStartChk.IsChecked = Global.Settings.TestOnStart;
+		ToggleConfModeOnStartChk.IsChecked = Global.Settings.ToggleConfidentialMode;
 		PageComboBox.SelectedIndex = (int)Global.Settings.DefaultPage;
 
 		// Web related settings section
@@ -383,4 +384,10 @@ public partial class SettingsPage : Page
 		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe"); // Start a new instance
 		Application.Current.Shutdown(); // Quit this current instance
 	}
+
+	private void ToggleConfModeOnStartChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.ToggleConfidentialMode = ToggleConfModeOnStartChk.IsChecked;
+		SettingsManager.Save();
+    }
 }

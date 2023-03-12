@@ -672,4 +672,7 @@ Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiF
   <data name="Failed" xml:space="preserve">
     <value>Fallito</value>
   </data>
+  <data name="ToggleConfidentialModeOnStart" xml:space="preserve">
+    <value>Alterna la modalità riservata</value>
+  </data>
 </root>
