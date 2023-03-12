@@ -165,4 +165,9 @@ public partial class PingPage : Page
 		}
 		PingBtn.IsEnabled = true;
 	}
+
+	private void TextBlock_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+	{
+		Clipboard.SetText(((TextBlock)sender).Text);
+	}
 }

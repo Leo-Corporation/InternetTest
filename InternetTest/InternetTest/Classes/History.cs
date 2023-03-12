@@ -49,7 +49,7 @@ public class HistoryItem
 }
 
 public class StatusHistory : HistoryItem
-{	
+{
 	public bool Status { get; set; }
 
 	[JsonConstructor]

@@ -70,6 +70,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Advanced.
+        /// </summary>
+        public static string Advanced {
+            get {
+                return ResourceManager.GetString("Advanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I agree.
         /// </summary>
         public static string Agree {
@@ -445,6 +454,15 @@ namespace InternetTest.Properties {
         public static string Export {
             get {
                 return ResourceManager.GetString("Export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed.
+        /// </summary>
+        public static string Failed {
+            get {
+                return ResourceManager.GetString("Failed", resourceCulture);
             }
         }
         
@@ -1197,6 +1215,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remember the &quot;Pinned&quot; state.
+        /// </summary>
+        public static string RememberPinState {
+            get {
+                return ResourceManager.GetString("RememberPinState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset settings.
         /// </summary>
         public static string ResetSettings {
@@ -1368,6 +1395,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Successful.
+        /// </summary>
+        public static string Successful {
+            get {
+                return ResourceManager.GetString("Successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Suggested actions.
         /// </summary>
         public static string SuggestedActions {
@@ -1458,7 +1494,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Testing, please wait.
+        ///   Looks up a localized string similar to Testing, please wait....
         /// </summary>
         public static string TestInProgress {
             get {
@@ -1526,6 +1562,15 @@ namespace InternetTest.Properties {
         public static string ToDate {
             get {
                 return ResourceManager.GetString("ToDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toggle confidential mode.
+        /// </summary>
+        public static string ToggleConfidentialModeOnStart {
+            get {
+                return ResourceManager.GetString("ToggleConfidentialModeOnStart", resourceCulture);
             }
         }
         

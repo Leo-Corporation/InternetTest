@@ -15,6 +15,7 @@
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
 		<StackPanel Margin="10" Orientation="Horizontal">
@@ -51,7 +52,7 @@
 					<TextBlock Text="{x:Static lang:Resources.Status}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF2F0;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="DetailsStatusTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="DetailsStatusTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -70,7 +71,7 @@
 					<TextBlock Text="{x:Static lang:Resources.TimeElapsed}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF6CF;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="DetailsTimeTxt" Text="0ms" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="DetailsTimeTxt" Text="0ms" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -89,10 +90,27 @@
 					<TextBlock Text="{x:Static lang:Resources.StatusMessage}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF300;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="DetailsMessageTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="DetailsMessageTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
+			<Button x:Name="AdvancedBtn" Click="AdvancedBtn_Click" Cursor="Hand" Content="&#xF4A4;" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="5 10" Padding="5" BorderThickness="0" Background="{Binding Source={StaticResource Background2}}" Foreground="{Binding Source={StaticResource Foreground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
 		</WrapPanel>
+		<Border Visibility="Collapsed" x:Name="AdvancedOptions" Grid.Row="4" MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}">
+			<Border.Effect>
+				<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
+			</Border.Effect>
+
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<TextBlock Text="{x:Static lang:Resources.Advanced}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
+
+				<TextBlock Margin="10" FontWeight="Bold" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" Cursor="Hand" x:Name="InfoTxt" Grid.Row="1"/>
+			</Grid>
+		</Border>
 	</Grid>
 </Page>

@@ -36,7 +36,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace InternetTest.Pages
@@ -404,6 +403,11 @@ namespace InternetTest.Pages
 				ScheduledTestLaunchBtn.Content = Properties.Resources.LaunchScheduledTest;
 				TimeIntervalTxt.Visibility = Visibility.Collapsed;
 			}
+		}
+
+		private void TextBlock_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		{
+			Clipboard.SetText(((TextBlock)sender).Text);
 		}
 	}
 }

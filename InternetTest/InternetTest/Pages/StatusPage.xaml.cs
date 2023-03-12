@@ -118,8 +118,11 @@ public partial class StatusPage : Page
 			dispatcherTimer.Tick += (o, e) => time++;
 			dispatcherTimer.Start();
 
-			int code = await Internet.GetStatusCodeAsync(customSite);
-			string message = await Internet.GetStatusDescriptionAsync(customSite);
+			HttpResponseMessage response = await new HttpClient().GetAsync(customSite);
+
+			int code = (int)response.StatusCode;
+			string message = response.ReasonPhrase;
+			InfoTxt.Text = response.Headers.ToString();
 
 			dispatcherTimer.Stop();
 
@@ -168,5 +171,16 @@ public partial class StatusPage : Page
 	private void BrowserBtn_Click(object sender, RoutedEventArgs e)
 	{
 		Process.Start("explorer.exe", Global.Settings.TestSite ?? "https://leocorporation.dev");
+	}
+
+	private void TextBlock_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+	{
+		Clipboard.SetText(((TextBlock)sender).Text);
+	}
+
+	private void AdvancedBtn_Click(object sender, RoutedEventArgs e)
+	{
+		AdvancedOptions.Visibility = AdvancedOptions.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+		AdvancedBtn.Content = AdvancedOptions.Visibility == Visibility.Visible ? "\uF36A" : "\uF4A4";
 	}
 }

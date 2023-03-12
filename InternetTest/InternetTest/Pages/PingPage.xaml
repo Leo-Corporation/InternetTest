@@ -56,7 +56,7 @@
 					<TextBlock Text="{x:Static lang:Resources.IPAddress}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF3DB;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="IPAddressTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="IPAddressTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -75,7 +75,7 @@
 					<TextBlock Text="{x:Static lang:Resources.MaxTime}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF6C9;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="MaxTimeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="MaxTimeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -94,7 +94,7 @@
 					<TextBlock Text="{x:Static lang:Resources.MinTime}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF6CF;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="MinTimeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="MinTimeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -112,7 +112,7 @@
 					<TextBlock Text="{x:Static lang:Resources.AverageTime}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF2DD;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="AverageTimeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="AverageTimeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -131,7 +131,7 @@
 					<TextBlock Text="{x:Static lang:Resources.PackageSent}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xFE36;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="SentTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="SentTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -150,7 +150,7 @@
 					<TextBlock Text="{x:Static lang:Resources.PackageReceived}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF2A0;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="ReceivedTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="ReceivedTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
@@ -169,7 +169,7 @@
 					<TextBlock Text="{x:Static lang:Resources.PackageLost}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF36E;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock x:Name="LostTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="LostTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>

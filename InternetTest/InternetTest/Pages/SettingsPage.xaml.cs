@@ -96,6 +96,8 @@ public partial class SettingsPage : Page
 		// On Start section
 		UpdateOnStartChk.IsChecked = Global.Settings.CheckUpdateOnStart;
 		TestOnStartChk.IsChecked = Global.Settings.TestOnStart;
+		ToggleConfModeOnStartChk.IsChecked = Global.Settings.ToggleConfidentialMode;
+		RememberPinOnStartChk.IsChecked = Global.Settings.RememberPinnedState;
 		PageComboBox.SelectedIndex = (int)Global.Settings.DefaultPage;
 
 		// Web related settings section
@@ -382,5 +384,17 @@ public partial class SettingsPage : Page
 		HistoryManager.Save(Global.History); // Save history content
 		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe"); // Start a new instance
 		Application.Current.Shutdown(); // Quit this current instance
+	}
+
+	private void ToggleConfModeOnStartChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.ToggleConfidentialMode = ToggleConfModeOnStartChk.IsChecked;
+		SettingsManager.Save();
+    }
+
+	private void RememberPinOnStartChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.RememberPinnedState = RememberPinOnStartChk.IsChecked;
+		SettingsManager.Save();
 	}
 }

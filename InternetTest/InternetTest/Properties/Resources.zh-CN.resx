@@ -202,7 +202,7 @@
 	<value>你没有连接到互联网</value>
   </data>
   <data name="TestInProgress" xml:space="preserve">
-	<value>正在测试，请稍候</value>
+	<value>正在测试，请稍候...</value>
   </data>
   <data name="TimeElapsed" xml:space="preserve">
 	<value>已用时间</value>
@@ -665,5 +665,20 @@
   </data>
   <data name="InvalidDateMsg" xml:space="preserve">
     <value>Please provide a valid date.</value>
+  </data>
+  <data name="Successful" xml:space="preserve">
+    <value>成功的</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>失败</value>
+  </data>
+  <data name="ToggleConfidentialModeOnStart" xml:space="preserve">
+    <value>切换保密模式</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>高级</value>
+  </data>
+  <data name="RememberPinState" xml:space="preserve">
+    <value>记住 "钉子 "状态</value>
   </data>
 </root>
