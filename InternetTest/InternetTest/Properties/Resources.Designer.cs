@@ -70,6 +70,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Advanced.
+        /// </summary>
+        public static string Advanced {
+            get {
+                return ResourceManager.GetString("Advanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I agree.
         /// </summary>
         public static string Agree {
@@ -1202,6 +1211,15 @@ namespace InternetTest.Properties {
         public static string Region {
             get {
                 return ResourceManager.GetString("Region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember the &quot;Pinned&quot; state.
+        /// </summary>
+        public static string RememberPinState {
+            get {
+                return ResourceManager.GetString("RememberPinState", resourceCulture);
             }
         }
         

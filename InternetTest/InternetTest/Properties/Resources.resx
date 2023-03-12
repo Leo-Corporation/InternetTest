@@ -675,4 +675,10 @@ Using this feature, you will be able to get information about each wireless netw
   <data name="ToggleConfidentialModeOnStart" xml:space="preserve">
     <value>Toggle confidential mode</value>
   </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="RememberPinState" xml:space="preserve">
+    <value>Remember the "Pinned" state</value>
+  </data>
 </root>

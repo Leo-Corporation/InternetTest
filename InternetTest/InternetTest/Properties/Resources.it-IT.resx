@@ -675,4 +675,10 @@ Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiF
   <data name="ToggleConfidentialModeOnStart" xml:space="preserve">
     <value>Alterna la modalità riservata</value>
   </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avanzato</value>
+  </data>
+  <data name="RememberPinState" xml:space="preserve">
+    <value>Ricordare lo stato "Appuntato"</value>
+  </data>
 </root>
