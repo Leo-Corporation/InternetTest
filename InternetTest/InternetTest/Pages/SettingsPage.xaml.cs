@@ -97,6 +97,7 @@ public partial class SettingsPage : Page
 		UpdateOnStartChk.IsChecked = Global.Settings.CheckUpdateOnStart;
 		TestOnStartChk.IsChecked = Global.Settings.TestOnStart;
 		ToggleConfModeOnStartChk.IsChecked = Global.Settings.ToggleConfidentialMode;
+		RememberPinOnStartChk.IsChecked = Global.Settings.RememberPinnedState;
 		PageComboBox.SelectedIndex = (int)Global.Settings.DefaultPage;
 
 		// Web related settings section
@@ -390,4 +391,10 @@ public partial class SettingsPage : Page
 		Global.Settings.ToggleConfidentialMode = ToggleConfModeOnStartChk.IsChecked;
 		SettingsManager.Save();
     }
+
+	private void RememberPinOnStartChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.RememberPinnedState = RememberPinOnStartChk.IsChecked;
+		SettingsManager.Save();
+	}
 }

@@ -140,6 +140,9 @@ public partial class MainWindow : Window
 
 		// Toggle on or off Confidential Mode
 		if (Global.Settings.ToggleConfidentialMode ?? false) ConfidentialModeBtn_Click(this, null);
+
+		// Toggle the "pin" state
+		if ((Global.Settings.RememberPinnedState ?? true) && (Global.Settings.Pinned ?? false)) PinBtn_Click(this, null);
 	}
 
 	private void PageCard_OnCardClick(object? sender, PageEventArgs e)
@@ -498,5 +501,6 @@ public partial class MainWindow : Window
 	{
 		Topmost = !Topmost; // Toggle
 		PinBtn.Content = Topmost ? "\uF604" : "\uF602"; // Set text
+		Global.Settings.Pinned = Topmost;
 	}
 }

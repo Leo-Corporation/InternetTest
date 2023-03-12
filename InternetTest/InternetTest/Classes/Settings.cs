@@ -46,6 +46,9 @@ public class Settings
 		UseSynethia = true;
 		TestOnStart = true;
 		IsMaximized = false;
+		ToggleConfidentialMode = false;
+		Pinned = false;
+		RememberPinnedState = true;
 	}
 
 	public Themes Theme { get; set; }
@@ -61,6 +64,8 @@ public class Settings
 	public string? TestSite { get; set; }
 	public bool? IsMaximized { get; set; }
 	public bool? ToggleConfidentialMode { get; set; }
+	public bool? Pinned { get; set; }
+	public bool? RememberPinnedState { get; set; }
 }
 
 public static class SettingsManager
@@ -95,6 +100,8 @@ public static class SettingsManager
 		// Upgrade the settings file if it comes from an older version
 		settings.IsMaximized ??= false; // Set the default value if none is specified.
 		settings.ToggleConfidentialMode ??= false; // Set the default value if none is specified.
+		settings.Pinned ??= false; // Set the default value if none is specified.
+		settings.RememberPinnedState ??= true; // Set the default value if none is specified.
 
 		return settings;
 	}
