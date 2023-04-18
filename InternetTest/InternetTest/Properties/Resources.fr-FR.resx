@@ -681,4 +681,16 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r�
   <data name="RememberPinState" xml:space="preserve">
     <value>Se rappeler de l'état "Epinglé"</value>
   </data>
+  <data name="DNS" xml:space="preserve">
+    <value>DNS</value>
+  </data>
+  <data name="DNSTool" xml:space="preserve">
+    <value>Outil DNS</value>
+  </data>
+  <data name="GetDnsInfo" xml:space="preserve">
+    <value>Obtenir les informations du DNS</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
 </root>

@@ -681,4 +681,16 @@
   <data name="RememberPinState" xml:space="preserve">
     <value>记住 "钉子 "状态</value>
   </data>
+  <data name="DNS" xml:space="preserve">
+    <value>DNS</value>
+  </data>
+  <data name="DNSTool" xml:space="preserve">
+    <value>DNS工具</value>
+  </data>
+  <data name="GetDnsInfo" xml:space="preserve">
+    <value>获取DNS信息</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
 </root>

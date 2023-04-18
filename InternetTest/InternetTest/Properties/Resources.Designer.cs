@@ -358,11 +358,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DNS.
+        /// </summary>
+        public static string DNS {
+            get {
+                return ResourceManager.GetString("DNS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DNS Suffix.
         /// </summary>
         public static string DNSSuffix {
             get {
                 return ResourceManager.GetString("DNSSuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DNS Tool.
+        /// </summary>
+        public static string DNSTool {
+            get {
+                return ResourceManager.GetString("DNSTool", resourceCulture);
             }
         }
         
@@ -517,6 +535,15 @@ namespace InternetTest.Properties {
         public static string GatewayIPv6 {
             get {
                 return ResourceManager.GetString("GatewayIPv6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get DNS information.
+        /// </summary>
+        public static string GetDnsInfo {
+            get {
+                return ResourceManager.GetString("GetDnsInfo", resourceCulture);
             }
         }
         
@@ -1607,6 +1634,15 @@ namespace InternetTest.Properties {
         public static string UpToDate {
             get {
                 return ResourceManager.GetString("UpToDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL.
+        /// </summary>
+        public static string URL {
+            get {
+                return ResourceManager.GetString("URL", resourceCulture);
             }
         }
         
