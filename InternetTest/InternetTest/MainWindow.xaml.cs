@@ -127,6 +127,12 @@ public partial class MainWindow : Window
 				UnCheckAllButton();
 				CheckButton(WifiPasswordsPageBtn);
 				break;
+			case AppPages.DnsTool:
+				PageDisplayer.Content = Global.DnsPage;
+				Global.SynethiaConfig.DnsPageInfo.EnterUnixTime = Sys.UnixTime;
+				UnCheckAllButton();
+				CheckButton(DnsPageBtn);
+				break;
 			default:
 				break;
 		}
@@ -190,6 +196,12 @@ public partial class MainWindow : Window
 				Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime = Sys.UnixTime;
 				UnCheckAllButton();
 				CheckButton(WifiPasswordsPageBtn);
+				break;
+			case AppPages.DnsTool:
+				PageDisplayer.Content = Global.DnsPage;
+				Global.SynethiaConfig.DnsPageInfo.EnterUnixTime = Sys.UnixTime;
+				UnCheckAllButton();
+				CheckButton(DnsPageBtn);
 				break;
 			default:
 				break;
@@ -330,6 +342,7 @@ public partial class MainWindow : Window
 		PingPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		IPConfigPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		WifiPasswordsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		DnsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 
 		StatusPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		DownDetectorPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
@@ -338,6 +351,7 @@ public partial class MainWindow : Window
 		PingPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		IPConfigPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		WifiPasswordsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+		DnsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 	}
 
 	private void StatusPageBtn_Click(object sender, RoutedEventArgs e)
@@ -482,6 +496,12 @@ public partial class MainWindow : Window
 			Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent += Global.SynethiaConfig.WiFiPasswordsPageInfo.LeaveUnixTime - Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime;
 			Global.SynethiaConfig.WiFiPasswordsPageInfo.Score = Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent * (Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount / 2d : 1d); // Calculate the score
 		}
+		else if (PageDisplayer.Content is DnsPage)
+		{
+			Global.SynethiaConfig.DnsPageInfo.LeaveUnixTime = Sys.UnixTime;
+			Global.SynethiaConfig.DnsPageInfo.TotalTimeSpent += Global.SynethiaConfig.DnsPageInfo.LeaveUnixTime - Global.SynethiaConfig.DnsPageInfo.EnterUnixTime;
+			Global.SynethiaConfig.DnsPageInfo.Score = Global.SynethiaConfig.DnsPageInfo.TotalTimeSpent * (Global.SynethiaConfig.DnsPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.DnsPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+		}
 	}
 
 	private void ConfidentialModeBtn_Click(object sender, RoutedEventArgs e)
@@ -502,5 +522,15 @@ public partial class MainWindow : Window
 		Topmost = !Topmost; // Toggle
 		PinBtn.Content = Topmost ? "\uF604" : "\uF602"; // Set text
 		Global.Settings.Pinned = Topmost;
+	}
+
+	private void DnsPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		LeavePage();
+		UnCheckAllButton(); // Reset all states
+		CheckButton(DnsPageBtn);
+
+		PageDisplayer.Content = Global.DnsPage; // Display the IP config page
+		Global.SynethiaConfig.DnsPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
 	}
 }

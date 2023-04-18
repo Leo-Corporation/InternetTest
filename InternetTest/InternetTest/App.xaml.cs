@@ -46,6 +46,7 @@ public partial class App : Application
 		Global.PingPage = new();
 		Global.IpConfigPage = new();
 		Global.WiFiPasswordsPage = new();
+		Global.DnsPage = new();
 
 
 		if (!Global.Settings.IsFirstRun)

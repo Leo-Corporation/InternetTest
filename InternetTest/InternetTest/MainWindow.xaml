@@ -275,6 +275,7 @@
 								<StackPanel x:Name="UtilitiesPanel" Visibility="Collapsed">
 									<Button x:Name="StatusPageBtn" Content="{x:Static lang:Resources.Status}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="StatusPageBtn_Click"/>
 									<Button x:Name="DownDetectorPageBtn" Content="{x:Static lang:Resources.DownDetector}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="DownDetectorPageBtn_Click"/>
+									<Button x:Name="DnsPageBtn" Content="{x:Static lang:Resources.DNSTool}" FontSize="10" FontWeight="ExtraBold" BorderThickness="0" Style="{DynamicResource DefaultButton}" Padding="5,2,2,2" Background="Transparent" HorizontalContentAlignment="Left" Foreground="{Binding Source={StaticResource AccentColor}}" Margin="10,0,0,0" Click="DnsPageBtn_Click"/>
 								</StackPanel>
 								<Button x:Name="IPToolsBtn" Click="IPToolsBtn_Click" Margin="0 2" Foreground="{Binding Source={StaticResource AccentColor}}" Style="{DynamicResource DefaultButton}" Background="Transparent" BorderThickness="0" Padding="5" HorizontalContentAlignment="Stretch" Height="30">
 									<Grid>

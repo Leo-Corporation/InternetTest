@@ -32,4 +32,5 @@ public enum AppActions
 	Ping,
 	GetIPConfig,
 	GetWiFiPasswords,
+	GetDnsInfo,
 }
