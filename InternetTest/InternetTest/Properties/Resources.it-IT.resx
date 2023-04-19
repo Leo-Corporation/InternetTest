@@ -693,4 +693,7 @@ Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiF
   <data name="URL" xml:space="preserve">
     <value>URL</value>
   </data>
+  <data name="DNSInfo" xml:space="preserve">
+    <value>Informazioni sul DNS</value>
+  </data>
 </root>

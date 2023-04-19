@@ -693,4 +693,7 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r√
   <data name="URL" xml:space="preserve">
     <value>URL</value>
   </data>
+  <data name="DNSInfo" xml:space="preserve">
+    <value>Information sur le DNS</value>
+  </data>
 </root>

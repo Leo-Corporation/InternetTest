@@ -367,6 +367,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DNS Information.
+        /// </summary>
+        public static string DNSInfo {
+            get {
+                return ResourceManager.GetString("DNSInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DNS Suffix.
         /// </summary>
         public static string DNSSuffix {

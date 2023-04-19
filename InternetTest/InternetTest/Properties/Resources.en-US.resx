@@ -693,4 +693,7 @@ Using this feature, you will be able to get information about each wireless netw
   <data name="URL" xml:space="preserve">
     <value>URL</value>
   </data>
+  <data name="DNSInfo" xml:space="preserve">
+    <value>DNS Information</value>
+  </data>
 </root>
