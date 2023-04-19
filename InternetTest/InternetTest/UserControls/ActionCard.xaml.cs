@@ -83,6 +83,11 @@ public partial class ActionCard : UserControl
 				Global.IpConfigPage.RefreshBtn_Click(this, null);
 				OnCardClick?.Invoke(this, new(AppPages.IPConfig));
 				break;
+			case AppActions.GetDnsInfo:
+				Global.DnsPage.SiteTxt.Text = string.IsNullOrEmpty(Global.DnsPage.SiteTxt.Text) ? Global.Settings.TestSite.Replace("https://", "").Replace("http://","") : Global.DnsPage.SiteTxt.Text;
+				Global.DnsPage.GetDnsInfoBtn_Click(this, null);
+				OnCardClick?.Invoke(this, new(AppPages.DnsTool));
+				break;
 			default:
 				break;
 		}

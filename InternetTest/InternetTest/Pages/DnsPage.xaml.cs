@@ -152,7 +152,7 @@ public partial class DnsPage : Page
 		SiteTxt.Text = string.Empty;
 	}
 
-	private void GetDnsInfoBtn_Click(object sender, RoutedEventArgs e)
+	internal void GetDnsInfoBtn_Click(object sender, RoutedEventArgs e)
 	{
 		GetDnsInfo(SiteTxt.Text);
 		
