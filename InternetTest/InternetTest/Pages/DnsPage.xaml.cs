@@ -104,35 +104,47 @@ public partial class DnsPage : Page
 
 	private async void GetDnsInfo(string website)
 	{
-		RecordDisplayer.Children.Clear();
-		// Get IP
-		IPHostEntry host = Dns.GetHostEntry(website);
-		IPAddress ip = host.AddressList[0];
-		UrlTxt.Text = website;
-		IpTxt.Text = ip.ToString();
-
-		// Get DNS records
-		var lookup = new LookupClient();
-		var result = lookup.QueryAsync(website, QueryType.ANY).Result;
-		foreach (var record in result.AllRecords)
+		try
 		{
-			RecordDisplayer.Children.Add(new DnsRecordItem(record.RecordType.ToString(), record.ToString()));
+			RecordDisplayer.Children.Clear();
+			// Get IP
+			IPHostEntry host = Dns.GetHostEntry(website);
+			IPAddress ip = host.AddressList[0];
+			UrlTxt.Text = website;
+			IpTxt.Text = ip.ToString();
 		}
+		catch { }
 
-		// Get WHOIS
-		var whois = new WhoisLookup();
-		var response = await whois.LookupAsync(website);
-		CreationTxt.Text = response.Registered.ToString();
-		ExpTxt.Text = response.Expiration.ToString();
-		StatusTxt.Text = string.Join("\n", response.DomainStatus);
-		string regInfo = "";
-		foreach (var prop in response.Registrant.GetType().GetProperties())
+		try
 		{
-			var val = prop.GetValue(response.Registrant, null);
-			if (val is null || prop.Name == "Address") continue;
-			regInfo += $"{prop.Name} - {val}\n";
+			// Get DNS records
+			var lookup = new LookupClient();
+			var result = lookup.QueryAsync(website, QueryType.ANY).Result;
+			foreach (var record in result.AllRecords)
+			{
+				RecordDisplayer.Children.Add(new DnsRecordItem(record.RecordType.ToString(), record.ToString()));
+			}
 		}
-		RegistrantTxt.Text = regInfo;
+		catch { }
+
+		try
+		{
+			// Get WHOIS
+			var whois = new WhoisLookup();
+			var response = await whois.LookupAsync(website);
+			CreationTxt.Text = response.Registered.ToString();
+			ExpTxt.Text = response.Expiration.ToString();
+			StatusTxt.Text = string.Join("\n", response.DomainStatus);
+			string regInfo = "";
+			foreach (var prop in response.Registrant.GetType().GetProperties())
+			{
+				var val = prop.GetValue(response.Registrant, null);
+				if (val is null || prop.Name == "Address") continue;
+				regInfo += $"{prop.Name} - {val}\n";
+			}
+			RegistrantTxt.Text = regInfo;
+		}
+		catch { }
 	}
 
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)
@@ -143,6 +155,7 @@ public partial class DnsPage : Page
 	private void GetDnsInfoBtn_Click(object sender, RoutedEventArgs e)
 	{
 		GetDnsInfo(SiteTxt.Text);
+		
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
 		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.GetDnsInfo).UsageCount++;
 	}
