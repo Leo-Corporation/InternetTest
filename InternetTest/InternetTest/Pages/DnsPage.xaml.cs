@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
+using DnsClient;
 using InternetTest.Classes;
+using InternetTest.UserControls;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -101,6 +103,14 @@ public partial class DnsPage : Page
 		IPAddress ip = host.AddressList[0];
 		UrlTxt.Text = website;
 		IpTxt.Text = ip.ToString();
+
+		// Get DNS records
+		var lookup = new LookupClient();
+		var result = lookup.QueryAsync(website, QueryType.ANY).Result;
+		foreach (var record in result.AllRecords)
+		{
+			RecordDisplayer.Children.Add(new DnsRecordItem(record.RecordType.ToString(), record.ToString()));
+		}
 	}
 
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)
