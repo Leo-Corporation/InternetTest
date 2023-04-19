@@ -53,7 +53,7 @@ Name: "english";           MessagesFile: "compiler:Default.isl"
 Name: "french";            MessagesFile: "compiler:Languages\French.isl"
 Name: "italian";           MessagesFile: "compiler:Languages\Italian.isl"
 ; Remove the line below if there are compilation errors
-Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
+Name: "chinesesimplified"; MessagesFile: "Languages\ChineseSimplified.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
