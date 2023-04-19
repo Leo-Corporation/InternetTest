@@ -696,4 +696,13 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r√
   <data name="DNSInfo" xml:space="preserve">
     <value>Information sur le DNS</value>
   </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Date de cr√©ation</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Date d'expiration</value>
+  </data>
+  <data name="Registrant" xml:space="preserve">
+    <value>Titulaire</value>
+  </data>
 </root>

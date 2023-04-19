@@ -25,10 +25,15 @@ SOFTWARE.
 using DnsClient;
 using InternetTest.Classes;
 using InternetTest.UserControls;
+using System.DirectoryServices.ActiveDirectory;
+using System;
 using System.Linq;
 using System.Net;
+using System.Net.Sockets;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using Whois;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -97,9 +102,10 @@ public partial class DnsPage : Page
 		TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.DNSTool}"; // Set the title
 	}
 
-	private void GetDnsInfo(string website)
+	private async void GetDnsInfo(string website)
 	{
 		RecordDisplayer.Children.Clear();
+		// Get IP
 		IPHostEntry host = Dns.GetHostEntry(website);
 		IPAddress ip = host.AddressList[0];
 		UrlTxt.Text = website;
@@ -112,6 +118,21 @@ public partial class DnsPage : Page
 		{
 			RecordDisplayer.Children.Add(new DnsRecordItem(record.RecordType.ToString(), record.ToString()));
 		}
+
+		// Get WHOIS
+		var whois = new WhoisLookup();
+		var response = await whois.LookupAsync(website);
+		CreationTxt.Text = response.Registered.ToString();
+		ExpTxt.Text = response.Expiration.ToString();
+		StatusTxt.Text = string.Join("\n", response.DomainStatus);
+		string regInfo = "";
+		foreach (var prop in response.Registrant.GetType().GetProperties())
+		{
+			var val = prop.GetValue(response.Registrant, null);
+			if (val is null || prop.Name == "Address") continue;
+			regInfo += $"{prop.Name} - {val}\n";
+		}
+		RegistrantTxt.Text = regInfo;
 	}
 
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)

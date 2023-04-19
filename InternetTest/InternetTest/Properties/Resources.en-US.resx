@@ -696,4 +696,13 @@ Using this feature, you will be able to get information about each wireless netw
   <data name="DNSInfo" xml:space="preserve">
     <value>DNS Information</value>
   </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Creation date</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Expiration date</value>
+  </data>
+  <data name="Registrant" xml:space="preserve">
+    <value>Registrant</value>
+  </data>
 </root>

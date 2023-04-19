@@ -696,4 +696,13 @@
   <data name="DNSInfo" xml:space="preserve">
     <value>DNS信息</value>
   </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>创建日期</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>过期日期</value>
+  </data>
+  <data name="Registrant" xml:space="preserve">
+    <value>注册人</value>
+  </data>
 </root>

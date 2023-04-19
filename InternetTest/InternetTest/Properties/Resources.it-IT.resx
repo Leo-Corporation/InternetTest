@@ -696,4 +696,13 @@ Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiF
   <data name="DNSInfo" xml:space="preserve">
     <value>Informazioni sul DNS</value>
   </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Data di creazione</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Data di scadenza</value>
+  </data>
+  <data name="Registrant" xml:space="preserve">
+    <value>Registrant</value>
+  </data>
 </root>
