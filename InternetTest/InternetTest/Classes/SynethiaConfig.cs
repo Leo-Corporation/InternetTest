@@ -37,6 +37,7 @@ public class SynethiaConfig
 		PingPageInfo = new();
 		IPConfigPageInfo = new();
 		WiFiPasswordsPageInfo = new();
+		DnsPageInfo = new();
 
 		ActionInfos = Global.DefaultRelevantActions;
 	}
@@ -48,6 +49,7 @@ public class SynethiaConfig
 	public PageInfo PingPageInfo { get; set; }
 	public PageInfo IPConfigPageInfo { get; set; }
 	public PageInfo WiFiPasswordsPageInfo { get; set; }
+	public PageInfo? DnsPageInfo { get; set; }
 
 	public List<ActionInfo> ActionInfos { get; set; }
 }

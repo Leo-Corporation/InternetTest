@@ -268,6 +268,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Creation date.
+        /// </summary>
+        public static string CreationDate {
+            get {
+                return ResourceManager.GetString("CreationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dark.
         /// </summary>
         public static string Dark {
@@ -358,11 +367,38 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DNS.
+        /// </summary>
+        public static string DNS {
+            get {
+                return ResourceManager.GetString("DNS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DNS Information.
+        /// </summary>
+        public static string DNSInfo {
+            get {
+                return ResourceManager.GetString("DNSInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DNS Suffix.
         /// </summary>
         public static string DNSSuffix {
             get {
                 return ResourceManager.GetString("DNSSuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DNS Tool.
+        /// </summary>
+        public static string DNSTool {
+            get {
+                return ResourceManager.GetString("DNSTool", resourceCulture);
             }
         }
         
@@ -449,6 +485,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expiration date.
+        /// </summary>
+        public static string ExpirationDate {
+            get {
+                return ResourceManager.GetString("ExpirationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Export settings.
         /// </summary>
         public static string Export {
@@ -517,6 +562,15 @@ namespace InternetTest.Properties {
         public static string GatewayIPv6 {
             get {
                 return ResourceManager.GetString("GatewayIPv6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get DNS information.
+        /// </summary>
+        public static string GetDnsInfo {
+            get {
+                return ResourceManager.GetString("GetDnsInfo", resourceCulture);
             }
         }
         
@@ -1215,6 +1269,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registrant.
+        /// </summary>
+        public static string Registrant {
+            get {
+                return ResourceManager.GetString("Registrant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remember the &quot;Pinned&quot; state.
         /// </summary>
         public static string RememberPinState {
@@ -1607,6 +1670,15 @@ namespace InternetTest.Properties {
         public static string UpToDate {
             get {
                 return ResourceManager.GetString("UpToDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL.
+        /// </summary>
+        public static string URL {
+            get {
+                return ResourceManager.GetString("URL", resourceCulture);
             }
         }
         

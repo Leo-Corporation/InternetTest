@@ -390,7 +390,7 @@ public partial class SettingsPage : Page
 	{
 		Global.Settings.ToggleConfidentialMode = ToggleConfModeOnStartChk.IsChecked;
 		SettingsManager.Save();
-    }
+	}
 
 	private void RememberPinOnStartChk_Checked(object sender, RoutedEventArgs e)
 	{

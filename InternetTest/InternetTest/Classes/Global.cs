@@ -40,7 +40,7 @@ using System.Windows.Media;
 namespace InternetTest.Classes;
 public static class Global
 {
-	public static string Version => "7.4.0.2303";
+	public static string Version => "7.5.0.2304";
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
 	public static Settings Settings { get; set; } = SettingsManager.Load();
@@ -57,6 +57,7 @@ public static class Global
 	public static PingPage? PingPage { get; set; }
 	public static IpConfigPage? IpConfigPage { get; set; }
 	public static WiFiPasswordsPage? WiFiPasswordsPage { get; set; }
+	public static DnsPage? DnsPage { get; set; }
 
 	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\SynethiaConfig.json";
 
@@ -99,6 +100,7 @@ public static class Global
 		{ AppPages.Ping, "\uF4FB" },
 		{ AppPages.IPConfig, "\uF848" },
 		{ AppPages.WiFiPasswords, "\uF8CC" },
+		{ AppPages.DnsTool, "\uF464" },
 	};
 	public static Dictionary<AppPages, string> AppPagesName => new()
 	{
@@ -112,6 +114,7 @@ public static class Global
 		{ AppPages.Ping, Properties.Resources.Ping },
 		{ AppPages.IPConfig, Properties.Resources.IPConfig },
 		{ AppPages.WiFiPasswords, Properties.Resources.WifiPasswords },
+		{ AppPages.DnsTool, Properties.Resources.DNSTool},
 	};
 
 	public static List<AppPages> GetMostRelevantPages(SynethiaConfig synethiaConfig)
@@ -125,6 +128,7 @@ public static class Global
 			{ AppPages.Ping, synethiaConfig.PingPageInfo.Score },
 			{ AppPages.IPConfig, synethiaConfig.IPConfigPageInfo.Score },
 			{ AppPages.WiFiPasswords, synethiaConfig.WiFiPasswordsPageInfo.Score },
+			{ AppPages.DnsTool, synethiaConfig.DnsPageInfo.Score },
 		};
 
 		var sorted = appScores.OrderByDescending(x => x.Value);
@@ -153,7 +157,8 @@ public static class Global
 		AppPages.DownDetector,
 		AppPages.MyIP,
 		AppPages.Ping,
-		AppPages.IPConfig
+		AppPages.IPConfig,
+		AppPages.DnsTool
 	};
 
 	public static List<ActionInfo> DefaultRelevantActions => new()
@@ -165,6 +170,7 @@ public static class Global
 		new() { Action = AppActions.LocateIP, UsageCount = 0 },
 		new() { Action = AppActions.GetIPConfig, UsageCount = 0 },
 		new() { Action = AppActions.GetWiFiPasswords, UsageCount = 0 },
+		new() { Action = AppActions.GetDnsInfo, UsageCount = 0 },
 	};
 
 	public static Dictionary<AppActions, string> ActionsIcons => new()
@@ -176,6 +182,7 @@ public static class Global
 		{ AppActions.MyIP, "\uF569" },
 		{ AppActions.Ping, "\uF4FB" },
 		{ AppActions.Test, "\uF612" },
+		{ AppActions.GetDnsInfo, "\uF69C" },
 	};
 
 	public static Dictionary<AppActions, string> ActionsString => new()
@@ -187,6 +194,7 @@ public static class Global
 		{ AppActions.MyIP, Properties.Resources.GetMyIP },
 		{ AppActions.Ping, Properties.Resources.MakePing },
 		{ AppActions.Test, Properties.Resources.TestConnection },
+		{ AppActions.GetDnsInfo, Properties.Resources.GetDnsInfo },
 	};
 
 	public static Color GetColorFromResource(string resourceName) => (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());

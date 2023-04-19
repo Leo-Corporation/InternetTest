@@ -34,5 +34,6 @@ public enum AppPages
 	LocateIP,
 	Ping,
 	IPConfig,
-	WiFiPasswords
+	WiFiPasswords,
+	DnsTool
 }

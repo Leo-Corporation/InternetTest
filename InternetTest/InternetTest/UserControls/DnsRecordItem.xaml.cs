@@ -21,48 +21,33 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Classes;
-using InternetTest.Windows;
+
 using System.Windows;
+using System.Windows.Controls;
 
-namespace InternetTest;
+namespace InternetTest.UserControls;
 /// <summary>
-/// Interaction logic for App.xaml
+/// Interaction logic for DnsRecordItem.xaml
 /// </summary>
-public partial class App : Application
+public partial class DnsRecordItem : UserControl
 {
-	private void Application_Startup(object sender, StartupEventArgs e)
+	private string Type { get; init; }
+	private string RecordContent { get; init; }
+	public DnsRecordItem(string type, string content)
 	{
-		Global.ChangeTheme();
-		Global.ChangeLanguage();
-
-		Global.HomePage = new();
-		Global.HistoryPage = new();
-		Global.SettingsPage = new();
-		Global.StatusPage = new();
-		Global.DownDetectorPage = new();
-		Global.MyIpPage = new();
-		Global.LocateIpPage = new();
-		Global.PingPage = new();
-		Global.IpConfigPage = new();
-		Global.WiFiPasswordsPage = new();
-		Global.DnsPage = new();
-
-
-		if (!Global.Settings.IsFirstRun)
-		{
-			new MainWindow().Show();
-		}
-		else
-		{
-			new FirstRunWindow().Show();
-		}
+		InitializeComponent();
+		Type = type;
+		RecordContent = content;
+		InitUI();
+	}
+	private void InitUI()
+	{
+		RecordTypeTxt.Text = Type;
+		RecordContentTxt.Text = RecordContent;
 	}
 
-	private void Application_Exit(object sender, ExitEventArgs e)
+	private void CopyBtn_Click(object sender, RoutedEventArgs e)
 	{
-		SynethiaManager.Save(Global.SynethiaConfig);
-		HistoryManager.Save(Global.History);
-		SettingsManager.Save();
+		Clipboard.SetText(RecordContent);
 	}
 }

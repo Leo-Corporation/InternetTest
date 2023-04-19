@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
-using PeyrSharp.Core;
 using PeyrSharp.Core.Converters;
 using System;
 using System.Diagnostics;

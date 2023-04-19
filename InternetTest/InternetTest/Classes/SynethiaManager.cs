@@ -46,7 +46,10 @@ public static class SynethiaManager
 
 		// If Synethia config exists
 		// Deserialize the file to Synethia config (using JSON)
-		return JsonSerializer.Deserialize<SynethiaConfig>(File.ReadAllText(Global.SynethiaPath)) ?? new();
+		var config = JsonSerializer.Deserialize<SynethiaConfig>(File.ReadAllText(Global.SynethiaPath)) ?? new();
+		config.DnsPageInfo ??= new();
+		CheckActions(ref config);
+		return config;
 	}
 
 	public static void Save(SynethiaConfig synethiaConfig)
@@ -54,5 +57,14 @@ public static class SynethiaManager
 		if (!Global.Settings.UseSynethia) return;
 		string json = JsonSerializer.Serialize(synethiaConfig, new JsonSerializerOptions { WriteIndented = true });
 		File.WriteAllText(Global.SynethiaPath, json);
+	}
+
+	private static void CheckActions(ref SynethiaConfig synethiaConfig)
+	{
+		for (int i = 0; i < synethiaConfig.ActionInfos.Count; i++)
+		{
+			if (synethiaConfig.ActionInfos[i].Action == Enums.AppActions.GetDnsInfo) return;
+		}
+		synethiaConfig.ActionInfos.Add(new() { Action = Enums.AppActions.GetDnsInfo, UsageCount = 0 });
 	}
 }
