@@ -39,7 +39,7 @@
 					<Button Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="DismissBtn" Content="&#xF36A;" Background="Transparent" BorderThickness="0" Padding="4" Margin="2" FontFamily="../Fonts/#FluentSystemIcons-Regular" Style="{DynamicResource ToolButton}" VerticalAlignment="Center" Click="DismissBtn_Click" HorizontalAlignment="Stretch" Grid.Column="1"/>
 				</Grid>
 			</Border>
-			<Button x:Name="GetDnsInfoBtn" Click="GetDnsInfoBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.GetDnsInfo}" Margin="5" Padding="5" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
+			<Button x:Name="GetDnsInfoBtn" Click="GetDnsInfoBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.GetDnsInfo}" Margin="5" Padding="5" BorderThickness="0" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 
 		</StackPanel>
 		<StackPanel Grid.Row="2" Margin="10" Orientation="Horizontal">
