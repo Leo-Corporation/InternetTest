@@ -664,22 +664,22 @@ Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiF
     <value>Al</value>
   </data>
   <data name="InvalidDateMsg" xml:space="preserve">
-    <value>Si prega di fornire una data valida.</value>
+    <value>Fornisci una data valida.</value>
   </data>
   <data name="Successful" xml:space="preserve">
-    <value>Successo</value>
+    <value>Completato</value>
   </data>
   <data name="Failed" xml:space="preserve">
     <value>Fallito</value>
   </data>
   <data name="ToggleConfidentialModeOnStart" xml:space="preserve">
-    <value>Alterna la modalità riservata</value>
+    <value>Attiuva/disattiva modalità riservata</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Avanzato</value>
+    <value>Avanzate</value>
   </data>
   <data name="RememberPinState" xml:space="preserve">
-    <value>Ricordare lo stato "Appuntato"</value>
+    <value>Ricorda stato "Appuntato"</value>
   </data>
   <data name="DNS" xml:space="preserve">
     <value>DNS</value>
@@ -688,21 +688,21 @@ Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiF
     <value>Strumento DNS</value>
   </data>
   <data name="GetDnsInfo" xml:space="preserve">
-    <value>Ottenere informazioni DNS</value>
+    <value>Richiedi informazioni DNS</value>
   </data>
   <data name="URL" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="DNSInfo" xml:space="preserve">
-    <value>Informazioni sul DNS</value>
+    <value>Informazioni DNS</value>
   </data>
   <data name="CreationDate" xml:space="preserve">
-    <value>Data di creazione</value>
+    <value>Data creazione</value>
   </data>
   <data name="ExpirationDate" xml:space="preserve">
-    <value>Data di scadenza</value>
+    <value>Data scadenza</value>
   </data>
   <data name="Registrant" xml:space="preserve">
-    <value>Registrant</value>
+    <value>Registrante</value>
   </data>
 </root>
