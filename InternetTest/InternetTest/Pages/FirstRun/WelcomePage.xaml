@@ -33,12 +33,13 @@
 				<Button x:Name="NextBtn" Click="NextBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Next}" Margin="5 10" Padding="10 5" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 				<Button x:Name="SkipBtn" Click="SkipBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Skip}" Margin="5 10" Padding="10 5" BorderThickness="0" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 			</StackPanel>
-			<ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Center" VerticalAlignment="Center">
-				<ComboBoxItem Content="{x:Static lang:Resources.Default}"/>
-				<ComboBoxItem Content="English (United States)"/>
-				<ComboBoxItem Content="French (France)"/>
-				<ComboBoxItem Content="中文（简体）- WIP"/>
-			</ComboBox>
-		</StackPanel>
+            <ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Center" Margin="0,0,10,0" VerticalAlignment="Center">
+                <ComboBoxItem Content="{x:Static lang:Resources.Default}"/>
+                <ComboBoxItem Content="English (United States)"/>
+                <ComboBoxItem Content="Français (France)"/>
+                <ComboBoxItem Content="中文（简体）"/>
+                <ComboBoxItem Content="Italiano (Italia)"/>
+            </ComboBox>
+        </StackPanel>
 	</Grid>
 </Page>
