@@ -99,6 +99,7 @@ public partial class DnsPage : Page
 
 	private void GetDnsInfo(string website)
 	{
+		RecordDisplayer.Children.Clear();
 		IPHostEntry host = Dns.GetHostEntry(website);
 		IPAddress ip = host.AddressList[0];
 		UrlTxt.Text = website;
