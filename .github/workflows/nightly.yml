@@ -16,7 +16,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Build App
-        run: dotnet build InternetTest\InternetTest.sln -c Release
+        run: dotnet build InternetTest\InternetTest.sln -c Release -p:DefineConstants=NIGHTLY
 
       - name: Test App
         run: dotnet test InternetTest\InternetTest.sln
