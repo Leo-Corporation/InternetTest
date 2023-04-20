@@ -43,6 +43,7 @@
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="Auto"/>
 						<ColumnDefinition/>
+						<ColumnDefinition Width="Auto"/>
 					</Grid.ColumnDefinitions>
 
 					<StackPanel Margin="15,15,10,15" Orientation="Horizontal">
@@ -53,7 +54,7 @@
 						</StackPanel>
 					</StackPanel>
 
-					<StackPanel Orientation="Horizontal" Grid.Column="1">
+					<StackPanel Orientation="Horizontal" Grid.Column="2">
 						<ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center">
 							<ComboBoxItem Content="{x:Static lang:Resources.Default}"/>
 							<ComboBoxItem Content="English (United States)"/>
@@ -61,7 +62,7 @@
 							<ComboBoxItem Content="中文（简体）"/>
 							<ComboBoxItem Content="Italiano (Italia)"/>
 						</ComboBox>
-						<Button x:Name="LangApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource PrimaryButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="LangApplyBtn_Click" Visibility="Hidden">
+						<Button x:Name="LangApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource PrimaryButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="LangApplyBtn_Click" Visibility="Collapsed" Margin="0,0,10,0">
 							<TextBlock Text="&#xF680;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" VerticalAlignment="Center"/>
 
 							<Button.ToolTip>
@@ -119,6 +120,7 @@
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="Auto"/>
 						<ColumnDefinition/>
+						<ColumnDefinition Width="Auto"/>
 					</Grid.ColumnDefinitions>
 
 					<StackPanel Margin="15,15,10,15" Orientation="Horizontal">
@@ -129,7 +131,7 @@
 						</StackPanel>
 					</StackPanel>
 
-					<ComboBox SelectionChanged="MapProviderComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="MapProviderComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Column="1">
+					<ComboBox SelectionChanged="MapProviderComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="MapProviderComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Column="2">
 						<ComboBoxItem Content="OpenStreetMap"/>
 						<ComboBoxItem Content="Bing Maps"/>
 						<ComboBoxItem Content="Google Maps"/>
