@@ -16,10 +16,10 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Build App
-        run: dotnet build InternetTest\InternetTest\InternetTest.csproj -c Release
+        run: dotnet build InternetTest\InternetTest.sln -c Release
 
       - name: Test App
-        run: dotnet test InternetTest\InternetTest\InternetTest.csproj
+        run: dotnet test InternetTest\InternetTest.sln
 
       - name: Build Setup
         uses: nadeemjazmawe/inno-setup-action-cli@v6.0.5
