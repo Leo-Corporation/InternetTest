@@ -40,7 +40,15 @@ using System.Windows.Media;
 namespace InternetTest.Classes;
 public static class Global
 {
+
+#if NIGHTLY
+	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
+
+	public static string Version => $"7.5.2.2304-nightly{Date:yyMM.dd@HHmm}";
+
+#else
 	public static string Version => "7.5.2.2304";
+#endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
 	public static Settings Settings { get; set; } = SettingsManager.Load();
