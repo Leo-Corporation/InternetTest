@@ -163,7 +163,7 @@
 	<value>DownDetector</value>
   </data>
   <data name="MyIP" xml:space="preserve">
-	<value>Mio IP</value>
+	<value>Info mio IP</value>
   </data>
   <data name="LocateIP" xml:space="preserve">
 	<value>Individua IP</value>
@@ -217,7 +217,7 @@
 	<value>Esegui un test per verificare la connessione</value>
   </data>
   <data name="TestConnection" xml:space="preserve">
-	<value>Test della connessione</value>
+	<value>Test connessione</value>
   </data>
   <data name="WebsiteAvailable" xml:space="preserve">
 	<value>Il sito web è disponibile</value>
@@ -286,7 +286,7 @@
 	<value>Il tuo IP verrà visualizzato qui.</value>
   </data>
   <data name="GetMyIP" xml:space="preserve">
-	<value>Ottieni il mio IP</value>
+	<value>Info mio IP</value>
   </data>
   <data name="IPShowHere2" xml:space="preserve">
 	<value>L'IP verrà visualizzato qui.</value>
@@ -304,7 +304,7 @@
 	<value>File testo</value>
   </data>
   <data name="MakePing" xml:space="preserve">
-	<value>Esegui un ping</value>
+	<value>Esegui ping</value>
   </data>
   <data name="IPAddress" xml:space="preserve">
 	<value>Indirizzo IP</value>
@@ -367,7 +367,7 @@
 	<value>Aggiorna</value>
   </data>
   <data name="SubnetMask" xml:space="preserve">
-	<value>Maschera sottorete</value>
+	<value>Maschera sotto rete</value>
   </data>
   <data name="Name" xml:space="preserve">
 	<value>Nome</value>
@@ -421,7 +421,8 @@
 	<value>Azzera cronologia</value>
   </data>
   <data name="EmptyHistoryMsg" xml:space="preserve">
-	<value>Sei sicuro di voler azzerare la cronologia? Questa azione è irreversibile.</value>
+	<value>Sei sicuro di voler azzerare la cronologia? 
+Questa azione è irreversibile.</value>
   </data>
   <data name="Pro" xml:space="preserve">
 	<value>Pro</value>
@@ -460,19 +461,21 @@
 	<value>Lingua</value>
   </data>
   <data name="NeedRestartToApplyChanges" xml:space="preserve">
-	<value>Per applicare le modifiche InternetTest deve essere riavviato. Vuoi riavviare InternetTest ora?</value>
+	<value>Per applicare le modifiche InternetTest deve essere riavviato. 
+Vuoi riavviare InternetTest ora?</value>
   </data>
   <data name="Default" xml:space="preserve">
 	<value>Predefinito</value>
   </data>
   <data name="UpToDate" xml:space="preserve">
-	<value>InternetTest è aggiornato.</value>
+	<value>Questa versione di InternetTest è aggiornata.</value>
   </data>
   <data name="AvailableUpdates" xml:space="preserve">
 	<value>Sono disponibili aggiornamenti.</value>
   </data>
   <data name="InstallConfirmMsg" xml:space="preserve">
-	<value>Per installare gli aggiornamenti, InternetTest deve essere riavviato. Vuoi continuare?</value>
+	<value>Per installare gli aggiornamenti, InternetTest deve essere riavviato. 
+Vuoi continuare?</value>
   </data>
   <data name="InstallVersion" xml:space="preserve">
 	<value>Installa versione</value>
@@ -496,7 +499,7 @@
 	<value>Impostazioni notifiche.</value>
   </data>
   <data name="CheckUpdatesOnStart" xml:space="preserve">
-	<value>Controlla gli aggiornamenti all'avvio</value>
+	<value>Controlla aggiornamenti all'avvio</value>
   </data>
   <data name="StartupPage" xml:space="preserve">
 	<value>Pagina predefinita all'avvio</value>
@@ -541,13 +544,14 @@
 	<value>Le impostazioni sono state esportate correttamente.</value>
   </data>
   <data name="SettingsImportedMsg" xml:space="preserve">
-	<value>Le impostazioni sono state importate correttamente. Per completare il processo, InternetTest si riavvierà.</value>
+	<value>Le impostazioni sono state importate correttamente. 
+Per completare il processo, InternetTest si riavvierà.</value>
   </data>
   <data name="ResetSettings" xml:space="preserve">
     <value>Ripristina impostazioni</value>
   </data>
   <data name="SynethiaEnable" xml:space="preserve">
-    <value>Abilita l'esperienza personalizzata Synethia.</value>
+    <value>Abilita esperienza personalizzata Synethia.</value>
   </data>
   <data name="ResetSynethia" xml:space="preserve">
     <value>Ripristina dati Synethia</value>
@@ -559,7 +563,9 @@
     <value>Esegui un test all'avvio</value>
   </data>
   <data name="SynethiaDeleteMsg" xml:space="preserve">
-    <value>Sei sicuro di voler ripristinare tutti i dati di Synethia? La tua esperienza personalizzata andrà persa. Questa azione non può essere annullata.</value>
+    <value>Sei sicuro di voler ripristinare tutti i dati di Synethia? 
+La tua esperienza personalizzata andrà persa. 
+Questa azione non può essere annullata.</value>
   </data>
   <data name="FirstRunQuitMsg" xml:space="preserve">
     <value>Vuoi ignorare questa finestra e continuare con InternetTest?</value>
@@ -578,11 +584,13 @@
 Puoi ottenere lo stato del sito, i tempi di risposta e molto altro!</value>
   </data>
   <data name="LocateIPInfo" xml:space="preserve">
-    <value>È possibile individuare un indirizzo IP usando questa funzione. Riceverai informazioni su città, paese, regione, fuso orario e altro ancora!
+    <value>È possibile individuare un indirizzo IP usando questa funzione. 
+Riceverai informazioni su città, paese, regione, fuso orario e altro ancora!
 Puoi anche individuare e ottenere l'IP dei server da una URL.</value>
   </data>
   <data name="WiFiPasswordsInfo" xml:space="preserve">
-    <value>Hai dimenticato la password del Wi-Fi? Non preoccuparti, puoi recuperarla usando la funzione "Password WiFi" di InternetTest Pro!
+    <value>Hai dimenticato la password del Wi-Fi? 
+Non preoccuparti, puoi recuperarla usando la funzione "Password WiFi" di InternetTest Pro! 
 Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiFi salvata nel computer, come la modalità di autenticazione, l'algoritmo di crittografia, ecc.</value>
   </data>
   <data name="Features" xml:space="preserve">
@@ -610,7 +618,8 @@ Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiF
     <value>Il pannello Home consiglierà le azioni in base al tuo uso</value>
   </data>
   <data name="SynethiaPrivacy" xml:space="preserve">
-    <value>I dati sono memorizzati nel dispositivo in forma anonima. Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
+    <value>I dati sono memorizzati nel dispositivo in forma anonima. 
+Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   </data>
   <data name="LetsGo" xml:space="preserve">
     <value>Andiamo!</value>

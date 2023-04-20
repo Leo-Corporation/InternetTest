@@ -421,7 +421,8 @@
 	<value>Vider l'Historique</value>
   </data>
   <data name="EmptyHistoryMsg" xml:space="preserve">
-	<value>Êtes-vous sûr de vouloir vider cette historique ? Cette action est irréversible.</value>
+	<value>Êtes-vous sûr de vouloir vider cette historique ? 
+Cette action est irréversible.</value>
   </data>
   <data name="Pro" xml:space="preserve">
 	<value>Pro</value>
@@ -460,7 +461,8 @@
 	<value>Langue</value>
   </data>
   <data name="NeedRestartToApplyChanges" xml:space="preserve">
-	<value>InternetTest doit redémarrer pour appliquer les changements. Voulez-vous redémarrer maintenant ?</value>
+	<value>InternetTest doit redémarrer pour appliquer les changements. 
+Voulez-vous redémarrer maintenant ?</value>
   </data>
   <data name="Default" xml:space="preserve">
 	<value>Par défaut</value>
@@ -472,7 +474,8 @@
 	<value>Des mises à jour sont disponibles.</value>
   </data>
   <data name="InstallConfirmMsg" xml:space="preserve">
-	<value>Pour installer les mises à jour, InternetTest doit redémarrer. Voulez-vous continuer ?</value>
+	<value>Pour installer les mises à jour, InternetTest doit redémarrer. 
+Voulez-vous continuer ?</value>
   </data>
   <data name="InstallVersion" xml:space="preserve">
 	<value>Installer la version</value>
@@ -541,7 +544,8 @@
 	<value>Les paramètres ont été exportés avec succès.</value>
   </data>
   <data name="SettingsImportedMsg" xml:space="preserve">
-	<value>Les paramètres ont été importés avec succès. Pour finir le processus, InternetTest va redémarrer.</value>
+	<value>Les paramètres ont été importés avec succès. 
+Pour finir le processus, InternetTest va redémarrer.</value>
   </data>
   <data name="ResetSettings" xml:space="preserve">
     <value>Réinitialiser les paramètres</value>
@@ -559,7 +563,8 @@
     <value>Lancer un test lors du démarrage</value>
   </data>
   <data name="SynethiaDeleteMsg" xml:space="preserve">
-    <value>Êtes-vous sûr de vouloir réinitialiser toutes les données de Synethia ? Votre expérience personnalisée sera perdue ; Cette action ne peut être annulée.</value>
+    <value>Êtes-vous sûr de vouloir réinitialiser toutes les données de Synethia ? 
+Votre expérience personnalisée sera perdue ; Cette action ne peut être annulée.</value>
   </data>
   <data name="FirstRunQuitMsg" xml:space="preserve">
     <value>Voulez-vous ignorer cette fenêtre et continuer sur InternetTest ?</value>
@@ -574,15 +579,18 @@
     <value>Passer</value>
   </data>
   <data name="DownDetectorInfo" xml:space="preserve">
-    <value>Vous vous demandez si un site web fonctionne ou non ? Vérifiez et obtenez des informations en temps réel sur les sites Web spécifiés en utilisant la fonction DownDetector d'InternetTest Pro.
+    <value>Vous vous demandez si un site web fonctionne ou non ? 
+Vérifiez et obtenez des informations en temps réel sur les sites Web spécifiés en utilisant la fonction DownDetector d'InternetTest Pro.
 Vous pouvez obtenir l'état du site, la durée de réponse et bien plus encore !</value>
   </data>
   <data name="LocateIPInfo" xml:space="preserve">
-    <value>Vous pouvez localiser une adresse IP en utilisant cette fonction. Vous obtiendrez des informations sur la ville, le pays, la région, le fuseau horaire, et plus encore !
+    <value>Vous pouvez localiser une adresse IP en utilisant cette fonction. 
+Vous obtiendrez des informations sur la ville, le pays, la région, le fuseau horaire, et plus encore !
 Vous pouvez également localiser et obtenir l'adresse IP de serveurs à partir d'une URL.</value>
   </data>
   <data name="WiFiPasswordsInfo" xml:space="preserve">
-    <value>Vous avez oublié votre mot de passe WiFi ? Ne vous inquiétez pas, vous pouvez le récupérer en utilisant la fonction "Mots de passe WiFi" d'InternetTest Pro !
+    <value>Vous avez oublié votre mot de passe WiFi ? 
+Ne vous inquiétez pas, vous pouvez le récupérer en utilisant la fonction "Mots de passe WiFi" d'InternetTest Pro !
 En utilisant cette fonction, vous pourrez obtenir des informations sur chaque réseau sans fil enregistré sur votre ordinateur, comme le mode d'authentification, l'algorithme de cryptage, etc...</value>
   </data>
   <data name="Features" xml:space="preserve">
@@ -610,7 +618,8 @@ En utilisant cette fonction, vous pourrez obtenir des informations sur chaque r�
     <value>Le tableau de bord d'accueil recommandera des actions en fonction de votre utilisation</value>
   </data>
   <data name="SynethiaPrivacy" xml:space="preserve">
-    <value>Vos données sont stockées sur votre appareil, de manière anonyme. Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
+    <value>Vos données sont stockées sur votre appareil, de manière anonyme. 
+Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   </data>
   <data name="LetsGo" xml:space="preserve">
     <value>En avant !</value>

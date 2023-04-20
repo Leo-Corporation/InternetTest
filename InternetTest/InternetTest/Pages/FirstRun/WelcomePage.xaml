@@ -9,18 +9,18 @@
 	  d:DesignHeight="450" d:DesignWidth="800"
 	  Title="WelcomePage">
 
-    <Page.Triggers>
-        <EventTrigger RoutedEvent="Loaded">
-            <BeginStoryboard>
-                <Storyboard>
-                    <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="IconImg" BeginTime="0:0:0.1">
-                        <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,20" />
-                        <SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
-                    </ThicknessAnimationUsingKeyFrames>
-                </Storyboard>
-            </BeginStoryboard>
-        </EventTrigger>
-    </Page.Triggers>
+	<Page.Triggers>
+		<EventTrigger RoutedEvent="Loaded">
+			<BeginStoryboard>
+				<Storyboard>
+					<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" Storyboard.TargetName="IconImg" BeginTime="0:0:0.1">
+						<SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,20" />
+						<SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
+					</ThicknessAnimationUsingKeyFrames>
+				</Storyboard>
+			</BeginStoryboard>
+		</EventTrigger>
+	</Page.Triggers>
 	<Grid>
 		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 			<Image x:Name="IconImg" Height="75" Source="../../Images/InternetTest.png" HorizontalAlignment="Center"/>
@@ -36,8 +36,9 @@
 			<ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="2" Padding="5" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Center" VerticalAlignment="Center">
 				<ComboBoxItem Content="{x:Static lang:Resources.Default}"/>
 				<ComboBoxItem Content="English (United States)"/>
-				<ComboBoxItem Content="French (France)"/>
-				<ComboBoxItem Content="中文（简体）- WIP"/>
+				<ComboBoxItem Content="Français (France)"/>
+				<ComboBoxItem Content="中文（简体）"/>
+				<ComboBoxItem Content="Italiano (Italia)"/>
 			</ComboBox>
 		</StackPanel>
 	</Grid>
