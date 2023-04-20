@@ -133,7 +133,7 @@
 	<value>Buona sera</value>
   </data>
   <data name="Pinned" xml:space="preserve">
-	<value>Appuntato</value>
+	<value>Funzioni</value>
   </data>
   <data name="Home" xml:space="preserve">
 	<value>Home</value>
@@ -184,7 +184,7 @@
 	<value>Azioni suggerite</value>
   </data>
   <data name="Discover" xml:space="preserve">
-	<value>Rileva</value>
+	<value>Rilevamento</value>
   </data>
   <data name="Details" xml:space="preserve">
 	<value>Dettagli</value>
