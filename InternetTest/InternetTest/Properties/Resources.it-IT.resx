@@ -475,7 +475,7 @@ Vuoi riavviare InternetTest ora?</value>
   </data>
   <data name="InstallConfirmMsg" xml:space="preserve">
 	<value>Per installare gli aggiornamenti, InternetTest deve essere riavviato. 
-	Vuoi continuare?</value>
+Vuoi continuare?</value>
   </data>
   <data name="InstallVersion" xml:space="preserve">
 	<value>Installa versione</value>

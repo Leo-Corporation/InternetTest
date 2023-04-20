@@ -421,7 +421,8 @@
 	<value>Empty History</value>
   </data>
   <data name="EmptyHistoryMsg" xml:space="preserve">
-	<value>Are you sure want to empty this history? This action is irreversible.</value>
+	<value>Are you sure want to empty this history? 
+This action is irreversible.</value>
   </data>
   <data name="Pro" xml:space="preserve">
 	<value>Pro</value>
@@ -460,7 +461,8 @@
 	<value>Language</value>
   </data>
   <data name="NeedRestartToApplyChanges" xml:space="preserve">
-	<value>InternetTest needs to restart to apply the changes. Do you want to restart now?</value>
+	<value>InternetTest needs to restart to apply the changes. 
+Do you want to restart now?</value>
   </data>
   <data name="Default" xml:space="preserve">
 	<value>Default</value>
@@ -472,7 +474,8 @@
 	<value>Updates are available.</value>
   </data>
   <data name="InstallConfirmMsg" xml:space="preserve">
-	<value>To install updates, InternetTest needs to restarts. Do you want to continue?</value>
+	<value>To install updates, InternetTest needs to restarts. 
+Do you want to continue?</value>
   </data>
   <data name="InstallVersion" xml:space="preserve">
 	<value>Install version</value>
@@ -541,7 +544,8 @@
 	<value>Settings have been sucessfully exported.</value>
   </data>
   <data name="SettingsImportedMsg" xml:space="preserve">
-	<value>Settings were sucessfully imported. To finish the process, InternetTest is going to restart.</value>
+	<value>Settings were sucessfully imported. 
+To finish the process, InternetTest is going to restart.</value>
   </data>
   <data name="ResetSettings" xml:space="preserve">
     <value>Reset settings</value>
@@ -559,7 +563,8 @@
     <value>Launch a test on start</value>
   </data>
   <data name="SynethiaDeleteMsg" xml:space="preserve">
-    <value>Are you sure you want to reset all Synethia data? Your personalized experience will be lost; This action cannot be canceled.</value>
+    <value>Are you sure you want to reset all Synethia data? 
+Your personalized experience will be lost; This action cannot be canceled.</value>
   </data>
   <data name="FirstRunQuitMsg" xml:space="preserve">
     <value>Do you want to ignore this window and continue to InternetTest?</value>
@@ -574,15 +579,18 @@
     <value>Skip</value>
   </data>
   <data name="DownDetectorInfo" xml:space="preserve">
-    <value>Wondering whether a website is working or not? Check and get real-time information about specified websites using InternetTest Pro's DownDetector feature.
+    <value>Wondering whether a website is working or not? 
+Check and get real-time information about specified websites using InternetTest Pro's DownDetector feature.
 You can get site status, response time and much more!</value>
   </data>
   <data name="LocateIPInfo" xml:space="preserve">
-    <value>You can locate an IP adress using this feature. You will get information about the city, country, region, timezone, and more!
+    <value>You can locate an IP adress using this feature. 
+You will get information about the city, country, region, timezone, and more!
 You can also locate and get the IP of servers from an URL.</value>
   </data>
   <data name="WiFiPasswordsInfo" xml:space="preserve">
-    <value>Forgot your WiFi password? Don't worry, you can recover it using InternetTest Pro "WiFi Passwords" feature!
+    <value>Forgot your WiFi password? 
+Don't worry, you can recover it using InternetTest Pro "WiFi Passwords" feature!
 Using this feature, you will be able to get information about each wireless networks saved on your computer, such as authentification mode, encyrption algorithm, etc...</value>
   </data>
   <data name="Features" xml:space="preserve">
@@ -610,7 +618,8 @@ Using this feature, you will be able to get information about each wireless netw
     <value>The Home dashbord will recommand actions based on your usage</value>
   </data>
   <data name="SynethiaPrivacy" xml:space="preserve">
-    <value>Your data is stored on your device, anonymously. Absolutely NO data is sent to Léo Corporation.</value>
+    <value>Your data is stored on your device, anonymously. 
+Absolutely NO data is sent to Léo Corporation.</value>
   </data>
   <data name="LetsGo" xml:space="preserve">
     <value>Let's go!</value>

@@ -421,7 +421,8 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wondering whether a website is working or not? Check and get real-time information about specified websites using InternetTest Pro&apos;s DownDetector feature.
+        ///   Looks up a localized string similar to Wondering whether a website is working or not? 
+        ///Check and get real-time information about specified websites using InternetTest Pro&apos;s DownDetector feature.
         ///You can get site status, response time and much more!.
         /// </summary>
         public static string DownDetectorInfo {
@@ -449,7 +450,8 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure want to empty this history? This action is irreversible..
+        ///   Looks up a localized string similar to Are you sure want to empty this history? 
+        ///This action is irreversible..
         /// </summary>
         public static string EmptyHistoryMsg {
             get {
@@ -719,7 +721,8 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To install updates, InternetTest needs to restarts. Do you want to continue?.
+        ///   Looks up a localized string similar to To install updates, InternetTest needs to restarts. 
+        ///Do you want to continue?.
         /// </summary>
         public static string InstallConfirmMsg {
             get {
@@ -953,7 +956,8 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can locate an IP adress using this feature. You will get information about the city, country, region, timezone, and more!
+        ///   Looks up a localized string similar to You can locate an IP adress using this feature. 
+        ///You will get information about the city, country, region, timezone, and more!
         ///You can also locate and get the IP of servers from an URL..
         /// </summary>
         public static string LocateIPInfo {
@@ -1035,7 +1039,8 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to InternetTest needs to restart to apply the changes. Do you want to restart now?.
+        ///   Looks up a localized string similar to InternetTest needs to restart to apply the changes. 
+        ///Do you want to restart now?.
         /// </summary>
         public static string NeedRestartToApplyChanges {
             get {
@@ -1377,7 +1382,8 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings were sucessfully imported. To finish the process, InternetTest is going to restart..
+        ///   Looks up a localized string similar to Settings were sucessfully imported. 
+        ///To finish the process, InternetTest is going to restart..
         /// </summary>
         public static string SettingsImportedMsg {
             get {
@@ -1494,7 +1500,8 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to reset all Synethia data? Your personalized experience will be lost; This action cannot be canceled..
+        ///   Looks up a localized string similar to Are you sure you want to reset all Synethia data? 
+        ///Your personalized experience will be lost; This action cannot be canceled..
         /// </summary>
         public static string SynethiaDeleteMsg {
             get {
@@ -1530,7 +1537,8 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your data is stored on your device, anonymously. Absolutely NO data is sent to Léo Corporation..
+        ///   Looks up a localized string similar to Your data is stored on your device, anonymously. 
+        ///Absolutely NO data is sent to Léo Corporation..
         /// </summary>
         public static string SynethiaPrivacy {
             get {
@@ -1764,7 +1772,8 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forgot your WiFi password? Don&apos;t worry, you can recover it using InternetTest Pro &quot;WiFi Passwords&quot; feature!
+        ///   Looks up a localized string similar to Forgot your WiFi password? 
+        ///Don&apos;t worry, you can recover it using InternetTest Pro &quot;WiFi Passwords&quot; feature!
         ///Using this feature, you will be able to get information about each wireless networks saved on your computer, such as authentification mode, encyrption algorithm, etc....
         /// </summary>
         public static string WiFiPasswordsInfo {
