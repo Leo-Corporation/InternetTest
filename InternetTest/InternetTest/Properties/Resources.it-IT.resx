@@ -440,10 +440,10 @@ Questa azione è irreversibile.</value>
 	<value>Tema</value>
   </data>
   <data name="Light" xml:space="preserve">
-	<value>Chiaro</value>
+	<value>Tema chiaro</value>
   </data>
   <data name="Dark" xml:space="preserve">
-	<value>Scuro</value>
+	<value>Tema scuro</value>
   </data>
   <data name="Licenses" xml:space="preserve">
 	<value>Licenze</value>
@@ -713,5 +713,11 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   </data>
   <data name="Registrant" xml:space="preserve">
     <value>Registrante</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>Lingua sistema</value>
+  </data>
+  <data name="DefaultTheme" xml:space="preserve">
+    <value>Tema sistema</value>
   </data>
 </root>

@@ -277,7 +277,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark.
+        ///   Looks up a localized string similar to Dark theme.
         /// </summary>
         public static string Dark {
             get {
@@ -322,11 +322,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System language.
+        /// </summary>
+        public static string DefaultLanguage {
+            get {
+                return ResourceManager.GetString("DefaultLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default protocol.
         /// </summary>
         public static string DefaultProtocol {
             get {
                 return ResourceManager.GetString("DefaultProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System theme.
+        /// </summary>
+        public static string DefaultTheme {
+            get {
+                return ResourceManager.GetString("DefaultTheme", resourceCulture);
             }
         }
         
@@ -929,7 +947,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light.
+        ///   Looks up a localized string similar to Light theme.
         /// </summary>
         public static string Light {
             get {
