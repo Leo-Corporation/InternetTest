@@ -705,4 +705,10 @@
   <data name="Registrant" xml:space="preserve">
     <value>注册人</value>
   </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>系统语言</value>
+  </data>
+  <data name="DefaultTheme" xml:space="preserve">
+    <value>系统主题</value>
+  </data>
 </root>
