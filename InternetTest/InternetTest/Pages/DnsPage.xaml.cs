@@ -107,6 +107,10 @@ public partial class DnsPage : Page
 		try
 		{
 			RecordDisplayer.Children.Clear();
+			CreationTxt.Text = "";
+			ExpTxt.Text = "";
+			StatusTxt.Text = "";
+			RegistrantTxt.Text = "";
 			// Get IP
 			IPHostEntry host = Dns.GetHostEntry(website);
 			IPAddress ip = host.AddressList[0];
