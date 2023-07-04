@@ -111,6 +111,8 @@ public partial class StatusPage : Page
 			StatusIconTxt.Text = "\uF2DE";
 			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
 			StatusTxt.Text = Properties.Resources.TestInProgress;
+			TestBtn.IsEnabled = false;
+			SpeedTestBtn.IsEnabled = false;
 
 			// Launch the test
 			// Part 1: Get the status code and start timer
@@ -160,6 +162,9 @@ public partial class StatusPage : Page
 			Global.History.StatusHistory.Add(new StatusHistory(Time.DateTimeToUnixTime(DateTime.Now), StatusIconTxt.Text, false));
 
 		}
+
+		TestBtn.IsEnabled = true;
+		SpeedTestBtn.IsEnabled = true;
 	}
 
 	internal void TestBtn_Click(object sender, RoutedEventArgs e)
@@ -193,6 +198,8 @@ public partial class StatusPage : Page
 			StatusIconTxt.Text = "\uF2DE";
 			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
 			StatusTxt.Text = Properties.Resources.TestInProgress;
+			TestBtn.IsEnabled = false;
+			SpeedTestBtn.IsEnabled = false;
 
 			// Test
 			string targetUrl = "http://speedtest.tele2.net/10MB.zip";
@@ -213,6 +220,9 @@ public partial class StatusPage : Page
 			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 			StatusTxt.Text = Properties.Resources.SpeedTestFailed;
 		}
+
+		TestBtn.IsEnabled = true;
+		SpeedTestBtn.IsEnabled = true;
 	}
 
 	static async Task<long> DownloadFile(string url)
