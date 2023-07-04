@@ -711,4 +711,22 @@
   <data name="DefaultTheme" xml:space="preserve">
     <value>系统主题</value>
   </data>
+  <data name="SpeedTest" xml:space="preserve">
+    <value>做一个速度测试</value>
+  </data>
+  <data name="MinSpeed" xml:space="preserve">
+    <value>最小速度</value>
+  </data>
+  <data name="MaxSpeed" xml:space="preserve">
+    <value>最大速度</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="SpeedTestSucess" xml:space="preserve">
+    <value>速度测试是成功的</value>
+  </data>
+  <data name="SpeedTestFailed" xml:space="preserve">
+    <value>速度测试失败</value>
+  </data>
 </root>

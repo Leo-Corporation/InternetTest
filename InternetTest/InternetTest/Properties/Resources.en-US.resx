@@ -720,4 +720,22 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="DefaultTheme" xml:space="preserve">
     <value>System theme</value>
   </data>
+  <data name="SpeedTest" xml:space="preserve">
+    <value>Make a speed test</value>
+  </data>
+  <data name="MinSpeed" xml:space="preserve">
+    <value>Min speed</value>
+  </data>
+  <data name="MaxSpeed" xml:space="preserve">
+    <value>Max speed</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="SpeedTestSucess" xml:space="preserve">
+    <value>The speed test was successful</value>
+  </data>
+  <data name="SpeedTestFailed" xml:space="preserve">
+    <value>The speed test failed</value>
+  </data>
 </root>

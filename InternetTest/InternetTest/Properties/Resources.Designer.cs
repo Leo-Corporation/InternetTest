@@ -1021,11 +1021,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Max speed.
+        /// </summary>
+        public static string MaxSpeed {
+            get {
+                return ResourceManager.GetString("MaxSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Max duration.
         /// </summary>
         public static string MaxTime {
             get {
                 return ResourceManager.GetString("MaxTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Min speed.
+        /// </summary>
+        public static string MinSpeed {
+            get {
+                return ResourceManager.GetString("MinSpeed", resourceCulture);
             }
         }
         
@@ -1433,6 +1451,42 @@ namespace InternetTest.Properties {
         public static string Skip {
             get {
                 return ResourceManager.GetString("Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speed.
+        /// </summary>
+        public static string Speed {
+            get {
+                return ResourceManager.GetString("Speed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make a speed test.
+        /// </summary>
+        public static string SpeedTest {
+            get {
+                return ResourceManager.GetString("SpeedTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The speed test failed.
+        /// </summary>
+        public static string SpeedTestFailed {
+            get {
+                return ResourceManager.GetString("SpeedTestFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The speed test was successful.
+        /// </summary>
+        public static string SpeedTestSucess {
+            get {
+                return ResourceManager.GetString("SpeedTestSucess", resourceCulture);
             }
         }
         

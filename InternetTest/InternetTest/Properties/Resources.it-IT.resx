@@ -720,4 +720,22 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="DefaultTheme" xml:space="preserve">
     <value>Tema sistema</value>
   </data>
+  <data name="SpeedTest" xml:space="preserve">
+    <value>Effettuare un speed test</value>
+  </data>
+  <data name="MinSpeed" xml:space="preserve">
+    <value>Velocità minima</value>
+  </data>
+  <data name="MaxSpeed" xml:space="preserve">
+    <value>Velocità massima</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Velocità</value>
+  </data>
+  <data name="SpeedTestSucess" xml:space="preserve">
+    <value>Il test di velocità ha avuto successo</value>
+  </data>
+  <data name="SpeedTestFailed" xml:space="preserve">
+    <value>Il test di velocità è fallito</value>
+  </data>
 </root>
