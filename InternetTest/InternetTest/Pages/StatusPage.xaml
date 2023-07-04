@@ -28,6 +28,7 @@
 			<TextBlock x:Name="StatusTxt" Text="{x:Static lang:Resources.LaunchTestToCheckConnection}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"/>
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button x:Name="TestBtn" Click="TestBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Test}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
+				<Button x:Name="SpeedTestBtn" Click="SpeedTestBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.SpeedTest}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 				<Button x:Name="BrowserBtn" Click="BrowserBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.OpenBrowser}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 			</StackPanel>
 		</StackPanel>
@@ -91,6 +92,24 @@
 					<StackPanel Grid.Row="1" Orientation="Horizontal">
 						<TextBlock Text="&#xF300;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
 						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="DetailsMessageTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
+					</StackPanel>
+				</Grid>
+			</Border>
+			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
+				<Border.Effect>
+					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
+				</Border.Effect>
+
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<TextBlock Text="{x:Static lang:Resources.Speed}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
+					<StackPanel Grid.Row="1" Orientation="Horizontal">
+						<TextBlock Text="&#xF831;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
+						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="SpeedTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
 					</StackPanel>
 				</Grid>
 			</Border>
