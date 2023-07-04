@@ -207,7 +207,7 @@ public partial class StatusPage : Page
 			long fileSize = await DownloadFile(targetUrl);
 			double speedMbps = fileSize / 1000000.0;
 
-			SpeedTxt.Text = $"{speedMbps} MB/s";
+			SpeedTxt.Text = $"{speedMbps:0.00} MB/s";
 
 			// Case of sucess
 			StatusIconTxt.Text = "\uF299";
