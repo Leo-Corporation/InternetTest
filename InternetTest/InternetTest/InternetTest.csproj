@@ -36,7 +36,7 @@
 	<ItemGroup>
 	  <PackageReference Include="DnsClient" Version="1.7.0" />
 	  <PackageReference Include="PeyrSharp.Core" Version="1.7.0.2307" />
-	  <PackageReference Include="PeyrSharp.Env" Version="1.5.0.2304" />
+	  <PackageReference Include="PeyrSharp.Env" Version="1.7.0.2307" />
 	  <PackageReference Include="Whois" Version="3.0.1" />
 	</ItemGroup>
 
