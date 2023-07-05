@@ -113,6 +113,9 @@ public partial class TraceroutePage : Page
 
 	private async void TraceBtn_Click(object sender, RoutedEventArgs e)
 	{
+		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
+		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.TraceRoute).UsageCount++;
+
 		// Show the waiting screen
 		TraceBtn.IsEnabled = false;
 		StatusPanel.Visibility = Visibility.Collapsed;

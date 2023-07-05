@@ -199,7 +199,7 @@ public static class Global
 		{ AppActions.Ping, "\uF4FB" },
 		{ AppActions.Test, "\uF612" },
 		{ AppActions.GetDnsInfo, "\uF69C" },
-		{ AppActions.TraceRoute, "\uF679" },
+		{ AppActions.TraceRoute, "\uF683" },
 	};
 
 	public static Dictionary<AppActions, string> ActionsString => new()
