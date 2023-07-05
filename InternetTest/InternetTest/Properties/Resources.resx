@@ -747,4 +747,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="ExecuteTraceRoute" xml:space="preserve">
     <value>Execute a trace route</value>
   </data>
+  <data name="TimedOut" xml:space="preserve">
+    <value>Timed out</value>
+  </data>
 </root>

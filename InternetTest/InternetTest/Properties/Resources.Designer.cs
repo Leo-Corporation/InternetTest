@@ -1691,6 +1691,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Timed out.
+        /// </summary>
+        public static string TimedOut {
+            get {
+                return ResourceManager.GetString("TimedOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Time elapsed.
         /// </summary>
         public static string TimeElapsed {

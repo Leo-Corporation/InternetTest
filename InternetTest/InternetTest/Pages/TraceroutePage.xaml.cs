@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
+using InternetTest.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -109,8 +110,22 @@ public partial class TraceroutePage : Page
 		AddressTxt.Text = "";
 	}
 
-	private void TraceBtn_Click(object sender, RoutedEventArgs e)
+	private async void TraceBtn_Click(object sender, RoutedEventArgs e)
 	{
+		TraceBtn.IsEnabled = false;
 
+		try
+		{
+			TracertPanel.Children.Clear();
+			var route = await Global.Trace(AddressTxt.Text, 30, 5000);
+
+			for (int i = 0; i < route.Count; i++)
+			{
+				TracertPanel.Children.Add(new TraceRouteItem(route[i], i == route.Count - 1));
+			}
+		}
+		catch { }
+
+		TraceBtn.IsEnabled = true;
 	}
 }

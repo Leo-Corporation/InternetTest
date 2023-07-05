@@ -37,7 +37,7 @@
 			</Border>
 			<Button x:Name="TraceBtn" Click="TraceBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Trace}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 		</StackPanel>
-		<StackPanel Grid.Row="2">
+		<StackPanel x:Name="TracertPanel" Grid.Row="2">
 			
 		</StackPanel>
 	</Grid>

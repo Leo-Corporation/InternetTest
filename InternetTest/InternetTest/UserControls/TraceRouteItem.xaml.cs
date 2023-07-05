@@ -23,7 +23,10 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
+using System.Net.NetworkInformation;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace InternetTest.UserControls;
 /// <summary>
@@ -32,10 +35,12 @@ namespace InternetTest.UserControls;
 public partial class TraceRouteItem : UserControl
 {
 	TracertStep TracertStep { get; init; }
-	public TraceRouteItem(TracertStep tracertStep)
+	bool IsLast { get; init; }
+	public TraceRouteItem(TracertStep tracertStep, bool isLast)
 	{
 		InitializeComponent();
 		TracertStep = tracertStep;
+		IsLast = isLast;
 		InitUI();
 	}
 
@@ -44,5 +49,30 @@ public partial class TraceRouteItem : UserControl
 		IdTxt.Text = $"#{TracertStep.TTL}";
 		NameTxt.Text = $"{TracertStep.Address}";
 		TimeTxt.Text = $"{TracertStep.RoundtripTime}ms";
+		IconTxt.Text = TracertStep.Status switch
+		{
+			IPStatus.Success => "\uF299",
+			IPStatus.TtlExpired => "\uF299",
+			_ => "\uF36E"
+		};
+		IconTxt.Foreground = TracertStep.Status switch
+		{
+			IPStatus.Success => new SolidColorBrush { Color = Global.GetColorFromResource("Green") },
+			IPStatus.TtlExpired => new SolidColorBrush { Color = Global.GetColorFromResource("Green") },
+			_ => new SolidColorBrush { Color = Global.GetColorFromResource("Red") }
+		};
+
+		if (TracertStep.Status == IPStatus.TimedOut)
+		{
+			NameTxt.Text = Properties.Resources.TimedOut;
+		}
+
+		if (TracertStep.Status != IPStatus.Success && TracertStep.Status != IPStatus.TtlExpired)
+		{
+			NameTxt.Text += $" {TracertStep.Status}";
+		}
+
+		TopElipse.Visibility = TracertStep.TTL == 1 ? Visibility.Collapsed : Visibility.Visible;
+		BottomElipse.Visibility = IsLast ? Visibility.Collapsed : Visibility.Visible;
 	}
 }

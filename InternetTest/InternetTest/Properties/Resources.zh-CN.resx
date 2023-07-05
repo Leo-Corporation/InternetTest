@@ -738,4 +738,7 @@
   <data name="ExecuteTraceRoute" xml:space="preserve">
     <value>执行一个追踪路线</value>
   </data>
+  <data name="TimedOut" xml:space="preserve">
+    <value>计时结束</value>
+  </data>
 </root>
