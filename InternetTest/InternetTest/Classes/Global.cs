@@ -364,4 +364,41 @@ public static class Global
 	public static bool DateIsInRange(int startDate, int endDate, int checkDate) => (startDate <= checkDate && checkDate <= endDate);
 
 	public static bool IsSuccessfulCode(int code) => code >= 200 && code < 400;
+
+	public static async Task<List<TracertStep>> Trace(string target, int maxHops, int timeout)
+	{
+		List<TracertStep> steps = new();
+
+		for (int ttl = 1; ttl <= maxHops; ttl++)
+		{
+			PingReply reply = await TraceRoute(target, ttl, timeout);
+
+			TracertStep step = new()
+			{
+				TTL = ttl,
+				Address = reply.Address,
+				RoundtripTime = reply.RoundtripTime,
+				Status = reply.Status
+			};
+
+			steps.Add(step);
+
+			if (reply.Status == IPStatus.Success)
+				break;
+		}
+
+		return steps;
+	}
+
+	public static Task<PingReply> TraceRoute(string targetAddress, int ttl, int timeout)
+	{
+		using Ping pingSender = new();
+		PingOptions options = new()
+		{
+			Ttl = ttl
+		};
+
+		byte[] buffer = new byte[32];
+		return pingSender.SendPingAsync(targetAddress, timeout, buffer, options);
+	}
 }
