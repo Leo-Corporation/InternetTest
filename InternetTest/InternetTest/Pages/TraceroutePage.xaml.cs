@@ -144,7 +144,7 @@ public partial class TraceroutePage : Page
 			SucessTxt.Text = success.ToString();
 			FailedTxt.Text = failed.ToString();
 			DurationTxt.Text = $"{time}ms";
-			HopsTxt.Text = route.Count.ToString();
+			HopsTxt.Text = $"{route.Count} {Properties.Resources.HopsLower}";
 
 			// Show the overview and the traceroute
 			StatusPanel.Visibility = Visibility.Visible;
