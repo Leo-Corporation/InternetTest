@@ -744,4 +744,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="Trace" xml:space="preserve">
     <value>Tracer</value>
   </data>
+  <data name="ExecuteTraceRoute" xml:space="preserve">
+    <value>Exécuter un trace route</value>
+  </data>
 </root>

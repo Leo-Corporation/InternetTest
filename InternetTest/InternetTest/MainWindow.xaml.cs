@@ -203,6 +203,12 @@ public partial class MainWindow : Window
 				UnCheckAllButton();
 				CheckButton(DnsPageBtn);
 				break;
+			case AppPages.TraceRoute:
+				PageDisplayer.Content = Global.TraceroutePage;
+				Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime = Sys.UnixTime;
+				UnCheckAllButton();
+				CheckButton(TraceroutePageBtn);
+				break;
 			default:
 				break;
 		}
@@ -340,6 +346,7 @@ public partial class MainWindow : Window
 		MyIPPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		LocateIPPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		PingPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		TraceroutePageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		IPConfigPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		WifiPasswordsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		DnsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
@@ -349,6 +356,7 @@ public partial class MainWindow : Window
 		MyIPPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		LocateIPPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		PingPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+		TraceroutePageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		IPConfigPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		WifiPasswordsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		DnsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
@@ -502,6 +510,12 @@ public partial class MainWindow : Window
 			Global.SynethiaConfig.DnsPageInfo.TotalTimeSpent += Global.SynethiaConfig.DnsPageInfo.LeaveUnixTime - Global.SynethiaConfig.DnsPageInfo.EnterUnixTime;
 			Global.SynethiaConfig.DnsPageInfo.Score = Global.SynethiaConfig.DnsPageInfo.TotalTimeSpent * (Global.SynethiaConfig.DnsPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.DnsPageInfo.InteractionCount / 2d : 1d); // Calculate the score
 		}
+		else if (PageDisplayer.Content is TraceroutePage)
+		{
+			Global.SynethiaConfig.TraceRoutePageInfo.LeaveUnixTime = Sys.UnixTime;
+			Global.SynethiaConfig.TraceRoutePageInfo.TotalTimeSpent += Global.SynethiaConfig.TraceRoutePageInfo.LeaveUnixTime - Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime;
+			Global.SynethiaConfig.TraceRoutePageInfo.Score = Global.SynethiaConfig.TraceRoutePageInfo.TotalTimeSpent * (Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount > 0 ? Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount / 2d : 1d); // Calculate the score
+		}
 	}
 
 	private void ConfidentialModeBtn_Click(object sender, RoutedEventArgs e)
@@ -532,5 +546,15 @@ public partial class MainWindow : Window
 
 		PageDisplayer.Content = Global.DnsPage; // Display the IP config page
 		Global.SynethiaConfig.DnsPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
+	}
+
+	private void TraceroutePageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		LeavePage();
+		UnCheckAllButton(); // Reset all states
+		CheckButton(TraceroutePageBtn);
+
+		PageDisplayer.Content = Global.TraceroutePage; // Display the ping page
+		Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
 	}
 }

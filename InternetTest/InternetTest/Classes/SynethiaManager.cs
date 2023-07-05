@@ -48,6 +48,7 @@ public static class SynethiaManager
 		// Deserialize the file to Synethia config (using JSON)
 		var config = JsonSerializer.Deserialize<SynethiaConfig>(File.ReadAllText(Global.SynethiaPath)) ?? new();
 		config.DnsPageInfo ??= new();
+		config.TraceRoutePageInfo ??= new();
 		CheckActions(ref config);
 		return config;
 	}
@@ -61,10 +62,22 @@ public static class SynethiaManager
 
 	private static void CheckActions(ref SynethiaConfig synethiaConfig)
 	{
+		bool hasDns = false;
+		bool hasTracert = false;
 		for (int i = 0; i < synethiaConfig.ActionInfos.Count; i++)
 		{
-			if (synethiaConfig.ActionInfos[i].Action == Enums.AppActions.GetDnsInfo) return;
+			if (synethiaConfig.ActionInfos[i].Action == Enums.AppActions.GetDnsInfo) hasDns = true;
+			if (synethiaConfig.ActionInfos[i].Action == Enums.AppActions.TraceRoute) hasTracert = true;
 		}
-		synethiaConfig.ActionInfos.Add(new() { Action = Enums.AppActions.GetDnsInfo, UsageCount = 0 });
+
+		if (!hasDns)
+		{
+			synethiaConfig.ActionInfos.Add(new() { Action = Enums.AppActions.GetDnsInfo, UsageCount = 0 }); 
+		}
+
+		if (!hasTracert)
+		{
+			synethiaConfig.ActionInfos.Add(new() { Action = Enums.AppActions.TraceRoute, UsageCount = 0 });
+		}
 	}
 }

@@ -735,4 +735,7 @@
   <data name="Trace" xml:space="preserve">
     <value>追踪</value>
   </data>
+  <data name="ExecuteTraceRoute" xml:space="preserve">
+    <value>执行一个追踪路线</value>
+  </data>
 </root>

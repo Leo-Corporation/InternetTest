@@ -88,6 +88,10 @@ public partial class ActionCard : UserControl
 				Global.DnsPage.GetDnsInfoBtn_Click(this, null);
 				OnCardClick?.Invoke(this, new(AppPages.DnsTool));
 				break;
+			case AppActions.TraceRoute:
+				
+				OnCardClick?.Invoke(this, new(AppPages.TraceRoute));
+				break;
 			default:
 				break;
 		}

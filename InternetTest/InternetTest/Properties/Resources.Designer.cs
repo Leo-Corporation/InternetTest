@@ -505,6 +505,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Execute a trace route.
+        /// </summary>
+        public static string ExecuteTraceRoute {
+            get {
+                return ResourceManager.GetString("ExecuteTraceRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expiration date.
         /// </summary>
         public static string ExpirationDate {

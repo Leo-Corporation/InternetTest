@@ -47,6 +47,7 @@ public partial class App : Application
 		Global.IpConfigPage = new();
 		Global.WiFiPasswordsPage = new();
 		Global.DnsPage = new();
+		Global.TraceroutePage = new();
 
 
 		if (!Global.Settings.IsFirstRun)

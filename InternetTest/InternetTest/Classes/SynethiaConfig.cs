@@ -38,6 +38,7 @@ public class SynethiaConfig
 		IPConfigPageInfo = new();
 		WiFiPasswordsPageInfo = new();
 		DnsPageInfo = new();
+		TraceRoutePageInfo = new();
 
 		ActionInfos = Global.DefaultRelevantActions;
 	}
@@ -50,6 +51,7 @@ public class SynethiaConfig
 	public PageInfo IPConfigPageInfo { get; set; }
 	public PageInfo WiFiPasswordsPageInfo { get; set; }
 	public PageInfo? DnsPageInfo { get; set; }
+	public PageInfo? TraceRoutePageInfo { get; set; }
 
 	public List<ActionInfo> ActionInfos { get; set; }
 }
