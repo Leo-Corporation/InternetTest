@@ -410,4 +410,10 @@ public partial class SettingsPage : Page
 		Global.Settings.TraceRouteMaxHops = int.Parse(HopsTxt.Text);
 		SettingsManager.Save();
 	}
+
+	private void TimeOutApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.TraceRouteMaxTimeOut = int.Parse(TimeOutTxt.Text);
+		SettingsManager.Save();
+	}
 }
