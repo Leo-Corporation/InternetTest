@@ -20,7 +20,7 @@
 				</Grid.ColumnDefinitions>
 
 				<TextBlock Margin="5 0" x:Name="IdTxt" d:Text="#1" FontSize="16" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="Bold"/>
-				<TextBlock Margin="5 0" x:Name="NameTxt" d:Text="NameHere" FontSize="16" Grid.Column="1" FontWeight="Bold" VerticalAlignment="Center"/>
+				<TextBlock Margin="5 0" x:Name="NameTxt" d:Text="NameHere" FontSize="16" Grid.Column="1" FontWeight="Bold" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonUp="NameTxt_MouseLeftButtonUp"/>
 				<TextBlock Margin="5 0" x:Name="TimeTxt" d:Text="2ms" FontSize="16" Grid.Column="2" FontWeight="Bold" VerticalAlignment="Center"/>
 				<TextBlock Margin="5 0" x:Name="IconTxt" d:Text="&#xF299;" FontFamily="../Fonts/#FluentSystemIcons-Filled" FontSize="16" Grid.Column="3" VerticalAlignment="Center"/>
 

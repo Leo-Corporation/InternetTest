@@ -75,4 +75,9 @@ public partial class TraceRouteItem : UserControl
 		TopElipse.Visibility = TracertStep.TTL == 1 ? Visibility.Collapsed : Visibility.Visible;
 		BottomElipse.Visibility = IsLast ? Visibility.Collapsed : Visibility.Visible;
 	}
+
+	private void NameTxt_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+	{
+		Clipboard.SetText(((TextBlock)sender).Text);
+	}
 }
