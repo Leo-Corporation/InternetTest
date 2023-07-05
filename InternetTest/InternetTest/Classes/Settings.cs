@@ -49,6 +49,8 @@ public class Settings
 		ToggleConfidentialMode = false;
 		Pinned = false;
 		RememberPinnedState = true;
+		TraceRouteMaxHops = 30;
+		TraceRouteMaxTimeOut = 5000;
 	}
 
 	public Themes Theme { get; set; }
@@ -66,6 +68,8 @@ public class Settings
 	public bool? ToggleConfidentialMode { get; set; }
 	public bool? Pinned { get; set; }
 	public bool? RememberPinnedState { get; set; }
+	public int? TraceRouteMaxHops { get; set; }
+	public int? TraceRouteMaxTimeOut { get; set; }
 }
 
 public static class SettingsManager
@@ -102,6 +106,8 @@ public static class SettingsManager
 		settings.ToggleConfidentialMode ??= false; // Set the default value if none is specified.
 		settings.Pinned ??= false; // Set the default value if none is specified.
 		settings.RememberPinnedState ??= true; // Set the default value if none is specified.
+		settings.TraceRouteMaxHops ??= 30;
+		settings.TraceRouteMaxTimeOut ??= 5000;
 
 		return settings;
 	}

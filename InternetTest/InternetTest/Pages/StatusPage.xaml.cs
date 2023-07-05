@@ -26,7 +26,9 @@ using PeyrSharp.Core.Converters;
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -109,6 +111,8 @@ public partial class StatusPage : Page
 			StatusIconTxt.Text = "\uF2DE";
 			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
 			StatusTxt.Text = Properties.Resources.TestInProgress;
+			TestBtn.IsEnabled = false;
+			SpeedTestBtn.IsEnabled = false;
 
 			// Launch the test
 			// Part 1: Get the status code and start timer
@@ -158,6 +162,9 @@ public partial class StatusPage : Page
 			Global.History.StatusHistory.Add(new StatusHistory(Time.DateTimeToUnixTime(DateTime.Now), StatusIconTxt.Text, false));
 
 		}
+
+		TestBtn.IsEnabled = true;
+		SpeedTestBtn.IsEnabled = true;
 	}
 
 	internal void TestBtn_Click(object sender, RoutedEventArgs e)
@@ -181,5 +188,61 @@ public partial class StatusPage : Page
 	{
 		AdvancedOptions.Visibility = AdvancedOptions.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 		AdvancedBtn.Content = AdvancedOptions.Visibility == Visibility.Visible ? "\uF36A" : "\uF4A4";
+	}
+
+	private async void SpeedTestBtn_Click(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			// Show the waiting screen
+			StatusIconTxt.Text = "\uF2DE";
+			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			StatusTxt.Text = Properties.Resources.TestInProgress;
+			TestBtn.IsEnabled = false;
+			SpeedTestBtn.IsEnabled = false;
+
+			// Test
+			string targetUrl = "http://speedtest.tele2.net/10MB.zip";
+
+			long fileSize = await DownloadFile(targetUrl);
+			double speedMbps = fileSize / 1000000.0;
+
+			SpeedTxt.Text = $"{speedMbps:0.00} MB/s";
+
+			// Case of sucess
+			StatusIconTxt.Text = "\uF299";
+			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+			StatusTxt.Text = Properties.Resources.SpeedTestSucess;
+		}
+		catch
+		{
+			StatusIconTxt.Text = "\uF36E";
+			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+			StatusTxt.Text = Properties.Resources.SpeedTestFailed;
+		}
+
+		TestBtn.IsEnabled = true;
+		SpeedTestBtn.IsEnabled = true;
+	}
+
+	static async Task<long> DownloadFile(string url)
+	{
+		Stopwatch stopwatch = Stopwatch.StartNew();
+
+		using (HttpClient client = new HttpClient())
+		{
+			HttpResponseMessage response = await client.GetAsync(url);
+
+			if (response.IsSuccessStatusCode)
+			{
+				byte[] data = await response.Content.ReadAsByteArrayAsync();
+				stopwatch.Stop();
+				return data.Length;
+			}
+			else
+			{				
+				return 0;
+			}
+		}
 	}
 }

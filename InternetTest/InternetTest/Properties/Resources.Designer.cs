@@ -505,6 +505,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Execute a trace route.
+        /// </summary>
+        public static string ExecuteTraceRoute {
+            get {
+                return ResourceManager.GetString("ExecuteTraceRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expiration date.
         /// </summary>
         public static string ExpirationDate {
@@ -690,6 +699,15 @@ namespace InternetTest.Properties {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hops.
+        /// </summary>
+        public static string HopsLower {
+            get {
+                return ResourceManager.GetString("HopsLower", resourceCulture);
             }
         }
         
@@ -1021,11 +1039,47 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maximum hops.
+        /// </summary>
+        public static string MaxHops {
+            get {
+                return ResourceManager.GetString("MaxHops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max speed.
+        /// </summary>
+        public static string MaxSpeed {
+            get {
+                return ResourceManager.GetString("MaxSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Max duration.
         /// </summary>
         public static string MaxTime {
             get {
                 return ResourceManager.GetString("MaxTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum time out.
+        /// </summary>
+        public static string MaxTimeOut {
+            get {
+                return ResourceManager.GetString("MaxTimeOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Min speed.
+        /// </summary>
+        public static string MinSpeed {
+            get {
+                return ResourceManager.GetString("MinSpeed", resourceCulture);
             }
         }
         
@@ -1437,6 +1491,42 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Speed.
+        /// </summary>
+        public static string Speed {
+            get {
+                return ResourceManager.GetString("Speed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make a speed test.
+        /// </summary>
+        public static string SpeedTest {
+            get {
+                return ResourceManager.GetString("SpeedTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The speed test failed.
+        /// </summary>
+        public static string SpeedTestFailed {
+            get {
+                return ResourceManager.GetString("SpeedTestFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The speed test was successful.
+        /// </summary>
+        public static string SpeedTestSucess {
+            get {
+                return ResourceManager.GetString("SpeedTestSucess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default page on start.
         /// </summary>
         public static string StartupPage {
@@ -1628,6 +1718,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Timed out.
+        /// </summary>
+        public static string TimedOut {
+            get {
+                return ResourceManager.GetString("TimedOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Time elapsed.
         /// </summary>
         public static string TimeElapsed {
@@ -1669,6 +1768,51 @@ namespace InternetTest.Properties {
         public static string Tools {
             get {
                 return ResourceManager.GetString("Tools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trace.
+        /// </summary>
+        public static string Trace {
+            get {
+                return ResourceManager.GetString("Trace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tracing in progress.
+        /// </summary>
+        public static string TraceProgress {
+            get {
+                return ResourceManager.GetString("TraceProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trace Route.
+        /// </summary>
+        public static string TraceRoute {
+            get {
+                return ResourceManager.GetString("TraceRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Define the settings to use when performing a trace route..
+        /// </summary>
+        public static string TraceRouteDesc {
+            get {
+                return ResourceManager.GetString("TraceRouteDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trace route information will appear here.
+        /// </summary>
+        public static string TraceRouteInformation {
+            get {
+                return ResourceManager.GetString("TraceRouteInformation", resourceCulture);
             }
         }
         

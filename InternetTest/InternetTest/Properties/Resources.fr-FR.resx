@@ -720,4 +720,52 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="DefaultTheme" xml:space="preserve">
     <value>Thème système</value>
   </data>
+  <data name="SpeedTest" xml:space="preserve">
+    <value>Faire un speed test</value>
+  </data>
+  <data name="MinSpeed" xml:space="preserve">
+    <value>Vitesse min.</value>
+  </data>
+  <data name="MaxSpeed" xml:space="preserve">
+    <value>Vitesse maxi</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Vitesse</value>
+  </data>
+  <data name="SpeedTestSucess" xml:space="preserve">
+    <value>Le test de vitesse a réussi</value>
+  </data>
+  <data name="SpeedTestFailed" xml:space="preserve">
+    <value>Le speed test a échoué</value>
+  </data>
+  <data name="TraceRoute" xml:space="preserve">
+    <value>Trace Route</value>
+  </data>
+  <data name="Trace" xml:space="preserve">
+    <value>Tracer</value>
+  </data>
+  <data name="ExecuteTraceRoute" xml:space="preserve">
+    <value>Exécuter un trace route</value>
+  </data>
+  <data name="TimedOut" xml:space="preserve">
+    <value>Délai d’attente dépassé</value>
+  </data>
+  <data name="TraceRouteInformation" xml:space="preserve">
+    <value>Les informations relatives à l'itinéraire de traçage s'afficheront ici</value>
+  </data>
+  <data name="TraceProgress" xml:space="preserve">
+    <value>Traçage en cours</value>
+  </data>
+  <data name="TraceRouteDesc" xml:space="preserve">
+    <value>Définir les paramètres à utiliser lors de l'exécution d'un itinéraire de recherche.</value>
+  </data>
+  <data name="MaxTimeOut" xml:space="preserve">
+    <value>Délai maximum d'attente</value>
+  </data>
+  <data name="MaxHops" xml:space="preserve">
+    <value>Nombre maximal de sauts</value>
+  </data>
+  <data name="HopsLower" xml:space="preserve">
+    <value>sauts</value>
+  </data>
 </root>

@@ -24,12 +24,14 @@ SOFTWARE.
 using InternetTest.Enums;
 using InternetTest.Pages;
 using Microsoft.Win32;
+using PeyrSharp.Core.Maths;
 using PeyrSharp.Enums;
 using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.NetworkInformation;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -44,10 +46,10 @@ public static class Global
 #if NIGHTLY
 	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-	public static string Version => $"7.5.3.2304-nightly{Date:yyMM.dd@HHmm}";
+	public static string Version => $"7.6.0.2307-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "7.5.3.2304";
+	public static string Version => "7.6.0.2307";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
@@ -66,6 +68,7 @@ public static class Global
 	public static IpConfigPage? IpConfigPage { get; set; }
 	public static WiFiPasswordsPage? WiFiPasswordsPage { get; set; }
 	public static DnsPage? DnsPage { get; set; }
+	public static TraceroutePage? TraceroutePage { get; set; }
 
 	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\SynethiaConfig.json";
 
@@ -109,6 +112,7 @@ public static class Global
 		{ AppPages.IPConfig, "\uF848" },
 		{ AppPages.WiFiPasswords, "\uF8CC" },
 		{ AppPages.DnsTool, "\uF464" },
+		{ AppPages.TraceRoute, "\uF683" },
 	};
 	public static Dictionary<AppPages, string> AppPagesName => new()
 	{
@@ -123,6 +127,7 @@ public static class Global
 		{ AppPages.IPConfig, Properties.Resources.IPConfig },
 		{ AppPages.WiFiPasswords, Properties.Resources.WifiPasswords },
 		{ AppPages.DnsTool, Properties.Resources.DNSTool},
+		{ AppPages.TraceRoute, Properties.Resources.TraceRoute},
 	};
 
 	public static List<AppPages> GetMostRelevantPages(SynethiaConfig synethiaConfig)
@@ -137,6 +142,7 @@ public static class Global
 			{ AppPages.IPConfig, synethiaConfig.IPConfigPageInfo.Score },
 			{ AppPages.WiFiPasswords, synethiaConfig.WiFiPasswordsPageInfo.Score },
 			{ AppPages.DnsTool, synethiaConfig.DnsPageInfo.Score },
+			{ AppPages.TraceRoute, synethiaConfig.TraceRoutePageInfo.Score },
 		};
 
 		var sorted = appScores.OrderByDescending(x => x.Value);
@@ -165,8 +171,9 @@ public static class Global
 		AppPages.DownDetector,
 		AppPages.MyIP,
 		AppPages.Ping,
+		AppPages.TraceRoute,
 		AppPages.IPConfig,
-		AppPages.DnsTool
+		AppPages.DnsTool,
 	};
 
 	public static List<ActionInfo> DefaultRelevantActions => new()
@@ -179,6 +186,7 @@ public static class Global
 		new() { Action = AppActions.GetIPConfig, UsageCount = 0 },
 		new() { Action = AppActions.GetWiFiPasswords, UsageCount = 0 },
 		new() { Action = AppActions.GetDnsInfo, UsageCount = 0 },
+		new() { Action = AppActions.TraceRoute, UsageCount = 0 },
 	};
 
 	public static Dictionary<AppActions, string> ActionsIcons => new()
@@ -191,6 +199,7 @@ public static class Global
 		{ AppActions.Ping, "\uF4FB" },
 		{ AppActions.Test, "\uF612" },
 		{ AppActions.GetDnsInfo, "\uF69C" },
+		{ AppActions.TraceRoute, "\uF683" },
 	};
 
 	public static Dictionary<AppActions, string> ActionsString => new()
@@ -203,6 +212,7 @@ public static class Global
 		{ AppActions.Ping, Properties.Resources.MakePing },
 		{ AppActions.Test, Properties.Resources.TestConnection },
 		{ AppActions.GetDnsInfo, Properties.Resources.GetDnsInfo },
+		{ AppActions.TraceRoute, Properties.Resources.ExecuteTraceRoute },
 	};
 
 	public static Color GetColorFromResource(string resourceName) => (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());
@@ -354,4 +364,41 @@ public static class Global
 	public static bool DateIsInRange(int startDate, int endDate, int checkDate) => (startDate <= checkDate && checkDate <= endDate);
 
 	public static bool IsSuccessfulCode(int code) => code >= 200 && code < 400;
+
+	public static async Task<List<TracertStep>> Trace(string target, int maxHops, int timeout)
+	{
+		List<TracertStep> steps = new();
+
+		for (int ttl = 1; ttl <= maxHops; ttl++)
+		{
+			PingReply reply = await TraceRoute(target, ttl, timeout);
+
+			TracertStep step = new()
+			{
+				TTL = ttl,
+				Address = reply.Address,
+				RoundtripTime = reply.RoundtripTime,
+				Status = reply.Status
+			};
+
+			steps.Add(step);
+
+			if (reply.Status == IPStatus.Success)
+				break;
+		}
+
+		return steps;
+	}
+
+	public static Task<PingReply> TraceRoute(string targetAddress, int ttl, int timeout)
+	{
+		using Ping pingSender = new();
+		PingOptions options = new()
+		{
+			Ttl = ttl
+		};
+
+		byte[] buffer = new byte[32];
+		return pingSender.SendPingAsync(targetAddress, timeout, buffer, options);
+	}
 }

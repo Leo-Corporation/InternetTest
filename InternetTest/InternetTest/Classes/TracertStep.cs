@@ -22,16 +22,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-namespace InternetTest.Enums;
-public enum AppActions
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InternetTest.Classes;
+public class TracertStep
 {
-	Test,
-	DownDetectorRequest,
-	MyIP,
-	LocateIP,
-	Ping,
-	GetIPConfig,
-	GetWiFiPasswords,
-	GetDnsInfo,
-	TraceRoute
+	public int TTL { get; set; }
+	public IPAddress Address { get; set; }
+	public long RoundtripTime { get; set; }
+	public IPStatus Status { get; set; }
 }

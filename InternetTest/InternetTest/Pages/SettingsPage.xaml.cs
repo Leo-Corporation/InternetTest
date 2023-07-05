@@ -29,6 +29,7 @@ using PeyrSharp.Env;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -104,6 +105,10 @@ public partial class SettingsPage : Page
 		HttpsRadio.IsChecked = Global.Settings.UseHttps;
 		HttpRadio.IsChecked = !Global.Settings.UseHttps;
 		SiteTxt.Text = Global.Settings.TestSite;
+
+		// Trace route section
+		HopsTxt.Text = Global.Settings.TraceRouteMaxHops.ToString();
+		TimeOutTxt.Text = Global.Settings.TraceRouteMaxTimeOut.ToString();
 
 		// Data section
 		UseSynethiaChk.IsChecked = Global.Settings.UseSynethia;
@@ -386,6 +391,12 @@ public partial class SettingsPage : Page
 		Application.Current.Shutdown(); // Quit this current instance
 	}
 
+	private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+	{
+		Regex regex = new("[^0-9]+");
+		e.Handled = regex.IsMatch(e.Text);
+	}
+
 	private void ToggleConfModeOnStartChk_Checked(object sender, RoutedEventArgs e)
 	{
 		Global.Settings.ToggleConfidentialMode = ToggleConfModeOnStartChk.IsChecked;
@@ -395,6 +406,18 @@ public partial class SettingsPage : Page
 	private void RememberPinOnStartChk_Checked(object sender, RoutedEventArgs e)
 	{
 		Global.Settings.RememberPinnedState = RememberPinOnStartChk.IsChecked;
+		SettingsManager.Save();
+	}
+
+	private void HopsApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.TraceRouteMaxHops = int.Parse(HopsTxt.Text);
+		SettingsManager.Save();
+	}
+
+	private void TimeOutApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.TraceRouteMaxTimeOut = int.Parse(TimeOutTxt.Text);
 		SettingsManager.Save();
 	}
 }

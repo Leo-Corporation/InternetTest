@@ -35,5 +35,6 @@ public enum AppPages
 	Ping,
 	IPConfig,
 	WiFiPasswords,
-	DnsTool
+	DnsTool,
+	TraceRoute
 }

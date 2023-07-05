@@ -711,4 +711,52 @@
   <data name="DefaultTheme" xml:space="preserve">
     <value>系统主题</value>
   </data>
+  <data name="SpeedTest" xml:space="preserve">
+    <value>做一个速度测试</value>
+  </data>
+  <data name="MinSpeed" xml:space="preserve">
+    <value>最小速度</value>
+  </data>
+  <data name="MaxSpeed" xml:space="preserve">
+    <value>最大速度</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="SpeedTestSucess" xml:space="preserve">
+    <value>速度测试是成功的</value>
+  </data>
+  <data name="SpeedTestFailed" xml:space="preserve">
+    <value>速度测试失败</value>
+  </data>
+  <data name="TraceRoute" xml:space="preserve">
+    <value>追踪路线</value>
+  </data>
+  <data name="Trace" xml:space="preserve">
+    <value>追踪</value>
+  </data>
+  <data name="ExecuteTraceRoute" xml:space="preserve">
+    <value>执行一个追踪路线</value>
+  </data>
+  <data name="TimedOut" xml:space="preserve">
+    <value>计时结束</value>
+  </data>
+  <data name="TraceRouteInformation" xml:space="preserve">
+    <value>追踪路线信息将出现在这里</value>
+  </data>
+  <data name="TraceProgress" xml:space="preserve">
+    <value>追踪过程中</value>
+  </data>
+  <data name="TraceRouteDesc" xml:space="preserve">
+    <value>定义执行跟踪路由时要使用的设置。</value>
+  </data>
+  <data name="MaxTimeOut" xml:space="preserve">
+    <value>最大限度的超时</value>
+  </data>
+  <data name="MaxHops" xml:space="preserve">
+    <value>最大跳数</value>
+  </data>
+  <data name="HopsLower" xml:space="preserve">
+    <value>啤酒花</value>
+  </data>
 </root>

@@ -720,4 +720,52 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="DefaultTheme" xml:space="preserve">
     <value>System theme</value>
   </data>
+  <data name="SpeedTest" xml:space="preserve">
+    <value>Make a speed test</value>
+  </data>
+  <data name="MinSpeed" xml:space="preserve">
+    <value>Min speed</value>
+  </data>
+  <data name="MaxSpeed" xml:space="preserve">
+    <value>Max speed</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="SpeedTestSucess" xml:space="preserve">
+    <value>The speed test was successful</value>
+  </data>
+  <data name="SpeedTestFailed" xml:space="preserve">
+    <value>The speed test failed</value>
+  </data>
+  <data name="TraceRoute" xml:space="preserve">
+    <value>Trace Route</value>
+  </data>
+  <data name="Trace" xml:space="preserve">
+    <value>Trace</value>
+  </data>
+  <data name="ExecuteTraceRoute" xml:space="preserve">
+    <value>Execute a trace route</value>
+  </data>
+  <data name="TimedOut" xml:space="preserve">
+    <value>Timed out</value>
+  </data>
+  <data name="TraceRouteInformation" xml:space="preserve">
+    <value>Trace route information will appear here</value>
+  </data>
+  <data name="TraceProgress" xml:space="preserve">
+    <value>Tracing in progress</value>
+  </data>
+  <data name="TraceRouteDesc" xml:space="preserve">
+    <value>Define the settings to use when performing a trace route.</value>
+  </data>
+  <data name="MaxTimeOut" xml:space="preserve">
+    <value>Maximum time out</value>
+  </data>
+  <data name="MaxHops" xml:space="preserve">
+    <value>Maximum hops</value>
+  </data>
+  <data name="HopsLower" xml:space="preserve">
+    <value>hops</value>
+  </data>
 </root>
