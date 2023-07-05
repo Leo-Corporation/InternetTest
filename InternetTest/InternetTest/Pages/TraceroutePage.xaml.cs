@@ -27,6 +27,7 @@ using InternetTest.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -113,16 +114,27 @@ public partial class TraceroutePage : Page
 	private async void TraceBtn_Click(object sender, RoutedEventArgs e)
 	{
 		TraceBtn.IsEnabled = false;
+		StatusPanel.Visibility = Visibility.Collapsed;
 
 		try
 		{
 			TracertPanel.Children.Clear();
 			var route = await Global.Trace(AddressTxt.Text, 30, 5000);
+			int success = 0; int failed = 0; long time = 0;
 
 			for (int i = 0; i < route.Count; i++)
 			{
 				TracertPanel.Children.Add(new TraceRouteItem(route[i], i == route.Count - 1));
+				if (route[i].Status == IPStatus.Success || route[i].Status == IPStatus.TtlExpired) success++;
+				else failed++;
+				time += route[i].RoundtripTime;
 			}
+
+			SucessTxt.Text = success.ToString();
+			FailedTxt.Text = failed.ToString();
+			DurationTxt.Text = $"{time}ms";
+			HopsTxt.Text = route.Count.ToString();
+			StatusPanel.Visibility = Visibility.Visible;
 		}
 		catch { }
 

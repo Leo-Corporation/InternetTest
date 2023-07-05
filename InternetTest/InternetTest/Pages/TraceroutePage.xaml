@@ -13,6 +13,7 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 
@@ -37,7 +38,18 @@
 			</Border>
 			<Button x:Name="TraceBtn" Click="TraceBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Trace}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 		</StackPanel>
-		<StackPanel x:Name="TracertPanel" Grid.Row="2">
+		<StackPanel x:Name="StatusPanel" Visibility="Collapsed" Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+			<TextBlock Margin="1 0" Text="&#xF299;" FontFamily="../Fonts/#FluentSystemIcons-Filled" FontSize="16" Grid.Column="3" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Green}}"/>
+			<TextBlock Margin="1 0 5 0" x:Name="SucessTxt" d:Text="6" FontSize="14" Grid.Column="2" FontWeight="Bold" VerticalAlignment="Center"/>
+			<TextBlock Margin="1 0" Text="&#xF36E;" FontFamily="../Fonts/#FluentSystemIcons-Filled" FontSize="16" Grid.Column="3" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource Red}}"/>
+			<TextBlock Margin="1 0 5 0" x:Name="FailedTxt" d:Text="1" FontSize="14" Grid.Column="2" FontWeight="Bold" VerticalAlignment="Center"/>
+			<TextBlock Margin="1 0" Text="&#xF2DE;" FontFamily="../Fonts/#FluentSystemIcons-Filled" FontSize="16" Grid.Column="3" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource AccentColor}}"/>
+			<TextBlock Margin="1 0 5 0" x:Name="DurationTxt" d:Text="27ms" FontSize="14" Grid.Column="2" FontWeight="Bold" VerticalAlignment="Center"/>
+			<TextBlock Margin="1 0" Text="&#xFDAA;" FontFamily="../Fonts/#FluentSystemIcons-Filled" FontSize="16" Grid.Column="3" VerticalAlignment="Center" Foreground="{Binding Source={StaticResource AccentColor}}"/>
+			<TextBlock Margin="1 0 5 0" x:Name="HopsTxt" d:Text="7" FontSize="14" Grid.Column="2" FontWeight="Bold" VerticalAlignment="Center"/>
+
+		</StackPanel>
+		<StackPanel x:Name="TracertPanel" Grid.Row="3">
 			
 		</StackPanel>
 	</Grid>
