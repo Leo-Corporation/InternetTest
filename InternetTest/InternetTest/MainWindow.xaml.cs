@@ -133,6 +133,12 @@ public partial class MainWindow : Window
 				UnCheckAllButton();
 				CheckButton(DnsPageBtn);
 				break;
+			case AppPages.TraceRoute:
+				PageDisplayer.Content = Global.TraceroutePage;
+				Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime = Sys.UnixTime;
+				UnCheckAllButton();
+				CheckButton(TraceroutePageBtn);
+				break;
 			default:
 				break;
 		}
