@@ -756,4 +756,16 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="TraceProgress" xml:space="preserve">
     <value>Tracciamento in corso</value>
   </data>
+  <data name="TraceRouteDesc" xml:space="preserve">
+    <value>Definire le impostazioni da utilizzare quando si esegue un percorso di tracciamento.</value>
+  </data>
+  <data name="MaxTimeOut" xml:space="preserve">
+    <value>Tempo massimo di uscita</value>
+  </data>
+  <data name="MaxHops" xml:space="preserve">
+    <value>Salti massimi</value>
+  </data>
+  <data name="HopsLower" xml:space="preserve">
+    <value>salti</value>
+  </data>
 </root>

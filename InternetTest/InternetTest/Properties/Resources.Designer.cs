@@ -703,6 +703,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to hops.
+        /// </summary>
+        public static string HopsLower {
+            get {
+                return ResourceManager.GetString("HopsLower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to HTTP.
         /// </summary>
         public static string HTTP {
@@ -1030,6 +1039,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maximum hops.
+        /// </summary>
+        public static string MaxHops {
+            get {
+                return ResourceManager.GetString("MaxHops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Max speed.
         /// </summary>
         public static string MaxSpeed {
@@ -1044,6 +1062,15 @@ namespace InternetTest.Properties {
         public static string MaxTime {
             get {
                 return ResourceManager.GetString("MaxTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum time out.
+        /// </summary>
+        public static string MaxTimeOut {
+            get {
+                return ResourceManager.GetString("MaxTimeOut", resourceCulture);
             }
         }
         
@@ -1768,6 +1795,15 @@ namespace InternetTest.Properties {
         public static string TraceRoute {
             get {
                 return ResourceManager.GetString("TraceRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Define the settings to use when performing a trace route..
+        /// </summary>
+        public static string TraceRouteDesc {
+            get {
+                return ResourceManager.GetString("TraceRouteDesc", resourceCulture);
             }
         }
         

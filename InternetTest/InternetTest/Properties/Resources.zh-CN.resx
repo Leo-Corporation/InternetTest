@@ -747,4 +747,16 @@
   <data name="TraceProgress" xml:space="preserve">
     <value>追踪过程中</value>
   </data>
+  <data name="TraceRouteDesc" xml:space="preserve">
+    <value>定义执行跟踪路由时要使用的设置。</value>
+  </data>
+  <data name="MaxTimeOut" xml:space="preserve">
+    <value>最大限度的超时</value>
+  </data>
+  <data name="MaxHops" xml:space="preserve">
+    <value>最大跳数</value>
+  </data>
+  <data name="HopsLower" xml:space="preserve">
+    <value>啤酒花</value>
+  </data>
 </root>
