@@ -67,9 +67,9 @@ public partial class TraceRouteItem : UserControl
 			NameTxt.Text = Properties.Resources.TimedOut;
 		}
 
-		if (TracertStep.Status != IPStatus.Success && TracertStep.Status != IPStatus.TtlExpired)
+		if (TracertStep.Status != IPStatus.Success && TracertStep.Status != IPStatus.TtlExpired && TracertStep.Status != IPStatus.TimedOut)
 		{
-			NameTxt.Text += $" {TracertStep.Status}";
+			NameTxt.Text += $" ({TracertStep.Status})";
 		}
 
 		TopElipse.Visibility = TracertStep.TTL == 1 ? Visibility.Collapsed : Visibility.Visible;
