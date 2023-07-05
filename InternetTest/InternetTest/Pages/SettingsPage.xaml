@@ -240,7 +240,7 @@
 							<Border.Effect>
 								<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
 							</Border.Effect>
-							<TextBox PreviewTextInput="TextBox_PreviewTextInput" Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="HopsTxt" Background="Transparent" BorderThickness="0" Padding="3" MinWidth="50"/>
+							<TextBox TextAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput" Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="HopsTxt" Background="Transparent" BorderThickness="0" Padding="3" MinWidth="50"/>
 						</Border>
 						<Button x:Name="HopsApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource PrimaryButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="HopsApplyBtn_Click" Visibility="Visible">
 							<TextBlock Text="&#xF680;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" VerticalAlignment="Center"/>
@@ -256,7 +256,7 @@
 							<Border.Effect>
 								<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
 							</Border.Effect>
-							<TextBox PreviewTextInput="TextBox_PreviewTextInput" Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="TimeOutTxt" Background="Transparent" BorderThickness="0" Padding="3" MinWidth="50"/>
+							<TextBox TextAlignment="Center" PreviewTextInput="TextBox_PreviewTextInput" Foreground="{Binding Source={StaticResource Foreground1}}" x:Name="TimeOutTxt" Background="Transparent" BorderThickness="0" Padding="3" MinWidth="50"/>
 						</Border>
 						<Button x:Name="TimeOutApplyBtn" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" Padding="10,5,10,5" Style="{StaticResource PrimaryButton}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="TimeOutApplyBtn_Click" Visibility="Visible">
 							<TextBlock Text="&#xF680;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" VerticalAlignment="Center"/>

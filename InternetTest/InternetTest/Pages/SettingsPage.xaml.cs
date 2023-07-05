@@ -106,6 +106,10 @@ public partial class SettingsPage : Page
 		HttpRadio.IsChecked = !Global.Settings.UseHttps;
 		SiteTxt.Text = Global.Settings.TestSite;
 
+		// Trace route section
+		HopsTxt.Text = Global.Settings.TraceRouteMaxHops.ToString();
+		TimeOutTxt.Text = Global.Settings.TraceRouteMaxTimeOut.ToString();
+
 		// Data section
 		UseSynethiaChk.IsChecked = Global.Settings.UseSynethia;
 
