@@ -128,7 +128,7 @@ public partial class TraceroutePage : Page
 		try
 		{
 			// Get traceroute
-			var route = await Global.Trace(AddressTxt.Text, 30, 5000);
+			var route = await Global.Trace(AddressTxt.Text, Global.Settings.TraceRouteMaxHops ?? 30, Global.Settings.TraceRouteMaxTimeOut ?? 5000);
 			int success = 0; int failed = 0; long time = 0;
 
 			// Update the UI with each step
