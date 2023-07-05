@@ -1727,6 +1727,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Trace.
+        /// </summary>
+        public static string Trace {
+            get {
+                return ResourceManager.GetString("Trace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trace Route.
+        /// </summary>
+        public static string TraceRoute {
+            get {
+                return ResourceManager.GetString("TraceRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Text files.
         /// </summary>
         public static string TxtFiles {

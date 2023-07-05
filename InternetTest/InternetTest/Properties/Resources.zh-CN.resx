@@ -729,4 +729,10 @@
   <data name="SpeedTestFailed" xml:space="preserve">
     <value>速度测试失败</value>
   </data>
+  <data name="TraceRoute" xml:space="preserve">
+    <value>追踪路线</value>
+  </data>
+  <data name="Trace" xml:space="preserve">
+    <value>追踪</value>
+  </data>
 </root>

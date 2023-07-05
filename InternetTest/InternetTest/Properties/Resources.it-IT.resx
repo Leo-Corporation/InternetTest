@@ -738,4 +738,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="SpeedTestFailed" xml:space="preserve">
     <value>Il test di velocità è fallito</value>
   </data>
+  <data name="TraceRoute" xml:space="preserve">
+    <value>Trace Route</value>
+  </data>
+  <data name="Trace" xml:space="preserve">
+    <value>Traccia</value>
+  </data>
 </root>

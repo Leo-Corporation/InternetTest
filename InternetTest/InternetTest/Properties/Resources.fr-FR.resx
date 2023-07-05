@@ -738,4 +738,10 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="SpeedTestFailed" xml:space="preserve">
     <value>Le speed test a échoué</value>
   </data>
+  <data name="TraceRoute" xml:space="preserve">
+    <value>Trace Route</value>
+  </data>
+  <data name="Trace" xml:space="preserve">
+    <value>Tracer</value>
+  </data>
 </root>
