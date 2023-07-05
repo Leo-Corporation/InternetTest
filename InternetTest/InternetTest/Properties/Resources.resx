@@ -750,4 +750,10 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="TimedOut" xml:space="preserve">
     <value>Timed out</value>
   </data>
+  <data name="TraceRouteInformation" xml:space="preserve">
+    <value>Trace route information will appear here</value>
+  </data>
+  <data name="TraceProgress" xml:space="preserve">
+    <value>Tracing in progress</value>
+  </data>
 </root>

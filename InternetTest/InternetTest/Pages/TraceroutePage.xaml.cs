@@ -113,15 +113,22 @@ public partial class TraceroutePage : Page
 
 	private async void TraceBtn_Click(object sender, RoutedEventArgs e)
 	{
+		// Show the waiting screen
 		TraceBtn.IsEnabled = false;
 		StatusPanel.Visibility = Visibility.Collapsed;
+		WaitingScreen.Visibility = Visibility.Visible;
+		WaitTxt.Text = Properties.Resources.TraceProgress;
+		WaitIconTxt.Text = "\uF2DE";
+		TracertPanel.Visibility = Visibility.Collapsed;
+		TracertPanel.Children.Clear();
 
 		try
 		{
-			TracertPanel.Children.Clear();
+			// Get traceroute
 			var route = await Global.Trace(AddressTxt.Text, 30, 5000);
 			int success = 0; int failed = 0; long time = 0;
 
+			// Update the UI with each step
 			for (int i = 0; i < route.Count; i++)
 			{
 				TracertPanel.Children.Add(new TraceRouteItem(route[i], i == route.Count - 1));
@@ -130,11 +137,19 @@ public partial class TraceroutePage : Page
 				time += route[i].RoundtripTime;
 			}
 
+			// Set the values of the overview panel
 			SucessTxt.Text = success.ToString();
 			FailedTxt.Text = failed.ToString();
 			DurationTxt.Text = $"{time}ms";
 			HopsTxt.Text = route.Count.ToString();
+
+			// Show the overview and the traceroute
 			StatusPanel.Visibility = Visibility.Visible;
+			WaitingScreen.Visibility = Visibility.Collapsed;
+			TracertPanel.Visibility = Visibility.Visible;
+			
+			WaitTxt.Text = Properties.Resources.TraceRouteInformation; // Reset text to default
+			WaitIconTxt.Text = "\uF4AB";
 		}
 		catch { }
 

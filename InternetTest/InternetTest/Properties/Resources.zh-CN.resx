@@ -741,4 +741,10 @@
   <data name="TimedOut" xml:space="preserve">
     <value>计时结束</value>
   </data>
+  <data name="TraceRouteInformation" xml:space="preserve">
+    <value>追踪路线信息将出现在这里</value>
+  </data>
+  <data name="TraceProgress" xml:space="preserve">
+    <value>追踪过程中</value>
+  </data>
 </root>

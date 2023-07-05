@@ -750,4 +750,10 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="TimedOut" xml:space="preserve">
     <value>Délai d’attente dépassé</value>
   </data>
+  <data name="TraceRouteInformation" xml:space="preserve">
+    <value>Les informations relatives à l'itinéraire de traçage s'afficheront ici</value>
+  </data>
+  <data name="TraceProgress" xml:space="preserve">
+    <value>Traçage en cours</value>
+  </data>
 </root>

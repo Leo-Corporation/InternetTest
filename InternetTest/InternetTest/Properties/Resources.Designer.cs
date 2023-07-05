@@ -1754,11 +1754,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tracing in progress.
+        /// </summary>
+        public static string TraceProgress {
+            get {
+                return ResourceManager.GetString("TraceProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trace Route.
         /// </summary>
         public static string TraceRoute {
             get {
                 return ResourceManager.GetString("TraceRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trace route information will appear here.
+        /// </summary>
+        public static string TraceRouteInformation {
+            get {
+                return ResourceManager.GetString("TraceRouteInformation", resourceCulture);
             }
         }
         
