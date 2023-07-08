@@ -721,7 +721,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Tema sistema</value>
   </data>
   <data name="SpeedTest" xml:space="preserve">
-    <value>Effettuare un speed test</value>
+    <value>Effettua un test velocità</value>
   </data>
   <data name="MinSpeed" xml:space="preserve">
     <value>Velocità minima</value>
@@ -733,34 +733,34 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Velocità</value>
   </data>
   <data name="SpeedTestSucess" xml:space="preserve">
-    <value>Il test di velocità ha avuto successo</value>
+    <value>Test velocità completato corretamente</value>
   </data>
   <data name="SpeedTestFailed" xml:space="preserve">
-    <value>Il test di velocità è fallito</value>
+    <value>Il test velocità è fallito</value>
   </data>
   <data name="TraceRoute" xml:space="preserve">
-    <value>Trace Route</value>
+    <value>Traccia percorso (trace route)</value>
   </data>
   <data name="Trace" xml:space="preserve">
     <value>Traccia</value>
   </data>
   <data name="ExecuteTraceRoute" xml:space="preserve">
-    <value>Eseguire un trace route</value>
+    <value>Esegui un trace route</value>
   </data>
   <data name="TimedOut" xml:space="preserve">
-    <value>Timed out</value>
+    <value>Time out</value>
   </data>
   <data name="TraceRouteInformation" xml:space="preserve">
-    <value>Le informazioni sul percorso di tracciamento vengono visualizzate qui</value>
+    <value>Le informazioni sul percorso di trace route vengono visualizzate qui</value>
   </data>
   <data name="TraceProgress" xml:space="preserve">
     <value>Tracciamento in corso</value>
   </data>
   <data name="TraceRouteDesc" xml:space="preserve">
-    <value>Definire le impostazioni da utilizzare quando si esegue un percorso di tracciamento.</value>
+    <value>Definisci le impostazioni da usare quando si esegue un trace route.</value>
   </data>
   <data name="MaxTimeOut" xml:space="preserve">
-    <value>Tempo massimo di uscita</value>
+    <value>Timeout max</value>
   </data>
   <data name="MaxHops" xml:space="preserve">
     <value>Salti massimi</value>
