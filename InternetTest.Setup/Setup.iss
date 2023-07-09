@@ -71,3 +71,60 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
+[Code]
+function IsDotNetInstalled(DotNetName: string): Boolean;
+var
+  Cmd, Args: string;
+  FileName: string;
+  Output: AnsiString;
+  Command: string;
+  ResultCode: Integer;
+begin
+  FileName := ExpandConstant('{tmp}\dotnet.txt');
+  Cmd := ExpandConstant('{cmd}');
+  Command := 'dotnet --list-runtimes';
+  Args := '/C ' + Command + ' > "' + FileName + '" 2>&1';
+  if Exec(Cmd, Args, '', SW_HIDE, ewWaitUntilTerminated, ResultCode) and
+     (ResultCode = 0) then
+  begin
+    if LoadStringFromFile(FileName, Output) then
+    begin
+      if Pos(DotNetName, Output) > 0 then
+      begin
+        Log('"' + DotNetName + '" found in output of "' + Command + '"');
+        Result := True;
+      end
+        else
+      begin
+        Log('"' + DotNetName + '" not found in output of "' + Command + '"');
+        Result := False;
+      end;
+    end
+      else
+    begin
+      Log('Failed to read output of "' + Command + '"');
+    end;
+  end
+    else
+  begin
+    Log('Failed to execute "' + Command + '"');
+    Result := False;
+  end;
+  DeleteFile(FileName);
+end;
+
+function IsDotNetCore60RuntimeInstalled(): Boolean;
+begin
+    Result := IsDotNetInstalled('Microsoft.WindowsDesktop.App 6.0.');
+end;
+
+function InitializeSetup(): Boolean;
+begin
+    if not IsDotNetCore60RuntimeInstalled() then begin
+        MsgBox('The required .NET Core 6.0 Windows Desktop Runtime is not installed on your system. Please install it and try again.', mbError, MB_OK);
+        Result := False;
+        Exit;
+    end;
+
+    Result := True;
+end;
