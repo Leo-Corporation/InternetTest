@@ -163,6 +163,9 @@ public partial class MainWindow : Window
 			Width = Global.Settings.MainWindowSize?.Item1 ?? 950;
 			Height = Global.Settings.MainWindowSize?.Item2 ?? 600;
 		}
+
+		// Version
+		VersionTxt.Text = Global.Version;
 	}
 
 	private void PageCard_OnCardClick(object? sender, PageEventArgs e)
