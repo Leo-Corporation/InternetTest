@@ -68,6 +68,7 @@ public partial class MainWindow : Window
 		{
 			PageScroller.Height = (ActualHeight - (GridRow1.ActualHeight + 68) > 0) ? ActualHeight - (GridRow1.ActualHeight + 68) : 0; // Set the scroller height
 			ActionsScrollViewer.Height = ActualHeight - SideBarTop.ActualHeight - GridRow1.ActualHeight - 60;
+			Global.Settings.MainWindowSize = (ActualWidth, ActualHeight);
 		};
 		Closed += (o, e) => LeavePage();
 		HelloTxt.Text = Global.GetHiSentence; // Show greeting message to the user
@@ -155,6 +156,13 @@ public partial class MainWindow : Window
 
 		// Toggle the "pin" state
 		if ((Global.Settings.RememberPinnedState ?? true) && (Global.Settings.Pinned ?? false)) PinBtn_Click(this, null);
+
+		// Restore the previous size
+		if (!Global.Settings.IsMaximized ?? false)
+		{
+			Width = Global.Settings.MainWindowSize?.Item1 ?? 950;
+			Height = Global.Settings.MainWindowSize?.Item2 ?? 600;
+		}
 	}
 
 	private void PageCard_OnCardClick(object? sender, PageEventArgs e)
