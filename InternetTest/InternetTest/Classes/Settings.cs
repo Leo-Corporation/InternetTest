@@ -51,6 +51,7 @@ public class Settings
 		RememberPinnedState = true;
 		TraceRouteMaxHops = 30;
 		TraceRouteMaxTimeOut = 5000;
+		MainWindowSize = (950, 600);
 	}
 
 	public Themes Theme { get; set; }
@@ -70,6 +71,7 @@ public class Settings
 	public bool? RememberPinnedState { get; set; }
 	public int? TraceRouteMaxHops { get; set; }
 	public int? TraceRouteMaxTimeOut { get; set; }
+	public (double, double)? MainWindowSize { get; set; }
 }
 
 public static class SettingsManager
@@ -108,6 +110,7 @@ public static class SettingsManager
 		settings.RememberPinnedState ??= true; // Set the default value if none is specified.
 		settings.TraceRouteMaxHops ??= 30;
 		settings.TraceRouteMaxTimeOut ??= 5000;
+		settings.MainWindowSize ??= (950, 600);
 
 		return settings;
 	}
