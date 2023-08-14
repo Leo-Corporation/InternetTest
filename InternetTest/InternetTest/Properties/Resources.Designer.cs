@@ -1491,6 +1491,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Signal quality.
+        /// </summary>
+        public static string SignalQuality {
+            get {
+                return ResourceManager.GetString("SignalQuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skip.
         /// </summary>
         public static string Skip {

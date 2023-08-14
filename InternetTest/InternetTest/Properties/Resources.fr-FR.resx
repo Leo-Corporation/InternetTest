@@ -774,4 +774,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="ConnectWiFi" xml:space="preserve">
     <value>Se connecter à un réseau WiFi</value>
   </data>
+  <data name="SignalQuality" xml:space="preserve">
+    <value>Qualité du signal</value>
+  </data>
 </root>

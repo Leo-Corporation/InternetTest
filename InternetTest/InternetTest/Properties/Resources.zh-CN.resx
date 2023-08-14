@@ -765,4 +765,7 @@
   <data name="ConnectWiFi" xml:space="preserve">
     <value>连接到 WiFi 网络</value>
   </data>
+  <data name="SignalQuality" xml:space="preserve">
+    <value>信号质量</value>
+  </data>
 </root>
