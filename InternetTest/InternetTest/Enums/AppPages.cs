@@ -36,5 +36,6 @@ public enum AppPages
 	IPConfig,
 	WiFiPasswords,
 	DnsTool,
-	TraceRoute
+	TraceRoute,
+	WiFiNetworks
 }

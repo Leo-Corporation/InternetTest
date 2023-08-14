@@ -69,6 +69,7 @@ public static class Global
 	public static WiFiPasswordsPage? WiFiPasswordsPage { get; set; }
 	public static DnsPage? DnsPage { get; set; }
 	public static TraceroutePage? TraceroutePage { get; set; }
+	public static WiFiNetworksPage? WiFiNetworksPage { get; set; }
 
 	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\SynethiaConfig.json";
 
@@ -113,6 +114,7 @@ public static class Global
 		{ AppPages.WiFiPasswords, "\uF8CC" },
 		{ AppPages.DnsTool, "\uF464" },
 		{ AppPages.TraceRoute, "\uF683" },
+		{ AppPages.WiFiNetworks, "\uF8C5" },
 	};
 	public static Dictionary<AppPages, string> AppPagesName => new()
 	{
@@ -128,6 +130,7 @@ public static class Global
 		{ AppPages.WiFiPasswords, Properties.Resources.WifiPasswords },
 		{ AppPages.DnsTool, Properties.Resources.DNSTool},
 		{ AppPages.TraceRoute, Properties.Resources.TraceRoute},
+		{ AppPages.WiFiNetworks, Properties.Resources.WiFiNetworks},
 	};
 
 	public static List<AppPages> GetMostRelevantPages(SynethiaConfig synethiaConfig)
@@ -143,6 +146,7 @@ public static class Global
 			{ AppPages.WiFiPasswords, synethiaConfig.WiFiPasswordsPageInfo.Score },
 			{ AppPages.DnsTool, synethiaConfig.DnsPageInfo.Score },
 			{ AppPages.TraceRoute, synethiaConfig.TraceRoutePageInfo.Score },
+			{ AppPages.WiFiNetworks, synethiaConfig.WiFiNetworksPageInfo.Score },
 		};
 
 		var sorted = appScores.OrderByDescending(x => x.Value);
@@ -170,6 +174,7 @@ public static class Global
 		AppPages.WiFiPasswords,
 		AppPages.DownDetector,
 		AppPages.MyIP,
+		AppPages.WiFiNetworks,
 		AppPages.Ping,
 		AppPages.TraceRoute,
 		AppPages.IPConfig,
@@ -185,6 +190,7 @@ public static class Global
 		new() { Action = AppActions.LocateIP, UsageCount = 0 },
 		new() { Action = AppActions.GetIPConfig, UsageCount = 0 },
 		new() { Action = AppActions.GetWiFiPasswords, UsageCount = 0 },
+		new() { Action = AppActions.ConnectWiFi, UsageCount = 0 },
 		new() { Action = AppActions.GetDnsInfo, UsageCount = 0 },
 		new() { Action = AppActions.TraceRoute, UsageCount = 0 },
 	};
@@ -200,6 +206,7 @@ public static class Global
 		{ AppActions.Test, "\uF612" },
 		{ AppActions.GetDnsInfo, "\uF69C" },
 		{ AppActions.TraceRoute, "\uF683" },
+		{ AppActions.ConnectWiFi, "\uF614" },
 	};
 
 	public static Dictionary<AppActions, string> ActionsString => new()
@@ -213,6 +220,7 @@ public static class Global
 		{ AppActions.Test, Properties.Resources.TestConnection },
 		{ AppActions.GetDnsInfo, Properties.Resources.GetDnsInfo },
 		{ AppActions.TraceRoute, Properties.Resources.ExecuteTraceRoute },
+		{ AppActions.ConnectWiFi, Properties.Resources.ConnectWiFi },
 	};
 
 	public static Color GetColorFromResource(string resourceName) => (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());

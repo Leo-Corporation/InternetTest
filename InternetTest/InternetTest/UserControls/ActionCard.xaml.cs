@@ -92,6 +92,10 @@ public partial class ActionCard : UserControl
 				
 				OnCardClick?.Invoke(this, new(AppPages.TraceRoute));
 				break;
+			case AppActions.ConnectWiFi:
+
+				OnCardClick?.Invoke(this, new(AppPages.WiFiNetworks));
+				break;
 			default:
 				break;
 		}

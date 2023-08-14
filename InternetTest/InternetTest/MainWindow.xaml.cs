@@ -140,6 +140,12 @@ public partial class MainWindow : Window
 				UnCheckAllButton();
 				CheckButton(TraceroutePageBtn);
 				break;
+			case AppPages.WiFiNetworks:
+				PageDisplayer.Content = Global.WiFiNetworksPage;
+				Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime = Sys.UnixTime;
+				UnCheckAllButton();
+				CheckButton(WiFiPageBtn);
+				break;
 			default:
 				break;
 		}
@@ -225,6 +231,12 @@ public partial class MainWindow : Window
 				Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime = Sys.UnixTime;
 				UnCheckAllButton();
 				CheckButton(TraceroutePageBtn);
+				break;
+			case AppPages.WiFiNetworks:
+				PageDisplayer.Content = Global.WiFiNetworksPage;
+				Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime = Sys.UnixTime;
+				UnCheckAllButton();
+				CheckButton(WiFiPageBtn);
 				break;
 			default:
 				break;
@@ -367,6 +379,7 @@ public partial class MainWindow : Window
 		IPConfigPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		WifiPasswordsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		DnsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		WiFiPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 
 		StatusPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		DownDetectorPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
@@ -377,6 +390,7 @@ public partial class MainWindow : Window
 		IPConfigPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		WifiPasswordsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		DnsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+		WiFiPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 	}
 
 	private void StatusPageBtn_Click(object sender, RoutedEventArgs e)
@@ -533,6 +547,12 @@ public partial class MainWindow : Window
 			Global.SynethiaConfig.TraceRoutePageInfo.TotalTimeSpent += Global.SynethiaConfig.TraceRoutePageInfo.LeaveUnixTime - Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime;
 			Global.SynethiaConfig.TraceRoutePageInfo.Score = Global.SynethiaConfig.TraceRoutePageInfo.TotalTimeSpent * (Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount > 0 ? Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount / 2d : 1d); // Calculate the score
 		}
+		else if (PageDisplayer.Content is WiFiNetworksPage)
+		{
+			Global.SynethiaConfig.WiFiNetworksPageInfo.LeaveUnixTime = Sys.UnixTime;
+			Global.SynethiaConfig.WiFiNetworksPageInfo.TotalTimeSpent += Global.SynethiaConfig.WiFiNetworksPageInfo.LeaveUnixTime - Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime;
+			Global.SynethiaConfig.WiFiNetworksPageInfo.Score = Global.SynethiaConfig.WiFiNetworksPageInfo.TotalTimeSpent * (Global.SynethiaConfig.WiFiNetworksPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.WiFiNetworksPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+		}
 	}
 
 	private void ConfidentialModeBtn_Click(object sender, RoutedEventArgs e)
@@ -573,5 +593,15 @@ public partial class MainWindow : Window
 
 		PageDisplayer.Content = Global.TraceroutePage; // Display the ping page
 		Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
+	}
+
+	private void WiFiPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		LeavePage();
+		UnCheckAllButton(); // Reset all states
+		CheckButton(WiFiPageBtn);
+
+		PageDisplayer.Content = Global.WiFiNetworksPage;
+		Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime = Sys.UnixTime;
 	}
 }

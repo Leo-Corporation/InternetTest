@@ -52,6 +52,7 @@ public class SynethiaConfig
 	public PageInfo WiFiPasswordsPageInfo { get; set; }
 	public PageInfo? DnsPageInfo { get; set; }
 	public PageInfo? TraceRoutePageInfo { get; set; }
+	public PageInfo? WiFiNetworksPageInfo { get; set; }
 
 	public List<ActionInfo> ActionInfos { get; set; }
 }
