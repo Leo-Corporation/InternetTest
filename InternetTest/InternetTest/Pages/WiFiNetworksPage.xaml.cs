@@ -23,6 +23,8 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
+using InternetTest.UserControls;
+using ManagedNativeWifi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -103,5 +105,10 @@ public partial class WiFiNetworksPage : Page
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.WiFiNetworks}"; // Set the title
+		var wifis = Global.GetWiFis();
+		for (int i = 0; i < wifis.Count; i++)
+		{
+			WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i]));
+		}
 	}
 }

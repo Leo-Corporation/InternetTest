@@ -21,5 +21,9 @@
 			<TextBlock Text="&#xF8AD;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
 			<TextBlock x:Name="TitleTxt" d:Text="{x:Static lang:Resources.WiFiNetworks}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
 		</StackPanel>
+
+		<StackPanel x:Name="WiFiDisplayer" Grid.Row="1">
+			
+		</StackPanel>
 	</Grid>
 </Page>

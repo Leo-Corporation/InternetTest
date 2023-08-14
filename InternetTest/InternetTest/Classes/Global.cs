@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Enums;
 using InternetTest.Pages;
+using ManagedNativeWifi;
 using Microsoft.Win32;
 using PeyrSharp.Core.Maths;
 using PeyrSharp.Enums;
@@ -408,5 +409,30 @@ public static class Global
 
 		byte[] buffer = new byte[32];
 		return pingSender.SendPingAsync(targetAddress, timeout, buffer, options);
+	}
+
+	internal static List<NetworkInfo> GetWiFis()
+	{
+		var availableNetworks = NativeWifi.EnumerateAvailableNetworks()
+			.Select(x => new NetworkInfo
+			{
+				Ssid = x.Ssid.ToString(),
+				SignalQuality = x.SignalQuality,
+				BssType = x.BssType.ToString(),
+				IsSecurityEnabled = x.IsSecurityEnabled,
+				ProfileName = x.ProfileName,
+				InterfaceDescription = x.Interface.Description
+			})
+			.ToList();
+
+		var bssNetworks = NativeWifi.EnumerateBssNetworks()
+			.Select(x => new { x.Ssid, x.Channel })
+			.ToList();
+
+		foreach (var network in availableNetworks)
+		{
+			network.Channel = bssNetworks.FirstOrDefault(x => x.Ssid.ToString() == network.Ssid)?.Channel;
+		}
+		return availableNetworks;
 	}
 }
