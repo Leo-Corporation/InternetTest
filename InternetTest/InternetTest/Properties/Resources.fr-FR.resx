@@ -768,4 +768,10 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="HopsLower" xml:space="preserve">
     <value>sauts</value>
   </data>
+  <data name="WiFiNetworks" xml:space="preserve">
+    <value>Réseaux WiFi</value>
+  </data>
+  <data name="ConnectWiFi" xml:space="preserve">
+    <value>Se connecter à un réseau WiFi</value>
+  </data>
 </root>

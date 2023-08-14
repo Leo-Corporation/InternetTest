@@ -259,6 +259,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connect to a WiFi network.
+        /// </summary>
+        public static string ConnectWiFi {
+            get {
+                return ResourceManager.GetString("ConnectWiFi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
         public static string Country {
@@ -1921,6 +1930,15 @@ namespace InternetTest.Properties {
         public static string WelcomeReady {
             get {
                 return ResourceManager.GetString("WelcomeReady", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WiFi Networks.
+        /// </summary>
+        public static string WiFiNetworks {
+            get {
+                return ResourceManager.GetString("WiFiNetworks", resourceCulture);
             }
         }
         

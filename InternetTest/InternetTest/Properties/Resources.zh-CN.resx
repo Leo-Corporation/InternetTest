@@ -759,4 +759,10 @@
   <data name="HopsLower" xml:space="preserve">
     <value>啤酒花</value>
   </data>
+  <data name="WiFiNetworks" xml:space="preserve">
+    <value>WiFi 网络</value>
+  </data>
+  <data name="ConnectWiFi" xml:space="preserve">
+    <value>连接到 WiFi 网络</value>
+  </data>
 </root>
