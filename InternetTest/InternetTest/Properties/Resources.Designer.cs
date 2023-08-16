@@ -1211,6 +1211,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No networks are available..
+        /// </summary>
+        public static string NoNetworks {
+            get {
+                return ResourceManager.GetString("NoNetworks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You aren&apos;t connected to the Internet.
         /// </summary>
         public static string NotConnected {
@@ -1477,6 +1486,15 @@ namespace InternetTest.Properties {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InternetTest Pro is scanning networks nearby, please wait..
+        /// </summary>
+        public static string ScanningInProgress {
+            get {
+                return ResourceManager.GetString("ScanningInProgress", resourceCulture);
             }
         }
         

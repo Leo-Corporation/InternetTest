@@ -810,4 +810,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="Connect" xml:space="preserve">
     <value>Collegarsi</value>
   </data>
+  <data name="ScanningInProgress" xml:space="preserve">
+    <value>InternetTest Pro sta eseguendo la scansione delle reti nelle vicinanze, si prega di attendere.</value>
+  </data>
+  <data name="NoNetworks" xml:space="preserve">
+    <value>Non sono disponibili reti.</value>
+  </data>
 </root>

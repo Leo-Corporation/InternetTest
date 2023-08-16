@@ -810,4 +810,10 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="Connect" xml:space="preserve">
     <value>Connect</value>
   </data>
+  <data name="ScanningInProgress" xml:space="preserve">
+    <value>InternetTest Pro is scanning networks nearby, please wait.</value>
+  </data>
+  <data name="NoNetworks" xml:space="preserve">
+    <value>No networks are available.</value>
+  </data>
 </root>

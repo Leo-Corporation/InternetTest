@@ -801,4 +801,10 @@
   <data name="Connect" xml:space="preserve">
     <value>连接</value>
   </data>
+  <data name="ScanningInProgress" xml:space="preserve">
+    <value>InternetTest Pro 正在扫描附近的网络，请稍候。</value>
+  </data>
+  <data name="NoNetworks" xml:space="preserve">
+    <value>无网络可用。</value>
+  </data>
 </root>

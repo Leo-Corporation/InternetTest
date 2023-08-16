@@ -24,7 +24,32 @@
 		<Button x:Name="RefreshBtn" Click="RefreshBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Refresh}" Padding="5" Background="{Binding Source={StaticResource LightAccentColor}}" Margin="5" Style="{DynamicResource PrimaryButton}" Grid.Row="1" FontWeight="ExtraBold" Foreground="{Binding Source={StaticResource AccentColor}}" HorizontalAlignment="Right"/>
 
 		<StackPanel x:Name="WiFiDisplayer" Grid.Row="2">
-			
+
 		</StackPanel>
+
+		<StackPanel x:Name="NoNetworksPanel" Visibility="Collapsed" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<TextBlock Text="&#xFB69;" FontFamily="../Fonts/#FluentSystemIcons-Regular" FontSize="48" HorizontalAlignment="Center"/>
+			<TextBlock Text="{x:Static lang:Resources.NoNetworks}" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+		</StackPanel>
+
+		<StackPanel x:Name="ScanningPanel" Visibility="Visible" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<TextBlock Text="&#xF709;" FontFamily="../Fonts/#FluentSystemIcons-Regular" FontSize="48" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+				<TextBlock.RenderTransform>
+					<RotateTransform x:Name="SpinTransform" Angle="0"/>
+				</TextBlock.RenderTransform>
+
+				<TextBlock.Triggers>
+					<EventTrigger RoutedEvent="TextBlock.Loaded">
+						<BeginStoryboard>
+							<Storyboard>
+								<DoubleAnimation Storyboard.TargetName="SpinTransform" Storyboard.TargetProperty="Angle" From="0" To="360" Duration="0:0:1" RepeatBehavior="Forever"/>
+							</Storyboard>
+						</BeginStoryboard>
+					</EventTrigger>
+				</TextBlock.Triggers>
+			</TextBlock>
+			<TextBlock Text="{x:Static lang:Resources.ScanningInProgress}" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+		</StackPanel>
+
 	</Grid>
 </Page>
