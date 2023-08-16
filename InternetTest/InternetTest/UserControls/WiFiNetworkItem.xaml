@@ -39,6 +39,7 @@
 					<RowDefinition Height="Auto"/>
 					<RowDefinition Height="Auto"/>
 					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
 				</Grid.RowDefinitions>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
@@ -65,6 +66,9 @@
 
 				<TextBlock Text="{x:Static lang:Resources.Band}" FontWeight="Bold" Grid.Row="6" />
 				<TextBlock x:Name="BandTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="6" Margin="15,0,0,0" TextWrapping="Wrap"/>
+
+				<TextBlock Text="{x:Static lang:Resources.Frequency}" FontWeight="Bold" Grid.Row="7" />
+				<TextBlock x:Name="FrequencyTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="7" Margin="15,0,0,0" TextWrapping="Wrap"/>
 
 			</Grid>
 		</Grid>

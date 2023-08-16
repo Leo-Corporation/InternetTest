@@ -795,4 +795,7 @@
   <data name="No" xml:space="preserve">
     <value>没有</value>
   </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>频率</value>
+  </data>
 </root>

@@ -804,4 +804,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
 </root>
