@@ -789,4 +789,10 @@
   <data name="Channel" xml:space="preserve">
     <value>频道</value>
   </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>没有</value>
+  </data>
 </root>

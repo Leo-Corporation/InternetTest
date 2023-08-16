@@ -23,14 +23,14 @@
 					<ColumnDefinition/>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
-                <TextBlock x:Name="StrengthIconTxt" FontSize="16" VerticalAlignment="Center" FontFamily="../Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" d:Text="&#xF8AD;"/>
-                <TextBlock x:Name="SsidTxt" d:Text="WiFi" FontSize="16" FontWeight="ExtraBold" Grid.Column="1"/>
+				<TextBlock x:Name="StrengthIconTxt" FontSize="16" VerticalAlignment="Center" FontFamily="../Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" d:Text="&#xF8AD;"/>
+				<TextBlock x:Name="SsidTxt" d:Text="WiFi" FontSize="16" FontWeight="ExtraBold" Grid.Column="1"/>
 				<StackPanel Orientation="Horizontal" Grid.Column="2">
 					<Button Click="CopyBtn_Click" Content="&#xF32C;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="CopyBtn" Background="Transparent" Style="{DynamicResource DefaultButton}" Margin="0,0,5,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 					<Button Click="ExpanderBtn_Click" Content="&#xF2A4;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="ExpanderBtn" Background="Transparent" Style="{DynamicResource DefaultButton}" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 				</StackPanel>
 			</Grid>
-			<Grid Grid.Row="1" x:Name="CollapseGrid" Visibility="Collapsed">
+			<Grid Grid.Row="1" x:Name="CollapseGrid" Visibility="Collapsed" d:Visibility="Visible">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="Auto"/>
 					<RowDefinition Height="Auto"/>
@@ -47,6 +47,21 @@
 
 				<TextBlock Text="{x:Static lang:Resources.SignalQuality}" FontWeight="Bold" />
 				<TextBlock x:Name="StrengthTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="0" Margin="15,0,0,0" TextWrapping="Wrap"/>
+				
+				<TextBlock Text="{x:Static lang:Resources.ProfileName}" FontWeight="Bold" Grid.Row="1" />
+				<TextBlock x:Name="ProfileTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Margin="15,0,0,0" TextWrapping="Wrap"/>
+
+				<TextBlock Text="{x:Static lang:Resources.Interface}" FontWeight="Bold" Grid.Row="2" />
+				<TextBlock x:Name="InterfaceTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="2" Margin="15,0,0,0" TextWrapping="Wrap"/>
+
+				<TextBlock Text="{x:Static lang:Resources.BssType}" FontWeight="Bold" Grid.Row="3" />
+				<TextBlock x:Name="BSSTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="3" Margin="15,0,0,0" TextWrapping="Wrap"/>
+
+				<TextBlock Text="{x:Static lang:Resources.SecurityEnabled}" FontWeight="Bold" Grid.Row="4" />
+				<TextBlock x:Name="SecurityEnabledTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="4" Margin="15,0,0,0" TextWrapping="Wrap"/>
+
+				<TextBlock Text="{x:Static lang:Resources.Channel}" FontWeight="Bold" Grid.Row="5" />
+				<TextBlock x:Name="ChannelTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="5" Margin="15,0,0,0" TextWrapping="Wrap"/>
 
 			</Grid>
 		</Grid>

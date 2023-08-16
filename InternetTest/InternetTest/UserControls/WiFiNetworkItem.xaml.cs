@@ -68,12 +68,18 @@ public partial class WiFiNetworkItem : UserControl
 			int n when (n >= 75 && n <= 100) => "\uF8AD",
 			_ => "\uF8AD",
 		};
+
+		ProfileTxt.Text = NetworkInfo.ProfileName;
+		InterfaceTxt.Text = NetworkInfo.InterfaceDescription;
+		BSSTxt.Text = NetworkInfo.BssType;
+		SecurityEnabledTxt.Text = NetworkInfo.IsSecurityEnabled ? Properties.Resources.Yes : Properties.Resources.No ;
+		ChannelTxt.Text = $"{NetworkInfo.Channel}";
 	}
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)
 	{
 
-    }
+	}
 
 	private void ExpanderBtn_Click(object sender, RoutedEventArgs e)
 	{

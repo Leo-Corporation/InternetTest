@@ -798,4 +798,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="Channel" xml:space="preserve">
     <value>Canale</value>
   </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
 </root>
