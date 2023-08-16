@@ -80,7 +80,7 @@ public partial class WiFiNetworkItem : UserControl
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)
 	{
-
+		Clipboard.SetText(NetworkInfo.ToString());
 	}
 
 	private void ExpanderBtn_Click(object sender, RoutedEventArgs e)

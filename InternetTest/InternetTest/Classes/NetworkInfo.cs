@@ -36,4 +36,18 @@ public class NetworkInfo
 	public int? Channel { get; set; }
 	public int? Frequency { get; set; }
 	public double? Band { get; set; }
+
+	public override string ToString()
+	{
+		return $"SSID: {Ssid}\n" +
+			new string('=', Ssid.Length + 6) + "\n" +
+			$"Signal Strength: {SignalQuality}\n" +
+			$"ProfileName: {ProfileName}\n" +
+			$"Interface: {InterfaceDescription}\n" +
+			$"BssType: {BssType}\n" +
+			$"IsSecurityEnabled: {IsSecurityEnabled}\n" +
+			$"Channel: {Channel}\n" +
+			$"Band: {Band} GHz\n" +
+			$"Frequency: {Frequency} kHz\n";
+	}
 }
