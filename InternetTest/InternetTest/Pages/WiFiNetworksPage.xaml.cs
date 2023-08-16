@@ -105,10 +105,17 @@ public partial class WiFiNetworksPage : Page
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.WiFiNetworks}"; // Set the title
+
+		WiFiDisplayer.Children.Clear();
 		var wifis = Global.GetWiFis();
 		for (int i = 0; i < wifis.Count; i++)
 		{
 			WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i]));
 		}
 	}
+
+	private void RefreshBtn_Click(object sender, RoutedEventArgs e)
+	{
+		InitUI();
+    }
 }

@@ -13,16 +13,17 @@
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
 			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 
 		<StackPanel Margin="10" Orientation="Horizontal">
 			<TextBlock Text="&#xF8AD;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
 			<TextBlock x:Name="TitleTxt" d:Text="{x:Static lang:Resources.WiFiNetworks}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
 		</StackPanel>
+		<Button x:Name="RefreshBtn" Click="RefreshBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Refresh}" Padding="5" Background="{Binding Source={StaticResource LightAccentColor}}" Margin="5" Style="{DynamicResource PrimaryButton}" Grid.Row="1" FontWeight="ExtraBold" Foreground="{Binding Source={StaticResource AccentColor}}" HorizontalAlignment="Right"/>
 
-		<StackPanel x:Name="WiFiDisplayer" Grid.Row="1">
+		<StackPanel x:Name="WiFiDisplayer" Grid.Row="2">
 			
 		</StackPanel>
 	</Grid>
