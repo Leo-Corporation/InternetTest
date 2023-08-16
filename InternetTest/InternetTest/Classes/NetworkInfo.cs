@@ -34,4 +34,6 @@ public class NetworkInfo
 	public string ProfileName { get; set; }
 	public string InterfaceDescription { get; set; }
 	public int? Channel { get; set; }
+	public int? Frequency { get; set; }
+	public double? Band { get; set; }
 }

@@ -63,6 +63,9 @@
 				<TextBlock Text="{x:Static lang:Resources.Channel}" FontWeight="Bold" Grid.Row="5" />
 				<TextBlock x:Name="ChannelTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="5" Margin="15,0,0,0" TextWrapping="Wrap"/>
 
+				<TextBlock Text="{x:Static lang:Resources.Band}" FontWeight="Bold" Grid.Row="6" />
+				<TextBlock x:Name="BandTxt" d:Text="OK" FontWeight="Bold" Grid.Column="1" Grid.Row="6" Margin="15,0,0,0" TextWrapping="Wrap"/>
+
 			</Grid>
 		</Grid>
 	</Border>

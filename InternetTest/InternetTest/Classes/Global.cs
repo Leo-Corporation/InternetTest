@@ -426,12 +426,18 @@ public static class Global
 			.ToList();
 
 		var bssNetworks = NativeWifi.EnumerateBssNetworks()
-			.Select(x => new { x.Ssid, x.Channel })
+			.Select(x => new { x.Ssid, x.Channel, x.Band, x.Frequency })
 			.ToList();
 
 		foreach (var network in availableNetworks)
 		{
-			network.Channel = bssNetworks.FirstOrDefault(x => x.Ssid.ToString() == network.Ssid)?.Channel;
+			var bssNetwork = bssNetworks.FirstOrDefault(x => x.Ssid.ToString() == network.Ssid);
+			if (bssNetwork != null)
+			{
+				network.Channel = bssNetwork.Channel;
+				network.Frequency = bssNetwork.Frequency;
+				network.Band = bssNetwork.Band;
+			}
 		}
 		return availableNetworks;
 	}
