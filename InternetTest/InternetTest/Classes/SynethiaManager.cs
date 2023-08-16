@@ -49,6 +49,7 @@ public static class SynethiaManager
 		var config = JsonSerializer.Deserialize<SynethiaConfig>(File.ReadAllText(Global.SynethiaPath)) ?? new();
 		config.DnsPageInfo ??= new();
 		config.TraceRoutePageInfo ??= new();
+		config.WiFiNetworksPageInfo ??= new();
 		CheckActions(ref config);
 		return config;
 	}
@@ -64,10 +65,12 @@ public static class SynethiaManager
 	{
 		bool hasDns = false;
 		bool hasTracert = false;
+		bool hasWiFiNetworks = false;
 		for (int i = 0; i < synethiaConfig.ActionInfos.Count; i++)
 		{
 			if (synethiaConfig.ActionInfos[i].Action == Enums.AppActions.GetDnsInfo) hasDns = true;
 			if (synethiaConfig.ActionInfos[i].Action == Enums.AppActions.TraceRoute) hasTracert = true;
+			if (synethiaConfig.ActionInfos[i].Action == Enums.AppActions.ConnectWiFi) hasWiFiNetworks = true;
 		}
 
 		if (!hasDns)
@@ -78,6 +81,11 @@ public static class SynethiaManager
 		if (!hasTracert)
 		{
 			synethiaConfig.ActionInfos.Add(new() { Action = Enums.AppActions.TraceRoute, UsageCount = 0 });
+		}
+
+		if (!hasWiFiNetworks)
+		{
+			synethiaConfig.ActionInfos.Add(new() { Action = Enums.AppActions.ConnectWiFi, UsageCount = 0 });
 		}
 	}
 }

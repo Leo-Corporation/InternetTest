@@ -768,4 +768,52 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="HopsLower" xml:space="preserve">
     <value>salti</value>
   </data>
+  <data name="WiFiNetworks" xml:space="preserve">
+    <value>Reti WiFi</value>
+  </data>
+  <data name="ConnectWiFi" xml:space="preserve">
+    <value>Collegarsi a una rete WiFi</value>
+  </data>
+  <data name="SignalQuality" xml:space="preserve">
+    <value>Qualità del segnale</value>
+  </data>
+  <data name="BssType" xml:space="preserve">
+    <value>Tipo di BSS</value>
+  </data>
+  <data name="Band" xml:space="preserve">
+    <value>Banda</value>
+  </data>
+  <data name="Interface" xml:space="preserve">
+    <value>Interfaccia</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Sicurezza</value>
+  </data>
+  <data name="SecurityEnabled" xml:space="preserve">
+    <value>La sicurezza è abilitata</value>
+  </data>
+  <data name="ProfileName" xml:space="preserve">
+    <value>Nome del profilo</value>
+  </data>
+  <data name="Channel" xml:space="preserve">
+    <value>Canale</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>Frequenza</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Collegarsi</value>
+  </data>
+  <data name="ScanningInProgress" xml:space="preserve">
+    <value>InternetTest Pro sta eseguendo la scansione delle reti nelle vicinanze, si prega di attendere.</value>
+  </data>
+  <data name="NoNetworks" xml:space="preserve">
+    <value>Non sono disponibili reti.</value>
+  </data>
 </root>

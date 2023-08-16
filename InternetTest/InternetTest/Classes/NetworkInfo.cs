@@ -22,20 +22,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-namespace InternetTest.Enums;
-public enum AppPages
+
+
+namespace InternetTest.Classes;
+public class NetworkInfo
 {
-	Settings = -1, // Special page
-	Home,
-	History,
-	Status,
-	DownDetector,
-	MyIP,
-	LocateIP,
-	Ping,
-	IPConfig,
-	WiFiPasswords,
-	DnsTool,
-	TraceRoute,
-	WiFiNetworks
+	public string Ssid { get; set; }
+	public int SignalQuality { get; set; }
+	public string BssType { get; set; }
+	public bool IsSecurityEnabled { get; set; }
+	public string ProfileName { get; set; }
+	public string InterfaceDescription { get; set; }
+	public int? Channel { get; set; }
+	public int? Frequency { get; set; }
+	public double? Band { get; set; }
+
+	public override string ToString()
+	{
+		return $"SSID: {Ssid}\n" +
+			new string('=', Ssid.Length + 6) + "\n" +
+			$"Signal Strength: {SignalQuality}\n" +
+			$"ProfileName: {ProfileName}\n" +
+			$"Interface: {InterfaceDescription}\n" +
+			$"BssType: {BssType}\n" +
+			$"IsSecurityEnabled: {IsSecurityEnabled}\n" +
+			$"Channel: {Channel}\n" +
+			$"Band: {Band} GHz\n" +
+			$"Frequency: {Frequency} kHz\n";
+	}
 }

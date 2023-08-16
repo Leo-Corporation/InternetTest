@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Enums;
 using InternetTest.Pages;
+using ManagedNativeWifi;
 using Microsoft.Win32;
 using PeyrSharp.Core.Maths;
 using PeyrSharp.Enums;
@@ -46,10 +47,10 @@ public static class Global
 #if NIGHTLY
 	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-	public static string Version => $"7.6.2.2307-nightly{Date:yyMM.dd@HHmm}";
+	public static string Version => $"7.7.0.2308-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "7.6.2.2307";
+	public static string Version => "7.7.0.2308";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
@@ -69,6 +70,7 @@ public static class Global
 	public static WiFiPasswordsPage? WiFiPasswordsPage { get; set; }
 	public static DnsPage? DnsPage { get; set; }
 	public static TraceroutePage? TraceroutePage { get; set; }
+	public static WiFiNetworksPage? WiFiNetworksPage { get; set; }
 
 	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\SynethiaConfig.json";
 
@@ -113,6 +115,7 @@ public static class Global
 		{ AppPages.WiFiPasswords, "\uF8CC" },
 		{ AppPages.DnsTool, "\uF464" },
 		{ AppPages.TraceRoute, "\uF683" },
+		{ AppPages.WiFiNetworks, "\uF8C5" },
 	};
 	public static Dictionary<AppPages, string> AppPagesName => new()
 	{
@@ -128,6 +131,7 @@ public static class Global
 		{ AppPages.WiFiPasswords, Properties.Resources.WifiPasswords },
 		{ AppPages.DnsTool, Properties.Resources.DNSTool},
 		{ AppPages.TraceRoute, Properties.Resources.TraceRoute},
+		{ AppPages.WiFiNetworks, Properties.Resources.WiFiNetworks},
 	};
 
 	public static List<AppPages> GetMostRelevantPages(SynethiaConfig synethiaConfig)
@@ -143,6 +147,7 @@ public static class Global
 			{ AppPages.WiFiPasswords, synethiaConfig.WiFiPasswordsPageInfo.Score },
 			{ AppPages.DnsTool, synethiaConfig.DnsPageInfo.Score },
 			{ AppPages.TraceRoute, synethiaConfig.TraceRoutePageInfo.Score },
+			{ AppPages.WiFiNetworks, synethiaConfig.WiFiNetworksPageInfo.Score },
 		};
 
 		var sorted = appScores.OrderByDescending(x => x.Value);
@@ -170,6 +175,7 @@ public static class Global
 		AppPages.WiFiPasswords,
 		AppPages.DownDetector,
 		AppPages.MyIP,
+		AppPages.WiFiNetworks,
 		AppPages.Ping,
 		AppPages.TraceRoute,
 		AppPages.IPConfig,
@@ -185,6 +191,7 @@ public static class Global
 		new() { Action = AppActions.LocateIP, UsageCount = 0 },
 		new() { Action = AppActions.GetIPConfig, UsageCount = 0 },
 		new() { Action = AppActions.GetWiFiPasswords, UsageCount = 0 },
+		new() { Action = AppActions.ConnectWiFi, UsageCount = 0 },
 		new() { Action = AppActions.GetDnsInfo, UsageCount = 0 },
 		new() { Action = AppActions.TraceRoute, UsageCount = 0 },
 	};
@@ -200,6 +207,7 @@ public static class Global
 		{ AppActions.Test, "\uF612" },
 		{ AppActions.GetDnsInfo, "\uF69C" },
 		{ AppActions.TraceRoute, "\uF683" },
+		{ AppActions.ConnectWiFi, "\uF614" },
 	};
 
 	public static Dictionary<AppActions, string> ActionsString => new()
@@ -213,6 +221,7 @@ public static class Global
 		{ AppActions.Test, Properties.Resources.TestConnection },
 		{ AppActions.GetDnsInfo, Properties.Resources.GetDnsInfo },
 		{ AppActions.TraceRoute, Properties.Resources.ExecuteTraceRoute },
+		{ AppActions.ConnectWiFi, Properties.Resources.ConnectWiFi },
 	};
 
 	public static Color GetColorFromResource(string resourceName) => (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());
@@ -400,5 +409,97 @@ public static class Global
 
 		byte[] buffer = new byte[32];
 		return pingSender.SendPingAsync(targetAddress, timeout, buffer, options);
+	}
+
+	internal static List<NetworkInfo> GetWiFis()
+	{
+		var availableNetworks = NativeWifi.EnumerateAvailableNetworks()
+			.Select(x => new NetworkInfo
+			{
+				Ssid = x.Ssid.ToString(),
+				SignalQuality = x.SignalQuality,
+				BssType = x.BssType.ToString(),
+				IsSecurityEnabled = x.IsSecurityEnabled,
+				ProfileName = x.ProfileName,
+				InterfaceDescription = x.Interface.Description
+			})
+			.ToList();
+
+		var bssNetworks = NativeWifi.EnumerateBssNetworks()
+			.Select(x => new { x.Ssid, x.Channel, x.Band, x.Frequency })
+			.ToList();
+
+		foreach (var network in availableNetworks)
+		{
+			var bssNetwork = bssNetworks.FirstOrDefault(x => x.Ssid.ToString() == network.Ssid);
+			if (bssNetwork != null)
+			{
+				network.Channel = bssNetwork.Channel;
+				network.Frequency = bssNetwork.Frequency;
+				network.Band = bssNetwork.Band;
+			}
+		}
+		return availableNetworks;
+	}
+
+	public static string GetWpa2PersonalProfileXml(string ssid, string password)
+	{
+		var profileXml = $@"<?xml version=""1.0""?>
+    <WLANProfile xmlns=""http://www.microsoft.com/networking/WLAN/profile/v1"">
+        <name>{ssid}</name>
+        <SSIDConfig>
+            <SSID>
+                <name>{ssid}</name>
+            </SSID>
+        </SSIDConfig>
+        <connectionType>ESS</connectionType>
+        <connectionMode>auto</connectionMode>
+        <MSM>
+            <security>
+                <authEncryption>
+                    <authentication>WPA2PSK</authentication>
+                    <encryption>AES</encryption>
+                    <useOneX>false</useOneX>
+                </authEncryption>
+                <sharedKey>
+                    <keyType>passPhrase</keyType>
+                    <protected>false</protected>
+                    <keyMaterial>{password}</keyMaterial>
+                </sharedKey>
+            </security>
+        </MSM>
+    </WLANProfile>";
+		return profileXml;
+	}
+
+	public static async Task<bool> ConnectAsync(string ssid, string password)
+	{
+		var availableNetwork = NativeWifi.EnumerateAvailableNetworks()
+			.Where(x => x.Ssid.ToString() == ssid)
+			.FirstOrDefault();
+
+		if (availableNetwork is null)
+			return false;
+
+		if (availableNetwork.ProfileName is { Length: 0 })
+		{
+			var profileXml = GetWpa2PersonalProfileXml(ssid, password);
+			NativeWifi.SetProfile(availableNetwork.Interface.Id, ProfileType.AllUser, profileXml, null, false); ;
+		}
+
+		var connectionResult = await NativeWifi.ConnectNetworkAsync(
+			interfaceId: availableNetwork.Interface.Id,
+			profileName: ssid,
+			bssType: availableNetwork.BssType,
+			timeout: TimeSpan.FromSeconds(10));
+
+		if (!connectionResult)
+		{
+			Console.WriteLine("Failed to connect.");
+			return false;
+		}
+
+		Console.WriteLine("Connected successfully.");
+		return true;
 	}
 }

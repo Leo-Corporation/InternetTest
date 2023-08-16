@@ -140,6 +140,12 @@ public partial class MainWindow : Window
 				UnCheckAllButton();
 				CheckButton(TraceroutePageBtn);
 				break;
+			case AppPages.WiFiNetworks:
+				PageDisplayer.Content = Global.WiFiNetworksPage;
+				Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime = Sys.UnixTime;
+				UnCheckAllButton();
+				CheckButton(WiFiPageBtn);
+				break;
 			default:
 				break;
 		}
@@ -225,6 +231,12 @@ public partial class MainWindow : Window
 				Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime = Sys.UnixTime;
 				UnCheckAllButton();
 				CheckButton(TraceroutePageBtn);
+				break;
+			case AppPages.WiFiNetworks:
+				PageDisplayer.Content = Global.WiFiNetworksPage;
+				Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime = Sys.UnixTime;
+				UnCheckAllButton();
+				CheckButton(WiFiPageBtn);
 				break;
 			default:
 				break;
@@ -367,6 +379,7 @@ public partial class MainWindow : Window
 		IPConfigPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		WifiPasswordsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 		DnsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
+		WiFiPageBtn.Background = new SolidColorBrush(Colors.Transparent);
 
 		StatusPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		DownDetectorPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
@@ -377,6 +390,7 @@ public partial class MainWindow : Window
 		IPConfigPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		WifiPasswordsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 		DnsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
+		WiFiPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
 	}
 
 	private void StatusPageBtn_Click(object sender, RoutedEventArgs e)
@@ -479,59 +493,58 @@ public partial class MainWindow : Window
 	private void LeavePage()
 	{
 		if (!Global.Settings.UseSynethia) return;
-		if (PageDisplayer.Content is StatusPage)
+		switch (PageDisplayer.Content)
 		{
-			Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime = Sys.UnixTime;
-			Global.SynethiaConfig.StatusPageInfo.TotalTimeSpent += Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime - Global.SynethiaConfig.StatusPageInfo.EnterUnixTime;
-			Global.SynethiaConfig.StatusPageInfo.Score = Global.SynethiaConfig.StatusPageInfo.TotalTimeSpent * (Global.SynethiaConfig.StatusPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.StatusPageInfo.InteractionCount / 2d : 1d); // Calculate the score
-		}
-		else if (PageDisplayer.Content is DownDetectorPage)
-		{
-			Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime = Sys.UnixTime;
-			Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent += Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime - Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime;
-			Global.SynethiaConfig.DownDetectorPageInfo.Score = Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent * (Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount / 2d : 1d); // Calculate the score
-		}
-		else if (PageDisplayer.Content is MyIpPage)
-		{
-			Global.SynethiaConfig.MyIPPageInfo.LeaveUnixTime = Sys.UnixTime;
-			Global.SynethiaConfig.MyIPPageInfo.TotalTimeSpent += Global.SynethiaConfig.MyIPPageInfo.LeaveUnixTime - Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime;
-			Global.SynethiaConfig.MyIPPageInfo.Score = Global.SynethiaConfig.MyIPPageInfo.TotalTimeSpent * (Global.SynethiaConfig.MyIPPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.MyIPPageInfo.InteractionCount / 2d : 1d); // Calculate the score
-		}
-		else if (PageDisplayer.Content is LocateIpPage)
-		{
-			Global.SynethiaConfig.LocateIPPageInfo.LeaveUnixTime = Sys.UnixTime;
-			Global.SynethiaConfig.LocateIPPageInfo.TotalTimeSpent += Global.SynethiaConfig.LocateIPPageInfo.LeaveUnixTime - Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime;
-			Global.SynethiaConfig.LocateIPPageInfo.Score = Global.SynethiaConfig.LocateIPPageInfo.TotalTimeSpent * (Global.SynethiaConfig.LocateIPPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.LocateIPPageInfo.InteractionCount / 2d : 1d); // Calculate the score
-		}
-		else if (PageDisplayer.Content is PingPage)
-		{
-			Global.SynethiaConfig.PingPageInfo.LeaveUnixTime = Sys.UnixTime;
-			Global.SynethiaConfig.PingPageInfo.TotalTimeSpent += Global.SynethiaConfig.PingPageInfo.LeaveUnixTime - Global.SynethiaConfig.PingPageInfo.EnterUnixTime;
-			Global.SynethiaConfig.PingPageInfo.Score = Global.SynethiaConfig.PingPageInfo.TotalTimeSpent * (Global.SynethiaConfig.PingPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.PingPageInfo.InteractionCount / 2d : 1d); // Calculate the score
-		}
-		else if (PageDisplayer.Content is IpConfigPage)
-		{
-			Global.SynethiaConfig.IPConfigPageInfo.LeaveUnixTime = Sys.UnixTime;
-			Global.SynethiaConfig.IPConfigPageInfo.TotalTimeSpent += Global.SynethiaConfig.IPConfigPageInfo.LeaveUnixTime - Global.SynethiaConfig.IPConfigPageInfo.EnterUnixTime;
-			Global.SynethiaConfig.IPConfigPageInfo.Score = Global.SynethiaConfig.IPConfigPageInfo.TotalTimeSpent * (Global.SynethiaConfig.IPConfigPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.IPConfigPageInfo.InteractionCount / 2d : 1d); // Calculate the score
-		}
-		else if (PageDisplayer.Content is WiFiPasswordsPage)
-		{
-			Global.SynethiaConfig.WiFiPasswordsPageInfo.LeaveUnixTime = Sys.UnixTime;
-			Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent += Global.SynethiaConfig.WiFiPasswordsPageInfo.LeaveUnixTime - Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime;
-			Global.SynethiaConfig.WiFiPasswordsPageInfo.Score = Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent * (Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount / 2d : 1d); // Calculate the score
-		}
-		else if (PageDisplayer.Content is DnsPage)
-		{
-			Global.SynethiaConfig.DnsPageInfo.LeaveUnixTime = Sys.UnixTime;
-			Global.SynethiaConfig.DnsPageInfo.TotalTimeSpent += Global.SynethiaConfig.DnsPageInfo.LeaveUnixTime - Global.SynethiaConfig.DnsPageInfo.EnterUnixTime;
-			Global.SynethiaConfig.DnsPageInfo.Score = Global.SynethiaConfig.DnsPageInfo.TotalTimeSpent * (Global.SynethiaConfig.DnsPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.DnsPageInfo.InteractionCount / 2d : 1d); // Calculate the score
-		}
-		else if (PageDisplayer.Content is TraceroutePage)
-		{
-			Global.SynethiaConfig.TraceRoutePageInfo.LeaveUnixTime = Sys.UnixTime;
-			Global.SynethiaConfig.TraceRoutePageInfo.TotalTimeSpent += Global.SynethiaConfig.TraceRoutePageInfo.LeaveUnixTime - Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime;
-			Global.SynethiaConfig.TraceRoutePageInfo.Score = Global.SynethiaConfig.TraceRoutePageInfo.TotalTimeSpent * (Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount > 0 ? Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount / 2d : 1d); // Calculate the score
+			case StatusPage:
+				Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.StatusPageInfo.TotalTimeSpent += Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime - Global.SynethiaConfig.StatusPageInfo.EnterUnixTime;
+				Global.SynethiaConfig.StatusPageInfo.Score = Global.SynethiaConfig.StatusPageInfo.TotalTimeSpent * (Global.SynethiaConfig.StatusPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.StatusPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+				break;
+			case DownDetectorPage:
+				Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent += Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime - Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime;
+				Global.SynethiaConfig.DownDetectorPageInfo.Score = Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent * (Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+				break;
+			case MyIpPage:
+				Global.SynethiaConfig.MyIPPageInfo.LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.MyIPPageInfo.TotalTimeSpent += Global.SynethiaConfig.MyIPPageInfo.LeaveUnixTime - Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime;
+				Global.SynethiaConfig.MyIPPageInfo.Score = Global.SynethiaConfig.MyIPPageInfo.TotalTimeSpent * (Global.SynethiaConfig.MyIPPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.MyIPPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+				break;
+			case LocateIpPage:
+				Global.SynethiaConfig.LocateIPPageInfo.LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.LocateIPPageInfo.TotalTimeSpent += Global.SynethiaConfig.LocateIPPageInfo.LeaveUnixTime - Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime;
+				Global.SynethiaConfig.LocateIPPageInfo.Score = Global.SynethiaConfig.LocateIPPageInfo.TotalTimeSpent * (Global.SynethiaConfig.LocateIPPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.LocateIPPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+				break;
+			case PingPage:
+				Global.SynethiaConfig.PingPageInfo.LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.PingPageInfo.TotalTimeSpent += Global.SynethiaConfig.PingPageInfo.LeaveUnixTime - Global.SynethiaConfig.PingPageInfo.EnterUnixTime;
+				Global.SynethiaConfig.PingPageInfo.Score = Global.SynethiaConfig.PingPageInfo.TotalTimeSpent * (Global.SynethiaConfig.PingPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.PingPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+				break;
+			case IpConfigPage:
+				Global.SynethiaConfig.IPConfigPageInfo.LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.IPConfigPageInfo.TotalTimeSpent += Global.SynethiaConfig.IPConfigPageInfo.LeaveUnixTime - Global.SynethiaConfig.IPConfigPageInfo.EnterUnixTime;
+				Global.SynethiaConfig.IPConfigPageInfo.Score = Global.SynethiaConfig.IPConfigPageInfo.TotalTimeSpent * (Global.SynethiaConfig.IPConfigPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.IPConfigPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+				break;
+			case WiFiPasswordsPage:
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent += Global.SynethiaConfig.WiFiPasswordsPageInfo.LeaveUnixTime - Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime;
+				Global.SynethiaConfig.WiFiPasswordsPageInfo.Score = Global.SynethiaConfig.WiFiPasswordsPageInfo.TotalTimeSpent * (Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+				break;
+			case DnsPage:
+				Global.SynethiaConfig.DnsPageInfo.LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.DnsPageInfo.TotalTimeSpent += Global.SynethiaConfig.DnsPageInfo.LeaveUnixTime - Global.SynethiaConfig.DnsPageInfo.EnterUnixTime;
+				Global.SynethiaConfig.DnsPageInfo.Score = Global.SynethiaConfig.DnsPageInfo.TotalTimeSpent * (Global.SynethiaConfig.DnsPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.DnsPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+				break;
+			case TraceroutePage:
+				Global.SynethiaConfig.TraceRoutePageInfo.LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.TraceRoutePageInfo.TotalTimeSpent += Global.SynethiaConfig.TraceRoutePageInfo.LeaveUnixTime - Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime;
+				Global.SynethiaConfig.TraceRoutePageInfo.Score = Global.SynethiaConfig.TraceRoutePageInfo.TotalTimeSpent * (Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount > 0 ? Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount / 2d : 1d); // Calculate the score
+				break;
+			case WiFiNetworksPage:
+				Global.SynethiaConfig.WiFiNetworksPageInfo.LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.WiFiNetworksPageInfo.TotalTimeSpent += Global.SynethiaConfig.WiFiNetworksPageInfo.LeaveUnixTime - Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime;
+				Global.SynethiaConfig.WiFiNetworksPageInfo.Score = Global.SynethiaConfig.WiFiNetworksPageInfo.TotalTimeSpent * (Global.SynethiaConfig.WiFiNetworksPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.WiFiNetworksPageInfo.InteractionCount / 2d : 1d); // Calculate the score
+				break;
 		}
 	}
 
@@ -573,5 +586,15 @@ public partial class MainWindow : Window
 
 		PageDisplayer.Content = Global.TraceroutePage; // Display the ping page
 		Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
+	}
+
+	private void WiFiPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		LeavePage();
+		UnCheckAllButton(); // Reset all states
+		CheckButton(WiFiPageBtn);
+
+		PageDisplayer.Content = Global.WiFiNetworksPage;
+		Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime = Sys.UnixTime;
 	}
 }

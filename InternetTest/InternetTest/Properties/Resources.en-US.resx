@@ -768,4 +768,52 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="HopsLower" xml:space="preserve">
     <value>hops</value>
   </data>
+  <data name="WiFiNetworks" xml:space="preserve">
+    <value>WiFi Networks</value>
+  </data>
+  <data name="ConnectWiFi" xml:space="preserve">
+    <value>Connect to a WiFi network</value>
+  </data>
+  <data name="SignalQuality" xml:space="preserve">
+    <value>Signal quality</value>
+  </data>
+  <data name="BssType" xml:space="preserve">
+    <value>BSS Type</value>
+  </data>
+  <data name="Band" xml:space="preserve">
+    <value>Band</value>
+  </data>
+  <data name="Interface" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="SecurityEnabled" xml:space="preserve">
+    <value>Is security enabled</value>
+  </data>
+  <data name="ProfileName" xml:space="preserve">
+    <value>Profile Name</value>
+  </data>
+  <data name="Channel" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="ScanningInProgress" xml:space="preserve">
+    <value>InternetTest Pro is scanning networks nearby, please wait.</value>
+  </data>
+  <data name="NoNetworks" xml:space="preserve">
+    <value>No networks are available.</value>
+  </data>
 </root>

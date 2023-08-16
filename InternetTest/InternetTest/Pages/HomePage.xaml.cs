@@ -77,7 +77,7 @@ public partial class HomePage : Page
 		}
 
 		// Load "Status" section
-		bool connected = await Internet.GetStatusCodeAsync(Global.Settings.TestSite) != 400; // Check if Internet is available
+		bool connected = await Internet.IsAvailableAsync(Global.Settings.TestSite); // Check if Internet is available
 		StatusTxt.Text = connected ? Properties.Resources.Connected : Properties.Resources.NotConnected; // Set text
 		StatusIconTxt.Text = connected ? "\uF299" : "\uF36E";
 		StatusIconTxt.Foreground = connected ? new SolidColorBrush(Global.GetColorFromResource("Green")) : new SolidColorBrush(Global.GetColorFromResource("Red"));

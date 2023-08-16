@@ -759,4 +759,52 @@
   <data name="HopsLower" xml:space="preserve">
     <value>啤酒花</value>
   </data>
+  <data name="WiFiNetworks" xml:space="preserve">
+    <value>WiFi 网络</value>
+  </data>
+  <data name="ConnectWiFi" xml:space="preserve">
+    <value>连接到 WiFi 网络</value>
+  </data>
+  <data name="SignalQuality" xml:space="preserve">
+    <value>信号质量</value>
+  </data>
+  <data name="BssType" xml:space="preserve">
+    <value>BSS 类型</value>
+  </data>
+  <data name="Band" xml:space="preserve">
+    <value>乐队</value>
+  </data>
+  <data name="Interface" xml:space="preserve">
+    <value>界面</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="SecurityEnabled" xml:space="preserve">
+    <value>是否启用了安全功能</value>
+  </data>
+  <data name="ProfileName" xml:space="preserve">
+    <value>简介名称</value>
+  </data>
+  <data name="Channel" xml:space="preserve">
+    <value>频道</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>没有</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>频率</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>连接</value>
+  </data>
+  <data name="ScanningInProgress" xml:space="preserve">
+    <value>InternetTest Pro 正在扫描附近的网络，请稍候。</value>
+  </data>
+  <data name="NoNetworks" xml:space="preserve">
+    <value>无网络可用。</value>
+  </data>
 </root>
