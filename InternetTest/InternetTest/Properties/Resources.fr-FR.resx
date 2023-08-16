@@ -777,4 +777,25 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="SignalQuality" xml:space="preserve">
     <value>Qualité du signal</value>
   </data>
+  <data name="BssType" xml:space="preserve">
+    <value>Type de BSS</value>
+  </data>
+  <data name="Band" xml:space="preserve">
+    <value>Bande</value>
+  </data>
+  <data name="Interface" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Sécurité</value>
+  </data>
+  <data name="SecurityEnabled" xml:space="preserve">
+    <value>Sécurité activée</value>
+  </data>
+  <data name="ProfileName" xml:space="preserve">
+    <value>Nom du profil</value>
+  </data>
+  <data name="Channel" xml:space="preserve">
+    <value>Canal</value>
+  </data>
 </root>

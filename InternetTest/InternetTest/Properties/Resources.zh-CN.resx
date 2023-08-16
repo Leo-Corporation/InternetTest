@@ -768,4 +768,25 @@
   <data name="SignalQuality" xml:space="preserve">
     <value>信号质量</value>
   </data>
+  <data name="BssType" xml:space="preserve">
+    <value>BSS 类型</value>
+  </data>
+  <data name="Band" xml:space="preserve">
+    <value>乐队</value>
+  </data>
+  <data name="Interface" xml:space="preserve">
+    <value>界面</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="SecurityEnabled" xml:space="preserve">
+    <value>是否启用了安全功能</value>
+  </data>
+  <data name="ProfileName" xml:space="preserve">
+    <value>简介名称</value>
+  </data>
+  <data name="Channel" xml:space="preserve">
+    <value>频道</value>
+  </data>
 </root>

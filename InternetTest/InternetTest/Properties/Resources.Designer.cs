@@ -160,6 +160,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Band.
+        /// </summary>
+        public static string Band {
+            get {
+                return ResourceManager.GetString("Band", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BSS Type.
+        /// </summary>
+        public static string BssType {
+            get {
+                return ResourceManager.GetString("BssType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change the language of InternetTest..
         /// </summary>
         public static string ChangeLanguage {
@@ -174,6 +192,15 @@ namespace InternetTest.Properties {
         public static string ChangeTheme {
             get {
                 return ResourceManager.GetString("ChangeTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Channel.
+        /// </summary>
+        public static string Channel {
+            get {
+                return ResourceManager.GetString("Channel", resourceCulture);
             }
         }
         
@@ -785,6 +812,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Interface.
+        /// </summary>
+        public static string Interface {
+            get {
+                return ResourceManager.GetString("Interface", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to InternetTest.
         /// </summary>
         public static string InternetTest {
@@ -1337,6 +1373,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Profile Name.
+        /// </summary>
+        public static string ProfileName {
+            get {
+                return ResourceManager.GetString("ProfileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Refresh.
         /// </summary>
         public static string Refresh {
@@ -1432,6 +1477,24 @@ namespace InternetTest.Properties {
         public static string SecondsLower {
             get {
                 return ResourceManager.GetString("SecondsLower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Security.
+        /// </summary>
+        public static string Security {
+            get {
+                return ResourceManager.GetString("Security", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is security enabled.
+        /// </summary>
+        public static string SecurityEnabled {
+            get {
+                return ResourceManager.GetString("SecurityEnabled", resourceCulture);
             }
         }
         
