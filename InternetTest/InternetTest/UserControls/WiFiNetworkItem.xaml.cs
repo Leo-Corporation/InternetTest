@@ -75,7 +75,7 @@ public partial class WiFiNetworkItem : UserControl
 		SecurityEnabledTxt.Text = NetworkInfo.IsSecurityEnabled ? Properties.Resources.Yes : Properties.Resources.No ;
 		ChannelTxt.Text = $"{NetworkInfo.Channel}";
 		BandTxt.Text = $"{NetworkInfo.Band:0.0} GHz";
-		FrequencyTxt.Text = $"{NetworkInfo.Frequency} KHz";
+		FrequencyTxt.Text = $"{NetworkInfo.Frequency} kHz";
 	}
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)
