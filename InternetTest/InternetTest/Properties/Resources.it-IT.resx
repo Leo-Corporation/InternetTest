@@ -807,4 +807,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="Frequency" xml:space="preserve">
     <value>Frequenza</value>
   </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Collegarsi</value>
+  </data>
 </root>

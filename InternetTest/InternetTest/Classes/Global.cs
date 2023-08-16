@@ -441,4 +441,65 @@ public static class Global
 		}
 		return availableNetworks;
 	}
+
+	public static string GetWpa2PersonalProfileXml(string ssid, string password)
+	{
+		var profileXml = $@"<?xml version=""1.0""?>
+    <WLANProfile xmlns=""http://www.microsoft.com/networking/WLAN/profile/v1"">
+        <name>{ssid}</name>
+        <SSIDConfig>
+            <SSID>
+                <name>{ssid}</name>
+            </SSID>
+        </SSIDConfig>
+        <connectionType>ESS</connectionType>
+        <connectionMode>auto</connectionMode>
+        <MSM>
+            <security>
+                <authEncryption>
+                    <authentication>WPA2PSK</authentication>
+                    <encryption>AES</encryption>
+                    <useOneX>false</useOneX>
+                </authEncryption>
+                <sharedKey>
+                    <keyType>passPhrase</keyType>
+                    <protected>false</protected>
+                    <keyMaterial>{password}</keyMaterial>
+                </sharedKey>
+            </security>
+        </MSM>
+    </WLANProfile>";
+		return profileXml;
+	}
+
+	public static async Task<bool> ConnectAsync(string ssid, string password)
+	{
+		var availableNetwork = NativeWifi.EnumerateAvailableNetworks()
+			.Where(x => x.Ssid.ToString() == ssid)
+			.FirstOrDefault();
+
+		if (availableNetwork is null)
+			return false;
+
+		if (availableNetwork.ProfileName is { Length: 0 })
+		{
+			var profileXml = GetWpa2PersonalProfileXml(ssid, password);
+			NativeWifi.SetProfile(availableNetwork.Interface.Id, ProfileType.AllUser, profileXml, null, false); ;
+		}
+
+		var connectionResult = await NativeWifi.ConnectNetworkAsync(
+			interfaceId: availableNetwork.Interface.Id,
+			profileName: ssid,
+			bssType: availableNetwork.BssType,
+			timeout: TimeSpan.FromSeconds(10));
+
+		if (!connectionResult)
+		{
+			Console.WriteLine("Failed to connect.");
+			return false;
+		}
+
+		Console.WriteLine("Connected successfully.");
+		return true;
+	}
 }

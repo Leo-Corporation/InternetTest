@@ -26,9 +26,32 @@
 				<TextBlock x:Name="StrengthIconTxt" FontSize="16" VerticalAlignment="Center" FontFamily="../Fonts/#FluentSystemIcons-Regular" Margin="0 0 10 0" d:Text="&#xF8AD;"/>
 				<TextBlock x:Name="SsidTxt" d:Text="WiFi" FontSize="16" FontWeight="ExtraBold" Grid.Column="1"/>
 				<StackPanel Orientation="Horizontal" Grid.Column="2">
+					<Button x:Name="ConnectBtn" Click="ConnectBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Connect}" Padding="5 2" Background="{Binding Source={StaticResource LightAccentColor}}" Margin="0 0 5 0" Style="{DynamicResource PrimaryButton}" Grid.Row="1" FontWeight="ExtraBold" Foreground="{Binding Source={StaticResource AccentColor}}" HorizontalAlignment="Right"/>
+
 					<Button Click="CopyBtn_Click" Content="&#xF32C;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="CopyBtn" Background="Transparent" Style="{DynamicResource DefaultButton}" Margin="0,0,5,0" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 					<Button Click="ExpanderBtn_Click" Content="&#xF2A4;" Padding="5" FontFamily="../Fonts/#FluentSystemIcons-Regular" Grid.Column="1" x:Name="ExpanderBtn" Background="Transparent" Style="{DynamicResource DefaultButton}" Foreground="{Binding Source={StaticResource Foreground1}}"/>
 				</StackPanel>
+
+				<Popup AllowsTransparency="True" x:Name="PasswordPopup" StaysOpen="False" Placement="Bottom" PlacementTarget="{Binding ElementName=ConnectBtn}">
+					<Border Background="{Binding Source={StaticResource Background1}}" CornerRadius="10" Margin="10" Padding="10">
+						<Border.Effect>
+							<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
+						</Border.Effect>
+
+						<StackPanel>
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="{x:Static lang:Resources.Key}" FontWeight="Bold" VerticalAlignment="Center"/>
+                                <Border Background="{Binding Source={StaticResource CardBackground}}" CornerRadius="5" Padding="3" Margin="10,3,10,3" Width="100" VerticalAlignment="Center">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
+                                    </Border.Effect>
+                                    <PasswordBox x:Name="PasswordTxt" BorderThickness="0" VerticalAlignment="Center" Background="Transparent" Foreground="{Binding Source={StaticResource Foreground1}}"/>
+                                </Border>
+                            </StackPanel>
+							<Button x:Name="ConnectPopupBtn" Click="ConnectPopupBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Connect}" Padding="5 2" Background="{Binding Source={StaticResource LightAccentColor}}" Margin="5" Style="{DynamicResource PrimaryButton}" Grid.Row="1" FontWeight="ExtraBold" Foreground="{Binding Source={StaticResource AccentColor}}" HorizontalAlignment="Center"/>
+						</StackPanel>
+					</Border>
+				</Popup>
 			</Grid>
 			<Grid Grid.Row="1" x:Name="CollapseGrid" Visibility="Collapsed" d:Visibility="Visible">
 				<Grid.RowDefinitions>

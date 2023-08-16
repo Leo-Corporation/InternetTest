@@ -798,4 +798,7 @@
   <data name="Frequency" xml:space="preserve">
     <value>频率</value>
   </data>
+  <data name="Connect" xml:space="preserve">
+    <value>连接</value>
+  </data>
 </root>

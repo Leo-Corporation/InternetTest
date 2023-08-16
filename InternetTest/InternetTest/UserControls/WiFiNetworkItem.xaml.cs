@@ -88,4 +88,38 @@ public partial class WiFiNetworkItem : UserControl
 		CollapseGrid.Visibility = CollapseGrid.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 		ExpanderBtn.Content = CollapseGrid.Visibility != Visibility.Visible ? "\uF2A4" : "\uF2B7";
 	}
+
+	private async void ConnectBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (!string.IsNullOrEmpty(NetworkInfo.ProfileName))
+		{
+			if (await Global.ConnectAsync(NetworkInfo.Ssid, ""))
+			{
+				MessageBox.Show(Properties.Resources.Connected);
+			}
+			else
+			{
+				MessageBox.Show(Properties.Resources.NotConnected);
+			}
+		}
+		else
+		{
+			PasswordPopup.IsOpen = true;
+		}
+	}
+
+	private async void ConnectPopupBtn_Click(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			if (await Global.ConnectAsync(NetworkInfo.Ssid, PasswordTxt.Password))
+			{
+				MessageBox.Show(Properties.Resources.Connected);
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show($"{Properties.Resources.NotConnected}\n\n{ex.Message}");
+		}
+	}
 }
