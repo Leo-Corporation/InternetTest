@@ -643,31 +643,31 @@
     <value>WPA2-个人 (802.11) 网络</value>
   </data>
   <data name="AllSuccess" xml:space="preserve">
-    <value>All tests were successful</value>
+    <value>所有测试均成功</value>
   </data>
   <data name="AllFailed" xml:space="preserve">
-    <value>All tests have failed</value>
+    <value>所有测试均失败</value>
   </data>
   <data name="TestSucessAndFailed" xml:space="preserve">
-    <value>Some tests have failed</value>
+    <value>部分测试失败</value>
   </data>
   <data name="Filters" xml:space="preserve">
-    <value>Filters</value>
+    <value>筛选</value>
   </data>
   <data name="Date" xml:space="preserve">
-    <value>Date</value>
+    <value>日期</value>
   </data>
   <data name="FromDate" xml:space="preserve">
-    <value>From</value>
+    <value>从</value>
   </data>
   <data name="ToDate" xml:space="preserve">
-    <value>To</value>
+    <value>到</value>
   </data>
   <data name="InvalidDateMsg" xml:space="preserve">
-    <value>Please provide a valid date.</value>
+    <value>请提供有效日期。</value>
   </data>
   <data name="Successful" xml:space="preserve">
-    <value>成功的</value>
+    <value>成功</value>
   </data>
   <data name="Failed" xml:space="preserve">
     <value>失败</value>
@@ -679,22 +679,22 @@
     <value>高级</value>
   </data>
   <data name="RememberPinState" xml:space="preserve">
-    <value>记住 "钉子 "状态</value>
+    <value>记住“已固定”状态</value>
   </data>
   <data name="DNS" xml:space="preserve">
     <value>DNS</value>
   </data>
   <data name="DNSTool" xml:space="preserve">
-    <value>DNS工具</value>
+    <value>DNS 工具</value>
   </data>
   <data name="GetDnsInfo" xml:space="preserve">
-    <value>获取DNS信息</value>
+    <value>获取 DNS 信息</value>
   </data>
   <data name="URL" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="DNSInfo" xml:space="preserve">
-    <value>DNS信息</value>
+    <value>DNS 信息</value>
   </data>
   <data name="CreationDate" xml:space="preserve">
     <value>创建日期</value>
@@ -724,7 +724,7 @@
     <value>速度</value>
   </data>
   <data name="SpeedTestSucess" xml:space="preserve">
-    <value>速度测试是成功的</value>
+    <value>速度测试成功</value>
   </data>
   <data name="SpeedTestFailed" xml:space="preserve">
     <value>速度测试失败</value>
@@ -739,25 +739,25 @@
     <value>执行一个追踪路线</value>
   </data>
   <data name="TimedOut" xml:space="preserve">
-    <value>计时结束</value>
+    <value>已超时</value>
   </data>
   <data name="TraceRouteInformation" xml:space="preserve">
     <value>追踪路线信息将出现在这里</value>
   </data>
   <data name="TraceProgress" xml:space="preserve">
-    <value>追踪过程中</value>
+    <value>追踪正在进行中</value>
   </data>
   <data name="TraceRouteDesc" xml:space="preserve">
     <value>定义执行跟踪路由时要使用的设置。</value>
   </data>
   <data name="MaxTimeOut" xml:space="preserve">
-    <value>最大限度的超时</value>
+    <value>最大超时时间</value>
   </data>
   <data name="MaxHops" xml:space="preserve">
-    <value>最大跳数</value>
+    <value>最大跃点数/value>
   </data>
   <data name="HopsLower" xml:space="preserve">
-    <value>啤酒花</value>
+    <value>跳跃</value>
   </data>
   <data name="WiFiNetworks" xml:space="preserve">
     <value>WiFi 网络</value>
@@ -772,7 +772,7 @@
     <value>BSS 类型</value>
   </data>
   <data name="Band" xml:space="preserve">
-    <value>乐队</value>
+    <value>频带</value>
   </data>
   <data name="Interface" xml:space="preserve">
     <value>界面</value>
@@ -784,16 +784,16 @@
     <value>是否启用了安全功能</value>
   </data>
   <data name="ProfileName" xml:space="preserve">
-    <value>简介名称</value>
+    <value>配置文件名称</value>
   </data>
   <data name="Channel" xml:space="preserve">
-    <value>频道</value>
+    <value>通道</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>是</value>
   </data>
   <data name="No" xml:space="preserve">
-    <value>没有</value>
+    <value>否</value>
   </data>
   <data name="Frequency" xml:space="preserve">
     <value>频率</value>
