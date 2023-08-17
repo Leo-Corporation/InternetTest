@@ -754,7 +754,7 @@
     <value>最大超时时间</value>
   </data>
   <data name="MaxHops" xml:space="preserve">
-    <value>最大跃点数/value>
+    <value>最大跃点数</value>
   </data>
   <data name="HopsLower" xml:space="preserve">
     <value>跳跃</value>
