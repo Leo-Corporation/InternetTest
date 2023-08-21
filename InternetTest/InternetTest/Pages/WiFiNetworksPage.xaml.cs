@@ -104,31 +104,40 @@ public partial class WiFiNetworksPage : Page
 
 	private async void InitUI()
 	{
-		TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.WiFiNetworks}"; // Set the title
-
-		WiFiDisplayer.Children.Clear();
-
-		WiFiDisplayer.Visibility = Visibility.Collapsed;
-		ScanningPanel.Visibility = Visibility.Visible;
-		NoNetworksPanel.Visibility = Visibility.Collapsed;
-
-		await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
-		var wifis = Global.GetWiFis();
-		for (int i = 0; i < wifis.Count; i++)
+		try
 		{
-			WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i]));
-		}
+			TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.WiFiNetworks}"; // Set the title
 
-		if (WiFiDisplayer.Children.Count == 0)
+			WiFiDisplayer.Children.Clear();
+
+			WiFiDisplayer.Visibility = Visibility.Collapsed;
+			ScanningPanel.Visibility = Visibility.Visible;
+			NoNetworksPanel.Visibility = Visibility.Collapsed;
+
+			await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
+			var wifis = Global.GetWiFis();
+			for (int i = 0; i < wifis.Count; i++)
+			{
+				WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i]));
+			}
+
+			if (WiFiDisplayer.Children.Count == 0)
+			{
+				WiFiDisplayer.Visibility = Visibility.Collapsed;
+				ScanningPanel.Visibility = Visibility.Collapsed;
+				NoNetworksPanel.Visibility = Visibility.Visible;
+				return;
+			}
+			WiFiDisplayer.Visibility = Visibility.Visible;
+			ScanningPanel.Visibility = Visibility.Collapsed;
+			NoNetworksPanel.Visibility = Visibility.Collapsed;
+		}
+		catch
 		{
 			WiFiDisplayer.Visibility = Visibility.Collapsed;
 			ScanningPanel.Visibility = Visibility.Collapsed;
 			NoNetworksPanel.Visibility = Visibility.Visible;
-			return;
 		}
-		WiFiDisplayer.Visibility = Visibility.Visible;
-		ScanningPanel.Visibility = Visibility.Collapsed;
-		NoNetworksPanel.Visibility = Visibility.Collapsed;
 	}
 
 	private void RefreshBtn_Click(object sender, RoutedEventArgs e)
