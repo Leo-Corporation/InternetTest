@@ -49,16 +49,16 @@
             Grid.Row="1"
             Margin="10"
             Orientation="Horizontal">
-            <Button
+            <RadioButton
                 x:Name="StatusBtn"
                 Margin="0 2"
                 Padding="5"
                 HorizontalContentAlignment="Stretch"
                 Background="Transparent"
                 BorderThickness="0"
-                Click="StatusBtn_Click"
+                Checked="StatusBtn_Click"
                 Foreground="{Binding Source={StaticResource AccentColor}}"
-                Style="{DynamicResource DefaultButton}">
+                Style="{DynamicResource TabRadioButton}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -78,17 +78,17 @@
                         FontWeight="ExtraBold"
                         Text="{x:Static lang:Resources.Status}" />
                 </Grid>
-            </Button>
-            <Button
+            </RadioButton>
+            <RadioButton
                 x:Name="DownDetectorBtn"
                 Margin="10 2 0 2"
                 Padding="5"
                 HorizontalContentAlignment="Stretch"
                 Background="Transparent"
                 BorderThickness="0"
-                Click="DownDetectorBtn_Click"
+                Checked="DownDetectorBtn_Click"
                 Foreground="{Binding Source={StaticResource AccentColor}}"
-                Style="{DynamicResource DefaultButton}">
+                Style="{DynamicResource TabRadioButton}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -108,7 +108,7 @@
                         FontWeight="ExtraBold"
                         Text="{x:Static lang:Resources.DownDetector}" />
                 </Grid>
-            </Button>
+            </RadioButton>
         </StackPanel>
         <Popup
             x:Name="FilterPopup"
