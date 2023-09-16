@@ -156,7 +156,12 @@ public partial class WiFiNetworksPage : Page
 
 	private void RefreshBtn_Click(object sender, RoutedEventArgs e)
 	{
-		InitUI();
+		if (AdaptersPage.Visibility == Visibility.Collapsed)
+		{
+			InitUI();
+			return;
+		}
+		GetAdapters();
     }
 
 	private void NetworksBtn_Click(object sender, RoutedEventArgs e)
