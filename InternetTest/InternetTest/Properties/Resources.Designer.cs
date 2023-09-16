@@ -848,6 +848,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Interface type.
+        /// </summary>
+        public static string InterfaceType {
+            get {
+                return ResourceManager.GetString("InterfaceType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to InternetTest.
         /// </summary>
         public static string InternetTest {
@@ -1907,6 +1916,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total bytes received.
+        /// </summary>
+        public static string TotalBytesReceived {
+            get {
+                return ResourceManager.GetString("TotalBytesReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total bytes sent.
+        /// </summary>
+        public static string TotalBytesSent {
+            get {
+                return ResourceManager.GetString("TotalBytesSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trace.
         /// </summary>
         public static string Trace {
@@ -1957,6 +1984,24 @@ namespace InternetTest.Properties {
         public static string TxtFiles {
             get {
                 return ResourceManager.GetString("TxtFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown,Ethernet,TokenRing,FDDI,Basic ISDN,Primary ISDN,PPP,Loopback,Ethernet 3 Megabit,SLIP,ATM,Generic Modem,Fast Ethernet T,ISDN,Fast Ethernet FX,Wireless 802.11,Asymmetric DSL,Rate-Adaptive DSL,Symmetric DSL,Very High-Speed DSL,IP over ATM,Gigabit Ethernet,Tunnel,Multi-Rate Symmetric DSL,High-Performance Serial Bus,WMAN,WWANPP,WWANPP2.
+        /// </summary>
+        public static string Types {
+            get {
+                return ResourceManager.GetString("Types", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bytes,Kilobytes,Megabytes,Gigabytes,Terabytes,Petabytes.
+        /// </summary>
+        public static string Units {
+            get {
+                return ResourceManager.GetString("Units", resourceCulture);
             }
         }
         

@@ -810,4 +810,19 @@
   <data name="Adapters" xml:space="preserve">
     <value>网络适配器</value>
   </data>
+  <data name="InterfaceType" xml:space="preserve">
+    <value>接口类型</value>
+  </data>
+  <data name="TotalBytesSent" xml:space="preserve">
+    <value>发送的总字节数</value>
+  </data>
+  <data name="TotalBytesReceived" xml:space="preserve">
+    <value>接收字节总数</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>字节, 千字节, 兆字节, 千兆字节, 万亿字节, 京字节</value>
+  </data>
+  <data name="Types" xml:space="preserve">
+    <value>未知,以太网,令牌环,FDDI,基本ISDN,主要ISDN,PPP,回环,以太网3兆比特,SLIP,ATM,通用调制解调器,快速以太网T型,ISDN,快速以太网FX型,无线802.11,非对称DSL,速率自适应DSL,对称DSL,超高速DSL,ATM上的IP,千兆以太网,隧道,多速率对称DSL,高性能串行总线,WMAN,WWANPP,WWANPP2</value>
+  </data>
 </root>

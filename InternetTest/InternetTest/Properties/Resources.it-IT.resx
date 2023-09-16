@@ -819,4 +819,19 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="Adapters" xml:space="preserve">
     <value>Adattatori di rete</value>
   </data>
+  <data name="TotalBytesSent" xml:space="preserve">
+    <value>Totale byte inviati</value>
+  </data>
+  <data name="InterfaceType" xml:space="preserve">
+    <value>Tipo di interfaccia</value>
+  </data>
+  <data name="TotalBytesReceived" xml:space="preserve">
+    <value>Totale byte ricevuti</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>Byte,Kilobyte,Megabyte,Gigabyte,Terabyte,Petabyte</value>
+  </data>
+  <data name="Types" xml:space="preserve">
+    <value>Sconosciuto,Ethernet,TokenRing,FDDI,ISDN di base,ISDN primario,PPP,Loopback,Ethernet 3 Megabit,SLIP,ATM,Modem generico,Fast Ethernet T,ISDN,Fast Ethernet FX,Wireless 802.11,DSL asimmetrico,DSL adattivo al rate,DSL simmetrico,DSL molto alto rate,IP su ATM,Gigabit Ethernet,Tunnel,DSL multi-rate,Bus seriale ad alte prestazioni,WMAN,WWANPP,WWANPP2</value>
+  </data>
 </root>

@@ -819,4 +819,19 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="Adapters" xml:space="preserve">
     <value>Cartes réseau</value>
   </data>
+  <data name="InterfaceType" xml:space="preserve">
+    <value>Type d'interface</value>
+  </data>
+  <data name="TotalBytesSent" xml:space="preserve">
+    <value>Total d'octets envoyés</value>
+  </data>
+  <data name="TotalBytesReceived" xml:space="preserve">
+    <value>Total d'octets reçus</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>Octets,Kilooctets,Méga-octets,Gigaoctets,Téraoctets,Pétaoctets</value>
+  </data>
+  <data name="Types" xml:space="preserve">
+    <value>Inconnu,Ethernet,TokenRing,FDDI,ISDN de base,ISDN principal,PPP,Bouclage,Ethernet 3 mégabits,SLIP,ATM,Modem générique,Fast Ethernet T,ISDN,Fast Ethernet FX,Sans fil 802.11,DSL asymétrique,DSL adaptatif en fonction du débit,DSL symétrique,DSL très haut débit,IP sur ATM,Gigabit Ethernet,Tunnel,DSL multi-débit,Bus série haute performance,WMAN,WWANPP,WWANPP2</value>
+  </data>
 </root>
