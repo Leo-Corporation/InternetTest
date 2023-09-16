@@ -61,6 +61,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Network adapters.
+        /// </summary>
+        public static string Adapters {
+            get {
+                return ResourceManager.GetString("Adapters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ad-hoc network.
         /// </summary>
         public static string AdHocNetwork {

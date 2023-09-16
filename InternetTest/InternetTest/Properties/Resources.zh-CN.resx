@@ -807,4 +807,7 @@
   <data name="NoNetworks" xml:space="preserve">
     <value>无网络可用。</value>
   </data>
+  <data name="Adapters" xml:space="preserve">
+    <value>网络适配器</value>
+  </data>
 </root>

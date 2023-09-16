@@ -816,4 +816,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="NoNetworks" xml:space="preserve">
     <value>No networks are available.</value>
   </data>
+  <data name="Adapters" xml:space="preserve">
+    <value>Network adapters</value>
+  </data>
 </root>

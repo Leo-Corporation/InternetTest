@@ -631,7 +631,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>È abilitata la modalità riservata</value>
   </data>
   <data name="DetailsNotAvailableCM" xml:space="preserve">
-    <value>In modalità riservata i dettagli non sono disponibili </value>
+    <value>In modalità riservata i dettagli non sono disponibili</value>
   </data>
   <data name="OpenNetwork" xml:space="preserve">
     <value>Rete aperta (802.11)</value>
@@ -815,5 +815,8 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   </data>
   <data name="NoNetworks" xml:space="preserve">
     <value>Non sono disponibili reti.</value>
+  </data>
+  <data name="Adapters" xml:space="preserve">
+    <value>Adattatori di rete</value>
   </data>
 </root>
