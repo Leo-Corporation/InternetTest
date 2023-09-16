@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
+using System;
 using System.Net.NetworkInformation;
 
 namespace InternetTest.Classes
@@ -78,20 +79,33 @@ namespace InternetTest.Classes
 			OutputQueueLength = statistics.OutputQueueLength;
 			UnicastPacketsReceived = statistics.UnicastPacketsReceived;
 			UnicastPacketsSent = statistics.UnicastPacketsSent;
+
+			if (adapter.Supports(NetworkInterfaceComponent.IPv4))
+			{
+				IpVersion = "IPv4";
+			}
+			if (adapter.Supports(NetworkInterfaceComponent.IPv6))
+			{
+				if (IpVersion.Length > 0)
+				{
+					IpVersion += ", ";
+				}
+				IpVersion += "IPv6";
+			}
 		}
 
 		public string ToFormattedString()
 		{
 			return $"{Name}\n" +
 				   $"{Global.GetInterfaceTypeName(NetworkInterfaceType)}\n" +
-				   $"{Status}\n" +
+				   $"{Status switch { OperationalStatus.Up => Properties.Resources.ConnectedS, OperationalStatus.Down => Properties.Resources.Disconnected, _ => Status.ToString() }}\n" +
 				   $"{IpVersion}\n" +
 				   $"{DnsSuffix}\n" +
 				   $"{Mtu}\n" +
-				   $"{DnsEnabled}\n" +
-				   $"{IsDynamicDnsEnabled}\n" +
-				   $"{IsReceiveOnly}\n" +
-				   $"{SupportsMulticast}\n" +
+				   $"{BoolToString(DnsEnabled)}\n" +
+				   $"{BoolToString(IsDynamicDnsEnabled)}\n" +
+				   $"{BoolToString(IsReceiveOnly)}\n" +
+				   $"{BoolToString(SupportsMulticast)}\n" +
 				   $"{Global.GetStorageUnit(Speed).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(Speed).Item1)}/s\n" +
 				   $"{Global.GetStorageUnit(BytesReceived).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(BytesReceived).Item1)}\n" +
 				   $"{Global.GetStorageUnit(BytesSent).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(BytesSent).Item1)}\n" +
@@ -106,5 +120,7 @@ namespace InternetTest.Classes
 				   $"{UnicastPacketsReceived}\n" +
 				   $"{UnicastPacketsSent}";
 		}
+
+		private string BoolToString(bool b) => b ? Properties.Resources.Yes : Properties.Resources.No;
 	}
 }
