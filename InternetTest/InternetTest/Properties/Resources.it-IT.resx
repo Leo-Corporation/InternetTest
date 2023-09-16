@@ -834,4 +834,55 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="Types" xml:space="preserve">
     <value>Sconosciuto,Ethernet,TokenRing,FDDI,ISDN di base,ISDN primario,PPP,Loopback,Ethernet 3 Megabit,SLIP,ATM,Modem generico,Fast Ethernet T,ISDN,Fast Ethernet FX,Wireless 802.11,DSL asimmetrico,DSL adattivo al rate,DSL simmetrico,DSL molto alto rate,IP su ATM,Gigabit Ethernet,Tunnel,DSL multi-rate,Bus seriale ad alte prestazioni,WMAN,WWANPP,WWANPP2</value>
   </data>
+  <data name="MTU" xml:space="preserve">
+    <value>MTU</value>
+  </data>
+  <data name="PhysicalAddress" xml:space="preserve">
+    <value>Indirizzo fisico</value>
+  </data>
+  <data name="IpVersion" xml:space="preserve">
+    <value>Versione/i IP</value>
+  </data>
+  <data name="DnsEnabled" xml:space="preserve">
+    <value>DNS abilitato</value>
+  </data>
+  <data name="DnsDynamicConfigured" xml:space="preserve">
+    <value>DNS configurator dinamicamente</value>
+  </data>
+  <data name="ReceiveOnly" xml:space="preserve">
+    <value>Solo ricezione</value>
+  </data>
+  <data name="Multicast" xml:space="preserve">
+    <value>Multicast</value>
+  </data>
+  <data name="UnicastPacketsSent" xml:space="preserve">
+    <value>Pacchetti unicast inviati</value>
+  </data>
+  <data name="UnicastPacketsReceived" xml:space="preserve">
+    <value>Pacchetti unicast ricevuti</value>
+  </data>
+  <data name="NonUnicastPacketsSent" xml:space="preserve">
+    <value>Pacchetti non unicast inviati</value>
+  </data>
+  <data name="NonUnicastPacketsReceived" xml:space="preserve">
+    <value>Pacchetti non unicast ricevuti</value>
+  </data>
+  <data name="IncomingPacketsDiscarded" xml:space="preserve">
+    <value>Pacchetti in ingresso scartati</value>
+  </data>
+  <data name="OutgoingPacketsDiscarded" xml:space="preserve">
+    <value>Pacchetti in uscita scartati</value>
+  </data>
+  <data name="IncomingPacketsWithErrors" xml:space="preserve">
+    <value>Pacchetti in ingresso con errori</value>
+  </data>
+  <data name="OutgoingPacketsWithErrors" xml:space="preserve">
+    <value>Pacchetti in uscita con errori</value>
+  </data>
+  <data name="IncomingUnknownProtocolPackets" xml:space="preserve">
+    <value>Pacchetti in ingresso con protocollo sconosciuto</value>
+  </data>
+  <data name="OutputQueueLength" xml:space="preserve">
+    <value>Lunghezza della coda di uscita</value>
+  </data>
 </root>

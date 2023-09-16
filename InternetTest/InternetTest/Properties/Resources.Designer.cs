@@ -448,6 +448,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dynamically configured DNS.
+        /// </summary>
+        public static string DnsDynamicConfigured {
+            get {
+                return ResourceManager.GetString("DnsDynamicConfigured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DNS enabled.
+        /// </summary>
+        public static string DnsEnabled {
+            get {
+                return ResourceManager.GetString("DnsEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DNS Information.
         /// </summary>
         public static string DNSInfo {
@@ -802,6 +820,33 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Incoming Packets Discarded.
+        /// </summary>
+        public static string IncomingPacketsDiscarded {
+            get {
+                return ResourceManager.GetString("IncomingPacketsDiscarded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incoming Packets With Errors.
+        /// </summary>
+        public static string IncomingPacketsWithErrors {
+            get {
+                return ResourceManager.GetString("IncomingPacketsWithErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incoming Unknown Protocol Packets.
+        /// </summary>
+        public static string IncomingUnknownProtocolPackets {
+            get {
+                return ResourceManager.GetString("IncomingUnknownProtocolPackets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Infrastructure network.
         /// </summary>
         public static string InfrastructureNetwork {
@@ -961,6 +1006,15 @@ namespace InternetTest.Properties {
         public static string IPv6Address {
             get {
                 return ResourceManager.GetString("IPv6Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IP Version(s).
+        /// </summary>
+        public static string IpVersion {
+            get {
+                return ResourceManager.GetString("IpVersion", resourceCulture);
             }
         }
         
@@ -1174,6 +1228,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MTU.
+        /// </summary>
+        public static string MTU {
+            get {
+                return ResourceManager.GetString("MTU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multicast.
+        /// </summary>
+        public static string Multicast {
+            get {
+                return ResourceManager.GetString("Multicast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My IP.
         /// </summary>
         public static string MyIP {
@@ -1234,6 +1306,24 @@ namespace InternetTest.Properties {
         public static string NoNetworks {
             get {
                 return ResourceManager.GetString("NoNetworks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Non-Unicast Packets Received.
+        /// </summary>
+        public static string NonUnicastPacketsReceived {
+            get {
+                return ResourceManager.GetString("NonUnicastPacketsReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Non-Unicast Packets Sent.
+        /// </summary>
+        public static string NonUnicastPacketsSent {
+            get {
+                return ResourceManager.GetString("NonUnicastPacketsSent", resourceCulture);
             }
         }
         
@@ -1337,6 +1427,33 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Outgoing Packets Discarded.
+        /// </summary>
+        public static string OutgoingPacketsDiscarded {
+            get {
+                return ResourceManager.GetString("OutgoingPacketsDiscarded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outgoing Packets With Errors.
+        /// </summary>
+        public static string OutgoingPacketsWithErrors {
+            get {
+                return ResourceManager.GetString("OutgoingPacketsWithErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output Queue Length.
+        /// </summary>
+        public static string OutputQueueLength {
+            get {
+                return ResourceManager.GetString("OutputQueueLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Package(s) lost.
         /// </summary>
         public static string PackageLost {
@@ -1360,6 +1477,15 @@ namespace InternetTest.Properties {
         public static string PackageSent {
             get {
                 return ResourceManager.GetString("PackageSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Physical Address.
+        /// </summary>
+        public static string PhysicalAddress {
+            get {
+                return ResourceManager.GetString("PhysicalAddress", resourceCulture);
             }
         }
         
@@ -1432,6 +1558,15 @@ namespace InternetTest.Properties {
         public static string ProfileName {
             get {
                 return ResourceManager.GetString("ProfileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receive Only.
+        /// </summary>
+        public static string ReceiveOnly {
+            get {
+                return ResourceManager.GetString("ReceiveOnly", resourceCulture);
             }
         }
         
@@ -1993,6 +2128,24 @@ namespace InternetTest.Properties {
         public static string Types {
             get {
                 return ResourceManager.GetString("Types", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unicast Packets Received.
+        /// </summary>
+        public static string UnicastPacketsReceived {
+            get {
+                return ResourceManager.GetString("UnicastPacketsReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unicast Packets Sent.
+        /// </summary>
+        public static string UnicastPacketsSent {
+            get {
+                return ResourceManager.GetString("UnicastPacketsSent", resourceCulture);
             }
         }
         
