@@ -37,78 +37,152 @@
                 FontSize="14"
                 FontWeight="ExtraBold" />
         </StackPanel>
-        <Button
-            x:Name="RefreshBtn"
-            Grid.Row="1"
-            Margin="5"
-            Padding="5"
-            HorizontalAlignment="Right"
-            Background="{Binding Source={StaticResource LightAccentColor}}"
-            Click="RefreshBtn_Click"
-            Content="{x:Static lang:Resources.Refresh}"
-            Cursor="Hand"
-            FontWeight="ExtraBold"
-            Foreground="{Binding Source={StaticResource AccentColor}}"
-            Style="{DynamicResource PrimaryButton}" />
+        <Grid Grid.Row="1">
+            <StackPanel
+                Grid.Row="1"
+                Margin="10 0 0 0"
+                Orientation="Horizontal">
+                <RadioButton
+                    x:Name="NetworksBtn"
+                    Margin="0 2"
+                    Padding="5"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Stretch"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Checked="NetworksBtn_Click"
+                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Style="{DynamicResource TabRadioButton}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="/Fonts/#FluentSystemIcons-Regular"
+                            FontSize="14"
+                            Text="&#xF60A;" />
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5 0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="11"
+                            FontWeight="ExtraBold"
+                            Text="{x:Static lang:Resources.WiFiNetworks}" />
+                    </Grid>
+                </RadioButton>
+                <RadioButton
+                    x:Name="AdaptersBtn"
+                    Margin="10 2 0 2"
+                    Padding="5"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Stretch"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Checked="AdaptersBtn_Click"
+                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Style="{DynamicResource TabRadioButton}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="/Fonts/#FluentSystemIcons-Regular"
+                            FontSize="14"
+                            Text="&#xF35C;" />
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="5 0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="11"
+                            FontWeight="ExtraBold"
+                            Text="{x:Static lang:Resources.Adapters}" />
+                    </Grid>
+                </RadioButton>
+            </StackPanel>
+            <Button
+                x:Name="RefreshBtn"
+                Grid.Row="1"
+                Margin="5"
+                Padding="5"
+                HorizontalAlignment="Right"
+                Background="{Binding Source={StaticResource LightAccentColor}}"
+                Click="RefreshBtn_Click"
+                Content="{x:Static lang:Resources.Refresh}"
+                Cursor="Hand"
+                FontWeight="ExtraBold"
+                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Style="{DynamicResource PrimaryButton}" />
+        </Grid>
 
-        <StackPanel x:Name="WiFiDisplayer" Grid.Row="2" />
+        <Grid x:Name="NetworksPage" Grid.Row="2">
+            <StackPanel x:Name="WiFiDisplayer" Grid.Row="2" />
 
-        <StackPanel
-            x:Name="NoNetworksPanel"
+            <StackPanel
+                x:Name="NoNetworksPanel"
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Visibility="Collapsed">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                    FontSize="48"
+                    Text="&#xFB69;" />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.NoNetworks}"
+                    TextWrapping="Wrap" />
+            </StackPanel>
+
+            <StackPanel
+                x:Name="ScanningPanel"
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Visibility="Visible">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                    FontSize="48"
+                    RenderTransformOrigin="0.5,0.5"
+                    Text="&#xF709;">
+                    <TextBlock.RenderTransform>
+                        <RotateTransform x:Name="SpinTransform" Angle="0" />
+                    </TextBlock.RenderTransform>
+
+                    <TextBlock.Triggers>
+                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        RepeatBehavior="Forever"
+                                        Storyboard.TargetName="SpinTransform"
+                                        Storyboard.TargetProperty="Angle"
+                                        From="0"
+                                        To="360"
+                                        Duration="0:0:1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </TextBlock.Triggers>
+                </TextBlock>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.ScanningInProgress}"
+                    TextWrapping="Wrap" />
+            </StackPanel>
+        </Grid>
+        <Grid
+            x:Name="AdaptersPage"
             Grid.Row="2"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Visibility="Collapsed">
-            <TextBlock
-                HorizontalAlignment="Center"
-                FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                FontSize="48"
-                Text="&#xFB69;" />
-            <TextBlock
-                HorizontalAlignment="Center"
-                FontWeight="Bold"
-                Text="{x:Static lang:Resources.NoNetworks}"
-                TextWrapping="Wrap" />
-        </StackPanel>
-
-        <StackPanel
-            x:Name="ScanningPanel"
-            Grid.Row="2"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Visibility="Visible">
-            <TextBlock
-                HorizontalAlignment="Center"
-                FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                FontSize="48"
-                RenderTransformOrigin="0.5,0.5"
-                Text="&#xF709;">
-                <TextBlock.RenderTransform>
-                    <RotateTransform x:Name="SpinTransform" Angle="0" />
-                </TextBlock.RenderTransform>
-
-                <TextBlock.Triggers>
-                    <EventTrigger RoutedEvent="TextBlock.Loaded">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation
-                                    RepeatBehavior="Forever"
-                                    Storyboard.TargetName="SpinTransform"
-                                    Storyboard.TargetProperty="Angle"
-                                    From="0"
-                                    To="360"
-                                    Duration="0:0:1" />
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </TextBlock.Triggers>
-            </TextBlock>
-            <TextBlock
-                HorizontalAlignment="Center"
-                FontWeight="Bold"
-                Text="{x:Static lang:Resources.ScanningInProgress}"
-                TextWrapping="Wrap" />
-        </StackPanel>
-
+            Visibility="Collapsed" />
     </Grid>
 </Page>

@@ -131,6 +131,8 @@ public partial class WiFiNetworksPage : Page
 			WiFiDisplayer.Visibility = Visibility.Visible;
 			ScanningPanel.Visibility = Visibility.Collapsed;
 			NoNetworksPanel.Visibility = Visibility.Collapsed;
+
+			NetworksBtn.IsChecked = true;
 		}
 		catch
 		{
@@ -143,5 +145,17 @@ public partial class WiFiNetworksPage : Page
 	private void RefreshBtn_Click(object sender, RoutedEventArgs e)
 	{
 		InitUI();
+    }
+
+	private void NetworksBtn_Click(object sender, RoutedEventArgs e)
+	{
+		AdaptersPage.Visibility = Visibility.Collapsed;
+		NetworksPage.Visibility = Visibility.Visible;
+	}
+
+	private void AdaptersBtn_Click(object sender, RoutedEventArgs e)
+	{
+		AdaptersPage.Visibility = Visibility.Visible;
+		NetworksPage.Visibility = Visibility.Collapsed;
     }
 }
