@@ -1,202 +1,519 @@
-﻿<Page x:Class="InternetTest.Pages.LocateIpPage"
-	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-	  xmlns:local="clr-namespace:InternetTest.Pages"
-	  xmlns:lang="clr-namespace:InternetTest.Properties"
-	  mc:Ignorable="d" Background="Transparent" d:Background="White" Foreground="{Binding Source={StaticResource Foreground1}}"
-	  d:DesignHeight="450" d:DesignWidth="800" FontFamily="../Fonts/#Hauora"
-	  Title="LocateIpPage">
+﻿<Page
+    x:Class="InternetTest.Pages.LocateIpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lang="clr-namespace:InternetTest.Properties"
+    xmlns:local="clr-namespace:InternetTest.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="LocateIpPage"
+    d:Background="White"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="Transparent"
+    FontFamily="../Fonts/#Hauora"
+    Foreground="{Binding Source={StaticResource Foreground1}}"
+    mc:Ignorable="d">
 
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-		</Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-		<StackPanel Margin="10" Orientation="Horizontal">
-			<TextBlock Text="&#xF4F9;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
-			<TextBlock x:Name="TitleTxt" d:Text="{x:Static lang:Resources.GetStarted}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
-		</StackPanel>
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <TextBlock
+                VerticalAlignment="Center"
+                FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                FontSize="16"
+                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Text="&#xF4F9;" />
+            <TextBlock
+                x:Name="TitleTxt"
+                Margin="5 0 0 0"
+                VerticalAlignment="Center"
+                d:Text="{x:Static lang:Resources.GetStarted}"
+                FontSize="14"
+                FontWeight="ExtraBold" />
+        </StackPanel>
 
-		<StackPanel Grid.Row="1" VerticalAlignment="Center">
-			<TextBlock x:Name="StatusIconTxt" Text="&#xF4AB;" FontSize="76" FontFamily="../Fonts/#FluentSystemIcons-Filled" Foreground="{Binding Source={StaticResource Gray}}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-			<TextBlock x:Name="MyIPTxt" Text="{x:Static lang:Resources.IPShowHere2}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"/>
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button x:Name="LocateIPBtn" Click="LocateIPBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.LocateIP}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource AccentColor}}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
-				<Button x:Name="MapBtn" Click="MapBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.ShowOnMap}" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
-				<Button x:Name="SaveBtn" Click="SaveBtn_Click" Cursor="Hand" Content="&#xF680;" Margin="5 10" Padding="5 2" BorderThickness="0" Background="{Binding Source={StaticResource LightAccentColor}}" Foreground="{Binding Source={StaticResource AccentColor}}" FontFamily="../Fonts/#FluentSystemIcons-Regular" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
-			</StackPanel>
-			<Border Background="{Binding Source={StaticResource CardBackground}}" Width="300" CornerRadius="5" HorizontalAlignment="Center">
-				<Border.Effect>
-					<DropShadowEffect Color="{Binding Source={StaticResource AccentColor}}" BlurRadius="15" Opacity="0.2" ShadowDepth="0"/>
-				</Border.Effect>
-				<Grid>
-					<TextBox x:Name="IpTxt" Padding="5" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" d:Text="123.54.132.56" Background="Transparent"/>
-					<PasswordBox x:Name="IpPassword" Padding="5" Margin="5" BorderThickness="0" FontWeight="Bold" Foreground="{Binding Source={StaticResource DarkGray}}" Background="Transparent" Visibility="Collapsed"/>
-				</Grid>
-			</Border>
-		</StackPanel>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            <TextBlock
+                x:Name="StatusIconTxt"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontFamily="../Fonts/#FluentSystemIcons-Filled"
+                FontSize="76"
+                Foreground="{Binding Source={StaticResource Gray}}"
+                Text="&#xF4AB;" />
+            <TextBlock
+                x:Name="MyIPTxt"
+                Margin="5 0 0 0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="14"
+                FontWeight="ExtraBold"
+                Text="{x:Static lang:Resources.IPShowHere2}"
+                TextAlignment="Center"
+                TextWrapping="Wrap" />
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button
+                    x:Name="LocateIPBtn"
+                    Margin="5 10"
+                    Padding="5 2"
+                    Background="{Binding Source={StaticResource AccentColor}}"
+                    BorderThickness="0"
+                    Click="LocateIPBtn_Click"
+                    Content="{x:Static lang:Resources.LocateIP}"
+                    Cursor="Hand"
+                    FontWeight="ExtraBold"
+                    Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                    Style="{DynamicResource PrimaryButton}" />
+                <Button
+                    x:Name="MapBtn"
+                    Margin="5 10"
+                    Padding="5 2"
+                    Background="{Binding Source={StaticResource LightAccentColor}}"
+                    BorderThickness="0"
+                    Click="MapBtn_Click"
+                    Content="{x:Static lang:Resources.ShowOnMap}"
+                    Cursor="Hand"
+                    FontWeight="ExtraBold"
+                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Style="{DynamicResource PrimaryButton}" />
+                <Button
+                    x:Name="SaveBtn"
+                    Margin="5 10"
+                    Padding="5 2"
+                    Background="{Binding Source={StaticResource LightAccentColor}}"
+                    BorderThickness="0"
+                    Click="SaveBtn_Click"
+                    Content="&#xF680;"
+                    Cursor="Hand"
+                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                    FontWeight="ExtraBold"
+                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Style="{DynamicResource PrimaryButton}" />
+            </StackPanel>
+            <Border
+                Width="300"
+                HorizontalAlignment="Center"
+                Background="{Binding Source={StaticResource CardBackground}}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Opacity="0.2"
+                        ShadowDepth="0"
+                        Color="{Binding Source={StaticResource AccentColor}}" />
+                </Border.Effect>
+                <Grid>
+                    <TextBox
+                        x:Name="IpTxt"
+                        Margin="5"
+                        Padding="5"
+                        d:Text="123.54.132.56"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontWeight="Bold"
+                        Foreground="{Binding Source={StaticResource DarkGray}}" />
+                    <PasswordBox
+                        x:Name="IpPassword"
+                        Margin="5"
+                        Padding="5"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontWeight="Bold"
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Visibility="Collapsed" />
+                </Grid>
+            </Border>
+        </StackPanel>
 
-		<StackPanel Margin="10" Orientation="Horizontal" Grid.Row="2">
-			<TextBlock Text="&#xF4A4;" FontSize="16" FontFamily="../Fonts/#FluentSystemIcons-Regular" Foreground="{Binding Source={StaticResource AccentColor}}" VerticalAlignment="Center"/>
-			<TextBlock x:Name="DetailsInfoTxt" Text="{x:Static lang:Resources.Details}" FontSize="14" VerticalAlignment="Center" FontWeight="ExtraBold" Margin="5,0,0,0"/>
-		</StackPanel>
+        <StackPanel
+            Grid.Row="2"
+            Margin="10"
+            Orientation="Horizontal">
+            <TextBlock
+                VerticalAlignment="Center"
+                FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                FontSize="16"
+                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Text="&#xF4A4;" />
+            <TextBlock
+                x:Name="DetailsInfoTxt"
+                Margin="5 0 0 0"
+                VerticalAlignment="Center"
+                FontSize="14"
+                FontWeight="ExtraBold"
+                Text="{x:Static lang:Resources.Details}" />
+        </StackPanel>
 
-		<WrapPanel x:Name="DetailsWrap" Grid.Row="3" Margin="0,0,0,20" Orientation="Horizontal">
-			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
-				<Border.Effect>
-					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
-				</Border.Effect>
+        <WrapPanel
+            x:Name="DetailsWrap"
+            Grid.Row="3"
+            Margin="0 0 0 20"
+            Orientation="Horizontal">
+            <Border
+                MinWidth="150"
+                Margin="5"
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{Binding Source={StaticResource CardBackground}}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Direction="135"
+                        Opacity="0.2"
+                        ShadowDepth="0"
+                        Color="#000" />
+                </Border.Effect>
 
-				<Grid>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto"/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-					<TextBlock Text="{x:Static lang:Resources.Country}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
-					<StackPanel Grid.Row="1" Orientation="Horizontal">
-						<TextBlock Text="&#xF3DB;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="CountryTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
-					</StackPanel>
-				</Grid>
-			</Border>
+                    <TextBlock
+                        FontWeight="ExtraBold"
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Text="{x:Static lang:Resources.Country}" />
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0 0 5 0"
+                            VerticalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="22"
+                            Text="&#xF3DB;" />
+                        <TextBlock
+                            x:Name="CountryTxt"
+                            VerticalAlignment="Center"
+                            Cursor="Hand"
+                            FontSize="18"
+                            FontWeight="ExtraBold"
+                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                            Text="N/A" />
+                    </StackPanel>
+                </Grid>
+            </Border>
 
-			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
-				<Border.Effect>
-					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
-				</Border.Effect>
+            <Border
+                MinWidth="150"
+                Margin="5"
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{Binding Source={StaticResource CardBackground}}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Direction="135"
+                        Opacity="0.2"
+                        ShadowDepth="0"
+                        Color="#000" />
+                </Border.Effect>
 
-				<Grid>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto"/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-					<TextBlock Text="{x:Static lang:Resources.Region}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
-					<StackPanel Grid.Row="1" Orientation="Horizontal">
-						<TextBlock Text="&#xF52E;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="RegionTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
-					</StackPanel>
-				</Grid>
-			</Border>
+                    <TextBlock
+                        FontWeight="ExtraBold"
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Text="{x:Static lang:Resources.Region}" />
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0 0 5 0"
+                            VerticalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="22"
+                            Text="&#xF52E;" />
+                        <TextBlock
+                            x:Name="RegionTxt"
+                            VerticalAlignment="Center"
+                            Cursor="Hand"
+                            FontSize="18"
+                            FontWeight="ExtraBold"
+                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                            Text="N/A" />
+                    </StackPanel>
+                </Grid>
+            </Border>
 
-			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
-				<Border.Effect>
-					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
-				</Border.Effect>
+            <Border
+                MinWidth="150"
+                Margin="5"
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{Binding Source={StaticResource CardBackground}}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Direction="135"
+                        Opacity="0.2"
+                        ShadowDepth="0"
+                        Color="#000" />
+                </Border.Effect>
 
-				<Grid>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto"/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-					<TextBlock Text="{x:Static lang:Resources.City}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
-					<StackPanel Grid.Row="1" Orientation="Horizontal">
-						<TextBlock Text="&#xF2C3;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="CityTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
-					</StackPanel>
-				</Grid>
-			</Border>
-			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
-				<Border.Effect>
-					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
-				</Border.Effect>
+                    <TextBlock
+                        FontWeight="ExtraBold"
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Text="{x:Static lang:Resources.City}" />
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0 0 5 0"
+                            VerticalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="22"
+                            Text="&#xF2C3;" />
+                        <TextBlock
+                            x:Name="CityTxt"
+                            VerticalAlignment="Center"
+                            Cursor="Hand"
+                            FontSize="18"
+                            FontWeight="ExtraBold"
+                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                            Text="N/A" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                MinWidth="150"
+                Margin="5"
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{Binding Source={StaticResource CardBackground}}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Direction="135"
+                        Opacity="0.2"
+                        ShadowDepth="0"
+                        Color="#000" />
+                </Border.Effect>
 
-				<Grid>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto"/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-					<TextBlock Text="{x:Static lang:Resources.ZIPCode}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
-					<StackPanel Grid.Row="1" Orientation="Horizontal">
-						<TextBlock Text="&#xF507;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="ZipCodeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
-					</StackPanel>
-				</Grid>
-			</Border>
+                    <TextBlock
+                        FontWeight="ExtraBold"
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Text="{x:Static lang:Resources.ZIPCode}" />
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0 0 5 0"
+                            VerticalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="22"
+                            Text="&#xF507;" />
+                        <TextBlock
+                            x:Name="ZipCodeTxt"
+                            VerticalAlignment="Center"
+                            Cursor="Hand"
+                            FontSize="18"
+                            FontWeight="ExtraBold"
+                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                            Text="N/A" />
+                    </StackPanel>
+                </Grid>
+            </Border>
 
-			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
-				<Border.Effect>
-					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
-				</Border.Effect>
+            <Border
+                MinWidth="150"
+                Margin="5"
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{Binding Source={StaticResource CardBackground}}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Direction="135"
+                        Opacity="0.2"
+                        ShadowDepth="0"
+                        Color="#000" />
+                </Border.Effect>
 
-				<Grid>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto"/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-					<TextBlock Text="{x:Static lang:Resources.Latitude}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
-					<StackPanel Grid.Row="1" Orientation="Horizontal">
-						<TextBlock Text="&#xF55F;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="LatTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
-					</StackPanel>
-				</Grid>
-			</Border>
+                    <TextBlock
+                        FontWeight="ExtraBold"
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Text="{x:Static lang:Resources.Latitude}" />
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0 0 5 0"
+                            VerticalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="22"
+                            Text="&#xF55F;" />
+                        <TextBlock
+                            x:Name="LatTxt"
+                            VerticalAlignment="Center"
+                            Cursor="Hand"
+                            FontSize="18"
+                            FontWeight="ExtraBold"
+                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                            Text="N/A" />
+                    </StackPanel>
+                </Grid>
+            </Border>
 
-			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
-				<Border.Effect>
-					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
-				</Border.Effect>
+            <Border
+                MinWidth="150"
+                Margin="5"
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{Binding Source={StaticResource CardBackground}}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Direction="135"
+                        Opacity="0.2"
+                        ShadowDepth="0"
+                        Color="#000" />
+                </Border.Effect>
 
-				<Grid>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto"/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-					<TextBlock Text="{x:Static lang:Resources.Longitude}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
-					<StackPanel Grid.Row="1" Orientation="Horizontal">
-						<TextBlock Text="&#xF4F9;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="LongitudeTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
-					</StackPanel>
-				</Grid>
-			</Border>
+                    <TextBlock
+                        FontWeight="ExtraBold"
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Text="{x:Static lang:Resources.Longitude}" />
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0 0 5 0"
+                            VerticalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="22"
+                            Text="&#xF4F9;" />
+                        <TextBlock
+                            x:Name="LongitudeTxt"
+                            VerticalAlignment="Center"
+                            Cursor="Hand"
+                            FontSize="18"
+                            FontWeight="ExtraBold"
+                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                            Text="N/A" />
+                    </StackPanel>
+                </Grid>
+            </Border>
 
-			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
-				<Border.Effect>
-					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
-				</Border.Effect>
+            <Border
+                MinWidth="150"
+                Margin="5"
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{Binding Source={StaticResource CardBackground}}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Direction="135"
+                        Opacity="0.2"
+                        ShadowDepth="0"
+                        Color="#000" />
+                </Border.Effect>
 
-				<Grid>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto"/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-					<TextBlock Text="{x:Static lang:Resources.Timezone}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
-					<StackPanel Grid.Row="1" Orientation="Horizontal">
-						<TextBlock Text="&#xF823;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="TimezoneTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
-					</StackPanel>
-				</Grid>
-			</Border>
-			<Border MinWidth="150" CornerRadius="5" Margin="5" Padding="5" Background="{Binding Source={StaticResource CardBackground}}" HorizontalAlignment="Left">
-				<Border.Effect>
-					<DropShadowEffect BlurRadius="15" Color="#000" Direction="135" Opacity="0.2" ShadowDepth="0" />
-				</Border.Effect>
+                    <TextBlock
+                        FontWeight="ExtraBold"
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Text="{x:Static lang:Resources.Timezone}" />
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0 0 5 0"
+                            VerticalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="22"
+                            Text="&#xF823;" />
+                        <TextBlock
+                            x:Name="TimezoneTxt"
+                            VerticalAlignment="Center"
+                            Cursor="Hand"
+                            FontSize="18"
+                            FontWeight="ExtraBold"
+                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                            Text="N/A" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                MinWidth="150"
+                Margin="5"
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{Binding Source={StaticResource CardBackground}}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Direction="135"
+                        Opacity="0.2"
+                        ShadowDepth="0"
+                        Color="#000" />
+                </Border.Effect>
 
-				<Grid>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="Auto"/>
-						<RowDefinition/>
-					</Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-					<TextBlock Text="{x:Static lang:Resources.ISP}" Foreground="{Binding Source={StaticResource DarkGray}}" FontWeight="ExtraBold" />
-					<StackPanel Grid.Row="1" Orientation="Horizontal">
-						<TextBlock Text="&#xF8AD;" Margin="0 0 5 0" FontFamily="../Fonts/#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="22"/>
-						<TextBlock Cursor="Hand" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" x:Name="IspTxt" Text="N/A" VerticalAlignment="Center" FontWeight="ExtraBold" FontSize="18"/>
-					</StackPanel>
-				</Grid>
-			</Border>
+                    <TextBlock
+                        FontWeight="ExtraBold"
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Text="{x:Static lang:Resources.ISP}" />
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0 0 5 0"
+                            VerticalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="22"
+                            Text="&#xF8AD;" />
+                        <TextBlock
+                            x:Name="IspTxt"
+                            VerticalAlignment="Center"
+                            Cursor="Hand"
+                            FontSize="18"
+                            FontWeight="ExtraBold"
+                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                            Text="N/A" />
+                    </StackPanel>
+                </Grid>
+            </Border>
 
-		</WrapPanel>
-	</Grid>
+        </WrapPanel>
+    </Grid>
 </Page>
