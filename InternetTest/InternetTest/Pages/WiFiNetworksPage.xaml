@@ -183,6 +183,8 @@
         <Grid
             x:Name="AdaptersPage"
             Grid.Row="2"
-            Visibility="Collapsed" />
+            Visibility="Collapsed">
+            <WrapPanel x:Name="AdaptersPanel" Orientation="Horizontal" />
+        </Grid>
     </Grid>
 </Page>

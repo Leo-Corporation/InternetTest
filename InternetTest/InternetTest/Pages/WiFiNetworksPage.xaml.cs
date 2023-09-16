@@ -28,6 +28,7 @@ using ManagedNativeWifi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -142,6 +143,17 @@ public partial class WiFiNetworksPage : Page
 		}
 	}
 
+	private void GetAdapters()
+	{
+		AdaptersPanel.Children.Clear();
+
+		NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+		for (int i = 0; i < nics.Length; i++)
+		{
+			AdaptersPanel.Children.Add(new AdapterItem(new(nics[i])));
+		}
+	}
+
 	private void RefreshBtn_Click(object sender, RoutedEventArgs e)
 	{
 		InitUI();
@@ -157,5 +169,6 @@ public partial class WiFiNetworksPage : Page
 	{
 		AdaptersPage.Visibility = Visibility.Visible;
 		NetworksPage.Visibility = Visibility.Collapsed;
-    }
+		GetAdapters();
+	}
 }
