@@ -79,5 +79,32 @@ namespace InternetTest.Classes
 			UnicastPacketsReceived = statistics.UnicastPacketsReceived;
 			UnicastPacketsSent = statistics.UnicastPacketsSent;
 		}
+
+		public string ToFormattedString()
+		{
+			return $"{Name}\n" +
+				   $"{Global.GetInterfaceTypeName(NetworkInterfaceType)}\n" +
+				   $"{Status}\n" +
+				   $"{IpVersion}\n" +
+				   $"{DnsSuffix}\n" +
+				   $"{Mtu}\n" +
+				   $"{DnsEnabled}\n" +
+				   $"{IsDynamicDnsEnabled}\n" +
+				   $"{IsReceiveOnly}\n" +
+				   $"{SupportsMulticast}\n" +
+				   $"{Global.GetStorageUnit(Speed).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(Speed).Item1)}/s\n" +
+				   $"{Global.GetStorageUnit(BytesReceived).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(BytesReceived).Item1)}\n" +
+				   $"{Global.GetStorageUnit(BytesSent).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(BytesSent).Item1)}\n" +
+				   $"{IncomingPacketsDiscarded}\n" +
+				   $"{IncomingPacketsWithErrors}\n" +
+				   $"{IncomingUnknownProtocolPackets}\n" +
+				   $"{NonUnicastPacketsReceived}\n" +
+				   $"{NonUnicastPacketsSent}\n" +
+				   $"{OutgoingPacketsDiscarded}\n" +
+				   $"{OutgoingPacketsWithErrors}\n" +
+				   $"{OutputQueueLength}\n" +
+				   $"{UnicastPacketsReceived}\n" +
+				   $"{UnicastPacketsSent}";
+		}
 	}
 }
