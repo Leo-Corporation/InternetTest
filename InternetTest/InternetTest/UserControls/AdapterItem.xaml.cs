@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
+using InternetTest.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,6 +79,11 @@ namespace InternetTest.UserControls
 			SpeedTxt.Text = $"{Global.GetStorageUnit(AdapterInfo.Speed).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.Speed).Item1)}/s";
 			SentBytesTxt.Text = $"{Global.GetStorageUnit(AdapterInfo.BytesSent).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.BytesSent).Item1)}";
 			ReceivedBytesTxt.Text = $"{Global.GetStorageUnit(AdapterInfo.BytesReceived).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.BytesReceived).Item1)}";
+		}
+
+		private void AdvancedBtn_Click(object sender, RoutedEventArgs e)
+		{
+			new AdapterWindow(AdapterInfo).Show();
 		}
 	}
 }
