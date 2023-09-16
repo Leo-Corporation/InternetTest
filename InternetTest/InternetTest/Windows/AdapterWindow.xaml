@@ -1,0 +1,188 @@
+﻿<Window
+    x:Class="InternetTest.Windows.AdapterWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:InternetTest.Windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AdapterWindow"
+    Width="650"
+    Height="550"
+    MinWidth="450"
+    MinHeight="550"
+    AllowsTransparency="True"
+    Background="Transparent"
+    FontFamily="/Fonts/#Hauora"
+    Foreground="{Binding Source={StaticResource Foreground1}}"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="32" ResizeBorderThickness="10" />
+    </WindowChrome.WindowChrome>
+
+    <Window.Resources>
+        <Style x:Key="WindowMainPanelStyle" TargetType="{x:Type Border}">
+            <Setter Property="BorderBrush" Value="{DynamicResource WindowBorderBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+        <Style x:Key="TitleBarButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+            <Setter Property="IsTabStop" Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="0"
+                            CornerRadius="5"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter
+                                x:Name="contentPresenter"
+                                Margin="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Focusable="False"
+                                RecognizesAccessKey="True" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource WindowButtonsHover1}}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource WindowButtonsPressed1}}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TitleBarCloseButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+            <Setter Property="IsTabStop" Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+                            x:Name="border"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            CornerRadius="5"
+                            SnapsToDevicePixels="true">
+                            <ContentPresenter
+                                x:Name="contentPresenter"
+                                Margin="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Focusable="False"
+                                RecognizesAccessKey="True" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="Red" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="border" Property="Background" Value="Red" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Window.Effect>
+        <DropShadowEffect
+            BlurRadius="10"
+            Opacity="0.4"
+            RenderingBias="Performance"
+            ShadowDepth="0"
+            Color="Black" />
+    </Window.Effect>
+    <Border
+        Name="WindowBorder"
+        Margin="10"
+        d:Background="#fff"
+        BorderThickness="0"
+        CornerRadius="5">
+        <Border.Background>
+            <ImageBrush ImageSource="{Binding Source={StaticResource BackgroundImg}}" />
+        </Border.Background>
+        <Grid VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border Height="Auto" Style="{StaticResource WindowMainPanelStyle}">
+                <Grid Height="Auto" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                        <TextBlock
+                            x:Name="AdapterIcon"
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="18"
+                            Foreground="{Binding Source={StaticResource AccentColor}}"
+                            Text="&#xF8AC;" />
+                        <TextBlock
+                            x:Name="NameTxt"
+                            VerticalAlignment="Center"
+                            d:Text="Long Adapter Name Will Be Displayed Here"
+                            FontSize="18"
+                            FontWeight="Bold"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+
+                    <Button
+                        x:Name="CloseBtn"
+                        Grid.Column="1"
+                        Width="46"
+                        Height="32"
+                        VerticalAlignment="Top"
+                        Background="Transparent"
+                        Click="CloseBtn_Click"
+                        Content="&#xF36B;"
+                        FontFamily="/Fonts/#FluentSystemIcons-Regular"
+                        FontSize="14"
+                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        RenderOptions.EdgeMode="Aliased"
+                        Style="{StaticResource TitleBarCloseButtonStyle}" />
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="HeadTxt"
+                    Margin="10"
+                    FontSize="14"
+                    FontWeight="Bold" />
+                <TextBlock
+                    x:Name="InfoTxt"
+                    Grid.Column="1"
+                    Margin="10"
+                    FontSize="14"
+                    FontWeight="Bold" />
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
