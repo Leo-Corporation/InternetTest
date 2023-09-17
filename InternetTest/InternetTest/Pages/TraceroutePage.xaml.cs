@@ -121,7 +121,8 @@ public partial class TraceroutePage : Page
 		StatusPanel.Visibility = Visibility.Collapsed;
 		WaitingScreen.Visibility = Visibility.Visible;
 		WaitTxt.Text = Properties.Resources.TraceProgress;
-		WaitIconTxt.Text = "\uF2DE";
+		WaitIconTxt.Visibility = Visibility.Collapsed;
+		Spinner.Visibility = Visibility.Visible;
 		TracertPanel.Visibility = Visibility.Collapsed;
 		TracertPanel.Children.Clear();
 
@@ -152,7 +153,8 @@ public partial class TraceroutePage : Page
 			TracertPanel.Visibility = Visibility.Visible;
 			
 			WaitTxt.Text = Properties.Resources.TraceRouteInformation; // Reset text to default
-			WaitIconTxt.Text = "\uF4AB";
+			WaitIconTxt.Visibility = Visibility.Visible;
+			Spinner.Visibility = Visibility.Collapsed;
 		}
 		catch { }
 

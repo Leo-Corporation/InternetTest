@@ -190,6 +190,34 @@
                 Foreground="{Binding Source={StaticResource Gray}}"
                 Text="&#xF4AB;" />
             <TextBlock
+                x:Name="Spinner"
+                HorizontalAlignment="Center"
+                FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                FontSize="48"
+                RenderTransformOrigin="0.5,0.5"
+                Text="&#xF709;"
+                Visibility="Collapsed">
+                <TextBlock.RenderTransform>
+                    <RotateTransform x:Name="SpinTransform" Angle="0" />
+                </TextBlock.RenderTransform>
+
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="SpinTransform"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="360"
+                                    Duration="0:0:1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
+            <TextBlock
                 x:Name="WaitTxt"
                 Margin="5 0 0 0"
                 HorizontalAlignment="Center"
