@@ -146,13 +146,20 @@ public partial class WiFiNetworksPage : Page
 
 	private void GetAdapters()
 	{
-		AdaptersPanel.Children.Clear();
-
-		NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
-		for (int i = 0; i < nics.Length; i++)
+		try
 		{
-			if (!(ShowHiddenChk.IsChecked ?? true) && nics[i].OperationalStatus == OperationalStatus.Down) continue;
-			AdaptersPanel.Children.Add(new AdapterItem(new(nics[i])));
+			AdaptersPanel.Children.Clear();
+
+			NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+			for (int i = 0; i < nics.Length; i++)
+			{
+				if (!(ShowHiddenChk.IsChecked ?? true) && nics[i].OperationalStatus == OperationalStatus.Down) continue;
+				AdaptersPanel.Children.Add(new AdapterItem(new(nics[i])));
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 		}
 	}
 
