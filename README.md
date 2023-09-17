@@ -183,6 +183,10 @@ Customization lies at the heart of InternetTest Pro's design, empowering you to 
 
 [Click here](https://blog.leocorporation.dev/2022/08/introducing-internettest-pro/) to learn more about InternetTest Pro.
 
+## Compatibility
+
+InternetTest Pro is available only on Windows from Windows 7 to 11. For legacy platforms, you may need to install the [.NET Desktop SDK](https://dotnet.microsoft.com/en-us/download) manually.
+
 ## Latest release
 
 [Click here](https://github.com/Leo-Corporation/InternetTest/releases) to show the latest release's changelog.
