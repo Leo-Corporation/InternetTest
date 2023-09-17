@@ -807,4 +807,76 @@
   <data name="NoNetworks" xml:space="preserve">
     <value>无网络可用。</value>
   </data>
+  <data name="Adapters" xml:space="preserve">
+    <value>网络适配器</value>
+  </data>
+  <data name="InterfaceType" xml:space="preserve">
+    <value>接口类型</value>
+  </data>
+  <data name="TotalBytesSent" xml:space="preserve">
+    <value>发送的总字节数</value>
+  </data>
+  <data name="TotalBytesReceived" xml:space="preserve">
+    <value>接收字节总数</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>字节, 千字节, 兆字节, 千兆字节, 万亿字节, 京字节</value>
+  </data>
+  <data name="Types" xml:space="preserve">
+    <value>未知,以太网,令牌环,FDDI,基本ISDN,主要ISDN,PPP,回环,以太网3兆比特,SLIP,ATM,通用调制解调器,快速以太网T型,ISDN,快速以太网FX型,无线802.11,非对称DSL,速率自适应DSL,对称DSL,超高速DSL,ATM上的IP,千兆以太网,隧道,多速率对称DSL,高性能串行总线,WMAN,WWANPP,WWANPP2</value>
+  </data>
+  <data name="MTU" xml:space="preserve">
+    <value>MTU</value>
+  </data>
+  <data name="PhysicalAddress" xml:space="preserve">
+    <value>物理地址</value>
+  </data>
+  <data name="IpVersion" xml:space="preserve">
+    <value>IP 版本</value>
+  </data>
+  <data name="DnsEnabled" xml:space="preserve">
+    <value>已启用 DNS</value>
+  </data>
+  <data name="DnsDynamicConfigured" xml:space="preserve">
+    <value>动态配置的 DNS</value>
+  </data>
+  <data name="ReceiveOnly" xml:space="preserve">
+    <value>仅接收</value>
+  </data>
+  <data name="Multicast" xml:space="preserve">
+    <value>Multicast</value>
+  </data>
+  <data name="UnicastPacketsSent" xml:space="preserve">
+    <value>单播数据包已发送</value>
+  </data>
+  <data name="UnicastPacketsReceived" xml:space="preserve">
+    <value>单播数据包已接收</value>
+  </data>
+  <data name="NonUnicastPacketsSent" xml:space="preserve">
+    <value>非单播数据包已发送</value>
+  </data>
+  <data name="NonUnicastPacketsReceived" xml:space="preserve">
+    <value>非单播数据包已接收</value>
+  </data>
+  <data name="IncomingPacketsDiscarded" xml:space="preserve">
+    <value>丢弃的入站数据包</value>
+  </data>
+  <data name="OutgoingPacketsDiscarded" xml:space="preserve">
+    <value>丢弃的出站数据包</value>
+  </data>
+  <data name="IncomingPacketsWithErrors" xml:space="preserve">
+    <value>入站数据包带有错误</value>
+  </data>
+  <data name="OutgoingPacketsWithErrors" xml:space="preserve">
+    <value>出站数据包带有错误</value>
+  </data>
+  <data name="IncomingUnknownProtocolPackets" xml:space="preserve">
+    <value>入站未知协议数据包</value>
+  </data>
+  <data name="OutputQueueLength" xml:space="preserve">
+    <value>输出队列长度</value>
+  </data>
+  <data name="ShowDisabled" xml:space="preserve">
+    <value>显示禁用的适配器</value>
+  </data>
 </root>

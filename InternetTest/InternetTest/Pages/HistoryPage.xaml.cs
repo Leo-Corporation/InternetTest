@@ -41,8 +41,8 @@ public partial class HistoryPage : Page
 		Loaded += (o, e) => InitUI();
 
 		HistoryGrid.Children.Add(Placeholder);
-		CheckButton(StatusBtn); // Check the default button
 		InitUI();
+		StatusBtn.IsChecked = true;
 	}
 
 	Placeholder Placeholder = new(Properties.Resources.HistoryEmpty, "\uF47F");
@@ -79,22 +79,10 @@ public partial class HistoryPage : Page
 		SearchTxt_TextChanged(this, null);
 	}
 
-	private void UnCheckAllButtons()
-	{
-		StatusBtn.Background = new SolidColorBrush { Color = Colors.Transparent };
-		DownDetectorBtn.Background = new SolidColorBrush { Color = Colors.Transparent };
-
-		StatusHistory.Visibility = Visibility.Collapsed;
-		DownDetectorHistory.Visibility = Visibility.Collapsed;
-	}
-
-	private void CheckButton(Button button) => button.Background = new SolidColorBrush { Color = Global.GetColorFromResource("LightAccentColor") };
-
 	private void StatusBtn_Click(object sender, RoutedEventArgs e)
 	{
-		UnCheckAllButtons();
-		CheckButton(StatusBtn);
 		StatusHistory.Visibility = Visibility.Visible;
+		DownDetectorHistory.Visibility = Visibility.Collapsed;
 
 		if (StatusHistory.Children.Count == 0)
 		{
@@ -112,8 +100,7 @@ public partial class HistoryPage : Page
 
 	private void DownDetectorBtn_Click(object sender, RoutedEventArgs e)
 	{
-		UnCheckAllButtons();
-		CheckButton(DownDetectorBtn);
+		StatusHistory.Visibility = Visibility.Collapsed;
 		DownDetectorHistory.Visibility = Visibility.Visible;
 
 		if (DownDetectorHistory.Children.Count == 0)

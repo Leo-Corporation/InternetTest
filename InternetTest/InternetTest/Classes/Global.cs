@@ -30,6 +30,7 @@ using PeyrSharp.Enums;
 using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.NetworkInformation;
@@ -47,10 +48,10 @@ public static class Global
 #if NIGHTLY
 	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-	public static string Version => $"7.7.3.2308-nightly{Date:yyMM.dd@HHmm}";
+	public static string Version => $"7.8.0.2309-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "7.7.3.2308";
+	public static string Version => "7.8.0.2309";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
@@ -501,5 +502,80 @@ public static class Global
 
 		Console.WriteLine("Connected successfully.");
 		return true;
+	}
+
+	public static (StorageUnits, double) GetStorageUnit(long size)
+	{
+		StorageUnits unit = size switch
+		{
+			long s when s >= Math.Pow(1024, 5) => StorageUnits.Petabyte,
+			long s when s >= Math.Pow(1024, 4) => StorageUnits.Terabyte,
+			long s when s >= 1073741824 => StorageUnits.Gigabyte,
+			long s when s >= 1048576 => StorageUnits.Megabyte,
+			long s when s >= 1024 => StorageUnits.Kilobyte,
+			_ => StorageUnits.Byte,
+		};
+
+		double convertedSize = size / Math.Pow(1024, (int)unit);
+
+		return (unit, convertedSize);
+	}
+
+	public static string UnitToString(StorageUnits unit)
+	{
+		try
+		{
+			string[] units = Properties.Resources.Units.Split(",");
+			return units[(int)unit];
+		}
+		catch
+		{
+			return "";
+		}
+	}
+
+	public static string GetInterfaceTypeName(NetworkInterfaceType networkInterfaceType)
+	{
+		try
+		{
+			string[] types = Properties.Resources.Types.Split(",");
+			int i = networkInterfaceType switch
+			{
+				NetworkInterfaceType.Unknown => 0,
+				NetworkInterfaceType.Ethernet => 1,
+				NetworkInterfaceType.TokenRing => 2,
+				NetworkInterfaceType.Fddi => 3,
+				NetworkInterfaceType.BasicIsdn => 4,
+				NetworkInterfaceType.PrimaryIsdn => 5,
+				NetworkInterfaceType.Ppp => 6,
+				NetworkInterfaceType.Loopback => 7,
+				NetworkInterfaceType.Ethernet3Megabit => 8,
+				NetworkInterfaceType.Slip => 9,
+				NetworkInterfaceType.Atm => 10,
+				NetworkInterfaceType.GenericModem => 11,
+				NetworkInterfaceType.FastEthernetT => 12,
+				NetworkInterfaceType.Isdn => 13,
+				NetworkInterfaceType.FastEthernetFx => 14,
+				NetworkInterfaceType.Wireless80211 => 15,
+				NetworkInterfaceType.AsymmetricDsl => 16,
+				NetworkInterfaceType.RateAdaptDsl => 17,
+				NetworkInterfaceType.SymmetricDsl => 18,
+				NetworkInterfaceType.VeryHighSpeedDsl => 19,
+				NetworkInterfaceType.IPOverAtm => 20,
+				NetworkInterfaceType.GigabitEthernet => 21,
+				NetworkInterfaceType.Tunnel => 22,
+				NetworkInterfaceType.MultiRateSymmetricDsl => 23,
+				NetworkInterfaceType.HighPerformanceSerialBus => 24,
+				NetworkInterfaceType.Wman => 25,
+				NetworkInterfaceType.Wwanpp => 26,
+				NetworkInterfaceType.Wwanpp2 => 27,
+				_ => 0 // Handle any other cases or invalid values as needed.
+			};
+			return types[i];
+		}
+		catch
+		{
+			return "";
+		}
 	}
 }

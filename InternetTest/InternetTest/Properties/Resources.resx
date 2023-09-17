@@ -816,4 +816,76 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="NoNetworks" xml:space="preserve">
     <value>No networks are available.</value>
   </data>
+  <data name="Adapters" xml:space="preserve">
+    <value>Network adapters</value>
+  </data>
+  <data name="InterfaceType" xml:space="preserve">
+    <value>Interface type</value>
+  </data>
+  <data name="TotalBytesSent" xml:space="preserve">
+    <value>Total bytes sent</value>
+  </data>
+  <data name="TotalBytesReceived" xml:space="preserve">
+    <value>Total bytes received</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>Bytes,Kilobytes,Megabytes,Gigabytes,Terabytes,Petabytes</value>
+  </data>
+  <data name="Types" xml:space="preserve">
+    <value>Unknown,Ethernet,TokenRing,FDDI,Basic ISDN,Primary ISDN,PPP,Loopback,Ethernet 3 Megabit,SLIP,ATM,Generic Modem,Fast Ethernet T,ISDN,Fast Ethernet FX,Wireless 802.11,Asymmetric DSL,Rate-Adaptive DSL,Symmetric DSL,Very High-Speed DSL,IP over ATM,Gigabit Ethernet,Tunnel,Multi-Rate Symmetric DSL,High-Performance Serial Bus,WMAN,WWANPP,WWANPP2</value>
+  </data>
+  <data name="MTU" xml:space="preserve">
+    <value>MTU</value>
+  </data>
+  <data name="PhysicalAddress" xml:space="preserve">
+    <value>Physical Address</value>
+  </data>
+  <data name="IpVersion" xml:space="preserve">
+    <value>IP Version(s)</value>
+  </data>
+  <data name="DnsEnabled" xml:space="preserve">
+    <value>DNS enabled</value>
+  </data>
+  <data name="DnsDynamicConfigured" xml:space="preserve">
+    <value>Dynamically configured DNS</value>
+  </data>
+  <data name="ReceiveOnly" xml:space="preserve">
+    <value>Receive Only</value>
+  </data>
+  <data name="Multicast" xml:space="preserve">
+    <value>Multicast</value>
+  </data>
+  <data name="UnicastPacketsSent" xml:space="preserve">
+    <value>Unicast Packets Sent</value>
+  </data>
+  <data name="UnicastPacketsReceived" xml:space="preserve">
+    <value>Unicast Packets Received</value>
+  </data>
+  <data name="NonUnicastPacketsSent" xml:space="preserve">
+    <value>Non-Unicast Packets Sent</value>
+  </data>
+  <data name="NonUnicastPacketsReceived" xml:space="preserve">
+    <value>Non-Unicast Packets Received</value>
+  </data>
+  <data name="IncomingPacketsDiscarded" xml:space="preserve">
+    <value>Incoming Packets Discarded</value>
+  </data>
+  <data name="OutgoingPacketsDiscarded" xml:space="preserve">
+    <value>Outgoing Packets Discarded</value>
+  </data>
+  <data name="IncomingPacketsWithErrors" xml:space="preserve">
+    <value>Incoming Packets With Errors</value>
+  </data>
+  <data name="OutgoingPacketsWithErrors" xml:space="preserve">
+    <value>Outgoing Packets With Errors</value>
+  </data>
+  <data name="IncomingUnknownProtocolPackets" xml:space="preserve">
+    <value>Incoming Unknown Protocol Packets</value>
+  </data>
+  <data name="OutputQueueLength" xml:space="preserve">
+    <value>Output Queue Length</value>
+  </data>
+  <data name="ShowDisabled" xml:space="preserve">
+    <value>Show disabled</value>
+  </data>
 </root>

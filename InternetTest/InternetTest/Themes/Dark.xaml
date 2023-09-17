@@ -1,23 +1,24 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:local="clr-namespace:InternetTest.Themes"
-					xmlns:sys="clr-namespace:System;assembly=mscorlib">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:InternetTest.Themes"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-	<sys:String x:Key="Background1">#0A0A1E</sys:String>
-	<sys:String x:Key="Background2">#141428</sys:String>
-	<sys:String x:Key="CardBackground">#141446</sys:String>
-	<sys:String x:Key="Foreground1">#FFFFFF</sys:String>
-	<sys:String x:Key="BackgroundImg">/Images/DarkBackground.png</sys:String>
-	<sys:String x:Key="WindowButtonsHover1">#141428</sys:String>
-	<sys:String x:Key="WindowButtonsPressed1">#1E1E32</sys:String>
-	<sys:String x:Key="WindowButtonsHoverForeground1">#ffffff</sys:String>
-	<sys:String x:Key="AccentColor">#2153E0</sys:String>
-	<sys:String x:Key="DarkFAccentColor">#7998ec</sys:String>
-	<sys:String x:Key="LightAccentColor">#001A65</sys:String>
-	<sys:String x:Key="Gray">#5A5A6E</sys:String>
-	<sys:String x:Key="Green">#25DE0F</sys:String>
-	<sys:String x:Key="Red">#FF321E</sys:String>
-	<sys:String x:Key="Orange">#ff7a00</sys:String>
-	<sys:String x:Key="DarkGray">#7474B1</sys:String>
+    <sys:String x:Key="Background1">#0A0A1E</sys:String>
+    <sys:String x:Key="Background2">#141428</sys:String>
+    <sys:String x:Key="CardBackground">#141446</sys:String>
+    <sys:String x:Key="Foreground1">#FFFFFF</sys:String>
+    <sys:String x:Key="BackgroundImg">/Images/DarkBackground.png</sys:String>
+    <sys:String x:Key="WindowButtonsHover1">#141428</sys:String>
+    <sys:String x:Key="WindowButtonsPressed1">#1E1E32</sys:String>
+    <sys:String x:Key="WindowButtonsHoverForeground1">#ffffff</sys:String>
+    <sys:String x:Key="AccentColor">#2153E0</sys:String>
+    <sys:String x:Key="DarkFAccentColor">#7998ec</sys:String>
+    <sys:String x:Key="LightAccentColor">#001A65</sys:String>
+    <sys:String x:Key="Gray">#5A5A6E</sys:String>
+    <sys:String x:Key="Green">#25DE0F</sys:String>
+    <sys:String x:Key="Red">#FF321E</sys:String>
+    <sys:String x:Key="Orange">#ff7a00</sys:String>
+    <sys:String x:Key="DarkGray">#7474B1</sys:String>
 
 </ResourceDictionary>

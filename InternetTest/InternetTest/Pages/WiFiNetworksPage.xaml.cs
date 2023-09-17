@@ -28,6 +28,7 @@ using ManagedNativeWifi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -101,7 +102,7 @@ public partial class WiFiNetworksPage : Page
 			};
 		}
 	}
-
+	bool loaded = false;
 	private async void InitUI()
 	{
 		try
@@ -131,6 +132,9 @@ public partial class WiFiNetworksPage : Page
 			WiFiDisplayer.Visibility = Visibility.Visible;
 			ScanningPanel.Visibility = Visibility.Collapsed;
 			NoNetworksPanel.Visibility = Visibility.Collapsed;
+
+			NetworksBtn.IsChecked = true;
+			loaded = true;
 		}
 		catch
 		{
@@ -140,8 +144,53 @@ public partial class WiFiNetworksPage : Page
 		}
 	}
 
+	private void GetAdapters()
+	{
+		try
+		{
+			AdaptersPanel.Children.Clear();
+
+			NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+			for (int i = 0; i < nics.Length; i++)
+			{
+				if (!(ShowHiddenChk.IsChecked ?? true) && nics[i].OperationalStatus == OperationalStatus.Down) continue;
+				AdaptersPanel.Children.Add(new AdapterItem(new(nics[i])));
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
+	}
+
 	private void RefreshBtn_Click(object sender, RoutedEventArgs e)
 	{
-		InitUI();
-    }
+		if (AdaptersPage.Visibility == Visibility.Collapsed)
+		{
+			InitUI();
+			return;
+		}
+		GetAdapters();
+	}
+
+	private void NetworksBtn_Click(object sender, RoutedEventArgs e)
+	{
+		AdaptersPage.Visibility = Visibility.Collapsed;
+		NetworksPage.Visibility = Visibility.Visible;
+		ShowHiddenChk.Visibility = Visibility.Collapsed;
+	}
+
+	private void AdaptersBtn_Click(object sender, RoutedEventArgs e)
+	{
+		AdaptersPage.Visibility = Visibility.Visible;
+		NetworksPage.Visibility = Visibility.Collapsed;
+		ShowHiddenChk.Visibility = Visibility.Visible;
+		GetAdapters();
+	}
+
+	private void ShowHiddenChk_Checked(object sender, RoutedEventArgs e)
+	{
+		if (loaded)
+			GetAdapters();
+	}
 }

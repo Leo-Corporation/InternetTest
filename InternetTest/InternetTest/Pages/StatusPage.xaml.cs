@@ -108,8 +108,9 @@ public partial class StatusPage : Page
 		try
 		{
 			// Show the waiting screen
-			StatusIconTxt.Text = "\uF2DE";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			StatusIconTxt.Visibility = Visibility.Collapsed;
+			Spinner.Visibility = Visibility.Visible;
+
 			StatusTxt.Text = Properties.Resources.TestInProgress;
 			TestBtn.IsEnabled = false;
 			SpeedTestBtn.IsEnabled = false;
@@ -165,6 +166,8 @@ public partial class StatusPage : Page
 
 		TestBtn.IsEnabled = true;
 		SpeedTestBtn.IsEnabled = true;
+		StatusIconTxt.Visibility = Visibility.Visible;
+		Spinner.Visibility = Visibility.Collapsed;
 	}
 
 	internal void TestBtn_Click(object sender, RoutedEventArgs e)
@@ -194,10 +197,10 @@ public partial class StatusPage : Page
 	{
 		try
 		{
-			// Show the waiting screen
-			StatusIconTxt.Text = "\uF2DE";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			// Show the waiting screen			
 			StatusTxt.Text = Properties.Resources.TestInProgress;
+			StatusIconTxt.Visibility = Visibility.Collapsed;
+			Spinner.Visibility = Visibility.Visible;
 			TestBtn.IsEnabled = false;
 			SpeedTestBtn.IsEnabled = false;
 
@@ -223,6 +226,8 @@ public partial class StatusPage : Page
 
 		TestBtn.IsEnabled = true;
 		SpeedTestBtn.IsEnabled = true;
+		StatusIconTxt.Visibility = Visibility.Visible;
+		Spinner.Visibility = Visibility.Collapsed;
 	}
 
 	static async Task<long> DownloadFile(string url)
