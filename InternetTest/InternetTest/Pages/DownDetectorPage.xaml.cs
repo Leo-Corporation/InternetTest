@@ -156,8 +156,8 @@ namespace InternetTest.Pages
 				if (!Global.IsUrlValid(url)) return new(0, 0, "Invalid URL");
 
 				// Show the "Waiting" screen
-				StatusIconTxt.Text = "\uF2DE";
-				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+				StatusIconTxt.Visibility = Visibility.Collapsed;
+				Spinner.Visibility = Visibility.Visible;
 				StatusTxt.Text = Properties.Resources.TestInProgress;
 
 				int statusCode = await Internet.GetStatusCodeAsync(url);
@@ -169,6 +169,8 @@ namespace InternetTest.Pages
 					StatusIconTxt.Text = "\uF299"; // Update the icon
 					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
 					StatusTxt.Text = Properties.Resources.WebsiteAvailable; // Update the text
+					StatusIconTxt.Visibility = Visibility.Visible;
+					Spinner.Visibility = Visibility.Collapsed;
 
 					if (isFirst)
 					{
@@ -203,6 +205,8 @@ namespace InternetTest.Pages
 					StatusIconTxt.Text = "\uF36E"; // Update the icon
 					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 					StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
+					StatusIconTxt.Visibility = Visibility.Visible;
+					Spinner.Visibility = Visibility.Collapsed;
 
 					if (isFirst)
 					{
@@ -238,6 +242,8 @@ namespace InternetTest.Pages
 				StatusIconTxt.Text = "\uF36E"; // Update the icon
 				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
 				StatusTxt.Text = Properties.Resources.WebsiteDown; // Update the text
+				StatusIconTxt.Visibility = Visibility.Visible;
+				Spinner.Visibility = Visibility.Collapsed;
 
 				if (isFirst)
 				{
@@ -253,7 +259,7 @@ namespace InternetTest.Pages
 				Global.History.DownDetectorHistory.Add(new(Time.DateTimeToUnixTime(DateTime.Now), StatusIconTxt.Text, 400, Properties.Resources.Down, url));
 
 				return new(0, 0, ex.Message);
-			}
+			}			
 		}
 
 		private void SetTestIconResult(List<StatusCodes> StatusCodess)
