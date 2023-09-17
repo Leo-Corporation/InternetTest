@@ -139,6 +139,28 @@ The "WiFi Password Recovery" feature in InternetTest Pro offers a convenient and
 
 InternetTest Pro brings together a comprehensive suite of tools to empower Windows users with detailed insights into their internet connection and network environment. Whether you're troubleshooting connectivity issues or optimizing your online experience, InternetTest Pro has you covered.
 
+### WiFi Networks
+
+The WiFi Networks feature in InternetTest Pro empowers users with a comprehensive set of tools to manage and optimize their wireless network connections. Whether you're seeking information about nearby networks or fine-tuning your network adapters, this section provides you with the functionality you need.
+
+#### 1. WiFi Networks Section
+
+- **Discover Available Nearby Networks**:
+  InternetTest Pro allows you to access detailed information about nearby WiFi networks, including speed, signal strength, band, frequency, and more. Make informed decisions about which network to connect to, ensuring a seamless online experience.
+
+- **Connect to WiFi Networks** (no password needed for networks you previously connected to)
+- **WiFi Network Scanning**:
+  Stay up-to-date with the latest information on nearby WiFi networks. Launch a scan to refresh the list of available networks, ensuring you always have access to the most accurate and current data.
+
+#### 2. Network Adapters Section
+
+- **Obtain Available Network Adapters**:
+  Get all available network adapters on your system, along with essential information such as their status, interface type, speed, and total bytes received and sent. This knowledge allows you to troubleshoot network issues effectively.
+
+- **Detailed Adapter Information**: Access detailed insights, including configuration details, statistics, and performance metrics.
+
+The WiFi Networks feature in InternetTest Pro puts you in control of your wireless connections and network adapters, empowering you to make informed decisions, troubleshoot issues, and ensure a smooth online experience.
+
 ## Customization and User Experience
 
 InternetTest Pro offers a range of customization features that fit to your unique preferences and needs. These features are designed to enhance your overall user experience and adapt the utility to fit your specific requirements.
@@ -182,6 +204,10 @@ InternetTest Pro has support for multiple languages. These languages are current
 Customization lies at the heart of InternetTest Pro's design, empowering you to shape your experience according to your preferences. Whether you prioritize convenience, aesthetics, privacy, or localization, InternetTest Pro adapts to your needs, making it a versatile and user-centric utility.
 
 [Click here](https://blog.leocorporation.dev/2022/08/introducing-internettest-pro/) to learn more about InternetTest Pro.
+
+## Compatibility
+
+InternetTest Pro is available only on Windows from Windows 7 to 11. For legacy platforms, you may need to install the [.NET Desktop SDK](https://dotnet.microsoft.com/en-us/download) manually.
 
 ## Latest release
 
