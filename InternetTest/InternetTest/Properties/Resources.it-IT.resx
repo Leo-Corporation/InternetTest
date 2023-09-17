@@ -172,7 +172,7 @@
 	<value>Ping</value>
   </data>
   <data name="IPConfig" xml:space="preserve">
-	<value>IP Config</value>
+	<value>IPConfig</value>
   </data>
   <data name="WifiPasswords" xml:space="preserve">
 	<value>Password WiFi</value>
@@ -397,13 +397,13 @@
 	<value>Chiave</value>
   </data>
   <data name="InfrastructureNetwork" xml:space="preserve">
-	<value>Rete infrastrutturale</value>
+	<value>Rete infrastruttura</value>
   </data>
   <data name="AdHocNetwork" xml:space="preserve">
 	<value>Rete ad-hoc</value>
   </data>
   <data name="GetIPConfig" xml:space="preserve">
-	<value>Ottieni IP Config</value>
+	<value>Ottieni IPConfig</value>
   </data>
   <data name="NothingToShow" xml:space="preserve">
 	<value>Non c'è niente da visualizzare per ora, prova ad aggiornare la pagina.</value>
@@ -452,7 +452,7 @@ Questa azione è irreversibile.</value>
 	<value>Applica</value>
   </data>
   <data name="SeeLicenses" xml:space="preserve">
-	<value>Vedi licenze</value>
+	<value>Visualizza licenze</value>
   </data>
   <data name="ChangeTheme" xml:space="preserve">
 	<value>Modifica tema InternetTest.</value>
@@ -484,7 +484,7 @@ Vuoi continuare?</value>
 	<value>Versione</value>
   </data>
   <data name="ChangeLanguage" xml:space="preserve">
-	<value>Modifica lingua interfaccia di InternetTest.</value>
+	<value>Modifica lingua interfaccia InternetTest.</value>
   </data>
   <data name="MapProviderDescription" xml:space="preserve">
 	<value>Il provider di mappe usato per visualizzare la posizione di un indirizzo IP.</value>
@@ -545,7 +545,7 @@ Vuoi continuare?</value>
   </data>
   <data name="SettingsImportedMsg" xml:space="preserve">
 	<value>Le impostazioni sono state importate correttamente. 
-Per completare il processo, InternetTest si riavvierà.</value>
+Per completare il processo, InternetTest verrà riavviato.</value>
   </data>
   <data name="ResetSettings" xml:space="preserve">
     <value>Ripristina impostazioni</value>
@@ -682,7 +682,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Fallito</value>
   </data>
   <data name="ToggleConfidentialModeOnStart" xml:space="preserve">
-    <value>Attiuva/disattiva modalità riservata</value>
+    <value>Attiva/disattiva modalità riservata</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avanzate</value>
@@ -703,7 +703,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>URL</value>
   </data>
   <data name="DNSInfo" xml:space="preserve">
-    <value>Informazioni DNS</value>
+    <value>Info DNS</value>
   </data>
   <data name="CreationDate" xml:space="preserve">
     <value>Data creazione</value>
@@ -739,25 +739,25 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Il test velocità è fallito</value>
   </data>
   <data name="TraceRoute" xml:space="preserve">
-    <value>Traccia percorso (trace route)</value>
+    <value>Traceroute</value>
   </data>
   <data name="Trace" xml:space="preserve">
-    <value>Traccia</value>
+    <value>Trace</value>
   </data>
   <data name="ExecuteTraceRoute" xml:space="preserve">
-    <value>Esegui un trace route</value>
+    <value>Esegui un traceroute</value>
   </data>
   <data name="TimedOut" xml:space="preserve">
-    <value>Time out</value>
+    <value>Timeout</value>
   </data>
   <data name="TraceRouteInformation" xml:space="preserve">
-    <value>Le informazioni sul percorso di trace route vengono visualizzate qui</value>
+    <value>Le informazioni sul traceroute vengono visualizzate qui</value>
   </data>
   <data name="TraceProgress" xml:space="preserve">
-    <value>Tracciamento in corso</value>
+    <value>Traceroute in corso</value>
   </data>
   <data name="TraceRouteDesc" xml:space="preserve">
-    <value>Definisci le impostazioni da usare quando si esegue un trace route.</value>
+    <value>Definisci le impostazioni da usare quando si esegue un traceroute.</value>
   </data>
   <data name="MaxTimeOut" xml:space="preserve">
     <value>Timeout max</value>
@@ -772,13 +772,13 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Reti WiFi</value>
   </data>
   <data name="ConnectWiFi" xml:space="preserve">
-    <value>Collegarsi a una rete WiFi</value>
+    <value>Connetti ad una rete WiFi</value>
   </data>
   <data name="SignalQuality" xml:space="preserve">
-    <value>Qualità del segnale</value>
+    <value>Qualità segnale</value>
   </data>
   <data name="BssType" xml:space="preserve">
-    <value>Tipo di BSS</value>
+    <value>Tipo BSS</value>
   </data>
   <data name="Band" xml:space="preserve">
     <value>Banda</value>
@@ -793,7 +793,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>La sicurezza è abilitata</value>
   </data>
   <data name="ProfileName" xml:space="preserve">
-    <value>Nome del profilo</value>
+    <value>Nome profilo</value>
   </data>
   <data name="Channel" xml:space="preserve">
     <value>Canale</value>
@@ -811,19 +811,19 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Collegarsi</value>
   </data>
   <data name="ScanningInProgress" xml:space="preserve">
-    <value>InternetTest Pro sta eseguendo la scansione delle reti nelle vicinanze, si prega di attendere.</value>
+    <value>InternetTest Pro sta eseguendo la scansione delle reti nelle vicinanze, attendi.</value>
   </data>
   <data name="NoNetworks" xml:space="preserve">
     <value>Non sono disponibili reti.</value>
   </data>
   <data name="Adapters" xml:space="preserve">
-    <value>Adattatori di rete</value>
+    <value>Schede di rete</value>
   </data>
   <data name="TotalBytesSent" xml:space="preserve">
     <value>Totale byte inviati</value>
   </data>
   <data name="InterfaceType" xml:space="preserve">
-    <value>Tipo di interfaccia</value>
+    <value>Tipo interfaccia</value>
   </data>
   <data name="TotalBytesReceived" xml:space="preserve">
     <value>Totale byte ricevuti</value>
@@ -886,6 +886,6 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Lunghezza della coda di uscita</value>
   </data>
   <data name="ShowDisabled" xml:space="preserve">
-    <value>Mostra disabilitato</value>
+    <value>Visualizza disabilitato</value>
   </data>
 </root>
