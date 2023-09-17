@@ -105,19 +105,36 @@
                     </Grid>
                 </RadioButton>
             </StackPanel>
-            <Button
-                x:Name="RefreshBtn"
+            <StackPanel
                 Grid.Row="1"
-                Margin="5"
-                Padding="5"
                 HorizontalAlignment="Right"
-                Background="{Binding Source={StaticResource LightAccentColor}}"
-                Click="RefreshBtn_Click"
-                Content="{x:Static lang:Resources.Refresh}"
-                Cursor="Hand"
-                FontWeight="ExtraBold"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
-                Style="{DynamicResource PrimaryButton}" />
+                Orientation="Horizontal">
+                <CheckBox
+                    x:Name="ShowHiddenChk"
+                    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    BorderThickness="2"
+                    Checked="ShowHiddenChk_Checked"
+                    Content="{x:Static lang:Resources.ShowDisabled}"
+                    FontWeight="Bold"
+                    Foreground="{Binding Source={StaticResource Foreground1}}"
+                    IsChecked="True"
+                    Style="{DynamicResource CheckBoxStyle1}"
+                    Unchecked="ShowHiddenChk_Checked"
+                    Visibility="Collapsed" />
+                <Button
+                    x:Name="RefreshBtn"
+                    Grid.Row="1"
+                    Margin="5"
+                    Padding="5"
+                    Background="{Binding Source={StaticResource LightAccentColor}}"
+                    Click="RefreshBtn_Click"
+                    Content="{x:Static lang:Resources.Refresh}"
+                    Cursor="Hand"
+                    FontWeight="ExtraBold"
+                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Style="{DynamicResource PrimaryButton}" />
+            </StackPanel>
         </Grid>
 
         <Grid x:Name="NetworksPage" Grid.Row="2">

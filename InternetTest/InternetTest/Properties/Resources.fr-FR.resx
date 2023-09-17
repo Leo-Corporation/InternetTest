@@ -885,4 +885,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="OutputQueueLength" xml:space="preserve">
     <value>Longueur de la file d'attente de sortie</value>
   </data>
+  <data name="ShowDisabled" xml:space="preserve">
+    <value>Afficher désactivés</value>
+  </data>
 </root>

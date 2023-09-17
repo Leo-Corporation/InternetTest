@@ -102,7 +102,7 @@ public partial class WiFiNetworksPage : Page
 			};
 		}
 	}
-
+	bool loaded = false;
 	private async void InitUI()
 	{
 		try
@@ -134,6 +134,7 @@ public partial class WiFiNetworksPage : Page
 			NoNetworksPanel.Visibility = Visibility.Collapsed;
 
 			NetworksBtn.IsChecked = true;
+			loaded = true;
 		}
 		catch
 		{
@@ -150,6 +151,7 @@ public partial class WiFiNetworksPage : Page
 		NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
 		for (int i = 0; i < nics.Length; i++)
 		{
+			if (!(ShowHiddenChk.IsChecked ?? true) && nics[i].OperationalStatus == OperationalStatus.Down) continue;
 			AdaptersPanel.Children.Add(new AdapterItem(new(nics[i])));
 		}
 	}
@@ -162,18 +164,26 @@ public partial class WiFiNetworksPage : Page
 			return;
 		}
 		GetAdapters();
-    }
+	}
 
 	private void NetworksBtn_Click(object sender, RoutedEventArgs e)
 	{
 		AdaptersPage.Visibility = Visibility.Collapsed;
 		NetworksPage.Visibility = Visibility.Visible;
+		ShowHiddenChk.Visibility = Visibility.Collapsed;
 	}
 
 	private void AdaptersBtn_Click(object sender, RoutedEventArgs e)
 	{
 		AdaptersPage.Visibility = Visibility.Visible;
 		NetworksPage.Visibility = Visibility.Collapsed;
+		ShowHiddenChk.Visibility = Visibility.Visible;
 		GetAdapters();
+	}
+
+	private void ShowHiddenChk_Checked(object sender, RoutedEventArgs e)
+	{
+		if (loaded)
+			GetAdapters();
 	}
 }

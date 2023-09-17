@@ -1743,6 +1743,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show disabled.
+        /// </summary>
+        public static string ShowDisabled {
+            get {
+                return ResourceManager.GetString("ShowDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show on a map.
         /// </summary>
         public static string ShowOnMap {

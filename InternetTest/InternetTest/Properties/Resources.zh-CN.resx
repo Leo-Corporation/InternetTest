@@ -876,4 +876,7 @@
   <data name="OutputQueueLength" xml:space="preserve">
     <value>输出队列长度</value>
   </data>
+  <data name="ShowDisabled" xml:space="preserve">
+    <value>显示禁用的适配器</value>
+  </data>
 </root>

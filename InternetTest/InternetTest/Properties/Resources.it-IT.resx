@@ -885,4 +885,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="OutputQueueLength" xml:space="preserve">
     <value>Lunghezza della coda di uscita</value>
   </data>
+  <data name="ShowDisabled" xml:space="preserve">
+    <value>Mostra disabilitato</value>
+  </data>
 </root>
