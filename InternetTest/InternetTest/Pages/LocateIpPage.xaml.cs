@@ -53,7 +53,7 @@ public partial class LocateIpPage : Page
 		TitleTxt.Text = $"{Properties.Resources.IPTools} > {Properties.Resources.LocateIP}";
 		try
 		{
-			if (await Internet.IsAvailableAsync())
+			if (Global.Settings.LaunchIpLocationOnStart ?? true && await Internet.IsAvailableAsync())
 			{
 				LocateIP(""); // Get the current IP of the user
 			}

@@ -97,6 +97,7 @@ public partial class SettingsPage : Page
 		// On Start section
 		UpdateOnStartChk.IsChecked = Global.Settings.CheckUpdateOnStart;
 		TestOnStartChk.IsChecked = Global.Settings.TestOnStart;
+		LocateIpOnStartChk.IsChecked = Global.Settings.LaunchIpLocationOnStart ?? true;
 		ToggleConfModeOnStartChk.IsChecked = Global.Settings.ToggleConfidentialMode;
 		RememberPinOnStartChk.IsChecked = Global.Settings.RememberPinnedState;
 		PageComboBox.SelectedIndex = (int)Global.Settings.DefaultPage;
@@ -418,6 +419,12 @@ public partial class SettingsPage : Page
 	private void TimeOutApplyBtn_Click(object sender, RoutedEventArgs e)
 	{
 		Global.Settings.TraceRouteMaxTimeOut = int.Parse(TimeOutTxt.Text);
+		SettingsManager.Save();
+	}
+
+	private void LocateIpOnStartChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.LaunchIpLocationOnStart = LocateIpOnStartChk.IsChecked;
 		SettingsManager.Save();
 	}
 }
