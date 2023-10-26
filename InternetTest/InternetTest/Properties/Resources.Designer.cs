@@ -1138,6 +1138,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Locate my IP on start.
+        /// </summary>
+        public static string LocateMyIpOnStart {
+            get {
+                return ResourceManager.GetString("LocateMyIpOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Longitude.
         /// </summary>
         public static string Longitude {

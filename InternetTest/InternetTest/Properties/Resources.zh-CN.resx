@@ -879,4 +879,7 @@
   <data name="ShowDisabled" xml:space="preserve">
     <value>显示禁用的适配器</value>
   </data>
+  <data name="LocateMyIpOnStart" xml:space="preserve">
+    <value>在启动时定位我的 IP</value>
+  </data>
 </root>

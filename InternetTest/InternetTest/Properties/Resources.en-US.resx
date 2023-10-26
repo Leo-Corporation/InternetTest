@@ -888,4 +888,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="ShowDisabled" xml:space="preserve">
     <value>Show disabled</value>
   </data>
+  <data name="LocateMyIpOnStart" xml:space="preserve">
+    <value>Locate my IP on start</value>
+  </data>
 </root>
