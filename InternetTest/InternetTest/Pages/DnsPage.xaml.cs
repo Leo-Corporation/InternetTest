@@ -122,7 +122,7 @@ public partial class DnsPage : Page
 		}
 		catch { }
 
-		List<string> availableTypes = new() { "ANY" };
+		List<string> availableTypes = new();
 		FiltersDisplayer.Children.Clear();
 		try
 		{
@@ -136,6 +136,8 @@ public partial class DnsPage : Page
 					availableTypes.Add(record.RecordType.ToString());
 			}
 
+			availableTypes.Sort();
+			availableTypes.Insert(0, "ANY");
 			for (int i = 0; i < availableTypes.Count; i++)
 			{
 				FiltersDisplayer.Children.Add(CreateFilterButton(availableTypes[i]));
