@@ -22,6 +22,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -191,7 +192,11 @@
                 FontWeight="ExtraBold"
                 Text="{x:Static lang:Resources.DNSInfo}" />
         </StackPanel>
-        <StackPanel x:Name="RecordDisplayer" Grid.Row="5" />
+        <WrapPanel
+            x:Name="FiltersDisplayer"
+            Grid.Row="5"
+            Orientation="Horizontal" />
+        <StackPanel x:Name="RecordDisplayer" Grid.Row="6" />
     </Grid>
 
 </Page>

@@ -31,7 +31,7 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class DnsRecordItem : UserControl
 {
-	private string Type { get; init; }
+	internal string Type { get; init; }
 	private string RecordContent { get; init; }
 	public DnsRecordItem(string type, string content)
 	{

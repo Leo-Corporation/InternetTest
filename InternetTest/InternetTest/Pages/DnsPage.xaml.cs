@@ -34,6 +34,9 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using Whois;
+using System.Collections.Generic;
+using System.Windows.Media;
+using System.Windows.Input;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -119,6 +122,8 @@ public partial class DnsPage : Page
 		}
 		catch { }
 
+		List<string> availableTypes = new() { "ANY" };
+		FiltersDisplayer.Children.Clear();
 		try
 		{
 			// Get DNS records
@@ -127,6 +132,13 @@ public partial class DnsPage : Page
 			foreach (var record in result.AllRecords)
 			{
 				RecordDisplayer.Children.Add(new DnsRecordItem(record.RecordType.ToString(), record.ToString()));
+				if (!availableTypes.Contains(record.RecordType.ToString()))
+					availableTypes.Add(record.RecordType.ToString());
+			}
+
+			for (int i = 0; i < availableTypes.Count; i++)
+			{
+				FiltersDisplayer.Children.Add(CreateFilterButton(availableTypes[i]));
 			}
 		}
 		catch { }
@@ -151,6 +163,39 @@ public partial class DnsPage : Page
 		catch { }
 	}
 
+	private RadioButton CreateFilterButton(string recordType)
+	{
+		RadioButton filterBtn = new()
+		{
+			Margin = new(5),
+			Padding = new(5),
+			BorderThickness = new(0),
+			Content = recordType,
+			Style = (Style)FindResource("CheckButton"),
+			Foreground = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") },
+			Background = new SolidColorBrush { Color = Global.GetColorFromResource("LightAccentColor") },
+			Cursor = Cursors.Hand,
+			FontWeight = FontWeights.Bold,
+			GroupName = "Filters",
+			IsChecked = recordType == "ANY"
+		};
+		filterBtn.Click += (o, e) => { filterBtn.IsChecked = true; Filter(recordType); };
+		return filterBtn;
+	}
+
+	private void Filter(string query)
+	{
+		foreach (DnsRecordItem item in RecordDisplayer.Children)
+		{
+			if (query == "ANY")
+			{
+				item.Visibility = Visibility.Visible;
+				continue;
+			}
+			item.Visibility = query == item.Type ? Visibility.Visible : Visibility.Collapsed;
+		}
+	}
+
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)
 	{
 		SiteTxt.Text = string.Empty;
@@ -159,7 +204,7 @@ public partial class DnsPage : Page
 	internal void GetDnsInfoBtn_Click(object sender, RoutedEventArgs e)
 	{
 		GetDnsInfo(SiteTxt.Text);
-		
+
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
 		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.GetDnsInfo).UsageCount++;
 	}
