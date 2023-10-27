@@ -652,7 +652,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Rete WPA2-Personal (802.11)</value>
   </data>
   <data name="AllSuccess" xml:space="preserve">
-    <value>Tutti i test sono stati completati corretamente</value>
+    <value>Tutti i test sono stati completati correttamente</value>
   </data>
   <data name="AllFailed" xml:space="preserve">
     <value>Tutti i test sono falliti</value>
@@ -733,7 +733,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Velocità</value>
   </data>
   <data name="SpeedTestSucess" xml:space="preserve">
-    <value>Test velocità completato corretamente</value>
+    <value>Test velocità completato correttamente</value>
   </data>
   <data name="SpeedTestFailed" xml:space="preserve">
     <value>Il test velocità è fallito</value>
@@ -757,7 +757,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Traceroute in corso</value>
   </data>
   <data name="TraceRouteDesc" xml:space="preserve">
-    <value>Definisci le impostazioni da usare quando si esegue un traceroute.</value>
+    <value>Definisci le impostazioni da usare quando esegui un traceroute.</value>
   </data>
   <data name="MaxTimeOut" xml:space="preserve">
     <value>Timeout max</value>
@@ -808,10 +808,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Frequenza</value>
   </data>
   <data name="Connect" xml:space="preserve">
-    <value>Collegarsi</value>
+    <value>Conetti</value>
   </data>
   <data name="ScanningInProgress" xml:space="preserve">
-    <value>InternetTest Pro sta eseguendo la scansione delle reti nelle vicinanze, attendi.</value>
+    <value>InternetTest Pro sta eseguendo la scansione delle reti vicine, attendi.</value>
   </data>
   <data name="NoNetworks" xml:space="preserve">
     <value>Non sono disponibili reti.</value>
@@ -819,11 +819,11 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="Adapters" xml:space="preserve">
     <value>Schede di rete</value>
   </data>
-  <data name="TotalBytesSent" xml:space="preserve">
-    <value>Totale byte inviati</value>
-  </data>
-  <data name="InterfaceType" xml:space="preserve">
+<data name="InterfaceType" xml:space="preserve">
     <value>Tipo interfaccia</value>
+  </data>
+    <data name="TotalBytesSent" xml:space="preserve">
+    <value>Totale byte inviati</value>
   </data>
   <data name="TotalBytesReceived" xml:space="preserve">
     <value>Totale byte ricevuti</value>
@@ -832,7 +832,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Byte,Kilobyte,Megabyte,Gigabyte,Terabyte,Petabyte</value>
   </data>
   <data name="Types" xml:space="preserve">
-    <value>Sconosciuto,Ethernet,TokenRing,FDDI,ISDN di base,ISDN primario,PPP,Loopback,Ethernet 3 Megabit,SLIP,ATM,Modem generico,Fast Ethernet T,ISDN,Fast Ethernet FX,Wireless 802.11,DSL asimmetrico,DSL adattivo al rate,DSL simmetrico,DSL molto alto rate,IP su ATM,Gigabit Ethernet,Tunnel,DSL multi-rate,Bus seriale ad alte prestazioni,WMAN,WWANPP,WWANPP2</value>
+    <value>Sconosciuto,Ethernet,TokenRing,FDDI,ISDN di base,ISDN primario,PPP,Loopback,Ethernet 3 Megabit,SLIP,ATM,Modem generico,Fast Ethernet T,ISDN,Fast Ethernet FX,Wireless 802.11,DSL asimmetrico,DSL auto adattiva,DSL simmetrico,DSL molto alto rate,IP su ATM,Gigabit Ethernet,Tunnel,DSL multi-rate,Bus seriale ad alte prestazioni,WMAN,WWANPP,WWANPP2</value>
   </data>
   <data name="MTU" xml:space="preserve">
     <value>MTU</value>
@@ -847,7 +847,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>DNS abilitato</value>
   </data>
   <data name="DnsDynamicConfigured" xml:space="preserve">
-    <value>DNS configurator dinamicamente</value>
+    <value>Configurazione dinamica DNS</value>
   </data>
   <data name="ReceiveOnly" xml:space="preserve">
     <value>Solo ricezione</value>
@@ -883,13 +883,13 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Pacchetti in ingresso con protocollo sconosciuto</value>
   </data>
   <data name="OutputQueueLength" xml:space="preserve">
-    <value>Lunghezza della coda di uscita</value>
+    <value>Lunghezza coda output</value>
   </data>
   <data name="ShowDisabled" xml:space="preserve">
     <value>Visualizza disabilitato</value>
   </data>
   <data name="LocateMyIpOnStart" xml:space="preserve">
-    <value>Individuare il mio IP all'avvio</value>
+    <value>Individua il mio IP all'avvio</value>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>Copia</value>
