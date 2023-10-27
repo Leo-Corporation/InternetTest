@@ -23,19 +23,8 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.NetworkInformation;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace InternetTest.Windows
 {
@@ -56,6 +45,17 @@ namespace InternetTest.Windows
 		{
 			NameTxt.Text = AdapterInfo.Name;
 			InfoTxt.Text = AdapterInfo.ToFormattedString();
+			AdapterIcon.Text = AdapterInfo.NetworkInterfaceType switch
+			{
+				NetworkInterfaceType.Tunnel => "\uF18E",
+				NetworkInterfaceType.Ethernet => "\uFB32",
+				NetworkInterfaceType.Ethernet3Megabit => "\uFB32",
+				NetworkInterfaceType.FastEthernetFx => "\uFB32",
+				NetworkInterfaceType.FastEthernetT => "\uFB32",
+				NetworkInterfaceType.GigabitEthernet => "\uFB32",
+				_ => "\uF8AC"
+			};
+
 			HeadTxt.Text = $"{Properties.Resources.Name}\n" +
 				$"{Properties.Resources.InterfaceType}\n" +
 				$"{Properties.Resources.Status}\n" +
@@ -85,5 +85,10 @@ namespace InternetTest.Windows
 		{
 			Close();
 		}
-	}
+
+		private void CopyBtn_Click(object sender, RoutedEventArgs e)
+		{
+			Clipboard.SetText(AdapterInfo.ToLongFormattedString());
+        }
+    }
 }

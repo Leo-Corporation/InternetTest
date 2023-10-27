@@ -52,6 +52,7 @@ public class Settings
 		TraceRouteMaxHops = 30;
 		TraceRouteMaxTimeOut = 5000;
 		MainWindowSize = (950, 600);
+		LaunchIpLocationOnStart = true;
 	}
 
 	public Themes Theme { get; set; }
@@ -72,6 +73,7 @@ public class Settings
 	public int? TraceRouteMaxHops { get; set; }
 	public int? TraceRouteMaxTimeOut { get; set; }
 	public (double, double)? MainWindowSize { get; set; }
+	public bool? LaunchIpLocationOnStart { get; set; }
 }
 
 public static class SettingsManager
@@ -111,6 +113,7 @@ public static class SettingsManager
 		settings.TraceRouteMaxHops ??= 30;
 		settings.TraceRouteMaxTimeOut ??= 5000;
 		settings.MainWindowSize ??= (950, 600);
+		settings.LaunchIpLocationOnStart ??= true;
 
 		return settings;
 	}

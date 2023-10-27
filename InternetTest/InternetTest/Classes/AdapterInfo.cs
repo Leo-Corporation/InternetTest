@@ -121,6 +121,33 @@ namespace InternetTest.Classes
 				   $"{UnicastPacketsSent}";
 		}
 
+		public string ToLongFormattedString()
+		{
+			return $"{Properties.Resources.Name}: {Name}\n" +
+				   $"{Properties.Resources.InterfaceType}: {Global.GetInterfaceTypeName(NetworkInterfaceType)}\n" +
+				   $"{Properties.Resources.Status}: {Status switch { OperationalStatus.Up => Properties.Resources.ConnectedS, OperationalStatus.Down => Properties.Resources.Disconnected, _ => Status.ToString() }}\n" +
+				   $"{Properties.Resources.IpVersion}: {IpVersion}\n" +
+				   $"{Properties.Resources.DNSSuffix}: {DnsSuffix}\n" +
+				   $"{Properties.Resources.MTU}: {Mtu}\n" +
+				   $"{Properties.Resources.DnsEnabled}: {BoolToString(DnsEnabled)}\n" +
+				   $"{Properties.Resources.DnsDynamicConfigured}: {BoolToString(IsDynamicDnsEnabled)}\n" +
+				   $"{Properties.Resources.ReceiveOnly}: {BoolToString(IsReceiveOnly)}\n" +
+				   $"{Properties.Resources.Multicast}: {BoolToString(SupportsMulticast)}\n" +
+				   $"{Properties.Resources.Speed}: {Global.GetStorageUnit(Speed).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(Speed).Item1)}/s\n" +
+				   $"{Properties.Resources.TotalBytesReceived}: {Global.GetStorageUnit(BytesReceived).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(BytesReceived).Item1)}\n" +
+				   $"{Properties.Resources.TotalBytesSent}: {Global.GetStorageUnit(BytesSent).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(BytesSent).Item1)}\n" +
+				   $"{Properties.Resources.IncomingPacketsDiscarded}: {IncomingPacketsDiscarded}\n" +
+				   $"{Properties.Resources.IncomingPacketsWithErrors}: {IncomingPacketsWithErrors}\n" +
+				   $"{Properties.Resources.IncomingUnknownProtocolPackets}: {IncomingUnknownProtocolPackets}\n" +
+				   $"{Properties.Resources.NonUnicastPacketsReceived}: {NonUnicastPacketsReceived}\n" +
+				   $"{Properties.Resources.NonUnicastPacketsSent}: {NonUnicastPacketsSent}\n" +
+				   $"{Properties.Resources.OutgoingPacketsDiscarded}: {OutgoingPacketsDiscarded}\n" +
+				   $"{Properties.Resources.OutgoingPacketsWithErrors}: {OutgoingPacketsWithErrors}\n" +
+				   $"{Properties.Resources.OutputQueueLength}: {OutputQueueLength}\n" +
+				   $"{Properties.Resources.UnicastPacketsReceived}: {UnicastPacketsReceived}\n" +
+				   $"{Properties.Resources.UnicastPacketsSent}: {UnicastPacketsSent}";
+		}
+
 		private string BoolToString(bool b) => b ? Properties.Resources.Yes : Properties.Resources.No;
 	}
 }

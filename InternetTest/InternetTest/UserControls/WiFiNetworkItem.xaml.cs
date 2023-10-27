@@ -46,7 +46,7 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class WiFiNetworkItem : UserControl
 {
-	NetworkInfo NetworkInfo { get; init; }
+	internal NetworkInfo NetworkInfo { get; init; }
 	public WiFiNetworkItem(NetworkInfo networkInfo)
 	{
 		InitializeComponent();

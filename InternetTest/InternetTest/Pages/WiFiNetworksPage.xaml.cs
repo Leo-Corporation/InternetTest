@@ -165,6 +165,7 @@ public partial class WiFiNetworksPage : Page
 
 	private void RefreshBtn_Click(object sender, RoutedEventArgs e)
 	{
+		SearchTxt.Text = "";
 		if (AdaptersPage.Visibility == Visibility.Collapsed)
 		{
 			InitUI();
@@ -178,6 +179,7 @@ public partial class WiFiNetworksPage : Page
 		AdaptersPage.Visibility = Visibility.Collapsed;
 		NetworksPage.Visibility = Visibility.Visible;
 		ShowHiddenChk.Visibility = Visibility.Collapsed;
+		SearchBorder.Visibility = Visibility.Visible;
 	}
 
 	private void AdaptersBtn_Click(object sender, RoutedEventArgs e)
@@ -185,6 +187,8 @@ public partial class WiFiNetworksPage : Page
 		AdaptersPage.Visibility = Visibility.Visible;
 		NetworksPage.Visibility = Visibility.Collapsed;
 		ShowHiddenChk.Visibility = Visibility.Visible;
+		SearchBorder.Visibility = Visibility.Collapsed;
+
 		GetAdapters();
 	}
 
@@ -193,4 +197,32 @@ public partial class WiFiNetworksPage : Page
 		if (loaded)
 			GetAdapters();
 	}
+
+	private void SearchTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		Search(SearchTxt.Text);
+	}
+
+	private void Search(string query)
+	{
+		int nbVis = 0;
+		foreach (WiFiNetworkItem item in WiFiDisplayer.Children)
+		{
+			if (query == "")
+			{
+				item.Visibility = Visibility.Visible;
+				nbVis++;
+				continue;
+			}
+			bool match = item.NetworkInfo.Ssid.ToLower().Contains(query.ToLower());
+			item.Visibility = match ? Visibility.Visible : Visibility.Collapsed;
+			nbVis += match ? 1 : 0;
+		}
+		NoNetworksPanel.Visibility = nbVis == 0 ? Visibility.Visible : Visibility.Collapsed;
+	}
+
+	private void DismissBtn_Click(object sender, RoutedEventArgs e)
+	{
+		SearchTxt.Text = "";
+    }
 }

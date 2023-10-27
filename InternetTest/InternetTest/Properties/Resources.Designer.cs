@@ -313,6 +313,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy.
+        /// </summary>
+        public static string Copy {
+            get {
+                return ResourceManager.GetString("Copy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
         public static string Country {
@@ -1134,6 +1143,15 @@ namespace InternetTest.Properties {
         public static string LocateIPInfo {
             get {
                 return ResourceManager.GetString("LocateIPInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Locate my IP on start.
+        /// </summary>
+        public static string LocateMyIpOnStart {
+            get {
+                return ResourceManager.GetString("LocateMyIpOnStart", resourceCulture);
             }
         }
         

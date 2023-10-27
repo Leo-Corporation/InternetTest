@@ -49,7 +49,7 @@ public partial class MyIpPage : Page
 	{
 		try
 		{
-			if (await Internet.IsAvailableAsync())
+			if (Global.Settings.LaunchIpLocationOnStart ?? true && await Internet.IsAvailableAsync())
 			{
 				GetMyIP(); // Locate the current IP
 			}

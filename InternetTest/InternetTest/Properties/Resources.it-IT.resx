@@ -888,4 +888,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="ShowDisabled" xml:space="preserve">
     <value>Visualizza disabilitato</value>
   </data>
+  <data name="LocateMyIpOnStart" xml:space="preserve">
+    <value>Individuare il mio IP all'avvio</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copia</value>
+  </data>
 </root>
