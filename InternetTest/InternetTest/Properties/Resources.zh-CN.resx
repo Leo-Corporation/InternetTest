@@ -882,4 +882,7 @@
   <data name="LocateMyIpOnStart" xml:space="preserve">
     <value>在启动时定位我的 IP</value>
   </data>
+  <data name="Copy" xml:space="preserve">
+    <value>复制</value>
+  </data>
 </root>
