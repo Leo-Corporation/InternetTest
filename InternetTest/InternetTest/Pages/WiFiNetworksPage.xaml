@@ -104,6 +104,54 @@
                             Text="{x:Static lang:Resources.Adapters}" />
                     </Grid>
                 </RadioButton>
+                <Border
+                    x:Name="SearchBorder"
+                    Grid.Row="1"
+                    Width="200"
+                    Margin="10 3 3 3"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Background="{Binding Source={StaticResource CardBackground}}"
+                    CornerRadius="5">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="15"
+                            Opacity="0.2"
+                            ShadowDepth="0"
+                            Color="{Binding Source={StaticResource AccentColor}}" />
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox
+                            x:Name="SearchTxt"
+                            Margin="5 0"
+                            Padding="1"
+                            VerticalAlignment="Center"
+                            d:Text="123.54.132.56"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            FontWeight="Bold"
+                            Foreground="{Binding Source={StaticResource DarkGray}}"
+                            TextChanged="SearchTxt_TextChanged" />
+                        <Button
+                            x:Name="DismissBtn"
+                            Grid.Column="1"
+                            Margin="2"
+                            Padding="4"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Click="DismissBtn_Click"
+                            Content="&#xF36A;"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            Foreground="{Binding Source={StaticResource Foreground1}}"
+                            Style="{DynamicResource ToolButton}" />
+                    </Grid>
+                </Border>
             </StackPanel>
             <StackPanel
                 Grid.Row="1"
