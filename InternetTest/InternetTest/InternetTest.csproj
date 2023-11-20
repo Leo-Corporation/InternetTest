@@ -38,7 +38,7 @@
 	  <PackageReference Include="DnsClient" Version="1.7.0" />
 	  <PackageReference Include="ManagedNativeWifi" Version="2.5.0" />
 	  <PackageReference Include="PeyrSharp.Core" Version="1.10.0.2310" />
-	  <PackageReference Include="PeyrSharp.Env" Version="1.10.0.2310" />
+	  <PackageReference Include="PeyrSharp.Env" Version="2.0.0.2311" />
 	  <PackageReference Include="Whois" Version="3.0.1" />
 	</ItemGroup>
 
