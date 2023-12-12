@@ -1,55 +1,51 @@
-# Roadmap and features of InternetTest Pro
+# Roadmap and features of InternetTest Pro 8
+
 <img src=".github/images/banner.png" alt="banner">
 
-
 ## Introduction
-InternetTest Pro (also called InternetTest 7) is the next generation of InternetTest. It is a free and open source Windows application. This new iteration of InternetTest is a complete rewrite of the previous version, offering a new and improved user interface, new features and more!
+
+InternetTest Pro 8 is the next major iteration for InternetTest. It is a free and open source Windows application. This version will focus on improving the user experience, making it more intuitive to use the app - but that's not it, a UI refresh is also to be expected.
 
 ## Roadmap
-- [ ] Main Window
-    - [ ] Possibility to resize the window
-    - [ ] Mesh gradient background
-    - [ ] Possibility to maximize the window
-    - [ ] Possibility to minimize the window
-    - [ ] Rounded corners
+
+- [ ] Global/App
+
+  - [ ] New navigation button system
+  - [ ] New Navigation styles
+  - [ ] Portable mode
+  - [ ] Remove Status page
+  - [ ] Remove My IP page
+  - [ ] Move IP Config page to IP Tools category
+
 - [ ] Pages
-    - [ ] Home page
-        - [ ] "Get started" section _(powered by [Synethia](https://github.com/Leo-Corporation/Synethia))_
-        - [ ] "Suggested actions" section _(powered by [Synethia](https://github.com/Leo-Corporation/Synethia))_
-        - [ ] "Discover" section _(powered by [Synethia](https://github.com/Leo-Corporation/Synethia))_
-    - [ ] History page
-        - [ ] "Status" section
-        - [ ] "DownDetector" section
-        - [ ] "Delete history" button
-    - [ ] Settings page
-        - [ ] "About/Updates" section
-        - [ ] "Language" section
-        - [ ] "Theme" section
-        - [ ] "Map provider" section
-        - [ ] "Notifications" section
-        - [ ] "Startup" section
-        - [ ] "Web related settings" section
-        - [ ] "Data" section
-    - [ ] Web Utilities (section)
-        - [ ] Status page
-            - [ ] "Test" section
-            - [ ] "Test Details" section
-        - [ ] DownDetector page
-            - [ ] "Test" section
-            - [ ] "Test Results" section
-            - [ ] "Scheduled tests" section
-    - [ ] IP Tools (section)
-        - [ ] My IP page
-            - [ ] "Details" section
-        - [ ] Locate IP page
-            - [ ] "Input" section (where the user has to specify the IP)
-            - [ ] "Details" section (the results and info of the specified IP address)
-    - [ ] Commands (section)
-        - [ ] Ping page
-            - [ ] "Input" section (where the user has to specify the IP)
-            - [ ] "Details" section (the results and info of the ping)
-        - [ ] IP Config page
-            - [ ] "Results" section (where the user can see the results of the IP Config command)
-        - [ ] Find WiFi passwords page
-            - [ ] List of all WiFi networks
-            - [ ] A UserControl will show the results and info of the specified WiFi network.
+
+  - [ ] Home page
+
+    - [ ] Add new Quick Info section with Status, WiFi name, IP Address
+    - [ ] Redesign Page Cards
+    - [ ] Add new Quick Actions system
+      - [ ] Speed Test
+      - [ ] Connect to WiFi
+      - [ ] Recover Passwords
+
+  - [ ] DNS page
+    - [ ] Add placeholder in DNS information section
+  - [ ] DownDetector page
+    - [ ] Add "Add website" section
+    - [ ] Add Website Item with details section
+    - [ ] Add the possibility to remove a website
+    - [ ] Add the possibility to test all websites
+    - [ ] Add new Timer panel
+      - [ ] Add the possibility to check the status automatically
+      - [ ] Add the possibility to provide an interval for the auto status check
+    - [ ] Add the possibility to remember websites
+  - [ ] Locate IP page
+    - [ ] Add the possibility to get the user's IP
+  - [ ] WiFi passwords page
+    - [ ] Add the possibility to remember the user's passwords
+    - [ ] Add the possibility to erase saved WiFi passwords
+
+- [ ] Settings
+  - [ ] Instant theme switching
+  - [ ] Default interval for DownDetector check
+  - [ ] Possibility to hide by default disabled adapters
