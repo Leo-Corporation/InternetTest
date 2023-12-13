@@ -16,7 +16,7 @@ InternetTest Pro 8 is the next major iteration for InternetTest. It is a free an
   - [ ] Remove Status page
   - [ ] Remove My IP page
   - [ ] Move IP Config page to IP Tools category
-
+  - [ ] Rewrite Synethia config system using the official NuGet package
 - [ ] Pages
 
   - [ ] Home page
