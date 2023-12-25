@@ -639,20 +639,6 @@
                                 </Button>
                                 <StackPanel x:Name="IPPanel" Visibility="Collapsed">
                                     <RadioButton
-                                        x:Name="MyIPPageBtn"
-                                        Margin="10 0 0 0"
-                                        Padding="5 2 2 2"
-                                        HorizontalContentAlignment="Left"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Click="MyIPPageBtn_Click"
-                                        Content="{x:Static lang:Resources.MyIP}"
-                                        FontSize="10"
-                                        FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        GroupName="NavBar"
-                                        Style="{DynamicResource NavBarToolButton}" />
-                                    <RadioButton
                                         x:Name="LocateIPPageBtn"
                                         Margin="10 0 0 0"
                                         Padding="5 2 2 2"

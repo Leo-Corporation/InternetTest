@@ -42,7 +42,6 @@ public partial class App : Application
 			Global.HistoryPage = new();
 			Global.SettingsPage = new();
 			Global.DownDetectorPage = new();
-			Global.MyIpPage = new();
 			Global.LocateIpPage = new();
 			Global.PingPage = new();
 			Global.IpConfigPage = new();

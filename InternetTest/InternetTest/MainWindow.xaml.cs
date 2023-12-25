@@ -85,11 +85,6 @@ public partial class MainWindow : Window
 				Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Sys.UnixTime;
 				DownDetectorPageBtn.IsChecked = true;
 				break;
-			case AppPages.MyIP:
-				PageDisplayer.Content = Global.MyIpPage;
-				Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Sys.UnixTime;
-				MyIPPageBtn.IsChecked = true;
-				break;
 			case AppPages.LocateIP:
 				PageDisplayer.Content = Global.LocateIpPage;
 				Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime = Sys.UnixTime;
@@ -163,11 +158,6 @@ public partial class MainWindow : Window
 				PageDisplayer.Content = Global.DownDetectorPage;
 				Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Sys.UnixTime;
 				DownDetectorPageBtn.IsChecked = true;
-				break;
-			case AppPages.MyIP:
-				PageDisplayer.Content = Global.MyIpPage;
-				Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Sys.UnixTime;
-				MyIPPageBtn.IsChecked = true;
 				break;
 			case AppPages.LocateIP:
 				PageDisplayer.Content = Global.LocateIpPage;
@@ -325,14 +315,6 @@ public partial class MainWindow : Window
 		Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
 	}
 
-	private void MyIPPageBtn_Click(object sender, RoutedEventArgs e)
-	{
-		LeavePage();
-
-		PageDisplayer.Content = Global.MyIpPage; // Display the my IP page
-		Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
-	}
-
 	private void LocateIPPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
@@ -396,11 +378,6 @@ public partial class MainWindow : Window
 				Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent += Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime - Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime;
 				Global.SynethiaConfig.DownDetectorPageInfo.Score = Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent * (Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount / 2d : 1d); // Calculate the score
 				break;
-			case MyIpPage:
-				Global.SynethiaConfig.MyIPPageInfo.LeaveUnixTime = Sys.UnixTime;
-				Global.SynethiaConfig.MyIPPageInfo.TotalTimeSpent += Global.SynethiaConfig.MyIPPageInfo.LeaveUnixTime - Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime;
-				Global.SynethiaConfig.MyIPPageInfo.Score = Global.SynethiaConfig.MyIPPageInfo.TotalTimeSpent * (Global.SynethiaConfig.MyIPPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.MyIPPageInfo.InteractionCount / 2d : 1d); // Calculate the score
-				break;
 			case LocateIpPage:
 				Global.SynethiaConfig.LocateIPPageInfo.LeaveUnixTime = Sys.UnixTime;
 				Global.SynethiaConfig.LocateIPPageInfo.TotalTimeSpent += Global.SynethiaConfig.LocateIPPageInfo.LeaveUnixTime - Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime;
@@ -446,7 +423,6 @@ public partial class MainWindow : Window
 		RegularLockTxt.Visibility = Global.IsConfidentialModeEnabled ? Visibility.Collapsed : Visibility.Visible;
 		FilledLockTxt.Visibility = !Global.IsConfidentialModeEnabled ? Visibility.Collapsed : Visibility.Visible;
 
-		Global.MyIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 		Global.LocateIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 		Global.IpConfigPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 		Global.WiFiPasswordsPage?.ToggleConfidentialMode();

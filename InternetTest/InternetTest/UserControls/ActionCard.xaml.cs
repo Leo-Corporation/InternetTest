@@ -58,10 +58,6 @@ public partial class ActionCard : UserControl
 				Global.DownDetectorPage.TestBtn_Click(this, null);
 				OnCardClick?.Invoke(this, new(AppPages.DownDetector));
 				break;
-			case AppActions.MyIP:
-				Global.MyIpPage.GetMyIPBtn_Click(this, null);
-				OnCardClick?.Invoke(this, new(AppPages.MyIP));
-				break;
 			case AppActions.LocateIP:
 				Global.LocateIpPage.LocateIPBtn_Click(this, null);
 				OnCardClick?.Invoke(this, new(AppPages.LocateIP));

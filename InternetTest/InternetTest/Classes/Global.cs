@@ -63,7 +63,6 @@ public static class Global
 	public static HistoryPage? HistoryPage { get; set; }
 	public static SettingsPage? SettingsPage { get; set; }
 	public static DownDetectorPage? DownDetectorPage { get; set; }
-	public static MyIpPage? MyIpPage { get; set; }
 	public static LocateIpPage? LocateIpPage { get; set; }
 	public static PingPage? PingPage { get; set; }
 	public static IpConfigPage? IpConfigPage { get; set; }
