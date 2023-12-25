@@ -270,8 +270,8 @@
                                 HorizontalContentAlignment="Left"
                                 Background="Transparent"
                                 BorderThickness="0"
-                                GroupName="NavBar"
                                 Click="HomePageBtn_Click"
+                                GroupName="NavBar"
                                 Style="{DynamicResource NavBarButton}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -329,8 +329,8 @@
                                 HorizontalContentAlignment="Left"
                                 Background="Transparent"
                                 BorderThickness="0"
-                                GroupName="NavBar"
                                 Click="HistoryPageBtn_Click"
+                                GroupName="NavBar"
                                 Style="{DynamicResource NavBarButton}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -403,8 +403,8 @@
                                 HorizontalContentAlignment="Left"
                                 Background="Transparent"
                                 BorderThickness="0"
-                                GroupName="NavBar"
                                 Click="SettingsPageBtn_Click"
+                                GroupName="NavBar"
                                 Style="{DynamicResource NavBarButton}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -541,9 +541,10 @@
                                         BorderThickness="0"
                                         Click="StatusPageBtn_Click"
                                         Content="{x:Static lang:Resources.Status}"
-                                        FontSize="10" GroupName="NavBar"
+                                        FontSize="10"
                                         FontWeight="ExtraBold"
                                         Foreground="{Binding Source={StaticResource AccentColor}}"
+                                        GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                     <RadioButton
                                         x:Name="DownDetectorPageBtn"
@@ -554,9 +555,10 @@
                                         BorderThickness="0"
                                         Click="DownDetectorPageBtn_Click"
                                         Content="{x:Static lang:Resources.DownDetector}"
-                                        FontSize="10" GroupName="NavBar"
+                                        FontSize="10"
                                         FontWeight="ExtraBold"
                                         Foreground="{Binding Source={StaticResource AccentColor}}"
+                                        GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                     <RadioButton
                                         x:Name="DnsPageBtn"
@@ -567,9 +569,10 @@
                                         BorderThickness="0"
                                         Click="DnsPageBtn_Click"
                                         Content="{x:Static lang:Resources.DNSTool}"
-                                        FontSize="10" GroupName="NavBar"
+                                        FontSize="10"
                                         FontWeight="ExtraBold"
                                         Foreground="{Binding Source={StaticResource AccentColor}}"
+                                        GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                     <RadioButton
                                         x:Name="WiFiPageBtn"
@@ -580,9 +583,10 @@
                                         BorderThickness="0"
                                         Click="WiFiPageBtn_Click"
                                         Content="{x:Static lang:Resources.WiFiNetworks}"
-                                        FontSize="10" GroupName="NavBar"
+                                        FontSize="10"
                                         FontWeight="ExtraBold"
                                         Foreground="{Binding Source={StaticResource AccentColor}}"
+                                        GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                 </StackPanel>
                                 <Button
@@ -657,9 +661,10 @@
                                         BorderThickness="0"
                                         Click="MyIPPageBtn_Click"
                                         Content="{x:Static lang:Resources.MyIP}"
-                                        FontSize="10" GroupName="NavBar"
+                                        FontSize="10"
                                         FontWeight="ExtraBold"
                                         Foreground="{Binding Source={StaticResource AccentColor}}"
+                                        GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                     <RadioButton
                                         x:Name="LocateIPPageBtn"
@@ -670,9 +675,10 @@
                                         BorderThickness="0"
                                         Click="LocateIPPageBtn_Click"
                                         Content="{x:Static lang:Resources.LocateIP}"
-                                        FontSize="10" GroupName="NavBar"
+                                        FontSize="10"
                                         FontWeight="ExtraBold"
                                         Foreground="{Binding Source={StaticResource AccentColor}}"
+                                        GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                 </StackPanel>
                                 <Button
@@ -758,9 +764,10 @@
                                         BorderThickness="0"
                                         Click="PingPageBtn_Click"
                                         Content="{x:Static lang:Resources.Ping}"
-                                        FontSize="10" GroupName="NavBar"
+                                        FontSize="10"
                                         FontWeight="ExtraBold"
                                         Foreground="{Binding Source={StaticResource AccentColor}}"
+                                        GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                     <RadioButton
                                         x:Name="IPConfigPageBtn"
@@ -771,9 +778,10 @@
                                         BorderThickness="0"
                                         Click="IPConfigPageBtn_Click"
                                         Content="{x:Static lang:Resources.IPConfig}"
-                                        FontSize="10" GroupName="NavBar"
+                                        FontSize="10"
                                         FontWeight="ExtraBold"
                                         Foreground="{Binding Source={StaticResource AccentColor}}"
+                                        GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                     <RadioButton
                                         x:Name="TraceroutePageBtn"
@@ -784,9 +792,10 @@
                                         BorderThickness="0"
                                         Click="TraceroutePageBtn_Click"
                                         Content="{x:Static lang:Resources.TraceRoute}"
-                                        FontSize="10" GroupName="NavBar"
+                                        FontSize="10"
                                         FontWeight="ExtraBold"
                                         Foreground="{Binding Source={StaticResource AccentColor}}"
+                                        GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                     <RadioButton
                                         x:Name="WifiPasswordsPageBtn"
@@ -798,9 +807,9 @@
                                         Click="WifiPasswordsPageBtn_Click"
                                         Content="{x:Static lang:Resources.WifiPasswords}"
                                         FontSize="10"
-                                        GroupName="NavBar"
                                         FontWeight="ExtraBold"
                                         Foreground="{Binding Source={StaticResource AccentColor}}"
+                                        GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                 </StackPanel>
                             </StackPanel>

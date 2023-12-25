@@ -175,7 +175,7 @@
 
                                 </Trigger>
                                 <Trigger Property="IsChecked" Value="True">
-                                    <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource Background1}}"/>
+                                    <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource Background1}}" />
                                 </Trigger>
                                 <Trigger Property="IsPressed" Value="true">
                                     <Setter TargetName="border" Property="Background" Value="Transparent" />
@@ -259,12 +259,12 @@
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsChecked" Value="True">
                                     <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource AccentColor}}" />
-                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" />
+                                    <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" />
                                 </Trigger>
                                 <Trigger Property="IsMouseOver" Value="true">
                                     <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource LightAccentColor}}" />
                                     <Setter TargetName="border" Property="BorderBrush" Value="{Binding Source={StaticResource LightAccentColor}}" />
-                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{Binding Source={StaticResource AccentColor}}" />
+                                    <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{Binding Source={StaticResource AccentColor}}" />
                                 </Trigger>
                                 <Trigger Property="IsPressed" Value="true">
                                     <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource LightAccentColor}}" />
