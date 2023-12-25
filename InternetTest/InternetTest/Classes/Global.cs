@@ -62,7 +62,6 @@ public static class Global
 	public static HomePage? HomePage { get; set; }
 	public static HistoryPage? HistoryPage { get; set; }
 	public static SettingsPage? SettingsPage { get; set; }
-	public static StatusPage? StatusPage { get; set; }
 	public static DownDetectorPage? DownDetectorPage { get; set; }
 	public static MyIpPage? MyIpPage { get; set; }
 	public static LocateIpPage? LocateIpPage { get; set; }

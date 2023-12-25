@@ -75,19 +75,10 @@ public partial class MainWindow : Window
 
 		// Show the appropriate page
 		switch (Global.Settings.DefaultPage)
-		{
-			case AppPages.Home:
-				PageDisplayer.Content = Global.HomePage;
-				HomePageBtn.IsChecked = true;
-				break;
+		{				
 			case AppPages.History:
 				PageDisplayer.Content = Global.HistoryPage;
 				HistoryPageBtn.IsChecked = true;
-				break;
-			case AppPages.Status:
-				PageDisplayer.Content = Global.StatusPage;
-				Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Sys.UnixTime;
-				StatusPageBtn.IsChecked = true;
 				break;
 			case AppPages.DownDetector:
 				PageDisplayer.Content = Global.DownDetectorPage;
@@ -135,6 +126,8 @@ public partial class MainWindow : Window
 				WiFiPageBtn.IsChecked = true;
 				break;
 			default:
+				PageDisplayer.Content = Global.HomePage;
+				HomePageBtn.IsChecked = true;
 				break;
 		}
 
@@ -166,11 +159,6 @@ public partial class MainWindow : Window
 	{
 		switch (e.AppPage)
 		{
-			case AppPages.Status:
-				PageDisplayer.Content = Global.StatusPage;
-				Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Sys.UnixTime;
-				StatusPageBtn.IsChecked = true;
-				break;
 			case AppPages.DownDetector:
 				PageDisplayer.Content = Global.DownDetectorPage;
 				Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Sys.UnixTime;
@@ -328,13 +316,6 @@ public partial class MainWindow : Window
 		storyboard.Begin(this); // Animate the utilities panel
 	}
 
-	private void StatusPageBtn_Click(object sender, RoutedEventArgs e)
-	{
-		LeavePage();
-
-		PageDisplayer.Content = Global.StatusPage; // Display the status page
-		Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
-	}
 
 	private void DownDetectorPageBtn_Click(object sender, RoutedEventArgs e)
 	{
@@ -410,11 +391,6 @@ public partial class MainWindow : Window
 		if (!Global.Settings.UseSynethia) return;
 		switch (PageDisplayer.Content)
 		{
-			case StatusPage:
-				Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime = Sys.UnixTime;
-				Global.SynethiaConfig.StatusPageInfo.TotalTimeSpent += Global.SynethiaConfig.StatusPageInfo.LeaveUnixTime - Global.SynethiaConfig.StatusPageInfo.EnterUnixTime;
-				Global.SynethiaConfig.StatusPageInfo.Score = Global.SynethiaConfig.StatusPageInfo.TotalTimeSpent * (Global.SynethiaConfig.StatusPageInfo.InteractionCount > 0 ? Global.SynethiaConfig.StatusPageInfo.InteractionCount / 2d : 1d); // Calculate the score
-				break;
 			case DownDetectorPage:
 				Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime = Sys.UnixTime;
 				Global.SynethiaConfig.DownDetectorPageInfo.TotalTimeSpent += Global.SynethiaConfig.DownDetectorPageInfo.LeaveUnixTime - Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime;

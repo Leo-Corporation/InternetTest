@@ -53,8 +53,6 @@ public partial class ActionCard : UserControl
 		switch (AppAction)
 		{
 			case AppActions.Test:
-				Global.StatusPage.TestBtn_Click(this, null);
-				OnCardClick?.Invoke(this, new(AppPages.Status));
 				break;
 			case AppActions.DownDetectorRequest:
 				Global.DownDetectorPage.TestBtn_Click(this, null);

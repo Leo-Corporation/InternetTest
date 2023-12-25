@@ -114,6 +114,7 @@ public static class SettingsManager
 		settings.TraceRouteMaxTimeOut ??= 5000;
 		settings.MainWindowSize ??= (950, 600);
 		settings.LaunchIpLocationOnStart ??= true;
+		settings.DefaultPage = (settings.DefaultPage == AppPages.Status || settings.DefaultPage == AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
 
 		return settings;
 	}

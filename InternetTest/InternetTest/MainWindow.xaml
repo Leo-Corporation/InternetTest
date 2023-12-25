@@ -533,20 +533,6 @@
                                 </Button>
                                 <StackPanel x:Name="UtilitiesPanel" Visibility="Collapsed">
                                     <RadioButton
-                                        x:Name="StatusPageBtn"
-                                        Margin="10 0 0 0"
-                                        Padding="5 2 2 2"
-                                        HorizontalContentAlignment="Left"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Click="StatusPageBtn_Click"
-                                        Content="{x:Static lang:Resources.Status}"
-                                        FontSize="10"
-                                        FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        GroupName="NavBar"
-                                        Style="{DynamicResource NavBarToolButton}" />
-                                    <RadioButton
                                         x:Name="DownDetectorPageBtn"
                                         Margin="10 0 0 0"
                                         Padding="5 2 2 2"

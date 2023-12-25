@@ -436,7 +436,6 @@
                             Style="{DynamicResource ComboBoxStyle1}">
                             <ComboBoxItem Content="{x:Static lang:Resources.Home}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.History}" />
-                            <ComboBoxItem Content="{x:Static lang:Resources.Status}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.DownDetector}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.MyIP}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.LocateIP}" />
