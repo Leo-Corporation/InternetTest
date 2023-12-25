@@ -79,12 +79,12 @@ public partial class MainWindow : Window
 			case AppPages.Home:
 				PageDisplayer.Content = Global.HomePage;
 				UnCheckAllButton();
-				CheckButton(HomePageBtn, true);
+				HomePageBtn.IsChecked = true;
 				break;
 			case AppPages.History:
 				PageDisplayer.Content = Global.HistoryPage;
 				UnCheckAllButton();
-				CheckButton(HistoryPageBtn, true);
+				HistoryPageBtn.IsChecked = true;
 				break;
 			case AppPages.Status:
 				PageDisplayer.Content = Global.StatusPage;
@@ -466,17 +466,13 @@ public partial class MainWindow : Window
 	private void HomePageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(HomePageBtn, true);
-
+		HomePageBtn.IsChecked = true;
 		PageDisplayer.Content = Global.HomePage; // Display the home page
 	}
 
 	private void HistoryPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(HistoryPageBtn, true);
 
 		PageDisplayer.Content = Global.HistoryPage; // Display the history page
 	}
@@ -484,8 +480,6 @@ public partial class MainWindow : Window
 	private void SettingsPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(SettingsPageBtn, true);
 
 		PageDisplayer.Content = Global.SettingsPage;
 	}
