@@ -78,73 +78,61 @@ public partial class MainWindow : Window
 		{
 			case AppPages.Home:
 				PageDisplayer.Content = Global.HomePage;
-				UnCheckAllButton();
 				HomePageBtn.IsChecked = true;
 				break;
 			case AppPages.History:
 				PageDisplayer.Content = Global.HistoryPage;
-				UnCheckAllButton();
 				HistoryPageBtn.IsChecked = true;
 				break;
 			case AppPages.Status:
 				PageDisplayer.Content = Global.StatusPage;
 				Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(StatusPageBtn);
+				StatusPageBtn.IsChecked = true;
 				break;
 			case AppPages.DownDetector:
 				PageDisplayer.Content = Global.DownDetectorPage;
 				Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(DownDetectorPageBtn);
+				DownDetectorPageBtn.IsChecked = true;
 				break;
 			case AppPages.MyIP:
 				PageDisplayer.Content = Global.MyIpPage;
 				Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(MyIPPageBtn);
+				MyIPPageBtn.IsChecked = true;
 				break;
 			case AppPages.LocateIP:
 				PageDisplayer.Content = Global.LocateIpPage;
 				Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(LocateIPPageBtn);
+				LocateIPPageBtn.IsChecked = true;
 				break;
 			case AppPages.Ping:
 				PageDisplayer.Content = Global.PingPage;
 				Global.SynethiaConfig.PingPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(PingPageBtn);
+				PingPageBtn.IsChecked = true;
 				break;
 			case AppPages.IPConfig:
 				PageDisplayer.Content = Global.IpConfigPage;
 				Global.SynethiaConfig.IPConfigPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(IPConfigPageBtn);
+				IPConfigPageBtn.IsChecked = true;
 				break;
 			case AppPages.WiFiPasswords:
 				PageDisplayer.Content = Global.WiFiPasswordsPage;
 				Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(WifiPasswordsPageBtn);
+				WifiPasswordsPageBtn.IsChecked = true;
 				break;
 			case AppPages.DnsTool:
 				PageDisplayer.Content = Global.DnsPage;
 				Global.SynethiaConfig.DnsPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(DnsPageBtn);
+				DnsPageBtn.IsChecked = true;
 				break;
 			case AppPages.TraceRoute:
 				PageDisplayer.Content = Global.TraceroutePage;
 				Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(TraceroutePageBtn);
+				TraceroutePageBtn.IsChecked = true;
 				break;
 			case AppPages.WiFiNetworks:
 				PageDisplayer.Content = Global.WiFiNetworksPage;
 				Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(WiFiPageBtn);
+				WiFiPageBtn.IsChecked = true;
 				break;
 			default:
 				break;
@@ -181,62 +169,52 @@ public partial class MainWindow : Window
 			case AppPages.Status:
 				PageDisplayer.Content = Global.StatusPage;
 				Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(StatusPageBtn);
+				StatusPageBtn.IsChecked = true;
 				break;
 			case AppPages.DownDetector:
 				PageDisplayer.Content = Global.DownDetectorPage;
 				Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(DownDetectorPageBtn);
+				DownDetectorPageBtn.IsChecked = true;
 				break;
 			case AppPages.MyIP:
 				PageDisplayer.Content = Global.MyIpPage;
 				Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(MyIPPageBtn);
+				MyIPPageBtn.IsChecked = true;
 				break;
 			case AppPages.LocateIP:
 				PageDisplayer.Content = Global.LocateIpPage;
 				Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(LocateIPPageBtn);
+				LocateIPPageBtn.IsChecked = true;
 				break;
 			case AppPages.Ping:
 				PageDisplayer.Content = Global.PingPage;
 				Global.SynethiaConfig.PingPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(PingPageBtn);
+				PingPageBtn.IsChecked = true;
 				break;
 			case AppPages.IPConfig:
 				PageDisplayer.Content = Global.IpConfigPage;
 				Global.SynethiaConfig.IPConfigPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(IPConfigPageBtn);
+				IPConfigPageBtn.IsChecked = true;
 				break;
 			case AppPages.WiFiPasswords:
 				PageDisplayer.Content = Global.WiFiPasswordsPage;
 				Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(WifiPasswordsPageBtn);
+				WifiPasswordsPageBtn.IsChecked = true;
 				break;
 			case AppPages.DnsTool:
 				PageDisplayer.Content = Global.DnsPage;
 				Global.SynethiaConfig.DnsPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(DnsPageBtn);
+				DnsPageBtn.IsChecked = true;
 				break;
 			case AppPages.TraceRoute:
 				PageDisplayer.Content = Global.TraceroutePage;
 				Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(TraceroutePageBtn);
+				TraceroutePageBtn.IsChecked = true;
 				break;
 			case AppPages.WiFiNetworks:
 				PageDisplayer.Content = Global.WiFiNetworksPage;
 				Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime = Sys.UnixTime;
-				UnCheckAllButton();
-				CheckButton(WiFiPageBtn);
+				WiFiPageBtn.IsChecked = true;
 				break;
 			default:
 				break;
@@ -350,54 +328,9 @@ public partial class MainWindow : Window
 		storyboard.Begin(this); // Animate the utilities panel
 	}
 
-	private void CheckButton(Button button, bool isSpecial = false)
-	{
-		if (isSpecial)
-		{
-			button.Background = new SolidColorBrush(Global.GetColorFromResource("Background1"));
-		}
-		else
-		{
-			button.Background = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-			button.Foreground = new SolidColorBrush(Global.GetColorFromResource("WindowButtonsHoverForeground1"));
-		}
-	}
-
-	private void UnCheckAllButton()
-	{
-		// Background
-		HomePageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		HistoryPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		SettingsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-
-		StatusPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		DownDetectorPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		MyIPPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		LocateIPPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		PingPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		TraceroutePageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		IPConfigPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		WifiPasswordsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		DnsPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-		WiFiPageBtn.Background = new SolidColorBrush(Colors.Transparent);
-
-		StatusPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-		DownDetectorPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-		MyIPPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-		LocateIPPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-		PingPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-		TraceroutePageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-		IPConfigPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-		WifiPasswordsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-		DnsPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-		WiFiPageBtn.Foreground = new SolidColorBrush(Global.GetColorFromResource("AccentColor"));
-	}
-
 	private void StatusPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(StatusPageBtn);
 
 		PageDisplayer.Content = Global.StatusPage; // Display the status page
 		Global.SynethiaConfig.StatusPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
@@ -406,8 +339,6 @@ public partial class MainWindow : Window
 	private void DownDetectorPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(DownDetectorPageBtn);
 
 		PageDisplayer.Content = Global.DownDetectorPage; // Display the down detector page
 		Global.SynethiaConfig.DownDetectorPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
@@ -416,8 +347,6 @@ public partial class MainWindow : Window
 	private void MyIPPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(MyIPPageBtn);
 
 		PageDisplayer.Content = Global.MyIpPage; // Display the my IP page
 		Global.SynethiaConfig.MyIPPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
@@ -426,8 +355,6 @@ public partial class MainWindow : Window
 	private void LocateIPPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(LocateIPPageBtn);
 
 		PageDisplayer.Content = Global.LocateIpPage; // Display the locate IP page
 		Global.SynethiaConfig.LocateIPPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
@@ -436,8 +363,6 @@ public partial class MainWindow : Window
 	private void PingPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(PingPageBtn);
 
 		PageDisplayer.Content = Global.PingPage; // Display the ping page
 		Global.SynethiaConfig.PingPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
@@ -446,8 +371,6 @@ public partial class MainWindow : Window
 	private void IPConfigPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(IPConfigPageBtn);
 
 		PageDisplayer.Content = Global.IpConfigPage; // Display the IP config page
 		Global.SynethiaConfig.IPConfigPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
@@ -456,8 +379,6 @@ public partial class MainWindow : Window
 	private void WifiPasswordsPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(WifiPasswordsPageBtn);
 
 		PageDisplayer.Content = Global.WiFiPasswordsPage; // Display the wifi passwords page
 		Global.SynethiaConfig.WiFiPasswordsPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
@@ -565,8 +486,6 @@ public partial class MainWindow : Window
 	private void DnsPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(DnsPageBtn);
 
 		PageDisplayer.Content = Global.DnsPage; // Display the IP config page
 		Global.SynethiaConfig.DnsPageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
@@ -575,8 +494,6 @@ public partial class MainWindow : Window
 	private void TraceroutePageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(TraceroutePageBtn);
 
 		PageDisplayer.Content = Global.TraceroutePage; // Display the ping page
 		Global.SynethiaConfig.TraceRoutePageInfo.EnterUnixTime = Sys.UnixTime; // Update the last entered time
@@ -585,8 +502,6 @@ public partial class MainWindow : Window
 	private void WiFiPageBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LeavePage();
-		UnCheckAllButton(); // Reset all states
-		CheckButton(WiFiPageBtn);
 
 		PageDisplayer.Content = Global.WiFiNetworksPage;
 		Global.SynethiaConfig.WiFiNetworksPageInfo.EnterUnixTime = Sys.UnixTime;
