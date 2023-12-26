@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.UserControls;
 using PeyrSharp.Env;
+using Synethia;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -45,7 +46,7 @@ public partial class WiFiPasswordsPage : Page
 	{
 		InitializeComponent();
 		InitUI();
-		InjectSynethiaCode();
+		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 7, ref codeInjected);
 	}
 
 	Placeholder Placeholder = new(Properties.Resources.NothingToShow, "\uF227");
@@ -53,53 +54,6 @@ public partial class WiFiPasswordsPage : Page
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.WifiPasswords}";
 		PlaceholderGrid.Children.Add(Placeholder); // Show the placeholder instead of an empty page
-	}
-
-	private void InjectSynethiaCode()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each CheckBox/RadioButton of the page
-		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-		{
-			checkBox.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-			checkBox.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-		}
-
-		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-		{
-			radioButton.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-			radioButton.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-		}
 	}
 
 	internal async void GetWiFiBtn_Click(object sender, RoutedEventArgs e)
@@ -117,7 +71,7 @@ public partial class WiFiPasswordsPage : Page
 		}
 
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.GetWiFiPasswords).UsageCount++;
+		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "WiFiPasswords.Get").UsageCount++;
 	}
 
 	internal async Task GetWiFiNetworksInfo()

@@ -54,7 +54,7 @@ public partial class DownDetectorItem : UserControl
 		{
 			b.Click += (sender, e) =>
 			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+				Global.SynethiaConfig.PagesInfo[0].InteractionCount++;
 			};
 		}
 		// For each TextBox of the page
@@ -62,7 +62,7 @@ public partial class DownDetectorItem : UserControl
 		{
 			textBox.GotFocus += (o, e) =>
 			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+				Global.SynethiaConfig.PagesInfo[0].InteractionCount++;
 			};
 		}
 

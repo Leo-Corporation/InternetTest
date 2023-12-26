@@ -91,9 +91,6 @@ public partial class WiFiNetworkItem : UserControl
 
 	private async void ConnectBtn_Click(object sender, RoutedEventArgs e)
 	{
-		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.ConnectWiFi).UsageCount++;
-
 		if (!string.IsNullOrEmpty(NetworkInfo.ProfileName))
 		{
 			if (await Global.ConnectAsync(NetworkInfo.Ssid, ""))

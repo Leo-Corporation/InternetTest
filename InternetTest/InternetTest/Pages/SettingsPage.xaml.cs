@@ -26,6 +26,7 @@ using InternetTest.Enums;
 using Microsoft.Win32;
 using PeyrSharp.Core;
 using PeyrSharp.Env;
+using Synethia;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -52,7 +53,7 @@ public partial class SettingsPage : Page
 				string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink); // Get last version
 				if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
 				{
-					SynethiaManager.Save(Global.SynethiaConfig);
+					SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 					HistoryManager.Save(Global.History);
 					SettingsManager.Save();
 
@@ -148,7 +149,7 @@ public partial class SettingsPage : Page
 			}
 
 			// If the user wants to proceed.
-			SynethiaManager.Save(Global.SynethiaConfig);
+			SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 			HistoryManager.Save(Global.History);
 			SettingsManager.Save();
 
@@ -193,7 +194,7 @@ public partial class SettingsPage : Page
 			return;
 		}
 
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
 		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
@@ -213,7 +214,7 @@ public partial class SettingsPage : Page
 			return;
 		}
 
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
 		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
@@ -233,7 +234,7 @@ public partial class SettingsPage : Page
 			return;
 		}
 
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
 		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
@@ -256,7 +257,7 @@ public partial class SettingsPage : Page
 			return;
 		}
 
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
 		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
@@ -349,7 +350,7 @@ public partial class SettingsPage : Page
 			return;
 		}
 
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
 		Application.Current.Shutdown();
@@ -377,7 +378,7 @@ public partial class SettingsPage : Page
 
 		// If the user wants to proceed, reset Syenthia config file.
 		Global.SynethiaConfig = new();
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 
 		// Ask the user if they want to restart the application to apply changes.
 		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)

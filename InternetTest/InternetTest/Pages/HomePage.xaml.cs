@@ -46,16 +46,13 @@ public partial class HomePage : Page
 	{
 		// Load "Get started" section
 		List<AppPages> relevantPages = Enumerable.Empty<AppPages>().ToList();
-		List<AppActions> relevantActions = Enumerable.Empty<AppActions>().ToList();
 		if (Global.SynethiaConfig is not null)
 		{
 			relevantPages = Global.GetMostRelevantPages(Global.SynethiaConfig);
-			Global.GetMostRelevantActions(Global.SynethiaConfig).ForEach((ActionInfo actionInfo) => relevantActions.Add(actionInfo.Action));
 		}
 		else
 		{
 			relevantPages = Global.DefaultRelevantPages;
-			Global.DefaultRelevantActions.ForEach((ActionInfo actionInfo) => relevantActions.Add(actionInfo.Action));
 		}
 
 		for (int i = 0; i < 5; i++)
@@ -68,12 +65,6 @@ public partial class HomePage : Page
 		for (int i = 0; i < relevantPages.Count; i++)
 		{
 			DiscoverPanel.Children.Add(new PageCard(relevantPages[i]));
-		}
-
-		// Load "Suggested actions" section
-		for (int i = 0; i < 4; i++)
-		{
-			SuggestedActionsPanel.Children.Add(new ActionCard(relevantActions[i]));
 		}
 
 		// Load "Status" section

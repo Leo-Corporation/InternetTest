@@ -24,6 +24,7 @@ SOFTWARE.
 
 using InternetTest.Classes;
 using InternetTest.UserControls;
+using Synethia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,56 +51,10 @@ public partial class TraceroutePage : Page
 	public TraceroutePage()
 	{
 		InitializeComponent();
-		Loaded += (o, e) => InjectSynethiaCode();
+		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 6, ref codeInjected);
 		InitUI();
 	}
 
-	private void InjectSynethiaCode()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-		}
-
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-		}
-
-		// For each CheckBox/RadioButton of the page
-		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-		{
-			checkBox.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-			checkBox.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-		}
-
-		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-		{
-			radioButton.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-			radioButton.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-		}
-	}
 
 	private void InitUI()
 	{
@@ -114,7 +69,7 @@ public partial class TraceroutePage : Page
 	private async void TraceBtn_Click(object sender, RoutedEventArgs e)
 	{
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.TraceRoute).UsageCount++;
+		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "Traceroute.Execute").UsageCount++;
 
 		// Show the waiting screen
 		TraceBtn.IsEnabled = false;

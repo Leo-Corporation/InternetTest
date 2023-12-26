@@ -37,6 +37,7 @@ using Whois;
 using System.Collections.Generic;
 using System.Windows.Media;
 using System.Windows.Input;
+using Synethia;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -50,54 +51,7 @@ public partial class DnsPage : Page
 	{
 		InitializeComponent();
 		InitUI(); // Load the UI
-		Loaded += (o, e) => InjectSynethiaCode();
-	}
-
-	private void InjectSynethiaCode()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each CheckBox/RadioButton of the page
-		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-		{
-			checkBox.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-			checkBox.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-		}
-
-		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-		{
-			radioButton.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-			radioButton.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-		}
+		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 1, ref codeInjected);
 	}
 
 	private void InitUI()
@@ -208,6 +162,6 @@ public partial class DnsPage : Page
 		GetDnsInfo(SiteTxt.Text);
 
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.GetDnsInfo).UsageCount++;
+		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "DNS.GetInfo").UsageCount++;
 	}
 }

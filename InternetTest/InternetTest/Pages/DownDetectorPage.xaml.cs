@@ -26,6 +26,7 @@ using InternetTest.UserControls;
 using PeyrSharp.Core;
 using PeyrSharp.Core.Converters;
 using PeyrSharp.Enums;
+using Synethia;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -53,7 +54,7 @@ namespace InternetTest.Pages
 		{
 			InitializeComponent();
 			InitUI(); // Load the UI
-			Loaded += (o, e) => InjectSynethiaCode();
+			Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 0, ref codeInjected);
 		}
 
 		private void InitUI()
@@ -62,54 +63,7 @@ namespace InternetTest.Pages
 			TimeIntervalTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, 10); // Set the time interval text
 			WebsiteTxt.Text = Global.Settings.TestSite ?? "https://leocorporation.dev";
 		}
-
-		private void InjectSynethiaCode()
-		{
-			if (codeInjected) return;
-			codeInjected = true;
-			foreach (Button b in Global.FindVisualChildren<Button>(this))
-			{
-				b.Click += (sender, e) =>
-				{
-					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
-				};
-			}
-
-			// For each TextBox of the page
-			foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-			{
-				textBox.GotFocus += (o, e) =>
-				{
-					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
-				};
-			}
-
-			// For each CheckBox/RadioButton of the page
-			foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-			{
-				checkBox.Checked += (o, e) =>
-				{
-					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
-				};
-				checkBox.Unchecked += (o, e) =>
-				{
-					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
-				};
-			}
-
-			foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-			{
-				radioButton.Checked += (o, e) =>
-				{
-					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
-				};
-				radioButton.Unchecked += (o, e) =>
-				{
-					Global.SynethiaConfig.DownDetectorPageInfo.InteractionCount++;
-				};
-			}
-		}
-
+		
 		internal async void TestBtn_Click(object sender, RoutedEventArgs e)
 		{
 			results.Clear();
@@ -140,7 +94,7 @@ namespace InternetTest.Pages
 			SetTestIconResult(results);
 
 			// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-			Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.DownDetectorRequest).UsageCount++;
+			Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "DownDetector.Test").UsageCount++;
 		}
 
 		readonly List<StatusCodes> results = new();

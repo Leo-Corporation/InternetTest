@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Windows;
+using Synethia;
 using System.Windows;
 
 namespace InternetTest;
@@ -67,7 +68,7 @@ public partial class App : Application
 
 	private void Application_Exit(object sender, ExitEventArgs e)
 	{
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 		SettingsManager.Save();
 	}

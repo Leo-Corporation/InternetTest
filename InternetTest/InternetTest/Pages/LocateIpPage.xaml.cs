@@ -25,6 +25,7 @@ using InternetTest.Classes;
 using InternetTest.Enums;
 using Microsoft.Win32;
 using PeyrSharp.Core;
+using Synethia;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -45,7 +46,7 @@ public partial class LocateIpPage : Page
 	{
 		InitializeComponent();
 		InitUI(); // Load the UI
-		InjectSynethiaCode();
+		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 3, ref codeInjected);
 	}
 
 	private async void InitUI()
@@ -59,53 +60,6 @@ public partial class LocateIpPage : Page
 			}
 		}
 		catch (Exception) { } // Cancel if there is no internet connection
-	}
-
-	private void InjectSynethiaCode()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each CheckBox/RadioButton of the page
-		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-		{
-			checkBox.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-			};
-			checkBox.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-			};
-		}
-
-		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-		{
-			radioButton.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-			};
-			radioButton.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.LocateIPPageInfo.InteractionCount++;
-			};
-		}
 	}
 
 	internal void ToggleConfidentialMode(bool toggle)
@@ -130,7 +84,7 @@ public partial class LocateIpPage : Page
 		LocateIP(Global.IsConfidentialModeEnabled ? IpPassword.Password : IpTxt.Text); // Locate IP
 
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.LocateIP).UsageCount++;
+		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "LocateIP.Locate").UsageCount++;
 	}
 
 	private void MapBtn_Click(object sender, RoutedEventArgs e)
