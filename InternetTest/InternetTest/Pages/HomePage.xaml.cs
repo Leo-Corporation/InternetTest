@@ -24,7 +24,9 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.Enums;
 using InternetTest.UserControls;
+using ManagedNativeWifi;
 using PeyrSharp.Core;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -132,6 +134,7 @@ public partial class HomePage : Page
 	private async void SpeedTest_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
 	{
 		SpeedTestPopup.IsOpen = true;
+		ConnectPopup.IsOpen = false;
 		try
 		{
 			CloseSpeedTestBtn.IsEnabled = false;
@@ -177,5 +180,23 @@ public partial class HomePage : Page
 				return 0;
 			}
 		}
+	}
+
+	private async void ConnectWiFi_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+	{
+		ConnectPopup.IsOpen = true;
+		SpeedTestPopup.IsOpen = false;
+		WiFiDisplayer.Children.Clear();
+		await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
+		var wifis = Global.GetWiFis();
+		for (int i = 0; i < wifis.Count; i++)
+		{
+			WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i]));
+		}
+	}
+
+	private void CloseConnectBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+	{
+		ConnectPopup.IsOpen = false;
 	}
 }
