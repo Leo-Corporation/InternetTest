@@ -26,15 +26,19 @@ using InternetTest.Enums;
 using InternetTest.UserControls;
 using ManagedNativeWifi;
 using PeyrSharp.Core;
+using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Xml.Serialization;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -135,6 +139,7 @@ public partial class HomePage : Page
 	{
 		SpeedTestPopup.IsOpen = true;
 		ConnectPopup.IsOpen = false;
+		PasswordPopup.IsOpen = false;
 		try
 		{
 			CloseSpeedTestBtn.IsEnabled = false;
@@ -186,6 +191,7 @@ public partial class HomePage : Page
 	{
 		ConnectPopup.IsOpen = true;
 		SpeedTestPopup.IsOpen = false;
+		PasswordPopup.IsOpen = false;
 		WiFiDisplayer.Children.Clear();
 		await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
 		var wifis = Global.GetWiFis();
@@ -198,5 +204,69 @@ public partial class HomePage : Page
 	private void CloseConnectBtn_Click(object sender, System.Windows.RoutedEventArgs e)
 	{
 		ConnectPopup.IsOpen = false;
+	}
+
+	private async void RecoverWiFi_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+	{
+		PasswordPopup.IsOpen = true;
+		SpeedTestPopup.IsOpen = false;
+		ConnectPopup.IsOpen = false;
+		await GetWiFiNetworksInfo();
+	}
+
+	private void ClosePasswordBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+	{
+		PasswordPopup.IsOpen = false;
+	}
+
+	async Task GetWiFiNetworksInfo()
+	{
+
+		try
+		{
+			WiFiItemDisplayer.Children.Clear(); // Clear the panel
+
+			// Check if the temp directory exists
+			string path = FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\Temp";
+
+			if (!Directory.Exists(path))
+			{
+				Directory.CreateDirectory(path);
+			};
+
+			// Run "netsh wlan export profile key=clear" command
+			Process process = new();
+			process.StartInfo.FileName = "cmd.exe";
+			process.StartInfo.Arguments = $"/c netsh wlan export profile key=clear folder=\"{path}\"";
+			process.StartInfo.UseShellExecute = false;
+			process.StartInfo.CreateNoWindow = true;
+			process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+			process.Start();
+			await process.WaitForExitAsync();
+
+			// Read the files
+			string[] files = Directory.GetFiles(path);
+			for (int i = 0; i < files.Length; i++)
+			{
+				XmlSerializer serializer = new(typeof(WLANProfile));
+				StreamReader streamReader = new(files[i]); // Where the file is going to be read
+
+				var test = (WLANProfile?)serializer.Deserialize(streamReader);
+
+				if (test != null)
+				{
+					WiFiItemDisplayer.Children.Add(new WiFiInfoItem(test));
+				}
+				streamReader.Close();
+
+				File.Delete(files[i]); // Remove the temp file
+
+			}
+			Directory.Delete(path); // Delete the temp directory			
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
 	}
 }

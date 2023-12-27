@@ -296,7 +296,7 @@
                         FontFamily="../Fonts/#FluentSystemIcons-Filled"
                         FontSize="16"
                         Foreground="{Binding Source={StaticResource AccentColor}}"
-                        Text="&#xF8C5;" />
+                        Text="&#xF31E;" />
                     <TextBlock
                         Margin="10 0 0 0"
                         VerticalAlignment="Center"
@@ -305,6 +305,33 @@
                         FontWeight="ExtraBold"
                         Foreground="{Binding Source={StaticResource AccentColor}}"
                         Text="{x:Static lang:Resources.ConnectWiFi}" />
+                </StackPanel>
+            </Border>
+            <Border
+                x:Name="RecoverWiFi"
+                Margin="5 0"
+                Background="{Binding Source={StaticResource LightAccentColor}}"
+                CornerRadius="15"
+                Cursor="Hand"
+                MouseLeftButtonUp="RecoverWiFi_MouseLeftButtonUp">
+                <StackPanel
+                    Margin="10 5"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontFamily="../Fonts/#FluentSystemIcons-Filled"
+                        FontSize="16"
+                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Text="&#xF5A8;" />
+                    <TextBlock
+                        Margin="10 0 0 0"
+                        VerticalAlignment="Center"
+                        FontFamily="../Fonts/#Hauora"
+                        FontSize="14"
+                        FontWeight="ExtraBold"
+                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Text="{x:Static lang:Resources.WifiPasswords}" />
                 </StackPanel>
             </Border>
         </WrapPanel>
@@ -449,6 +476,70 @@
                         HorizontalAlignment="Center"
                         Background="{Binding Source={StaticResource LightAccentColor}}"
                         Click="CloseConnectBtn_Click"
+                        Content="{x:Static lang:Resources.Close}"
+                        FontWeight="Bold"
+                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Style="{DynamicResource DefaultButton}" />
+                </Grid>
+            </Border>
+        </Popup>
+        <Popup
+            x:Name="PasswordPopup"
+            Width="400"
+            Height="400"
+            AllowsTransparency="True"
+            Placement="Center"
+            PlacementTarget="{Binding ElementName=Home}"
+            PopupAnimation="Fade"
+            StaysOpen="True">
+            <Border
+                Margin="10"
+                Padding="5"
+                Background="{Binding Source={StaticResource Background1}}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="10"
+                        Opacity="0.4"
+                        RenderingBias="Performance"
+                        ShadowDepth="0"
+                        Color="Black" />
+                </Border.Effect>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Filled"
+                            FontSize="24"
+                            Foreground="{Binding Source={StaticResource AccentColor}}"
+                            Text="&#xF5A8;" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.WifiPasswords}" />
+                    </StackPanel>
+
+                    <ScrollViewer
+                        Grid.Row="1"
+                        HorizontalScrollBarVisibility="Disabled"
+                        Style="{DynamicResource ScrollViewerStyle}">
+                        <StackPanel x:Name="WiFiItemDisplayer" />
+                    </ScrollViewer>
+                    <Button
+                        x:Name="ClosePasswordBtn"
+                        Grid.Row="2"
+                        Margin="5"
+                        Padding="3"
+                        HorizontalAlignment="Center"
+                        Background="{Binding Source={StaticResource LightAccentColor}}"
+                        Click="ClosePasswordBtn_Click"
                         Content="{x:Static lang:Resources.Close}"
                         FontWeight="Bold"
                         Foreground="{Binding Source={StaticResource AccentColor}}"
