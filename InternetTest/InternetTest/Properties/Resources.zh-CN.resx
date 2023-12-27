@@ -885,4 +885,16 @@
   <data name="Copy" xml:space="preserve">
     <value>复制</value>
   </data>
+  <data name="NotConnectedS" xml:space="preserve">
+    <value>离线</value>
+  </data>
+  <data name="Checking" xml:space="preserve">
+    <value>检查</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>网络</value>
+  </data>
+  <data name="HoverToReveal" xml:space="preserve">
+    <value>悬停显示</value>
+  </data>
 </root>
