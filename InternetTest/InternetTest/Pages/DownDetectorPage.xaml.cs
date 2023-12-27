@@ -63,7 +63,7 @@ namespace InternetTest.Pages
 			TimeIntervalTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, 10); // Set the time interval text
 			WebsiteTxt.Text = Global.Settings.TestSite ?? "https://leocorporation.dev";
 		}
-		
+
 		internal async void TestBtn_Click(object sender, RoutedEventArgs e)
 		{
 			results.Clear();
@@ -213,7 +213,7 @@ namespace InternetTest.Pages
 				Global.History.DownDetectorHistory.Add(new(Time.DateTimeToUnixTime(DateTime.Now), StatusIconTxt.Text, 400, Properties.Resources.Down, url));
 
 				return new(0, 0, ex.Message);
-			}			
+			}
 		}
 
 		private void SetTestIconResult(List<StatusCodes> StatusCodess)

@@ -25,19 +25,15 @@ SOFTWARE.
 using DnsClient;
 using InternetTest.Classes;
 using InternetTest.UserControls;
-using System.DirectoryServices.ActiveDirectory;
-using System;
+using Synethia;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Sockets;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using Whois;
-using System.Collections.Generic;
-using System.Windows.Media;
 using System.Windows.Input;
-using Synethia;
+using System.Windows.Media;
+using Whois;
 
 namespace InternetTest.Pages;
 /// <summary>

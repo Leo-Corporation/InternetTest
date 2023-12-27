@@ -28,7 +28,6 @@ using InternetTest.UserControls;
 using PeyrSharp.Env;
 using System;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
@@ -75,7 +74,7 @@ public partial class MainWindow : Window
 
 		// Show the appropriate page
 		switch (Global.Settings.DefaultPage)
-		{				
+		{
 			case AppPages.History:
 				PageDisplayer.Content = Global.HistoryPage;
 				HistoryPageBtn.IsChecked = true;
@@ -127,7 +126,7 @@ public partial class MainWindow : Window
 		}
 
 		// Register event handlers
-		PageCard.OnCardClick += PageCard_OnCardClick;		
+		PageCard.OnCardClick += PageCard_OnCardClick;
 
 		// Restore the previous Window state
 		WindowState = Global.Settings.IsMaximized ?? false ? WindowState.Maximized : WindowState.Normal;

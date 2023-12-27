@@ -24,21 +24,8 @@ SOFTWARE.
 
 using InternetTest.Classes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Intrinsics.X86;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace InternetTest.UserControls;
 /// <summary>
@@ -72,7 +59,7 @@ public partial class WiFiNetworkItem : UserControl
 		ProfileTxt.Text = NetworkInfo.ProfileName;
 		InterfaceTxt.Text = NetworkInfo.InterfaceDescription;
 		BSSTxt.Text = NetworkInfo.BssType;
-		SecurityEnabledTxt.Text = NetworkInfo.IsSecurityEnabled ? Properties.Resources.Yes : Properties.Resources.No ;
+		SecurityEnabledTxt.Text = NetworkInfo.IsSecurityEnabled ? Properties.Resources.Yes : Properties.Resources.No;
 		ChannelTxt.Text = $"{NetworkInfo.Channel}";
 		BandTxt.Text = $"{NetworkInfo.Band:0.0} GHz";
 		FrequencyTxt.Text = $"{NetworkInfo.Frequency} kHz";
