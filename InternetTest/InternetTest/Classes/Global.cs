@@ -582,4 +582,19 @@ public static class Global
 			return "";
 		}
 	}
+
+	public static string GetCurrentWifiSSID()
+	{
+		var connections = NativeWifi.EnumerateInterfaceConnections();
+
+		foreach (var connection in connections)
+		{
+			if (connection.IsConnected)
+			{
+				return connection.ProfileName;
+			}
+		}
+		return null;
+	}
+
 }

@@ -24,30 +24,191 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-
         <StackPanel
             Grid.Row="0"
             Margin="10"
             Orientation="Horizontal">
             <TextBlock
-                x:Name="StatusIconTxt"
                 VerticalAlignment="Center"
-                FontFamily="../Fonts/#FluentSystemIcons-Filled"
+                FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
                 Foreground="{Binding Source={StaticResource AccentColor}}"
-                Text="&#xF484;" />
+                Text="&#xF481;" />
             <TextBlock
-                x:Name="StatusTxt"
                 Margin="5 0 0 0"
                 VerticalAlignment="Center"
                 FontSize="14"
                 FontWeight="ExtraBold"
-                Text="{x:Static lang:Resources.Connected}" />
+                Text="{x:Static lang:Resources.Home}" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Border
+                x:Name="StatusBorder"
+                Margin="0"
+                Padding="5 2"
+                CornerRadius="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        x:Name="StatusIconTxt"
+                        VerticalAlignment="Center"
+                        FontFamily="../Fonts/#FluentSystemIcons-Filled"
+                        FontSize="32"
+                        Foreground="{Binding Source={StaticResource Green}}"
+                        Text="&#xF299;" />
+                    <StackPanel
+                        Grid.Column="1"
+                        Margin="5 0 0 0"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="ExtraBold"
+                            Text="{x:Static lang:Resources.Status}" />
+                        <TextBlock
+                            x:Name="StatusTxt"
+                            FontSize="10"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.ConnectedS}" />
+                    </StackPanel>
+                    <Button
+                        x:Name="RefreshStatusBtn"
+                        Grid.Column="2"
+                        Margin="2 0"
+                        Background="Transparent"
+                        Click="RefreshStatusBtn_Click"
+                        Content="&#xF191;"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Style="{DynamicResource ToolButton}" />
+                </Grid>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{Binding Source={StaticResource CardBackground}}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+            <Border
+                x:Name="NetworkBorder"
+                Margin="0"
+                Padding="5 2"
+                CornerRadius="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        x:Name="NetworkIconTxt"
+                        VerticalAlignment="Center"
+                        FontFamily="../Fonts/#FluentSystemIcons-Filled"
+                        FontSize="32"
+                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Text="&#xF8C5;" />
+                    <StackPanel
+                        Grid.Column="1"
+                        Margin="5 0 0 0"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="ExtraBold"
+                            Text="{x:Static lang:Resources.Network}" />
+                        <TextBlock
+                            x:Name="NetworkTxt"
+                            FontSize="10"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.ConnectedS}" />
+                    </StackPanel>
+                    <Button
+                        x:Name="RefreshNetworkBtn"
+                        Grid.Column="2"
+                        Margin="2 0"
+                        Background="Transparent"
+                        Click="RefreshNetworkBtn_Click"
+                        Content="&#xF191;"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Style="{DynamicResource ToolButton}" />
+                </Grid>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{Binding Source={StaticResource CardBackground}}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+            <Border
+                x:Name="MyIpBorder"
+                Margin="0"
+                Padding="5 2"
+                CornerRadius="5"
+                MouseEnter="MyIpBorder_MouseEnter"
+                MouseLeave="MyIpBorder_MouseLeave">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        x:Name="MyIpIconTxt"
+                        VerticalAlignment="Center"
+                        FontFamily="../Fonts/#FluentSystemIcons-Filled"
+                        FontSize="32"
+                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Text="&#xF3DA;" />
+                    <StackPanel
+                        Grid.Column="1"
+                        Margin="5 0 0 0"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="ExtraBold"
+                            Text="{x:Static lang:Resources.MyIP}" />
+                        <TextBlock
+                            x:Name="MyIpTxt"
+                            FontSize="10"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.HoverToReveal}" />
+                    </StackPanel>
+                    <Button
+                        x:Name="RefreshMyIpBtn"
+                        Grid.Column="2"
+                        Margin="2 0"
+                        Background="Transparent"
+                        Click="RefreshMyIpBtn_Click"
+                        Content="&#xF191;"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Style="{DynamicResource ToolButton}" />
+                </Grid>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{Binding Source={StaticResource CardBackground}}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
         </StackPanel>
 
         <StackPanel
-            Grid.Row="1"
+            Grid.Row="2"
             Margin="10"
             Orientation="Horizontal">
             <TextBlock
@@ -66,11 +227,11 @@
 
         <WrapPanel
             x:Name="GetStartedPanel"
-            Grid.Row="2"
+            Grid.Row="3"
             Orientation="Horizontal" />
 
         <StackPanel
-            Grid.Row="3"
+            Grid.Row="4"
             Margin="10"
             Orientation="Horizontal">
             <TextBlock
@@ -89,11 +250,11 @@
 
         <WrapPanel
             x:Name="SuggestedActionsPanel"
-            Grid.Row="4"
+            Grid.Row="5"
             Orientation="Horizontal" />
 
         <StackPanel
-            Grid.Row="5"
+            Grid.Row="6"
             Margin="10"
             Orientation="Horizontal">
             <TextBlock
@@ -112,7 +273,7 @@
 
         <WrapPanel
             x:Name="DiscoverPanel"
-            Grid.Row="6"
+            Grid.Row="7"
             Orientation="Horizontal" />
     </Grid>
 </Page>

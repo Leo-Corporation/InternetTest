@@ -68,9 +68,60 @@ public partial class HomePage : Page
 		}
 
 		// Load "Status" section
+		LoadStatusCard();
+
+		// Load "Network" section
+		LoadNetworkCard();
+
+		// Load "My IP" section
+		ip = (await Global.GetIPInfoAsync("")).Query ?? "";
+	}
+
+	private async void RefreshStatusBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+	{
+		StatusTxt.Text = Properties.Resources.Checking;
+		LoadStatusCard();
+	}
+
+	internal async void LoadStatusCard()
+	{
 		bool connected = await Internet.IsAvailableAsync(Global.Settings.TestSite); // Check if Internet is available
-		StatusTxt.Text = connected ? Properties.Resources.Connected : Properties.Resources.NotConnected; // Set text
+		StatusTxt.Text = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS; // Set text
 		StatusIconTxt.Text = connected ? "\uF299" : "\uF36E";
 		StatusIconTxt.Foreground = connected ? new SolidColorBrush(Global.GetColorFromResource("Green")) : new SolidColorBrush(Global.GetColorFromResource("Red"));
+	}
+
+	internal void LoadNetworkCard()
+	{
+		string ssid = Global.GetCurrentWifiSSID();
+		if (ssid == null)
+		{
+			NetworkTxt.Text = Properties.Resources.NotConnectedS;
+			NetworkIconTxt.Text = "\uFB71";
+			return;
+		}
+		NetworkTxt.Text = ssid;
+		NetworkIconTxt.Text = "\uF8C5";
+	}
+
+	private void RefreshNetworkBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+	{
+		LoadNetworkCard();
+	}
+
+	string ip = "";
+	private async void RefreshMyIpBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+	{
+		ip = (await Global.GetIPInfoAsync("")).Query ?? "";
+	}
+
+	private void MyIpBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		MyIpTxt.Text = ip;
+	}
+
+	private void MyIpBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		MyIpTxt.Text = Properties.Resources.HoverToReveal;
 	}
 }
