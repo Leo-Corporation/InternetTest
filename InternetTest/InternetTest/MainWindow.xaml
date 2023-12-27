@@ -269,7 +269,7 @@
                                 x:Name="HomePageBtn"
                                 HorizontalContentAlignment="Left"
                                 Background="Transparent"
-                                BorderThickness="0"
+                                BorderThickness="1"
                                 Click="HomePageBtn_Click"
                                 GroupName="NavBar"
                                 Style="{DynamicResource NavBarButton}">
@@ -328,7 +328,7 @@
                                 Margin="0 5 0 0"
                                 HorizontalContentAlignment="Left"
                                 Background="Transparent"
-                                BorderThickness="0"
+                                BorderThickness="1"
                                 Click="HistoryPageBtn_Click"
                                 GroupName="NavBar"
                                 Style="{DynamicResource NavBarButton}">
@@ -402,7 +402,7 @@
                                 Margin="0 5 0 0"
                                 HorizontalContentAlignment="Left"
                                 Background="Transparent"
-                                BorderThickness="0"
+                                BorderThickness="1"
                                 Click="SettingsPageBtn_Click"
                                 GroupName="NavBar"
                                 Style="{DynamicResource NavBarButton}">

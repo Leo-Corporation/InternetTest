@@ -156,7 +156,7 @@
                                 x:Name="border"
                                 Background="{TemplateBinding Background}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="5"
+                                CornerRadius="6"
                                 SnapsToDevicePixels="true">
                                 <ContentPresenter
                                     x:Name="contentPresenter"
@@ -176,10 +176,19 @@
                                 </Trigger>
                                 <Trigger Property="IsChecked" Value="True">
                                     <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource Background1}}" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="{Binding Source={StaticResource AccentColor}}" />
+                                    <Setter TargetName="border" Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect
+                                                BlurRadius="10"
+                                                Direction="270"
+                                                Opacity="0.1"
+                                                ShadowDepth="0"
+                                                Color="{Binding Source={StaticResource AccentColor}}" />
+                                        </Setter.Value>
+                                    </Setter>
                                 </Trigger>
                                 <Trigger Property="IsPressed" Value="true">
-                                    <Setter TargetName="border" Property="Background" Value="Transparent" />
-                                    <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
                                     <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="White" />
                                 </Trigger>
                                 <Trigger Property="IsEnabled" Value="false">
