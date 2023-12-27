@@ -127,8 +127,7 @@ public partial class MainWindow : Window
 		}
 
 		// Register event handlers
-		PageCard.OnCardClick += PageCard_OnCardClick;
-		ActionCard.OnCardClick += PageCard_OnCardClick;
+		PageCard.OnCardClick += PageCard_OnCardClick;		
 
 		// Restore the previous Window state
 		WindowState = Global.Settings.IsMaximized ?? false ? WindowState.Maximized : WindowState.Normal;
