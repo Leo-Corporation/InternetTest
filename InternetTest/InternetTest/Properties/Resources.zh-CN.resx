@@ -897,4 +897,7 @@
   <data name="HoverToReveal" xml:space="preserve">
     <value>悬停显示</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
 </root>

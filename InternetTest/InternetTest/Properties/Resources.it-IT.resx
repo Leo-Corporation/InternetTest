@@ -906,4 +906,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="HoverToReveal" xml:space="preserve">
     <value>Passare il mouse per rivelare</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Chiudere</value>
+  </data>
 </root>

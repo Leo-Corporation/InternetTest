@@ -26,7 +26,11 @@ using InternetTest.Enums;
 using InternetTest.UserControls;
 using PeyrSharp.Core;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -123,5 +127,55 @@ public partial class HomePage : Page
 	private void MyIpBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
 	{
 		MyIpTxt.Text = Properties.Resources.HoverToReveal;
+	}
+
+	private async void SpeedTest_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+	{
+		SpeedTestPopup.IsOpen = true;
+		try
+		{
+			CloseSpeedTestBtn.IsEnabled = false;
+			SpeedTestStatus.Text = Properties.Resources.TestInProgress;
+
+			// Test
+			string targetUrl = "http://speedtest.tele2.net/10MB.zip";
+			SpeedTxt.Text = "...";
+			long fileSize = await DownloadFile(targetUrl);
+			double speedMbps = fileSize / 1000000.0;
+
+			SpeedTxt.Text = $"{speedMbps:0.00} MB/s";
+			SpeedTestStatus.Text = Properties.Resources.SpeedTestSucess;
+		}
+		catch
+		{
+			SpeedTestStatus.Text = Properties.Resources.SpeedTestFailed;
+		}
+		CloseSpeedTestBtn.IsEnabled = true;
+	}
+
+	private void CloseSpeedTestBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+	{
+		SpeedTestPopup.IsOpen = false;
+	}
+
+	static async Task<long> DownloadFile(string url)
+	{
+		Stopwatch stopwatch = Stopwatch.StartNew();
+
+		using (HttpClient client = new HttpClient())
+		{
+			HttpResponseMessage response = await client.GetAsync(url);
+
+			if (response.IsSuccessStatusCode)
+			{
+				byte[] data = await response.Content.ReadAsByteArrayAsync();
+				stopwatch.Stop();
+				return data.Length;
+			}
+			else
+			{
+				return 0;
+			}
+		}
 	}
 }

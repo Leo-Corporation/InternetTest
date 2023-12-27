@@ -250,6 +250,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Close.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Commands.
         /// </summary>
         public static string Commands {

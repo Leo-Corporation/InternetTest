@@ -906,4 +906,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="HoverToReveal" xml:space="preserve">
     <value>Survoler pour réveler</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
 </root>
