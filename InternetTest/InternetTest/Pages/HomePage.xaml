@@ -86,6 +86,7 @@
                         Click="RefreshStatusBtn_Click"
                         Content="&#xF191;"
                         FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Foreground="{Binding Source={StaticResource Foreground1}}"
                         Style="{DynamicResource ToolButton}" />
                 </Grid>
                 <Border.Style>
@@ -139,6 +140,7 @@
                         Click="RefreshNetworkBtn_Click"
                         Content="&#xF191;"
                         FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Foreground="{Binding Source={StaticResource Foreground1}}"
                         Style="{DynamicResource ToolButton}" />
                 </Grid>
                 <Border.Style>
@@ -194,6 +196,7 @@
                         Click="RefreshMyIpBtn_Click"
                         Content="&#xF191;"
                         FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Foreground="{Binding Source={StaticResource Foreground1}}"
                         Style="{DynamicResource ToolButton}" />
                 </Grid>
                 <Border.Style>
