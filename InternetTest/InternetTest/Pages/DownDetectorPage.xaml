@@ -190,6 +190,7 @@
                         Text="{x:Static lang:Resources.SecondsLower}" />
                 </StackPanel>
                 <StackPanel
+                    x:Name="TimerPanel"
                     Grid.Row="3"
                     VerticalAlignment="Center"
                     Visibility="Collapsed">
@@ -221,6 +222,7 @@
                         </TextBlock.Triggers>
                     </TextBlock>
                     <TextBlock
+                        x:Name="TimeTxt"
                         Width="200"
                         HorizontalAlignment="Center"
                         FontSize="11"
@@ -238,7 +240,7 @@
                     VerticalAlignment="Center"
                     Background="{Binding Source={StaticResource AccentColor}}"
                     BorderThickness="0"
-                    Click="TestBtn_Click"
+                    Click="LaunchTimerBtn_Click"
                     Content="{x:Static lang:Resources.LaunchScheduledTest}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"

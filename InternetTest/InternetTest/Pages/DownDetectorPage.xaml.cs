@@ -24,11 +24,13 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.UserControls;
 using Synethia;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace InternetTest.Pages
 {
@@ -38,6 +40,8 @@ namespace InternetTest.Pages
 	public partial class DownDetectorPage : Page
 	{
 		bool codeInjected = !Global.Settings.UseSynethia;
+
+		DispatcherTimer timer = new() { Interval = TimeSpan.FromSeconds(1) }; // Create a new timer
 
 		public DownDetectorPage()
 		{
@@ -71,6 +75,7 @@ namespace InternetTest.Pages
 
 		private void TestBtn_Click(object sender, RoutedEventArgs e)
 		{
+			LaunchTimerBtn.IsEnabled = false;
 			for (int i = 0; i < WebsiteDisplayer.Children.Count; i++)
 			{
 				if (WebsiteDisplayer.Children[i] is WebsiteItem websiteItem)
@@ -78,6 +83,7 @@ namespace InternetTest.Pages
 					websiteItem.LaunchTestAsync();
 				}
 			}
+			LaunchTimerBtn.IsEnabled = true;
 		}
 
 		private void IntervalTxt_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -92,6 +98,45 @@ namespace InternetTest.Pages
 			{
 				AddBtn_Click(sender, e);
 			}
+		}
+
+		int secondsRemaining = 0;
+		int interval = 0;
+		bool timerStarted = false;
+		private void LaunchTimerBtn_Click(object sender, RoutedEventArgs e)
+		{
+			timerStarted = !timerStarted;
+			if (timerStarted)
+			{
+				secondsRemaining = int.Parse(IntervalTxt.Text); // Get the seconds
+				interval = int.Parse(IntervalTxt.Text); // Get the seconds
+				timer = new() { Interval = TimeSpan.FromSeconds(1) }; // Create a new timer
+				timer.Tick += (o, e) =>
+				{
+					if (secondsRemaining >= 0) secondsRemaining--;
+					TimeTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, secondsRemaining);
+					if (secondsRemaining < 0)
+					{
+						TestBtn_Click(sender, null);
+						secondsRemaining = interval;
+						TimeTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, secondsRemaining);
+					}
+				};
+				TimeTxt.Text = string.Format(Properties.Resources.ScheduledTestInterval, secondsRemaining);
+				timer.Start();
+				TimerPanel.Visibility = Visibility.Visible;
+				TestBtn.IsEnabled = false;
+				AddBtn.IsEnabled = false;
+				LaunchTimerBtn.Content = Properties.Resources.StopScheduledTests;
+			}
+			else
+			{
+				timer.Stop();
+				TimerPanel.Visibility = Visibility.Collapsed;
+				TestBtn.IsEnabled = true;
+				AddBtn.IsEnabled = true;
+				LaunchTimerBtn.Content = Properties.Resources.LaunchScheduledTest;
+			}						
 		}
 	}
 }
