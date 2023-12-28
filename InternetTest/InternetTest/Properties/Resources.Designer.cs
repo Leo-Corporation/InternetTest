@@ -502,6 +502,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à DNS Information will show here.
+        /// </summary>
+        public static string DnsInfoWillShowHere {
+            get {
+                return ResourceManager.GetString("DnsInfoWillShowHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à DNS Suffix.
         /// </summary>
         public static string DNSSuffix {

@@ -912,4 +912,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="QuickActions" xml:space="preserve">
     <value>Actions rapides</value>
   </data>
+  <data name="DnsInfoWillShowHere" xml:space="preserve">
+    <value>Les informations sur le DNS s'afficheront ici</value>
+  </data>
 </root>

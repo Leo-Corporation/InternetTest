@@ -119,7 +119,10 @@
                 FontWeight="ExtraBold"
                 Text="{x:Static lang:Resources.Details}" />
         </StackPanel>
-        <Grid Grid.Row="3" Margin="10">
+        <Grid
+            x:Name="DetailsGrid"
+            Grid.Row="3"
+            Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -176,6 +179,22 @@
                 Grid.Column="1" />
         </Grid>
         <StackPanel
+            x:Name="Placeholder"
+            Grid.Row="3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                FontSize="36"
+                Text="&#xFB59;" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontWeight="Bold"
+                Text="{x:Static lang:Resources.DnsInfoWillShowHere}" />
+        </StackPanel>
+        <StackPanel
+            x:Name="InformationHeader"
             Grid.Row="4"
             Margin="10"
             Orientation="Horizontal">

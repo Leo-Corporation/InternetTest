@@ -53,6 +53,9 @@ public partial class DnsPage : Page
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.DNSTool}"; // Set the title
+		Placeholder.Visibility = Visibility.Visible;
+		InformationHeader.Visibility = Visibility.Collapsed;
+		DetailsGrid.Visibility = Visibility.Collapsed;
 	}
 
 	private async void GetDnsInfo(string website)
@@ -69,6 +72,9 @@ public partial class DnsPage : Page
 			IPAddress ip = host.AddressList[0];
 			UrlTxt.Text = website;
 			IpTxt.Text = ip.ToString();
+			Placeholder.Visibility = Visibility.Collapsed;
+			InformationHeader.Visibility = Visibility.Visible;
+			DetailsGrid.Visibility = Visibility.Visible;
 		}
 		catch { }
 

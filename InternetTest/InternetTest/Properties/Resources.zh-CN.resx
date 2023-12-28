@@ -903,4 +903,7 @@
   <data name="QuickActions" xml:space="preserve">
     <value>快速行动</value>
   </data>
+  <data name="DnsInfoWillShowHere" xml:space="preserve">
+    <value>此处将显示 DNS 信息</value>
+  </data>
 </root>
