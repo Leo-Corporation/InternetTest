@@ -1,0 +1,142 @@
+﻿<UserControl
+    x:Class="InternetTest.UserControls.WebsiteItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lang="clr-namespace:InternetTest.Properties"
+    xmlns:local="clr-namespace:InternetTest.UserControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="Auto"
+    FontFamily="../Fonts/#Hauora"
+    Foreground="{Binding Source={StaticResource Foreground1}}">
+    <Border
+        Margin="10"
+        Padding="10"
+        Background="{Binding Source={StaticResource CardBackground}}"
+        CornerRadius="10">
+        <Border.Effect>
+            <DropShadowEffect
+                BlurRadius="15"
+                Opacity="0.2"
+                ShadowDepth="0"
+                Color="{Binding Source={StaticResource AccentColor}}" />
+        </Border.Effect>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel
+                    x:Name="StatusSection"
+                    Orientation="Horizontal"
+                    Visibility="Collapsed">
+                    <TextBlock
+                        x:Name="StatusIcon"
+                        Margin="0 0 5 0"
+                        VerticalAlignment="Center"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Filled"
+                        Foreground="{Binding Source={StaticResource Green}}"
+                        Text="&#xF299;" />
+                    <TextBlock
+                        x:Name="StatusCodeTxt"
+                        Margin="0 0 5 0"
+                        VerticalAlignment="Center"
+                        FontWeight="Bold"
+                        Text="200" />
+                </StackPanel>
+                <TextBlock
+                    x:Name="WebsiteNameTxt"
+                    Grid.Column="1"
+                    Margin="0 0 5 0"
+                    VerticalAlignment="Center"
+                    FontWeight="ExtraBold"
+                    Text="Website" />
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button
+                        x:Name="TestBtn"
+                        Grid.Column="1"
+                        Margin="0 0 5 0"
+                        Padding="5"
+                        Background="Transparent"
+                        Click="TestBtn_Click"
+                        Content="&#xF606;"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Style="{DynamicResource DefaultButton}" />
+                    <Button
+                        x:Name="ExpanderBtn"
+                        Grid.Column="1"
+                        Padding="5"
+                        Background="Transparent"
+                        Click="ExpanderBtn_Click"
+                        Content="&#xF2A4;"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Style="{DynamicResource DefaultButton}" />
+                </StackPanel>
+            </Grid>
+            <Grid
+                x:Name="CollapseGrid"
+                Grid.Row="1"
+                Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock FontWeight="Bold" Text="{x:Static lang:Resources.Status}" />
+                <TextBlock
+                    x:Name="StatusCodeBisTxt"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="15 0 0 0"
+                    FontWeight="Bold"
+                    Text="N/A"
+                    TextWrapping="Wrap" />
+
+                <TextBlock
+                    Grid.Row="1"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.StatusMessage}" />
+                <TextBlock
+                    x:Name="StatusMsgTxt"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="15 0 0 0"
+                    FontWeight="Bold"
+                    Text="N/A"
+                    TextWrapping="Wrap" />
+                <TextBlock
+                    Grid.Row="2"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.TimeElapsed}" />
+                <TextBlock
+                    x:Name="TimeTxt"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="15 0 0 0"
+                    FontWeight="Bold"
+                    Text="N/A"
+                    TextWrapping="Wrap" />
+
+
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
