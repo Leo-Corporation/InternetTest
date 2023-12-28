@@ -122,6 +122,21 @@
         </StackPanel>
 
         <StackPanel x:Name="WebsiteDisplayer" Grid.Row="2" />
+        <StackPanel
+            x:Name="Placeholder"
+            Grid.Row="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                FontSize="36"
+                Text="&#xF7A8;" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontWeight="Bold"
+                Text="{x:Static lang:Resources.DownDetectorPlaceHolder}" />
+        </StackPanel>
         <Border
             Grid.Row="2"
             Grid.Column="1"

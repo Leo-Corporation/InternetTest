@@ -250,7 +250,7 @@
 	<value>Tester un site</value>
   </data>
   <data name="DownDetectorPlaceHolder" xml:space="preserve">
-	<value>Lancez un test pour voir si un site est disponible ou non</value>
+	<value>Ajoutez un site web pour vérifier s'il est disponible ou non</value>
   </data>
   <data name="MapProvider" xml:space="preserve">
 	<value>Fournisseur de carte</value>

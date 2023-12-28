@@ -117,6 +117,7 @@ public partial class WebsiteItem : UserControl
 #pragma warning disable CS8602 // DownDetectorPage cannot be null in this context
 		Global.DownDetectorPage.WebsiteDisplayer.Children.Remove(this);
 		Global.DownDetectorPage.Websites.Remove(URL);
+		Global.DownDetectorPage.Placeholder.Visibility = Global.DownDetectorPage.WebsiteDisplayer.Children.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
 #pragma warning restore CS8602
 	}
 }

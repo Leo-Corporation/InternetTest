@@ -68,6 +68,7 @@ namespace InternetTest.Pages
 				WebsiteTxt.Text = (Global.Settings.UseHttps ? "https://" : "http://") + WebsiteTxt.Text;
 			}
 
+			Placeholder.Visibility = Visibility.Collapsed;
 			WebsiteDisplayer.Children.Add(new WebsiteItem(WebsiteTxt.Text));
 			Websites.Add(WebsiteTxt.Text);
 			WebsiteTxt.Text = string.Empty;

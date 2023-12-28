@@ -250,7 +250,7 @@
 	<value>测试网站</value>
   </data>
   <data name="DownDetectorPlaceHolder" xml:space="preserve">
-	<value>启动测试以查看网站是否可用</value>
+	<value>添加网站以检查是否可用</value>
   </data>
   <data name="MapProvider" xml:space="preserve">
 	<value>地图提供者</value>
