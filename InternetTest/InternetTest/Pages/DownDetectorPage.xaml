@@ -74,7 +74,8 @@
                         Background="Transparent"
                         BorderThickness="0"
                         FontWeight="Bold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}" />
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Keyboard.KeyUp="WebsiteTxt_KeyUp" />
                     <Button
                         x:Name="ClearBtn"
                         Grid.Column="1"
