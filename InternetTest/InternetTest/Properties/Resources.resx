@@ -915,4 +915,13 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="DnsInfoWillShowHere" xml:space="preserve">
     <value>DNS Information will show here</value>
   </data>
+  <data name="AddSite" xml:space="preserve">
+    <value>Add site</value>
+  </data>
+  <data name="TimerDesc" xml:space="preserve">
+    <value>Automatically launch tests to check whether a website is down or not.</value>
+  </data>
+  <data name="TestAll" xml:space="preserve">
+    <value>Test all</value>
+  </data>
 </root>

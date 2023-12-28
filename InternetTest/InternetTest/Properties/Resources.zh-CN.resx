@@ -906,4 +906,13 @@
   <data name="DnsInfoWillShowHere" xml:space="preserve">
     <value>此处将显示 DNS 信息</value>
   </data>
+  <data name="AddSite" xml:space="preserve">
+    <value>添加站点</value>
+  </data>
+  <data name="TimerDesc" xml:space="preserve">
+    <value>自动启动测试，检查网站是否瘫痪。</value>
+  </data>
+  <data name="TestAll" xml:space="preserve">
+    <value>全部测试</value>
+  </data>
 </root>

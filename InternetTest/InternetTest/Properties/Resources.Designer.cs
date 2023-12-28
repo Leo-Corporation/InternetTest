@@ -70,6 +70,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Add site.
+        /// </summary>
+        public static string AddSite {
+            get {
+                return ResourceManager.GetString("AddSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Ad-hoc network.
         /// </summary>
         public static string AdHocNetwork {
@@ -2033,6 +2042,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Test all.
+        /// </summary>
+        public static string TestAll {
+            get {
+                return ResourceManager.GetString("TestAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Test your connection.
         /// </summary>
         public static string TestConnection {
@@ -2101,6 +2119,15 @@ namespace InternetTest.Properties {
         public static string TimeElapsed {
             get {
                 return ResourceManager.GetString("TimeElapsed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Automatically launch tests to check whether a website is down or not..
+        /// </summary>
+        public static string TimerDesc {
+            get {
+                return ResourceManager.GetString("TimerDesc", resourceCulture);
             }
         }
         
