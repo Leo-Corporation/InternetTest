@@ -900,4 +900,7 @@
   <data name="Close" xml:space="preserve">
     <value>关闭</value>
   </data>
+  <data name="QuickActions" xml:space="preserve">
+    <value>快速行动</value>
+  </data>
 </root>

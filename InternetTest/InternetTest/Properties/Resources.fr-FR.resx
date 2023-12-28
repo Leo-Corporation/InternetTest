@@ -909,4 +909,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
   </data>
+  <data name="QuickActions" xml:space="preserve">
+    <value>Actions rapides</value>
+  </data>
 </root>

@@ -249,7 +249,7 @@
                 VerticalAlignment="Center"
                 FontSize="14"
                 FontWeight="ExtraBold"
-                Text="{x:Static lang:Resources.SuggestedActions}" />
+                Text="{x:Static lang:Resources.QuickActions}" />
         </StackPanel>
 
         <WrapPanel
