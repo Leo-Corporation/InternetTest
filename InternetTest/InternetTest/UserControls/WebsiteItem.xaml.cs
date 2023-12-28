@@ -111,4 +111,12 @@ public partial class WebsiteItem : UserControl
 			StatusMsgTxt.Text = ex.Message;
 		}
 	}
+
+	private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+	{
+#pragma warning disable CS8602 // DownDetectorPage cannot be null in this context
+		Global.DownDetectorPage.WebsiteDisplayer.Children.Remove(this);
+		Global.DownDetectorPage.Websites.Remove(URL);
+#pragma warning restore CS8602
+	}
 }
