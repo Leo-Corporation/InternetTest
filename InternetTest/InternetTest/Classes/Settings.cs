@@ -24,9 +24,11 @@ SOFTWARE.
 using InternetTest.Enums;
 using PeyrSharp.Env;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using System.Windows.Documents;
 using System.Xml.Serialization;
 
 namespace InternetTest.Classes;
@@ -74,6 +76,7 @@ public class Settings
 	public int? TraceRouteMaxTimeOut { get; set; }
 	public (double, double)? MainWindowSize { get; set; }
 	public bool? LaunchIpLocationOnStart { get; set; }
+	public List<string>? DownDetectorWebsites { get; set; }
 }
 
 public static class SettingsManager
@@ -115,6 +118,7 @@ public static class SettingsManager
 		settings.MainWindowSize ??= (950, 600);
 		settings.LaunchIpLocationOnStart ??= true;
 		settings.DefaultPage = (settings.DefaultPage == AppPages.Status || settings.DefaultPage == AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
+		settings.DownDetectorWebsites ??= new();
 
 		return settings;
 	}

@@ -53,13 +53,19 @@ namespace InternetTest.Pages
 		private void InitUI()
 		{
 			TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.DownDetector}"; // Set the title of the page
+			WebsiteDisplayer.Children.Clear();
+			for (int i = 0; i < Websites.Count; i++) 
+			{
+				WebsiteDisplayer.Children.Add(new WebsiteItem(Websites[i]));
+			}
+			Placeholder.Visibility = WebsiteDisplayer.Children.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
 		}
 		private void ClearBtn_Click(object sender, RoutedEventArgs e)
 		{
 			WebsiteTxt.Text = string.Empty;
 		}
 
-		internal List<string> Websites = new();
+		internal List<string> Websites = Global.Settings.DownDetectorWebsites ?? new();
 		private void AddBtn_Click(object sender, RoutedEventArgs e)
 		{
 			if (!Global.IsUrlValid(WebsiteTxt.Text) || Websites.Contains(WebsiteTxt.Text)) return;
@@ -72,6 +78,9 @@ namespace InternetTest.Pages
 			WebsiteDisplayer.Children.Add(new WebsiteItem(WebsiteTxt.Text));
 			Websites.Add(WebsiteTxt.Text);
 			WebsiteTxt.Text = string.Empty;
+
+			Global.Settings.DownDetectorWebsites = Websites;
+			SettingsManager.Save();
 		}
 
 		private void TestBtn_Click(object sender, RoutedEventArgs e)

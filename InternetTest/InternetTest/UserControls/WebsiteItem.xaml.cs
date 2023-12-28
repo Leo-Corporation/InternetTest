@@ -119,5 +119,8 @@ public partial class WebsiteItem : UserControl
 		Global.DownDetectorPage.Websites.Remove(URL);
 		Global.DownDetectorPage.Placeholder.Visibility = Global.DownDetectorPage.WebsiteDisplayer.Children.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
 #pragma warning restore CS8602
+
+		Global.Settings.DownDetectorWebsites = Global.DownDetectorPage.Websites;
+		SettingsManager.Save();
 	}
 }
