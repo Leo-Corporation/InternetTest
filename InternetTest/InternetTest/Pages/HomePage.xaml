@@ -49,7 +49,9 @@
                 x:Name="StatusBorder"
                 Margin="0"
                 Padding="5 2"
-                CornerRadius="5">
+                CornerRadius="5"
+                MouseEnter="StatusBorder_MouseEnter"
+                MouseLeave="StatusBorder_MouseLeave">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -87,7 +89,8 @@
                         Content="&#xF191;"
                         FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                         Foreground="{Binding Source={StaticResource Foreground1}}"
-                        Style="{DynamicResource ToolButton}" />
+                        Style="{DynamicResource ToolButton}"
+                        Visibility="Hidden" />
                 </Grid>
                 <Border.Style>
                     <Style TargetType="Border">
@@ -103,7 +106,9 @@
                 x:Name="NetworkBorder"
                 Margin="0"
                 Padding="5 2"
-                CornerRadius="5">
+                CornerRadius="5"
+                MouseEnter="NetworkBorder_MouseEnter"
+                MouseLeave="NetworkBorder_MouseLeave">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -141,7 +146,8 @@
                         Content="&#xF191;"
                         FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                         Foreground="{Binding Source={StaticResource Foreground1}}"
-                        Style="{DynamicResource ToolButton}" />
+                        Style="{DynamicResource ToolButton}"
+                        Visibility="Hidden" />
                 </Grid>
                 <Border.Style>
                     <Style TargetType="Border">
@@ -197,7 +203,8 @@
                         Content="&#xF191;"
                         FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                         Foreground="{Binding Source={StaticResource Foreground1}}"
-                        Style="{DynamicResource ToolButton}" />
+                        Style="{DynamicResource ToolButton}"
+                        Visibility="Hidden" />
                 </Grid>
                 <Border.Style>
                     <Style TargetType="Border">

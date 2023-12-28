@@ -127,11 +127,13 @@ public partial class HomePage : Page
 	private void MyIpBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
 	{
 		MyIpTxt.Text = ip;
+		RefreshMyIpBtn.Visibility = Visibility.Visible;
 	}
 
 	private void MyIpBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
 	{
 		MyIpTxt.Text = Properties.Resources.HoverToReveal;
+		RefreshMyIpBtn.Visibility = Visibility.Hidden;
 	}
 
 	private async void SpeedTest_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -267,5 +269,25 @@ public partial class HomePage : Page
 		{
 			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 		}
+	}
+
+	private void StatusBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		RefreshStatusBtn.Visibility = Visibility.Visible;
+	}
+
+	private void StatusBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		RefreshStatusBtn.Visibility = Visibility.Hidden;
+	}
+
+	private void NetworkBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		RefreshNetworkBtn.Visibility = Visibility.Visible;
+	}
+
+	private void NetworkBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		RefreshNetworkBtn.Visibility= Visibility.Hidden;
 	}
 }
