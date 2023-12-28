@@ -133,7 +133,7 @@
                     BlurRadius="15"
                     Opacity="0.15"
                     ShadowDepth="0"
-                    Color="Black" />
+                    Color="{Binding Source={StaticResource AccentColor}}" />
             </Border.Effect>
             <Grid>
                 <Grid.RowDefinitions>

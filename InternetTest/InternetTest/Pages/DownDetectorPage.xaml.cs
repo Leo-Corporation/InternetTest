@@ -23,21 +23,12 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.UserControls;
-using PeyrSharp.Core;
-using PeyrSharp.Core.Converters;
-using PeyrSharp.Enums;
 using Synethia;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Threading;
 
 namespace InternetTest.Pages
 {
@@ -64,14 +55,29 @@ namespace InternetTest.Pages
 			WebsiteTxt.Text = string.Empty;
 		}
 
+		internal List<string> Websites = new();
 		private void AddBtn_Click(object sender, RoutedEventArgs e)
 		{
+			if (!Global.IsUrlValid(WebsiteTxt.Text) || Websites.Contains(WebsiteTxt.Text)) return;
+			if (!WebsiteTxt.Text.StartsWith("http"))
+			{
+				WebsiteTxt.Text = (Global.Settings.UseHttps ? "https://" : "http://") + WebsiteTxt.Text;
+			}
 
+			WebsiteDisplayer.Children.Add(new WebsiteItem(WebsiteTxt.Text));
+			Websites.Add(WebsiteTxt.Text);
+			WebsiteTxt.Text = string.Empty;
 		}
 
 		private void TestBtn_Click(object sender, RoutedEventArgs e)
 		{
-
+			for (int i = 0; i < WebsiteDisplayer.Children.Count; i++)
+			{
+				if (WebsiteDisplayer.Children[i] is WebsiteItem websiteItem)
+				{
+					websiteItem.LaunchTestAsync();
+				}
+			}
 		}
 
 		private void IntervalTxt_PreviewTextInput(object sender, TextCompositionEventArgs e)
