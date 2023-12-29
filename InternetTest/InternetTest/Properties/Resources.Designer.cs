@@ -640,6 +640,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ethernet.
+        /// </summary>
+        public static string Ethernet {
+            get {
+                return ResourceManager.GetString("Ethernet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Execute a trace route.
         /// </summary>
         public static string ExecuteTraceRoute {

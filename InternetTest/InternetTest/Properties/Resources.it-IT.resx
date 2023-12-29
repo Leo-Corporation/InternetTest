@@ -930,4 +930,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
     <value>Siete sicuri di voler cancellare le password WiFi memorizzate nella cache?</value>
   </data>
+  <data name="Ethernet" xml:space="preserve">
+    <value>Ethernet</value>
+  </data>
 </root>

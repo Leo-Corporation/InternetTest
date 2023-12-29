@@ -92,9 +92,10 @@ public partial class HomePage : Page
 		LoadStatusCard();
 	}
 
+	bool connected = true;
 	internal async void LoadStatusCard()
 	{
-		bool connected = await Internet.IsAvailableAsync(Global.Settings.TestSite); // Check if Internet is available
+		connected = await Internet.IsAvailableAsync(Global.Settings.TestSite); // Check if Internet is available
 		StatusTxt.Text = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS; // Set text
 		StatusIconTxt.Text = connected ? "\uF299" : "\uF36E";
 		StatusIconTxt.Foreground = connected ? new SolidColorBrush(Global.GetColorFromResource("Green")) : new SolidColorBrush(Global.GetColorFromResource("Red"));
@@ -102,15 +103,19 @@ public partial class HomePage : Page
 
 	internal void LoadNetworkCard()
 	{
-		string ssid = Global.GetCurrentWifiSSID();
-		if (ssid == null)
+		try
 		{
-			NetworkTxt.Text = Properties.Resources.NotConnectedS;
-			NetworkIconTxt.Text = "\uFB71";
-			return;
+			string ssid = Global.GetCurrentWifiSSID();
+
+			NetworkTxt.Text = (ssid == null || !connected) ? Properties.Resources.NotConnectedS : ssid;
+			NetworkIconTxt.Text = (ssid == null || !connected) ? "\uFB71" : "\uF8C5";
+
 		}
-		NetworkTxt.Text = ssid;
-		NetworkIconTxt.Text = "\uF8C5";
+		catch // If there is no WiFi
+		{
+			NetworkIconTxt.Text = connected ? "\uF35A" : "\uFC27";
+			NetworkTxt.Text = connected ? Properties.Resources.Ethernet : Properties.Resources.NotConnectedS;
+		}
 	}
 
 	private void RefreshNetworkBtn_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -288,6 +293,6 @@ public partial class HomePage : Page
 
 	private void NetworkBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
 	{
-		RefreshNetworkBtn.Visibility= Visibility.Hidden;
+		RefreshNetworkBtn.Visibility = Visibility.Hidden;
 	}
 }

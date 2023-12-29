@@ -921,4 +921,7 @@
   <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
     <value>您确定要删除缓存的 WiFi 密码吗？</value>
   </data>
+  <data name="Ethernet" xml:space="preserve">
+    <value>以太网</value>
+  </data>
 </root>
