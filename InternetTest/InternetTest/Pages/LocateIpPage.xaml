@@ -72,6 +72,18 @@
                     Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
                     Style="{DynamicResource PrimaryButton}" />
                 <Button
+                    x:Name="MyIpBtn"
+                    Margin="5 10"
+                    Padding="5 2"
+                    Background="{Binding Source={StaticResource LightAccentColor}}"
+                    BorderThickness="0"
+                    Click="MyIpBtn_Click"
+                    Content="{x:Static lang:Resources.MyIP}"
+                    Cursor="Hand"
+                    FontWeight="ExtraBold"
+                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Style="{DynamicResource PrimaryButton}" />
+                <Button
                     x:Name="MapBtn"
                     Margin="5 10"
                     Padding="5 2"
@@ -80,19 +92,6 @@
                     Click="MapBtn_Click"
                     Content="{x:Static lang:Resources.ShowOnMap}"
                     Cursor="Hand"
-                    FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
-                    Style="{DynamicResource PrimaryButton}" />
-                <Button
-                    x:Name="SaveBtn"
-                    Margin="5 10"
-                    Padding="5 2"
-                    Background="{Binding Source={StaticResource LightAccentColor}}"
-                    BorderThickness="0"
-                    Click="SaveBtn_Click"
-                    Content="&#xF680;"
-                    Cursor="Hand"
-                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
                     FontWeight="ExtraBold"
                     Foreground="{Binding Source={StaticResource AccentColor}}"
                     Style="{DynamicResource PrimaryButton}" />
@@ -149,6 +148,19 @@
                 FontSize="14"
                 FontWeight="ExtraBold"
                 Text="{x:Static lang:Resources.Details}" />
+            <Button
+                x:Name="SaveBtn"
+                Margin="5 0 0 0"
+                Padding="5 2"
+                Background="{Binding Source={StaticResource LightAccentColor}}"
+                BorderThickness="0"
+                Click="SaveBtn_Click"
+                Content="&#xF680;"
+                Cursor="Hand"
+                FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                FontWeight="ExtraBold"
+                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Style="{DynamicResource PrimaryButton}" />
         </StackPanel>
 
         <WrapPanel

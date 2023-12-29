@@ -167,4 +167,9 @@ public partial class LocateIpPage : Page
 	{
 		Clipboard.SetText(((TextBlock)sender).Text);
 	}
+
+	private void MyIpBtn_Click(object sender, RoutedEventArgs e)
+	{
+		LocateIP(""); // Empty query will return the user's public IP
+    }
 }
