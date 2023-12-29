@@ -50,7 +50,7 @@ public static class Global
 	public static string Version => $"8.0.0.2401-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "8.0.0.2401-pre1";
+	public static string Version => "8.0.0.2401-pre2";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\NewSynethiaConfig.json";
