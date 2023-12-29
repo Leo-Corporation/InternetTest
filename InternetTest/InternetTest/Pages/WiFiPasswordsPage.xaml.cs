@@ -54,21 +54,18 @@ public partial class WiFiPasswordsPage : Page
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.WifiPasswords}";
 		PlaceholderGrid.Children.Add(Placeholder); // Show the placeholder instead of an empty page
+
+		try
+		{
+			if (!Directory.Exists(FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis")) return;
+			LoadWiFiInfo(FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis");
+		}
+		catch {	}
 	}
 
 	internal async void GetWiFiBtn_Click(object sender, RoutedEventArgs e)
 	{
-		await GetWiFiNetworksInfo(); // Update the UI
-		if (WiFiItemDisplayer.Children.Count == 0)
-		{
-			PlaceholderGrid.Visibility = Visibility.Visible;
-			Placeholder.Visibility = Visibility.Visible;
-		}
-		else
-		{
-			PlaceholderGrid.Visibility = Visibility.Collapsed;
-			Placeholder.Visibility = Visibility.Collapsed;
-		}
+		await GetWiFiNetworksInfo(); // Update the UI		
 
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
 		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "WiFiPasswords.Get").UsageCount++;
@@ -80,11 +77,9 @@ public partial class WiFiPasswordsPage : Page
 		try
 		{
 			WiFiItemDisplayer.Children.Clear(); // Clear the panel
-			PlaceholderGrid.Visibility = Visibility.Collapsed; // Hide the placeholder
-			Placeholder.Visibility = Visibility.Collapsed; // Hide the placeholder
 
 			// Check if the temp directory exists
-			string path = FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\Temp";
+			string path = FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis";
 
 			if (!Directory.Exists(path))
 			{
@@ -102,28 +97,40 @@ public partial class WiFiPasswordsPage : Page
 			await process.WaitForExitAsync();
 
 			// Read the files
-			string[] files = Directory.GetFiles(path);
-			for (int i = 0; i < files.Length; i++)
-			{
-				XmlSerializer serializer = new(typeof(WLANProfile));
-				StreamReader streamReader = new(files[i]); // Where the file is going to be read
-
-				var test = (WLANProfile?)serializer.Deserialize(streamReader);
-
-				if (test != null)
-				{
-					WiFiItemDisplayer.Children.Add(new WiFiInfoItem(test));
-				}
-				streamReader.Close();
-
-				File.Delete(files[i]); // Remove the temp file
-
-			}
-			Directory.Delete(path); // Delete the temp directory			
+			LoadWiFiInfo(path);
 		}
 		catch (Exception ex)
 		{
 			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
+	}
+
+	internal void LoadWiFiInfo(string path)
+	{
+		string[] files = Directory.GetFiles(path);
+		for (int i = 0; i < files.Length; i++)
+		{
+			XmlSerializer serializer = new(typeof(WLANProfile));
+			StreamReader streamReader = new(files[i]); // Where the file is going to be read
+
+			var test = (WLANProfile?)serializer.Deserialize(streamReader);
+
+			if (test != null)
+			{
+				WiFiItemDisplayer.Children.Add(new WiFiInfoItem(test));
+			}
+			streamReader.Close();
+		}
+
+		if (WiFiItemDisplayer.Children.Count == 0)
+		{
+			PlaceholderGrid.Visibility = Visibility.Visible;
+			Placeholder.Visibility = Visibility.Visible;
+		}
+		else
+		{
+			PlaceholderGrid.Visibility = Visibility.Collapsed;
+			Placeholder.Visibility = Visibility.Collapsed;
 		}
 	}
 
