@@ -924,4 +924,10 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="TestAll" xml:space="preserve">
     <value>Tout tester</value>
   </data>
+  <data name="EraseWiFiPasswordsFiles" xml:space="preserve">
+    <value>Effacer les données WiFi mises en cache</value>
+  </data>
+  <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir effacer les mots de passe WiFi mis en cache ?</value>
+  </data>
 </root>

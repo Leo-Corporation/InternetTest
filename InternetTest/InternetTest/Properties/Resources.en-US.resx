@@ -421,7 +421,7 @@
 	<value>Empty History</value>
   </data>
   <data name="EmptyHistoryMsg" xml:space="preserve">
-	<value>Are you sure want to empty this history? 
+	<value>Are you sure you want to empty this history? 
 This action is irreversible.</value>
   </data>
   <data name="Pro" xml:space="preserve">
@@ -923,5 +923,11 @@ Absolutely NO data is sent to Léo Corporation.</value>
   </data>
   <data name="TestAll" xml:space="preserve">
     <value>Test all</value>
+  </data>
+  <data name="EraseWiFiPasswordsFiles" xml:space="preserve">
+    <value>Erase cached WiFi data</value>
+  </data>
+  <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
+    <value>Are you sure you want to erase cached WiFi Passwords?</value>
   </data>
 </root>

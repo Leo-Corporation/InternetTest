@@ -915,4 +915,10 @@
   <data name="TestAll" xml:space="preserve">
     <value>全部测试</value>
   </data>
+  <data name="EraseWiFiPasswordsFiles" xml:space="preserve">
+    <value>清除缓存的 WiFi 数据</value>
+  </data>
+  <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
+    <value>您确定要删除缓存的 WiFi 密码吗？</value>
+  </data>
 </root>

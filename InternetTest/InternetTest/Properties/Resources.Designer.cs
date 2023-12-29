@@ -567,7 +567,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Launch a test to see if a website is available or not.
+        ///   Recherche une chaîne localisée semblable à Add a website to check if it is available or not.
         /// </summary>
         public static string DownDetectorPlaceHolder {
             get {
@@ -585,7 +585,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Are you sure want to empty this history? 
+        ///   Recherche une chaîne localisée semblable à Are you sure you want to empty this history? 
         ///This action is irreversible..
         /// </summary>
         public static string EmptyHistoryMsg {
@@ -609,6 +609,24 @@ namespace InternetTest.Properties {
         public static string EnterIP {
             get {
                 return ResourceManager.GetString("EnterIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erase cached WiFi data.
+        /// </summary>
+        public static string EraseWiFiPasswordsFiles {
+            get {
+                return ResourceManager.GetString("EraseWiFiPasswordsFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Are you sure you want to erase cached WiFi Passwords?.
+        /// </summary>
+        public static string EraseWiFiPasswordsFilesMsg {
+            get {
+                return ResourceManager.GetString("EraseWiFiPasswordsFilesMsg", resourceCulture);
             }
         }
         
