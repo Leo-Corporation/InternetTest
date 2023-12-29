@@ -70,7 +70,7 @@
                 <TextBlock
                     x:Name="VersionTxt"
                     HorizontalAlignment="Center"
-                    d:Text="7.0.0.2208"
+                    d:Text="8.0.0.2401"
                     FontSize="11" />
                 <TextBlock
                     x:Name="UpdateTxt"
@@ -864,6 +864,27 @@
                                 FontWeight="Regular"
                                 Text="&#xF583;" />
                             <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.ResetSynethia}" />
+                        </StackPanel>
+                    </Button>
+                    <Button
+                        x:Name="EraseWiFisLink"
+                        Padding="5"
+                        HorizontalAlignment="Left"
+                        Background="{x:Null}"
+                        Click="EraseWiFisLink_Click"
+                        Cursor="Hand"
+                        FontSize="14"
+                        FontWeight="ExtraBold"
+                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Style="{DynamicResource StandardButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0 0 10 0"
+                                VerticalAlignment="Center"
+                                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                FontWeight="Regular"
+                                Text="&#xF583;" />
+                            <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.EraseWiFiPasswordsFiles}" />
                         </StackPanel>
                     </Button>
                 </StackPanel>

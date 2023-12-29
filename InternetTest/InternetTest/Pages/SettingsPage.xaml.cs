@@ -35,6 +35,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -427,5 +428,20 @@ public partial class SettingsPage : Page
 	{
 		Global.Settings.LaunchIpLocationOnStart = LocateIpOnStartChk.IsChecked;
 		SettingsManager.Save();
+	}
+
+	private void EraseWiFisLink_Click(object sender, RoutedEventArgs e)
+	{
+		if (!Directory.Exists(FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis")) return;
+
+		if (MessageBox.Show(Properties.Resources.EraseWiFiPasswordsFilesMsg, Properties.Resources.InternetTestPro, MessageBoxButton.YesNoCancel, MessageBoxImage.Question) != MessageBoxResult.Yes) return;
+
+		string path = FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis";
+		string[] files = Directory.GetFiles(path);
+		for (int i = 0; i < files.Length; i++)
+		{
+			File.Delete(files[i]); // Remove the temp file
+		}
+		Directory.Delete(path); // Delete the temp directory		
 	}
 }
