@@ -195,15 +195,22 @@ public partial class HomePage : Page
 
 	private async void ConnectWiFi_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
 	{
-		ConnectPopup.IsOpen = true;
-		SpeedTestPopup.IsOpen = false;
-		PasswordPopup.IsOpen = false;
-		WiFiDisplayer.Children.Clear();
-		await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
-		var wifis = Global.GetWiFis();
-		for (int i = 0; i < wifis.Count; i++)
+		try
 		{
-			WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i]));
+			ConnectPopup.IsOpen = true;
+			SpeedTestPopup.IsOpen = false;
+			PasswordPopup.IsOpen = false;
+			WiFiDisplayer.Children.Clear();
+			await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
+			var wifis = Global.GetWiFis();
+			for (int i = 0; i < wifis.Count; i++)
+			{
+				WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i]));
+			}
+		}
+		catch
+		{
+
 		}
 	}
 
