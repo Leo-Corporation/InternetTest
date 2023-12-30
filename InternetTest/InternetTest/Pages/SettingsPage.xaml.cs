@@ -188,18 +188,12 @@ public partial class SettingsPage : Page
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.Light;
-		SettingsManager.Save();
-
-		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
-		{
-			return;
-		}
+		SettingsManager.Save();		
 
 		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
-		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
-		Application.Current.Shutdown();
+		Global.ChangeTheme();
 	}
 
 	private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -208,18 +202,12 @@ public partial class SettingsPage : Page
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.Dark;
-		SettingsManager.Save();
-
-		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
-		{
-			return;
-		}
+		SettingsManager.Save();		
 
 		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
-		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
-		Application.Current.Shutdown();
+		Global.ChangeTheme();
 	}
 
 	private void SystemBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -228,18 +216,12 @@ public partial class SettingsPage : Page
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.System;
-		SettingsManager.Save();
-
-		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
-		{
-			return;
-		}
+		SettingsManager.Save();		
 
 		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
-		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
-		Application.Current.Shutdown();
+		Global.ChangeTheme();
 	}
 
 	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
