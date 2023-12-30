@@ -936,4 +936,22 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="InvalidURLMsg" xml:space="preserve">
     <value>Veuillez spécifier une URL valide.</value>
   </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Inconnu</value>
+  </data>
+  <data name="DefaultTimeInterval" xml:space="preserve">
+    <value>Intervalle de temps par défaut</value>
+  </data>
+  <data name="DownDetectorSettingsDesc" xml:space="preserve">
+    <value>Paramètres de la fonction DownDetector.</value>
+  </data>
+  <data name="NetworkAdapters" xml:space="preserve">
+    <value>Adaptateurs réseau</value>
+  </data>
+  <data name="NetworkAdaptersSettingsDesc" xml:space="preserve">
+    <value>Paramètres à appliquer à la section des adaptateurs réseau.</value>
+  </data>
+  <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
+    <value>Masquer les adaptateurs désactivés par défaut</value>
+  </data>
 </root>

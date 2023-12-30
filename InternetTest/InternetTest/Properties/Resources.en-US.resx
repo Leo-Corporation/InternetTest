@@ -936,4 +936,22 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="InvalidURLMsg" xml:space="preserve">
     <value>Please provide a valid URL.</value>
   </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="DefaultTimeInterval" xml:space="preserve">
+    <value>Default time interval</value>
+  </data>
+  <data name="DownDetectorSettingsDesc" xml:space="preserve">
+    <value>Settings for the DownDetector feature.</value>
+  </data>
+  <data name="NetworkAdapters" xml:space="preserve">
+    <value>Network Adapters</value>
+  </data>
+  <data name="NetworkAdaptersSettingsDesc" xml:space="preserve">
+    <value>Settings to apply to the network adapters section.</value>
+  </data>
+  <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
+    <value>Hide disabled adapters by default</value>
+  </data>
 </root>

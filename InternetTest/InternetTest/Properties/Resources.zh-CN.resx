@@ -927,4 +927,22 @@
   <data name="InvalidURLMsg" xml:space="preserve">
     <value>请提供有效的 URL。</value>
   </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="DefaultTimeInterval" xml:space="preserve">
+    <value>默认时间间隔</value>
+  </data>
+  <data name="DownDetectorSettingsDesc" xml:space="preserve">
+    <value>DownDetector 功能的设置。</value>
+  </data>
+  <data name="NetworkAdapters" xml:space="preserve">
+    <value>网络适配器</value>
+  </data>
+  <data name="NetworkAdaptersSettingsDesc" xml:space="preserve">
+    <value>应用于网络适配器部分的设置。</value>
+  </data>
+  <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
+    <value>默认隐藏已禁用的适配器</value>
+  </data>
 </root>
