@@ -60,6 +60,12 @@ public partial class TraceroutePage : Page
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
 		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "Traceroute.Execute").UsageCount++;
 
+		if (string.IsNullOrEmpty(AddressTxt.Text) || string.IsNullOrWhiteSpace(AddressTxt.Text))
+		{
+			MessageBox.Show(Properties.Resources.InvalidURLMsg, Properties.Resources.GetDnsInfo, MessageBoxButton.OK, MessageBoxImage.Error);
+			return;
+		}
+
 		// Show the waiting screen
 		TraceBtn.IsEnabled = false;
 		StatusPanel.Visibility = Visibility.Collapsed;
