@@ -13,7 +13,7 @@
     AllowsTransparency="True"
     Background="Transparent"
     FontFamily="/Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
@@ -52,10 +52,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource WindowButtonsHover1}}" />
+                                <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowButtonsHover1}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource WindowButtonsPressed1}}" />
+                                <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowButtonsPressed1}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -130,12 +130,9 @@
     <Border
         Name="WindowBorder"
         Margin="10"
-        d:Background="#fff"
+        Background="{DynamicResource BackgroundImg}"
         BorderThickness="0"
         CornerRadius="5">
-        <Border.Background>
-            <ImageBrush ImageSource="{Binding Source={StaticResource BackgroundImg}}" />
-        </Border.Background>
         <Grid VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -159,7 +156,7 @@
                         Content="&#xF36B;"
                         FontFamily="/Fonts/#FluentSystemIcons-Regular"
                         FontSize="14"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
                         Style="{StaticResource TitleBarCloseButtonStyle}" />
                 </Grid>

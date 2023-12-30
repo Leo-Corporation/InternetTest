@@ -9,19 +9,19 @@
     Height="Auto"
     d:DesignWidth="800"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
     <Border
         Margin="10"
         Padding="10"
-        Background="{Binding Source={StaticResource CardBackground}}"
+        Background="{DynamicResource CardBackground}"
         CornerRadius="10">
         <Border.Effect>
             <DropShadowEffect
                 BlurRadius="15"
                 Opacity="0.2"
                 ShadowDepth="0"
-                Color="{Binding Source={StaticResource AccentColor}}" />
+                Color="{DynamicResource AccentColor}" />
         </Border.Effect>
 
         <Grid>
@@ -55,12 +55,12 @@
                         Margin="0 0 5 0"
                         Padding="5 2"
                         HorizontalAlignment="Right"
-                        Background="{Binding Source={StaticResource LightAccentColor}}"
+                        Background="{DynamicResource LightAccent}"
                         Click="ConnectBtn_Click"
                         Content="{x:Static lang:Resources.Connect}"
                         Cursor="Hand"
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Foreground="{DynamicResource Accent}"
                         Style="{DynamicResource PrimaryButton}" />
 
                     <Button
@@ -72,7 +72,7 @@
                         Click="CopyBtn_Click"
                         Content="&#xF32C;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource DefaultButton}" />
                     <Button
                         x:Name="ExpanderBtn"
@@ -82,7 +82,7 @@
                         Click="ExpanderBtn_Click"
                         Content="&#xF2A4;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource DefaultButton}" />
                 </StackPanel>
 
@@ -95,14 +95,14 @@
                     <Border
                         Margin="10"
                         Padding="10"
-                        Background="{Binding Source={StaticResource Background1}}"
+                        Background="{DynamicResource Background1}"
                         CornerRadius="10">
                         <Border.Effect>
                             <DropShadowEffect
                                 BlurRadius="15"
                                 Opacity="0.2"
                                 ShadowDepth="0"
-                                Color="{Binding Source={StaticResource AccentColor}}" />
+                                Color="{DynamicResource AccentColor}" />
                         </Border.Effect>
 
                         <StackPanel>
@@ -116,21 +116,21 @@
                                     Margin="10 3 10 3"
                                     Padding="3"
                                     VerticalAlignment="Center"
-                                    Background="{Binding Source={StaticResource CardBackground}}"
+                                    Background="{DynamicResource CardBackground}"
                                     CornerRadius="5">
                                     <Border.Effect>
                                         <DropShadowEffect
                                             BlurRadius="15"
                                             Opacity="0.2"
                                             ShadowDepth="0"
-                                            Color="{Binding Source={StaticResource AccentColor}}" />
+                                            Color="{DynamicResource AccentColor}" />
                                     </Border.Effect>
                                     <PasswordBox
                                         x:Name="PasswordTxt"
                                         VerticalAlignment="Center"
                                         Background="Transparent"
                                         BorderThickness="0"
-                                        Foreground="{Binding Source={StaticResource Foreground1}}" />
+                                        Foreground="{DynamicResource Foreground1}" />
                                 </Border>
                             </StackPanel>
                             <Button
@@ -139,12 +139,12 @@
                                 Margin="5"
                                 Padding="5 2"
                                 HorizontalAlignment="Center"
-                                Background="{Binding Source={StaticResource LightAccentColor}}"
+                                Background="{DynamicResource LightAccent}"
                                 Click="ConnectPopupBtn_Click"
                                 Content="{x:Static lang:Resources.Connect}"
                                 Cursor="Hand"
                                 FontWeight="ExtraBold"
-                                Foreground="{Binding Source={StaticResource AccentColor}}"
+                                Foreground="{DynamicResource Accent}"
                                 Style="{DynamicResource PrimaryButton}" />
                         </StackPanel>
                     </Border>

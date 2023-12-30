@@ -10,7 +10,7 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     FontFamily="../../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
 
     <Page.Triggers>
@@ -39,7 +39,7 @@
                 <TextBlock
                     FontSize="32"
                     FontWeight="Bold"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Text="{x:Static lang:Resources.InternetTest}" />
                 <TextBlock
                     Margin="5 0 0 0"
@@ -59,25 +59,25 @@
                     x:Name="NextBtn"
                     Margin="5 10"
                     Padding="10 5"
-                    Background="{Binding Source={StaticResource AccentColor}}"
+                    Background="{DynamicResource Accent}"
                     BorderThickness="0"
                     Click="NextBtn_Click"
                     Content="{x:Static lang:Resources.Next}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                     Style="{DynamicResource PrimaryButton}" />
                 <Button
                     x:Name="SkipBtn"
                     Margin="5 10"
                     Padding="10 5"
-                    Background="{Binding Source={StaticResource LightAccentColor}}"
+                    Background="{DynamicResource LightAccent}"
                     BorderThickness="0"
                     Click="SkipBtn_Click"
                     Content="{x:Static lang:Resources.Skip}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Style="{DynamicResource PrimaryButton}" />
             </StackPanel>
             <ComboBox
@@ -86,9 +86,9 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Background="Transparent"
-                BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                BorderBrush="{DynamicResource Accent}"
                 BorderThickness="2"
-                Foreground="{Binding Source={StaticResource Foreground1}}"
+                Foreground="{DynamicResource Foreground1}"
                 SelectionChanged="LangComboBox_SelectionChanged"
                 Style="{DynamicResource ComboBoxStyle1}">
                 <ComboBoxItem Content="{x:Static lang:Resources.Default}" />

@@ -6,19 +6,19 @@
     xmlns:local="clr-namespace:InternetTest.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
     <Border
         Margin="10"
         Padding="10"
-        Background="{Binding Source={StaticResource CardBackground}}"
+        Background="{DynamicResource CardBackground}"
         CornerRadius="10">
         <Border.Effect>
             <DropShadowEffect
                 BlurRadius="15"
                 Opacity="0.2"
                 ShadowDepth="0"
-                Color="{Binding Source={StaticResource AccentColor}}" />
+                Color="{DynamicResource AccentColor}" />
         </Border.Effect>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -47,7 +47,7 @@
                 Click="CopyBtn_Click"
                 Content="&#xF32C;"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                Foreground="{Binding Source={StaticResource Foreground1}}"
+                Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource DefaultButton}" />
 
         </Grid>

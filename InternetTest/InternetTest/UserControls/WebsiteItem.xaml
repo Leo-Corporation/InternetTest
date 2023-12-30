@@ -8,18 +8,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Height="Auto"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}">
+    Foreground="{DynamicResource Foreground1}">
     <Border
         Margin="10 5"
         Padding="10 5"
-        Background="{Binding Source={StaticResource CardBackground}}"
+        Background="{DynamicResource CardBackground}"
         CornerRadius="5">
         <Border.Effect>
             <DropShadowEffect
                 BlurRadius="15"
                 Opacity="0.2"
                 ShadowDepth="0"
-                Color="{Binding Source={StaticResource AccentColor}}" />
+                Color="{DynamicResource AccentColor}" />
         </Border.Effect>
 
         <Grid>
@@ -42,7 +42,7 @@
                         Margin="0 0 5 0"
                         VerticalAlignment="Center"
                         FontFamily="..\Fonts\#FluentSystemIcons-Filled"
-                        Foreground="{Binding Source={StaticResource Green}}"
+                        Foreground="{DynamicResource Green}"
                         Text="&#xF299;" />
                     <TextBlock
                         x:Name="StatusCodeTxt"
@@ -67,7 +67,7 @@
                         Click="TestBtn_Click"
                         Content="&#xF606;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource DefaultButton}" />
                     <Button
                         x:Name="ExpanderBtn"
@@ -77,7 +77,7 @@
                         Click="ExpanderBtn_Click"
                         Content="&#xF2A4;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource DefaultButton}" />
                     <Button
                         x:Name="DeleteBtn"
@@ -87,7 +87,7 @@
                         Click="DeleteBtn_Click"
                         Content="&#xF34D;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource DefaultButton}" />
                 </StackPanel>
             </Grid>

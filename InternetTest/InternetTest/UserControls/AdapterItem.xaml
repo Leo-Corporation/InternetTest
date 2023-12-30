@@ -9,19 +9,19 @@
     Width="350"
     Height="170"
     FontFamily="..\Fonts\#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
     <Border
         Margin="10"
         Padding="10"
-        Background="{Binding Source={StaticResource CardBackground}}"
+        Background="{DynamicResource CardBackground}"
         CornerRadius="10">
         <Border.Effect>
             <DropShadowEffect
                 BlurRadius="15"
                 Opacity="0.2"
                 ShadowDepth="0"
-                Color="{Binding Source={StaticResource AccentColor}}" />
+                Color="{DynamicResource AccentColor}" />
         </Border.Effect>
         <Grid>
             <Grid.RowDefinitions>
@@ -41,7 +41,7 @@
                     VerticalAlignment="Center"
                     FontFamily="../Fonts/#FluentSystemIcons-Regular"
                     FontSize="16"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Text="&#xF8AC;" />
                 <TextBlock
                     x:Name="NameTxt"
@@ -66,7 +66,7 @@
                     Cursor="Hand"
                     FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource Foreground1}}"
+                    Foreground="{DynamicResource Foreground1}"
                     Style="{DynamicResource PrimaryButton}" />
             </Grid>
             <Grid Grid.Row="1" Margin="0 5 0 0">

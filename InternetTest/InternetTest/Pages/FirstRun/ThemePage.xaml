@@ -10,7 +10,7 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     FontFamily="../../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
 
     <Grid>
@@ -126,13 +126,13 @@
             Margin="5 10"
             Padding="10 5"
             HorizontalAlignment="Center"
-            Background="{Binding Source={StaticResource AccentColor}}"
+            Background="{DynamicResource Accent}"
             BorderThickness="0"
             Click="NextBtn_Click"
             Content="{x:Static lang:Resources.Next}"
             Cursor="Hand"
             FontWeight="ExtraBold"
-            Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
             Style="{DynamicResource PrimaryButton}" />
 
     </Grid>

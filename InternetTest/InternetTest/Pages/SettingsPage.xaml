@@ -11,7 +11,7 @@
     d:DesignHeight="1450"
     d:DesignWidth="800"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
 
     <Grid>
@@ -30,7 +30,7 @@
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Text="&#xF6AA;" />
             <TextBlock
                 Margin="5 0 0 0"
@@ -45,21 +45,21 @@
             Margin="5"
             Padding="20"
             HorizontalAlignment="Center"
-            Background="{Binding Source={StaticResource CardBackground}}"
+            Background="{DynamicResource CardBackground}"
             CornerRadius="5">
             <Border.Effect>
                 <DropShadowEffect
                     BlurRadius="15"
                     Opacity="0.5"
                     ShadowDepth="0"
-                    Color="{Binding Source={StaticResource LightAccentColor}}" />
+                    Color="{DynamicResource LightAccentColor}" />
             </Border.Effect>
             <StackPanel>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBlock
                         FontSize="32"
                         FontWeight="Bold"
-                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Foreground="{DynamicResource Accent}"
                         Text="{x:Static lang:Resources.InternetTest}" />
                     <TextBlock
                         Margin="5 0 0 0"
@@ -83,13 +83,13 @@
                     Margin="5 10"
                     Padding="5 2"
                     HorizontalAlignment="Center"
-                    Background="{Binding Source={StaticResource AccentColor}}"
+                    Background="{DynamicResource Accent}"
                     BorderThickness="0"
                     Click="CheckUpdateBtn_Click"
                     Content="{x:Static lang:Resources.CheckUpdate}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                     Style="{DynamicResource PrimaryButton}" />
             </StackPanel>
         </Border>
@@ -97,7 +97,7 @@
         <StackPanel Grid.Row="2">
             <Border
                 Margin="10 10 10 0"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -136,9 +136,9 @@
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
                             Background="Transparent"
-                            BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                            BorderBrush="{DynamicResource Accent}"
                             BorderThickness="2"
-                            Foreground="{Binding Source={StaticResource Foreground1}}"
+                            Foreground="{DynamicResource Foreground1}"
                             SelectionChanged="LangComboBox_SelectionChanged"
                             Style="{DynamicResource ComboBoxStyle1}">
                             <ComboBoxItem Content="{x:Static lang:Resources.DefaultLanguage}" />
@@ -152,11 +152,11 @@
                             Margin="0 0 10 0"
                             Padding="10 5 10 5"
                             VerticalAlignment="Center"
-                            Background="{Binding Source={StaticResource AccentColor}}"
+                            Background="{DynamicResource Accent}"
                             Click="LangApplyBtn_Click"
                             Cursor="Hand"
                             FontWeight="ExtraBold"
-                            Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                             Style="{StaticResource PrimaryButton}"
                             Visibility="Collapsed">
                             <TextBlock
@@ -168,9 +168,9 @@
 
                             <Button.ToolTip>
                                 <ToolTip
-                                    Background="{Binding Source={StaticResource Background1}}"
+                                    Background="{DynamicResource Background1}"
                                     Content="{x:Static lang:Resources.Apply}"
-                                    Foreground="{Binding Source={StaticResource Foreground1}}" />
+                                    Foreground="{DynamicResource Foreground1}" />
                             </Button.ToolTip>
                         </Button>
                     </StackPanel>
@@ -178,8 +178,8 @@
             </Border>
             <Expander
                 Margin="10 10 10 0"
-                Background="{Binding Source={StaticResource CardBackground}}"
-                Foreground="{Binding Source={StaticResource Foreground1}}"
+                Background="{DynamicResource CardBackground}"
+                Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource ExpanderStyle1}">
                 <Expander.Header>
                     <StackPanel Margin="10 15" Orientation="Horizontal">
@@ -293,7 +293,7 @@
             </Expander>
             <Border
                 Margin="10 10 10 0"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -332,9 +332,9 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         Background="Transparent"
-                        BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                        BorderBrush="{DynamicResource Accent}"
                         BorderThickness="2"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         SelectionChanged="MapProviderComboBox_SelectionChanged"
                         Style="{DynamicResource ComboBoxStyle1}">
                         <ComboBoxItem Content="OpenStreetMap" />
@@ -348,8 +348,8 @@
             </Border>
             <Expander
                 Margin="10 10 10 0"
-                Background="{Binding Source={StaticResource CardBackground}}"
-                Foreground="{Binding Source={StaticResource Foreground1}}"
+                Background="{DynamicResource CardBackground}"
+                Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource ExpanderStyle1}">
                 <Expander.Header>
                     <StackPanel Margin="10 15" Orientation="Horizontal">
@@ -382,7 +382,7 @@
                         BorderThickness="2"
                         Checked="UpdateNotifChk_Checked"
                         Content="{x:Static lang:Resources.NotifyUpdates}"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource CheckBoxStyle1}"
                         Unchecked="UpdateNotifChk_Checked" />
                 </StackPanel>
@@ -390,8 +390,8 @@
 
             <Expander
                 Margin="10 10 10 0"
-                Background="{Binding Source={StaticResource CardBackground}}"
-                Foreground="{Binding Source={StaticResource Foreground1}}"
+                Background="{DynamicResource CardBackground}"
+                Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource ExpanderStyle1}">
                 <Expander.Header>
                     <StackPanel Margin="10 15" Orientation="Horizontal">
@@ -429,9 +429,9 @@
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
                             Background="Transparent"
-                            BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                            BorderBrush="{DynamicResource Accent}"
                             BorderThickness="2"
-                            Foreground="{Binding Source={StaticResource Foreground1}}"
+                            Foreground="{DynamicResource Foreground1}"
                             SelectionChanged="PageComboBox_SelectionChanged"
                             Style="{DynamicResource ComboBoxStyle1}">
                             <ComboBoxItem Content="{x:Static lang:Resources.Home}" />
@@ -453,7 +453,7 @@
                         BorderThickness="2"
                         Checked="UpdateOnStartChk_Checked"
                         Content="{x:Static lang:Resources.CheckUpdatesOnStart}"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource CheckBoxStyle1}"
                         Unchecked="UpdateOnStartChk_Checked" />
                     <CheckBox
@@ -463,7 +463,7 @@
                         BorderThickness="2"
                         Checked="TestOnStartChk_Checked"
                         Content="{x:Static lang:Resources.LaunchTestOnStart}"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource CheckBoxStyle1}"
                         Unchecked="TestOnStartChk_Checked" />
                     <CheckBox
@@ -473,7 +473,7 @@
                         BorderThickness="2"
                         Checked="LocateIpOnStartChk_Checked"
                         Content="{x:Static lang:Resources.LocateMyIpOnStart}"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource CheckBoxStyle1}"
                         Unchecked="LocateIpOnStartChk_Checked" />
                     <CheckBox
@@ -483,7 +483,7 @@
                         BorderThickness="2"
                         Checked="ToggleConfModeOnStartChk_Checked"
                         Content="{x:Static lang:Resources.ToggleConfidentialModeOnStart}"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource CheckBoxStyle1}"
                         Unchecked="ToggleConfModeOnStartChk_Checked" />
                     <CheckBox
@@ -493,15 +493,15 @@
                         BorderThickness="2"
                         Checked="RememberPinOnStartChk_Checked"
                         Content="{x:Static lang:Resources.RememberPinState}"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource CheckBoxStyle1}"
                         Unchecked="RememberPinOnStartChk_Checked" />
                 </StackPanel>
             </Expander>
             <Expander
                 Margin="10 10 10 0"
-                Background="{Binding Source={StaticResource CardBackground}}"
-                Foreground="{Binding Source={StaticResource Foreground1}}"
+                Background="{DynamicResource CardBackground}"
+                Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource ExpanderStyle1}">
                 <Expander.Header>
                     <StackPanel Margin="10 15" Orientation="Horizontal">
@@ -534,11 +534,11 @@
                             Margin="0 0 10 0"
                             VerticalAlignment="Center"
                             Background="Transparent"
-                            BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                            BorderBrush="{DynamicResource Accent}"
                             Checked="HttpsRadio_Checked"
                             Content="{x:Static lang:Resources.HTTPS}"
                             FontWeight="Bold"
-                            Foreground="{Binding Source={StaticResource Foreground1}}"
+                            Foreground="{DynamicResource Foreground1}"
                             GroupName="Protocol"
                             Style="{DynamicResource RadioButtonStyle1}"
                             Unchecked="HttpsRadio_Checked" />
@@ -546,11 +546,11 @@
                             x:Name="HttpRadio"
                             VerticalAlignment="Center"
                             Background="Transparent"
-                            BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                            BorderBrush="{DynamicResource Accent}"
                             Checked="HttpRadio_Checked"
                             Content="{x:Static lang:Resources.HTTP}"
                             FontWeight="Bold"
-                            Foreground="{Binding Source={StaticResource Foreground1}}"
+                            Foreground="{DynamicResource Foreground1}"
                             GroupName="Protocol"
                             Style="{DynamicResource RadioButtonStyle1}"
                             Unchecked="HttpRadio_Checked" />
@@ -560,14 +560,14 @@
                         <Border
                             Margin="10 3 10 3"
                             Padding="3"
-                            Background="{Binding Source={StaticResource CardBackground}}"
+                            Background="{DynamicResource CardBackground}"
                             CornerRadius="5">
                             <Border.Effect>
                                 <DropShadowEffect
                                     BlurRadius="15"
                                     Opacity="0.2"
                                     ShadowDepth="0"
-                                    Color="{Binding Source={StaticResource AccentColor}}" />
+                                    Color="{DynamicResource AccentColor}" />
                             </Border.Effect>
                             <TextBox
                                 x:Name="SiteTxt"
@@ -575,17 +575,17 @@
                                 Padding="3"
                                 Background="Transparent"
                                 BorderThickness="0"
-                                Foreground="{Binding Source={StaticResource Foreground1}}" />
+                                Foreground="{DynamicResource Foreground1}" />
                         </Border>
                         <Button
                             x:Name="SiteApplyBtn"
                             Padding="10 5 10 5"
                             VerticalAlignment="Center"
-                            Background="{Binding Source={StaticResource AccentColor}}"
+                            Background="{DynamicResource Accent}"
                             Click="SiteApplyBtn_Click"
                             Cursor="Hand"
                             FontWeight="ExtraBold"
-                            Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                             Style="{StaticResource PrimaryButton}"
                             Visibility="Visible">
                             <TextBlock
@@ -597,9 +597,9 @@
 
                             <Button.ToolTip>
                                 <ToolTip
-                                    Background="{Binding Source={StaticResource Background1}}"
+                                    Background="{DynamicResource Background1}"
                                     Content="{x:Static lang:Resources.Apply}"
-                                    Foreground="{Binding Source={StaticResource Foreground1}}" />
+                                    Foreground="{DynamicResource Foreground1}" />
                             </Button.ToolTip>
                         </Button>
                     </StackPanel>
@@ -608,8 +608,8 @@
 
             <Expander
                 Margin="10 10 10 0"
-                Background="{Binding Source={StaticResource CardBackground}}"
-                Foreground="{Binding Source={StaticResource Foreground1}}"
+                Background="{DynamicResource CardBackground}"
+                Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource ExpanderStyle1}">
                 <Expander.Header>
                     <StackPanel Margin="10 15" Orientation="Horizontal">
@@ -641,14 +641,14 @@
                         <Border
                             Margin="10 3 10 3"
                             Padding="3"
-                            Background="{Binding Source={StaticResource CardBackground}}"
+                            Background="{DynamicResource CardBackground}"
                             CornerRadius="5">
                             <Border.Effect>
                                 <DropShadowEffect
                                     BlurRadius="15"
                                     Opacity="0.2"
                                     ShadowDepth="0"
-                                    Color="{Binding Source={StaticResource AccentColor}}" />
+                                    Color="{DynamicResource AccentColor}" />
                             </Border.Effect>
                             <TextBox
                                 x:Name="HopsTxt"
@@ -656,7 +656,7 @@
                                 Padding="3"
                                 Background="Transparent"
                                 BorderThickness="0"
-                                Foreground="{Binding Source={StaticResource Foreground1}}"
+                                Foreground="{DynamicResource Foreground1}"
                                 PreviewTextInput="TextBox_PreviewTextInput"
                                 TextAlignment="Center" />
                         </Border>
@@ -664,11 +664,11 @@
                             x:Name="HopsApplyBtn"
                             Padding="10 5 10 5"
                             VerticalAlignment="Center"
-                            Background="{Binding Source={StaticResource AccentColor}}"
+                            Background="{DynamicResource Accent}"
                             Click="HopsApplyBtn_Click"
                             Cursor="Hand"
                             FontWeight="ExtraBold"
-                            Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                             Style="{StaticResource PrimaryButton}"
                             Visibility="Visible">
                             <TextBlock
@@ -680,9 +680,9 @@
 
                             <Button.ToolTip>
                                 <ToolTip
-                                    Background="{Binding Source={StaticResource Background1}}"
+                                    Background="{DynamicResource Background1}"
                                     Content="{x:Static lang:Resources.Apply}"
-                                    Foreground="{Binding Source={StaticResource Foreground1}}" />
+                                    Foreground="{DynamicResource Foreground1}" />
                             </Button.ToolTip>
                         </Button>
                     </StackPanel>
@@ -691,14 +691,14 @@
                         <Border
                             Margin="10 3 10 3"
                             Padding="3"
-                            Background="{Binding Source={StaticResource CardBackground}}"
+                            Background="{DynamicResource CardBackground}"
                             CornerRadius="5">
                             <Border.Effect>
                                 <DropShadowEffect
                                     BlurRadius="15"
                                     Opacity="0.2"
                                     ShadowDepth="0"
-                                    Color="{Binding Source={StaticResource AccentColor}}" />
+                                    Color="{DynamicResource AccentColor}" />
                             </Border.Effect>
                             <TextBox
                                 x:Name="TimeOutTxt"
@@ -706,7 +706,7 @@
                                 Padding="3"
                                 Background="Transparent"
                                 BorderThickness="0"
-                                Foreground="{Binding Source={StaticResource Foreground1}}"
+                                Foreground="{DynamicResource Foreground1}"
                                 PreviewTextInput="TextBox_PreviewTextInput"
                                 TextAlignment="Center" />
                         </Border>
@@ -714,11 +714,11 @@
                             x:Name="TimeOutApplyBtn"
                             Padding="10 5 10 5"
                             VerticalAlignment="Center"
-                            Background="{Binding Source={StaticResource AccentColor}}"
+                            Background="{DynamicResource Accent}"
                             Click="TimeOutApplyBtn_Click"
                             Cursor="Hand"
                             FontWeight="ExtraBold"
-                            Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                             Style="{StaticResource PrimaryButton}"
                             Visibility="Visible">
                             <TextBlock
@@ -730,9 +730,9 @@
 
                             <Button.ToolTip>
                                 <ToolTip
-                                    Background="{Binding Source={StaticResource Background1}}"
+                                    Background="{DynamicResource Background1}"
                                     Content="{x:Static lang:Resources.Apply}"
-                                    Foreground="{Binding Source={StaticResource Foreground1}}" />
+                                    Foreground="{DynamicResource Foreground1}" />
                             </Button.ToolTip>
                         </Button>
                     </StackPanel>
@@ -741,8 +741,8 @@
 
             <Expander
                 Margin="10 10 10 0"
-                Background="{Binding Source={StaticResource CardBackground}}"
-                Foreground="{Binding Source={StaticResource Foreground1}}"
+                Background="{DynamicResource CardBackground}"
+                Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource ExpanderStyle1}">
                 <Expander.Header>
                     <StackPanel Margin="10 15" Orientation="Horizontal">
@@ -774,11 +774,11 @@
                             Margin="0 0 10 0"
                             Padding="10 5 10 5"
                             VerticalAlignment="Center"
-                            Background="{Binding Source={StaticResource AccentColor}}"
+                            Background="{DynamicResource Accent}"
                             Click="ImportBtn_Click"
                             Cursor="Hand"
                             FontWeight="ExtraBold"
-                            Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                             Style="{StaticResource PrimaryButton}">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock
@@ -795,11 +795,11 @@
                             x:Name="ExportBtn"
                             Padding="10 5 10 5"
                             VerticalAlignment="Center"
-                            Background="{Binding Source={StaticResource LightAccentColor}}"
+                            Background="{DynamicResource LightAccent}"
                             Click="ExportBtn_Click"
                             Cursor="Hand"
                             FontWeight="ExtraBold"
-                            Foreground="{Binding Source={StaticResource AccentColor}}"
+                            Foreground="{DynamicResource Accent}"
                             Style="{StaticResource DefaultButton}">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock
@@ -820,7 +820,7 @@
                         BorderThickness="2"
                         Checked="UseSynethiaChk_Checked"
                         Content="{x:Static lang:Resources.SynethiaEnable}"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource CheckBoxStyle1}"
                         Unchecked="UseSynethiaChk_Checked" />
 
@@ -833,7 +833,7 @@
                         Cursor="Hand"
                         FontSize="14"
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Foreground="{DynamicResource Accent}"
                         Style="{DynamicResource StandardButton}">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock
@@ -854,7 +854,7 @@
                         Cursor="Hand"
                         FontSize="14"
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Foreground="{DynamicResource Accent}"
                         Style="{DynamicResource StandardButton}">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock
@@ -875,7 +875,7 @@
                         Cursor="Hand"
                         FontSize="14"
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Foreground="{DynamicResource Accent}"
                         Style="{DynamicResource StandardButton}">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock

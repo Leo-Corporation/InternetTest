@@ -12,7 +12,7 @@
     d:DesignWidth="800"
     Background="Transparent"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
 
     <Grid>
@@ -35,7 +35,7 @@
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Text="&#xFB69;" />
             <TextBlock
                 x:Name="TitleTxt"
@@ -52,14 +52,14 @@
                 Width="300"
                 Margin="10 3 3 3"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
                         BlurRadius="15"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -74,7 +74,7 @@
                         Background="Transparent"
                         BorderThickness="0"
                         FontWeight="Bold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         Keyboard.KeyUp="WebsiteTxt_KeyUp" />
                     <Button
                         x:Name="ClearBtn"
@@ -88,7 +88,7 @@
                         Click="ClearBtn_Click"
                         Content="&#xF36A;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource ToolButton}" />
                 </Grid>
             </Border>
@@ -97,26 +97,26 @@
                 Margin="5"
                 Padding="5 2"
                 VerticalAlignment="Center"
-                Background="{Binding Source={StaticResource LightAccentColor}}"
+                Background="{DynamicResource LightAccent}"
                 BorderThickness="0"
                 Click="AddBtn_Click"
                 Content="{x:Static lang:Resources.AddSite}"
                 Cursor="Hand"
                 FontWeight="ExtraBold"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Style="{DynamicResource PrimaryButton}" />
             <Button
                 x:Name="TestBtn"
                 Margin="5"
                 Padding="5 2"
                 VerticalAlignment="Center"
-                Background="{Binding Source={StaticResource AccentColor}}"
+                Background="{DynamicResource Accent}"
                 BorderThickness="0"
                 Click="TestBtn_Click"
                 Content="{x:Static lang:Resources.TestAll}"
                 Cursor="Hand"
                 FontWeight="ExtraBold"
-                Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                 Style="{DynamicResource PrimaryButton}" />
 
         </StackPanel>
@@ -145,14 +145,14 @@
             Grid.Column="1"
             Margin="10"
             Padding="10"
-            Background="{Binding Source={StaticResource CardBackground}}"
+            Background="{DynamicResource CardBackground}"
             CornerRadius="5">
             <Border.Effect>
                 <DropShadowEffect
                     BlurRadius="15"
                     Opacity="0.15"
                     ShadowDepth="0"
-                    Color="{Binding Source={StaticResource AccentColor}}" />
+                    Color="{DynamicResource AccentColor}" />
             </Border.Effect>
             <Grid>
                 <Grid.RowDefinitions>
@@ -167,7 +167,7 @@
                         VerticalAlignment="Center"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         FontSize="14"
-                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Foreground="{DynamicResource Accent}"
                         Text="&#xF827;" />
                     <TextBlock
                         Margin="5 0 0 0"
@@ -197,7 +197,7 @@
                         BorderThickness="0"
                         FontSize="11"
                         FontWeight="SemiBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         PreviewTextInput="IntervalTxt_PreviewTextInput"
                         Text="10"
                         TextAlignment="Center" />
@@ -216,7 +216,7 @@
                         HorizontalAlignment="Center"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         FontSize="48"
-                        Foreground="{Binding Source={StaticResource AccentColor}}"
+                        Foreground="{DynamicResource Accent}"
                         RenderTransformOrigin="0.5,0.5"
                         Text="&#xF709;">
                         <TextBlock.RenderTransform>
@@ -256,13 +256,13 @@
                     Padding="5 2"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    Background="{Binding Source={StaticResource AccentColor}}"
+                    Background="{DynamicResource Accent}"
                     BorderThickness="0"
                     Click="LaunchTimerBtn_Click"
                     Content="{x:Static lang:Resources.LaunchScheduledTest}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                     Style="{DynamicResource PrimaryButton}" />
             </Grid>
         </Border>

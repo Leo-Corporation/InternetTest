@@ -9,12 +9,12 @@
     MinWidth="220"
     Margin="5"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
     <Border
         Padding="5"
-        Background="{Binding Source={StaticResource CardBackground}}"
-        BorderBrush="{Binding Source={StaticResource AccentColor}}"
+        Background="{DynamicResource CardBackground}"
+        BorderBrush="{DynamicResource Accent}"
         BorderThickness="1"
         CornerRadius="6"
         Cursor="Hand"
@@ -25,7 +25,7 @@
                 Direction="270"
                 Opacity="0.1"
                 ShadowDepth="0"
-                Color="{Binding Source={StaticResource AccentColor}}" />
+                Color="{DynamicResource AccentColor}" />
         </Border.Effect>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -42,7 +42,7 @@
                     d:Text="&#xF4DB;"
                     FontFamily="../Fonts/#FluentSystemIcons-Filled"
                     FontSize="26"
-                    Foreground="{Binding Source={StaticResource AccentColor}}" />
+                    Foreground="{DynamicResource Accent}" />
                 <TextBlock
                     x:Name="PageNameTxt"
                     Margin="10 0 0 0"
@@ -57,7 +57,7 @@
                     VerticalAlignment="Center"
                     FontFamily="../Fonts/#FluentSystemIcons-Regular"
                     FontSize="14"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Text="&#xF2B1;" />
             </Grid>            
         </Grid>

@@ -12,7 +12,7 @@
     d:DesignWidth="800"
     Background="Transparent"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
 
     <Grid>
@@ -28,7 +28,7 @@
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Text="&#xF4F9;" />
             <TextBlock
                 x:Name="TitleTxt"
@@ -46,7 +46,7 @@
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Filled"
                 FontSize="76"
-                Foreground="{Binding Source={StaticResource Gray}}"
+                Foreground="{DynamicResource Gray}"
                 Text="&#xF4AB;" />
             <TextBlock
                 x:Name="MyIPTxt"
@@ -63,50 +63,50 @@
                     x:Name="LocateIPBtn"
                     Margin="5 10"
                     Padding="5 2"
-                    Background="{Binding Source={StaticResource AccentColor}}"
+                    Background="{DynamicResource Accent}"
                     BorderThickness="0"
                     Click="LocateIPBtn_Click"
                     Content="{x:Static lang:Resources.LocateIP}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                     Style="{DynamicResource PrimaryButton}" />
                 <Button
                     x:Name="MyIpBtn"
                     Margin="5 10"
                     Padding="5 2"
-                    Background="{Binding Source={StaticResource LightAccentColor}}"
+                    Background="{DynamicResource LightAccent}"
                     BorderThickness="0"
                     Click="MyIpBtn_Click"
                     Content="{x:Static lang:Resources.MyIP}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Style="{DynamicResource PrimaryButton}" />
                 <Button
                     x:Name="MapBtn"
                     Margin="5 10"
                     Padding="5 2"
-                    Background="{Binding Source={StaticResource LightAccentColor}}"
+                    Background="{DynamicResource LightAccent}"
                     BorderThickness="0"
                     Click="MapBtn_Click"
                     Content="{x:Static lang:Resources.ShowOnMap}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Style="{DynamicResource PrimaryButton}" />
             </StackPanel>
             <Border
                 Width="300"
                 HorizontalAlignment="Center"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
                         BlurRadius="15"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
                 <Grid>
                     <TextBox
@@ -117,7 +117,7 @@
                         Background="Transparent"
                         BorderThickness="0"
                         FontWeight="Bold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}" />
+                        Foreground="{DynamicResource DarkGray}" />
                     <PasswordBox
                         x:Name="IpPassword"
                         Margin="5"
@@ -125,7 +125,7 @@
                         Background="Transparent"
                         BorderThickness="0"
                         FontWeight="Bold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         Visibility="Collapsed" />
                 </Grid>
             </Border>
@@ -139,7 +139,7 @@
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Text="&#xF4A4;" />
             <TextBlock
                 x:Name="DetailsInfoTxt"
@@ -152,14 +152,14 @@
                 x:Name="SaveBtn"
                 Margin="5 0 0 0"
                 Padding="5 2"
-                Background="{Binding Source={StaticResource LightAccentColor}}"
+                Background="{DynamicResource LightAccent}"
                 BorderThickness="0"
                 Click="SaveBtn_Click"
                 Content="&#xF680;"
                 Cursor="Hand"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontWeight="ExtraBold"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Style="{DynamicResource PrimaryButton}" />
         </StackPanel>
 
@@ -173,7 +173,7 @@
                 Margin="5"
                 Padding="5"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
@@ -181,7 +181,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
 
                 <Grid>
@@ -192,7 +192,7 @@
 
                     <TextBlock
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         Text="{x:Static lang:Resources.Country}" />
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                         <TextBlock
@@ -218,7 +218,7 @@
                 Margin="5"
                 Padding="5"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
@@ -226,7 +226,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
 
                 <Grid>
@@ -237,7 +237,7 @@
 
                     <TextBlock
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         Text="{x:Static lang:Resources.Region}" />
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                         <TextBlock
@@ -263,7 +263,7 @@
                 Margin="5"
                 Padding="5"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
@@ -271,7 +271,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
 
                 <Grid>
@@ -282,7 +282,7 @@
 
                     <TextBlock
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         Text="{x:Static lang:Resources.City}" />
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                         <TextBlock
@@ -307,7 +307,7 @@
                 Margin="5"
                 Padding="5"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
@@ -315,7 +315,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
 
                 <Grid>
@@ -326,7 +326,7 @@
 
                     <TextBlock
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         Text="{x:Static lang:Resources.ZIPCode}" />
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                         <TextBlock
@@ -352,7 +352,7 @@
                 Margin="5"
                 Padding="5"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
@@ -360,7 +360,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
 
                 <Grid>
@@ -371,7 +371,7 @@
 
                     <TextBlock
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         Text="{x:Static lang:Resources.Latitude}" />
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                         <TextBlock
@@ -397,7 +397,7 @@
                 Margin="5"
                 Padding="5"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
@@ -405,7 +405,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
 
                 <Grid>
@@ -416,7 +416,7 @@
 
                     <TextBlock
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         Text="{x:Static lang:Resources.Longitude}" />
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                         <TextBlock
@@ -442,7 +442,7 @@
                 Margin="5"
                 Padding="5"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
@@ -450,7 +450,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
 
                 <Grid>
@@ -461,7 +461,7 @@
 
                     <TextBlock
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         Text="{x:Static lang:Resources.Timezone}" />
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                         <TextBlock
@@ -486,7 +486,7 @@
                 Margin="5"
                 Padding="5"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
@@ -494,7 +494,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
 
                 <Grid>
@@ -505,7 +505,7 @@
 
                     <TextBlock
                         FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         Text="{x:Static lang:Resources.ISP}" />
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                         <TextBlock

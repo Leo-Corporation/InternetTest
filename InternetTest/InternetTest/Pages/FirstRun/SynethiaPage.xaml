@@ -10,7 +10,7 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     FontFamily="../../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
 
     <Grid>
@@ -26,7 +26,7 @@
                 <TextBlock
                     FontFamily="../../Fonts/#FluentSystemIcons-Filled"
                     FontSize="24"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Text="&#xF5BF;" />
                 <TextBlock
                     Margin="10 0 0 0"
@@ -40,7 +40,7 @@
                 <TextBlock
                     FontFamily="../../Fonts/#FluentSystemIcons-Filled"
                     FontSize="24"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Text="&#xF35C;" />
                 <TextBlock
                     Margin="10 0 0 0"
@@ -54,7 +54,7 @@
                 <TextBlock
                     FontFamily="../../Fonts/#FluentSystemIcons-Filled"
                     FontSize="24"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Text="&#xF488;" />
                 <TextBlock
                     Margin="10 0 0 0"
@@ -68,7 +68,7 @@
                 <TextBlock
                     FontFamily="../../Fonts/#FluentSystemIcons-Filled"
                     FontSize="24"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Text="&#xF345;" />
                 <TextBlock
                     Margin="10 0 0 0"
@@ -83,25 +83,25 @@
                     x:Name="NextBtn"
                     Margin="5 10"
                     Padding="10 5"
-                    Background="{Binding Source={StaticResource AccentColor}}"
+                    Background="{DynamicResource Accent}"
                     BorderThickness="0"
                     Click="NextBtn_Click"
                     Content="{x:Static lang:Resources.Agree}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                     Style="{DynamicResource PrimaryButton}" />
                 <Button
                     x:Name="DisagreeBtn"
                     Margin="5 10"
                     Padding="10 5"
-                    Background="{Binding Source={StaticResource LightAccentColor}}"
+                    Background="{DynamicResource LightAccent}"
                     BorderThickness="0"
                     Click="DisagreeBtn_Click"
                     Content="{x:Static lang:Resources.NoThanks}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Style="{DynamicResource PrimaryButton}" />
             </StackPanel>
         </StackPanel>
