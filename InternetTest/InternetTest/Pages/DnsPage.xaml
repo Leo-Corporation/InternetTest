@@ -91,14 +91,15 @@
             <Button
                 x:Name="GetDnsInfoBtn"
                 Margin="5"
-                Padding="5"
-                Background="{Binding Source={StaticResource LightAccentColor}}"
+                Padding="5 2"
+                VerticalAlignment="Center"
+                Background="{Binding Source={StaticResource AccentColor}}"
                 BorderThickness="0"
                 Click="GetDnsInfoBtn_Click"
                 Content="{x:Static lang:Resources.GetDnsInfo}"
                 Cursor="Hand"
                 FontWeight="ExtraBold"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
                 Style="{DynamicResource PrimaryButton}" />
 
         </StackPanel>
