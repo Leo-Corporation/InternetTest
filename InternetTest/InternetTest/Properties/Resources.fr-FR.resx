@@ -933,4 +933,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="Ethernet" xml:space="preserve">
     <value>Ethernet</value>
   </data>
+  <data name="InvalidURLMsg" xml:space="preserve">
+    <value>Veuillez spécifier une URL valide.</value>
+  </data>
 </root>

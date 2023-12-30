@@ -1028,6 +1028,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Please provide a valid URL..
+        /// </summary>
+        public static string InvalidURLMsg {
+            get {
+                return ResourceManager.GetString("InvalidURLMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à IP Address.
         /// </summary>
         public static string IPAddress {

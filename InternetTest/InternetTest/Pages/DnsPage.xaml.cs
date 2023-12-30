@@ -161,6 +161,11 @@ public partial class DnsPage : Page
 
 	internal void GetDnsInfoBtn_Click(object sender, RoutedEventArgs e)
 	{
+		if (string.IsNullOrEmpty(SiteTxt.Text) || string.IsNullOrWhiteSpace(SiteTxt.Text))
+		{
+			MessageBox.Show(Properties.Resources.InvalidURLMsg, Properties.Resources.GetDnsInfo, MessageBoxButton.OK, MessageBoxImage.Error);
+			return;
+		}
 		GetDnsInfo(SiteTxt.Text);
 
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig

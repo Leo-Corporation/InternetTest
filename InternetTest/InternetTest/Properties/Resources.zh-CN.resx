@@ -924,4 +924,7 @@
   <data name="Ethernet" xml:space="preserve">
     <value>以太网</value>
   </data>
+  <data name="InvalidURLMsg" xml:space="preserve">
+    <value>请提供有效的 URL。</value>
+  </data>
 </root>
