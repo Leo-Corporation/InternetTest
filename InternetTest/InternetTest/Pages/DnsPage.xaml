@@ -214,6 +214,7 @@
         <WrapPanel
             x:Name="FiltersDisplayer"
             Grid.Row="5"
+            Margin="5 0 0 0"
             Orientation="Horizontal" />
         <StackPanel x:Name="RecordDisplayer" Grid.Row="6" />
     </Grid>

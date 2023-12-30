@@ -121,7 +121,10 @@
 
         </StackPanel>
 
-        <StackPanel x:Name="WebsiteDisplayer" Grid.Row="2" />
+        <StackPanel
+            x:Name="WebsiteDisplayer"
+            Grid.Row="2"
+            Margin="0 5 0 0" />
         <StackPanel
             x:Name="Placeholder"
             Grid.Row="2"
