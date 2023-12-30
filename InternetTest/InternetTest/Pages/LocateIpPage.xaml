@@ -181,7 +181,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="#000" />
+                        Color="{Binding Source={StaticResource AccentColor}}" />
                 </Border.Effect>
 
                 <Grid>
@@ -226,7 +226,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="#000" />
+                        Color="{Binding Source={StaticResource AccentColor}}" />
                 </Border.Effect>
 
                 <Grid>
@@ -271,7 +271,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="#000" />
+                        Color="{Binding Source={StaticResource AccentColor}}" />
                 </Border.Effect>
 
                 <Grid>
@@ -315,7 +315,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="#000" />
+                        Color="{Binding Source={StaticResource AccentColor}}" />
                 </Border.Effect>
 
                 <Grid>
@@ -360,7 +360,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="#000" />
+                        Color="{Binding Source={StaticResource AccentColor}}" />
                 </Border.Effect>
 
                 <Grid>
@@ -405,7 +405,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="#000" />
+                        Color="{Binding Source={StaticResource AccentColor}}" />
                 </Border.Effect>
 
                 <Grid>
@@ -450,7 +450,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="#000" />
+                        Color="{Binding Source={StaticResource AccentColor}}" />
                 </Border.Effect>
 
                 <Grid>
@@ -494,7 +494,7 @@
                         Direction="135"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="#000" />
+                        Color="{Binding Source={StaticResource AccentColor}}" />
                 </Border.Effect>
 
                 <Grid>
