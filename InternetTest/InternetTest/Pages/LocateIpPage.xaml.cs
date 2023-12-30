@@ -110,7 +110,7 @@ public partial class LocateIpPage : Page
 		try
 		{
 			StatusIconTxt.Text = "\uF4AB";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			StatusIconTxt.Foreground =Global.GetBrushFromResource("Gray");
 			MyIPTxt.Text = Properties.Resources.IPShowHere2;
 
 			var ipInfo = await Global.GetIPInfoAsync(ip); // Giving an empty IP returns the user's current IP
@@ -131,12 +131,12 @@ public partial class LocateIpPage : Page
 				IpTxt.Text = IpTxt.Text is { Length: 0 } ? ipInfo.Query : IpTxt.Text; // If the IP is empty, use the user's current IP
 
 				StatusIconTxt.Text = "\uF299";
-				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+				StatusIconTxt.Foreground = Global.GetBrushFromResource("Green");
 			}
 			else
 			{
 				StatusIconTxt.Text = "\uF36E";
-				StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+				StatusIconTxt.Foreground = Global.GetBrushFromResource("Red");
 			}
 		}
 		catch (Exception ex)

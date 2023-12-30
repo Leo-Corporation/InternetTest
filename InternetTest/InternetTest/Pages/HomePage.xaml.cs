@@ -98,7 +98,7 @@ public partial class HomePage : Page
 		connected = await Internet.IsAvailableAsync(Global.Settings.TestSite); // Check if Internet is available
 		StatusTxt.Text = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS; // Set text
 		StatusIconTxt.Text = connected ? "\uF299" : "\uF36E";
-		StatusIconTxt.Foreground = connected ? new SolidColorBrush(Global.GetColorFromResource("Green")) : new SolidColorBrush(Global.GetColorFromResource("Red"));
+		StatusIconTxt.Foreground = connected ? Global.GetBrushFromResource("Green") : Global.GetBrushFromResource("Red");
 	}
 
 	internal void LoadNetworkCard()

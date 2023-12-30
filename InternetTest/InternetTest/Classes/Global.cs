@@ -227,7 +227,7 @@ public static class Global
 		{ AppActions.ConnectWiFi, Properties.Resources.ConnectWiFi },
 	};
 
-	public static Color GetColorFromResource(string resourceName) => (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());
+	public static SolidColorBrush GetBrushFromResource(string resourceName) => (SolidColorBrush)Application.Current.Resources[resourceName];
 
 	public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
 	{

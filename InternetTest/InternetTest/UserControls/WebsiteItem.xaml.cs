@@ -67,7 +67,7 @@ public partial class WebsiteItem : UserControl
 		{
 			// Loading UI
 			StatusIcon.Text = "\uF2DE";
-			StatusIcon.Foreground = new SolidColorBrush() { Color = Global.GetColorFromResource("AccentColor") };
+			StatusIcon.Foreground = Global.GetBrushFromResource("Accent");
 
 			// Chronometer
 			int time = 0;
@@ -91,9 +91,9 @@ public partial class WebsiteItem : UserControl
 			};
 			StatusIcon.Foreground = statusInfo.StatusCode switch
 			{
-				>= 400 => new SolidColorBrush() { Color = Global.GetColorFromResource("Red") },
-				>= 300 => new SolidColorBrush() { Color = Global.GetColorFromResource("AccentColor") },
-				_ => new SolidColorBrush() { Color = Global.GetColorFromResource("Green") },
+				>= 400 => Global.GetBrushFromResource("Red"),
+				>= 300 => Global.GetBrushFromResource("Accent"),
+				_ => Global.GetBrushFromResource("Green"),
 			};
 
 			StatusSection.Visibility = Visibility.Visible;
@@ -105,7 +105,7 @@ public partial class WebsiteItem : UserControl
 		{
 			StatusSection.Visibility = Visibility.Visible;
 			StatusIcon.Text = "\uF36E";
-			StatusIcon.Foreground = new SolidColorBrush() { Color = Global.GetColorFromResource("Red") };
+			StatusIcon.Foreground = Global.GetBrushFromResource("Red");
 			StatusCodeTxt.Text = "4xx";
 			StatusCodeBisTxt.Text = "4xx";
 			StatusMsgTxt.Text = ex.Message;

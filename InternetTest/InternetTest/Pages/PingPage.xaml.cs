@@ -71,7 +71,7 @@ public partial class PingPage : Page
 
 			// Update UI
 			StatusIconTxt.Text = "\uF2DE";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			StatusIconTxt.Foreground = Global.GetBrushFromResource("Gray");
 			StatusTxt.Text = Properties.Resources.PingWait;
 			PingBtn.IsEnabled = false;
 
@@ -90,13 +90,13 @@ public partial class PingPage : Page
 				{
 					received++;
 					StatusIconTxt.Text = "\uF299";
-					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+					StatusIconTxt.Foreground = Global.GetBrushFromResource("Green");
 					StatusTxt.Text = $"{Properties.Resources.PingSuccess}{nl}";
 				}
 				else
 				{
 					StatusIconTxt.Text = "\uF36E";
-					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+					StatusIconTxt.Foreground = Global.GetBrushFromResource("Red");
 					StatusTxt.Text = $"{Properties.Resources.PingFail}{nl}";
 					IPAddressTxt.Text = ping.Status.ToString();
 				}
@@ -113,7 +113,7 @@ public partial class PingPage : Page
 		catch (Exception ex)
 		{
 			StatusIconTxt.Text = "\uF4AB";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			StatusIconTxt.Foreground = Global.GetBrushFromResource("Gray");
 			StatusTxt.Text = Properties.Resources.PingStatus;
 			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 		}
