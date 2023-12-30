@@ -216,6 +216,7 @@
                     HorizontalAlignment="Center"
                     FontFamily="../Fonts/#FluentSystemIcons-Regular"
                     FontSize="48"
+                    Foreground="{Binding Source={StaticResource AccentColor}}"
                     RenderTransformOrigin="0.5,0.5"
                     Text="&#xF709;">
                     <TextBlock.RenderTransform>
