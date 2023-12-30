@@ -509,7 +509,7 @@
                             VerticalAlignment="Center"
                             FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                             FontSize="22"
-                            Text="&#xF8AD;" />
+                            Text="&#xF45B;" />
                         <StackPanel>
                             <TextBlock
                                 Margin="10 0 0 0"
