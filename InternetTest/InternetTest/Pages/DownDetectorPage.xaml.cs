@@ -59,6 +59,8 @@ namespace InternetTest.Pages
 				WebsiteDisplayer.Children.Add(new WebsiteItem(Websites[i]));
 			}
 			Placeholder.Visibility = WebsiteDisplayer.Children.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
+
+			IntervalTxt.Text = Global.Settings.DefaultTimeInterval.ToString();
 		}
 		private void ClearBtn_Click(object sender, RoutedEventArgs e)
 		{

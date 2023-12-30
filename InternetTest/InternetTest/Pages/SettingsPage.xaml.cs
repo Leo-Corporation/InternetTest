@@ -109,6 +109,9 @@ public partial class SettingsPage : Page
 		HttpRadio.IsChecked = !Global.Settings.UseHttps;
 		SiteTxt.Text = Global.Settings.TestSite;
 
+		// DownDetector section
+		IntervalTxt.Text = Global.Settings.DefaultTimeInterval.ToString();
+
 		// Trace route section
 		HopsTxt.Text = Global.Settings.TraceRouteMaxHops.ToString();
 		TimeOutTxt.Text = Global.Settings.TraceRouteMaxTimeOut.ToString();
@@ -425,5 +428,13 @@ public partial class SettingsPage : Page
 			File.Delete(files[i]); // Remove the temp file
 		}
 		Directory.Delete(path); // Delete the temp directory		
+	}
+
+	private void IntervalApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (string.IsNullOrEmpty(IntervalTxt.Text)) return;
+
+		Global.Settings.DefaultTimeInterval = int.Parse(IntervalTxt.Text);
+		SettingsManager.Save();
 	}
 }

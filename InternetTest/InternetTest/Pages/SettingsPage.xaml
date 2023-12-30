@@ -617,6 +617,88 @@
                             VerticalAlignment="Center"
                             FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                             FontSize="22"
+                            Text="&#xFB69;" />
+                        <StackPanel>
+                            <TextBlock
+                                Margin="10 0 0 0"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                FontWeight="ExtraBold"
+                                Text="{x:Static lang:Resources.DownDetector}" />
+                            <TextBlock
+                                Margin="10 0 0 0"
+                                VerticalAlignment="Center"
+                                FontSize="13"
+                                Text="{x:Static lang:Resources.DownDetectorSettingsDesc}"
+                                TextWrapping="Wrap" />
+                        </StackPanel>
+                    </StackPanel>
+                </Expander.Header>
+                <StackPanel Margin="10 0 0 0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.DefaultTimeInterval}" />
+                        <Border
+                            Margin="10 3 10 3"
+                            Padding="3"
+                            Background="{DynamicResource CardBackground}"
+                            CornerRadius="5">
+                            <Border.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="15"
+                                    Opacity="0.2"
+                                    ShadowDepth="0"
+                                    Color="{DynamicResource AccentColor}" />
+                            </Border.Effect>
+                            <TextBox
+                                x:Name="IntervalTxt"
+                                MinWidth="50"
+                                Padding="3"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Foreground="{DynamicResource Foreground1}"
+                                PreviewTextInput="TextBox_PreviewTextInput"
+                                TextAlignment="Center" />
+                        </Border>
+                        <Button
+                            x:Name="IntervalApplyBtn"
+                            Padding="10 5 10 5"
+                            VerticalAlignment="Center"
+                            Background="{DynamicResource Accent}"
+                            Click="IntervalApplyBtn_Click"
+                            Cursor="Hand"
+                            FontWeight="ExtraBold"
+                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                            Style="{StaticResource PrimaryButton}"
+                            Visibility="Visible">
+                            <TextBlock
+                                Margin="0 0 0 0"
+                                VerticalAlignment="Center"
+                                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                FontWeight="Regular"
+                                Text="&#xF680;" />
+
+                            <Button.ToolTip>
+                                <ToolTip
+                                    Background="{DynamicResource Background1}"
+                                    Content="{x:Static lang:Resources.Apply}"
+                                    Foreground="{DynamicResource Foreground1}" />
+                            </Button.ToolTip>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Expander>
+
+            <Expander
+                Margin="10 10 10 0"
+                Background="{DynamicResource CardBackground}"
+                Foreground="{DynamicResource Foreground1}"
+                Style="{DynamicResource ExpanderStyle1}">
+                <Expander.Header>
+                    <StackPanel Margin="10 15" Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="22"
                             Text="&#xF679;" />
                         <StackPanel>
                             <TextBlock
