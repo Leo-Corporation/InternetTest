@@ -954,4 +954,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
     <value>Hide disabled adapters by default</value>
   </data>
+  <data name="PortableNoAutoUpdates" xml:space="preserve">
+    <value>Automatic updates are not available in portable mode, please download InternetTest Pro (Portable) again.</value>
+  </data>
 </root>

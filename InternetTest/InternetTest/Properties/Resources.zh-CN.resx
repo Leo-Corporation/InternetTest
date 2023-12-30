@@ -945,4 +945,7 @@
   <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
     <value>默认隐藏已禁用的适配器</value>
   </data>
+  <data name="PortableNoAutoUpdates" xml:space="preserve">
+    <value>自动更新在便携模式下不可用，请重新下载 InternetTest Pro (便携版)。</value>
+  </data>
 </root>

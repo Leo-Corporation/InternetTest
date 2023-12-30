@@ -15,6 +15,7 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<RepositoryUrl>https://github.com/Leo-Corporation/InternetTest</RepositoryUrl>
 		<PackageProjectUrl>https://leocorporation.dev/store/internettest</PackageProjectUrl>
+		<PublishSingleFile>true</PublishSingleFile>
 	</PropertyGroup>
 
 	<ItemGroup>

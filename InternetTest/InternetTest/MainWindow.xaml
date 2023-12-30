@@ -143,7 +143,7 @@
                         CornerRadius="10">
                         <TextBlock
                             x:Name="VersionTxt"
-                            d:Text="7.6.2.2307"
+                            d:Text="8.0.0.2401"
                             FontSize="10"
                             FontWeight="SemiBold"
                             Foreground="{DynamicResource DarkGray}" />

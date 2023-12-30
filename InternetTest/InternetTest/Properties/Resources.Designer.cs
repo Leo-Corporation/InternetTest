@@ -1706,6 +1706,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatic updates are not available in portable mode, please download InternetTest Pro (Portable) again..
+        /// </summary>
+        public static string PortableNoAutoUpdates {
+            get {
+                return ResourceManager.GetString("PortableNoAutoUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pro.
         /// </summary>
         public static string Pro {

@@ -954,4 +954,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
     <value>Nascondere gli adattatori disabilitati per impostazione predefinita</value>
   </data>
+  <data name="PortableNoAutoUpdates" xml:space="preserve">
+    <value>Gli aggiornamenti automatici non sono disponibili in modalità portatile; scaricare nuovamente InternetTest Pro (Portable).</value>
+  </data>
 </root>

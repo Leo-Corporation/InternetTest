@@ -60,6 +60,12 @@ public partial class MainWindow : Window
 
 	private void InitUI()
 	{
+#if PORTABLE
+		VersionTxt.Text = Global.Version + " (Portable)";
+#else
+		VersionTxt.Text = Global.Version;
+#endif
+
 		StateChanged += (o, e) => HandleWindowStateChanged();
 		Loaded += (o, e) => HandleWindowStateChanged();
 		LocationChanged += (o, e) => HandleWindowStateChanged();
@@ -143,9 +149,6 @@ public partial class MainWindow : Window
 			Width = Global.Settings.MainWindowSize?.Item1 ?? 950;
 			Height = Global.Settings.MainWindowSize?.Item2 ?? 600;
 		}
-
-		// Version
-		VersionTxt.Text = Global.Version;
 	}
 
 	private void PageCard_OnCardClick(object? sender, PageEventArgs e)
