@@ -55,6 +55,7 @@ public partial class WiFiNetworksPage : Page
 			TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.WiFiNetworks}"; // Set the title
 
 			WiFiDisplayer.Children.Clear();
+			ShowHiddenChk.IsChecked = !Global.Settings.HideDisabledAdapters;
 
 			WiFiDisplayer.Visibility = Visibility.Collapsed;
 			ScanningPanel.Visibility = Visibility.Visible;

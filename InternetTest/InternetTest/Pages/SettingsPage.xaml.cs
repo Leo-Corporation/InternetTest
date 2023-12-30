@@ -116,6 +116,9 @@ public partial class SettingsPage : Page
 		HopsTxt.Text = Global.Settings.TraceRouteMaxHops.ToString();
 		TimeOutTxt.Text = Global.Settings.TraceRouteMaxTimeOut.ToString();
 
+		// Adapters section
+		HideNetworkAdaptersChk.IsChecked = Global.Settings.HideDisabledAdapters;
+
 		// Data section
 		UseSynethiaChk.IsChecked = Global.Settings.UseSynethia;
 
@@ -435,6 +438,12 @@ public partial class SettingsPage : Page
 		if (string.IsNullOrEmpty(IntervalTxt.Text)) return;
 
 		Global.Settings.DefaultTimeInterval = int.Parse(IntervalTxt.Text);
+		SettingsManager.Save();
+	}
+
+	private void NetworkAdaptersChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.HideDisabledAdapters = HideNetworkAdaptersChk.IsChecked;
 		SettingsManager.Save();
 	}
 }

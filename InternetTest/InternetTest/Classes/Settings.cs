@@ -78,6 +78,7 @@ public class Settings
 	public bool? LaunchIpLocationOnStart { get; set; }
 	public List<string>? DownDetectorWebsites { get; set; }
 	public int? DefaultTimeInterval { get; set; }
+	public bool? HideDisabledAdapters { get; set; }
 }
 
 public static class SettingsManager
@@ -121,6 +122,7 @@ public static class SettingsManager
 		settings.DefaultPage = (settings.DefaultPage == AppPages.Status || settings.DefaultPage == AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
 		settings.DownDetectorWebsites ??= new();
 		settings.DefaultTimeInterval ??= 10;
+		settings.HideDisabledAdapters ??= false;
 
 		return settings;
 	}
@@ -184,6 +186,7 @@ public static class SettingsManager
 				settings.DefaultPage = (settings.DefaultPage == AppPages.Status || settings.DefaultPage == AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
 				settings.DownDetectorWebsites ??= new();
 				settings.DefaultTimeInterval ??= 10;
+				settings.HideDisabledAdapters ??= false;
 
 				Global.Settings = settings;
 

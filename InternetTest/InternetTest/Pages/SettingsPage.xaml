@@ -832,6 +832,48 @@
                             VerticalAlignment="Center"
                             FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                             FontSize="22"
+                            Text="&#xF35C;" />
+                        <StackPanel>
+                            <TextBlock
+                                Margin="10 0 0 0"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                FontWeight="ExtraBold"
+                                Text="{x:Static lang:Resources.NetworkAdapters}" />
+                            <TextBlock
+                                Margin="10 0 0 0"
+                                VerticalAlignment="Center"
+                                FontSize="13"
+                                Text="{x:Static lang:Resources.NetworkAdaptersSettingsDesc}"
+                                TextWrapping="Wrap" />
+                        </StackPanel>
+                    </StackPanel>
+                </Expander.Header>
+                <StackPanel>
+                    <CheckBox
+                        x:Name="HideNetworkAdaptersChk"
+                        Margin="10 0 0 5"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="2"
+                        Checked="NetworkAdaptersChk_Checked"
+                        Content="{x:Static lang:Resources.HideDisabledAdaptersByDefault}"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource CheckBoxStyle1}"
+                        Unchecked="NetworkAdaptersChk_Checked" />
+                </StackPanel>
+            </Expander>
+
+            <Expander
+                Margin="10 10 10 0"
+                Background="{DynamicResource CardBackground}"
+                Foreground="{DynamicResource Foreground1}"
+                Style="{DynamicResource ExpanderStyle1}">
+                <Expander.Header>
+                    <StackPanel Margin="10 15" Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="22"
                             Text="&#xF4AB;" />
                         <StackPanel>
                             <TextBlock
