@@ -110,4 +110,12 @@ public partial class TraceroutePage : Page
 
 		TraceBtn.IsEnabled = true;
 	}
+
+	private void AddressTxt_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+	{
+		if (e.Key == System.Windows.Input.Key.Enter)
+		{
+			TraceBtn_Click(sender, e);
+		}
+	}
 }

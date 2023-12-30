@@ -71,7 +71,8 @@
                         Background="Transparent"
                         BorderThickness="0"
                         FontWeight="Bold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}" />
+                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Keyboard.KeyUp="AddressTxt_KeyUp" />
                     <Button
                         x:Name="DismissBtn"
                         Grid.Column="1"

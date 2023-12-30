@@ -171,4 +171,12 @@ public partial class DnsPage : Page
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
 		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "DNS.GetInfo").UsageCount++;
 	}
+
+	private void SiteTxt_KeyUp(object sender, KeyEventArgs e)
+	{
+		if (e.Key == Key.Enter)
+		{
+			GetDnsInfoBtn_Click(sender, e);
+		}
+	}
 }
