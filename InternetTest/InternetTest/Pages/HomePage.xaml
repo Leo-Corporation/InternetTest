@@ -63,8 +63,8 @@
                         VerticalAlignment="Center"
                         FontFamily="../Fonts/#FluentSystemIcons-Filled"
                         FontSize="32"
-                        Foreground="{DynamicResource Green}"
-                        Text="&#xF299;" />
+                        Foreground="{DynamicResource Accent}"
+                        Text="&#xF648;" />
                     <StackPanel
                         Grid.Column="1"
                         Margin="5 0 0 0"
@@ -78,7 +78,7 @@
                             x:Name="StatusTxt"
                             FontSize="10"
                             FontWeight="SemiBold"
-                            Text="{x:Static lang:Resources.ConnectedS}" />
+                            Text="{x:Static lang:Resources.Unknown}" />
                     </StackPanel>
                     <Button
                         x:Name="RefreshStatusBtn"

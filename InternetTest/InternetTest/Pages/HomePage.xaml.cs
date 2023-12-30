@@ -77,7 +77,7 @@ public partial class HomePage : Page
 		}
 
 		// Load "Status" section
-		LoadStatusCard();
+		if (Global.Settings.TestOnStart) LoadStatusCard();
 
 		// Load "Network" section
 		LoadNetworkCard();
@@ -94,7 +94,7 @@ public partial class HomePage : Page
 
 	bool connected = true;
 	internal async void LoadStatusCard()
-	{
+	{		
 		connected = await Internet.IsAvailableAsync(Global.Settings.TestSite); // Check if Internet is available
 		StatusTxt.Text = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS; // Set text
 		StatusIconTxt.Text = connected ? "\uF299" : "\uF36E";
