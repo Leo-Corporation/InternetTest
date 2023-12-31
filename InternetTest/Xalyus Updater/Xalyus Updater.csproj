@@ -9,7 +9,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Version>1.0.0.2208</Version>
     <Company>Léo Corporation</Company>
-    <Copyright>© 2022</Copyright>
+    <Copyright>© 2024</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
