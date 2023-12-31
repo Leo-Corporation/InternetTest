@@ -35,7 +35,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Shapes;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -201,7 +200,7 @@ public partial class SettingsPage : Page
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.Light;
-		SettingsManager.Save();		
+		SettingsManager.Save();
 
 		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
@@ -215,7 +214,7 @@ public partial class SettingsPage : Page
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.Dark;
-		SettingsManager.Save();		
+		SettingsManager.Save();
 
 		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
@@ -229,7 +228,7 @@ public partial class SettingsPage : Page
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.System;
-		SettingsManager.Save();		
+		SettingsManager.Save();
 
 		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);

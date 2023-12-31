@@ -54,7 +54,7 @@ namespace InternetTest.Pages
 		{
 			TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.DownDetector}"; // Set the title of the page
 			WebsiteDisplayer.Children.Clear();
-			for (int i = 0; i < Websites.Count; i++) 
+			for (int i = 0; i < Websites.Count; i++)
 			{
 				WebsiteDisplayer.Children.Add(new WebsiteItem(Websites[i]));
 			}
@@ -148,7 +148,7 @@ namespace InternetTest.Pages
 				TestBtn.IsEnabled = true;
 				AddBtn.IsEnabled = true;
 				LaunchTimerBtn.Content = Properties.Resources.LaunchScheduledTest;
-			}						
+			}
 		}
 	}
 }

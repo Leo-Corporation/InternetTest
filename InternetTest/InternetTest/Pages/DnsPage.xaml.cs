@@ -32,7 +32,6 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 using Whois;
 
 namespace InternetTest.Pages;

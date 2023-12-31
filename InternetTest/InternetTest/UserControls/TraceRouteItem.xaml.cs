@@ -26,7 +26,6 @@ using InternetTest.Classes;
 using System.Net.NetworkInformation;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace InternetTest.UserControls;
 /// <summary>

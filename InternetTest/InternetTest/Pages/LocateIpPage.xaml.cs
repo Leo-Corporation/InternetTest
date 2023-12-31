@@ -32,7 +32,6 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -110,7 +109,7 @@ public partial class LocateIpPage : Page
 		try
 		{
 			StatusIconTxt.Text = "\uF4AB";
-			StatusIconTxt.Foreground =Global.GetBrushFromResource("Gray");
+			StatusIconTxt.Foreground = Global.GetBrushFromResource("Gray");
 			MyIPTxt.Text = Properties.Resources.IPShowHere2;
 
 			var ipInfo = await Global.GetIPInfoAsync(ip); // Giving an empty IP returns the user's current IP
@@ -171,5 +170,5 @@ public partial class LocateIpPage : Page
 	private void MyIpBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LocateIP(""); // Empty query will return the user's public IP
-    }
+	}
 }

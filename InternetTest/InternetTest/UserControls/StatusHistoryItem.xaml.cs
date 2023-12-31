@@ -26,7 +26,6 @@ using InternetTest.Enums;
 using PeyrSharp.Core.Converters;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace InternetTest.UserControls;
 /// <summary>

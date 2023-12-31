@@ -36,7 +36,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using System.Xml.Serialization;
 
 namespace InternetTest.Pages;
@@ -94,7 +93,7 @@ public partial class HomePage : Page
 
 	bool connected = true;
 	internal async void LoadStatusCard()
-	{		
+	{
 		connected = await Internet.IsAvailableAsync(Global.Settings.TestSite); // Check if Internet is available
 		StatusTxt.Text = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS; // Set text
 		StatusIconTxt.Text = connected ? "\uF299" : "\uF36E";

@@ -60,7 +60,7 @@ public partial class WiFiPasswordsPage : Page
 			if (!Directory.Exists(FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis")) return;
 			LoadWiFiInfo(FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis");
 		}
-		catch {	}
+		catch { }
 	}
 
 	internal async void GetWiFiBtn_Click(object sender, RoutedEventArgs e)
