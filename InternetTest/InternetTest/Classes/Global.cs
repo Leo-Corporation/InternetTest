@@ -25,12 +25,11 @@ using InternetTest.Enums;
 using InternetTest.Pages;
 using ManagedNativeWifi;
 using Microsoft.Win32;
-using PeyrSharp.Core.Maths;
 using PeyrSharp.Enums;
 using PeyrSharp.Env;
+using Synethia;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.NetworkInformation;
@@ -48,23 +47,47 @@ public static class Global
 #if NIGHTLY
 	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-	public static string Version => $"7.9.1.2310-nightly{Date:yyMM.dd@HHmm}";
+	public static string Version => $"8.0.0.2401-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "7.9.1.2310";
+	public static string Version => "8.0.0.2401";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
+	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\NewSynethiaConfig.json";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
 	public static Settings Settings { get; set; } = SettingsManager.Load();
-	public static SynethiaConfig SynethiaConfig { get; set; } = SynethiaManager.Load();
+	public static SynethiaConfig SynethiaConfig { get; set; } = SynethiaManager.Load(SynethiaPath, DefaultConfig);
+	public static SynethiaConfig DefaultConfig => new()
+	{
+		PagesInfo = new()
+		{
+			new("DownDetector"),
+			new("DNS"),
+			new("WiFiNetworks"),
+			new("LocateIP"),
+			new("IPConfig"),
+			new("Ping"),
+			new("Traceroute"),
+			new("WiFiPasswords"),
+		},
+		ActionsInfo = new()
+		{
+			new(0, "DownDetector.Test"),
+			new(1, "DNS.GetInfo"),
+			new(2, "WiFiNetworks.Scan"),
+			new(3, "LocateIP.Locate"),
+			new(4, "IPConfig.Get"),
+			new(5, "Ping.Execute"),
+			new(6, "Traceroute.Execute"),
+			new(7, "WiFiPasswords.Get"),
+		}
+	};
 	public static History History { get; set; } = HistoryManager.Load();
 
 	public static HomePage? HomePage { get; set; }
 	public static HistoryPage? HistoryPage { get; set; }
 	public static SettingsPage? SettingsPage { get; set; }
-	public static StatusPage? StatusPage { get; set; }
 	public static DownDetectorPage? DownDetectorPage { get; set; }
-	public static MyIpPage? MyIpPage { get; set; }
 	public static LocateIpPage? LocateIpPage { get; set; }
 	public static PingPage? PingPage { get; set; }
 	public static IpConfigPage? IpConfigPage { get; set; }
@@ -72,8 +95,6 @@ public static class Global
 	public static DnsPage? DnsPage { get; set; }
 	public static TraceroutePage? TraceroutePage { get; set; }
 	public static WiFiNetworksPage? WiFiNetworksPage { get; set; }
-
-	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\SynethiaConfig.json";
 
 	public static string GetHiSentence
 	{
@@ -139,16 +160,14 @@ public static class Global
 	{
 		Dictionary<AppPages, double> appScores = new()
 		{
-			{ AppPages.Status, synethiaConfig.StatusPageInfo.Score },
-			{ AppPages.DownDetector, synethiaConfig.DownDetectorPageInfo.Score },
-			{ AppPages.MyIP, synethiaConfig.MyIPPageInfo.Score },
-			{ AppPages.LocateIP, synethiaConfig.LocateIPPageInfo.Score },
-			{ AppPages.Ping, synethiaConfig.PingPageInfo.Score },
-			{ AppPages.IPConfig, synethiaConfig.IPConfigPageInfo.Score },
-			{ AppPages.WiFiPasswords, synethiaConfig.WiFiPasswordsPageInfo.Score },
-			{ AppPages.DnsTool, synethiaConfig.DnsPageInfo.Score },
-			{ AppPages.TraceRoute, synethiaConfig.TraceRoutePageInfo.Score },
-			{ AppPages.WiFiNetworks, synethiaConfig.WiFiNetworksPageInfo.Score },
+			{ AppPages.DownDetector, synethiaConfig.PagesInfo[0].Score },
+			{ AppPages.DnsTool, synethiaConfig.PagesInfo[1].Score },
+			{ AppPages.WiFiNetworks, synethiaConfig.PagesInfo[2].Score },
+			{ AppPages.LocateIP, synethiaConfig.PagesInfo[3].Score },
+			{ AppPages.IPConfig, synethiaConfig.PagesInfo[4].Score },
+			{ AppPages.Ping, synethiaConfig.PagesInfo[5].Score },
+			{ AppPages.TraceRoute, synethiaConfig.PagesInfo[6].Score },
+			{ AppPages.WiFiPasswords, synethiaConfig.PagesInfo[7].Score },
 		};
 
 		var sorted = appScores.OrderByDescending(x => x.Value);
@@ -156,26 +175,11 @@ public static class Global
 		return (from item in sorted select item.Key).ToList();
 	}
 
-	public static List<ActionInfo> GetMostRelevantActions(SynethiaConfig synethiaConfig)
-	{
-		Dictionary<ActionInfo, int> relevantActions = new();
-		for (int i = 0; i < synethiaConfig.ActionInfos.Count; i++)
-		{
-			relevantActions.Add(synethiaConfig.ActionInfos[i], synethiaConfig.ActionInfos[i].UsageCount);
-		}
-
-		// Sort each action with its usage count descending
-		var sorted = relevantActions.OrderByDescending(x => x.Value);
-		return (from item in sorted select item.Key).ToList();
-	}
-
 	public static List<AppPages> DefaultRelevantPages => new()
 	{
-		AppPages.Status,
 		AppPages.LocateIP,
 		AppPages.WiFiPasswords,
 		AppPages.DownDetector,
-		AppPages.MyIP,
 		AppPages.WiFiNetworks,
 		AppPages.Ping,
 		AppPages.TraceRoute,
@@ -185,16 +189,14 @@ public static class Global
 
 	public static List<ActionInfo> DefaultRelevantActions => new()
 	{
-		new() { Action = AppActions.MyIP, UsageCount = 0 },
-		new() { Action = AppActions.Test, UsageCount = 0 },
-		new() { Action = AppActions.DownDetectorRequest, UsageCount = 0 },
-		new() { Action = AppActions.Ping, UsageCount = 0 },
-		new() { Action = AppActions.LocateIP, UsageCount = 0 },
-		new() { Action = AppActions.GetIPConfig, UsageCount = 0 },
-		new() { Action = AppActions.GetWiFiPasswords, UsageCount = 0 },
-		new() { Action = AppActions.ConnectWiFi, UsageCount = 0 },
-		new() { Action = AppActions.GetDnsInfo, UsageCount = 0 },
-		new() { Action = AppActions.TraceRoute, UsageCount = 0 },
+		new(4, "IPConfig.Get"),
+		new(2, "WiFiNetworks.Scan"),
+		new(3, "LocateIP.Locate"),
+		new(7, "WiFiPasswords.Get"),
+		new(0, "DownDetector.Test"),
+		new(5, "Ping.Execute"),
+		new(1, "DNS.GetInfo"),
+		new(6, "Traceroute.Execute"),
 	};
 
 	public static Dictionary<AppActions, string> ActionsIcons => new()
@@ -225,7 +227,7 @@ public static class Global
 		{ AppActions.ConnectWiFi, Properties.Resources.ConnectWiFi },
 	};
 
-	public static Color GetColorFromResource(string resourceName) => (Color)ColorConverter.ConvertFromString(Application.Current.Resources[resourceName].ToString());
+	public static SolidColorBrush GetBrushFromResource(string resourceName) => (SolidColorBrush)Application.Current.Resources[resourceName];
 
 	public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
 	{
@@ -578,4 +580,19 @@ public static class Global
 			return "";
 		}
 	}
+
+	public static string GetCurrentWifiSSID()
+	{
+		var connections = NativeWifi.EnumerateInterfaceConnections();
+
+		foreach (var connection in connections)
+		{
+			if (connection.IsConnected)
+			{
+				return connection.ProfileName;
+			}
+		}
+		return null;
+	}
+
 }

@@ -14,7 +14,7 @@
     AllowsTransparency="True"
     Background="Transparent"
     FontFamily="/Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
@@ -52,10 +52,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource WindowButtonsHover1}}" />
+                                <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowButtonsHover1}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource WindowButtonsPressed1}}" />
+                                <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowButtonsPressed1}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -113,12 +113,9 @@
     <Border
         Name="WindowBorder"
         Margin="10"
-        d:Background="#fff"
+        Background="{DynamicResource BackgroundImg}"
         BorderThickness="0"
         CornerRadius="5">
-        <Border.Background>
-            <ImageBrush ImageSource="{Binding Source={StaticResource BackgroundImg}}" />
-        </Border.Background>
         <Grid VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -140,7 +137,7 @@
                             VerticalAlignment="Center"
                             FontFamily="../Fonts/#FluentSystemIcons-Regular"
                             FontSize="18"
-                            Foreground="{Binding Source={StaticResource AccentColor}}"
+                            Foreground="{DynamicResource Accent}"
                             Text="&#xF8AC;" />
                         <TextBlock
                             x:Name="NameTxt"
@@ -162,7 +159,7 @@
                         Content="&#xF36B;"
                         FontFamily="/Fonts/#FluentSystemIcons-Regular"
                         FontSize="14"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
                         Style="{StaticResource TitleBarCloseButtonStyle}" />
                 </Grid>
@@ -192,11 +189,11 @@
                 Padding="5"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Background="{Binding Source={StaticResource AccentColor}}"
+                Background="{DynamicResource Accent}"
                 Click="CopyBtn_Click"
                 Content="{x:Static lang:Resources.Copy}"
                 FontWeight="Bold"
-                Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                 Style="{DynamicResource PrimaryButton}" />
         </Grid>
     </Border>

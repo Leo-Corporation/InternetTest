@@ -15,7 +15,7 @@
             Margin="5"
             Padding="5"
             VerticalAlignment="Top"
-            Background="{Binding Source={StaticResource CardBackground}}"
+            Background="{DynamicResource CardBackground}"
             CornerRadius="5">
             <Border.Effect>
                 <DropShadowEffect
@@ -40,7 +40,7 @@
                     d:Text="#1"
                     FontSize="16"
                     FontWeight="Bold"
-                    Foreground="{Binding Source={StaticResource DarkGray}}" />
+                    Foreground="{DynamicResource DarkGray}" />
                 <TextBlock
                     x:Name="NameTxt"
                     Grid.Column="1"
@@ -78,8 +78,8 @@
             Height="16"
             Margin="0 -3 0 0"
             VerticalAlignment="Top"
-            Fill="{Binding Source={StaticResource Background1}}"
-            Stroke="{Binding Source={StaticResource AccentColor}}"
+            Fill="{DynamicResource Background1}"
+            Stroke="{DynamicResource Accent}"
             StrokeDashOffset="1"
             StrokeThickness="1" />
         <StackPanel x:Name="BottomElipse" Margin="0 38 0 0">
@@ -90,15 +90,15 @@
                 Margin="0 0 0 -3"
                 VerticalAlignment="Bottom"
                 Panel.ZIndex="1"
-                Fill="{Binding Source={StaticResource Background1}}"
-                Stroke="{Binding Source={StaticResource AccentColor}}"
+                Fill="{DynamicResource Background1}"
+                Stroke="{DynamicResource Accent}"
                 StrokeDashOffset="1"
                 StrokeThickness="1" />
             <Path
                 Width="2"
                 Height="28"
                 Data="M1 0L1 28"
-                Stroke="{Binding Source={StaticResource AccentColor}}"
+                Stroke="{DynamicResource Accent}"
                 StrokeDashOffset="1"
                 StrokeThickness="1" />
         </StackPanel>

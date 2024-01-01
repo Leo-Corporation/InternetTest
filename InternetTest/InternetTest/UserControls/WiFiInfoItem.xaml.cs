@@ -72,7 +72,7 @@ public partial class WiFiInfoItem : UserControl
 		{
 			b.Click += (sender, e) =>
 			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
+				Global.SynethiaConfig.PagesInfo[7].InteractionCount++;
 			};
 		}
 	}

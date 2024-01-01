@@ -11,7 +11,7 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
 
     <Grid>
@@ -35,7 +35,7 @@
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Text="&#xF47F;" />
             <TextBlock
                 Margin="5 0 0 0"
@@ -57,7 +57,7 @@
                 Background="Transparent"
                 BorderThickness="0"
                 Checked="StatusBtn_Click"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Style="{DynamicResource TabRadioButton}">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -87,7 +87,7 @@
                 Background="Transparent"
                 BorderThickness="0"
                 Checked="DownDetectorBtn_Click"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Style="{DynamicResource TabRadioButton}">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -120,7 +120,7 @@
             <Border
                 Margin="8"
                 Padding="10"
-                Background="{Binding Source={StaticResource Background1}}"
+                Background="{DynamicResource Background1}"
                 CornerRadius="5">
                 <StackPanel>
                     <TextBlock
@@ -138,9 +138,9 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         Background="Transparent"
-                        BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                        BorderBrush="{DynamicResource Accent}"
                         BorderThickness="2"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         SelectedIndex="0"
                         SelectionChanged="FilterComboBox_SelectionChanged"
                         Style="{DynamicResource ComboBoxStyle1}">
@@ -164,10 +164,10 @@
                                 Text="{x:Static lang:Resources.FromDate}" />
                             <DatePicker
                                 x:Name="FromDatePicker"
-                                Background="{Binding Source={StaticResource Background1}}"
-                                BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                                Background="{DynamicResource Background1}"
+                                BorderBrush="{DynamicResource Accent}"
                                 FontWeight="SemiBold"
-                                Foreground="{Binding Source={StaticResource Foreground1}}"
+                                Foreground="{DynamicResource Foreground1}"
                                 Style="{DynamicResource DatePickerStyle}">
                                 <DatePicker.Resources>
                                     <Style TargetType="{x:Type DatePickerTextBox}">
@@ -177,9 +177,9 @@
                                                     <TextBox
                                                         x:Name="PART_TextBox"
                                                         VerticalAlignment="Center"
-                                                        Background="{Binding Source={StaticResource Background1}}"
+                                                        Background="{DynamicResource Background1}"
                                                         BorderThickness="0"
-                                                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                                                        Foreground="{DynamicResource Foreground1}"
                                                         Text="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
                                                 </ControlTemplate>
                                             </Setter.Value>
@@ -197,10 +197,10 @@
                                 Text="{x:Static lang:Resources.ToDate}" />
                             <DatePicker
                                 x:Name="ToDatePicker"
-                                Background="{Binding Source={StaticResource Background1}}"
-                                BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                                Background="{DynamicResource Background1}"
+                                BorderBrush="{DynamicResource Accent}"
                                 FontWeight="SemiBold"
-                                Foreground="{Binding Source={StaticResource Foreground1}}"
+                                Foreground="{DynamicResource Foreground1}"
                                 Style="{DynamicResource DatePickerStyle}">
                                 <DatePicker.Resources>
                                     <Style TargetType="{x:Type DatePickerTextBox}">
@@ -210,9 +210,9 @@
                                                     <TextBox
                                                         x:Name="PART_TextBox"
                                                         VerticalAlignment="Center"
-                                                        Background="{Binding Source={StaticResource Background1}}"
+                                                        Background="{DynamicResource Background1}"
                                                         BorderThickness="0"
-                                                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                                                        Foreground="{DynamicResource Foreground1}"
                                                         Text="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
                                                 </ControlTemplate>
                                             </Setter.Value>
@@ -227,11 +227,11 @@
                             Padding="10 5 10 5"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Background="{Binding Source={StaticResource AccentColor}}"
+                            Background="{DynamicResource Accent}"
                             Click="DateApplyBtn_Click"
                             Cursor="Hand"
                             FontWeight="ExtraBold"
-                            Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                             Style="{StaticResource PrimaryButton}"
                             Visibility="Visible">
                             <StackPanel Orientation="Horizontal">
@@ -252,9 +252,9 @@
                             </StackPanel>
                             <Button.ToolTip>
                                 <ToolTip
-                                    Background="{Binding Source={StaticResource Background1}}"
+                                    Background="{DynamicResource Background1}"
                                     Content="{x:Static lang:Resources.Apply}"
-                                    Foreground="{Binding Source={StaticResource Foreground1}}" />
+                                    Foreground="{DynamicResource Foreground1}" />
                             </Button.ToolTip>
                         </Button>
                     </StackPanel>
@@ -267,10 +267,10 @@
                             x:Name="SuccessfulRadioBtn"
                             Margin="10"
                             Background="Transparent"
-                            BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                            BorderBrush="{DynamicResource Accent}"
                             Checked="SuccessfulRadioBtn_Checked"
                             Content="{x:Static lang:Resources.Successful}"
-                            Foreground="{Binding Source={StaticResource Foreground1}}"
+                            Foreground="{DynamicResource Foreground1}"
                             GroupName="StateFilter"
                             IsChecked="True"
                             Style="{DynamicResource RadioButtonStyle1}" />
@@ -278,10 +278,10 @@
                             x:Name="FailRadioBtn"
                             Margin="10"
                             Background="Transparent"
-                            BorderBrush="{Binding Source={StaticResource AccentColor}}"
+                            BorderBrush="{DynamicResource Accent}"
                             Checked="FailRadioBtn_Checked"
                             Content="{x:Static lang:Resources.Failed}"
-                            Foreground="{Binding Source={StaticResource Foreground1}}"
+                            Foreground="{DynamicResource Foreground1}"
                             GroupName="StateFilter"
                             Style="{DynamicResource RadioButtonStyle1}" />
                     </StackPanel>
@@ -308,7 +308,7 @@
             Background="Transparent"
             BorderThickness="0"
             Click="EmptyHistoryBtn_Click"
-            Foreground="{Binding Source={StaticResource Red}}"
+            Foreground="{DynamicResource Red}"
             Style="{DynamicResource StandardButton}">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -336,14 +336,14 @@
                 Width="300"
                 Margin="10 3 3 3"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
                         BlurRadius="15"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -358,7 +358,7 @@
                         Background="Transparent"
                         BorderThickness="0"
                         FontWeight="Bold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
+                        Foreground="{DynamicResource DarkGray}"
                         TextChanged="SearchTxt_TextChanged" />
                     <Button
                         x:Name="DismissBtn"
@@ -372,7 +372,7 @@
                         Click="DismissBtn_Click"
                         Content="&#xF36A;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource ToolButton}" />
                 </Grid>
             </Border>
@@ -387,7 +387,7 @@
                 Content="&#xF407;"
                 FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Style="{DynamicResource DefaultButton}" />
         </StackPanel>
         <Grid

@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Enums;
 using PeyrSharp.Env;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -74,6 +75,9 @@ public class Settings
 	public int? TraceRouteMaxTimeOut { get; set; }
 	public (double, double)? MainWindowSize { get; set; }
 	public bool? LaunchIpLocationOnStart { get; set; }
+	public List<string>? DownDetectorWebsites { get; set; }
+	public int? DefaultTimeInterval { get; set; }
+	public bool? HideDisabledAdapters { get; set; }
 }
 
 public static class SettingsManager
@@ -114,6 +118,10 @@ public static class SettingsManager
 		settings.TraceRouteMaxTimeOut ??= 5000;
 		settings.MainWindowSize ??= (950, 600);
 		settings.LaunchIpLocationOnStart ??= true;
+		settings.DefaultPage = (settings.DefaultPage == AppPages.Status || settings.DefaultPage == AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
+		settings.DownDetectorWebsites ??= new();
+		settings.DefaultTimeInterval ??= 10;
+		settings.HideDisabledAdapters ??= false;
 
 		return settings;
 	}
@@ -163,7 +171,23 @@ public static class SettingsManager
 				XmlSerializer xmlSerializer = new(typeof(Settings)); // XML Serializer
 				StreamReader streamReader = new(path); // Where the file is going to be read
 
-				Global.Settings = (Settings)xmlSerializer.Deserialize(streamReader); // Read
+				var settings = (Settings?)xmlSerializer.Deserialize(streamReader) ?? new();
+
+				// Upgrade the settings file if it comes from an older version
+				settings.IsMaximized ??= false; // Set the default value if none is specified.
+				settings.ToggleConfidentialMode ??= false; // Set the default value if none is specified.
+				settings.Pinned ??= false; // Set the default value if none is specified.
+				settings.RememberPinnedState ??= true; // Set the default value if none is specified.
+				settings.TraceRouteMaxHops ??= 30;
+				settings.TraceRouteMaxTimeOut ??= 5000;
+				settings.MainWindowSize ??= (950, 600);
+				settings.LaunchIpLocationOnStart ??= true;
+				settings.DefaultPage = (settings.DefaultPage == AppPages.Status || settings.DefaultPage == AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
+				settings.DownDetectorWebsites ??= new();
+				settings.DefaultTimeInterval ??= 10;
+				settings.HideDisabledAdapters ??= false;
+
+				Global.Settings = settings;
 
 				streamReader.Dispose();
 				Save(); // Save

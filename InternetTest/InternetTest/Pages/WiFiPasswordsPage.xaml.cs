@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.UserControls;
 using PeyrSharp.Env;
+using Synethia;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -45,7 +46,7 @@ public partial class WiFiPasswordsPage : Page
 	{
 		InitializeComponent();
 		InitUI();
-		InjectSynethiaCode();
+		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 7, ref codeInjected);
 	}
 
 	Placeholder Placeholder = new(Properties.Resources.NothingToShow, "\uF227");
@@ -53,71 +54,21 @@ public partial class WiFiPasswordsPage : Page
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.WifiPasswords}";
 		PlaceholderGrid.Children.Add(Placeholder); // Show the placeholder instead of an empty page
-	}
 
-	private void InjectSynethiaCode()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
+		try
 		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
+			if (!Directory.Exists(FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis")) return;
+			LoadWiFiInfo(FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis");
 		}
-
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each CheckBox/RadioButton of the page
-		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-		{
-			checkBox.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-			checkBox.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-		}
-
-		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-		{
-			radioButton.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-			radioButton.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.WiFiPasswordsPageInfo.InteractionCount++;
-			};
-		}
+		catch { }
 	}
 
 	internal async void GetWiFiBtn_Click(object sender, RoutedEventArgs e)
 	{
-		await GetWiFiNetworksInfo(); // Update the UI
-		if (WiFiItemDisplayer.Children.Count == 0)
-		{
-			PlaceholderGrid.Visibility = Visibility.Visible;
-			Placeholder.Visibility = Visibility.Visible;
-		}
-		else
-		{
-			PlaceholderGrid.Visibility = Visibility.Collapsed;
-			Placeholder.Visibility = Visibility.Collapsed;
-		}
+		await GetWiFiNetworksInfo(); // Update the UI		
 
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.GetWiFiPasswords).UsageCount++;
+		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "WiFiPasswords.Get").UsageCount++;
 	}
 
 	internal async Task GetWiFiNetworksInfo()
@@ -126,11 +77,9 @@ public partial class WiFiPasswordsPage : Page
 		try
 		{
 			WiFiItemDisplayer.Children.Clear(); // Clear the panel
-			PlaceholderGrid.Visibility = Visibility.Collapsed; // Hide the placeholder
-			Placeholder.Visibility = Visibility.Collapsed; // Hide the placeholder
 
 			// Check if the temp directory exists
-			string path = FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\Temp";
+			string path = FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis";
 
 			if (!Directory.Exists(path))
 			{
@@ -148,28 +97,40 @@ public partial class WiFiPasswordsPage : Page
 			await process.WaitForExitAsync();
 
 			// Read the files
-			string[] files = Directory.GetFiles(path);
-			for (int i = 0; i < files.Length; i++)
-			{
-				XmlSerializer serializer = new(typeof(WLANProfile));
-				StreamReader streamReader = new(files[i]); // Where the file is going to be read
-
-				var test = (WLANProfile?)serializer.Deserialize(streamReader);
-
-				if (test != null)
-				{
-					WiFiItemDisplayer.Children.Add(new WiFiInfoItem(test));
-				}
-				streamReader.Close();
-
-				File.Delete(files[i]); // Remove the temp file
-
-			}
-			Directory.Delete(path); // Delete the temp directory			
+			LoadWiFiInfo(path);
 		}
 		catch (Exception ex)
 		{
 			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
+	}
+
+	internal void LoadWiFiInfo(string path)
+	{
+		string[] files = Directory.GetFiles(path);
+		for (int i = 0; i < files.Length; i++)
+		{
+			XmlSerializer serializer = new(typeof(WLANProfile));
+			StreamReader streamReader = new(files[i]); // Where the file is going to be read
+
+			var test = (WLANProfile?)serializer.Deserialize(streamReader);
+
+			if (test != null)
+			{
+				WiFiItemDisplayer.Children.Add(new WiFiInfoItem(test));
+			}
+			streamReader.Close();
+		}
+
+		if (WiFiItemDisplayer.Children.Count == 0)
+		{
+			PlaceholderGrid.Visibility = Visibility.Visible;
+			Placeholder.Visibility = Visibility.Visible;
+		}
+		else
+		{
+			PlaceholderGrid.Visibility = Visibility.Collapsed;
+			Placeholder.Visibility = Visibility.Collapsed;
 		}
 	}
 

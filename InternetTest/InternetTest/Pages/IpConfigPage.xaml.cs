@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.UserControls;
+using Synethia;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
@@ -40,54 +41,7 @@ public partial class IpConfigPage : Page
 	{
 		InitializeComponent();
 		InitUI();
-		InjectSynethiaCode();
-	}
-
-	private void InjectSynethiaCode()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each CheckBox/RadioButton of the page
-		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-		{
-			checkBox.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
-			};
-			checkBox.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
-			};
-		}
-
-		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-		{
-			radioButton.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
-			};
-			radioButton.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.IPConfigPageInfo.InteractionCount++;
-			};
-		}
+		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 4, ref codeInjected);
 	}
 
 	private void InitUI()
@@ -134,6 +88,6 @@ public partial class IpConfigPage : Page
 		InitUI(); // Refresh the UI
 
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.GetIPConfig).UsageCount++;
+		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "IPConfig.Get").UsageCount++;
 	}
 }

@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Classes;
 using InternetTest.Windows;
+using Synethia;
 using System.Windows;
 
 namespace InternetTest;
@@ -41,9 +42,7 @@ public partial class App : Application
 			Global.HomePage = new();
 			Global.HistoryPage = new();
 			Global.SettingsPage = new();
-			Global.StatusPage = new();
 			Global.DownDetectorPage = new();
-			Global.MyIpPage = new();
 			Global.LocateIpPage = new();
 			Global.PingPage = new();
 			Global.IpConfigPage = new();
@@ -69,7 +68,7 @@ public partial class App : Application
 
 	private void Application_Exit(object sender, ExitEventArgs e)
 	{
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 		SettingsManager.Save();
 	}

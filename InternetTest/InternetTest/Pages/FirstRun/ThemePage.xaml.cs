@@ -70,7 +70,7 @@ public partial class ThemePage : Page
 	Border ThemeSelectedBorder;
 	private void Border_MouseEnter(object sender, MouseEventArgs e)
 	{
-		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 	}
 
 	private void Border_MouseLeave(object sender, MouseEventArgs e)
@@ -90,7 +90,7 @@ public partial class ThemePage : Page
 	{
 		ResetBorders();
 		ThemeSelectedBorder = (Border)sender;
-		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.Light;
 		SettingsManager.Save();
 	}
@@ -99,7 +99,7 @@ public partial class ThemePage : Page
 	{
 		ResetBorders();
 		ThemeSelectedBorder = (Border)sender;
-		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.Dark;
 		SettingsManager.Save();
 	}
@@ -108,7 +108,7 @@ public partial class ThemePage : Page
 	{
 		ResetBorders();
 		ThemeSelectedBorder = (Border)sender;
-		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.System;
 		SettingsManager.Save();
 	}

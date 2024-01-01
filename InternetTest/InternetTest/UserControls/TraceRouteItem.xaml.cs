@@ -26,7 +26,6 @@ using InternetTest.Classes;
 using System.Net.NetworkInformation;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace InternetTest.UserControls;
 /// <summary>
@@ -57,9 +56,9 @@ public partial class TraceRouteItem : UserControl
 		};
 		IconTxt.Foreground = TracertStep.Status switch
 		{
-			IPStatus.Success => new SolidColorBrush { Color = Global.GetColorFromResource("Green") },
-			IPStatus.TtlExpired => new SolidColorBrush { Color = Global.GetColorFromResource("Green") },
-			_ => new SolidColorBrush { Color = Global.GetColorFromResource("Red") }
+			IPStatus.Success => Global.GetBrushFromResource("Green"),
+			IPStatus.TtlExpired => Global.GetBrushFromResource("Green"),
+			_ => Global.GetBrushFromResource("Red")
 		};
 
 		if (TracertStep.Status == IPStatus.TimedOut)

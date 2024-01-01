@@ -250,7 +250,7 @@
 	<value>Tester un site</value>
   </data>
   <data name="DownDetectorPlaceHolder" xml:space="preserve">
-	<value>Lancez un test pour voir si un site est disponible ou non</value>
+	<value>Ajoutez un site web pour vérifier s'il est disponible ou non</value>
   </data>
   <data name="MapProvider" xml:space="preserve">
 	<value>Fournisseur de carte</value>
@@ -893,5 +893,68 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>Copier</value>
+  </data>
+  <data name="NotConnectedS" xml:space="preserve">
+    <value>Déconnecté</value>
+  </data>
+  <data name="Checking" xml:space="preserve">
+    <value>Vérification</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Réseau</value>
+  </data>
+  <data name="HoverToReveal" xml:space="preserve">
+    <value>Survoler pour réveler</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="QuickActions" xml:space="preserve">
+    <value>Actions rapides</value>
+  </data>
+  <data name="DnsInfoWillShowHere" xml:space="preserve">
+    <value>Les informations sur le DNS s'afficheront ici</value>
+  </data>
+  <data name="AddSite" xml:space="preserve">
+    <value>Ajouter un site</value>
+  </data>
+  <data name="TimerDesc" xml:space="preserve">
+    <value>Lancer automatiquement des tests pour vérifier si un site web est en down ou non.</value>
+  </data>
+  <data name="TestAll" xml:space="preserve">
+    <value>Tout tester</value>
+  </data>
+  <data name="EraseWiFiPasswordsFiles" xml:space="preserve">
+    <value>Effacer les données WiFi mises en cache</value>
+  </data>
+  <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir effacer les mots de passe WiFi mis en cache ?</value>
+  </data>
+  <data name="Ethernet" xml:space="preserve">
+    <value>Ethernet</value>
+  </data>
+  <data name="InvalidURLMsg" xml:space="preserve">
+    <value>Veuillez spécifier une URL valide.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Inconnu</value>
+  </data>
+  <data name="DefaultTimeInterval" xml:space="preserve">
+    <value>Intervalle de temps par défaut</value>
+  </data>
+  <data name="DownDetectorSettingsDesc" xml:space="preserve">
+    <value>Paramètres de la fonction DownDetector.</value>
+  </data>
+  <data name="NetworkAdapters" xml:space="preserve">
+    <value>Adaptateurs réseau</value>
+  </data>
+  <data name="NetworkAdaptersSettingsDesc" xml:space="preserve">
+    <value>Paramètres à appliquer à la section des adaptateurs réseau.</value>
+  </data>
+  <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
+    <value>Masquer les adaptateurs désactivés par défaut</value>
+  </data>
+  <data name="PortableNoAutoUpdates" xml:space="preserve">
+    <value>Les mises à jour automatiques ne sont pas disponibles en mode portable, veuillez télécharger InternetTest Pro (Portable) à nouveau.</value>
   </data>
 </root>

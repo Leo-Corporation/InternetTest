@@ -12,413 +12,259 @@
     d:DesignWidth="800"
     Background="Transparent"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition />
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="10" Orientation="Horizontal">
-            <TextBlock
-                VerticalAlignment="Center"
-                FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
-                Text="&#xFB69;" />
-            <TextBlock
-                x:Name="TitleTxt"
-                Margin="5 0 0 0"
-                VerticalAlignment="Center"
-                d:Text="{x:Static lang:Resources.GetStarted}"
-                FontSize="14"
-                FontWeight="ExtraBold" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" VerticalAlignment="Center">
-            <TextBlock
-                x:Name="StatusIconTxt"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontFamily="../Fonts/#FluentSystemIcons-Filled"
-                FontSize="76"
-                Foreground="{Binding Source={StaticResource Gray}}"
-                Text="&#xF4AB;" />
-            <TextBlock
-                x:Name="Spinner"
-                HorizontalAlignment="Center"
-                FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                FontSize="48"
-                RenderTransformOrigin="0.5,0.5"
-                Text="&#xF709;"
-                Visibility="Collapsed">
-                <TextBlock.RenderTransform>
-                    <RotateTransform x:Name="SpinTransform" Angle="0" />
-                </TextBlock.RenderTransform>
-
-                <TextBlock.Triggers>
-                    <EventTrigger RoutedEvent="TextBlock.Loaded">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation
-                                    RepeatBehavior="Forever"
-                                    Storyboard.TargetName="SpinTransform"
-                                    Storyboard.TargetProperty="Angle"
-                                    From="0"
-                                    To="360"
-                                    Duration="0:0:1" />
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </TextBlock.Triggers>
-            </TextBlock>
-            <TextBlock
-                x:Name="StatusTxt"
-                Margin="5 0 0 0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="14"
-                FontWeight="ExtraBold"
-                Text="{x:Static lang:Resources.DownDetectorPlaceHolder}"
-                TextAlignment="Center"
-                TextWrapping="Wrap" />
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <Button
-                    x:Name="TestBtn"
-                    Margin="5 10"
-                    Padding="5 2"
-                    Background="{Binding Source={StaticResource AccentColor}}"
-                    BorderThickness="0"
-                    Click="TestBtn_Click"
-                    Content="{x:Static lang:Resources.Test}"
-                    Cursor="Hand"
-                    FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
-                    Style="{DynamicResource PrimaryButton}" />
-                <Button
-                    x:Name="BrowserBtn"
-                    Margin="5 10"
-                    Padding="5 2"
-                    Background="{Binding Source={StaticResource LightAccentColor}}"
-                    BorderThickness="0"
-                    Click="BrowserBtn_Click"
-                    Content="{x:Static lang:Resources.OpenBrowser}"
-                    Cursor="Hand"
-                    FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
-                    Style="{DynamicResource PrimaryButton}" />
-            </StackPanel>
-            <Border
-                Width="300"
-                HorizontalAlignment="Center"
-                Background="{Binding Source={StaticResource CardBackground}}"
-                CornerRadius="5">
-                <Border.Effect>
-                    <DropShadowEffect
-                        BlurRadius="15"
-                        Opacity="0.2"
-                        ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
-                </Border.Effect>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock
-                        x:Name="IconTxt"
-                        Margin="5 2 0 2"
-                        VerticalAlignment="Center"
-                        FontFamily="../Fonts/#FluentSystemIcons-Filled"
-                        Foreground="{Binding Source={StaticResource Gray}}"
-                        Text="&#xF4AB;" />
-                    <TextBox
-                        x:Name="WebsiteTxt"
-                        Grid.Column="1"
-                        Margin="5"
-                        Padding="5"
-                        d:Text="https://bing.com"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        FontWeight="Bold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}" />
-                    <StackPanel Grid.Column="2" Orientation="Horizontal">
-                        <Button
-                            x:Name="TestSiteBtn"
-                            Margin="2"
-                            Padding="4"
-                            VerticalAlignment="Center"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Click="TestSiteBtn_Click"
-                            Content="&#xF606;"
-                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                            Foreground="{Binding Source={StaticResource Foreground1}}"
-                            Style="{DynamicResource ToolButton}" />
-                        <Button
-                            x:Name="InfoBtn"
-                            Margin="2"
-                            Padding="4"
-                            VerticalAlignment="Center"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Click="InfoBtn_Click"
-                            Content="&#xF4A4;"
-                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                            Foreground="{Binding Source={StaticResource Foreground1}}"
-                            Style="{DynamicResource ToolButton}" />
-                        <Button
-                            x:Name="AddBtn"
-                            Margin="2"
-                            Padding="4"
-                            VerticalAlignment="Center"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Click="AddBtn_Click"
-                            Content="&#xF10A;"
-                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                            Foreground="{Binding Source={StaticResource Foreground1}}"
-                            Style="{DynamicResource ToolButton}" />
-                    </StackPanel>
-                </Grid>
-            </Border>
-            <StackPanel x:Name="DownDetectorItemDisplayer" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="2" Margin="10">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock
-                    VerticalAlignment="Center"
-                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                    FontSize="16"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
-                    Text="&#xF4A4;" />
-                <TextBlock
-                    Margin="5 0 0 0"
-                    VerticalAlignment="Center"
-                    FontSize="14"
-                    FontWeight="ExtraBold"
-                    Text="{x:Static lang:Resources.Details}" />
-            </StackPanel>
-            <TextBlock
-                x:Name="DetailsSiteNameTxt"
-                VerticalAlignment="Center"
-                FontSize="12"
-                FontStyle="Italic"
-                FontWeight="Bold"
-                Foreground="{Binding Source={StaticResource DarkGray}}"
-                Text="" />
-        </StackPanel>
-
-        <WrapPanel
-            Grid.Row="3"
-            Margin="0 0 0 20"
-            Orientation="Horizontal">
-            <Border
-                MinWidth="150"
-                Margin="5"
-                Padding="5"
-                HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
-                CornerRadius="5">
-                <Border.Effect>
-                    <DropShadowEffect
-                        BlurRadius="15"
-                        Direction="135"
-                        Opacity="0.2"
-                        ShadowDepth="0"
-                        Color="#000" />
-                </Border.Effect>
-
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-
-                    <TextBlock
-                        FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
-                        Text="{x:Static lang:Resources.Status}" />
-                    <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <TextBlock
-                            Margin="0 0 5 0"
-                            VerticalAlignment="Center"
-                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                            FontSize="22"
-                            Text="&#xF2F0;" />
-                        <TextBlock
-                            x:Name="DetailsStatusTxt"
-                            VerticalAlignment="Center"
-                            Cursor="Hand"
-                            FontSize="18"
-                            FontWeight="ExtraBold"
-                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="N/A" />
-                    </StackPanel>
-                </Grid>
-            </Border>
-
-            <Border
-                MinWidth="150"
-                Margin="5"
-                Padding="5"
-                HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
-                CornerRadius="5">
-                <Border.Effect>
-                    <DropShadowEffect
-                        BlurRadius="15"
-                        Direction="135"
-                        Opacity="0.2"
-                        ShadowDepth="0"
-                        Color="#000" />
-                </Border.Effect>
-
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-
-                    <TextBlock
-                        FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
-                        Text="{x:Static lang:Resources.TimeElapsed}" />
-                    <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <TextBlock
-                            Margin="0 0 5 0"
-                            VerticalAlignment="Center"
-                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                            FontSize="22"
-                            Text="&#xF6CF;" />
-                        <TextBlock
-                            x:Name="DetailsTimeTxt"
-                            VerticalAlignment="Center"
-                            Cursor="Hand"
-                            FontSize="18"
-                            FontWeight="ExtraBold"
-                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="0ms" />
-                    </StackPanel>
-                </Grid>
-            </Border>
-
-            <Border
-                MinWidth="150"
-                Margin="5"
-                Padding="5"
-                HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
-                CornerRadius="5">
-                <Border.Effect>
-                    <DropShadowEffect
-                        BlurRadius="15"
-                        Direction="135"
-                        Opacity="0.2"
-                        ShadowDepth="0"
-                        Color="#000" />
-                </Border.Effect>
-
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-
-                    <TextBlock
-                        FontWeight="ExtraBold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}"
-                        Text="{x:Static lang:Resources.StatusMessage}" />
-                    <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <TextBlock
-                            Margin="0 0 5 0"
-                            VerticalAlignment="Center"
-                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                            FontSize="22"
-                            Text="&#xF300;" />
-                        <TextBlock
-                            x:Name="DetailsMessageTxt"
-                            VerticalAlignment="Center"
-                            Cursor="Hand"
-                            FontSize="18"
-                            FontWeight="ExtraBold"
-                            MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="N/A" />
-                    </StackPanel>
-                </Grid>
-            </Border>
-        </WrapPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
 
         <StackPanel
-            Grid.Row="4"
+            Grid.ColumnSpan="2"
             Margin="10"
             Orientation="Horizontal">
             <TextBlock
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
-                Text="&#xF827;" />
+                Foreground="{DynamicResource Accent}"
+                Text="&#xFB69;" />
             <TextBlock
+                x:Name="TitleTxt"
                 Margin="5 0 0 0"
                 VerticalAlignment="Center"
+                d:Text="{x:Static lang:Resources.DownDetector}"
                 FontSize="14"
-                FontWeight="ExtraBold"
-                Text="{x:Static lang:Resources.ScheduledTests}" />
+                FontWeight="ExtraBold" />
         </StackPanel>
 
-        <StackPanel Grid.Row="5">
-            <StackPanel Margin="10 0 0 0" Orientation="Horizontal">
-                <TextBlock
-                    VerticalAlignment="Center"
-                    FontWeight="Bold"
-                    Text="{x:Static lang:Resources.Interval}" />
-                <TextBox
-                    x:Name="IntervalTxt"
-                    MinWidth="25"
-                    Margin="5"
-                    Padding="2"
-                    VerticalAlignment="Center"
-                    Background="Transparent"
-                    BorderThickness="0"
-                    FontWeight="Bold"
-                    Foreground="{Binding Source={StaticResource DarkGray}}"
-                    PreviewTextInput="IntervalTxt_PreviewTextInput"
-                    Text="10"
-                    TextAlignment="Center" />
-                <TextBlock
-                    VerticalAlignment="Center"
-                    FontWeight="Bold"
-                    Text="{x:Static lang:Resources.SecondsLower}" />
-            </StackPanel>
-            <TextBlock
-                x:Name="TimeIntervalTxt"
-                Margin="10 0 0 5"
-                VerticalAlignment="Center"
-                FontWeight="Bold"
-                Text="{x:Static lang:Resources.Interval}"
-                Visibility="Collapsed" />
-            <Button
-                x:Name="ScheduledTestLaunchBtn"
-                Margin="10 0"
-                Padding="5 2"
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Border
+                Grid.Row="2"
+                Width="300"
+                Margin="10 3 3 3"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource LightAccentColor}}"
+                Background="{DynamicResource CardBackground}"
+                CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Opacity="0.2"
+                        ShadowDepth="0"
+                        Color="{DynamicResource AccentColor}" />
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox
+                        x:Name="WebsiteTxt"
+                        Margin="5"
+                        Padding="1"
+                        d:Text="google.com"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DarkGray}"
+                        Keyboard.KeyUp="WebsiteTxt_KeyUp" />
+                    <Button
+                        x:Name="ClearBtn"
+                        Grid.Column="1"
+                        Margin="2"
+                        Padding="4"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Click="ClearBtn_Click"
+                        Content="&#xF36A;"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource ToolButton}" />
+                </Grid>
+            </Border>
+            <Button
+                x:Name="AddBtn"
+                Margin="5"
+                Padding="5 2"
+                VerticalAlignment="Center"
+                Background="{DynamicResource LightAccent}"
                 BorderThickness="0"
-                Click="ScheduledTestLaunchBtn_Click"
-                Content="{x:Static lang:Resources.LaunchScheduledTest}"
+                Click="AddBtn_Click"
+                Content="{x:Static lang:Resources.AddSite}"
                 Cursor="Hand"
                 FontWeight="ExtraBold"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Style="{DynamicResource PrimaryButton}" />
+            <Button
+                x:Name="TestBtn"
+                Margin="5"
+                Padding="5 2"
+                VerticalAlignment="Center"
+                Background="{DynamicResource Accent}"
+                BorderThickness="0"
+                Click="TestBtn_Click"
+                Content="{x:Static lang:Resources.TestAll}"
+                Cursor="Hand"
+                FontWeight="ExtraBold"
+                Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                Style="{DynamicResource PrimaryButton}" />
+
         </StackPanel>
+
+        <StackPanel
+            x:Name="WebsiteDisplayer"
+            Grid.Row="2"
+            Margin="0 5 0 0" />
+        <StackPanel
+            x:Name="Placeholder"
+            Grid.Row="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                FontSize="36"
+                Text="&#xF7A8;" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontWeight="Bold"
+                Text="{x:Static lang:Resources.DownDetectorPlaceHolder}" />
+        </StackPanel>
+        <Border
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="10"
+            Padding="10"
+            Background="{DynamicResource CardBackground}"
+            CornerRadius="5">
+            <Border.Effect>
+                <DropShadowEffect
+                    BlurRadius="15"
+                    Opacity="0.15"
+                    ShadowDepth="0"
+                    Color="{DynamicResource AccentColor}" />
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        FontSize="14"
+                        Foreground="{DynamicResource Accent}"
+                        Text="&#xF827;" />
+                    <TextBlock
+                        Margin="5 0 0 0"
+                        VerticalAlignment="Center"
+                        FontWeight="ExtraBold"
+                        Text="{x:Static lang:Resources.ScheduledTests}" />
+                </StackPanel>
+                <TextBlock
+                    Grid.Row="1"
+                    Width="200"
+                    FontSize="11"
+                    Text="{x:Static lang:Resources.TimerDesc}"
+                    TextWrapping="Wrap" />
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="11"
+                        FontWeight="SemiBold"
+                        Text="{x:Static lang:Resources.Interval}" />
+                    <TextBox
+                        x:Name="IntervalTxt"
+                        MinWidth="25"
+                        Margin="5"
+                        Padding="2"
+                        VerticalAlignment="Center"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontSize="11"
+                        FontWeight="SemiBold"
+                        Foreground="{DynamicResource DarkGray}"
+                        PreviewTextInput="IntervalTxt_PreviewTextInput"
+                        Text="10"
+                        TextAlignment="Center" />
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="11"
+                        FontWeight="SemiBold"
+                        Text="{x:Static lang:Resources.SecondsLower}" />
+                </StackPanel>
+                <StackPanel
+                    x:Name="TimerPanel"
+                    Grid.Row="3"
+                    VerticalAlignment="Center"
+                    Visibility="Collapsed">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        FontSize="48"
+                        Foreground="{DynamicResource Accent}"
+                        RenderTransformOrigin="0.5,0.5"
+                        Text="&#xF709;">
+                        <TextBlock.RenderTransform>
+                            <RotateTransform x:Name="SpinTransform" Angle="0" />
+                        </TextBlock.RenderTransform>
+
+                        <TextBlock.Triggers>
+                            <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            RepeatBehavior="Forever"
+                                            Storyboard.TargetName="SpinTransform"
+                                            Storyboard.TargetProperty="Angle"
+                                            From="0"
+                                            To="360"
+                                            Duration="0:0:1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </TextBlock.Triggers>
+                    </TextBlock>
+                    <TextBlock
+                        x:Name="TimeTxt"
+                        Width="200"
+                        HorizontalAlignment="Center"
+                        FontSize="11"
+                        FontWeight="SemiBold"
+                        Text="{x:Static lang:Resources.ScheduledTestInterval}"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+                <Button
+                    x:Name="LaunchTimerBtn"
+                    Grid.Row="4"
+                    Margin="5"
+                    Padding="5 2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{DynamicResource Accent}"
+                    BorderThickness="0"
+                    Click="LaunchTimerBtn_Click"
+                    Content="{x:Static lang:Resources.LaunchScheduledTest}"
+                    Cursor="Hand"
+                    FontWeight="ExtraBold"
+                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                    Style="{DynamicResource PrimaryButton}" />
+            </Grid>
+        </Border>
     </Grid>
 </Page>

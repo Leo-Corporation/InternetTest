@@ -5,16 +5,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:InternetTest.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Height="75"
-    MinWidth="200"
+    Height="65"
+    MinWidth="220"
     Margin="5"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
     <Border
         Padding="5"
-        Background="{Binding Source={StaticResource CardBackground}}"
-        CornerRadius="5"
+        Background="{DynamicResource CardBackground}"
+        BorderBrush="{DynamicResource Accent}"
+        BorderThickness="1"
+        CornerRadius="6"
         Cursor="Hand"
         MouseLeftButtonUp="Border_MouseLeftButtonUp">
         <Border.Effect>
@@ -23,26 +25,69 @@
                 Direction="270"
                 Opacity="0.1"
                 ShadowDepth="0"
-                Color="#1F1F1F" />
+                Color="{DynamicResource AccentColor}" />
         </Border.Effect>
-        <StackPanel
-            Margin="10"
-            VerticalAlignment="Center"
-            Orientation="Horizontal">
-            <TextBlock
-                x:Name="IconTxt"
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel
+                Margin="10"
                 VerticalAlignment="Center"
-                d:Text="&#xF4DB;"
-                FontFamily="../Fonts/#FluentSystemIcons-Filled"
-                FontSize="26"
-                Foreground="{Binding Source={StaticResource AccentColor}}" />
-            <TextBlock
-                x:Name="PageNameTxt"
-                Margin="10 0 0 0"
-                VerticalAlignment="Center"
-                d:Text="Status"
-                FontSize="18"
-                FontWeight="ExtraBold" />
-        </StackPanel>
+                Orientation="Horizontal">
+                <TextBlock
+                    x:Name="IconTxt"
+                    VerticalAlignment="Center"
+                    d:Text="&#xF4DB;"
+                    FontFamily="../Fonts/#FluentSystemIcons-Filled"
+                    FontSize="26"
+                    Foreground="{DynamicResource Accent}" />
+                <TextBlock
+                    x:Name="PageNameTxt"
+                    Margin="10 0 0 0"
+                    VerticalAlignment="Center"
+                    d:Text="Status"
+                    FontSize="18"
+                    FontWeight="ExtraBold" />
+            </StackPanel>
+            <Grid Grid.Column="1" Width="19">
+                <TextBlock
+                    x:Name="Chevron"
+                    VerticalAlignment="Center"
+                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                    FontSize="14"
+                    Foreground="{DynamicResource Accent}"
+                    Text="&#xF2B1;" />
+            </Grid>            
+        </Grid>
     </Border>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="MouseEnter">
+            <BeginStoryboard>
+                <Storyboard>
+                    <ThicknessAnimation
+                BeginTime="0"
+                Storyboard.TargetName="Chevron"
+                Storyboard.TargetProperty="Margin"
+                From="0"
+                To="5 0 0 0"
+                Duration="0:0:0.05" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="MouseLeave">
+            <BeginStoryboard>
+                <Storyboard>
+                    <ThicknessAnimation
+                BeginTime="0"
+                Storyboard.TargetName="Chevron"
+                Storyboard.TargetProperty="Margin"
+                From="5 0 0 0"
+                To="0"
+                Duration="0:0:0.05" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
 </UserControl>

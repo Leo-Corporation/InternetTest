@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
+using Synethia;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -43,7 +44,7 @@ public partial class JumpInPage : Page
 	{
 		Global.Settings.IsFirstRun = false;
 		SettingsManager.Save();
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 
 		Process.Start(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\InternetTest.exe");
 		Application.Current.Shutdown(); // Quit the app

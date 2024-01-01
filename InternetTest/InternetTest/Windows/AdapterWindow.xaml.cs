@@ -89,6 +89,6 @@ namespace InternetTest.Windows
 		private void CopyBtn_Click(object sender, RoutedEventArgs e)
 		{
 			Clipboard.SetText(AdapterInfo.ToLongFormattedString());
-        }
-    }
+		}
+	}
 }

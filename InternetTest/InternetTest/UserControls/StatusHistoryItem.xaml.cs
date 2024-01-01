@@ -26,7 +26,6 @@ using InternetTest.Enums;
 using PeyrSharp.Core.Converters;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace InternetTest.UserControls;
 /// <summary>
@@ -56,9 +55,9 @@ public partial class StatusHistoryItem : UserControl
 
 		IconTxt.Foreground = IconTxt.Text switch
 		{
-			"\uF299" => new SolidColorBrush { Color = Global.GetColorFromResource("Green") },
-			"\uF36E" => new SolidColorBrush { Color = Global.GetColorFromResource("Red") },
-			_ => new SolidColorBrush { Color = Global.GetColorFromResource("Gray") }
+			"\uF299" => Global.GetBrushFromResource("Green"),
+			"\uF36E" => Global.GetBrushFromResource("Red"),
+			_ => Global.GetBrushFromResource("Gray")
 		};
 	}
 

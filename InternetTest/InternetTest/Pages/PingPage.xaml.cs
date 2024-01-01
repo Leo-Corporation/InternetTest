@@ -22,12 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using Synethia;
 using System;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -40,7 +40,7 @@ public partial class PingPage : Page
 	{
 		InitializeComponent();
 		InitUI(); // Load the UI
-		InjectSynethiaCode();
+		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 5, ref codeInjected);
 	}
 
 	private void InitUI()
@@ -49,60 +49,13 @@ public partial class PingPage : Page
 		IpTxt.Text = Global.Settings.TestSite ?? "https://leocorporation.dev";
 	}
 
-	private void InjectSynethiaCode()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each CheckBox/RadioButton of the page
-		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-		{
-			checkBox.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
-			};
-			checkBox.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
-			};
-		}
-
-		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-		{
-			radioButton.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
-			};
-			radioButton.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.PingPageInfo.InteractionCount++;
-			};
-		}
-	}
-
 	internal void PingBtn_Click(object sender, RoutedEventArgs e)
 	{
 		IpTxt.Text = IpTxt.Text.Replace("https://", "").Replace("http://", "").TrimEnd('/'); // Remove the http:// or https://
 		MakePing(IpTxt.Text); // Make a ping to the specified IP
 
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.Ping).UsageCount++;
+		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "Ping.Execute").UsageCount++;
 	}
 
 	private async void MakePing(string address)
@@ -117,7 +70,7 @@ public partial class PingPage : Page
 
 			// Update UI
 			StatusIconTxt.Text = "\uF2DE";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			StatusIconTxt.Foreground = Global.GetBrushFromResource("Gray");
 			StatusTxt.Text = Properties.Resources.PingWait;
 			PingBtn.IsEnabled = false;
 
@@ -136,13 +89,13 @@ public partial class PingPage : Page
 				{
 					received++;
 					StatusIconTxt.Text = "\uF299";
-					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Green"));
+					StatusIconTxt.Foreground = Global.GetBrushFromResource("Green");
 					StatusTxt.Text = $"{Properties.Resources.PingSuccess}{nl}";
 				}
 				else
 				{
 					StatusIconTxt.Text = "\uF36E";
-					StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Red"));
+					StatusIconTxt.Foreground = Global.GetBrushFromResource("Red");
 					StatusTxt.Text = $"{Properties.Resources.PingFail}{nl}";
 					IPAddressTxt.Text = ping.Status.ToString();
 				}
@@ -159,7 +112,7 @@ public partial class PingPage : Page
 		catch (Exception ex)
 		{
 			StatusIconTxt.Text = "\uF4AB";
-			StatusIconTxt.Foreground = new SolidColorBrush(Global.GetColorFromResource("Gray"));
+			StatusIconTxt.Foreground = Global.GetBrushFromResource("Gray");
 			StatusTxt.Text = Properties.Resources.PingStatus;
 			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 		}

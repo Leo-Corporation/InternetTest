@@ -250,7 +250,7 @@
 	<value>测试网站</value>
   </data>
   <data name="DownDetectorPlaceHolder" xml:space="preserve">
-	<value>启动测试以查看网站是否可用</value>
+	<value>添加网站以检查是否可用</value>
   </data>
   <data name="MapProvider" xml:space="preserve">
 	<value>地图提供者</value>
@@ -884,5 +884,68 @@
   </data>
   <data name="Copy" xml:space="preserve">
     <value>复制</value>
+  </data>
+  <data name="NotConnectedS" xml:space="preserve">
+    <value>离线</value>
+  </data>
+  <data name="Checking" xml:space="preserve">
+    <value>检查</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>网络</value>
+  </data>
+  <data name="HoverToReveal" xml:space="preserve">
+    <value>悬停显示</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="QuickActions" xml:space="preserve">
+    <value>快速行动</value>
+  </data>
+  <data name="DnsInfoWillShowHere" xml:space="preserve">
+    <value>此处将显示 DNS 信息</value>
+  </data>
+  <data name="AddSite" xml:space="preserve">
+    <value>添加站点</value>
+  </data>
+  <data name="TimerDesc" xml:space="preserve">
+    <value>自动启动测试，检查网站是否瘫痪。</value>
+  </data>
+  <data name="TestAll" xml:space="preserve">
+    <value>全部测试</value>
+  </data>
+  <data name="EraseWiFiPasswordsFiles" xml:space="preserve">
+    <value>清除缓存的 WiFi 数据</value>
+  </data>
+  <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
+    <value>您确定要删除缓存的 WiFi 密码吗？</value>
+  </data>
+  <data name="Ethernet" xml:space="preserve">
+    <value>以太网</value>
+  </data>
+  <data name="InvalidURLMsg" xml:space="preserve">
+    <value>请提供有效的 URL。</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="DefaultTimeInterval" xml:space="preserve">
+    <value>默认时间间隔</value>
+  </data>
+  <data name="DownDetectorSettingsDesc" xml:space="preserve">
+    <value>DownDetector 功能的设置。</value>
+  </data>
+  <data name="NetworkAdapters" xml:space="preserve">
+    <value>网络适配器</value>
+  </data>
+  <data name="NetworkAdaptersSettingsDesc" xml:space="preserve">
+    <value>应用于网络适配器部分的设置。</value>
+  </data>
+  <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
+    <value>默认隐藏已禁用的适配器</value>
+  </data>
+  <data name="PortableNoAutoUpdates" xml:space="preserve">
+    <value>自动更新在便携模式下不可用，请重新下载 InternetTest Pro (便携版)。</value>
   </data>
 </root>

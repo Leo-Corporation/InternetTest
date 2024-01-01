@@ -12,7 +12,7 @@
     d:DesignWidth="800"
     Background="Transparent"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
 
     <Grid>
@@ -32,7 +32,7 @@
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Text="&#xF460;" />
             <TextBlock
                 x:Name="TitleTxt"
@@ -49,14 +49,14 @@
                 Width="300"
                 Margin="10 3 3 3"
                 HorizontalAlignment="Left"
-                Background="{Binding Source={StaticResource CardBackground}}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Border.Effect>
                     <DropShadowEffect
                         BlurRadius="15"
                         Opacity="0.2"
                         ShadowDepth="0"
-                        Color="{Binding Source={StaticResource AccentColor}}" />
+                        Color="{DynamicResource AccentColor}" />
                 </Border.Effect>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -71,7 +71,8 @@
                         Background="Transparent"
                         BorderThickness="0"
                         FontWeight="Bold"
-                        Foreground="{Binding Source={StaticResource DarkGray}}" />
+                        Foreground="{DynamicResource DarkGray}"
+                        Keyboard.KeyUp="SiteTxt_KeyUp" />
                     <Button
                         x:Name="DismissBtn"
                         Grid.Column="1"
@@ -84,21 +85,22 @@
                         Click="DismissBtn_Click"
                         Content="&#xF36A;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource ToolButton}" />
                 </Grid>
             </Border>
             <Button
                 x:Name="GetDnsInfoBtn"
                 Margin="5"
-                Padding="5"
-                Background="{Binding Source={StaticResource LightAccentColor}}"
+                Padding="5 2"
+                VerticalAlignment="Center"
+                Background="{DynamicResource Accent}"
                 BorderThickness="0"
                 Click="GetDnsInfoBtn_Click"
                 Content="{x:Static lang:Resources.GetDnsInfo}"
                 Cursor="Hand"
                 FontWeight="ExtraBold"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                 Style="{DynamicResource PrimaryButton}" />
 
         </StackPanel>
@@ -110,7 +112,7 @@
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Text="&#xF4A4;" />
             <TextBlock
                 Margin="5 0 0 0"
@@ -119,7 +121,10 @@
                 FontWeight="ExtraBold"
                 Text="{x:Static lang:Resources.Details}" />
         </StackPanel>
-        <Grid Grid.Row="3" Margin="10">
+        <Grid
+            x:Name="DetailsGrid"
+            Grid.Row="3"
+            Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -176,6 +181,22 @@
                 Grid.Column="1" />
         </Grid>
         <StackPanel
+            x:Name="Placeholder"
+            Grid.Row="3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                FontSize="36"
+                Text="&#xFB59;" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontWeight="Bold"
+                Text="{x:Static lang:Resources.DnsInfoWillShowHere}" />
+        </StackPanel>
+        <StackPanel
+            x:Name="InformationHeader"
             Grid.Row="4"
             Margin="10"
             Orientation="Horizontal">
@@ -183,7 +204,7 @@
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Text="&#xF4A4;" />
             <TextBlock
                 Margin="5 0 0 0"
@@ -195,6 +216,7 @@
         <WrapPanel
             x:Name="FiltersDisplayer"
             Grid.Row="5"
+            Margin="5 0 0 0"
             Orientation="Horizontal" />
         <StackPanel x:Name="RecordDisplayer" Grid.Row="6" />
     </Grid>

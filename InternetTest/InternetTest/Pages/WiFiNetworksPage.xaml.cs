@@ -25,21 +25,11 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.UserControls;
 using ManagedNativeWifi;
+using Synethia;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -53,55 +43,10 @@ public partial class WiFiNetworksPage : Page
 	{
 		InitializeComponent();
 		InitUI(); // Load the UI
-		Loaded += (o, e) => InjectSynethiaCode();
+		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 2, ref codeInjected);
+
 	}
 
-	private void InjectSynethiaCode()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-		}
-
-		// For each CheckBox/RadioButton of the page
-		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-		{
-			checkBox.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-			checkBox.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-		}
-
-		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-		{
-			radioButton.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-			radioButton.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.DnsPageInfo.InteractionCount++;
-			};
-		}
-	}
 	bool loaded = false;
 	private async void InitUI()
 	{
@@ -110,6 +55,7 @@ public partial class WiFiNetworksPage : Page
 			TitleTxt.Text = $"{Properties.Resources.WebUtilities} > {Properties.Resources.WiFiNetworks}"; // Set the title
 
 			WiFiDisplayer.Children.Clear();
+			ShowHiddenChk.IsChecked = !Global.Settings.HideDisabledAdapters;
 
 			WiFiDisplayer.Visibility = Visibility.Collapsed;
 			ScanningPanel.Visibility = Visibility.Visible;
@@ -224,5 +170,5 @@ public partial class WiFiNetworksPage : Page
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)
 	{
 		SearchTxt.Text = "";
-    }
+	}
 }

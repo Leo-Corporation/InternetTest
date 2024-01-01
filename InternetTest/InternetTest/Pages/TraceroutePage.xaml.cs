@@ -24,21 +24,11 @@ SOFTWARE.
 
 using InternetTest.Classes;
 using InternetTest.UserControls;
-using System;
-using System.Collections.Generic;
+using Synethia;
 using System.Linq;
 using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -50,56 +40,10 @@ public partial class TraceroutePage : Page
 	public TraceroutePage()
 	{
 		InitializeComponent();
-		Loaded += (o, e) => InjectSynethiaCode();
+		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 6, ref codeInjected);
 		InitUI();
 	}
 
-	private void InjectSynethiaCode()
-	{
-		if (codeInjected) return;
-		codeInjected = true;
-		foreach (Button b in Global.FindVisualChildren<Button>(this))
-		{
-			b.Click += (sender, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-		}
-
-		// For each TextBox of the page
-		foreach (TextBox textBox in Global.FindVisualChildren<TextBox>(this))
-		{
-			textBox.GotFocus += (o, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-		}
-
-		// For each CheckBox/RadioButton of the page
-		foreach (CheckBox checkBox in Global.FindVisualChildren<CheckBox>(this))
-		{
-			checkBox.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-			checkBox.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-		}
-
-		foreach (RadioButton radioButton in Global.FindVisualChildren<RadioButton>(this))
-		{
-			radioButton.Checked += (o, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-			radioButton.Unchecked += (o, e) =>
-			{
-				Global.SynethiaConfig.TraceRoutePageInfo.InteractionCount++;
-			};
-		}
-	}
 
 	private void InitUI()
 	{
@@ -114,7 +58,13 @@ public partial class TraceroutePage : Page
 	private async void TraceBtn_Click(object sender, RoutedEventArgs e)
 	{
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
-		Global.SynethiaConfig.ActionInfos.First(a => a.Action == Enums.AppActions.TraceRoute).UsageCount++;
+		Global.SynethiaConfig.ActionsInfo.First(a => a.Name == "Traceroute.Execute").UsageCount++;
+
+		if (string.IsNullOrEmpty(AddressTxt.Text) || string.IsNullOrWhiteSpace(AddressTxt.Text))
+		{
+			MessageBox.Show(Properties.Resources.InvalidURLMsg, Properties.Resources.GetDnsInfo, MessageBoxButton.OK, MessageBoxImage.Error);
+			return;
+		}
 
 		// Show the waiting screen
 		TraceBtn.IsEnabled = false;
@@ -151,7 +101,7 @@ public partial class TraceroutePage : Page
 			StatusPanel.Visibility = Visibility.Visible;
 			WaitingScreen.Visibility = Visibility.Collapsed;
 			TracertPanel.Visibility = Visibility.Visible;
-			
+
 			WaitTxt.Text = Properties.Resources.TraceRouteInformation; // Reset text to default
 			WaitIconTxt.Visibility = Visibility.Visible;
 			Spinner.Visibility = Visibility.Collapsed;
@@ -159,5 +109,13 @@ public partial class TraceroutePage : Page
 		catch { }
 
 		TraceBtn.IsEnabled = true;
+	}
+
+	private void AddressTxt_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+	{
+		if (e.Key == System.Windows.Input.Key.Enter)
+		{
+			TraceBtn_Click(sender, e);
+		}
 	}
 }

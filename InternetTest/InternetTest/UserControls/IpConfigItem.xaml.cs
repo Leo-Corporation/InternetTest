@@ -81,7 +81,7 @@ public partial class IpConfigItem : UserControl
 		{
 			b.Click += (sender, e) =>
 			{
-				Global.SynethiaConfig.StatusPageInfo.InteractionCount++;
+				Global.SynethiaConfig.PagesInfo[4].InteractionCount++;
 			};
 		}
 	}

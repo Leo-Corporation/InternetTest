@@ -26,6 +26,7 @@ using InternetTest.Enums;
 using Microsoft.Win32;
 using PeyrSharp.Core;
 using PeyrSharp.Env;
+using Synethia;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -52,7 +53,7 @@ public partial class SettingsPage : Page
 				string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink); // Get last version
 				if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
 				{
-					SynethiaManager.Save(Global.SynethiaConfig);
+					SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 					HistoryManager.Save(Global.History);
 					SettingsManager.Save();
 
@@ -69,7 +70,11 @@ public partial class SettingsPage : Page
 	private async void InitUI()
 	{
 		// About section
-		VersionTxt.Text = Global.Version; // Update the current version label
+#if PORTABLE
+		VersionTxt.Text = Global.Version + " (Portable)";
+#else
+		VersionTxt.Text = Global.Version;
+#endif
 
 		// Select the default theme border
 		ThemeSelectedBorder = Global.Settings.Theme switch
@@ -107,9 +112,15 @@ public partial class SettingsPage : Page
 		HttpRadio.IsChecked = !Global.Settings.UseHttps;
 		SiteTxt.Text = Global.Settings.TestSite;
 
+		// DownDetector section
+		IntervalTxt.Text = Global.Settings.DefaultTimeInterval.ToString();
+
 		// Trace route section
 		HopsTxt.Text = Global.Settings.TraceRouteMaxHops.ToString();
 		TimeOutTxt.Text = Global.Settings.TraceRouteMaxTimeOut.ToString();
+
+		// Adapters section
+		HideNetworkAdaptersChk.IsChecked = Global.Settings.HideDisabledAdapters;
 
 		// Data section
 		UseSynethiaChk.IsChecked = Global.Settings.UseSynethia;
@@ -141,14 +152,17 @@ public partial class SettingsPage : Page
 		if (Update.IsAvailable(Global.Version, lastVersion))
 		{
 			UpdateTxt.Text = Properties.Resources.AvailableUpdates;
-
+#if PORTABLE
+				MessageBox.Show(Properties.Resources.PortableNoAutoUpdates, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.OK, MessageBoxImage.Information);
+				return;
+#else
 			if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
 			{
 				return;
 			}
-
+#endif
 			// If the user wants to proceed.
-			SynethiaManager.Save(Global.SynethiaConfig);
+			SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 			HistoryManager.Save(Global.History);
 			SettingsManager.Save();
 
@@ -164,7 +178,7 @@ public partial class SettingsPage : Page
 	Border ThemeSelectedBorder;
 	private void Border_MouseEnter(object sender, MouseEventArgs e)
 	{
-		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 	}
 
 	private void Border_MouseLeave(object sender, MouseEventArgs e)
@@ -184,60 +198,42 @@ public partial class SettingsPage : Page
 	{
 		ResetBorders();
 		ThemeSelectedBorder = (Border)sender;
-		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.Light;
 		SettingsManager.Save();
 
-		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
-		{
-			return;
-		}
-
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
-		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
-		Application.Current.Shutdown();
+		Global.ChangeTheme();
 	}
 
 	private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
 	{
 		ResetBorders();
 		ThemeSelectedBorder = (Border)sender;
-		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.Dark;
 		SettingsManager.Save();
 
-		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
-		{
-			return;
-		}
-
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
-		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
-		Application.Current.Shutdown();
+		Global.ChangeTheme();
 	}
 
 	private void SystemBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
 	{
 		ResetBorders();
 		ThemeSelectedBorder = (Border)sender;
-		((Border)sender).BorderBrush = new SolidColorBrush { Color = Global.GetColorFromResource("AccentColor") };
+		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.System;
 		SettingsManager.Save();
 
-		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
-		{
-			return;
-		}
-
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
-		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
-		Application.Current.Shutdown();
+		Global.ChangeTheme();
 	}
 
 	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -256,7 +252,7 @@ public partial class SettingsPage : Page
 			return;
 		}
 
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 
 		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
@@ -349,7 +345,7 @@ public partial class SettingsPage : Page
 			return;
 		}
 
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 		HistoryManager.Save(Global.History);
 		Process.Start(Directory.GetCurrentDirectory() + @"\InternetTest.exe");
 		Application.Current.Shutdown();
@@ -377,7 +373,7 @@ public partial class SettingsPage : Page
 
 		// If the user wants to proceed, reset Syenthia config file.
 		Global.SynethiaConfig = new();
-		SynethiaManager.Save(Global.SynethiaConfig);
+		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 
 		// Ask the user if they want to restart the application to apply changes.
 		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
@@ -425,6 +421,35 @@ public partial class SettingsPage : Page
 	private void LocateIpOnStartChk_Checked(object sender, RoutedEventArgs e)
 	{
 		Global.Settings.LaunchIpLocationOnStart = LocateIpOnStartChk.IsChecked;
+		SettingsManager.Save();
+	}
+
+	private void EraseWiFisLink_Click(object sender, RoutedEventArgs e)
+	{
+		if (!Directory.Exists(FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis")) return;
+
+		if (MessageBox.Show(Properties.Resources.EraseWiFiPasswordsFilesMsg, Properties.Resources.InternetTestPro, MessageBoxButton.YesNoCancel, MessageBoxImage.Question) != MessageBoxResult.Yes) return;
+
+		string path = FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\WiFis";
+		string[] files = Directory.GetFiles(path);
+		for (int i = 0; i < files.Length; i++)
+		{
+			File.Delete(files[i]); // Remove the temp file
+		}
+		Directory.Delete(path); // Delete the temp directory		
+	}
+
+	private void IntervalApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (string.IsNullOrEmpty(IntervalTxt.Text)) return;
+
+		Global.Settings.DefaultTimeInterval = int.Parse(IntervalTxt.Text);
+		SettingsManager.Save();
+	}
+
+	private void NetworkAdaptersChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.HideDisabledAdapters = HideNetworkAdaptersChk.IsChecked;
 		SettingsManager.Save();
 	}
 }

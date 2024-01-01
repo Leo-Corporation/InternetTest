@@ -12,7 +12,7 @@
     d:DesignWidth="800"
     Background="Transparent"
     FontFamily="../Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
 
     <Grid>
@@ -27,7 +27,7 @@
                 VerticalAlignment="Center"
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontSize="16"
-                Foreground="{Binding Source={StaticResource AccentColor}}"
+                Foreground="{DynamicResource Accent}"
                 Text="&#xF8AD;" />
             <TextBlock
                 x:Name="TitleTxt"
@@ -51,7 +51,7 @@
                     Background="Transparent"
                     BorderThickness="0"
                     Checked="NetworksBtn_Click"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Style="{DynamicResource TabRadioButton}">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -82,7 +82,7 @@
                     Background="Transparent"
                     BorderThickness="0"
                     Checked="AdaptersBtn_Click"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Style="{DynamicResource TabRadioButton}">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -111,14 +111,14 @@
                     Margin="10 3 3 3"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
-                    Background="{Binding Source={StaticResource CardBackground}}"
+                    Background="{DynamicResource CardBackground}"
                     CornerRadius="5">
                     <Border.Effect>
                         <DropShadowEffect
                             BlurRadius="15"
                             Opacity="0.2"
                             ShadowDepth="0"
-                            Color="{Binding Source={StaticResource AccentColor}}" />
+                            Color="{DynamicResource AccentColor}" />
                     </Border.Effect>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -134,7 +134,7 @@
                             Background="Transparent"
                             BorderThickness="0"
                             FontWeight="Bold"
-                            Foreground="{Binding Source={StaticResource DarkGray}}"
+                            Foreground="{DynamicResource DarkGray}"
                             TextChanged="SearchTxt_TextChanged" />
                         <Button
                             x:Name="DismissBtn"
@@ -148,7 +148,7 @@
                             Click="DismissBtn_Click"
                             Content="&#xF36A;"
                             FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                            Foreground="{Binding Source={StaticResource Foreground1}}"
+                            Foreground="{DynamicResource Foreground1}"
                             Style="{DynamicResource ToolButton}" />
                     </Grid>
                 </Border>
@@ -165,7 +165,7 @@
                     Checked="ShowHiddenChk_Checked"
                     Content="{x:Static lang:Resources.ShowDisabled}"
                     FontWeight="Bold"
-                    Foreground="{Binding Source={StaticResource Foreground1}}"
+                    Foreground="{DynamicResource Foreground1}"
                     IsChecked="True"
                     Style="{DynamicResource CheckBoxStyle1}"
                     Unchecked="ShowHiddenChk_Checked"
@@ -175,12 +175,12 @@
                     Grid.Row="1"
                     Margin="5"
                     Padding="5"
-                    Background="{Binding Source={StaticResource LightAccentColor}}"
+                    Background="{DynamicResource LightAccent}"
                     Click="RefreshBtn_Click"
                     Content="{x:Static lang:Resources.Refresh}"
                     Cursor="Hand"
                     FontWeight="ExtraBold"
-                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                    Foreground="{DynamicResource Accent}"
                     Style="{DynamicResource PrimaryButton}" />
             </StackPanel>
         </Grid>
@@ -216,6 +216,7 @@
                     HorizontalAlignment="Center"
                     FontFamily="../Fonts/#FluentSystemIcons-Regular"
                     FontSize="48"
+                    Foreground="{DynamicResource Accent}"
                     RenderTransformOrigin="0.5,0.5"
                     Text="&#xF709;">
                     <TextBlock.RenderTransform>

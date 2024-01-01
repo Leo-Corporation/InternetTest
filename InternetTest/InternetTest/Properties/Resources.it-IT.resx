@@ -250,7 +250,7 @@
 	<value>Test sito web</value>
   </data>
   <data name="DownDetectorPlaceHolder" xml:space="preserve">
-	<value>Esegui un test per verificare se un sito web è disponibile o meno</value>
+	<value>Aggiungere un sito web per verificare se è disponibile o meno</value>
   </data>
   <data name="MapProvider" xml:space="preserve">
 	<value>Fornitore mappe</value>
@@ -819,10 +819,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="Adapters" xml:space="preserve">
     <value>Schede di rete</value>
   </data>
-<data name="InterfaceType" xml:space="preserve">
+  <data name="InterfaceType" xml:space="preserve">
     <value>Tipo interfaccia</value>
   </data>
-    <data name="TotalBytesSent" xml:space="preserve">
+  <data name="TotalBytesSent" xml:space="preserve">
     <value>Totale byte inviati</value>
   </data>
   <data name="TotalBytesReceived" xml:space="preserve">
@@ -893,5 +893,68 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>Copia</value>
+  </data>
+  <data name="NotConnectedS" xml:space="preserve">
+    <value>Non in linea</value>
+  </data>
+  <data name="Checking" xml:space="preserve">
+    <value>Controllo</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Rete</value>
+  </data>
+  <data name="HoverToReveal" xml:space="preserve">
+    <value>Passare il mouse per rivelare</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Chiudere</value>
+  </data>
+  <data name="QuickActions" xml:space="preserve">
+    <value>Azioni rapide</value>
+  </data>
+  <data name="DnsInfoWillShowHere" xml:space="preserve">
+    <value>Le informazioni DNS vengono visualizzate qui</value>
+  </data>
+  <data name="AddSite" xml:space="preserve">
+    <value>Aggiungi sito</value>
+  </data>
+  <data name="TimerDesc" xml:space="preserve">
+    <value>Lancio automatico di test per verificare se un sito web è inattivo o meno.</value>
+  </data>
+  <data name="TestAll" xml:space="preserve">
+    <value>Test di tutti</value>
+  </data>
+  <data name="EraseWiFiPasswordsFiles" xml:space="preserve">
+    <value>Cancellare i dati WiFi memorizzati nella cache</value>
+  </data>
+  <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
+    <value>Siete sicuri di voler cancellare le password WiFi memorizzate nella cache?</value>
+  </data>
+  <data name="Ethernet" xml:space="preserve">
+    <value>Ethernet</value>
+  </data>
+  <data name="InvalidURLMsg" xml:space="preserve">
+    <value>Si prega di fornire un URL valido.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Sconosciuto</value>
+  </data>
+  <data name="DefaultTimeInterval" xml:space="preserve">
+    <value>Intervallo di tempo predefinito</value>
+  </data>
+  <data name="DownDetectorSettingsDesc" xml:space="preserve">
+    <value>Impostazioni per la funzione DownDetector.</value>
+  </data>
+  <data name="NetworkAdapters" xml:space="preserve">
+    <value>Adattatori di rete</value>
+  </data>
+  <data name="NetworkAdaptersSettingsDesc" xml:space="preserve">
+    <value>Impostazioni da applicare alla sezione degli adattatori di rete.</value>
+  </data>
+  <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
+    <value>Nascondere gli adattatori disabilitati per impostazione predefinita</value>
+  </data>
+  <data name="PortableNoAutoUpdates" xml:space="preserve">
+    <value>Gli aggiornamenti automatici non sono disponibili in modalità portatile; scaricare nuovamente InternetTest Pro (Portable).</value>
   </data>
 </root>

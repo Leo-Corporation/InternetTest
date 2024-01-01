@@ -250,7 +250,7 @@
 	<value>Test website</value>
   </data>
   <data name="DownDetectorPlaceHolder" xml:space="preserve">
-	<value>Launch a test to see if a website is available or not</value>
+	<value>Add a website to check if it is available or not</value>
   </data>
   <data name="MapProvider" xml:space="preserve">
 	<value>Map provider</value>
@@ -421,7 +421,7 @@
 	<value>Empty History</value>
   </data>
   <data name="EmptyHistoryMsg" xml:space="preserve">
-	<value>Are you sure want to empty this history? 
+	<value>Are you sure you want to empty this history? 
 This action is irreversible.</value>
   </data>
   <data name="Pro" xml:space="preserve">
@@ -893,5 +893,68 @@ Absolutely NO data is sent to Léo Corporation.</value>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>Copy</value>
+  </data>
+  <data name="NotConnectedS" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="Checking" xml:space="preserve">
+    <value>Checking</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Network</value>
+  </data>
+  <data name="HoverToReveal" xml:space="preserve">
+    <value>Hover to reveal</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="QuickActions" xml:space="preserve">
+    <value>Quick actions</value>
+  </data>
+  <data name="DnsInfoWillShowHere" xml:space="preserve">
+    <value>DNS Information will show here</value>
+  </data>
+  <data name="AddSite" xml:space="preserve">
+    <value>Add site</value>
+  </data>
+  <data name="TimerDesc" xml:space="preserve">
+    <value>Automatically launch tests to check whether a website is down or not.</value>
+  </data>
+  <data name="TestAll" xml:space="preserve">
+    <value>Test all</value>
+  </data>
+  <data name="EraseWiFiPasswordsFiles" xml:space="preserve">
+    <value>Erase cached WiFi data</value>
+  </data>
+  <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
+    <value>Are you sure you want to erase cached WiFi Passwords?</value>
+  </data>
+  <data name="Ethernet" xml:space="preserve">
+    <value>Ethernet</value>
+  </data>
+  <data name="InvalidURLMsg" xml:space="preserve">
+    <value>Please provide a valid URL.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="DefaultTimeInterval" xml:space="preserve">
+    <value>Default time interval</value>
+  </data>
+  <data name="DownDetectorSettingsDesc" xml:space="preserve">
+    <value>Settings for the DownDetector feature.</value>
+  </data>
+  <data name="NetworkAdapters" xml:space="preserve">
+    <value>Network Adapters</value>
+  </data>
+  <data name="NetworkAdaptersSettingsDesc" xml:space="preserve">
+    <value>Settings to apply to the network adapters section.</value>
+  </data>
+  <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
+    <value>Hide disabled adapters by default</value>
+  </data>
+  <data name="PortableNoAutoUpdates" xml:space="preserve">
+    <value>Automatic updates are not available in portable mode, please download InternetTest Pro (Portable) again.</value>
   </data>
 </root>

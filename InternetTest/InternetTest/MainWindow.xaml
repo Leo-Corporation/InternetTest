@@ -15,7 +15,7 @@
     AllowsTransparency="True"
     Background="Transparent"
     FontFamily="/Fonts/#Hauora"
-    Foreground="{Binding Source={StaticResource Foreground1}}"
+    Foreground="{DynamicResource Foreground1}"
     ResizeMode="CanResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
@@ -26,7 +26,6 @@
 
     <Window.Resources>
         <Style x:Key="WindowMainPanelStyle" TargetType="{x:Type Border}">
-            <Setter Property="BorderBrush" Value="{DynamicResource WindowBorderBrush}" />
             <Setter Property="BorderThickness" Value="1" />
         </Style>
         <Style x:Key="TitleBarButtonStyle" TargetType="Button">
@@ -54,10 +53,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource WindowButtonsHover1}}" />
+                                <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowButtonsHover1}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter TargetName="border" Property="Background" Value="{Binding Source={StaticResource WindowButtonsPressed1}}" />
+                                <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowButtonsPressed1}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -116,12 +115,9 @@
     <Border
         Name="WindowBorder"
         Margin="10"
-        d:Background="#fff"
+        Background="{DynamicResource BackgroundImg}"
         BorderThickness="0"
         CornerRadius="5">
-        <Border.Background>
-            <ImageBrush ImageSource="{Binding Source={StaticResource BackgroundImg}}" />
-        </Border.Background>
         <Grid VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -143,14 +139,14 @@
                         Grid.Column="1"
                         Padding="5 2"
                         VerticalAlignment="Center"
-                        Background="{Binding Source={StaticResource CardBackground}}"
+                        Background="{DynamicResource CardBackground}"
                         CornerRadius="10">
                         <TextBlock
                             x:Name="VersionTxt"
-                            d:Text="7.6.2.2307"
+                            d:Text="8.0.0.2401"
                             FontSize="10"
                             FontWeight="SemiBold"
-                            Foreground="{Binding Source={StaticResource DarkGray}}" />
+                            Foreground="{DynamicResource DarkGray}" />
                     </Border>
                     <Button
                         x:Name="PinBtn"
@@ -162,7 +158,7 @@
                         Content="&#xF602;"
                         FontFamily="/Fonts/#FluentSystemIcons-Regular"
                         FontSize="14"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
                         Style="{StaticResource TitleBarButtonStyle}" />
 
@@ -174,7 +170,7 @@
                         Background="Transparent"
                         Click="ConfidentialModeBtn_Click"
                         FontSize="14"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
                         Style="{StaticResource TitleBarButtonStyle}">
                         <Grid>
@@ -199,7 +195,7 @@
                         Content="&#xFC75;"
                         FontFamily="/Fonts/#FluentSystemIcons-Regular"
                         FontSize="14"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
                         Style="{StaticResource TitleBarButtonStyle}" />
                     <Button
@@ -212,7 +208,7 @@
                         Content="&#xFA40;"
                         FontFamily="/Fonts/#FluentSystemIcons-Regular"
                         FontSize="14"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
                         Style="{StaticResource TitleBarButtonStyle}" />
                     <Button
@@ -225,7 +221,7 @@
                         Content="&#xF36B;"
                         FontFamily="/Fonts/#FluentSystemIcons-Regular"
                         FontSize="14"
-                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                        Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
                         Style="{StaticResource TitleBarCloseButtonStyle}" />
                 </Grid>
@@ -265,13 +261,14 @@
                                 Margin="0 10"
                                 FontWeight="Bold"
                                 Text="{x:Static lang:Resources.Pinned}" />
-                            <Button
+                            <RadioButton
                                 x:Name="HomePageBtn"
                                 HorizontalContentAlignment="Left"
                                 Background="Transparent"
-                                BorderThickness="0"
+                                BorderThickness="1"
                                 Click="HomePageBtn_Click"
-                                Style="{DynamicResource StandardButton}">
+                                GroupName="NavBar"
+                                Style="{DynamicResource NavBarButton}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
@@ -294,7 +291,7 @@
                                             VerticalAlignment="Center"
                                             FontFamily="/Fonts/#FluentSystemIcons-Filled"
                                             FontSize="18"
-                                            Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                                             Text="&#xF488;" />
                                     </Border>
                                     <TextBlock
@@ -303,11 +300,11 @@
                                         VerticalAlignment="Center"
                                         FontSize="14"
                                         FontWeight="Bold"
-                                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                                        Foreground="{DynamicResource Foreground1}"
                                         Text="{x:Static lang:Resources.Home}" />
                                 </Grid>
 
-                                <Button.Triggers>
+                                <RadioButton.Triggers>
                                     <EventTrigger RoutedEvent="MouseEnter">
                                         <BeginStoryboard>
                                             <Storyboard>
@@ -320,16 +317,17 @@
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </EventTrigger>
-                                </Button.Triggers>
-                            </Button>
-                            <Button
+                                </RadioButton.Triggers>
+                            </RadioButton>
+                            <RadioButton
                                 x:Name="HistoryPageBtn"
                                 Margin="0 5 0 0"
                                 HorizontalContentAlignment="Left"
                                 Background="Transparent"
-                                BorderThickness="0"
+                                BorderThickness="1"
                                 Click="HistoryPageBtn_Click"
-                                Style="{DynamicResource StandardButton}">
+                                GroupName="NavBar"
+                                Style="{DynamicResource NavBarButton}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
@@ -352,7 +350,7 @@
                                             VerticalAlignment="Center"
                                             FontFamily="/Fonts/#FluentSystemIcons-Filled"
                                             FontSize="18"
-                                            Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                                             RenderTransformOrigin="0.5,0.5"
                                             Text="&#xF486;">
                                             <TextBlock.RenderTransform>
@@ -368,11 +366,11 @@
                                         VerticalAlignment="Center"
                                         FontSize="14"
                                         FontWeight="Bold"
-                                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                                        Foreground="{DynamicResource Foreground1}"
                                         Text="{x:Static lang:Resources.History}" />
                                 </Grid>
 
-                                <Button.Triggers>
+                                <RadioButton.Triggers>
                                     <EventTrigger RoutedEvent="MouseEnter">
                                         <BeginStoryboard>
                                             <Storyboard>
@@ -393,16 +391,17 @@
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </EventTrigger>
-                                </Button.Triggers>
-                            </Button>
-                            <Button
+                                </RadioButton.Triggers>
+                            </RadioButton>
+                            <RadioButton
                                 x:Name="SettingsPageBtn"
                                 Margin="0 5 0 0"
                                 HorizontalContentAlignment="Left"
                                 Background="Transparent"
-                                BorderThickness="0"
+                                BorderThickness="1"
                                 Click="SettingsPageBtn_Click"
-                                Style="{DynamicResource StandardButton}">
+                                GroupName="NavBar"
+                                Style="{DynamicResource NavBarButton}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
@@ -419,7 +418,7 @@
                                             x:Name="SettingsIconTxt"
                                             FontFamily="/Fonts/#FluentSystemIcons-Filled"
                                             FontSize="18"
-                                            Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}"
+                                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                                             RenderTransformOrigin="0.5,0.5"
                                             Text="&#xF6B3;">
                                             <TextBlock.RenderTransform>
@@ -435,11 +434,11 @@
                                         VerticalAlignment="Center"
                                         FontSize="14"
                                         FontWeight="Bold"
-                                        Foreground="{Binding Source={StaticResource Foreground1}}"
+                                        Foreground="{DynamicResource Foreground1}"
                                         Text="{x:Static lang:Resources.Settings}" />
                                 </Grid>
 
-                                <Button.Triggers>
+                                <RadioButton.Triggers>
                                     <EventTrigger RoutedEvent="MouseEnter">
                                         <BeginStoryboard>
                                             <Storyboard>
@@ -452,8 +451,8 @@
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </EventTrigger>
-                                </Button.Triggers>
-                            </Button>
+                                </RadioButton.Triggers>
+                            </RadioButton>
 
                             <TextBlock
                                 Margin="0 10"
@@ -475,7 +474,7 @@
                                     Background="Transparent"
                                     BorderThickness="0"
                                     Click="WebUtilitiesBtn_Click"
-                                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                                    Foreground="{DynamicResource Accent}"
                                     Style="{DynamicResource DefaultButton}">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
@@ -529,20 +528,7 @@
                                     </Button.Triggers>
                                 </Button>
                                 <StackPanel x:Name="UtilitiesPanel" Visibility="Collapsed">
-                                    <Button
-                                        x:Name="StatusPageBtn"
-                                        Margin="10 0 0 0"
-                                        Padding="5 2 2 2"
-                                        HorizontalContentAlignment="Left"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Click="StatusPageBtn_Click"
-                                        Content="{x:Static lang:Resources.Status}"
-                                        FontSize="10"
-                                        FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        Style="{DynamicResource DefaultButton}" />
-                                    <Button
+                                    <RadioButton
                                         x:Name="DownDetectorPageBtn"
                                         Margin="10 0 0 0"
                                         Padding="5 2 2 2"
@@ -553,9 +539,10 @@
                                         Content="{x:Static lang:Resources.DownDetector}"
                                         FontSize="10"
                                         FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        Style="{DynamicResource DefaultButton}" />
-                                    <Button
+                                        Foreground="{DynamicResource Accent}"
+                                        GroupName="NavBar"
+                                        Style="{DynamicResource NavBarToolButton}" />
+                                    <RadioButton
                                         x:Name="DnsPageBtn"
                                         Margin="10 0 0 0"
                                         Padding="5 2 2 2"
@@ -566,9 +553,10 @@
                                         Content="{x:Static lang:Resources.DNSTool}"
                                         FontSize="10"
                                         FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        Style="{DynamicResource DefaultButton}" />
-                                    <Button
+                                        Foreground="{DynamicResource Accent}"
+                                        GroupName="NavBar"
+                                        Style="{DynamicResource NavBarToolButton}" />
+                                    <RadioButton
                                         x:Name="WiFiPageBtn"
                                         Margin="10 0 0 0"
                                         Padding="5 2 2 2"
@@ -579,8 +567,9 @@
                                         Content="{x:Static lang:Resources.WiFiNetworks}"
                                         FontSize="10"
                                         FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        Style="{DynamicResource DefaultButton}" />
+                                        Foreground="{DynamicResource Accent}"
+                                        GroupName="NavBar"
+                                        Style="{DynamicResource NavBarToolButton}" />
                                 </StackPanel>
                                 <Button
                                     x:Name="IPToolsBtn"
@@ -591,7 +580,7 @@
                                     Background="Transparent"
                                     BorderThickness="0"
                                     Click="IPToolsBtn_Click"
-                                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                                    Foreground="{DynamicResource Accent}"
                                     Style="{DynamicResource DefaultButton}">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
@@ -645,20 +634,7 @@
                                     </Button.Triggers>
                                 </Button>
                                 <StackPanel x:Name="IPPanel" Visibility="Collapsed">
-                                    <Button
-                                        x:Name="MyIPPageBtn"
-                                        Margin="10 0 0 0"
-                                        Padding="5 2 2 2"
-                                        HorizontalContentAlignment="Left"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Click="MyIPPageBtn_Click"
-                                        Content="{x:Static lang:Resources.MyIP}"
-                                        FontSize="10"
-                                        FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        Style="{DynamicResource DefaultButton}" />
-                                    <Button
+                                    <RadioButton
                                         x:Name="LocateIPPageBtn"
                                         Margin="10 0 0 0"
                                         Padding="5 2 2 2"
@@ -669,8 +645,24 @@
                                         Content="{x:Static lang:Resources.LocateIP}"
                                         FontSize="10"
                                         FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        Style="{DynamicResource DefaultButton}" />
+                                        Foreground="{DynamicResource Accent}"
+                                        GroupName="NavBar"
+                                        Style="{DynamicResource NavBarToolButton}" />
+                                    <RadioButton
+                                        x:Name="IPConfigPageBtn"
+                                        Margin="10 0 0 0"
+                                        Padding="5 2 2 2"
+                                        HorizontalContentAlignment="Left"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Click="IPConfigPageBtn_Click"
+                                        Content="{x:Static lang:Resources.IPConfig}"
+                                        FontSize="10"
+                                        FontWeight="ExtraBold"
+                                        Foreground="{DynamicResource Accent}"
+                                        GroupName="NavBar"
+                                        Style="{DynamicResource NavBarToolButton}" />
+
                                 </StackPanel>
                                 <Button
                                     x:Name="CommandsBtn"
@@ -680,7 +672,7 @@
                                     Background="Transparent"
                                     BorderThickness="0"
                                     Click="CommandsBtn_Click"
-                                    Foreground="{Binding Source={StaticResource AccentColor}}"
+                                    Foreground="{DynamicResource Accent}"
                                     Style="{DynamicResource DefaultButton}">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
@@ -746,7 +738,7 @@
                                     </Button.Triggers>
                                 </Button>
                                 <StackPanel x:Name="CommandPanel" Visibility="Collapsed">
-                                    <Button
+                                    <RadioButton
                                         x:Name="PingPageBtn"
                                         Margin="10 0 0 0"
                                         Padding="5 2 2 2"
@@ -757,22 +749,10 @@
                                         Content="{x:Static lang:Resources.Ping}"
                                         FontSize="10"
                                         FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        Style="{DynamicResource DefaultButton}" />
-                                    <Button
-                                        x:Name="IPConfigPageBtn"
-                                        Margin="10 0 0 0"
-                                        Padding="5 2 2 2"
-                                        HorizontalContentAlignment="Left"
-                                        Background="Transparent"
-                                        BorderThickness="0"
-                                        Click="IPConfigPageBtn_Click"
-                                        Content="{x:Static lang:Resources.IPConfig}"
-                                        FontSize="10"
-                                        FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        Style="{DynamicResource DefaultButton}" />
-                                    <Button
+                                        Foreground="{DynamicResource Accent}"
+                                        GroupName="NavBar"
+                                        Style="{DynamicResource NavBarToolButton}" />
+                                    <RadioButton
                                         x:Name="TraceroutePageBtn"
                                         Margin="10 0 0 0"
                                         Padding="5 2 2 2"
@@ -783,9 +763,10 @@
                                         Content="{x:Static lang:Resources.TraceRoute}"
                                         FontSize="10"
                                         FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        Style="{DynamicResource DefaultButton}" />
-                                    <Button
+                                        Foreground="{DynamicResource Accent}"
+                                        GroupName="NavBar"
+                                        Style="{DynamicResource NavBarToolButton}" />
+                                    <RadioButton
                                         x:Name="WifiPasswordsPageBtn"
                                         Margin="10 0 0 0"
                                         Padding="5 2 2 2"
@@ -796,8 +777,9 @@
                                         Content="{x:Static lang:Resources.WifiPasswords}"
                                         FontSize="10"
                                         FontWeight="ExtraBold"
-                                        Foreground="{Binding Source={StaticResource AccentColor}}"
-                                        Style="{DynamicResource DefaultButton}" />
+                                        Foreground="{DynamicResource Accent}"
+                                        GroupName="NavBar"
+                                        Style="{DynamicResource NavBarToolButton}" />
                                 </StackPanel>
                             </StackPanel>
                         </ScrollViewer>
