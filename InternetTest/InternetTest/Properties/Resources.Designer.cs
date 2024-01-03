@@ -2483,6 +2483,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to WiFi.
+        /// </summary>
+        public static string WiFi {
+            get {
+                return ResourceManager.GetString("WiFi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WiFi Networks.
         /// </summary>
         public static string WiFiNetworks {

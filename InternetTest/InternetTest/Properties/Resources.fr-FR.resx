@@ -960,4 +960,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="NA" xml:space="preserve">
     <value>N/A</value>
   </data>
+  <data name="WiFi" xml:space="preserve">
+    <value>WiFi</value>
+  </data>
 </root>
