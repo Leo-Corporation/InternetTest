@@ -107,7 +107,7 @@ public partial class HomePage : Page
 			string ssid = Global.GetCurrentWifiSSID();
 
 			NetworkTxt.Text = (ssid == null || !connected) ? Properties.Resources.NotConnectedS : ssid;
-			NetworkTitleTxt.Text = (ssid == null || !connected) ? Properties.Resources.Network : Properties.Resources.WiFi;
+			NetworkTitleTxt.Text = Properties.Resources.WiFi;
 			NetworkIconTxt.Text = (ssid == null || !connected) ? "\uFC27" : "\uF8C5";
 
 		}
