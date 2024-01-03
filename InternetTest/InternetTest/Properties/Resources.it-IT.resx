@@ -895,7 +895,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Copia</value>
   </data>
   <data name="NotConnectedS" xml:space="preserve">
-    <value>Non in linea</value>
+    <value>Non connessa</value>
   </data>
   <data name="Checking" xml:space="preserve">
     <value>Controllo</value>
@@ -907,7 +907,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Passa il mouse per visualizzarlo</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Chiudere</value>
+    <value>Chiudi</value>
   </data>
   <data name="QuickActions" xml:space="preserve">
     <value>Azioni rapide</value>
