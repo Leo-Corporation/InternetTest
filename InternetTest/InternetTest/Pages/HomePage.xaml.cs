@@ -108,7 +108,7 @@ public partial class HomePage : Page
 
 			NetworkTxt.Text = (ssid == null || !connected) ? Properties.Resources.NotConnectedS : ssid;
 			NetworkTitleTxt.Text = (ssid == null || !connected) ? Properties.Resources.Network : Properties.Resources.WiFi;
-			NetworkIconTxt.Text = (ssid == null || !connected) ? "\uFB71" : "\uF8C5";
+			NetworkIconTxt.Text = (ssid == null || !connected) ? "\uFC27" : "\uF8C5";
 
 		}
 		catch // If there is no WiFi
