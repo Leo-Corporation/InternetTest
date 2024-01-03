@@ -957,4 +957,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="PortableNoAutoUpdates" xml:space="preserve">
     <value>Gli aggiornamenti automatici non sono disponibili in modalità portatile; scarica nuovamente InternetTest Pro (portatile).</value>
   </data>
+  <data name="NA" xml:space="preserve">
+    <value>N/D</value>
+  </data>
 </root>

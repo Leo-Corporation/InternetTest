@@ -116,7 +116,7 @@
                     Grid.Column="1"
                     Margin="15 0 0 0"
                     FontWeight="Bold"
-                    Text="N/A"
+                    Text="{x:Static lang:Resources.NA}" 
                     TextWrapping="Wrap" />
 
                 <TextBlock
@@ -129,7 +129,7 @@
                     Grid.Column="1"
                     Margin="15 0 0 0"
                     FontWeight="Bold"
-                    Text="N/A"
+                    Text="{x:Static lang:Resources.NA}" 
                     TextWrapping="Wrap" />
                 <TextBlock
                     Grid.Row="2"
@@ -141,7 +141,7 @@
                     Grid.Column="1"
                     Margin="15 0 0 0"
                     FontWeight="Bold"
-                    Text="N/A"
+                    Text="{x:Static lang:Resources.NA}" 
                     TextWrapping="Wrap" />
 
 

@@ -208,7 +208,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="N/A" />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -253,7 +253,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="N/A" />
+                            Text="{x:Static lang:Resources.NA}"  />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -298,7 +298,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="N/A" />
+                            Text="{x:Static lang:Resources.NA}"  />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -342,7 +342,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="N/A" />
+                            Text="{x:Static lang:Resources.NA}"  />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -387,7 +387,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="N/A" />
+                            Text="{x:Static lang:Resources.NA}"  />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -432,7 +432,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="N/A" />
+                            Text="{x:Static lang:Resources.NA}"  />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -477,7 +477,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="N/A" />
+                            Text="{x:Static lang:Resources.NA}"  />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -521,7 +521,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="N/A" />
+                            Text="{x:Static lang:Resources.NA}"  />
                     </StackPanel>
                 </Grid>
             </Border>
