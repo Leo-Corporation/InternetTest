@@ -107,13 +107,15 @@ public partial class HomePage : Page
 			string ssid = Global.GetCurrentWifiSSID();
 
 			NetworkTxt.Text = (ssid == null || !connected) ? Properties.Resources.NotConnectedS : ssid;
-			NetworkIconTxt.Text = (ssid == null || !connected) ? "\uFB71" : "\uF8C5";
+			NetworkTitleTxt.Text = (ssid == null || !connected) ? Properties.Resources.Network : Properties.Resources.WiFi;
+			NetworkIconTxt.Text = (ssid == null || !connected) ? "\uFC27" : "\uF8C5";
 
 		}
 		catch // If there is no WiFi
 		{
 			NetworkIconTxt.Text = connected ? "\uF35A" : "\uFC27";
 			NetworkTxt.Text = connected ? Properties.Resources.Ethernet : Properties.Resources.NotConnectedS;
+			NetworkTitleTxt.Text = Properties.Resources.Network;
 		}
 	}
 

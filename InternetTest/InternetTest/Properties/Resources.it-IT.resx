@@ -196,10 +196,10 @@
 	<value>Apri nel browser</value>
   </data>
   <data name="Connected" xml:space="preserve">
-	<value>Sei connesso ad internet</value>
+	<value>Connessione ad internet disponibile</value>
   </data>
   <data name="NotConnected" xml:space="preserve">
-	<value>Non sei connesso ad internet</value>
+	<value>Connessione ad internet non disponibile</value>
   </data>
   <data name="TestInProgress" xml:space="preserve">
 	<value>Test in corso. Attendi...</value>
@@ -406,7 +406,7 @@
 	<value>Ottieni IPConfig</value>
   </data>
   <data name="NothingToShow" xml:space="preserve">
-	<value>Non c'è niente da visualizzare per ora, prova ad aggiornare la pagina.</value>
+	<value>Al momento non c'è nulla da visualizzare. Prova ad aggiornare la pagina.</value>
   </data>
   <data name="Available" xml:space="preserve">
 	<value>Disponibile</value>
@@ -455,7 +455,7 @@ Questa azione è irreversibile.</value>
 	<value>Visualizza licenze</value>
   </data>
   <data name="ChangeTheme" xml:space="preserve">
-	<value>Modifica tema InternetTest.</value>
+	<value>Modifica tema programma.</value>
   </data>
   <data name="Language" xml:space="preserve">
 	<value>Lingua</value>
@@ -484,10 +484,10 @@ Vuoi continuare?</value>
 	<value>Versione</value>
   </data>
   <data name="ChangeLanguage" xml:space="preserve">
-	<value>Modifica lingua interfaccia InternetTest.</value>
+	<value>Modifica lingua interfaccia programma.</value>
   </data>
   <data name="MapProviderDescription" xml:space="preserve">
-	<value>Il provider di mappe usato per visualizzare la posizione di un indirizzo IP.</value>
+	<value>Provider mappe usato per visualizzare la posizione di un indirizzo IP.</value>
   </data>
   <data name="NotifyUpdates" xml:space="preserve">
 	<value>Visualizza una notifica quando sono disponibili aggiornamenti</value>
@@ -499,22 +499,22 @@ Vuoi continuare?</value>
 	<value>Impostazioni notifiche.</value>
   </data>
   <data name="CheckUpdatesOnStart" xml:space="preserve">
-	<value>Controlla aggiornamenti all'avvio</value>
+	<value>Controlla aggiornamenti</value>
   </data>
   <data name="StartupPage" xml:space="preserve">
-	<value>Pagina predefinita all'avvio</value>
+	<value>Pagina predefinita</value>
   </data>
   <data name="OnStart" xml:space="preserve">
-	<value>All'avvio</value>
+	<value>Impostazioni avvio programma</value>
   </data>
   <data name="OnStartDescription" xml:space="preserve">
 	<value>Impostazioni da applicare all'avvio.</value>
   </data>
   <data name="WebSettingsDescription" xml:space="preserve">
-	<value>Impostazioni relative al web.</value>
+	<value>Impostazioni relative ad internet.</value>
   </data>
   <data name="WebSettings" xml:space="preserve">
-	<value>Impostazioni web</value>
+	<value>Impostazioni internet</value>
   </data>
   <data name="TestSite" xml:space="preserve">
 	<value>Test sito web</value>
@@ -532,7 +532,7 @@ Vuoi continuare?</value>
 	<value>Dati e privacy</value>
   </data>
   <data name="DataDescription" xml:space="preserve">
-	<value>Gestione dei dati e della privacy.</value>
+	<value>Gestione dati e privacy.</value>
   </data>
   <data name="Import" xml:space="preserve">
 	<value>Importa imposatzioni</value>
@@ -721,7 +721,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Tema sistema</value>
   </data>
   <data name="SpeedTest" xml:space="preserve">
-    <value>Effettua un test velocità</value>
+    <value>Effettua test velocità</value>
   </data>
   <data name="MinSpeed" xml:space="preserve">
     <value>Velocità minima</value>
@@ -757,7 +757,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Traceroute in corso</value>
   </data>
   <data name="TraceRouteDesc" xml:space="preserve">
-    <value>Definisci le impostazioni da usare quando esegui un traceroute.</value>
+    <value>Impostazioni relative all'uso di un traceroute.</value>
   </data>
   <data name="MaxTimeOut" xml:space="preserve">
     <value>Timeout max</value>
@@ -889,7 +889,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Visualizza disabilitato</value>
   </data>
   <data name="LocateMyIpOnStart" xml:space="preserve">
-    <value>Individua il mio IP all'avvio</value>
+    <value>Individua il mio IP</value>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>Copia</value>
@@ -904,7 +904,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Rete</value>
   </data>
   <data name="HoverToReveal" xml:space="preserve">
-    <value>Passare il mouse per rivelare</value>
+    <value>Passa il mouse per visualizzarlo</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Chiudere</value>
@@ -925,10 +925,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Test di tutti</value>
   </data>
   <data name="EraseWiFiPasswordsFiles" xml:space="preserve">
-    <value>Cancellare i dati WiFi memorizzati nella cache</value>
+    <value>Cancella dati WiFi memorizzati nella cache</value>
   </data>
   <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
-    <value>Siete sicuri di voler cancellare le password WiFi memorizzate nella cache?</value>
+    <value>Sei sicuro di voler cancellare le password del WiFi memorizzate nella cache?</value>
   </data>
   <data name="Ethernet" xml:space="preserve">
     <value>Ethernet</value>
@@ -940,21 +940,27 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Sconosciuto</value>
   </data>
   <data name="DefaultTimeInterval" xml:space="preserve">
-    <value>Intervallo di tempo predefinito</value>
+    <value>Intervallo tempo predefinito</value>
   </data>
   <data name="DownDetectorSettingsDesc" xml:space="preserve">
-    <value>Impostazioni per la funzione DownDetector.</value>
+    <value>Impostazioni funzione DownDetector.</value>
   </data>
   <data name="NetworkAdapters" xml:space="preserve">
-    <value>Adattatori di rete</value>
+    <value>Schede di rete</value>
   </data>
   <data name="NetworkAdaptersSettingsDesc" xml:space="preserve">
-    <value>Impostazioni da applicare alla sezione degli adattatori di rete.</value>
+    <value>Impostazioni schede di rete.</value>
   </data>
   <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
-    <value>Nascondere gli adattatori disabilitati per impostazione predefinita</value>
+    <value>Nascondi gli adattatori disabilitati per impostazione predefinita</value>
   </data>
   <data name="PortableNoAutoUpdates" xml:space="preserve">
-    <value>Gli aggiornamenti automatici non sono disponibili in modalità portatile; scaricare nuovamente InternetTest Pro (Portable).</value>
+    <value>Gli aggiornamenti automatici non sono disponibili in modalità portatile; scarica nuovamente InternetTest Pro (portatile).</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>N/D</value>
+  </data>
+  <data name="WiFi" xml:space="preserve">
+    <value>WiFi</value>
   </data>
 </root>

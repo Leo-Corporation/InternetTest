@@ -957,4 +957,10 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="PortableNoAutoUpdates" xml:space="preserve">
     <value>Automatic updates are not available in portable mode, please download InternetTest Pro (Portable) again.</value>
   </data>
+  <data name="NA" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="WiFi" xml:space="preserve">
+    <value>WiFi</value>
+  </data>
 </root>

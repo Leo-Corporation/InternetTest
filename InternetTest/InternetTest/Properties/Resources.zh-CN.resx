@@ -948,4 +948,10 @@
   <data name="PortableNoAutoUpdates" xml:space="preserve">
     <value>自动更新在便携模式下不可用，请重新下载 InternetTest Pro (便携版)。</value>
   </data>
+  <data name="NA" xml:space="preserve">
+    <value>不适用</value>
+  </data>
+  <data name="WiFi" xml:space="preserve">
+    <value>无线网络</value>
+  </data>
 </root>
