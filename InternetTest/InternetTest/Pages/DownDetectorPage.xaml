@@ -75,7 +75,8 @@
                         BorderThickness="0"
                         FontWeight="Bold"
                         Foreground="{DynamicResource DarkGray}"
-                        Keyboard.KeyUp="WebsiteTxt_KeyUp" />
+                        Keyboard.KeyUp="WebsiteTxt_KeyUp"
+                        TextChanged="WebsiteTxt_TextChanged" />
                     <Button
                         x:Name="ClearBtn"
                         Grid.Column="1"
@@ -89,7 +90,8 @@
                         Content="&#xF36A;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource ToolButton}" />
+                        Style="{DynamicResource ToolButton}"
+                        Visibility="Collapsed" />
                 </Grid>
             </Border>
             <Button

@@ -79,6 +79,9 @@ namespace InternetTest.Windows
 				$"{Properties.Resources.OutputQueueLength}\n" +
 				$"{Properties.Resources.UnicastPacketsReceived}\n" +
 				$"{Properties.Resources.UnicastPacketsSent}";
+
+			StatusTxt.Text = AdapterInfo.Status switch { OperationalStatus.Up => Properties.Resources.ConnectedS, OperationalStatus.Down => Properties.Resources.Disconnected, _ => AdapterInfo.Status.ToString() };
+			DataTxt.Text = $"{Global.GetStorageUnit(AdapterInfo.BytesReceived + AdapterInfo.BytesSent).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.BytesReceived + AdapterInfo.BytesSent).Item1)}";
 		}
 
 		private void CloseBtn_Click(object sender, RoutedEventArgs e)

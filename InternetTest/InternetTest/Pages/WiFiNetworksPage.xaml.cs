@@ -147,6 +147,7 @@ public partial class WiFiNetworksPage : Page
 	private void SearchTxt_TextChanged(object sender, TextChangedEventArgs e)
 	{
 		Search(SearchTxt.Text);
+		DismissBtn.Visibility = SearchTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
 	}
 
 	private void Search(string query)

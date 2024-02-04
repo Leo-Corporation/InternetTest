@@ -72,7 +72,8 @@
                         BorderThickness="0"
                         FontWeight="Bold"
                         Foreground="{DynamicResource DarkGray}"
-                        Keyboard.KeyUp="AddressTxt_KeyUp" />
+                        Keyboard.KeyUp="AddressTxt_KeyUp"
+                        TextChanged="AddressTxt_TextChanged" />
                     <Button
                         x:Name="DismissBtn"
                         Grid.Column="1"
@@ -86,7 +87,8 @@
                         Content="&#xF36A;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource ToolButton}" />
+                        Style="{DynamicResource ToolButton}"
+                        Visibility="Collapsed" />
                 </Grid>
             </Border>
             <Button

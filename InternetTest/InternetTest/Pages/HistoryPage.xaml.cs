@@ -148,6 +148,7 @@ public partial class HistoryPage : Page
 			return;
 		}
 		SearchHistory(SearchTxt.Text);
+		DismissBtn.Visibility = SearchTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
 	}
 
 	internal void SearchHistory(string req)

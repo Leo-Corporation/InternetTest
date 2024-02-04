@@ -473,7 +473,65 @@
                             Text="{x:Static lang:Resources.ConnectWiFi}" />
                     </StackPanel>
 
+                    <StackPanel
+                        x:Name="WiFiQuickActionPlaceholder"
+                        Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Visibility="Collapsed">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="24"
+                            Foreground="{DynamicResource Accent}"
+                            Text="&#xFB69;" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.NoNetworks}"
+                            TextAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel
+                        x:Name="WiFiQuickActionLoader"
+                        Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Visibility="Collapsed">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="48"
+                            Foreground="{DynamicResource Accent}"
+                            RenderTransformOrigin="0.5,0.5"
+                            Text="&#xF709;">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform x:Name="SpinTransform" Angle="0" />
+                            </TextBlock.RenderTransform>
+
+                            <TextBlock.Triggers>
+                                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                RepeatBehavior="Forever"
+                                                Storyboard.TargetName="SpinTransform"
+                                                Storyboard.TargetProperty="Angle"
+                                                From="0"
+                                                To="360"
+                                                Duration="0:0:1" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
+                        <TextBlock
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.ScanningInProgress}"
+                            TextAlignment="Center" />
+                    </StackPanel>
+
                     <ScrollViewer
+                        x:Name="WiFiQuickAction"
                         Grid.Row="1"
                         HorizontalScrollBarVisibility="Disabled"
                         Style="{DynamicResource ScrollViewerStyle}">
@@ -538,11 +596,68 @@
                     </StackPanel>
 
                     <ScrollViewer
+                        x:Name="WiFiPasswordQuickAction"
                         Grid.Row="1"
                         HorizontalScrollBarVisibility="Disabled"
                         Style="{DynamicResource ScrollViewerStyle}">
                         <StackPanel x:Name="WiFiItemDisplayer" />
                     </ScrollViewer>
+                    <StackPanel
+                        x:Name="PasswordQuickActionPlaceholder"
+                        Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Visibility="Collapsed">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="24"
+                            Foreground="{DynamicResource Accent}"
+                            Text="&#xF59E;" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.NoWiFIPasswordsFound}"
+                            TextAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel
+                        x:Name="PasswordQuickActionLoader"
+                        Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Visibility="Collapsed">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="48"
+                            Foreground="{DynamicResource Accent}"
+                            RenderTransformOrigin="0.5,0.5"
+                            Text="&#xF709;">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform x:Name="SpinTransform2" Angle="0" />
+                            </TextBlock.RenderTransform>
+
+                            <TextBlock.Triggers>
+                                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                RepeatBehavior="Forever"
+                                                Storyboard.TargetName="SpinTransform2"
+                                                Storyboard.TargetProperty="Angle"
+                                                From="0"
+                                                To="360"
+                                                Duration="0:0:1" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
+                        <TextBlock
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.SearchingForWiFiPasswords}"
+                            TextAlignment="Center" />
+                    </StackPanel>
                     <Button
                         x:Name="ClosePasswordBtn"
                         Grid.Row="2"

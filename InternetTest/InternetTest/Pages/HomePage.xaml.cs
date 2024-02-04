@@ -201,13 +201,29 @@ public partial class HomePage : Page
 			ConnectPopup.IsOpen = true;
 			SpeedTestPopup.IsOpen = false;
 			PasswordPopup.IsOpen = false;
+
 			WiFiDisplayer.Children.Clear();
+			WiFiQuickActionLoader.Visibility = Visibility.Visible;
+			WiFiQuickAction.Visibility = Visibility.Collapsed;
+			WiFiQuickActionPlaceholder.Visibility = Visibility.Collapsed;
+
 			await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
 			var wifis = Global.GetWiFis();
 			for (int i = 0; i < wifis.Count; i++)
 			{
 				WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i]));
 			}
+			if (WiFiDisplayer.Children.Count > 0)
+			{
+				WiFiQuickActionPlaceholder.Visibility = Visibility.Collapsed;
+				WiFiQuickAction.Visibility = Visibility.Visible;
+			}
+			else
+			{
+				WiFiQuickActionPlaceholder.Visibility = Visibility.Visible;
+				WiFiQuickAction.Visibility = Visibility.Collapsed;
+			}
+			WiFiQuickActionLoader.Visibility = Visibility.Collapsed;
 		}
 		catch
 		{
@@ -239,6 +255,9 @@ public partial class HomePage : Page
 		try
 		{
 			WiFiItemDisplayer.Children.Clear(); // Clear the panel
+			PasswordQuickActionLoader.Visibility = Visibility.Visible;
+			WiFiPasswordQuickAction.Visibility = Visibility.Collapsed;
+			PasswordQuickActionPlaceholder.Visibility = Visibility.Collapsed;
 
 			// Check if the temp directory exists
 			string path = FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\Temp";
@@ -276,7 +295,18 @@ public partial class HomePage : Page
 				File.Delete(files[i]); // Remove the temp file
 
 			}
-			Directory.Delete(path); // Delete the temp directory			
+			Directory.Delete(path); // Delete the temp directory		
+			if (WiFiItemDisplayer.Children.Count > 0)
+			{
+				PasswordQuickActionPlaceholder.Visibility = Visibility.Collapsed;
+				WiFiPasswordQuickAction.Visibility = Visibility.Visible;
+			}
+			else
+			{
+				PasswordQuickActionPlaceholder.Visibility = Visibility.Visible;
+				WiFiPasswordQuickAction.Visibility = Visibility.Collapsed;
+			}
+			PasswordQuickActionLoader.Visibility = Visibility.Collapsed;
 		}
 		catch (Exception ex)
 		{
