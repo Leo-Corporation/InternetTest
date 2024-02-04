@@ -960,4 +960,13 @@
   <data name="SearchingForWiFiPasswords" xml:space="preserve">
     <value>InternetTest Pro 正在搜索 WiFi 密码。</value>
   </data>
+  <data name="ExportWithPasswords" xml:space="preserve">
+    <value>带密码导出</value>
+  </data>
+  <data name="ExportWithoutPasswords" xml:space="preserve">
+    <value>无密码导出</value>
+  </data>
+  <data name="WiFiExportSuccessful" xml:space="preserve">
+    <value>所有 WiFi 网络都已成功导出。</value>
+  </data>
 </root>

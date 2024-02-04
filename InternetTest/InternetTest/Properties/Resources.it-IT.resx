@@ -969,4 +969,13 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="SearchingForWiFiPasswords" xml:space="preserve">
     <value>InternetTest Pro sta cercando le password WiFi.</value>
   </data>
+  <data name="ExportWithPasswords" xml:space="preserve">
+    <value>Esportazione con password</value>
+  </data>
+  <data name="ExportWithoutPasswords" xml:space="preserve">
+    <value>Esportazione senza password</value>
+  </data>
+  <data name="WiFiExportSuccessful" xml:space="preserve">
+    <value>Tutte le reti WiFi sono state esportate con successo.</value>
+  </data>
 </root>

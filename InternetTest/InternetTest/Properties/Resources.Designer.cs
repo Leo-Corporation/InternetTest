@@ -694,6 +694,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export without passwords.
+        /// </summary>
+        public static string ExportWithoutPasswords {
+            get {
+                return ResourceManager.GetString("ExportWithoutPasswords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export with passwords.
+        /// </summary>
+        public static string ExportWithPasswords {
+            get {
+                return ResourceManager.GetString("ExportWithPasswords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed.
         /// </summary>
         public static string Failed {
@@ -2506,6 +2524,15 @@ namespace InternetTest.Properties {
         public static string WiFi {
             get {
                 return ResourceManager.GetString("WiFi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All WiFi networks were sucessfully exported..
+        /// </summary>
+        public static string WiFiExportSuccessful {
+            get {
+                return ResourceManager.GetString("WiFiExportSuccessful", resourceCulture);
             }
         }
         
