@@ -201,13 +201,29 @@ public partial class HomePage : Page
 			ConnectPopup.IsOpen = true;
 			SpeedTestPopup.IsOpen = false;
 			PasswordPopup.IsOpen = false;
+
 			WiFiDisplayer.Children.Clear();
+			WiFiQuickActionLoader.Visibility = Visibility.Visible;
+			WiFiQuickAction.Visibility = Visibility.Collapsed;
+			WiFiQuickActionPlaceholder.Visibility = Visibility.Collapsed;
+
 			await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
 			var wifis = Global.GetWiFis();
 			for (int i = 0; i < wifis.Count; i++)
 			{
 				WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i]));
 			}
+			if (WiFiDisplayer.Children.Count > 0)
+			{
+				WiFiQuickActionPlaceholder.Visibility = Visibility.Collapsed;
+				WiFiQuickAction.Visibility = Visibility.Visible;
+			}
+			else
+			{
+				WiFiQuickActionPlaceholder.Visibility = Visibility.Visible;
+				WiFiQuickAction.Visibility = Visibility.Collapsed;
+			}
+			WiFiQuickActionLoader.Visibility = Visibility.Collapsed;
 		}
 		catch
 		{
