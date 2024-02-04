@@ -118,4 +118,9 @@ public partial class TraceroutePage : Page
 			TraceBtn_Click(sender, e);
 		}
 	}
+
+	private void AddressTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		DismissBtn.Visibility = AddressTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
+	}
 }

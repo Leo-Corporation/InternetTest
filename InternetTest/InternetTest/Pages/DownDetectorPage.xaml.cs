@@ -150,5 +150,10 @@ namespace InternetTest.Pages
 				LaunchTimerBtn.Content = Properties.Resources.LaunchScheduledTest;
 			}
 		}
-	}
+
+		private void WebsiteTxt_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			ClearBtn.Visibility = WebsiteTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
+		}
+    }
 }

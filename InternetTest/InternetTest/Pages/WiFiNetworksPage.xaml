@@ -128,7 +128,7 @@
                         <TextBox
                             x:Name="SearchTxt"
                             Margin="5 0"
-                            Padding="1"
+                            Padding="1 4"
                             VerticalAlignment="Center"
                             d:Text="123.54.132.56"
                             Background="Transparent"
@@ -149,7 +149,8 @@
                             Content="&#xF36A;"
                             FontFamily="../Fonts/#FluentSystemIcons-Regular"
                             Foreground="{DynamicResource Foreground1}"
-                            Style="{DynamicResource ToolButton}" />
+                            Style="{DynamicResource ToolButton}"
+                            Visibility="Collapsed" />
                     </Grid>
                 </Border>
             </StackPanel>

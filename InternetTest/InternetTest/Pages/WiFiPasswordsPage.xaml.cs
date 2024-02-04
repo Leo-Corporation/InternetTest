@@ -158,6 +158,8 @@ public partial class WiFiPasswordsPage : Page
 
 	private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
 	{
+		DismissBtn.Visibility = SearchTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
+
 		PlaceholderGrid.Visibility = Visibility.Collapsed;
 		Placeholder.Visibility = Visibility.Collapsed;
 		if (!(WiFiItemDisplayer.Children.Count > 0)) return;

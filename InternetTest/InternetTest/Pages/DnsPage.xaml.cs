@@ -178,4 +178,9 @@ public partial class DnsPage : Page
 			GetDnsInfoBtn_Click(sender, e);
 		}
 	}
+
+	private void SiteTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		DismissBtn.Visibility = SiteTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
+    }
 }
