@@ -963,4 +963,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="WiFi" xml:space="preserve">
     <value>WiFi</value>
   </data>
+  <data name="NoWiFIPasswordsFound" xml:space="preserve">
+    <value>Non sono state trovate password WiFi su questo dispositivo.</value>
+  </data>
+  <data name="SearchingForWiFiPasswords" xml:space="preserve">
+    <value>InternetTest Pro sta cercando le password WiFi.</value>
+  </data>
 </root>

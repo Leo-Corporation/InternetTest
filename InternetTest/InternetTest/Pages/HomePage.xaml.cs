@@ -239,6 +239,9 @@ public partial class HomePage : Page
 		try
 		{
 			WiFiItemDisplayer.Children.Clear(); // Clear the panel
+			PasswordQuickActionLoader.Visibility = Visibility.Visible;
+			WiFiPasswordQuickAction.Visibility = Visibility.Collapsed;
+			PasswordQuickActionPlaceholder.Visibility = Visibility.Collapsed;
 
 			// Check if the temp directory exists
 			string path = FileSys.AppDataPath + @"\Léo Corporation\InternetTest Pro\Temp";
@@ -276,7 +279,18 @@ public partial class HomePage : Page
 				File.Delete(files[i]); // Remove the temp file
 
 			}
-			Directory.Delete(path); // Delete the temp directory			
+			Directory.Delete(path); // Delete the temp directory		
+			if (WiFiItemDisplayer.Children.Count > 0)
+			{
+				PasswordQuickActionPlaceholder.Visibility = Visibility.Collapsed;
+				WiFiPasswordQuickAction.Visibility = Visibility.Visible;
+			}
+			else
+			{
+				PasswordQuickActionPlaceholder.Visibility = Visibility.Visible;
+				WiFiPasswordQuickAction.Visibility = Visibility.Collapsed;
+			}
+			PasswordQuickActionLoader.Visibility = Visibility.Collapsed;
 		}
 		catch (Exception ex)
 		{

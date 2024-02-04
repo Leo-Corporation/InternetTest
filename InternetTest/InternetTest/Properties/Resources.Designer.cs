@@ -1553,6 +1553,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No WiFi passwords were found on this device..
+        /// </summary>
+        public static string NoWiFIPasswordsFound {
+            get {
+                return ResourceManager.GetString("NoWiFIPasswordsFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to of {0}.
         /// </summary>
         public static string OfWebsite {
@@ -1855,6 +1864,15 @@ namespace InternetTest.Properties {
         public static string ScheduledTests {
             get {
                 return ResourceManager.GetString("ScheduledTests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InternetTest Pro is searching for WiFi passwords..
+        /// </summary>
+        public static string SearchingForWiFiPasswords {
+            get {
+                return ResourceManager.GetString("SearchingForWiFiPasswords", resourceCulture);
             }
         }
         

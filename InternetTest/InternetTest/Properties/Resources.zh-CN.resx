@@ -954,4 +954,10 @@
   <data name="WiFi" xml:space="preserve">
     <value>无线网络</value>
   </data>
+  <data name="NoWiFIPasswordsFound" xml:space="preserve">
+    <value>此设备上未找到 WiFi 密码。</value>
+  </data>
+  <data name="SearchingForWiFiPasswords" xml:space="preserve">
+    <value>InternetTest Pro 正在搜索 WiFi 密码。</value>
+  </data>
 </root>
