@@ -978,4 +978,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="WiFiExportSuccessful" xml:space="preserve">
     <value>Tous les réseaux WiFi ont été exportés avec succès.</value>
   </data>
+  <data name="DataConsumption" xml:space="preserve">
+    <value>Consommation de données</value>
+  </data>
 </root>

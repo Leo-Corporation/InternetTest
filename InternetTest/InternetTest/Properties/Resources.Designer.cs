@@ -376,6 +376,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data consumption.
+        /// </summary>
+        public static string DataConsumption {
+            get {
+                return ResourceManager.GetString("DataConsumption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Manage your data and your privacy..
         /// </summary>
         public static string DataDescription {

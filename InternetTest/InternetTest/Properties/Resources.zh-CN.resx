@@ -969,4 +969,7 @@
   <data name="WiFiExportSuccessful" xml:space="preserve">
     <value>所有 WiFi 网络都已成功导出。</value>
   </data>
+  <data name="DataConsumption" xml:space="preserve">
+    <value>数据消耗</value>
+  </data>
 </root>
