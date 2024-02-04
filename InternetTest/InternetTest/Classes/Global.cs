@@ -47,10 +47,10 @@ public static class Global
 #if NIGHTLY
 	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-	public static string Version => $"8.0.3.2401-nightly{Date:yyMM.dd@HHmm}";
+	public static string Version => $"8.1.0.2402-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "8.0.3.2401";
+	public static string Version => "8.1.0.2402-rc1";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\NewSynethiaConfig.json";
