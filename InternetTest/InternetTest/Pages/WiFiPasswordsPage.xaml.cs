@@ -33,6 +33,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Shapes;
 using System.Xml.Serialization;
 
 namespace InternetTest.Pages;
@@ -98,6 +99,27 @@ public partial class WiFiPasswordsPage : Page
 
 			// Read the files
 			LoadWiFiInfo(path);
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
+	}
+
+	internal async Task ExportWiFiNetworkInfo(string path,bool includePasswords)
+	{
+		try
+		{
+			Process process = new();
+			process.StartInfo.FileName = "cmd.exe";
+			process.StartInfo.Arguments = $"/c netsh wlan export profile {(includePasswords ? "key=clear" : "")} folder=\"{path}\"";
+			process.StartInfo.UseShellExecute = false;
+			process.StartInfo.CreateNoWindow = true;
+			process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+			process.Start();
+			await process.WaitForExitAsync();
+
+			MessageBox.Show(Properties.Resources.WiFiExportSuccessful, Properties.Resources.Export, MessageBoxButton.OK, MessageBoxImage.Information);
 		}
 		catch (Exception ex)
 		{
@@ -191,5 +213,28 @@ public partial class WiFiPasswordsPage : Page
 			}
 		}
 		catch { }
+	}
+
+	private void ExportBtn_Click(object sender, RoutedEventArgs e)
+	{
+		ExportPopup.IsOpen = true;
+    }
+
+	private async void ExportWithPasswordBtn_Click(object sender, RoutedEventArgs e)
+	{
+        System.Windows.Forms.FolderBrowserDialog folderBrowserDialog = new() { UseDescriptionForTitle = true, Description = Properties.Resources.ExportWithPasswords };
+		if (folderBrowserDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+		{
+			await ExportWiFiNetworkInfo(folderBrowserDialog.SelectedPath, true);
+		}
+    }
+
+	private async void ExportWithoutPasswordBtn_Click(object sender, RoutedEventArgs e)
+	{
+		System.Windows.Forms.FolderBrowserDialog folderBrowserDialog = new() { UseDescriptionForTitle = true, Description = Properties.Resources.ExportWithoutPasswords };
+		if (folderBrowserDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+		{
+			await ExportWiFiNetworkInfo(folderBrowserDialog.SelectedPath, false);
+		}
 	}
 }
