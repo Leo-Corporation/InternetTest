@@ -981,4 +981,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="DataConsumption" xml:space="preserve">
     <value>Consumo di dati</value>
   </data>
+  <data name="Requests" xml:space="preserve">
+    <value>Richieste</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Inviare</value>
+  </data>
 </root>

@@ -972,4 +972,10 @@
   <data name="DataConsumption" xml:space="preserve">
     <value>数据消耗</value>
   </data>
+  <data name="Requests" xml:space="preserve">
+    <value>要求</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>发送</value>
+  </data>
 </root>
