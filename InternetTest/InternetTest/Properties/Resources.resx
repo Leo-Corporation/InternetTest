@@ -987,4 +987,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="Send" xml:space="preserve">
     <value>Send</value>
   </data>
+  <data name="Response" xml:space="preserve">
+    <value>Response</value>
+  </data>
 </root>

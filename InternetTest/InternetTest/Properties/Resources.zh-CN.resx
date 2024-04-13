@@ -978,4 +978,7 @@
   <data name="Send" xml:space="preserve">
     <value>发送</value>
   </data>
+  <data name="Response" xml:space="preserve">
+    <value>回应</value>
+  </data>
 </root>
