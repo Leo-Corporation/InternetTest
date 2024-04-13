@@ -61,6 +61,7 @@ public partial class RequestsPage : Page
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.Requests}";
+		RequestTypeComboBox.SelectedIndex = 0;
 	}
 
 	private void SendBtn_Click(object sender, RoutedEventArgs e)
@@ -81,7 +82,7 @@ public partial class RequestsPage : Page
 		var client = new RestClient(options);
 		var request = new RestRequest("", (Method)RequestTypeComboBox.SelectedIndex);
 
-		var response = await client.GetAsync(request);
+		var response = await client.ExecuteAsync(request);
 		ResponseTxt.Text = response.Content;
 	}
 
