@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
+using InternetTest.UserControls;
 using RestSharp;
 using Synethia;
 using System;
@@ -76,7 +77,7 @@ public partial class RequestsPage : Page
 	{
 		var options = new RestClientOptions(UrlTxt.Text);
 		var client = new RestClient(options);
-		var request = new RestRequest("", ((Method)RequestTypeComboBox.SelectedIndex));
+		var request = new RestRequest("", (Method)RequestTypeComboBox.SelectedIndex);
 
 		var response = await client.GetAsync(request);
 		ResponseTxt.Text = response.Content;
@@ -89,11 +90,37 @@ public partial class RequestsPage : Page
 
 	private void UrlTxt_TextChanged(object sender, TextChangedEventArgs e)
 	{
-
+		ParametersPanel.Children.Clear();
+		ParametersBorder.Visibility = Visibility.Collapsed;
+		try
+		{
+			var parameters = ParseUrl(UrlTxt.Text);
+			for (int i = 0; i < parameters.Count; i++)
+			{
+				ParametersPanel.Children.Add(new ParameterItem(parameters[i].Item1, parameters[i].Item2));
+			}
+		}
+		catch { }
+		ParametersBorder.Visibility = ParametersPanel.Children.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
 	}
 
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)
 	{
 		UrlTxt.Text = string.Empty;
+	}
+
+	private List<(string, string)> ParseUrl(string url)
+	{
+		var elements = url.Split(new string[] { "/", "//" }, StringSplitOptions.None);
+		var parameters = elements[^1].Split(new string[] { "?", "&" }, StringSplitOptions.None);
+		List<(string, string)> values = new();
+		for (int i = 0; i < parameters.Length; i++)
+		{
+			var kv = parameters[i].Split(new string[] { "=" }, StringSplitOptions.None);
+			if (kv.Length < 2) continue;
+			values.Add((kv[0], kv[1]));
+		}
+
+		return values;
 	}
 }
