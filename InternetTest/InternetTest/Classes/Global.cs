@@ -104,7 +104,7 @@ public static class Global
 			config.PagesInfo.Add(new("Requests"));
 			config.ActionsInfo.Add(new(8, "Request.Make"));
 		}
-		
+
 		return config;
 	}
 

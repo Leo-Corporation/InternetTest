@@ -182,5 +182,5 @@ public partial class DnsPage : Page
 	private void SiteTxt_TextChanged(object sender, TextChangedEventArgs e)
 	{
 		DismissBtn.Visibility = SiteTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
-    }
+	}
 }

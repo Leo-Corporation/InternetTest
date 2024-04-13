@@ -155,5 +155,5 @@ namespace InternetTest.Pages
 		{
 			ClearBtn.Visibility = WebsiteTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
 		}
-    }
+	}
 }
