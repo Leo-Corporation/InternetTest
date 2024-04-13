@@ -24,10 +24,12 @@ SOFTWARE.
 
 using InternetTest.Classes;
 using InternetTest.UserControls;
+using Microsoft.Win32;
 using RestSharp;
 using Synethia;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -126,7 +128,20 @@ public partial class RequestsPage : Page
 
 	private void SaveBtn_Click(object sender, RoutedEventArgs e)
 	{
+		if (string.IsNullOrEmpty(ResponseTxt.Text)) return;
+		SaveFileDialog dialog = new()
+		{
+			Title = Properties.Resources.Save,
+			Filter = Properties.Resources.TxtFiles + " (*.txt)|*.txt|JSON (*.json)|*.json|All Files|",
+			InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+			FileName = Properties.Resources.Requests + ".txt",
+			DefaultExt = ".txt"
+		};
 
+		if (dialog.ShowDialog() ?? false)
+		{
+			File.WriteAllText(dialog.FileName, ResponseTxt.Text);
+		}
 	}
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)

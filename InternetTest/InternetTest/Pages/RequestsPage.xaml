@@ -56,7 +56,6 @@
                 BorderBrush="{DynamicResource Accent}"
                 BorderThickness="2"
                 Foreground="{DynamicResource Foreground1}"
-                SelectedIndex="0"
                 Style="{DynamicResource ComboBoxStyle1}">
                 <ComboBoxItem Content="GET" />
                 <ComboBoxItem Content="POST" />
@@ -197,11 +196,11 @@
                     VerticalScrollBarVisibility="Auto">
                     <TextBox
                         x:Name="ResponseTxt"
+                        d:Text="Hello"
                         Background="{DynamicResource Background1}"
                         BorderThickness="0"
                         FontFamily="Consolas"
                         Foreground="{DynamicResource Foreground1}"
-                        Text="Hello"
                         TextWrapping="Wrap" />
                 </ScrollViewer>
             </Grid>
