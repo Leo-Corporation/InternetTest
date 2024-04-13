@@ -157,7 +157,40 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <TextBlock FontWeight="Bold" Text="{x:Static lang:Resources.Response}" />
+                <StackPanel Margin="0 0 0 5" Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontWeight="Bold"
+                        Text="{x:Static lang:Resources.Response}" />
+                    <Button
+                        x:Name="SaveBtn"
+                        Height="20"
+                        Margin="5 0 0 0"
+                        Padding="5 2"
+                        Background="{DynamicResource Background2}"
+                        BorderThickness="0"
+                        Click="SaveBtn_Click"
+                        Content="&#xF680;"
+                        Cursor="Hand"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        FontWeight="ExtraBold"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource PrimaryButton}" />
+                    <Button
+                        x:Name="CopyBtn"
+                        Height="20"
+                        Margin="5 0 0 0"
+                        Padding="5 2"
+                        Background="{DynamicResource Background2}"
+                        BorderThickness="0"
+                        Click="CopyBtn_Click"
+                        Content="&#xF32C;"
+                        Cursor="Hand"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        FontWeight="ExtraBold"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource PrimaryButton}" />
+                </StackPanel>
                 <ScrollViewer
                     Grid.Row="1"
                     Style="{DynamicResource ScrollViewerStyle}"

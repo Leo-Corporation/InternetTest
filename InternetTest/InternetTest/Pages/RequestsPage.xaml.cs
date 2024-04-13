@@ -123,4 +123,14 @@ public partial class RequestsPage : Page
 
 		return values;
 	}
+
+	private void SaveBtn_Click(object sender, RoutedEventArgs e)
+	{
+
+	}
+
+	private void CopyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Clipboard.SetText(ResponseTxt.Text);
+	}
 }
