@@ -125,6 +125,11 @@ public partial class MainWindow : Window
 				Global.SynethiaConfig.PagesInfo[2].EnterUnixTime = Sys.UnixTime;
 				WiFiPageBtn.IsChecked = true;
 				break;
+			case AppPages.Requests:
+				PageDisplayer.Content = Global.RequestsPage;
+				Global.SynethiaConfig.PagesInfo[8].EnterUnixTime = Sys.UnixTime;
+				RequestsPageBtn.IsChecked = true;
+				break;
 			default:
 				PageDisplayer.Content = Global.HomePage;
 				HomePageBtn.IsChecked = true;
@@ -194,6 +199,11 @@ public partial class MainWindow : Window
 				PageDisplayer.Content = Global.WiFiNetworksPage;
 				Global.SynethiaConfig.PagesInfo[2].EnterUnixTime = Sys.UnixTime;
 				WiFiPageBtn.IsChecked = true;
+				break;
+			case AppPages.Requests:
+				PageDisplayer.Content = Global.RequestsPage;
+				Global.SynethiaConfig.PagesInfo[8].EnterUnixTime = Sys.UnixTime;
+				RequestsPageBtn.IsChecked = true;
 				break;
 			default:
 				break;
@@ -406,6 +416,10 @@ public partial class MainWindow : Window
 				Global.SynethiaConfig.PagesInfo[2].LeaveUnixTime = Sys.UnixTime;
 				Global.SynethiaConfig.PagesInfo[2].TotalTimeSpent += Global.SynethiaConfig.PagesInfo[2].LeaveUnixTime - Global.SynethiaConfig.PagesInfo[2].EnterUnixTime;
 				break;
+			case RequestsPage:
+				Global.SynethiaConfig.PagesInfo[8].LeaveUnixTime = Sys.UnixTime;
+				Global.SynethiaConfig.PagesInfo[8].TotalTimeSpent += Global.SynethiaConfig.PagesInfo[8].LeaveUnixTime - Global.SynethiaConfig.PagesInfo[8].EnterUnixTime;
+				break;
 		}
 	}
 
@@ -450,5 +464,13 @@ public partial class MainWindow : Window
 
 		PageDisplayer.Content = Global.WiFiNetworksPage;
 		Global.SynethiaConfig.PagesInfo[2].EnterUnixTime = Sys.UnixTime;
+	}
+
+	private void RequestsPageBtn_Click(object sender, RoutedEventArgs e)
+	{
+		LeavePage();
+
+		PageDisplayer.Content = Global.RequestsPage; // Display the IP config page
+		Global.SynethiaConfig.PagesInfo[8].EnterUnixTime = Sys.UnixTime; // Update the last entered time
 	}
 }

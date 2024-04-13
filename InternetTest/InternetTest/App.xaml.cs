@@ -50,6 +50,7 @@ public partial class App : Application
 			Global.DnsPage = new();
 			Global.TraceroutePage = new();
 			Global.WiFiNetworksPage = new();
+			Global.RequestsPage = new();
 
 			if (!Global.Settings.IsFirstRun)
 			{

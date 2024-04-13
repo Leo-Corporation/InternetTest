@@ -37,5 +37,6 @@ public enum AppPages
 	WiFiPasswords,
 	DnsTool,
 	TraceRoute,
-	WiFiNetworks
+	WiFiNetworks,
+	Requests
 }
