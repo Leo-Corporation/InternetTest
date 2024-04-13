@@ -23,11 +23,13 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
+using RestSharp;
 using Synethia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -56,5 +58,42 @@ public partial class RequestsPage : Page
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.Requests}";
+	}
+
+	private void SendBtn_Click(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			ExecuteRequest();
+		}
+		catch (Exception ex)
+		{
+			ResponseTxt.Text = ex.Message;
+		}
+	}
+
+	private async void ExecuteRequest()
+	{
+		var options = new RestClientOptions(UrlTxt.Text);
+		var client = new RestClient(options);
+		var request = new RestRequest("", ((Method)RequestTypeComboBox.SelectedIndex));
+
+		var response = await client.GetAsync(request);
+		ResponseTxt.Text = response.Content;
+	}
+
+	private void UrlTxt_KeyUp(object sender, KeyEventArgs e)
+	{
+		if (e.Key == Key.Enter) SendBtn_Click(sender, e);
+	}
+
+	private void UrlTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+
+	}
+
+	private void DismissBtn_Click(object sender, RoutedEventArgs e)
+	{
+		UrlTxt.Text = string.Empty;
 	}
 }
