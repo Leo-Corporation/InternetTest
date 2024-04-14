@@ -981,4 +981,10 @@
   <data name="Response" xml:space="preserve">
     <value>回应</value>
   </data>
+  <data name="Headers" xml:space="preserve">
+    <value>页眉</value>
+  </data>
+  <data name="Cookies" xml:space="preserve">
+    <value>曲奇</value>
+  </data>
 </root>

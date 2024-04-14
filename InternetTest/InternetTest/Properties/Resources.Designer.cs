@@ -340,6 +340,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cookies.
+        /// </summary>
+        public static string Cookies {
+            get {
+                return ResourceManager.GetString("Cookies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy.
         /// </summary>
         public static string Copy {
@@ -861,6 +870,15 @@ namespace InternetTest.Properties {
         public static string GoodNight {
             get {
                 return ResourceManager.GetString("GoodNight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Headers.
+        /// </summary>
+        public static string Headers {
+            get {
+                return ResourceManager.GetString("Headers", resourceCulture);
             }
         }
         

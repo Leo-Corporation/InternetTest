@@ -990,4 +990,10 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="Response" xml:space="preserve">
     <value>Réponse</value>
   </data>
+  <data name="Headers" xml:space="preserve">
+    <value>En-têtes</value>
+  </data>
+  <data name="Cookies" xml:space="preserve">
+    <value>Cookies</value>
+  </data>
 </root>
