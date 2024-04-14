@@ -52,6 +52,7 @@ public partial class RequestsPage : Page
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.Requests}";
 		RequestTypeComboBox.SelectedIndex = 0;
+		ResponseBtn.IsChecked = true;
 	}
 
 	private void SendBtn_Click(object sender, RoutedEventArgs e)
@@ -66,6 +67,7 @@ public partial class RequestsPage : Page
 		}
 	}
 
+	string headers = "";
 	private async void ExecuteRequest()
 	{
 		var options = new RestClientOptions(UrlTxt.Text);
@@ -74,7 +76,20 @@ public partial class RequestsPage : Page
 
 		var response = await client.ExecuteAsync(request);
 		ResponseTxt.Text = response.Content;
-	}
+
+		HeadersPanel.Children.Clear();
+		headers = "";
+
+		foreach (var item in response.Headers)
+		{
+			headers += item.ToString() + "\n";
+			var header = item.ToString().Split("=", 2);
+			if (header.Length < 2) continue;
+
+			HeadersPanel.Children.Add(new TextBlock() { Text = header[0], FontWeight = FontWeights.Bold, TextWrapping = TextWrapping.Wrap, Margin = new(0, 5, 0, 0) });
+			HeadersPanel.Children.Add(new TextBlock() { Text = header[1], TextWrapping = TextWrapping.Wrap });
+		}
+    }
 
 	private void UrlTxt_KeyUp(object sender, KeyEventArgs e)
 	{
@@ -138,5 +153,22 @@ public partial class RequestsPage : Page
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)
 	{
 		Clipboard.SetText(ResponseTxt.Text);
+	}
+
+	private void CopyHeadersBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (headers != "") Clipboard.SetText(headers);
+	}
+
+	private void ResponseBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		ResponseSection.Visibility = Visibility.Visible;
+		HeadersSection.Visibility = Visibility.Collapsed;
+	}
+
+	private void HeadersBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		ResponseSection.Visibility = Visibility.Collapsed;
+		HeadersSection.Visibility = Visibility.Visible;
 	}
 }
