@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>True</UseWindowsForms>
-		<Version>8.2.0.2402-pre1</Version>
+		<Version>8.2.0.2402-rc1</Version>
 		<Copyright>© 2024</Copyright>
 		<Company>Léo Corporation</Company>
 		<Description>Taking you to another level. InternetTest can locate IP addresses, send ping request, recover your WiFi passwords and more!</Description>
