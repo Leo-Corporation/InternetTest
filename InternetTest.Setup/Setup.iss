@@ -3,7 +3,7 @@
 
 #define MyAppName       "InternetTest Pro"
 #define MyAppExeName    "InternetTest.exe"
-#define MyAppVersion    GetFileVersion('..\InternetTest\InternetTest\bin\Release\net6.0-windows\InternetTest.exe')
+#define MyAppVersion    GetFileVersion('..\InternetTest\InternetTest\bin\Release\net8.0-windows\InternetTest.exe')
 #define MyAppPublisher  "Léo Corporation"
 #define MyAppURL        "https://leocorporation.dev/"
 #define MyAppStartYear  "2021"
