@@ -77,7 +77,7 @@ public partial class DnsPage : Page
 		}
 		catch { }
 
-		List<string> availableTypes = new();
+		List<string> availableTypes = [];
 		FiltersDisplayer.Children.Clear();
 		try
 		{

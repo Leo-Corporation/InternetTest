@@ -44,7 +44,7 @@ public partial class HistoryPage : Page
 		StatusBtn.IsChecked = true;
 	}
 
-	Placeholder Placeholder = new(Properties.Resources.HistoryEmpty, "\uF47F");
+	readonly Placeholder Placeholder = new(Properties.Resources.HistoryEmpty, "\uF47F");
 	internal void InitUI()
 	{
 		// Clear

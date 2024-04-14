@@ -49,7 +49,7 @@ public partial class WiFiPasswordsPage : Page
 		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 7, ref codeInjected);
 	}
 
-	Placeholder Placeholder = new(Properties.Resources.NothingToShow, "\uF227");
+	readonly Placeholder Placeholder = new(Properties.Resources.NothingToShow, "\uF227");
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.WifiPasswords}";

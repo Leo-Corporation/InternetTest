@@ -59,8 +59,8 @@ public static class Global
 	public static SynethiaConfig SynethiaConfig { get; set; } = LoadConfig();
 	public static SynethiaConfig DefaultConfig => new()
 	{
-		PagesInfo = new()
-		{
+		PagesInfo =
+		[
 			new("DownDetector"),
 			new("DNS"),
 			new("WiFiNetworks"),
@@ -70,9 +70,9 @@ public static class Global
 			new("Traceroute"),
 			new("WiFiPasswords"),
 			new("Requests"),
-		},
-		ActionsInfo = new()
-		{
+		],
+		ActionsInfo =
+		[
 			new(0, "DownDetector.Test"),
 			new(1, "DNS.GetInfo"),
 			new(2, "WiFiNetworks.Scan"),
@@ -82,7 +82,7 @@ public static class Global
 			new(6, "Traceroute.Execute"),
 			new(7, "WiFiPasswords.Get"),
 			new(8, "Request.Make"),
-		}
+		]
 	};
 
 	public static SynethiaConfig LoadConfig()
@@ -205,8 +205,8 @@ public static class Global
 		return (from item in sorted select item.Key).ToList();
 	}
 
-	public static List<AppPages> DefaultRelevantPages => new()
-	{
+	public static List<AppPages> DefaultRelevantPages =>
+	[
 		AppPages.LocateIP,
 		AppPages.WiFiPasswords,
 		AppPages.DownDetector,
@@ -216,10 +216,10 @@ public static class Global
 		AppPages.IPConfig,
 		AppPages.DnsTool,
 		AppPages.Requests,
-	};
+	];
 
-	public static List<ActionInfo> DefaultRelevantActions => new()
-	{
+	public static List<ActionInfo> DefaultRelevantActions =>
+	[
 		new(4, "IPConfig.Get"),
 		new(2, "WiFiNetworks.Scan"),
 		new(3, "LocateIP.Locate"),
@@ -229,7 +229,7 @@ public static class Global
 		new(1, "DNS.GetInfo"),
 		new(6, "Traceroute.Execute"),
 		new(7, "Request.Make"),
-	};
+	];
 
 	public static Dictionary<AppActions, string> ActionsIcons => new()
 	{
@@ -312,7 +312,7 @@ public static class Global
 	public static void ChangeTheme()
 	{
 		App.Current.Resources.MergedDictionaries.Clear();
-		ResourceDictionary resourceDictionary = new(); // Create a resource dictionary
+		ResourceDictionary resourceDictionary = []; // Create a resource dictionary
 
 		bool isDark = Settings.Theme == Themes.Dark;
 		if (Settings.Theme == Themes.System)
@@ -413,7 +413,7 @@ public static class Global
 
 	public static async Task<List<TracertStep>> Trace(string target, int maxHops, int timeout)
 	{
-		List<TracertStep> steps = new();
+		List<TracertStep> steps = [];
 
 		for (int ttl = 1; ttl <= maxHops; ttl++)
 		{

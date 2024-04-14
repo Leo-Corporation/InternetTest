@@ -31,8 +31,8 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class ParameterItem : UserControl
 {
-	bool init = true;
-	bool hasRemoved = false;
+	readonly bool init = true;
+	readonly bool hasRemoved = false;
 	public ParameterItem(string name, string value, int id, Action<string, string, int, bool> updateParameter)
 	{
 		InitializeComponent();

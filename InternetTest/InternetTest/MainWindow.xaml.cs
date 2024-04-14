@@ -44,14 +44,14 @@ public partial class MainWindow : Window
 		GC.Collect();
 	}
 
-	DoubleAnimation expandAnimation = new()
+	readonly DoubleAnimation expandAnimation = new()
 	{
 		From = 0,
 		To = 180,
 		Duration = new Duration(TimeSpan.FromSeconds(0.2)),
 	};
 
-	DoubleAnimation collapseAnimation = new()
+	readonly DoubleAnimation collapseAnimation = new()
 	{
 		From = 180,
 		To = 0,

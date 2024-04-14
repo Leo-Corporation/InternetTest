@@ -67,7 +67,7 @@ namespace InternetTest.Pages
 			WebsiteTxt.Text = string.Empty;
 		}
 
-		internal List<string> Websites = Global.Settings.DownDetectorWebsites ?? new();
+		internal List<string> Websites = Global.Settings.DownDetectorWebsites ?? [];
 		private void AddBtn_Click(object sender, RoutedEventArgs e)
 		{
 			if (!Global.IsUrlValid(WebsiteTxt.Text) || Websites.Contains(WebsiteTxt.Text)) return;

@@ -42,7 +42,7 @@ public partial class RequestsPage : Page
 {
 	bool codeInjected = !Global.Settings.UseSynethia;
 
-	internal List<(string, string)> Parameters { get; set; } = new();
+	internal List<(string, string)> Parameters { get; set; } = [];
 
 	public RequestsPage()
 	{
@@ -70,8 +70,8 @@ public partial class RequestsPage : Page
 		}
 	}
 
-	string headers = "";
-	string baseUrl = "";
+	string _headers = "";
+	string _baseUrl = "";
 	private async void ExecuteRequest()
 	{
 		var options = new RestClientOptions(UrlTxt.Text);
@@ -82,11 +82,11 @@ public partial class RequestsPage : Page
 		ResponseTxt.Text = response.Content;
 
 		HeadersPanel.Children.Clear();
-		headers = "";
+		_headers = "";
 
 		foreach (var item in response.Headers)
 		{
-			headers += item.ToString() + "\n";
+			_headers += item.ToString() + "\n";
 			var header = item.ToString().Split("=", 2);
 			if (header.Length < 2) continue;
 
@@ -99,11 +99,11 @@ public partial class RequestsPage : Page
 	{
 		if (e.Key == Key.Enter) SendBtn_Click(sender, e);
 	}
-	bool reloadParameters = true;
+	bool _reloadParameters = true;
 	private void UrlTxt_TextChanged(object sender, TextChangedEventArgs e)
 	{
-		if (!reloadParameters) return;
-		baseUrl = UrlTxt.Text.Split("?", 2)[0];
+		if (!_reloadParameters) return;
+		_baseUrl = UrlTxt.Text.Split("?", 2)[0];
 		ParametersPanel.Children.Clear();
 		ParametersBorder.Visibility = Visibility.Collapsed;
 		try
@@ -120,23 +120,23 @@ public partial class RequestsPage : Page
 		ParametersBorder.Visibility = ParametersPanel.Children.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
 	}
 
-	List<int> HiddenIds = new List<int>();
+	readonly List<int> _hiddenIds = [];
 	void UpdateParameters(string name, string value, int id, bool included)
 	{
-		if (!included) HiddenIds.Add(id); else HiddenIds.Remove(id);
+		if (!included) _hiddenIds.Add(id); else _hiddenIds.Remove(id);
 		Parameters[id] = (name, value);
 
-		string url = baseUrl; // Create the new URL
+		string url = _baseUrl; // Create the new URL
 		int parametersCount = 0;
 		for (int i = 0; i < Parameters.Count; i++) // Append each "included" parameter to the base URL
 		{
-			if (HiddenIds.Contains(i)) continue;
+			if (_hiddenIds.Contains(i)) continue;
 			url += parametersCount == 0 ? $"?{Parameters[i].Item1}={Parameters[i].Item2}" : $"&{Parameters[i].Item1}={Parameters[i].Item2}";
 			parametersCount++;
 		}
-		reloadParameters = false; // Prevent rerender of the Parameters section
+		_reloadParameters = false; // Prevent rerender of the Parameters section
 		UrlTxt.Text = url; // Update the URL
-		reloadParameters = true;
+		_reloadParameters = true;
 	}
 
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)
@@ -144,14 +144,14 @@ public partial class RequestsPage : Page
 		UrlTxt.Text = string.Empty;
 	}
 
-	private List<(string, string)> ParseUrl(string url)
+	private static List<(string, string)> ParseUrl(string url)
 	{
-		var elements = url.Split(new string[] { "/", "//" }, StringSplitOptions.None);
-		var parameters = elements[^1].Split(new string[] { "?", "&" }, StringSplitOptions.None);
-		List<(string, string)> values = new();
+		var elements = url.Split(["/", "//"], StringSplitOptions.None);
+		var parameters = elements[^1].Split(["?", "&"], StringSplitOptions.None);
+		List<(string, string)> values = [];
 		for (int i = 0; i < parameters.Length; i++)
 		{
-			var kv = parameters[i].Split(new string[] { "=" }, StringSplitOptions.None);
+			var kv = parameters[i].Split(["="], StringSplitOptions.None);
 			if (kv.Length < 2) continue;
 			values.Add((kv[0], kv[1]));
 		}
@@ -184,7 +184,7 @@ public partial class RequestsPage : Page
 
 	private void CopyHeadersBtn_Click(object sender, RoutedEventArgs e)
 	{
-		if (headers != "") Clipboard.SetText(headers);
+		if (_headers != "") Clipboard.SetText(_headers);
 	}
 
 	private void ResponseBtn_Checked(object sender, RoutedEventArgs e)

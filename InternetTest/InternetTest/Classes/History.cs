@@ -32,8 +32,8 @@ public class History
 	public List<DownHistory> DownDetectorHistory { get; set; }
 	public History()
 	{
-		StatusHistory = new();
-		DownDetectorHistory = new();
+		StatusHistory = [];
+		DownDetectorHistory = [];
 	}
 }
 
