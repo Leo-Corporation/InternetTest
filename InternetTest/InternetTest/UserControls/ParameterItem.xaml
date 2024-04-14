@@ -26,7 +26,8 @@
                 Background="Transparent"
                 BorderThickness="0"
                 FontWeight="Bold"
-                Foreground="{DynamicResource DarkGray}" />
+                Foreground="{DynamicResource DarkGray}"
+                TextChanged="NameTxt_TextChanged" />
         </Border>
         <Border
             Grid.Column="1"
@@ -41,7 +42,8 @@
                 Background="Transparent"
                 BorderThickness="0"
                 FontWeight="Bold"
-                Foreground="{DynamicResource DarkGray}" />
+                Foreground="{DynamicResource DarkGray}"
+                TextChanged="NameTxt_TextChanged" />
         </Border>
     </Grid>
 </UserControl>

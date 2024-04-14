@@ -41,6 +41,9 @@ namespace InternetTest.Pages;
 public partial class RequestsPage : Page
 {
 	bool codeInjected = !Global.Settings.UseSynethia;
+
+	internal List<(string, string)> Parameters { get; set; } = new();
+
 	public RequestsPage()
 	{
 		InitializeComponent();
@@ -68,6 +71,7 @@ public partial class RequestsPage : Page
 	}
 
 	string headers = "";
+	string baseUrl = "";
 	private async void ExecuteRequest()
 	{
 		var options = new RestClientOptions(UrlTxt.Text);
@@ -89,27 +93,44 @@ public partial class RequestsPage : Page
 			HeadersPanel.Children.Add(new TextBlock() { Text = header[0], FontWeight = FontWeights.Bold, TextWrapping = TextWrapping.Wrap, Margin = new(0, 5, 0, 0) });
 			HeadersPanel.Children.Add(new TextBlock() { Text = header[1], TextWrapping = TextWrapping.Wrap });
 		}
-    }
+	}
 
 	private void UrlTxt_KeyUp(object sender, KeyEventArgs e)
 	{
 		if (e.Key == Key.Enter) SendBtn_Click(sender, e);
 	}
-
+	bool reloadParameters = true;
 	private void UrlTxt_TextChanged(object sender, TextChangedEventArgs e)
 	{
+		if (!reloadParameters) return;
+		baseUrl = UrlTxt.Text.Split("?", 2)[0];
 		ParametersPanel.Children.Clear();
 		ParametersBorder.Visibility = Visibility.Collapsed;
 		try
 		{
 			var parameters = ParseUrl(UrlTxt.Text);
-			for (int i = 0; i < parameters.Count; i++)
+			Parameters = parameters;
+
+			for (int i = 0; i < Parameters.Count; i++)
 			{
-				ParametersPanel.Children.Add(new ParameterItem(parameters[i].Item1, parameters[i].Item2));
+				ParametersPanel.Children.Add(new ParameterItem(Parameters[i].Item1, Parameters[i].Item2, i, UpdateParameters));
 			}
 		}
 		catch { }
 		ParametersBorder.Visibility = ParametersPanel.Children.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
+	}
+
+	void UpdateParameters(string name, string value, int id)
+	{
+		Parameters[id] = (name, value);
+		string url = baseUrl;
+		for (int i = 0; i < Parameters.Count; i++)
+		{
+			url += i == 0 ? $"?{Parameters[i].Item1}={Parameters[i].Item2}" : $"&{Parameters[i].Item1}={Parameters[i].Item2}";
+		}
+		reloadParameters = false;
+		UrlTxt.Text = url;
+		reloadParameters = true;
 	}
 
 	private void DismissBtn_Click(object sender, RoutedEventArgs e)

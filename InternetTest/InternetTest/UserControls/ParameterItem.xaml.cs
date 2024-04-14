@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
+using System;
 using System.Windows.Controls;
 
 namespace InternetTest.UserControls;
@@ -30,16 +31,28 @@ namespace InternetTest.UserControls;
 /// </summary>
 public partial class ParameterItem : UserControl
 {
-	public ParameterItem(string name, string value)
+	bool init = true;
+
+	public ParameterItem(string name, string value, int id, Action<string, string, int> updateParameter)
 	{
 		InitializeComponent();
 		VarName = name;
 		Value = value;
-
+		Id = id;
+		UpdateParameter = updateParameter;
 		NameTxt.Text = VarName;
 		ValueTxt.Text = Value;
+		init = false;
 	}
 
 	public string VarName { get; }
 	public string Value { get; }
+	public int Id { get; }
+	public Action<string, string, int> UpdateParameter { get; }
+
+	private void NameTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		if (init) return;
+		UpdateParameter(NameTxt.Text, ValueTxt.Text, Id);
+	}
 }
