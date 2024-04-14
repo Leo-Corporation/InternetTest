@@ -3,7 +3,7 @@
 
 #define MyAppName       "InternetTest Pro"
 #define MyAppExeName    "InternetTest.exe"
-#define MyAppVersion    GetFileVersion('..\InternetTest\InternetTest\bin\Release\net6.0-windows\InternetTest.exe')
+#define MyAppVersion    GetFileVersion('..\InternetTest\InternetTest\bin\Release\net8.0-windows\InternetTest.exe')
 #define MyAppPublisher  "Léo Corporation"
 #define MyAppURL        "https://leocorporation.dev/"
 #define MyAppStartYear  "2021"
@@ -59,9 +59,9 @@ Name: "chinesesimplified"; MessagesFile: "Languages\ChineseSimplified.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "..\InternetTest\InternetTest\bin\Release\net6.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\InternetTest\Xalyus Updater\bin\Release\net6.0-windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "..\InternetTest\InternetTest\bin\Release\net6.0-windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\InternetTest\InternetTest\bin\Release\net8.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\InternetTest\Xalyus Updater\bin\Release\net8.0-windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\InternetTest\InternetTest\bin\Release\net8.0-windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -115,13 +115,13 @@ end;
 
 function IsDotNetCore60RuntimeInstalled(): Boolean;
 begin
-    Result := IsDotNetInstalled('Microsoft.WindowsDesktop.App 6.0.');
+    Result := IsDotNetInstalled('Microsoft.WindowsDesktop.App 8.0.');
 end;
 
 function InitializeSetup(): Boolean;
 begin
     if not IsDotNetCore60RuntimeInstalled() then begin
-        MsgBox('The required .NET Core 6.0 Windows Desktop Runtime is not installed on your system. Please install it and try again.', mbError, MB_OK);
+        MsgBox('The required .NET Core 8.0 Windows Desktop Runtime is not installed on your system. Please install it and try again.', mbError, MB_OK);
         Result := False;
         Exit;
     end;

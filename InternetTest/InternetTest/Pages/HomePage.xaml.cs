@@ -177,20 +177,18 @@ public partial class HomePage : Page
 	{
 		Stopwatch stopwatch = Stopwatch.StartNew();
 
-		using (HttpClient client = new HttpClient())
-		{
-			HttpResponseMessage response = await client.GetAsync(url);
+		using HttpClient client = new();
+		HttpResponseMessage response = await client.GetAsync(url);
 
-			if (response.IsSuccessStatusCode)
-			{
-				byte[] data = await response.Content.ReadAsByteArrayAsync();
-				stopwatch.Stop();
-				return data.Length;
-			}
-			else
-			{
-				return 0;
-			}
+		if (response.IsSuccessStatusCode)
+		{
+			byte[] data = await response.Content.ReadAsByteArrayAsync();
+			stopwatch.Stop();
+			return data.Length;
+		}
+		else
+		{
+			return 0;
 		}
 	}
 

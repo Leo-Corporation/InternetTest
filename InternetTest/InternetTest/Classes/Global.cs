@@ -47,20 +47,20 @@ public static class Global
 #if NIGHTLY
 	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-	public static string Version => $"8.1.0.2402-nightly{Date:yyMM.dd@HHmm}";
+	public static string Version => $"8.2.0.2404-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "8.1.0.2402";
+	public static string Version => "8.2.0.2404";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\NewSynethiaConfig.json";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
 	public static Settings Settings { get; set; } = SettingsManager.Load();
-	public static SynethiaConfig SynethiaConfig { get; set; } = SynethiaManager.Load(SynethiaPath, DefaultConfig);
+	public static SynethiaConfig SynethiaConfig { get; set; } = LoadConfig();
 	public static SynethiaConfig DefaultConfig => new()
 	{
-		PagesInfo = new()
-		{
+		PagesInfo =
+		[
 			new("DownDetector"),
 			new("DNS"),
 			new("WiFiNetworks"),
@@ -69,9 +69,10 @@ public static class Global
 			new("Ping"),
 			new("Traceroute"),
 			new("WiFiPasswords"),
-		},
-		ActionsInfo = new()
-		{
+			new("Requests"),
+		],
+		ActionsInfo =
+		[
 			new(0, "DownDetector.Test"),
 			new(1, "DNS.GetInfo"),
 			new(2, "WiFiNetworks.Scan"),
@@ -80,8 +81,33 @@ public static class Global
 			new(5, "Ping.Execute"),
 			new(6, "Traceroute.Execute"),
 			new(7, "WiFiPasswords.Get"),
-		}
+			new(8, "Request.Make"),
+		]
 	};
+
+	public static SynethiaConfig LoadConfig()
+	{
+		var config = SynethiaManager.Load(SynethiaPath, DefaultConfig);
+
+		bool hasRequest = false;
+		for (int i = 0; i < config.PagesInfo.Count; i++)
+		{
+			if (config.PagesInfo[i].Name == "Requests")
+			{
+				hasRequest = true;
+				break;
+			}
+		}
+
+		if (!hasRequest)
+		{
+			config.PagesInfo.Add(new("Requests"));
+			config.ActionsInfo.Add(new(8, "Request.Make"));
+		}
+
+		return config;
+	}
+
 	public static History History { get; set; } = HistoryManager.Load();
 
 	public static HomePage? HomePage { get; set; }
@@ -95,6 +121,7 @@ public static class Global
 	public static DnsPage? DnsPage { get; set; }
 	public static TraceroutePage? TraceroutePage { get; set; }
 	public static WiFiNetworksPage? WiFiNetworksPage { get; set; }
+	public static RequestsPage? RequestsPage { get; set; }
 
 	public static string GetHiSentence
 	{
@@ -138,6 +165,7 @@ public static class Global
 		{ AppPages.DnsTool, "\uF464" },
 		{ AppPages.TraceRoute, "\uF683" },
 		{ AppPages.WiFiNetworks, "\uF8C5" },
+		{ AppPages.Requests, "\uF6A3" },
 	};
 	public static Dictionary<AppPages, string> AppPagesName => new()
 	{
@@ -154,6 +182,7 @@ public static class Global
 		{ AppPages.DnsTool, Properties.Resources.DNSTool},
 		{ AppPages.TraceRoute, Properties.Resources.TraceRoute},
 		{ AppPages.WiFiNetworks, Properties.Resources.WiFiNetworks},
+		{ AppPages.Requests, Properties.Resources.Requests},
 	};
 
 	public static List<AppPages> GetMostRelevantPages(SynethiaConfig synethiaConfig)
@@ -168,6 +197,7 @@ public static class Global
 			{ AppPages.Ping, synethiaConfig.PagesInfo[5].Score },
 			{ AppPages.TraceRoute, synethiaConfig.PagesInfo[6].Score },
 			{ AppPages.WiFiPasswords, synethiaConfig.PagesInfo[7].Score },
+			{ AppPages.Requests, synethiaConfig.PagesInfo[8].Score },
 		};
 
 		var sorted = appScores.OrderByDescending(x => x.Value);
@@ -175,8 +205,8 @@ public static class Global
 		return (from item in sorted select item.Key).ToList();
 	}
 
-	public static List<AppPages> DefaultRelevantPages => new()
-	{
+	public static List<AppPages> DefaultRelevantPages =>
+	[
 		AppPages.LocateIP,
 		AppPages.WiFiPasswords,
 		AppPages.DownDetector,
@@ -185,10 +215,11 @@ public static class Global
 		AppPages.TraceRoute,
 		AppPages.IPConfig,
 		AppPages.DnsTool,
-	};
+		AppPages.Requests,
+	];
 
-	public static List<ActionInfo> DefaultRelevantActions => new()
-	{
+	public static List<ActionInfo> DefaultRelevantActions =>
+	[
 		new(4, "IPConfig.Get"),
 		new(2, "WiFiNetworks.Scan"),
 		new(3, "LocateIP.Locate"),
@@ -197,7 +228,8 @@ public static class Global
 		new(5, "Ping.Execute"),
 		new(1, "DNS.GetInfo"),
 		new(6, "Traceroute.Execute"),
-	};
+		new(7, "Request.Make"),
+	];
 
 	public static Dictionary<AppActions, string> ActionsIcons => new()
 	{
@@ -211,6 +243,7 @@ public static class Global
 		{ AppActions.GetDnsInfo, "\uF69C" },
 		{ AppActions.TraceRoute, "\uF683" },
 		{ AppActions.ConnectWiFi, "\uF614" },
+		{ AppActions.MakeRequest, "\uF6A3" },
 	};
 
 	public static Dictionary<AppActions, string> ActionsString => new()
@@ -225,6 +258,7 @@ public static class Global
 		{ AppActions.GetDnsInfo, Properties.Resources.GetDnsInfo },
 		{ AppActions.TraceRoute, Properties.Resources.ExecuteTraceRoute },
 		{ AppActions.ConnectWiFi, Properties.Resources.ConnectWiFi },
+		{ AppActions.MakeRequest, Properties.Resources.Send },
 	};
 
 	public static SolidColorBrush GetBrushFromResource(string resourceName) => (SolidColorBrush)Application.Current.Resources[resourceName];
@@ -278,7 +312,7 @@ public static class Global
 	public static void ChangeTheme()
 	{
 		App.Current.Resources.MergedDictionaries.Clear();
-		ResourceDictionary resourceDictionary = new(); // Create a resource dictionary
+		ResourceDictionary resourceDictionary = []; // Create a resource dictionary
 
 		bool isDark = Settings.Theme == Themes.Dark;
 		if (Settings.Theme == Themes.System)
@@ -379,7 +413,7 @@ public static class Global
 
 	public static async Task<List<TracertStep>> Trace(string target, int maxHops, int timeout)
 	{
-		List<TracertStep> steps = new();
+		List<TracertStep> steps = [];
 
 		for (int ttl = 1; ttl <= maxHops; ttl++)
 		{

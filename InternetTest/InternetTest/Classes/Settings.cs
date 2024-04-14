@@ -119,7 +119,7 @@ public static class SettingsManager
 		settings.MainWindowSize ??= (950, 600);
 		settings.LaunchIpLocationOnStart ??= true;
 		settings.DefaultPage = (settings.DefaultPage == AppPages.Status || settings.DefaultPage == AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
-		settings.DownDetectorWebsites ??= new();
+		settings.DownDetectorWebsites ??= [];
 		settings.DefaultTimeInterval ??= 10;
 		settings.HideDisabledAdapters ??= false;
 
@@ -183,7 +183,7 @@ public static class SettingsManager
 				settings.MainWindowSize ??= (950, 600);
 				settings.LaunchIpLocationOnStart ??= true;
 				settings.DefaultPage = (settings.DefaultPage == AppPages.Status || settings.DefaultPage == AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
-				settings.DownDetectorWebsites ??= new();
+				settings.DownDetectorWebsites ??= [];
 				settings.DefaultTimeInterval ??= 10;
 				settings.HideDisabledAdapters ??= false;
 

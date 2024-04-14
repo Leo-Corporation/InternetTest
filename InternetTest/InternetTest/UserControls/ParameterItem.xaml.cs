@@ -21,56 +21,45 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Classes;
-using InternetTest.Windows;
-using Synethia;
-using System.Windows;
 
-namespace InternetTest;
+using System;
+using System.Windows.Controls;
+
+namespace InternetTest.UserControls;
 /// <summary>
-/// Interaction logic for App.xaml
+/// Interaction logic for ParameterItem.xaml
 /// </summary>
-public partial class App : Application
+public partial class ParameterItem : UserControl
 {
-	private void Application_Startup(object sender, StartupEventArgs e)
+	readonly bool init = true;
+	readonly bool hasRemoved = false;
+	public ParameterItem(string name, string value, int id, Action<string, string, int, bool> updateParameter)
 	{
-		try
-		{
-			Global.ChangeTheme();
-			Global.ChangeLanguage();
-
-			Global.HomePage = new();
-			Global.HistoryPage = new();
-			Global.SettingsPage = new();
-			Global.DownDetectorPage = new();
-			Global.LocateIpPage = new();
-			Global.PingPage = new();
-			Global.IpConfigPage = new();
-			Global.WiFiPasswordsPage = new();
-			Global.DnsPage = new();
-			Global.TraceroutePage = new();
-			Global.WiFiNetworksPage = new();
-			Global.RequestsPage = new();
-
-			if (!Global.Settings.IsFirstRun)
-			{
-				new MainWindow().Show();
-			}
-			else
-			{
-				new FirstRunWindow().Show();
-			}
-		}
-		catch (System.Exception ex)
-		{
-			MessageBox.Show(ex.Message);
-		}
+		InitializeComponent();
+		VarName = name;
+		Value = value;
+		Id = id;
+		UpdateParameter = updateParameter;
+		NameTxt.Text = VarName;
+		ValueTxt.Text = Value;
+		Toggle.IsChecked = true;
+		init = false;
 	}
 
-	private void Application_Exit(object sender, ExitEventArgs e)
+	public string VarName { get; }
+	public string Value { get; }
+	public int Id { get; }
+	public Action<string, string, int, bool> UpdateParameter { get; }
+
+	private void NameTxt_TextChanged(object sender, TextChangedEventArgs e)
 	{
-		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
-		HistoryManager.Save(Global.History);
-		SettingsManager.Save();
+		if (init) return;
+		UpdateParameter(NameTxt.Text, ValueTxt.Text, Id, Toggle.IsChecked == true);
+	}
+
+	private void Toggle_Checked(object sender, System.Windows.RoutedEventArgs e)
+	{
+		if (init) return;
+		UpdateParameter(NameTxt.Text, ValueTxt.Text, Id, Toggle.IsChecked == true);
 	}
 }

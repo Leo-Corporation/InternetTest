@@ -34,5 +34,6 @@ public enum AppActions
 	GetWiFiPasswords,
 	GetDnsInfo,
 	TraceRoute,
-	ConnectWiFi
+	ConnectWiFi,
+	MakeRequest
 }

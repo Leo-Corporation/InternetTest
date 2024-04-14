@@ -33,7 +33,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Shapes;
 using System.Xml.Serialization;
 
 namespace InternetTest.Pages;
@@ -50,7 +49,7 @@ public partial class WiFiPasswordsPage : Page
 		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 7, ref codeInjected);
 	}
 
-	Placeholder Placeholder = new(Properties.Resources.NothingToShow, "\uF227");
+	readonly Placeholder Placeholder = new(Properties.Resources.NothingToShow, "\uF227");
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.WifiPasswords}";
@@ -106,7 +105,7 @@ public partial class WiFiPasswordsPage : Page
 		}
 	}
 
-	internal async Task ExportWiFiNetworkInfo(string path,bool includePasswords)
+	internal async Task ExportWiFiNetworkInfo(string path, bool includePasswords)
 	{
 		try
 		{
@@ -220,16 +219,16 @@ public partial class WiFiPasswordsPage : Page
 	private void ExportBtn_Click(object sender, RoutedEventArgs e)
 	{
 		ExportPopup.IsOpen = true;
-    }
+	}
 
 	private async void ExportWithPasswordBtn_Click(object sender, RoutedEventArgs e)
 	{
-        System.Windows.Forms.FolderBrowserDialog folderBrowserDialog = new() { UseDescriptionForTitle = true, Description = Properties.Resources.ExportWithPasswords };
+		System.Windows.Forms.FolderBrowserDialog folderBrowserDialog = new() { UseDescriptionForTitle = true, Description = Properties.Resources.ExportWithPasswords };
 		if (folderBrowserDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 		{
 			await ExportWiFiNetworkInfo(folderBrowserDialog.SelectedPath, true);
 		}
-    }
+	}
 
 	private async void ExportWithoutPasswordBtn_Click(object sender, RoutedEventArgs e)
 	{

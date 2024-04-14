@@ -753,6 +753,20 @@
                                         GroupName="NavBar"
                                         Style="{DynamicResource NavBarToolButton}" />
                                     <RadioButton
+                                        x:Name="RequestsPageBtn"
+                                        Margin="10 0 0 0"
+                                        Padding="5 2 2 2"
+                                        HorizontalContentAlignment="Left"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Click="RequestsPageBtn_Click"
+                                        Content="{x:Static lang:Resources.Requests}"
+                                        FontSize="10"
+                                        FontWeight="ExtraBold"
+                                        Foreground="{DynamicResource Accent}"
+                                        GroupName="NavBar"
+                                        Style="{DynamicResource NavBarToolButton}" />
+                                    <RadioButton
                                         x:Name="TraceroutePageBtn"
                                         Margin="10 0 0 0"
                                         Padding="5 2 2 2"

@@ -5,6 +5,7 @@
 
     <SolidColorBrush x:Key="Background1" Color="#ffffff" />
     <SolidColorBrush x:Key="Background2" Color="#e6e6e6" />
+    <SolidColorBrush x:Key="Background3" Color="#efefef" />
     <SolidColorBrush x:Key="CardBackground" Color="#ffffff" />
     <SolidColorBrush x:Key="Foreground1" Color="#000000" />
     <SolidColorBrush x:Key="WindowButtonsHover1" Color="#E5E5E5" />

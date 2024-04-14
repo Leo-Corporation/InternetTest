@@ -436,14 +436,17 @@
                             Style="{DynamicResource ComboBoxStyle1}">
                             <ComboBoxItem Content="{x:Static lang:Resources.Home}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.History}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.Status}" Visibility="Collapsed" />
                             <ComboBoxItem Content="{x:Static lang:Resources.DownDetector}" />
-                            <ComboBoxItem Content="{x:Static lang:Resources.MyIP}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.MyIP}" Visibility="Collapsed" />
                             <ComboBoxItem Content="{x:Static lang:Resources.LocateIP}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.Ping}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.IPConfig}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.WifiPasswords}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.DNSTool}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.TraceRoute}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.WiFiNetworks}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.Requests}" />
                         </ComboBox>
                     </StackPanel>
                     <CheckBox
