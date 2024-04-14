@@ -10,10 +10,21 @@
     mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <CheckBox
+            x:Name="Toggle"
+            Margin="5 0"
+            VerticalContentAlignment="Center"
+            BorderThickness="2"
+            Checked="Toggle_Checked"
+            Foreground="{DynamicResource Foreground1}"
+            Style="{DynamicResource CheckBoxStyle1}"
+            Unchecked="Toggle_Checked" />
         <Border
+            Grid.Column="1"
             Margin="2"
             Background="{DynamicResource Background3}"
             CornerRadius="5">
@@ -30,7 +41,7 @@
                 TextChanged="NameTxt_TextChanged" />
         </Border>
         <Border
-            Grid.Column="1"
+            Grid.Column="2"
             Margin="2"
             Background="{DynamicResource Background3}"
             CornerRadius="5">

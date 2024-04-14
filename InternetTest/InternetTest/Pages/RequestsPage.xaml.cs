@@ -111,7 +111,7 @@ public partial class RequestsPage : Page
 			var parameters = ParseUrl(UrlTxt.Text);
 			Parameters = parameters;
 
-			for (int i = 0; i < Parameters.Count; i++)
+			for (int i = 0; i < Parameters.Count; i++) // Render the parameter section
 			{
 				ParametersPanel.Children.Add(new ParameterItem(Parameters[i].Item1, Parameters[i].Item2, i, UpdateParameters));
 			}
@@ -120,16 +120,22 @@ public partial class RequestsPage : Page
 		ParametersBorder.Visibility = ParametersPanel.Children.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
 	}
 
-	void UpdateParameters(string name, string value, int id)
+	List<int> HiddenIds = new List<int>();
+	void UpdateParameters(string name, string value, int id, bool included)
 	{
+		if (!included) HiddenIds.Add(id); else HiddenIds.Remove(id);
 		Parameters[id] = (name, value);
-		string url = baseUrl;
-		for (int i = 0; i < Parameters.Count; i++)
+
+		string url = baseUrl; // Create the new URL
+		int parametersCount = 0;
+		for (int i = 0; i < Parameters.Count; i++) // Append each "included" parameter to the base URL
 		{
-			url += i == 0 ? $"?{Parameters[i].Item1}={Parameters[i].Item2}" : $"&{Parameters[i].Item1}={Parameters[i].Item2}";
+			if (HiddenIds.Contains(i)) continue;
+			url += parametersCount == 0 ? $"?{Parameters[i].Item1}={Parameters[i].Item2}" : $"&{Parameters[i].Item1}={Parameters[i].Item2}";
+			parametersCount++;
 		}
-		reloadParameters = false;
-		UrlTxt.Text = url;
+		reloadParameters = false; // Prevent rerender of the Parameters section
+		UrlTxt.Text = url; // Update the URL
 		reloadParameters = true;
 	}
 

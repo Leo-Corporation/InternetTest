@@ -32,8 +32,8 @@ namespace InternetTest.UserControls;
 public partial class ParameterItem : UserControl
 {
 	bool init = true;
-
-	public ParameterItem(string name, string value, int id, Action<string, string, int> updateParameter)
+	bool hasRemoved = false;
+	public ParameterItem(string name, string value, int id, Action<string, string, int, bool> updateParameter)
 	{
 		InitializeComponent();
 		VarName = name;
@@ -42,17 +42,24 @@ public partial class ParameterItem : UserControl
 		UpdateParameter = updateParameter;
 		NameTxt.Text = VarName;
 		ValueTxt.Text = Value;
+		Toggle.IsChecked = true;
 		init = false;
 	}
 
 	public string VarName { get; }
 	public string Value { get; }
 	public int Id { get; }
-	public Action<string, string, int> UpdateParameter { get; }
+	public Action<string, string, int, bool> UpdateParameter { get; }
 
 	private void NameTxt_TextChanged(object sender, TextChangedEventArgs e)
 	{
 		if (init) return;
-		UpdateParameter(NameTxt.Text, ValueTxt.Text, Id);
+		UpdateParameter(NameTxt.Text, ValueTxt.Text, Id, Toggle.IsChecked == true);
+	}
+
+	private void Toggle_Checked(object sender, System.Windows.RoutedEventArgs e)
+	{
+		if (init) return;
+		UpdateParameter(NameTxt.Text, ValueTxt.Text, Id, Toggle.IsChecked == true);
 	}
 }
