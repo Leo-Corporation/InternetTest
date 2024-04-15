@@ -319,7 +319,7 @@
 	<value>Tempo medio</value>
   </data>
   <data name="PingWait" xml:space="preserve">
-	<value>La richiesta di ping è in corso. Attendi.</value>
+	<value>Richiesta di ping in corso. Attendi.</value>
   </data>
   <data name="PingSuccess" xml:space="preserve">
 	<value>La richiesta ping è andata a buon fine</value>
@@ -733,7 +733,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Velocità</value>
   </data>
   <data name="SpeedTestSucess" xml:space="preserve">
-    <value>Test velocità completato correttamente</value>
+    <value>Test velocità completato</value>
   </data>
   <data name="SpeedTestFailed" xml:space="preserve">
     <value>Il test velocità è fallito</value>
@@ -919,7 +919,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Aggiungi sito</value>
   </data>
   <data name="TimerDesc" xml:space="preserve">
-    <value>Esecuzione automatica di test per verificare se un sito web è attivo o meno.</value>
+    <value>Esecuzione automatica test verifica se un sito web è attivo o meno.</value>
   </data>
   <data name="TestAll" xml:space="preserve">
     <value>Test di tutti</value>
@@ -934,7 +934,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Ethernet</value>
   </data>
   <data name="InvalidURLMsg" xml:space="preserve">
-    <value>Si prega di fornire un URL valido.</value>
+    <value>Indica una URL valida.</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Sconosciuto</value>
@@ -964,7 +964,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>WiFi</value>
   </data>
   <data name="NoWiFIPasswordsFound" xml:space="preserve">
-    <value>Non sono state trovate password WiFi su questo dispositivo.</value>
+    <value>In questo dispositivo non sono state trovate password WiFi.</value>
   </data>
   <data name="SearchingForWiFiPasswords" xml:space="preserve">
     <value>InternetTest Pro sta cercando le password WiFi.</value>
@@ -976,16 +976,16 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Esportazione senza password</value>
   </data>
   <data name="WiFiExportSuccessful" xml:space="preserve">
-    <value>Tutte le reti WiFi sono state esportate con successo.</value>
+    <value>Esportazione completata di tutte le reti WiFi.</value>
   </data>
   <data name="DataConsumption" xml:space="preserve">
-    <value>Consumo di dati</value>
+    <value>Consumo dati</value>
   </data>
   <data name="Requests" xml:space="preserve">
     <value>Richieste</value>
   </data>
   <data name="Send" xml:space="preserve">
-    <value>Inviare</value>
+    <value>Invia</value>
   </data>
   <data name="Response" xml:space="preserve">
     <value>Risposta</value>
@@ -994,6 +994,6 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Intestazioni</value>
   </data>
   <data name="Cookies" xml:space="preserve">
-    <value>Cookies</value>
+    <value>Cookie</value>
   </data>
 </root>
