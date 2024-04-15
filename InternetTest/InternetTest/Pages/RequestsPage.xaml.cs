@@ -62,6 +62,7 @@ public partial class RequestsPage : Page
 	{
 		try
 		{
+			if (!UrlTxt.Text.Contains("http")) return;
 			ExecuteRequest();
 		}
 		catch (Exception ex)
@@ -74,25 +75,29 @@ public partial class RequestsPage : Page
 	string _baseUrl = "";
 	private async void ExecuteRequest()
 	{
-		var options = new RestClientOptions(UrlTxt.Text);
-		var client = new RestClient(options);
-		var request = new RestRequest("", (Method)RequestTypeComboBox.SelectedIndex);
-
-		var response = await client.ExecuteAsync(request);
-		ResponseTxt.Text = response.Content;
-
-		HeadersPanel.Children.Clear();
-		_headers = "";
-
-		foreach (var item in response.Headers)
+		try
 		{
-			_headers += item.ToString() + "\n";
-			var header = item.ToString().Split("=", 2);
-			if (header.Length < 2) continue;
+			var options = new RestClientOptions(UrlTxt.Text);
+			var client = new RestClient(options);
+			var request = new RestRequest("", (Method)RequestTypeComboBox.SelectedIndex);
 
-			HeadersPanel.Children.Add(new TextBlock() { Text = header[0], FontWeight = FontWeights.Bold, TextWrapping = TextWrapping.Wrap, Margin = new(0, 5, 0, 0) });
-			HeadersPanel.Children.Add(new TextBlock() { Text = header[1], TextWrapping = TextWrapping.Wrap });
+			var response = await client.ExecuteAsync(request);
+			ResponseTxt.Text = response.Content;
+
+			HeadersPanel.Children.Clear();
+			_headers = "";
+
+			foreach (var item in response.Headers)
+			{
+				_headers += item.ToString() + "\n";
+				var header = item.ToString().Split("=", 2);
+				if (header.Length < 2) continue;
+
+				HeadersPanel.Children.Add(new TextBlock() { Text = header[0], FontWeight = FontWeights.Bold, TextWrapping = TextWrapping.Wrap, Margin = new(0, 5, 0, 0) });
+				HeadersPanel.Children.Add(new TextBlock() { Text = header[1], TextWrapping = TextWrapping.Wrap });
+			}
 		}
+		catch {	}
 	}
 
 	private void UrlTxt_KeyUp(object sender, KeyEventArgs e)
