@@ -41,6 +41,17 @@
                     FontWeight="ExtraBold" />
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
                     <Button
+                        x:Name="GetQrBtn"
+                        Grid.Column="1"
+                        Margin="0 0 5 0"
+                        Padding="5"
+                        Background="Transparent"
+                        Click="GetQrBtn_Click"
+                        Content="&#xF635;"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource DefaultButton}" />
+                    <Button
                         x:Name="CopyBtn"
                         Grid.Column="1"
                         Margin="0 0 5 0"
@@ -173,6 +184,33 @@
                     FontWeight="Bold"
                     TextWrapping="Wrap" />
             </Grid>
+            <Popup
+                x:Name="QrPopup"
+                Width="200"
+                Height="230"
+                AllowsTransparency="True"
+                Placement="Center"
+                PlacementTarget="{Binding ElementName=GetQrBtn}"
+                PopupAnimation="Fade">
+                <Border
+                    Margin="10"
+                    Padding="5"
+                    Background="{DynamicResource Background1}"
+                    CornerRadius="5">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="10"
+                            Opacity="0.4"
+                            RenderingBias="Performance"
+                            ShadowDepth="0"
+                            Color="Black" />
+                    </Border.Effect>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image x:Name="QrImage" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Popup>
         </Grid>
     </Border>
 </UserControl>

@@ -22,8 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using QRCoder;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace InternetTest.UserControls;
 /// <summary>
@@ -102,4 +108,24 @@ public partial class WiFiInfoItem : UserControl
 	}
 
 	public override string ToString() => WLANProfile.SSIDConfig?.SSID?.Name ?? "";
+
+	private void GetQrBtn_Click(object sender, RoutedEventArgs e)
+	{
+		QRCodeGenerator qrGenerator = new();
+		QRCodeData qrCodeData = qrGenerator.CreateQrCode($"WIFI:T:{((WLANProfile.MSM?.Security?.AuthEncryption?.Authentication ?? "").Contains("WPA") ? "WPA" : "NONE")};S:{WLANProfile?.SSIDConfig?.SSID?.Name ?? ""};P:{WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial};;\r\n\r\n", QRCodeGenerator.ECCLevel.Q);
+		BitmapByteQRCode qrCode = new(qrCodeData);
+		byte[] qrCodeAsBitmapByteArr = qrCode.GetGraphic(20);
+
+		BitmapImage bitmapImage = new();
+		using MemoryStream memory = new(qrCodeAsBitmapByteArr);
+		memory.Position = 0;
+
+		bitmapImage.BeginInit();
+		bitmapImage.StreamSource = memory;
+		bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+		bitmapImage.EndInit();
+
+		QrImage.Source = bitmapImage;
+		QrPopup.IsOpen = true;
+	}
 }
