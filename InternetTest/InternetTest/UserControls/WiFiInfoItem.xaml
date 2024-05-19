@@ -207,6 +207,24 @@
                     </Border.Effect>
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Image x:Name="QrImage" />
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <Button
+                                x:Name="SaveQrBtn"
+                                Margin="0 0 5 0"
+                                Padding="3"
+                                Background="{DynamicResource LightAccent}"
+                                Click="SaveQrBtn_Click"
+                                Content="{x:Static lang:Resources.Save}"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Accent}"
+                                Style="{DynamicResource DefaultButton}" />
+                            <Button
+                                x:Name="CloseQrBtn"
+                                Padding="3"
+                                Click="CloseQrBtn_Click"
+                                Content="{x:Static lang:Resources.Close}"
+                                FontWeight="Bold"
+                                Style="{DynamicResource DefaultButton}" />
                         </StackPanel>
                     </StackPanel>
                 </Border>

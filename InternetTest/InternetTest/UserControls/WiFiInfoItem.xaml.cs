@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using Microsoft.Win32;
 using QRCoder;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -127,5 +128,29 @@ public partial class WiFiInfoItem : UserControl
 
 		QrImage.Source = bitmapImage;
 		QrPopup.IsOpen = true;
+	}
+
+	private void CloseQrBtn_Click(object sender, RoutedEventArgs e)
+	{
+		QrPopup.IsOpen = false;
+	}
+
+	private void SaveQrBtn_Click(object sender, RoutedEventArgs e)
+	{
+		var dialog = new SaveFileDialog() { Filter = "PNG Files|*.png", Title = Properties.Resources.Save, FileName = WLANProfile.SSIDConfig?.SSID?.Name ?? "" };
+		if (dialog.ShowDialog() ?? false)
+		{
+			SaveImageSourceToPng(QrImage.Source, dialog.FileName);
+		}
+	}
+
+	void SaveImageSourceToPng(ImageSource imageSource, string filePath)
+	{
+		var encoder = new PngBitmapEncoder();
+		var frame = BitmapFrame.Create((BitmapSource)imageSource);
+		encoder.Frames.Add(frame);
+
+		using var stream = new FileStream(filePath, FileMode.Create);
+		encoder.Save(stream);
 	}
 }
