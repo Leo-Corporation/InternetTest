@@ -1667,6 +1667,7 @@
                 <Setter Property="FontWeight" Value="Normal" />
                 <Setter Property="Background" Value="{DynamicResource Background1}" />
                 <Setter Property="Foreground" Value="{DynamicResource Foreground1}" />
+                <Setter Property="FontFamily" Value="Segoe UI" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="ToolTip">
@@ -1689,7 +1690,8 @@
                                 <ContentPresenter
                                     Margin="4"
                                     HorizontalAlignment="Left"
-                                    VerticalAlignment="Top" />
+                                    VerticalAlignment="Center"
+                                    TextBlock.FontSize="12" />
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="HasDropShadow" Value="true">
