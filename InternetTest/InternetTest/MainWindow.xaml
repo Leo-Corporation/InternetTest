@@ -160,7 +160,11 @@
                         FontSize="14"
                         Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
-                        Style="{StaticResource TitleBarButtonStyle}" />
+                        Style="{StaticResource TitleBarButtonStyle}">
+                        <Button.ToolTip>
+                            <ToolTip x:Name="PinTooltip" Content="{x:Static lang:Resources.Pin}" />
+                        </Button.ToolTip>
+                    </Button>
 
                     <Button
                         x:Name="ConfidentialModeBtn"
@@ -184,6 +188,9 @@
                                 Text="&#xFC2C;"
                                 Visibility="Collapsed" />
                         </Grid>
+                        <Button.ToolTip>
+                            <ToolTip x:Name="ConfidentialModeTooltip" Content="{x:Static lang:Resources.EnableConfidential}" />
+                        </Button.ToolTip>
                     </Button>
                     <Button
                         x:Name="MinimizeBtn"
@@ -197,7 +204,11 @@
                         FontSize="14"
                         Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
-                        Style="{StaticResource TitleBarButtonStyle}" />
+                        Style="{StaticResource TitleBarButtonStyle}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Minimize}" />
+                        </Button.ToolTip>
+                    </Button>
                     <Button
                         x:Name="MaximizeRestoreBtn"
                         Grid.Column="5"
@@ -210,7 +221,11 @@
                         FontSize="14"
                         Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
-                        Style="{StaticResource TitleBarButtonStyle}" />
+                        Style="{StaticResource TitleBarButtonStyle}">
+                        <Button.ToolTip>
+                            <ToolTip x:Name="MaximizeTooltip" Content="{x:Static lang:Resources.Maximize}" />
+                        </Button.ToolTip>
+                    </Button>
                     <Button
                         x:Name="CloseBtn"
                         Grid.Column="6"
@@ -223,7 +238,11 @@
                         FontSize="14"
                         Foreground="{DynamicResource Foreground1}"
                         RenderOptions.EdgeMode="Aliased"
-                        Style="{StaticResource TitleBarCloseButtonStyle}" />
+                        Style="{StaticResource TitleBarCloseButtonStyle}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Close}" />
+                        </Button.ToolTip>
+                    </Button>
                 </Grid>
             </Border>
 
