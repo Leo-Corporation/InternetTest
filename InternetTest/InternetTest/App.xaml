@@ -1663,6 +1663,10 @@
             <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
                 <Setter Property="OverridesDefaultStyle" Value="true" />
                 <Setter Property="HasDropShadow" Value="True" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontWeight" Value="Normal" />
+                <Setter Property="Background" Value="{DynamicResource Background1}" />
+                <Setter Property="Foreground" Value="{DynamicResource Foreground1}" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="ToolTip">
@@ -1672,7 +1676,7 @@
                                 Height="{TemplateBinding Height}"
                                 Margin="5"
                                 Background="{TemplateBinding Background}"
-                                BorderBrush="{DynamicResource LightAccentColor}"
+                                BorderBrush="{DynamicResource LightAccent}"
                                 BorderThickness="1">
                                 <Border.Effect>
                                     <DropShadowEffect
@@ -1680,7 +1684,7 @@
                                         Direction="270"
                                         Opacity="0.1"
                                         ShadowDepth="0"
-                                        Color="{DynamicResource Accent}" />
+                                        Color="{DynamicResource AccentColor}" />
                                 </Border.Effect>
                                 <ContentPresenter
                                     Margin="4"
