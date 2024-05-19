@@ -50,7 +50,11 @@
                         Content="&#xF635;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.ShareWithQrCode}" />
+                        </Button.ToolTip>
+                    </Button>
                     <Button
                         x:Name="CopyBtn"
                         Grid.Column="1"
@@ -61,7 +65,11 @@
                         Content="&#xF32C;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Copy}" />
+                        </Button.ToolTip>
+                    </Button>
                     <Button
                         x:Name="ExpanderBtn"
                         Grid.Column="1"
@@ -71,7 +79,11 @@
                         Content="&#xF2A4;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.ExpandCollapse}" />
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
             </Grid>
             <Grid
@@ -130,7 +142,11 @@
                         Content="&#xF3FC;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.ShowHideKey}" />
+                        </Button.ToolTip>
+                    </Button>
                     <Button
                         x:Name="CopyKeyBtn"
                         Grid.Column="1"
@@ -142,7 +158,11 @@
                         Content="&#xF32C;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Copy}" />
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
                 <TextBlock
                     Grid.Row="2"
