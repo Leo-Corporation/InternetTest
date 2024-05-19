@@ -68,7 +68,11 @@
                         Content="&#xF606;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.RunTest}" />
+                        </Button.ToolTip>
+                    </Button>
                     <Button
                         x:Name="ExpanderBtn"
                         Grid.Column="1"
@@ -78,7 +82,11 @@
                         Content="&#xF2A4;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.ExpandCollapse}" />
+                        </Button.ToolTip>
+                    </Button>
                     <Button
                         x:Name="DeleteBtn"
                         Grid.Column="1"
@@ -88,13 +96,18 @@
                         Content="&#xF34D;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Delete}" />
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
             </Grid>
             <Grid
                 x:Name="CollapseGrid"
                 Grid.Row="1"
-                Visibility="Collapsed" Margin="0 0 0 5">
+                Margin="0 0 0 5"
+                Visibility="Collapsed">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -116,7 +129,7 @@
                     Grid.Column="1"
                     Margin="15 0 0 0"
                     FontWeight="Bold"
-                    Text="{x:Static lang:Resources.NA}" 
+                    Text="{x:Static lang:Resources.NA}"
                     TextWrapping="Wrap" />
 
                 <TextBlock
@@ -129,7 +142,7 @@
                     Grid.Column="1"
                     Margin="15 0 0 0"
                     FontWeight="Bold"
-                    Text="{x:Static lang:Resources.NA}" 
+                    Text="{x:Static lang:Resources.NA}"
                     TextWrapping="Wrap" />
                 <TextBlock
                     Grid.Row="2"
@@ -141,7 +154,7 @@
                     Grid.Column="1"
                     Margin="15 0 0 0"
                     FontWeight="Bold"
-                    Text="{x:Static lang:Resources.NA}" 
+                    Text="{x:Static lang:Resources.NA}"
                     TextWrapping="Wrap" />
 
 
