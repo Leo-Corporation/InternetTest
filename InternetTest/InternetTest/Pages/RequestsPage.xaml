@@ -200,7 +200,11 @@
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         FontWeight="ExtraBold"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource PrimaryButton}" />
+                        Style="{DynamicResource PrimaryButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Save}" />
+                        </Button.ToolTip>
+                    </Button>
                     <Button
                         x:Name="CopyBtn"
                         Height="20"
@@ -214,7 +218,11 @@
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         FontWeight="ExtraBold"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource PrimaryButton}" />
+                        Style="{DynamicResource PrimaryButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Copy}" />
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
                 <ScrollViewer
                     Grid.Row="1"
@@ -277,7 +285,11 @@
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         FontWeight="ExtraBold"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource PrimaryButton}" />
+                        Style="{DynamicResource PrimaryButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Copy}" />
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
                 <StackPanel x:Name="HeadersPanel" Grid.Row="1" />
             </Grid>
