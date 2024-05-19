@@ -160,7 +160,11 @@
                 FontFamily="../Fonts/#FluentSystemIcons-Regular"
                 FontWeight="ExtraBold"
                 Foreground="{DynamicResource Accent}"
-                Style="{DynamicResource PrimaryButton}" />
+                Style="{DynamicResource PrimaryButton}">
+                <Button.ToolTip>
+                    <ToolTip Content="{x:Static lang:Resources.Save}" />
+                </Button.ToolTip>
+            </Button>
         </StackPanel>
 
         <WrapPanel
@@ -253,7 +257,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -298,7 +302,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -342,7 +346,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -387,7 +391,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -432,7 +436,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -477,7 +481,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -521,7 +525,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
