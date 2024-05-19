@@ -241,9 +241,11 @@
                             <Button
                                 x:Name="CloseQrBtn"
                                 Padding="3"
+                                Background="{DynamicResource Background2}"
                                 Click="CloseQrBtn_Click"
                                 Content="{x:Static lang:Resources.Close}"
                                 FontWeight="Bold"
+                                Foreground="{DynamicResource Foreground1}"
                                 Style="{DynamicResource DefaultButton}" />
                         </StackPanel>
                     </StackPanel>
