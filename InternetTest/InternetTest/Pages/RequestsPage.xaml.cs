@@ -62,7 +62,10 @@ public partial class RequestsPage : Page
 	{
 		try
 		{
-			if (!UrlTxt.Text.Contains("http")) return;
+			if (!UrlTxt.Text.Contains("http"))
+			{
+				UrlTxt.Text = Global.Settings.UseHttps ? "https://" + UrlTxt.Text : "http://" + UrlTxt.Text;
+			}
 			ExecuteRequest();
 		}
 		catch (Exception ex)
