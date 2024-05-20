@@ -24,8 +24,6 @@ SOFTWARE.
 using InternetTest.Classes;
 using Microsoft.Win32;
 using QRCoder;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
