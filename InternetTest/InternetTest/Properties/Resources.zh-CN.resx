@@ -1029,4 +1029,7 @@
   <data name="ShowHideKey" xml:space="preserve">
     <value>显示/隐藏秘钥</value>
   </data>
+  <data name="GitHubRepo" xml:space="preserve">
+    <value>访问 GitHub 仓库</value>
+  </data>
 </root>

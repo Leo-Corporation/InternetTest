@@ -901,6 +901,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Access GitHub repository.
+        /// </summary>
+        public static string GitHubRepo {
+            get {
+                return ResourceManager.GetString("GitHubRepo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Good afternoon.
         /// </summary>
         public static string GoodAfternoon {

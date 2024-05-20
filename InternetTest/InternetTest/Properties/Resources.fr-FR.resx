@@ -1038,4 +1038,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="ShowHideKey" xml:space="preserve">
     <value>Afficher/masquer la clé secrète</value>
   </data>
+  <data name="GitHubRepo" xml:space="preserve">
+    <value>Accéder au dépôt GitHub</value>
+  </data>
 </root>

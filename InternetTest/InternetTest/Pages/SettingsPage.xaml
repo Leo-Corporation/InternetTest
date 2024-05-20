@@ -93,8 +93,24 @@
                         Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                         Style="{DynamicResource PrimaryButton}" />
                     <Button
+                        x:Name="GitHubBtn"
+                        Margin="0 5 5 5"
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource Background3}"
+                        Click="GitHubBtn_Click"
+                        Content="&#xF1FB;"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        FontSize="14"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.GitHubRepo}" />
+                        </Button.ToolTip>
+                    </Button>
+                    <Button
                         x:Name="SeeLicensesBtn"
-                        Margin="5"
+                        Margin="0 5"
                         Padding="3"
                         VerticalAlignment="Center"
                         Background="{DynamicResource Background3}"
@@ -103,7 +119,12 @@
                         FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                         FontSize="14"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.SeeLicenses}" />
+                        </Button.ToolTip>
+                    </Button>
+
                 </StackPanel>
             </StackPanel>
         </Border>

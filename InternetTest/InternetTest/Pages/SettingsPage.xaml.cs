@@ -466,4 +466,9 @@ public partial class SettingsPage : Page
 		"Whois - MIT License - © 2012 Chris Wood\n" +
 		"InternetTest - MIT License - © 2021-2024 Léo Corporation", $"{Properties.Resources.InternetTestPro} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
 	}
+
+	private void GitHubBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Process.Start("explorer.exe", "https://github.com/Leo-Corporation/InternetTest/");
+	}
 }
