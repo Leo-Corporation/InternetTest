@@ -78,19 +78,33 @@
                     FontSize="11"
                     FontWeight="Bold"
                     Text="{x:Static lang:Resources.UpToDate}" />
-                <Button
-                    x:Name="CheckUpdateBtn"
-                    Margin="5 10"
-                    Padding="5 2"
-                    HorizontalAlignment="Center"
-                    Background="{DynamicResource Accent}"
-                    BorderThickness="0"
-                    Click="CheckUpdateBtn_Click"
-                    Content="{x:Static lang:Resources.CheckUpdate}"
-                    Cursor="Hand"
-                    FontWeight="ExtraBold"
-                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
-                    Style="{DynamicResource PrimaryButton}" />
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button
+                        x:Name="CheckUpdateBtn"
+                        Margin="5 10"
+                        Padding="5 2"
+                        HorizontalAlignment="Center"
+                        Background="{DynamicResource Accent}"
+                        BorderThickness="0"
+                        Click="CheckUpdateBtn_Click"
+                        Content="{x:Static lang:Resources.CheckUpdate}"
+                        Cursor="Hand"
+                        FontWeight="ExtraBold"
+                        Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                        Style="{DynamicResource PrimaryButton}" />
+                    <Button
+                        x:Name="SeeLicensesBtn"
+                        Margin="5"
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource Background3}"
+                        Click="SeeLicensesBtn_Click"
+                        Content="&#xF4A4;"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        FontSize="14"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource DefaultButton}" />
+                </StackPanel>
             </StackPanel>
         </Border>
 
