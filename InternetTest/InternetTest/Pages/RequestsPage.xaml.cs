@@ -96,11 +96,10 @@ public partial class RequestsPage : Page
 				var header = item.ToString().Split("=", 2);
 				if (header.Length < 2) continue;
 
-				HeadersPanel.Children.Add(new TextBlock() { Text = header[0], FontWeight = FontWeights.Bold, TextWrapping = TextWrapping.Wrap, Margin = new(0, 5, 0, 0) });
-				HeadersPanel.Children.Add(new TextBlock() { Text = header[1], TextWrapping = TextWrapping.Wrap });
+				HeadersPanel.Children.Add(new HeaderItem(header[0], header[1]));
 			}
 		}
-		catch {	}
+		catch { }
 	}
 
 	private void UrlTxt_KeyUp(object sender, KeyEventArgs e)
