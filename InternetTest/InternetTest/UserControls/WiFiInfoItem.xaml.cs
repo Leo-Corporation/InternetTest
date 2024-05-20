@@ -22,8 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Classes;
+using Microsoft.Win32;
+using QRCoder;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace InternetTest.UserControls;
 /// <summary>
@@ -102,4 +107,48 @@ public partial class WiFiInfoItem : UserControl
 	}
 
 	public override string ToString() => WLANProfile.SSIDConfig?.SSID?.Name ?? "";
+
+	private void GetQrBtn_Click(object sender, RoutedEventArgs e)
+	{
+		QRCodeGenerator qrGenerator = new();
+		QRCodeData qrCodeData = qrGenerator.CreateQrCode($"WIFI:T:{((WLANProfile.MSM?.Security?.AuthEncryption?.Authentication ?? "").Contains("WPA") ? "WPA" : "NONE")};S:{WLANProfile?.SSIDConfig?.SSID?.Name ?? ""};P:{WLANProfile.MSM?.Security?.SharedKey?.KeyMaterial};;\r\n\r\n", QRCodeGenerator.ECCLevel.Q);
+		BitmapByteQRCode qrCode = new(qrCodeData);
+		byte[] qrCodeAsBitmapByteArr = qrCode.GetGraphic(20);
+
+		BitmapImage bitmapImage = new();
+		using MemoryStream memory = new(qrCodeAsBitmapByteArr);
+		memory.Position = 0;
+
+		bitmapImage.BeginInit();
+		bitmapImage.StreamSource = memory;
+		bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+		bitmapImage.EndInit();
+
+		QrImage.Source = bitmapImage;
+		QrPopup.IsOpen = true;
+	}
+
+	private void CloseQrBtn_Click(object sender, RoutedEventArgs e)
+	{
+		QrPopup.IsOpen = false;
+	}
+
+	private void SaveQrBtn_Click(object sender, RoutedEventArgs e)
+	{
+		var dialog = new SaveFileDialog() { Filter = "PNG Files|*.png", Title = Properties.Resources.Save, FileName = WLANProfile.SSIDConfig?.SSID?.Name ?? "" };
+		if (dialog.ShowDialog() ?? false)
+		{
+			SaveImageSourceToPng(QrImage.Source, dialog.FileName);
+		}
+	}
+
+	void SaveImageSourceToPng(ImageSource imageSource, string filePath)
+	{
+		var encoder = new PngBitmapEncoder();
+		var frame = BitmapFrame.Create((BitmapSource)imageSource);
+		encoder.Frames.Add(frame);
+
+		using var stream = new FileStream(filePath, FileMode.Create);
+		encoder.Save(stream);
+	}
 }

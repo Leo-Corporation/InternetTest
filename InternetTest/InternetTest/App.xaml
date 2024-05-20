@@ -1660,6 +1660,49 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+            <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
+                <Setter Property="OverridesDefaultStyle" Value="true" />
+                <Setter Property="HasDropShadow" Value="True" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontWeight" Value="Normal" />
+                <Setter Property="Background" Value="{DynamicResource Background1}" />
+                <Setter Property="Foreground" Value="{DynamicResource Foreground1}" />
+                <Setter Property="FontFamily" Value="Segoe UI" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToolTip">
+                            <Border
+                                Name="Border"
+                                Width="{TemplateBinding Width}"
+                                Height="{TemplateBinding Height}"
+                                Margin="5"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{DynamicResource LightAccent}"
+                                BorderThickness="1">
+                                <Border.Effect>
+                                    <DropShadowEffect
+                                        BlurRadius="10"
+                                        Direction="270"
+                                        Opacity="0.1"
+                                        ShadowDepth="0"
+                                        Color="{DynamicResource AccentColor}" />
+                                </Border.Effect>
+                                <ContentPresenter
+                                    Margin="4"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    TextBlock.FontSize="12" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="HasDropShadow" Value="true">
+                                    <Setter TargetName="Border" Property="CornerRadius" Value="4" />
+                                    <Setter TargetName="Border" Property="SnapsToDevicePixels" Value="true" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

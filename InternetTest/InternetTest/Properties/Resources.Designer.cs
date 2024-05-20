@@ -259,6 +259,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        public static string Clear {
+            get {
+                return ResourceManager.GetString("Clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string Close {
@@ -354,6 +363,15 @@ namespace InternetTest.Properties {
         public static string Copy {
             get {
                 return ResourceManager.GetString("Copy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Key.
+        /// </summary>
+        public static string CopyKey {
+            get {
+                return ResourceManager.GetString("CopyKey", resourceCulture);
             }
         }
         
@@ -466,6 +484,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details {
@@ -480,6 +507,15 @@ namespace InternetTest.Properties {
         public static string DetailsNotAvailableCM {
             get {
                 return ResourceManager.GetString("DetailsNotAvailableCM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable Confidential Mode.
+        /// </summary>
+        public static string DisableConfidential {
+            get {
+                return ResourceManager.GetString("DisableConfidential", resourceCulture);
             }
         }
         
@@ -631,6 +667,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable Confidential Mode.
+        /// </summary>
+        public static string EnableConfidential {
+            get {
+                return ResourceManager.GetString("EnableConfidential", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encryption.
         /// </summary>
         public static string Encryption {
@@ -690,6 +735,15 @@ namespace InternetTest.Properties {
         public static string ExecuteTraceRoute {
             get {
                 return ResourceManager.GetString("ExecuteTraceRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expand/Collapse.
+        /// </summary>
+        public static string ExpandCollapse {
+            get {
+                return ResourceManager.GetString("ExpandCollapse", resourceCulture);
             }
         }
         
@@ -843,6 +897,15 @@ namespace InternetTest.Properties {
         public static string GetWiFi {
             get {
                 return ResourceManager.GetString("GetWiFi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access GitHub repository.
+        /// </summary>
+        public static string GitHubRepo {
+            get {
+                return ResourceManager.GetString("GitHubRepo", resourceCulture);
             }
         }
         
@@ -1354,6 +1417,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maximize.
+        /// </summary>
+        public static string Maximize {
+            get {
+                return ResourceManager.GetString("Maximize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Max speed.
         /// </summary>
         public static string MaxSpeed {
@@ -1377,6 +1449,15 @@ namespace InternetTest.Properties {
         public static string MaxTimeOut {
             get {
                 return ResourceManager.GetString("MaxTimeOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimize.
+        /// </summary>
+        public static string Minimize {
+            get {
+                return ResourceManager.GetString("Minimize", resourceCulture);
             }
         }
         
@@ -1715,6 +1796,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pin.
+        /// </summary>
+        public static string Pin {
+            get {
+                return ResourceManager.GetString("Pin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ping.
         /// </summary>
         public static string Ping {
@@ -1895,6 +1985,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restore.
+        /// </summary>
+        public static string Restore {
+            get {
+                return ResourceManager.GetString("Restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run test.
+        /// </summary>
+        public static string RunTest {
+            get {
+                return ResourceManager.GetString("RunTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save {
@@ -2022,11 +2130,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Share with a QR Code.
+        /// </summary>
+        public static string ShareWithQrCode {
+            get {
+                return ResourceManager.GetString("ShareWithQrCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show disabled.
         /// </summary>
         public static string ShowDisabled {
             get {
                 return ResourceManager.GetString("ShowDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show/Hide secret key.
+        /// </summary>
+        public static string ShowHideKey {
+            get {
+                return ResourceManager.GetString("ShowHideKey", resourceCulture);
             }
         }
         
@@ -2470,6 +2596,15 @@ namespace InternetTest.Properties {
         public static string Unknown {
             get {
                 return ResourceManager.GetString("Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unpin.
+        /// </summary>
+        public static string Unpin {
+            get {
+                return ResourceManager.GetString("Unpin", resourceCulture);
             }
         }
         

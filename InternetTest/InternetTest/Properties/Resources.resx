@@ -996,4 +996,49 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="Cookies" xml:space="preserve">
     <value>Cookies</value>
   </data>
+  <data name="Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>Expand/Collapse</value>
+  </data>
+  <data name="EnableConfidential" xml:space="preserve">
+    <value>Enable Confidential Mode</value>
+  </data>
+  <data name="DisableConfidential" xml:space="preserve">
+    <value>Disable Confidential Mode</value>
+  </data>
+  <data name="Pin" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="Unpin" xml:space="preserve">
+    <value>Unpin</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="RunTest" xml:space="preserve">
+    <value>Run test</value>
+  </data>
+  <data name="ShareWithQrCode" xml:space="preserve">
+    <value>Share with a QR Code</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="CopyKey" xml:space="preserve">
+    <value>Copy Key</value>
+  </data>
+  <data name="ShowHideKey" xml:space="preserve">
+    <value>Show/Hide secret key</value>
+  </data>
+  <data name="GitHubRepo" xml:space="preserve">
+    <value>Access GitHub repository</value>
+  </data>
 </root>

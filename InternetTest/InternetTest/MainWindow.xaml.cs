@@ -236,7 +236,7 @@ public partial class MainWindow : Window
 		MaximizeRestoreBtn.FontSize = WindowState == WindowState.Maximized
 			? 18
 			: 14;
-
+		MaximizeTooltip.Content = WindowState == WindowState.Maximized ? Properties.Resources.Restore : Properties.Resources.Maximize;
 		DefineMaximumSize();
 
 		WindowBorder.Margin = WindowState == WindowState.Maximized ? new(10, 10, 0, 0) : new(10); // Set
@@ -433,6 +433,8 @@ public partial class MainWindow : Window
 		Global.LocateIpPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 		Global.IpConfigPage?.ToggleConfidentialMode(Global.IsConfidentialModeEnabled);
 		Global.WiFiPasswordsPage?.ToggleConfidentialMode();
+
+		ConfidentialModeTooltip.Content = !Global.IsConfidentialModeEnabled ? Properties.Resources.EnableConfidential : Properties.Resources.DisableConfidential;
 	}
 
 	private void PinBtn_Click(object sender, RoutedEventArgs e)
@@ -440,6 +442,7 @@ public partial class MainWindow : Window
 		Topmost = !Topmost; // Toggle
 		PinBtn.Content = Topmost ? "\uF604" : "\uF602"; // Set text
 		Global.Settings.Pinned = Topmost;
+		PinTooltip.Content = Topmost ? Properties.Resources.Unpin : Properties.Resources.Pin;
 	}
 
 	private void DnsPageBtn_Click(object sender, RoutedEventArgs e)

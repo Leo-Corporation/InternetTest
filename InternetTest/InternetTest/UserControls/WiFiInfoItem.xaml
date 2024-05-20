@@ -41,6 +41,21 @@
                     FontWeight="ExtraBold" />
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
                     <Button
+                        x:Name="GetQrBtn"
+                        Grid.Column="1"
+                        Margin="0 0 5 0"
+                        Padding="5"
+                        Background="Transparent"
+                        Click="GetQrBtn_Click"
+                        Content="&#xF635;"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.ShareWithQrCode}" />
+                        </Button.ToolTip>
+                    </Button>
+                    <Button
                         x:Name="CopyBtn"
                         Grid.Column="1"
                         Margin="0 0 5 0"
@@ -50,7 +65,11 @@
                         Content="&#xF32C;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Copy}" />
+                        </Button.ToolTip>
+                    </Button>
                     <Button
                         x:Name="ExpanderBtn"
                         Grid.Column="1"
@@ -60,7 +79,11 @@
                         Content="&#xF2A4;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.ExpandCollapse}" />
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
             </Grid>
             <Grid
@@ -119,7 +142,11 @@
                         Content="&#xF3FC;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.ShowHideKey}" />
+                        </Button.ToolTip>
+                    </Button>
                     <Button
                         x:Name="CopyKeyBtn"
                         Grid.Column="1"
@@ -131,7 +158,11 @@
                         Content="&#xF32C;"
                         FontFamily="../Fonts/#FluentSystemIcons-Regular"
                         Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}" />
+                        Style="{DynamicResource DefaultButton}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Copy}" />
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
                 <TextBlock
                     Grid.Row="2"
@@ -173,6 +204,53 @@
                     FontWeight="Bold"
                     TextWrapping="Wrap" />
             </Grid>
+            <Popup
+                x:Name="QrPopup"
+                Width="200"
+                Height="230"
+                AllowsTransparency="True"
+                Placement="Center"
+                PlacementTarget="{Binding ElementName=GetQrBtn}"
+                PopupAnimation="Fade">
+                <Border
+                    Margin="10"
+                    Padding="5"
+                    Background="{DynamicResource Background1}"
+                    CornerRadius="5">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="10"
+                            Opacity="0.4"
+                            RenderingBias="Performance"
+                            ShadowDepth="0"
+                            Color="Black" />
+                    </Border.Effect>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image x:Name="QrImage" />
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <Button
+                                x:Name="SaveQrBtn"
+                                Margin="0 0 5 0"
+                                Padding="3"
+                                Background="{DynamicResource LightAccent}"
+                                Click="SaveQrBtn_Click"
+                                Content="{x:Static lang:Resources.Save}"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Accent}"
+                                Style="{DynamicResource DefaultButton}" />
+                            <Button
+                                x:Name="CloseQrBtn"
+                                Padding="3"
+                                Background="{DynamicResource Background2}"
+                                Click="CloseQrBtn_Click"
+                                Content="{x:Static lang:Resources.Close}"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Foreground1}"
+                                Style="{DynamicResource DefaultButton}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Popup>
         </Grid>
     </Border>
 </UserControl>

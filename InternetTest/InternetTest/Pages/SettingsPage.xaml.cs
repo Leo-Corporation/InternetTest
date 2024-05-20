@@ -452,4 +452,23 @@ public partial class SettingsPage : Page
 		Global.Settings.HideDisabledAdapters = HideNetworkAdaptersChk.IsChecked;
 		SettingsManager.Save();
 	}
+
+	private void SeeLicensesBtn_Click(object sender, RoutedEventArgs e)
+	{
+		MessageBox.Show($"{Properties.Resources.Licenses}\n\n" +
+		"DnsClient - Apache License Version 2.0 - © Michael Conrad\n" +
+		"Fluent System Icons - MIT License - © 2020 Microsoft Corporation\n" +
+		"ManagedNativeWifi - MIT License - © 2015-2019 emoacht\n" +
+		"PeyrSharp - MIT License - © 2022-2024 Devyus\n" +
+		"QRCoder - MIT License - © 2013-2018 Raffael Herrmann\n" +
+		"RestSharp - Apache License Version 2.0 - © .NET Foundation and Contributors\n" +
+		"Synethia - MIT License - © 2023-2024 Devyus\n" +
+		"Whois - MIT License - © 2012 Chris Wood\n" +
+		"InternetTest - MIT License - © 2021-2024 Léo Corporation", $"{Properties.Resources.InternetTestPro} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
+	}
+
+	private void GitHubBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Process.Start("explorer.exe", "https://github.com/Leo-Corporation/InternetTest/");
+	}
 }
