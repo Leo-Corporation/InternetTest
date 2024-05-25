@@ -997,48 +997,48 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Cookie</value>
   </data>
   <data name="Maximize" xml:space="preserve">
-    <value>Massimizzare</value>
+    <value>Massimizza</value>
   </data>
   <data name="Minimize" xml:space="preserve">
-    <value>Ridurre al minimo</value>
+    <value>Minimizza</value>
   </data>
   <data name="Restore" xml:space="preserve">
-    <value>Ripristino</value>
+    <value>Ripristina</value>
   </data>
   <data name="ExpandCollapse" xml:space="preserve">
-    <value>Espandi/Crolla</value>
+    <value>Espandi/riduci</value>
   </data>
   <data name="EnableConfidential" xml:space="preserve">
-    <value>Abilita la modalità riservata</value>
+    <value>Abilita modo confidenziale</value>
   </data>
   <data name="DisableConfidential" xml:space="preserve">
-    <value>Disattivare la modalità riservata</value>
+    <value>Disabilita modo confidenziale</value>
   </data>
   <data name="Pin" xml:space="preserve">
-    <value>Spillo</value>
+    <value>Aggancia</value>
   </data>
   <data name="Unpin" xml:space="preserve">
-    <value>Spillare</value>
+    <value>Sgancia</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Cancellare</value>
+    <value>Elimina</value>
   </data>
   <data name="RunTest" xml:space="preserve">
-    <value>Eseguire il test</value>
+    <value>Esegui test</value>
   </data>
   <data name="ShareWithQrCode" xml:space="preserve">
-    <value>Condividere con un codice QR</value>
+    <value>Condividi con codice QR</value>
   </data>
   <data name="Clear" xml:space="preserve">
-    <value>Eliminazione</value>
+    <value>Azzera</value>
   </data>
   <data name="CopyKey" xml:space="preserve">
-    <value>Chiave di copia</value>
+    <value>Copia chiave</value>
   </data>
   <data name="ShowHideKey" xml:space="preserve">
-    <value>Mostra/nascondi la chiave segreta</value>
+    <value>Visualizza/nascondi chiave segreta</value>
   </data>
   <data name="GitHubRepo" xml:space="preserve">
-    <value>Accesso al repository GitHub</value>
+    <value>Accesso repository GitHub</value>
   </data>
 </root>
