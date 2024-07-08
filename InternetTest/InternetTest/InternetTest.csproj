@@ -40,7 +40,7 @@
 	  <PackageReference Include="ManagedNativeWifi" Version="2.5.0" />
 	  <PackageReference Include="PeyrSharp.Core" Version="2.1.0.2312" />
 	  <PackageReference Include="PeyrSharp.Env" Version="2.1.0.2312" />
-	  <PackageReference Include="QRCoder" Version="1.5.1" />
+	  <PackageReference Include="QRCoder" Version="1.6.0" />
 	  <PackageReference Include="RestSharp" Version="111.3.0" />
 	  <PackageReference Include="Synethia" Version="1.1.1.2302" />
 	  <PackageReference Include="Whois" Version="3.0.1" />
