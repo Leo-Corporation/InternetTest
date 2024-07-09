@@ -104,7 +104,7 @@ public partial class PingPage : Page
 				}
 			}
 
-			AverageTimeTxt.Text = $"{times.Average()}ms"; // Get the average of the times
+			AverageTimeTxt.Text = $"{times.Average():0.00}ms"; // Get the average of the times
 			MinTimeTxt.Text = $"{times.Min()}ms"; // Get the minimum of the times
 			MaxTimeTxt.Text = $"{times.Max()}ms"; // Get the maximum of the times
 
