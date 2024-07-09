@@ -25,8 +25,10 @@ SOFTWARE.
 using DnsClient;
 using InternetTest.Classes;
 using InternetTest.UserControls;
+using Microsoft.Win32;
 using Synethia;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -57,8 +59,10 @@ public partial class DnsPage : Page
 		DetailsGrid.Visibility = Visibility.Collapsed;
 	}
 
+	string csvFile = "";
 	private async void GetDnsInfo(string website)
 	{
+		csvFile = "Type,Value\n";
 		try
 		{
 			RecordDisplayer.Children.Clear();
@@ -87,6 +91,7 @@ public partial class DnsPage : Page
 			foreach (var record in result.AllRecords)
 			{
 				RecordDisplayer.Children.Add(new DnsRecordItem(record.RecordType.ToString(), record.ToString()));
+				csvFile += $"{record.RecordType},{record}\n";
 				if (!availableTypes.Contains(record.RecordType.ToString()))
 					availableTypes.Add(record.RecordType.ToString());
 			}
@@ -118,6 +123,8 @@ public partial class DnsPage : Page
 			RegistrantTxt.Text = regInfo;
 		}
 		catch { }
+
+		SaveCsvBtn.Visibility = (FiltersDisplayer.Children.Count > 0) ? Visibility.Visible : Visibility.Collapsed;
 	}
 
 	private RadioButton CreateFilterButton(string recordType)
@@ -182,5 +189,21 @@ public partial class DnsPage : Page
 	private void SiteTxt_TextChanged(object sender, TextChangedEventArgs e)
 	{
 		DismissBtn.Visibility = SiteTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
+	}
+
+	private void SaveCsvBtn_Click(object sender, RoutedEventArgs e)
+	{
+		SaveFileDialog saveFileDialog = new()
+		{
+			FileName = $"{SiteTxt.Text}.csv",
+			Filter = "CSV|*.csv",
+			Title = Properties.Resources.ExportToCSV
+		}; // Create file dialog
+
+		if (saveFileDialog.ShowDialog() ?? true)
+		{
+			using StreamWriter outputFile = new(saveFileDialog.FileName);
+			outputFile.Write(csvFile);
+		}
 	}
 }

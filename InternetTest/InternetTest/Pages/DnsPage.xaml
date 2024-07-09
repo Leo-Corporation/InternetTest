@@ -219,11 +219,36 @@
                 FontWeight="ExtraBold"
                 Text="{x:Static lang:Resources.DNSInfo}" />
         </StackPanel>
-        <WrapPanel
-            x:Name="FiltersDisplayer"
-            Grid.Row="5"
-            Margin="5 0 0 0"
-            Orientation="Horizontal" />
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <WrapPanel
+                x:Name="FiltersDisplayer"
+                Margin="5 0 0 0"
+                Orientation="Horizontal" />
+            <Button
+                x:Name="SaveCsvBtn"
+                Grid.Column="1"
+                Margin="5 0"
+                Padding="5 2"
+                VerticalAlignment="Center"
+                Background="{DynamicResource LightAccent}"
+                BorderThickness="0"
+                Click="SaveCsvBtn_Click"
+                Content="&#xF151;"
+                Cursor="Hand"
+                FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                FontWeight="ExtraBold"
+                Foreground="{DynamicResource Accent}"
+                Style="{DynamicResource PrimaryButton}"
+                Visibility="Collapsed">
+                <Button.ToolTip>
+                    <ToolTip Content="{x:Static lang:Resources.ExportToCSV}" />
+                </Button.ToolTip>
+            </Button>
+        </Grid>
         <StackPanel x:Name="RecordDisplayer" Grid.Row="6" />
     </Grid>
 

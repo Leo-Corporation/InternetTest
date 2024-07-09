@@ -26,6 +26,7 @@ using Synethia;
 using System;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -43,10 +44,12 @@ public partial class PingPage : Page
 		Loaded += (o, e) => SynethiaManager.InjectSynethiaCode(this, Global.SynethiaConfig.PagesInfo, 5, ref codeInjected);
 	}
 
+	int requestsToMake = 4;
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.Ping}";
 		IpTxt.Text = Global.Settings.TestSite ?? "https://leocorporation.dev";
+		RequestsNumberTxt.Text = requestsToMake.ToString();
 	}
 
 	internal void PingBtn_Click(object sender, RoutedEventArgs e)
@@ -76,15 +79,15 @@ public partial class PingPage : Page
 
 			int sent = 0, received = 0;
 
-			long[] times = new long[4]; // Create an array
-			for (int i = 0; i < 4; i++)
+			long[] times = new long[requestsToMake]; // Create an array
+			for (int i = 0; i < requestsToMake; i++)
 			{
 				var ping = await new Ping().SendPingAsync(address); // Send a ping
 				sent++;
 				times[i] = ping.RoundtripTime; // Get the time of the ping
 				IPAddressTxt.Text = ping.Address.ToString(); // Get the address of the ping
 
-				string nl = (i + 1 < 4) ? $"\n{i + 1}/4" : ""; // Add a new line if it's not the last ping
+				string nl = (i + 1 < requestsToMake) ? $"\n{i + 1}/{requestsToMake}" : ""; // Add a new line if it's not the last ping
 				if (ping.Status == IPStatus.Success)
 				{
 					received++;
@@ -101,7 +104,7 @@ public partial class PingPage : Page
 				}
 			}
 
-			AverageTimeTxt.Text = $"{times.Average()}ms"; // Get the average of the times
+			AverageTimeTxt.Text = $"{times.Average():0.00}ms"; // Get the average of the times
 			MinTimeTxt.Text = $"{times.Min()}ms"; // Get the minimum of the times
 			MaxTimeTxt.Text = $"{times.Max()}ms"; // Get the maximum of the times
 
@@ -122,5 +125,25 @@ public partial class PingPage : Page
 	private void TextBlock_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
 	{
 		Clipboard.SetText(((TextBlock)sender).Text);
+	}
+
+	private void OptionsBtn_Click(object sender, RoutedEventArgs e)
+	{
+		OptionsPopup.IsOpen = true;
+	}
+
+	private void RequestsNumberTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		try
+		{
+			requestsToMake = int.Parse(RequestsNumberTxt.Text);
+		}
+		catch { }
+	}
+
+	private void RequestsNumberTxt_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+	{
+		Regex regex = new("[^0-9]+");
+		e.Handled = regex.IsMatch(e.Text);
 	}
 }

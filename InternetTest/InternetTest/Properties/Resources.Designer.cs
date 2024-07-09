@@ -766,6 +766,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export to CSV.
+        /// </summary>
+        public static string ExportToCSV {
+            get {
+                return ResourceManager.GetString("ExportToCSV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Export without passwords.
         /// </summary>
         public static string ExportWithoutPasswords {
@@ -2153,6 +2162,15 @@ namespace InternetTest.Properties {
         public static string ShowHideKey {
             get {
                 return ResourceManager.GetString("ShowHideKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show/Hide Timed Out items.
+        /// </summary>
+        public static string ShowHideTimedOut {
+            get {
+                return ResourceManager.GetString("ShowHideTimedOut", resourceCulture);
             }
         }
         

@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>True</UseWindowsForms>
-		<Version>8.3.1.2405</Version>
+		<Version>8.4.0.2407</Version>
 		<Copyright>© 2024</Copyright>
 		<Company>Léo Corporation</Company>
 		<Description>Taking you to another level. InternetTest can locate IP addresses, send ping request, recover your WiFi passwords and more!</Description>
@@ -36,12 +36,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="DnsClient" Version="1.7.0" />
-	  <PackageReference Include="ManagedNativeWifi" Version="2.5.0" />
+	  <PackageReference Include="DnsClient" Version="1.8.0" />
+	  <PackageReference Include="ManagedNativeWifi" Version="2.6.0" />
 	  <PackageReference Include="PeyrSharp.Core" Version="2.1.0.2312" />
 	  <PackageReference Include="PeyrSharp.Env" Version="2.1.0.2312" />
-	  <PackageReference Include="QRCoder" Version="1.5.1" />
-	  <PackageReference Include="RestSharp" Version="110.2.0" />
+	  <PackageReference Include="QRCoder" Version="1.6.0" />
+	  <PackageReference Include="RestSharp" Version="111.3.0" />
 	  <PackageReference Include="Synethia" Version="1.1.1.2302" />
 	  <PackageReference Include="Whois" Version="3.0.1" />
 	</ItemGroup>

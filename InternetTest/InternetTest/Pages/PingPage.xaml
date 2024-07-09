@@ -71,6 +71,24 @@
                     FontWeight="ExtraBold"
                     Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                     Style="{DynamicResource PrimaryButton}" />
+                <Button
+                    x:Name="OptionsBtn"
+                    Margin="5 0"
+                    Padding="5 4"
+                    VerticalAlignment="Center"
+                    Background="{DynamicResource LightAccent}"
+                    BorderThickness="0"
+                    Click="OptionsBtn_Click"
+                    Content="&#xF6AA;"
+                    Cursor="Hand"
+                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                    FontWeight="ExtraBold"
+                    Foreground="{DynamicResource Accent}"
+                    Style="{DynamicResource PrimaryButton}">
+                    <Button.ToolTip>
+                        <ToolTip Content="{x:Static lang:Resources.Save}" />
+                    </Button.ToolTip>
+                </Button>
             </StackPanel>
             <Border
                 Width="300"
@@ -158,7 +176,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -203,7 +221,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -248,7 +266,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -292,7 +310,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -337,7 +355,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -382,7 +400,7 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -427,11 +445,51 @@
                             FontSize="18"
                             FontWeight="ExtraBold"
                             MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
-                            Text="{x:Static lang:Resources.NA}"  />
+                            Text="{x:Static lang:Resources.NA}" />
                     </StackPanel>
                 </Grid>
             </Border>
 
         </WrapPanel>
+        <Popup
+            x:Name="OptionsPopup"
+            AllowsTransparency="True"
+            Placement="Bottom"
+            PlacementTarget="{Binding ElementName=OptionsBtn}"
+            PopupAnimation="Slide"
+            StaysOpen="False">
+            <Border
+                Margin="8"
+                Padding="10"
+                Background="{DynamicResource Background1}"
+                CornerRadius="5">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.Requests}" />
+                    <TextBox
+                        x:Name="RequestsNumberTxt"
+                        Width="40"
+                        Margin="5 0"
+                        Padding="2"
+                        VerticalAlignment="Center"
+                        d:Text="4"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DarkGray}"
+                        PreviewTextInput="RequestsNumberTxt_PreviewTextInput"
+                        Text="4"
+                        TextChanged="RequestsNumberTxt_TextChanged" />
+                </StackPanel>
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="10"
+                        Opacity="0.4"
+                        RenderingBias="Quality"
+                        ShadowDepth="0"
+                        Color="Black" />
+                </Border.Effect>
+            </Border>
+        </Popup>
     </Grid>
 </Page>
