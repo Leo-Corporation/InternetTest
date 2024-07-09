@@ -1032,4 +1032,7 @@
   <data name="GitHubRepo" xml:space="preserve">
     <value>访问 GitHub 仓库</value>
   </data>
+  <data name="ExportToCSV" xml:space="preserve">
+    <value>导出为 CSV</value>
+  </data>
 </root>

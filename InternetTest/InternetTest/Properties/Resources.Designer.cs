@@ -766,6 +766,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export to CSV.
+        /// </summary>
+        public static string ExportToCSV {
+            get {
+                return ResourceManager.GetString("ExportToCSV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Export without passwords.
         /// </summary>
         public static string ExportWithoutPasswords {

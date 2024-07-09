@@ -1041,4 +1041,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="GitHubRepo" xml:space="preserve">
     <value>Access GitHub repository</value>
   </data>
+  <data name="ExportToCSV" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
 </root>
