@@ -25,6 +25,7 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.UserControls;
 using Synethia;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Windows;
@@ -55,6 +56,8 @@ public partial class TraceroutePage : Page
 		AddressTxt.Text = "";
 	}
 
+	List<TracertStep> route = []; bool hideTimedOut = false;
+	int success = 0; int failed = 0; long time = 0;
 	private async void TraceBtn_Click(object sender, RoutedEventArgs e)
 	{
 		// Increment the interaction count of the ActionInfo in Global.SynethiaConfig
@@ -68,28 +71,23 @@ public partial class TraceroutePage : Page
 
 		// Show the waiting screen
 		TraceBtn.IsEnabled = false;
+		HideTimedOutBtn.IsEnabled = false;
 		StatusPanel.Visibility = Visibility.Collapsed;
 		WaitingScreen.Visibility = Visibility.Visible;
 		WaitTxt.Text = Properties.Resources.TraceProgress;
 		WaitIconTxt.Visibility = Visibility.Collapsed;
 		Spinner.Visibility = Visibility.Visible;
 		TracertPanel.Visibility = Visibility.Collapsed;
-		TracertPanel.Children.Clear();
+
+		success = 0; failed = 0; time = 0;
 
 		try
 		{
 			// Get traceroute
-			var route = await Global.Trace(AddressTxt.Text, Global.Settings.TraceRouteMaxHops ?? 30, Global.Settings.TraceRouteMaxTimeOut ?? 5000);
-			int success = 0; int failed = 0; long time = 0;
+			route = await Global.Trace(AddressTxt.Text, Global.Settings.TraceRouteMaxHops ?? 30, Global.Settings.TraceRouteMaxTimeOut ?? 5000);
 
 			// Update the UI with each step
-			for (int i = 0; i < route.Count; i++)
-			{
-				TracertPanel.Children.Add(new TraceRouteItem(route[i], i == route.Count - 1));
-				if (route[i].Status == IPStatus.Success || route[i].Status == IPStatus.TtlExpired) success++;
-				else failed++;
-				time += route[i].RoundtripTime;
-			}
+			RenderRouteItem();
 
 			// Set the values of the overview panel
 			SucessTxt.Text = success.ToString();
@@ -109,6 +107,22 @@ public partial class TraceroutePage : Page
 		catch { }
 
 		TraceBtn.IsEnabled = true;
+		HideTimedOutBtn.IsEnabled = true;
+	}
+
+	private void RenderRouteItem()
+	{
+		TracertPanel.Children.Clear();
+		for (int i = 0; i < route.Count; i++)
+		{
+			if (!(hideTimedOut && route[i].Status == IPStatus.TimedOut))
+			{
+				TracertPanel.Children.Add(new TraceRouteItem(route[i], i == route.Count - 1));
+			}
+			if (route[i].Status == IPStatus.Success || route[i].Status == IPStatus.TtlExpired) success++;
+			else failed++;
+			time += route[i].RoundtripTime;
+		}
 	}
 
 	private void AddressTxt_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
@@ -122,5 +136,12 @@ public partial class TraceroutePage : Page
 	private void AddressTxt_TextChanged(object sender, TextChangedEventArgs e)
 	{
 		DismissBtn.Visibility = AddressTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
+	}
+
+	private void HideTimedOutBtn_Click(object sender, RoutedEventArgs e)
+	{
+		hideTimedOut = !hideTimedOut;
+		HideTimedOutBtn.Content = hideTimedOut ? "\uF3F8" : "\uF3FC";
+		RenderRouteItem();
 	}
 }

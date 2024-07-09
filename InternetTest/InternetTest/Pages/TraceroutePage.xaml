@@ -103,6 +103,24 @@
                 FontWeight="ExtraBold"
                 Foreground="{DynamicResource WindowButtonsHoverForeground1}"
                 Style="{DynamicResource PrimaryButton}" />
+            <Button
+                x:Name="HideTimedOutBtn"
+                Margin="5 0"
+                Padding="5 4"
+                VerticalAlignment="Center"
+                Background="{DynamicResource LightAccent}"
+                BorderThickness="0"
+                Click="HideTimedOutBtn_Click"
+                Content="&#xF3FC;"
+                Cursor="Hand"
+                FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                FontWeight="ExtraBold"
+                Foreground="{DynamicResource Accent}"
+                Style="{DynamicResource PrimaryButton}">
+                <Button.ToolTip>
+                    <ToolTip Content="{x:Static lang:Resources.Save}" />
+                </Button.ToolTip>
+            </Button>
         </StackPanel>
         <StackPanel
             x:Name="StatusPanel"
