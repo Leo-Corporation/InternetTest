@@ -1035,4 +1035,7 @@
   <data name="ExportToCSV" xml:space="preserve">
     <value>导出为 CSV</value>
   </data>
+  <data name="ShowHideTimedOut" xml:space="preserve">
+    <value>显示/隐藏超时项目</value>
+  </data>
 </root>

@@ -1044,4 +1044,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="ExportToCSV" xml:space="preserve">
     <value>Export to CSV</value>
   </data>
+  <data name="ShowHideTimedOut" xml:space="preserve">
+    <value>Show/Hide Timed Out items</value>
+  </data>
 </root>

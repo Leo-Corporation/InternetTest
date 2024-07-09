@@ -2166,6 +2166,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show/Hide Timed Out items.
+        /// </summary>
+        public static string ShowHideTimedOut {
+            get {
+                return ResourceManager.GetString("ShowHideTimedOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show on a map.
         /// </summary>
         public static string ShowOnMap {

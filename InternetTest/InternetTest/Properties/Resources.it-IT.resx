@@ -1044,4 +1044,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="ExportToCSV" xml:space="preserve">
     <value>Esportazione in CSV</value>
   </data>
+  <data name="ShowHideTimedOut" xml:space="preserve">
+    <value>Mostra/Nascondi gli elementi scaduti</value>
+  </data>
 </root>

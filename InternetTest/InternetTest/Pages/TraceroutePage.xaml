@@ -118,7 +118,7 @@
                 Foreground="{DynamicResource Accent}"
                 Style="{DynamicResource PrimaryButton}">
                 <Button.ToolTip>
-                    <ToolTip Content="{x:Static lang:Resources.Save}" />
+                    <ToolTip Content="{x:Static lang:Resources.ShowHideTimedOut}" />
                 </Button.ToolTip>
             </Button>
         </StackPanel>
