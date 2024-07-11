@@ -1042,9 +1042,9 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Accesso repository GitHub</value>
   </data>
   <data name="ExportToCSV" xml:space="preserve">
-    <value>Esportazione in CSV</value>
+    <value>Esporta come file CSV</value>
   </data>
   <data name="ShowHideTimedOut" xml:space="preserve">
-    <value>Mostra/Nascondi gli elementi scaduti</value>
+    <value>Visualizza/nascondi elementi scaduti</value>
   </data>
 </root>
