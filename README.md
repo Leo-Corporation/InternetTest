@@ -1,4 +1,4 @@
-![GitHub contributors](https://img.shields.io/github/contributors/Leo-Corporation/LABS-ExperimentalConsole)
+![GitHub contributors](https://img.shields.io/github/contributors/Leo-Corporation/InternetTest)
 ![GitHub issues](https://img.shields.io/github/issues/Leo-Corporation/InternetTest)
 ![GitHub](https://img.shields.io/github/license/Leo-Corporation/InternetTest)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Leo-Corporation/InternetTest/dotnet-core-desktop.yml?branch=main)
