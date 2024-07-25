@@ -16,5 +16,5 @@ jobs:
         with:
           token: ${{ secrets.ACTIONS_TOKEN }}
           commitTitle: "Updated license copyright"
-          assignees: "Leo-Peyronnet"
+          assignees: "lpeyr"
           labels: documentation
