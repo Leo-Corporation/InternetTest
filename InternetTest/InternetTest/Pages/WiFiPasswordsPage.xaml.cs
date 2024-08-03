@@ -42,6 +42,7 @@ namespace InternetTest.Pages;
 public partial class WiFiPasswordsPage : Page
 {
 	bool codeInjected = !Global.Settings.UseSynethia;
+	bool showKeys = false;
 	public WiFiPasswordsPage()
 	{
 		InitializeComponent();
@@ -53,7 +54,7 @@ public partial class WiFiPasswordsPage : Page
 	private void InitUI()
 	{
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.WifiPasswords}";
-		PlaceholderGrid.Children.Add(Placeholder); // Show the placeholder instead of an empty page
+		if (PlaceholderGrid.Children.Count == 0) PlaceholderGrid.Children.Add(Placeholder); // Show the placeholder instead of an empty page
 
 		try
 		{
@@ -128,6 +129,7 @@ public partial class WiFiPasswordsPage : Page
 
 	internal void LoadWiFiInfo(string path)
 	{
+		WiFiItemDisplayer.Children.Clear();
 		string[] files = Directory.GetFiles(path);
 		for (int i = 0; i < files.Length; i++)
 		{
@@ -138,7 +140,7 @@ public partial class WiFiPasswordsPage : Page
 
 			if (test != null)
 			{
-				WiFiItemDisplayer.Children.Add(new WiFiInfoItem(test));
+				WiFiItemDisplayer.Children.Add(new WiFiInfoItem(test, showKeys));
 			}
 			streamReader.Close();
 		}
@@ -238,4 +240,11 @@ public partial class WiFiPasswordsPage : Page
 			await ExportWiFiNetworkInfo(folderBrowserDialog.SelectedPath, false);
 		}
 	}
+
+	private void ShowBtn_Click(object sender, RoutedEventArgs e)
+	{
+		showKeys = !showKeys;
+		InitUI();
+		ShowBtn.Content = showKeys ? "\uF3F8" : "\uF3FC";
+    }
 }
