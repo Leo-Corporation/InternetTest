@@ -57,6 +57,8 @@ namespace InternetTest.UserControls
 				_ => "\uF8AC"
 			};
 
+			if (AdapterInfo.Name.Contains("Bluetooth")) AdapterIcon.Text = "\uF1DF";
+
 			StatusTxt.Text = AdapterInfo.Status switch
 			{
 				OperationalStatus.Up => Properties.Resources.ConnectedS,

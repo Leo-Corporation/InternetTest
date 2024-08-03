@@ -58,6 +58,8 @@ namespace InternetTest.Windows
 				_ => "\uF8AC"
 			};
 
+			if (AdapterInfo.Name.Contains("Bluetooth")) AdapterIcon.Text = "\uF1DF";
+
 			// Category 1: Most Important Items
 			var category1 = new Dictionary<string, object>
 			{
