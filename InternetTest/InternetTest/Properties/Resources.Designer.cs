@@ -61,6 +61,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View information about your network adapter.
+        /// </summary>
+        public static string AdapterDesc {
+            get {
+                return ResourceManager.GetString("AdapterDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Network adapters.
         /// </summary>
         public static string Adapters {
@@ -291,6 +300,15 @@ namespace InternetTest.Properties {
         public static string ConfidentialModeEnabled {
             get {
                 return ResourceManager.GetString("ConfidentialModeEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configuration.
+        /// </summary>
+        public static string Configuration {
+            get {
+                return ResourceManager.GetString("Configuration", resourceCulture);
             }
         }
         
@@ -1792,6 +1810,15 @@ namespace InternetTest.Properties {
         public static string PackageSent {
             get {
                 return ResourceManager.GetString("PackageSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Performance Metrics.
+        /// </summary>
+        public static string PerformanceMetrics {
+            get {
+                return ResourceManager.GetString("PerformanceMetrics", resourceCulture);
             }
         }
         
