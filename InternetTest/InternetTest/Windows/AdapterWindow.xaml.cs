@@ -23,8 +23,11 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
+using PeyrSharp.Core.Converters;
+using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace InternetTest.Windows
 {
@@ -40,11 +43,10 @@ namespace InternetTest.Windows
 			AdapterInfo = adapterInfo;
 			InitUI();
 		}
-
+		private string BoolToString(bool b) => b ? Properties.Resources.Yes : Properties.Resources.No;
 		private void InitUI()
 		{
 			NameTxt.Text = AdapterInfo.Name;
-			InfoTxt.Text = AdapterInfo.ToFormattedString();
 			AdapterIcon.Text = AdapterInfo.NetworkInterfaceType switch
 			{
 				NetworkInterfaceType.Tunnel => "\uF18E",
@@ -56,32 +58,78 @@ namespace InternetTest.Windows
 				_ => "\uF8AC"
 			};
 
-			HeadTxt.Text = $"{Properties.Resources.Name}\n" +
-				$"{Properties.Resources.InterfaceType}\n" +
-				$"{Properties.Resources.Status}\n" +
-				$"{Properties.Resources.IpVersion}\n" +
-				$"{Properties.Resources.DNSSuffix}\n" +
-				$"{Properties.Resources.MTU}\n" +
-				$"{Properties.Resources.DnsEnabled}\n" +
-				$"{Properties.Resources.DnsDynamicConfigured}\n" +
-				$"{Properties.Resources.ReceiveOnly}\n" +
-				$"{Properties.Resources.Multicast}\n" +
-				$"{Properties.Resources.Speed}\n" +
-				$"{Properties.Resources.TotalBytesReceived}\n" +
-				$"{Properties.Resources.TotalBytesSent}\n" +
-				$"{Properties.Resources.IncomingPacketsDiscarded}\n" +
-				$"{Properties.Resources.IncomingPacketsWithErrors}\n" +
-				$"{Properties.Resources.IncomingUnknownProtocolPackets}\n" +
-				$"{Properties.Resources.NonUnicastPacketsReceived}\n" +
-				$"{Properties.Resources.NonUnicastPacketsSent}\n" +
-				$"{Properties.Resources.OutgoingPacketsDiscarded}\n" +
-				$"{Properties.Resources.OutgoingPacketsWithErrors}\n" +
-				$"{Properties.Resources.OutputQueueLength}\n" +
-				$"{Properties.Resources.UnicastPacketsReceived}\n" +
-				$"{Properties.Resources.UnicastPacketsSent}";
+			// Category 1: Most Important Items
+			var category1 = new Dictionary<string, object>
+			{
+				{ Properties.Resources.DataConsumption, $"{Global.GetStorageUnit(AdapterInfo.BytesReceived + AdapterInfo.BytesSent).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.BytesReceived + AdapterInfo.BytesSent).Item1)}" },
+				{ Properties.Resources.InterfaceType, Global.GetInterfaceTypeName(AdapterInfo.NetworkInterfaceType) },
+				{ Properties.Resources.Status, AdapterInfo.Status switch { OperationalStatus.Up => Properties.Resources.ConnectedS, OperationalStatus.Down => Properties.Resources.Disconnected, _ => AdapterInfo.Status.ToString() } },
+				{ Properties.Resources.IpVersion, AdapterInfo.IpVersion },
+				{ Properties.Resources.Speed, $"{Global.GetStorageUnit(AdapterInfo.Speed).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.Speed).Item1)}/s" }
+			};
 
-			StatusTxt.Text = AdapterInfo.Status switch { OperationalStatus.Up => Properties.Resources.ConnectedS, OperationalStatus.Down => Properties.Resources.Disconnected, _ => AdapterInfo.Status.ToString() };
-			DataTxt.Text = $"{Global.GetStorageUnit(AdapterInfo.BytesReceived + AdapterInfo.BytesSent).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.BytesReceived + AdapterInfo.BytesSent).Item1)}";
+			// Category 2: Important Configuration Details
+			var category2 = new Dictionary<string, object>
+			{
+				{ Properties.Resources.DNSSuffix, AdapterInfo.DnsSuffix },
+				{ Properties.Resources.MTU, AdapterInfo.Mtu },
+				{ Properties.Resources.DnsEnabled, BoolToString(AdapterInfo.DnsEnabled) },
+				{ Properties.Resources.DnsDynamicConfigured, BoolToString(AdapterInfo.IsDynamicDnsEnabled) },
+				{ Properties.Resources.Multicast, BoolToString(AdapterInfo.SupportsMulticast) }
+			};
+
+			// Category 3: Performance and Error Metrics
+			var category3 = new Dictionary<string, object>
+			{
+				{ Properties.Resources.TotalBytesReceived, $"{Global.GetStorageUnit(AdapterInfo.BytesReceived).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.BytesReceived).Item1)}" },
+				{ Properties.Resources.TotalBytesSent, $"{Global.GetStorageUnit(AdapterInfo.BytesSent).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.BytesSent).Item1)}" },
+				{ Properties.Resources.IncomingPacketsDiscarded, AdapterInfo.IncomingPacketsDiscarded },
+				{ Properties.Resources.IncomingPacketsWithErrors, AdapterInfo.IncomingPacketsWithErrors },
+				{ Properties.Resources.IncomingUnknownProtocolPackets, AdapterInfo.IncomingUnknownProtocolPackets },
+				{ Properties.Resources.NonUnicastPacketsReceived, AdapterInfo.NonUnicastPacketsReceived },
+				{ Properties.Resources.NonUnicastPacketsSent, AdapterInfo.NonUnicastPacketsSent },
+				{ Properties.Resources.OutgoingPacketsDiscarded, AdapterInfo.OutgoingPacketsDiscarded },
+				{ Properties.Resources.OutgoingPacketsWithErrors, AdapterInfo.OutgoingPacketsWithErrors },
+				{ Properties.Resources.OutputQueueLength, AdapterInfo.OutputQueueLength },
+				{ Properties.Resources.UnicastPacketsReceived, AdapterInfo.UnicastPacketsReceived },
+				{ Properties.Resources.UnicastPacketsSent, AdapterInfo.UnicastPacketsSent }
+			};
+
+			int i = 0;
+			foreach (var category in category1)
+			{
+				StackPanel stackPanel = new() { Margin = new(5) };
+				stackPanel.Children.Add(new TextBlock() { FontSize = 12, Text = category.Key, Foreground = Global.GetBrushFromResource("Foreground2") });
+				stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value.ToString() });
+				Cat1Grid.Children.Add(stackPanel);
+				Grid.SetColumn(stackPanel, i % 2);
+				Grid.SetRow(stackPanel, i / 2);
+				i++;
+			}
+
+			i = 0;
+			foreach (var category in category2)
+			{
+				StackPanel stackPanel = new() { Margin = new(5) };
+				stackPanel.Children.Add(new TextBlock() { FontSize = 12, Text = category.Key, Foreground = Global.GetBrushFromResource("Foreground2") });
+				stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value.ToString() });
+				Cat2Grid.Children.Add(stackPanel);
+				Grid.SetColumn(stackPanel, i % 2);
+				Grid.SetRow(stackPanel, i / 2);
+				i++;
+			}
+
+			i = 0;
+			foreach (var category in category3)
+			{
+				StackPanel stackPanel = new() { Margin = new(5) };
+				stackPanel.Children.Add(new TextBlock() { FontSize = 12, Text = category.Key, Foreground = Global.GetBrushFromResource("Foreground2") });
+				stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value.ToString() });
+				Cat3Grid.Children.Add(stackPanel);
+				Grid.SetColumn(stackPanel, i % 2);
+				Grid.SetRow(stackPanel, i / 2);
+				i++;
+			}
 		}
 
 		private void CloseBtn_Click(object sender, RoutedEventArgs e)
@@ -92,6 +140,22 @@ namespace InternetTest.Windows
 		private void CopyBtn_Click(object sender, RoutedEventArgs e)
 		{
 			Clipboard.SetText(AdapterInfo.ToLongFormattedString());
+		}
+
+		bool cat2Expanded = false;
+		private void ExpandCat2Btn_Click(object sender, RoutedEventArgs e)
+		{
+			cat2Expanded = !cat2Expanded;
+			ExpandCat2Btn.Content = cat2Expanded ? "\uF2B7" : "\uF2A4";
+			Cat2Grid.Visibility = cat2Expanded ? Visibility.Visible : Visibility.Collapsed;
+		}
+
+		bool cat3Expanded = false;
+		private void ExpandCat3Btn_Click(object sender, RoutedEventArgs e)
+		{
+			cat3Expanded = !cat3Expanded;
+			ExpandCat3Btn.Content = cat3Expanded ? "\uF2B7" : "\uF2A4";
+			Cat3Grid.Visibility = cat3Expanded ? Visibility.Visible : Visibility.Collapsed;
 		}
 	}
 }
