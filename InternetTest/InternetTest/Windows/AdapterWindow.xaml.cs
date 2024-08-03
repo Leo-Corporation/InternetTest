@@ -63,7 +63,7 @@ namespace InternetTest.Windows
 			{
 				{ Properties.Resources.DataConsumption, $"{Global.GetStorageUnit(AdapterInfo.BytesReceived + AdapterInfo.BytesSent).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.BytesReceived + AdapterInfo.BytesSent).Item1)}" },
 				{ Properties.Resources.InterfaceType, Global.GetInterfaceTypeName(AdapterInfo.NetworkInterfaceType) },
-				{ Properties.Resources.Status, AdapterInfo.Status switch { OperationalStatus.Up => Properties.Resources.ConnectedS, OperationalStatus.Down => Properties.Resources.Disconnected, _ => AdapterInfo.Status.ToString() } },
+				{ Properties.Resources.Status, AdapterInfo.Status },
 				{ Properties.Resources.IpVersion, AdapterInfo.IpVersion },
 				{ Properties.Resources.Speed, $"{Global.GetStorageUnit(AdapterInfo.Speed).Item2:0.00} {Global.UnitToString(Global.GetStorageUnit(AdapterInfo.Speed).Item1)}/s" }
 			};
@@ -99,8 +99,18 @@ namespace InternetTest.Windows
 			foreach (var category in category1)
 			{
 				StackPanel stackPanel = new() { Margin = new(5) };
-				stackPanel.Children.Add(new TextBlock() { FontSize = 12, Text = category.Key, Foreground = Global.GetBrushFromResource("Foreground2") });
-				stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value.ToString() });
+				
+				if (category.Key == Properties.Resources.Status)
+				{
+					stackPanel.Children.Add(new TextBlock() { FontSize = 12, Text = category.Key, Foreground = Global.GetBrushFromResource("Foreground2") });
+					stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value switch { OperationalStatus.Up => Properties.Resources.ConnectedS, OperationalStatus.Down => Properties.Resources.Disconnected, _ => AdapterInfo.Status.ToString() }, Foreground = Global.GetBrushFromResource(category.Value switch { OperationalStatus.Down => "Red", OperationalStatus.Unknown => "Gray", OperationalStatus.Up => "Green", _ => "Orange" }) });
+				}
+				else
+				{
+					stackPanel.Children.Add(new TextBlock() { FontSize = 12, Text = category.Key, Foreground = Global.GetBrushFromResource("Foreground2") });
+					stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value.ToString() });
+				}
+
 				Cat1Grid.Children.Add(stackPanel);
 				Grid.SetColumn(stackPanel, i % 2);
 				Grid.SetRow(stackPanel, i / 2);
