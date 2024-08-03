@@ -8,6 +8,7 @@
     <SolidColorBrush x:Key="Background3" Color="#141428" />
     <SolidColorBrush x:Key="CardBackground" Color="#141446" />
     <SolidColorBrush x:Key="Foreground1" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Foreground2" Color="#DBDBD7" />
     <SolidColorBrush x:Key="WindowButtonsHover1" Color="#141428" />
     <SolidColorBrush x:Key="WindowButtonsPressed1" Color="#1E1E32" />
     <SolidColorBrush x:Key="WindowButtonsHoverForeground1" Color="#ffffff" />
