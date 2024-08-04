@@ -165,6 +165,23 @@
                     <ToolTip Content="{x:Static lang:Resources.Save}" />
                 </Button.ToolTip>
             </Button>
+            <Button
+                x:Name="ResetBtn"
+                Margin="5 0 0 0"
+                Padding="5 2"
+                Background="{DynamicResource LightAccent}"
+                BorderThickness="0"
+                Click="ResetBtn_Click"
+                Content="&#xF34D;"
+                Cursor="Hand"
+                FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                FontWeight="ExtraBold"
+                Foreground="{DynamicResource Accent}"
+                Style="{DynamicResource PrimaryButton}">
+                <Button.ToolTip>
+                    <ToolTip Content="{x:Static lang:Resources.Reset}" />
+                </Button.ToolTip>
+            </Button>
         </StackPanel>
 
         <WrapPanel

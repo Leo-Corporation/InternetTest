@@ -1047,4 +1047,16 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="ShowHideTimedOut" xml:space="preserve">
     <value>Afficher/masquer les éléments hors délai</value>
   </data>
+  <data name="PerformanceMetrics" xml:space="preserve">
+    <value>Mesures de performance</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="AdapterDesc" xml:space="preserve">
+    <value>Afficher des informations sur votre adaptateur réseau</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
 </root>

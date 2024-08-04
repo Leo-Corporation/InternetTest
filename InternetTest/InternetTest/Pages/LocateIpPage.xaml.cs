@@ -58,7 +58,7 @@ public partial class LocateIpPage : Page
 				LocateIP(""); // Get the current IP of the user
 			}
 		}
-		catch (Exception) { } // Cancel if there is no internet connection
+		catch { } // Cancel if there is no internet connection
 	}
 
 	internal void ToggleConfidentialMode(bool toggle)
@@ -170,5 +170,27 @@ public partial class LocateIpPage : Page
 	private void MyIpBtn_Click(object sender, RoutedEventArgs e)
 	{
 		LocateIP(""); // Empty query will return the user's public IP
+	}
+
+	private void ResetUI()
+	{
+		StatusIconTxt.Text = "\uF4AB";
+		StatusIconTxt.Foreground = Global.GetBrushFromResource("Gray");
+		MyIPTxt.Text = Properties.Resources.IPShowHere2;
+		CountryTxt.Text = "N/A";
+		RegionTxt.Text = "N/A";
+		CityTxt.Text = "N/A";
+		ZipCodeTxt.Text = "N/A";
+		LatTxt.Text = "N/A";
+		LongitudeTxt.Text = "N/A";
+		TimezoneTxt.Text = "N/A";
+		IspTxt.Text = "N/A";
+		IpTxt.Text = "";
+	}
+
+	private void ResetBtn_Click(object sender, RoutedEventArgs e)
+	{
+		ResetUI();
+		CurrentIP = null;
 	}
 }

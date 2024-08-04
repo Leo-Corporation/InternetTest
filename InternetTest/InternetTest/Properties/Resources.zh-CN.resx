@@ -1038,4 +1038,16 @@
   <data name="ShowHideTimedOut" xml:space="preserve">
     <value>显示/隐藏超时项目</value>
   </data>
+  <data name="PerformanceMetrics" xml:space="preserve">
+    <value>性能指标</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="AdapterDesc" xml:space="preserve">
+    <value>查看网络适配器的相关信息</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>重置</value>
+  </data>
 </root>

@@ -61,6 +61,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View information about your network adapter.
+        /// </summary>
+        public static string AdapterDesc {
+            get {
+                return ResourceManager.GetString("AdapterDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Network adapters.
         /// </summary>
         public static string Adapters {
@@ -291,6 +300,15 @@ namespace InternetTest.Properties {
         public static string ConfidentialModeEnabled {
             get {
                 return ResourceManager.GetString("ConfidentialModeEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configuration.
+        /// </summary>
+        public static string Configuration {
+            get {
+                return ResourceManager.GetString("Configuration", resourceCulture);
             }
         }
         
@@ -1796,6 +1814,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Performance Metrics.
+        /// </summary>
+        public static string PerformanceMetrics {
+            get {
+                return ResourceManager.GetString("PerformanceMetrics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Physical Address.
         /// </summary>
         public static string PhysicalAddress {
@@ -1954,6 +1981,15 @@ namespace InternetTest.Properties {
         public static string Requests {
             get {
                 return ResourceManager.GetString("Requests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        public static string Reset {
+            get {
+                return ResourceManager.GetString("Reset", resourceCulture);
             }
         }
         

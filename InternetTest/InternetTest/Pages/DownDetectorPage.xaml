@@ -126,7 +126,23 @@
                 Style="{DynamicResource PrimaryButton}" />
 
         </StackPanel>
-
+        <Button
+            x:Name="ClearItemsBtn"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="10 5"
+            Padding="5"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Background="{DynamicResource LightAccent}"
+            BorderThickness="0"
+            Click="ClearItemsBtn_Click"
+            Content="&#xF34D;"
+            Cursor="Hand"
+            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+            FontWeight="ExtraBold"
+            Foreground="{DynamicResource Accent}"
+            Style="{DynamicResource PrimaryButton}" />
         <StackPanel
             x:Name="WebsiteDisplayer"
             Grid.Row="2"
