@@ -1056,4 +1056,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="AdapterDesc" xml:space="preserve">
     <value>Visualizzare le informazioni sulla scheda di rete</value>
   </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
 </root>

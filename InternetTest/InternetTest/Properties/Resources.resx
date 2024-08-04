@@ -1056,4 +1056,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="AdapterDesc" xml:space="preserve">
     <value>View information about your network adapter</value>
   </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
 </root>
