@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
-using PeyrSharp.Core.Converters;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using System.Windows;
@@ -101,7 +100,7 @@ namespace InternetTest.Windows
 			foreach (var category in category1)
 			{
 				StackPanel stackPanel = new() { Margin = new(5) };
-				
+
 				if (category.Key == Properties.Resources.Status)
 				{
 					stackPanel.Children.Add(new TextBlock() { FontSize = 12, Text = category.Key, Foreground = Global.GetBrushFromResource("Foreground2") });

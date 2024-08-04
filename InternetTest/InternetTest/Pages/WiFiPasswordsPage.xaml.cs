@@ -246,5 +246,5 @@ public partial class WiFiPasswordsPage : Page
 		showKeys = !showKeys;
 		InitUI();
 		ShowBtn.Content = showKeys ? "\uF3F8" : "\uF3FC";
-    }
+	}
 }

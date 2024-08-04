@@ -163,5 +163,5 @@ namespace InternetTest.Pages
 			Global.Settings.DownDetectorWebsites = Websites;
 			SettingsManager.Save();
 		}
-    }
+	}
 }

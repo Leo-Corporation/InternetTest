@@ -38,7 +38,7 @@ public partial class WiFiInfoItem : UserControl
 {
 	bool codeInjected = !Global.Settings.UseSynethia;
 	private WLANProfile WLANProfile { get; init; }
-	public WiFiInfoItem(WLANProfile profile, bool showKey=false)
+	public WiFiInfoItem(WLANProfile profile, bool showKey = false)
 	{
 		InitializeComponent();
 		WLANProfile = profile;
