@@ -155,5 +155,13 @@ namespace InternetTest.Pages
 		{
 			ClearBtn.Visibility = WebsiteTxt.Text.Length > 0 ? Visibility.Visible : Visibility.Collapsed;
 		}
-	}
+
+		private void ClearItemsBtn_Click(object sender, RoutedEventArgs e)
+		{
+			WebsiteDisplayer.Children.Clear();
+			Websites.Clear();
+			Global.Settings.DownDetectorWebsites = Websites;
+			SettingsManager.Save();
+		}
+    }
 }
