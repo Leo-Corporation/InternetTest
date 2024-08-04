@@ -33,7 +33,7 @@
 
 InternetTest Pro - Your Windows connection toolkit. Monitor, diagnose, and optimize internet connectivity with ease. Empowering users with actionable insights, from network diagnostics to WiFi password recovery. Seamlessly enhance your online experience anytime, anywhere.
 
-✨ **New:** Introducing [InternetTest CLI](https://github.com/Leo-Corporation/InternetTestCLI), a command line interface that provides the same features of InternetTest Pro. ✨
+✨ **New:** Introducing [InternetTest CLI](https://github.com/Leo-Corporation/InternetTestCLI), a command line interface that provides the same features of InternetTest Pro.
 
 ## Features
 
