@@ -808,7 +808,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Frequenza</value>
   </data>
   <data name="Connect" xml:space="preserve">
-    <value>Conetti</value>
+    <value>Connetti</value>
   </data>
   <data name="ScanningInProgress" xml:space="preserve">
     <value>InternetTest Pro sta eseguendo la scansione delle reti vicine, attendi.</value>
@@ -1048,15 +1048,15 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Visualizza/nascondi elementi scaduti</value>
   </data>
   <data name="PerformanceMetrics" xml:space="preserve">
-    <value>Metriche di prestazione</value>
+    <value>Metriche prestazioni</value>
   </data>
   <data name="Configuration" xml:space="preserve">
     <value>Configurazione</value>
   </data>
   <data name="AdapterDesc" xml:space="preserve">
-    <value>Visualizzare le informazioni sulla scheda di rete</value>
+    <value>Visualizza info sulla scheda di rete</value>
   </data>
   <data name="Reset" xml:space="preserve">
-    <value>Reset</value>
+    <value>Ripristina</value>
   </data>
 </root>
