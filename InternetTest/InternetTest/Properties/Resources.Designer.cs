@@ -2618,6 +2618,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to check for updates.
+        /// </summary>
+        public static string UnableToCheckUpdates {
+            get {
+                return ResourceManager.GetString("UnableToCheckUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unicast Packets Received.
         /// </summary>
         public static string UnicastPacketsReceived {
