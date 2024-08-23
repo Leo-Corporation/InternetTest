@@ -287,10 +287,16 @@ public static class Global
 
 	public async static Task<IPInfo?> GetIPInfoAsync(string ip)
 	{
-		HttpClient httpClient = new();
-		string result = await httpClient.GetStringAsync($"http://ip-api.com/json/{ip}");
-
-		return JsonSerializer.Deserialize<IPInfo>(result);
+		try
+		{
+			HttpClient httpClient = new();
+			string result = await httpClient.GetStringAsync($"http://ip-api.com/json/{ip}");
+			return JsonSerializer.Deserialize<IPInfo>(result);
+		}
+		catch
+		{
+			return null;
+		}
 	}
 
 	public static bool IsIpValid(string ip)
