@@ -1059,4 +1059,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="Reset" xml:space="preserve">
     <value>Reset</value>
   </data>
+  <data name="UnableToCheckUpdates" xml:space="preserve">
+    <value>Unable to check for updates</value>
+  </data>
 </root>

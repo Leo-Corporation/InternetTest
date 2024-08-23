@@ -82,7 +82,7 @@ public partial class HomePage : Page
 		LoadNetworkCard();
 
 		// Load "My IP" section
-		ip = (await Global.GetIPInfoAsync("")).Query ?? "";
+		ip = (await Global.GetIPInfoAsync(""))?.Query ?? "";
 	}
 
 	private async void RefreshStatusBtn_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -127,7 +127,7 @@ public partial class HomePage : Page
 	string ip = "";
 	private async void RefreshMyIpBtn_Click(object sender, System.Windows.RoutedEventArgs e)
 	{
-		ip = (await Global.GetIPInfoAsync("")).Query ?? "";
+		ip = (await Global.GetIPInfoAsync(""))?.Query ?? "";
 	}
 
 	private void MyIpBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)

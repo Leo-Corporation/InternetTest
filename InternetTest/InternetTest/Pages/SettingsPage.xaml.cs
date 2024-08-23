@@ -148,30 +148,37 @@ public partial class SettingsPage : Page
 
 	private async void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
 	{
-		string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink);
-		if (Update.IsAvailable(Global.Version, lastVersion))
+		try
 		{
-			UpdateTxt.Text = Properties.Resources.AvailableUpdates;
+			string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink);
+			if (Update.IsAvailable(Global.Version, lastVersion))
+			{
+				UpdateTxt.Text = Properties.Resources.AvailableUpdates;
 #if PORTABLE
 				MessageBox.Show(Properties.Resources.PortableNoAutoUpdates, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.OK, MessageBoxImage.Information);
 				return;
 #else
-			if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
-			{
-				return;
-			}
+				if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+				{
+					return;
+				}
 #endif
-			// If the user wants to proceed.
-			SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
-			HistoryManager.Save(Global.History);
-			SettingsManager.Save();
+				// If the user wants to proceed.
+				SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
+				HistoryManager.Save(Global.History);
+				SettingsManager.Save();
 
-			Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
-			Application.Current.Shutdown(); // Close
+				Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+				Application.Current.Shutdown(); // Close
+			}
+			else
+			{
+				UpdateTxt.Text = Properties.Resources.UpToDate;
+			}
 		}
-		else
+		catch
 		{
-			UpdateTxt.Text = Properties.Resources.UpToDate;
+			UpdateTxt.Text = Properties.Resources.UnableToCheckUpdates;
 		}
 	}
 
