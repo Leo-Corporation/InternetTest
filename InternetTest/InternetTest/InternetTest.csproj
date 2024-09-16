@@ -41,7 +41,7 @@
 	  <PackageReference Include="PeyrSharp.Core" Version="2.1.0.2312" />
 	  <PackageReference Include="PeyrSharp.Env" Version="2.1.0.2312" />
 	  <PackageReference Include="QRCoder" Version="1.6.0" />
-	  <PackageReference Include="RestSharp" Version="111.4.1" />
+	  <PackageReference Include="RestSharp" Version="112.0.0" />
 	  <PackageReference Include="Synethia" Version="1.1.1.2302" />
 	  <PackageReference Include="Whois" Version="3.0.1" />
 	</ItemGroup>
