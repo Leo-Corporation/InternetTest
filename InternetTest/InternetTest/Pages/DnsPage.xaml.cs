@@ -211,11 +211,24 @@ public partial class DnsPage : Page
 	{
 		DnsInfoGrid.Visibility = Visibility.Visible;
 		DnsCacheGrid.Visibility = Visibility.Collapsed;
-    }
+	}
 
 	private void DnsCacheBtn_Checked(object sender, RoutedEventArgs e)
 	{
 		DnsInfoGrid.Visibility = Visibility.Collapsed;
 		DnsCacheGrid.Visibility = Visibility.Visible;
+	}
+
+	private async void GetDnsCacheBtn_Click(object sender, RoutedEventArgs e)
+	{
+		ItemDisplayer.Children.Clear();
+		var cache = await Global.GetDnsCache();
+		if (cache != null)
+		{
+			for (int i = 0; i < cache.Length; i++)
+			{
+				ItemDisplayer.Children.Add(new DnsCacheItem(cache[i]));
+			}
+		}
 	}
 }

@@ -325,7 +325,89 @@
             </Grid>
             <StackPanel x:Name="RecordDisplayer" Grid.Row="6" />
         </Grid>
-        <Grid x:Name="DnsCacheGrid" Grid.Row="2" />
+        <Grid
+            x:Name="DnsCacheGrid"
+            Grid.Row="2"
+            Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button
+                x:Name="GetDnsCacheBtn"
+                Margin="5"
+                Padding="5 2"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Background="{DynamicResource Accent}"
+                BorderThickness="0"
+                Click="GetDnsCacheBtn_Click"
+                Content="{x:Static lang:Resources.GetCache}"
+                Cursor="Hand"
+                FontWeight="ExtraBold"
+                Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                Style="{DynamicResource PrimaryButton}" />
+            <Border
+                Grid.Row="1"
+                Background="{DynamicResource Background1}"
+                BorderBrush="{DynamicResource Background2}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+
+                    <Border
+                        BorderBrush="{DynamicResource Background2}"
+                        BorderThickness="0 0 0 1">
+                        <Grid Margin="10 15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                FontSize="14"
+                                FontWeight="Bold"
+                                Text="{x:Static lang:Resources.Entry}" />
+                            <TextBlock
+                                Grid.Column="1"
+                                FontSize="14"
+                                FontWeight="Bold"
+                                Text="{x:Static lang:Resources.RecordName}" />
+                            <TextBlock
+                                Grid.Column="2"
+                                FontSize="14"
+                                FontWeight="Bold"
+                                Text="{x:Static lang:Resources.Type}" />
+                            <TextBlock
+                                Grid.Column="3"
+                                FontSize="14"
+                                FontWeight="Bold"
+                                Text="{x:Static lang:Resources.Status}" />
+                            <TextBlock
+                                Grid.Column="4"
+                                FontSize="14"
+                                FontWeight="Bold"
+                                Text="{x:Static lang:Resources.Data}" />
+                        </Grid>
+
+                    </Border>
+                    <StackPanel
+                        x:Name="ItemDisplayer"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="5" />
+                </Grid>
+            </Border>
+
+
+        </Grid>
     </Grid>
 
 </Page>
