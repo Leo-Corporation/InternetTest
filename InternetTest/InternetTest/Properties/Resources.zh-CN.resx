@@ -1053,4 +1053,13 @@
   <data name="UnableToCheckUpdates" xml:space="preserve">
     <value>无法检查更新</value>
   </data>
+  <data name="DnsCache" xml:space="preserve">
+    <value>DNS 缓存</value>
+  </data>
+  <data name="GetCache" xml:space="preserve">
+    <value>获取缓存</value>
+  </data>
+  <data name="FlushDNS" xml:space="preserve">
+    <value>清除 DNS 缓存</value>
+  </data>
 </root>

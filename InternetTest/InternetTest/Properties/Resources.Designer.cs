@@ -565,6 +565,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DNS Cache.
+        /// </summary>
+        public static string DnsCache {
+            get {
+                return ResourceManager.GetString("DnsCache", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dynamically configured DNS.
         /// </summary>
         public static string DnsDynamicConfigured {
@@ -847,6 +856,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Flush DNS cache.
+        /// </summary>
+        public static string FlushDNS {
+            get {
+                return ResourceManager.GetString("FlushDNS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Frequency.
         /// </summary>
         public static string Frequency {
@@ -879,6 +897,15 @@ namespace InternetTest.Properties {
         public static string GatewayIPv6 {
             get {
                 return ResourceManager.GetString("GatewayIPv6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get cache.
+        /// </summary>
+        public static string GetCache {
+            get {
+                return ResourceManager.GetString("GetCache", resourceCulture);
             }
         }
         

@@ -1062,4 +1062,13 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="UnableToCheckUpdates" xml:space="preserve">
     <value>Impossibile controllare gli aggiornamenti</value>
   </data>
+  <data name="DnsCache" xml:space="preserve">
+    <value>Cache DNS</value>
+  </data>
+  <data name="GetCache" xml:space="preserve">
+    <value>Ottenere la cache</value>
+  </data>
+  <data name="FlushDNS" xml:space="preserve">
+    <value>Svuotare la cache DNS</value>
+  </data>
 </root>
