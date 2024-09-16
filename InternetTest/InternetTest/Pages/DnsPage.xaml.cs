@@ -206,4 +206,16 @@ public partial class DnsPage : Page
 			outputFile.Write(csvFile);
 		}
 	}
+
+	private void DnsInfoBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		DnsInfoGrid.Visibility = Visibility.Visible;
+		DnsCacheGrid.Visibility = Visibility.Collapsed;
+    }
+
+	private void DnsCacheBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		DnsInfoGrid.Visibility = Visibility.Collapsed;
+		DnsCacheGrid.Visibility = Visibility.Visible;
+	}
 }

@@ -19,12 +19,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
+
         </Grid.RowDefinitions>
 
         <StackPanel Margin="10" Orientation="Horizontal">
@@ -43,98 +39,75 @@
                 FontWeight="ExtraBold" />
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Border
-                Grid.Row="2"
-                Width="300"
-                Margin="10 3 3 3"
-                HorizontalAlignment="Left"
-                Background="{DynamicResource CardBackground}"
-                CornerRadius="5">
-                <Border.Effect>
-                    <DropShadowEffect
-                        BlurRadius="15"
-                        Opacity="0.2"
-                        ShadowDepth="0"
-                        Color="{DynamicResource AccentColor}" />
-                </Border.Effect>
+        <StackPanel
+            Grid.Row="1"
+            Margin="10 0 0 5"
+            Orientation="Horizontal">
+            <RadioButton
+                x:Name="DnsInfoBtn"
+                Margin="0 2"
+                Padding="5"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Stretch"
+                Background="Transparent"
+                BorderThickness="0"
+                Checked="DnsInfoBtn_Checked"
+                Foreground="{DynamicResource Accent}"
+                Style="{DynamicResource TabRadioButton}">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <TextBox
-                        x:Name="SiteTxt"
-                        Margin="5"
-                        Padding="1"
-                        d:Text="leocorporation.dev"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        FontWeight="Bold"
-                        Foreground="{DynamicResource DarkGray}"
-                        Keyboard.KeyUp="SiteTxt_KeyUp"
-                        TextChanged="SiteTxt_TextChanged" />
-                    <Button
-                        x:Name="DismissBtn"
-                        Grid.Column="1"
-                        Margin="2"
-                        Padding="4"
-                        HorizontalAlignment="Stretch"
+                    <TextBlock
                         VerticalAlignment="Center"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Click="DismissBtn_Click"
-                        Content="&#xF36A;"
-                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                        Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource ToolButton}"
-                        Visibility="Collapsed">
-                        <Button.ToolTip>
-                            <ToolTip Content="{x:Static lang:Resources.Clear}" />
-                        </Button.ToolTip>
-                    </Button>
+                        FontFamily="/Fonts/#FluentSystemIcons-Regular"
+                        FontSize="14"
+                        Text="&#xF58A;" />
+                    <TextBlock
+                        Grid.Column="1"
+                        Margin="5 0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="11"
+                        FontWeight="ExtraBold"
+                        Text="{x:Static lang:Resources.DNS}" />
                 </Grid>
-            </Border>
-            <Button
-                x:Name="GetDnsInfoBtn"
-                Margin="5"
-                Padding="5 2"
+            </RadioButton>
+            <RadioButton
+                x:Name="DnsCacheBtn"
+                Margin="10 2 0 2"
+                Padding="5"
                 VerticalAlignment="Center"
-                Background="{DynamicResource Accent}"
+                HorizontalContentAlignment="Stretch"
+                Background="Transparent"
                 BorderThickness="0"
-                Click="GetDnsInfoBtn_Click"
-                Content="{x:Static lang:Resources.GetDnsInfo}"
-                Cursor="Hand"
-                FontWeight="ExtraBold"
-                Foreground="{DynamicResource WindowButtonsHoverForeground1}"
-                Style="{DynamicResource PrimaryButton}" />
-
-        </StackPanel>
-        <StackPanel
-            Grid.Row="2"
-            Margin="10"
-            Orientation="Horizontal">
-            <TextBlock
-                VerticalAlignment="Center"
-                FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                FontSize="16"
+                Checked="DnsCacheBtn_Checked"
                 Foreground="{DynamicResource Accent}"
-                Text="&#xF4A4;" />
-            <TextBlock
-                Margin="5 0 0 0"
-                VerticalAlignment="Center"
-                FontSize="14"
-                FontWeight="ExtraBold"
-                Text="{x:Static lang:Resources.Details}" />
+                Style="{DynamicResource TabRadioButton}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontFamily="/Fonts/#FluentSystemIcons-Regular"
+                        FontSize="14"
+                        Text="&#xF904;" />
+                    <TextBlock
+                        Grid.Column="1"
+                        Margin="5 0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="11"
+                        FontWeight="ExtraBold"
+                        Text="{x:Static lang:Resources.DnsCache}" />
+                </Grid>
+            </RadioButton>
         </StackPanel>
-        <Grid
-            x:Name="DetailsGrid"
-            Grid.Row="3"
-            Margin="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+
+        <Grid x:Name="DnsInfoGrid" Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -142,114 +115,217 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <TextBlock FontWeight="Bold" Text="{x:Static lang:Resources.URL}" />
-            <TextBlock
+            <StackPanel Orientation="Horizontal">
+                <Border
+                    Grid.Row="2"
+                    Width="300"
+                    Margin="10 3 3 3"
+                    HorizontalAlignment="Left"
+                    Background="{DynamicResource CardBackground}"
+                    CornerRadius="5">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="15"
+                            Opacity="0.2"
+                            ShadowDepth="0"
+                            Color="{DynamicResource AccentColor}" />
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox
+                            x:Name="SiteTxt"
+                            Margin="5"
+                            Padding="1"
+                            d:Text="leocorporation.dev"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource DarkGray}"
+                            Keyboard.KeyUp="SiteTxt_KeyUp"
+                            TextChanged="SiteTxt_TextChanged" />
+                        <Button
+                            x:Name="DismissBtn"
+                            Grid.Column="1"
+                            Margin="2"
+                            Padding="4"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Click="DismissBtn_Click"
+                            Content="&#xF36A;"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            Foreground="{DynamicResource Foreground1}"
+                            Style="{DynamicResource ToolButton}"
+                            Visibility="Collapsed">
+                            <Button.ToolTip>
+                                <ToolTip Content="{x:Static lang:Resources.Clear}" />
+                            </Button.ToolTip>
+                        </Button>
+                    </Grid>
+                </Border>
+                <Button
+                    x:Name="GetDnsInfoBtn"
+                    Margin="5"
+                    Padding="5 2"
+                    VerticalAlignment="Center"
+                    Background="{DynamicResource Accent}"
+                    BorderThickness="0"
+                    Click="GetDnsInfoBtn_Click"
+                    Content="{x:Static lang:Resources.GetDnsInfo}"
+                    Cursor="Hand"
+                    FontWeight="ExtraBold"
+                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                    Style="{DynamicResource PrimaryButton}" />
+
+            </StackPanel>
+            <StackPanel
                 Grid.Row="1"
-                FontWeight="Bold"
-                Text="{x:Static lang:Resources.IPAddress}" />
-            <TextBlock
+                Margin="10"
+                Orientation="Horizontal">
+                <TextBlock
+                    VerticalAlignment="Center"
+                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                    FontSize="16"
+                    Foreground="{DynamicResource Accent}"
+                    Text="&#xF4A4;" />
+                <TextBlock
+                    Margin="5 0 0 0"
+                    VerticalAlignment="Center"
+                    FontSize="14"
+                    FontWeight="ExtraBold"
+                    Text="{x:Static lang:Resources.Details}" />
+            </StackPanel>
+            <Grid
+                x:Name="DetailsGrid"
                 Grid.Row="2"
-                FontWeight="Bold"
-                Text="{x:Static lang:Resources.CreationDate}" />
-            <TextBlock
-                Grid.Row="3"
-                FontWeight="Bold"
-                Text="{x:Static lang:Resources.ExpirationDate}" />
-            <TextBlock
-                Grid.Row="4"
-                FontWeight="Bold"
-                Text="{x:Static lang:Resources.Registrant}" />
-            <TextBlock
-                Grid.Row="5"
-                FontWeight="Bold"
-                Text="{x:Static lang:Resources.Status}" />
-            <TextBlock x:Name="UrlTxt" Grid.Column="1" />
-            <TextBlock
-                x:Name="IpTxt"
-                Grid.Row="1"
-                Grid.Column="1" />
-            <TextBlock
-                x:Name="CreationTxt"
+                Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock FontWeight="Bold" Text="{x:Static lang:Resources.URL}" />
+                <TextBlock
+                    Grid.Row="1"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.IPAddress}" />
+                <TextBlock
+                    Grid.Row="2"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.CreationDate}" />
+                <TextBlock
+                    Grid.Row="3"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.ExpirationDate}" />
+                <TextBlock
+                    Grid.Row="4"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.Registrant}" />
+                <TextBlock
+                    Grid.Row="5"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.Status}" />
+                <TextBlock x:Name="UrlTxt" Grid.Column="1" />
+                <TextBlock
+                    x:Name="IpTxt"
+                    Grid.Row="1"
+                    Grid.Column="1" />
+                <TextBlock
+                    x:Name="CreationTxt"
+                    Grid.Row="2"
+                    Grid.Column="1" />
+                <TextBlock
+                    x:Name="ExpTxt"
+                    Grid.Row="3"
+                    Grid.Column="1" />
+                <TextBlock
+                    x:Name="RegistrantTxt"
+                    Grid.Row="4"
+                    Grid.Column="1" />
+                <TextBlock
+                    x:Name="StatusTxt"
+                    Grid.Row="5"
+                    Grid.Column="1" />
+            </Grid>
+            <StackPanel
+                x:Name="Placeholder"
                 Grid.Row="2"
-                Grid.Column="1" />
-            <TextBlock
-                x:Name="ExpTxt"
-                Grid.Row="3"
-                Grid.Column="1" />
-            <TextBlock
-                x:Name="RegistrantTxt"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                    FontSize="36"
+                    Text="&#xFB59;" />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.DnsInfoWillShowHere}" />
+            </StackPanel>
+            <StackPanel
+                x:Name="InformationHeader"
                 Grid.Row="4"
-                Grid.Column="1" />
-            <TextBlock
-                x:Name="StatusTxt"
-                Grid.Row="5"
-                Grid.Column="1" />
+                Margin="10"
+                Orientation="Horizontal">
+                <TextBlock
+                    VerticalAlignment="Center"
+                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                    FontSize="16"
+                    Foreground="{DynamicResource Accent}"
+                    Text="&#xF4A4;" />
+                <TextBlock
+                    Margin="5 0 0 0"
+                    VerticalAlignment="Center"
+                    FontSize="14"
+                    FontWeight="ExtraBold"
+                    Text="{x:Static lang:Resources.DNSInfo}" />
+            </StackPanel>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <WrapPanel
+                    x:Name="FiltersDisplayer"
+                    Margin="5 0 0 0"
+                    Orientation="Horizontal" />
+                <Button
+                    x:Name="SaveCsvBtn"
+                    Grid.Column="1"
+                    Margin="5 0"
+                    Padding="5 2"
+                    VerticalAlignment="Center"
+                    Background="{DynamicResource LightAccent}"
+                    BorderThickness="0"
+                    Click="SaveCsvBtn_Click"
+                    Content="&#xF151;"
+                    Cursor="Hand"
+                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                    FontWeight="ExtraBold"
+                    Foreground="{DynamicResource Accent}"
+                    Style="{DynamicResource PrimaryButton}"
+                    Visibility="Collapsed">
+                    <Button.ToolTip>
+                        <ToolTip Content="{x:Static lang:Resources.ExportToCSV}" />
+                    </Button.ToolTip>
+                </Button>
+            </Grid>
+            <StackPanel x:Name="RecordDisplayer" Grid.Row="6" />
         </Grid>
-        <StackPanel
-            x:Name="Placeholder"
-            Grid.Row="3"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center">
-            <TextBlock
-                HorizontalAlignment="Center"
-                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
-                FontSize="36"
-                Text="&#xFB59;" />
-            <TextBlock
-                HorizontalAlignment="Center"
-                FontWeight="Bold"
-                Text="{x:Static lang:Resources.DnsInfoWillShowHere}" />
-        </StackPanel>
-        <StackPanel
-            x:Name="InformationHeader"
-            Grid.Row="4"
-            Margin="10"
-            Orientation="Horizontal">
-            <TextBlock
-                VerticalAlignment="Center"
-                FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                FontSize="16"
-                Foreground="{DynamicResource Accent}"
-                Text="&#xF4A4;" />
-            <TextBlock
-                Margin="5 0 0 0"
-                VerticalAlignment="Center"
-                FontSize="14"
-                FontWeight="ExtraBold"
-                Text="{x:Static lang:Resources.DNSInfo}" />
-        </StackPanel>
-        <Grid Grid.Row="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <WrapPanel
-                x:Name="FiltersDisplayer"
-                Margin="5 0 0 0"
-                Orientation="Horizontal" />
-            <Button
-                x:Name="SaveCsvBtn"
-                Grid.Column="1"
-                Margin="5 0"
-                Padding="5 2"
-                VerticalAlignment="Center"
-                Background="{DynamicResource LightAccent}"
-                BorderThickness="0"
-                Click="SaveCsvBtn_Click"
-                Content="&#xF151;"
-                Cursor="Hand"
-                FontFamily="../Fonts/#FluentSystemIcons-Regular"
-                FontWeight="ExtraBold"
-                Foreground="{DynamicResource Accent}"
-                Style="{DynamicResource PrimaryButton}"
-                Visibility="Collapsed">
-                <Button.ToolTip>
-                    <ToolTip Content="{x:Static lang:Resources.ExportToCSV}" />
-                </Button.ToolTip>
-            </Button>
-        </Grid>
-        <StackPanel x:Name="RecordDisplayer" Grid.Row="6" />
+        <Grid x:Name="DnsCacheGrid" Grid.Row="2" />
     </Grid>
 
 </Page>
