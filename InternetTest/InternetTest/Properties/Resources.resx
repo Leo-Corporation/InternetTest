@@ -1083,4 +1083,10 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="Data" xml:space="preserve">
     <value>Data</value>
   </data>
+  <data name="FlushDNSMessage" xml:space="preserve">
+    <value>Are you sure you want to flush the DNS cache stored on your device? This operation cannot be cancelled.</value>
+  </data>
+  <data name="FlushDNSSuccess" xml:space="preserve">
+    <value>The DNS Cache has been successfully flushed.</value>
+  </data>
 </root>

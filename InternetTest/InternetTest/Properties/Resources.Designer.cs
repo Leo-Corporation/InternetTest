@@ -883,6 +883,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to flush the DNS cache stored on your device? This operation cannot be cancelled..
+        /// </summary>
+        public static string FlushDNSMessage {
+            get {
+                return ResourceManager.GetString("FlushDNSMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The DNS Cache has been successfully flushed..
+        /// </summary>
+        public static string FlushDNSSuccess {
+            get {
+                return ResourceManager.GetString("FlushDNSSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Frequency.
         /// </summary>
         public static string Frequency {

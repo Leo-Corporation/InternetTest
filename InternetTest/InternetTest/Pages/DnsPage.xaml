@@ -333,20 +333,34 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Button
-                x:Name="GetDnsCacheBtn"
-                Margin="5"
-                Padding="5 2"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Background="{DynamicResource Accent}"
-                BorderThickness="0"
-                Click="GetDnsCacheBtn_Click"
-                Content="{x:Static lang:Resources.GetCache}"
-                Cursor="Hand"
-                FontWeight="ExtraBold"
-                Foreground="{DynamicResource WindowButtonsHoverForeground1}"
-                Style="{DynamicResource PrimaryButton}" />
+            <StackPanel Grid.ColumnSpan="5" Orientation="Horizontal">
+                <Button
+                    x:Name="GetDnsCacheBtn"
+                    Margin="5"
+                    Padding="5 2"
+                    VerticalAlignment="Center"
+                    Background="{DynamicResource Accent}"
+                    BorderThickness="0"
+                    Click="GetDnsCacheBtn_Click"
+                    Content="{x:Static lang:Resources.GetCache}"
+                    Cursor="Hand"
+                    FontWeight="ExtraBold"
+                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                    Style="{DynamicResource PrimaryButton}" />
+                <Button
+                    x:Name="FlushDnsBtn"
+                    Margin="5"
+                    Padding="5 2"
+                    VerticalAlignment="Center"
+                    Background="{DynamicResource LightAccent}"
+                    BorderThickness="0"
+                    Click="FlushDnsBtn_Click"
+                    Content="{x:Static lang:Resources.FlushDNS}"
+                    Cursor="Hand"
+                    FontWeight="ExtraBold"
+                    Foreground="{DynamicResource Accent}"
+                    Style="{DynamicResource PrimaryButton}" />
+            </StackPanel>
             <Border
                 Grid.Row="1"
                 Background="{DynamicResource Background1}"
@@ -361,9 +375,7 @@
                     </Grid.RowDefinitions>
 
 
-                    <Border
-                        BorderBrush="{DynamicResource Background2}"
-                        BorderThickness="0 0 0 1">
+                    <Border BorderBrush="{DynamicResource Background2}" BorderThickness="0 0 0 1">
                         <Grid Margin="10 15">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />

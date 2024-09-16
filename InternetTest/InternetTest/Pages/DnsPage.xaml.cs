@@ -27,7 +27,9 @@ using InternetTest.Classes;
 using InternetTest.UserControls;
 using Microsoft.Win32;
 using Synethia;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -230,5 +232,31 @@ public partial class DnsPage : Page
 				ItemDisplayer.Children.Add(new DnsCacheItem(cache[i]));
 			}
 		}
+	}
+
+	private void FlushDnsBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (MessageBox.Show(Properties.Resources.FlushDNSMessage, Properties.Resources.FlushDNS, MessageBoxButton.YesNoCancel, MessageBoxImage.Question) == MessageBoxResult.Yes)
+		{
+			ItemDisplayer.Children.Clear();
+			ProcessStartInfo processInfo = new ProcessStartInfo
+			{
+				FileName = "ipconfig",
+				Arguments = "/flushdns",
+				RedirectStandardOutput = true,
+				RedirectStandardError = true,
+				UseShellExecute = false,
+				CreateNoWindow = true
+			};
+
+			using Process process = Process.Start(processInfo);
+			// Read the output from the command
+			string output = process.StandardOutput.ReadToEnd();
+			string error = process.StandardError.ReadToEnd();
+
+			// Wait for the process to exit
+			process.WaitForExit();
+			MessageBox.Show(Properties.Resources.FlushDNSSuccess, Properties.Resources.FlushDNS, MessageBoxButton.OK, MessageBoxImage.Information);
+		}		
 	}
 }

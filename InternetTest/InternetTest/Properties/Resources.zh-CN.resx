@@ -1074,4 +1074,10 @@
   <data name="Data" xml:space="preserve">
     <value>数据</value>
   </data>
+  <data name="FlushDNSMessage" xml:space="preserve">
+    <value>您确定要清除存储在设备上的 DNS 缓存吗？此操作不能取消。</value>
+  </data>
+  <data name="FlushDNSSuccess" xml:space="preserve">
+    <value>DNS 缓存已成功刷新。</value>
+  </data>
 </root>
