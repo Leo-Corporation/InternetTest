@@ -1071,4 +1071,16 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="FlushDNS" xml:space="preserve">
     <value>Flush DNS cache</value>
   </data>
+  <data name="Entry" xml:space="preserve">
+    <value>Entry</value>
+  </data>
+  <data name="RecordName" xml:space="preserve">
+    <value>Record name</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
 </root>

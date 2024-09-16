@@ -421,6 +421,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data.
+        /// </summary>
+        public static string Data {
+            get {
+                return ResourceManager.GetString("Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data consumption.
         /// </summary>
         public static string DataConsumption {
@@ -717,6 +726,15 @@ namespace InternetTest.Properties {
         public static string EnterIP {
             get {
                 return ResourceManager.GetString("EnterIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entry.
+        /// </summary>
+        public static string Entry {
+            get {
+                return ResourceManager.GetString("Entry", resourceCulture);
             }
         }
         
@@ -1967,6 +1985,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Record name.
+        /// </summary>
+        public static string RecordName {
+            get {
+                return ResourceManager.GetString("RecordName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Refresh.
         /// </summary>
         public static string Refresh {
@@ -2632,6 +2659,15 @@ namespace InternetTest.Properties {
         public static string TxtFiles {
             get {
                 return ResourceManager.GetString("TxtFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
             }
         }
         
