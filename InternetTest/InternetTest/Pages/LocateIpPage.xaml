@@ -48,7 +48,7 @@
                 FontSize="76"
                 Foreground="{DynamicResource Gray}"
                 Text="&#xF4AB;" />
-            <TextBlock
+            <TextBlock Cursor="Hand" MouseLeftButtonUp="MyIPTxt_MouseLeftButtonUp"
                 x:Name="MyIPTxt"
                 Margin="5 0 0 0"
                 HorizontalAlignment="Center"

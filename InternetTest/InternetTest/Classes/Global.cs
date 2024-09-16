@@ -30,6 +30,7 @@ using PeyrSharp.Env;
 using Synethia;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.NetworkInformation;
@@ -47,10 +48,10 @@ public static class Global
 #if NIGHTLY
 	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-	public static string Version => $"8.5.2.2408-nightly{Date:yyMM.dd@HHmm}";
+	public static string Version => $"8.6.0.2409-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "8.5.2.2408";
+	public static string Version => "8.6.0.2409";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\NewSynethiaConfig.json";
@@ -633,6 +634,42 @@ public static class Global
 			}
 		}
 		return null;
+	}
+
+	public static async Task<DnsCacheInfo[]> GetDnsCache()
+	{
+		// The PowerShell command to execute
+		string psCommand = "Get-DnsClientCache | ConvertTo-Json -Depth 4";
+
+		// Capture the JSON output asynchronously
+		string json = await RunPowerShellCommandAsync(psCommand);
+		return DnsCacheInfo.FromJson(json);
+	}
+
+	public static async Task<string> RunPowerShellCommandAsync(string psCommand)
+	{
+		// Create a new process to run PowerShell
+		ProcessStartInfo processInfo = new ProcessStartInfo
+		{
+			FileName = "powershell.exe",
+			Arguments = $"-Command \"{psCommand}\"",
+			RedirectStandardOutput = true,
+			RedirectStandardError = true,
+			UseShellExecute = false,
+			CreateNoWindow = true
+		};
+
+		// Start the PowerShell process
+		using Process process = Process.Start(processInfo);
+
+		// Asynchronously read the output from the process
+		string output = await process.StandardOutput.ReadToEndAsync();
+
+		// Wait for the process to complete asynchronously
+		await process.WaitForExitAsync();
+
+		// Return the JSON output
+		return output;
 	}
 
 }

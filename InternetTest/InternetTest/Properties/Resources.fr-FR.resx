@@ -1062,4 +1062,31 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="UnableToCheckUpdates" xml:space="preserve">
     <value>Impossible de vérifier les mises à jour</value>
   </data>
+  <data name="DnsCache" xml:space="preserve">
+    <value>Cache DNS</value>
+  </data>
+  <data name="GetCache" xml:space="preserve">
+    <value>Obtenir le cache</value>
+  </data>
+  <data name="FlushDNS" xml:space="preserve">
+    <value>Vider le cache DNS</value>
+  </data>
+  <data name="Entry" xml:space="preserve">
+    <value>Entrée</value>
+  </data>
+  <data name="RecordName" xml:space="preserve">
+    <value>Nom du Record</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>Données</value>
+  </data>
+  <data name="FlushDNSMessage" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir vider le cache DNS stocké sur votre appareil ? Cette opération ne peut pas être annulée.</value>
+  </data>
+  <data name="FlushDNSSuccess" xml:space="preserve">
+    <value>Le cache DNS a été nettoyé avec succès.</value>
+  </data>
 </root>

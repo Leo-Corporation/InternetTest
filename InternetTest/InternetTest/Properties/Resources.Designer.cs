@@ -421,6 +421,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data.
+        /// </summary>
+        public static string Data {
+            get {
+                return ResourceManager.GetString("Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data consumption.
         /// </summary>
         public static string DataConsumption {
@@ -561,6 +570,15 @@ namespace InternetTest.Properties {
         public static string DNS {
             get {
                 return ResourceManager.GetString("DNS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DNS Cache.
+        /// </summary>
+        public static string DnsCache {
+            get {
+                return ResourceManager.GetString("DnsCache", resourceCulture);
             }
         }
         
@@ -712,6 +730,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Entry.
+        /// </summary>
+        public static string Entry {
+            get {
+                return ResourceManager.GetString("Entry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Erase cached WiFi data.
         /// </summary>
         public static string EraseWiFiPasswordsFiles {
@@ -847,6 +874,33 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Flush DNS cache.
+        /// </summary>
+        public static string FlushDNS {
+            get {
+                return ResourceManager.GetString("FlushDNS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to flush the DNS cache stored on your device? This operation cannot be cancelled..
+        /// </summary>
+        public static string FlushDNSMessage {
+            get {
+                return ResourceManager.GetString("FlushDNSMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The DNS Cache has been successfully flushed..
+        /// </summary>
+        public static string FlushDNSSuccess {
+            get {
+                return ResourceManager.GetString("FlushDNSSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Frequency.
         /// </summary>
         public static string Frequency {
@@ -879,6 +933,15 @@ namespace InternetTest.Properties {
         public static string GatewayIPv6 {
             get {
                 return ResourceManager.GetString("GatewayIPv6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get cache.
+        /// </summary>
+        public static string GetCache {
+            get {
+                return ResourceManager.GetString("GetCache", resourceCulture);
             }
         }
         
@@ -1940,6 +2003,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Record name.
+        /// </summary>
+        public static string RecordName {
+            get {
+                return ResourceManager.GetString("RecordName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Refresh.
         /// </summary>
         public static string Refresh {
@@ -2605,6 +2677,15 @@ namespace InternetTest.Properties {
         public static string TxtFiles {
             get {
                 return ResourceManager.GetString("TxtFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
             }
         }
         

@@ -27,7 +27,9 @@ using InternetTest.Classes;
 using InternetTest.UserControls;
 using Microsoft.Win32;
 using Synethia;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -205,5 +207,56 @@ public partial class DnsPage : Page
 			using StreamWriter outputFile = new(saveFileDialog.FileName);
 			outputFile.Write(csvFile);
 		}
+	}
+
+	private void DnsInfoBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		DnsInfoGrid.Visibility = Visibility.Visible;
+		DnsCacheGrid.Visibility = Visibility.Collapsed;
+	}
+
+	private void DnsCacheBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		DnsInfoGrid.Visibility = Visibility.Collapsed;
+		DnsCacheGrid.Visibility = Visibility.Visible;
+	}
+
+	private async void GetDnsCacheBtn_Click(object sender, RoutedEventArgs e)
+	{
+		ItemDisplayer.Children.Clear();
+		var cache = await Global.GetDnsCache();
+		if (cache != null)
+		{
+			for (int i = 0; i < cache.Length; i++)
+			{
+				ItemDisplayer.Children.Add(new DnsCacheItem(cache[i]));
+			}
+		}
+	}
+
+	private void FlushDnsBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (MessageBox.Show(Properties.Resources.FlushDNSMessage, Properties.Resources.FlushDNS, MessageBoxButton.YesNoCancel, MessageBoxImage.Question) == MessageBoxResult.Yes)
+		{
+			ItemDisplayer.Children.Clear();
+			ProcessStartInfo processInfo = new ProcessStartInfo
+			{
+				FileName = "ipconfig",
+				Arguments = "/flushdns",
+				RedirectStandardOutput = true,
+				RedirectStandardError = true,
+				UseShellExecute = false,
+				CreateNoWindow = true
+			};
+
+			using Process process = Process.Start(processInfo);
+			// Read the output from the command
+			string output = process.StandardOutput.ReadToEnd();
+			string error = process.StandardError.ReadToEnd();
+
+			// Wait for the process to exit
+			process.WaitForExit();
+			MessageBox.Show(Properties.Resources.FlushDNSSuccess, Properties.Resources.FlushDNS, MessageBoxButton.OK, MessageBoxImage.Information);
+		}		
 	}
 }
