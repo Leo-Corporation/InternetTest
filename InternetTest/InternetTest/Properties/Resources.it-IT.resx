@@ -1066,16 +1066,16 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Cache DNS</value>
   </data>
   <data name="GetCache" xml:space="preserve">
-    <value>Ottenere la cache</value>
+    <value>Ottieni cache</value>
   </data>
   <data name="FlushDNS" xml:space="preserve">
-    <value>Svuotare la cache DNS</value>
+    <value>Svuota cache DNS</value>
   </data>
   <data name="Entry" xml:space="preserve">
-    <value>Ingresso</value>
+    <value>Voce</value>
   </data>
   <data name="RecordName" xml:space="preserve">
-    <value>Nome del record</value>
+    <value>Nome record</value>
   </data>
   <data name="Type" xml:space="preserve">
     <value>Tipo</value>
@@ -1084,9 +1084,9 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Dati</value>
   </data>
   <data name="FlushDNSMessage" xml:space="preserve">
-    <value>Siete sicuri di voler svuotare la cache DNS memorizzata sul dispositivo? Questa operazione non può essere annullata.</value>
+    <value>Sei sicuro di voler cancellaze la cache DNS memorizzata nel dispositivo? Questa operazione non potrà essere annullata.</value>
   </data>
   <data name="FlushDNSSuccess" xml:space="preserve">
-    <value>La cache DNS è stata scaricata con successo.</value>
+    <value>Cancellazione cache DNS completata.</value>
   </data>
 </root>
