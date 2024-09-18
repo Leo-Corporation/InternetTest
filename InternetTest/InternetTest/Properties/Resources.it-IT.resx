@@ -1084,7 +1084,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Dati</value>
   </data>
   <data name="FlushDNSMessage" xml:space="preserve">
-    <value>Sei sicuro di voler cancellaze la cache DNS memorizzata nel dispositivo? Questa operazione non potrà essere annullata.</value>
+    <value>Sei sicuro di voler cancellare la cache DNS memorizzata nel dispositivo? Questa operazione non potrà essere annullata.</value>
   </data>
   <data name="FlushDNSSuccess" xml:space="preserve">
     <value>Cancellazione cache DNS completata.</value>
