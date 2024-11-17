@@ -82,21 +82,20 @@ public class Settings
 
 public static class SettingsManager
 {
-	private static string SettingsPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\Settings.xml";
 	public static Settings Load()
 	{
-		if (!Directory.Exists($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\"))
+		if (!Directory.Exists(Global.DefaultStoragePath))
 		{
-			Directory.CreateDirectory($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\");
+			Directory.CreateDirectory(Global.DefaultStoragePath);
 		}
 
-		if (!File.Exists(SettingsPath))
+		if (!File.Exists($@"{Global.DefaultStoragePath}\Settings.xml"))
 		{
 			Global.Settings = new();
 
 			// Serialize to XML
 			XmlSerializer xmlSerializer = new(typeof(Settings));
-			StreamWriter streamWriter = new(SettingsPath);
+			StreamWriter streamWriter = new($@"{Global.DefaultStoragePath}\Settings.xml");
 			xmlSerializer.Serialize(streamWriter, Global.Settings);
 			streamWriter.Dispose();
 			return new();
@@ -106,7 +105,7 @@ public static class SettingsManager
 		// Deserialize from xml
 		XmlSerializer xmlDeserializer = new(typeof(Settings));
 
-		StreamReader streamReader = new(SettingsPath);
+		StreamReader streamReader = new($@"{Global.DefaultStoragePath}\Settings.xml");
 		var settings = (Settings?)xmlDeserializer.Deserialize(streamReader) ?? new();
 
 		// Upgrade the settings file if it comes from an older version
@@ -130,7 +129,7 @@ public static class SettingsManager
 	{
 		// Serialize to XML
 		XmlSerializer xmlSerializer = new(typeof(Settings));
-		StreamWriter streamWriter = new(SettingsPath);
+		StreamWriter streamWriter = new($@"{Global.DefaultStoragePath}\Settings.xml");
 		xmlSerializer.Serialize(streamWriter, Global.Settings);
 		streamWriter.Dispose();
 	}
