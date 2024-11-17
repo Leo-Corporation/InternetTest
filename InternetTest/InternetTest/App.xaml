@@ -1703,6 +1703,9 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="CaretBrush" Value="{DynamicResource Foreground1}" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
