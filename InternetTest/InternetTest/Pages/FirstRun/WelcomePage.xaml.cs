@@ -25,8 +25,9 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.Enums;
 using InternetTest.Windows;
+using PeyrSharp.Env;
+using System;
 using System.Diagnostics;
-using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -51,11 +52,18 @@ public partial class WelcomePage : Page
 
 	private void SkipBtn_Click(object sender, RoutedEventArgs e)
 	{
-		Global.Settings.IsFirstRun = false;
-		SettingsManager.Save();
+		try
+		{
+			Global.Settings.IsFirstRun = false;
+			SettingsManager.Save();
 
-		Process.Start(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\InternetTest.exe");
-		Application.Current.Shutdown();
+			Process.Start($@"{FileSys.CurrentDirectory}\InternetTest.exe");
+			Application.Current.Shutdown();
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message);
+		}
 	}
 
 	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
