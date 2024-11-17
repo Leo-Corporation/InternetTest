@@ -56,7 +56,7 @@ public static class Global
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 
 #if PORTABLE
-	public static string DefaultStoragePath => $@"{FileSys.CurrentAppDirectory}\InternetTest Pro\";
+	public static string DefaultStoragePath => $@"{FileSys.CurrentDirectory}\InternetTest Pro\";
 #else
 	public static string DefaultStoragePath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\";
 #endif
