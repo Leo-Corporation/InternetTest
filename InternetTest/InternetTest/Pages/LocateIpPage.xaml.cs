@@ -197,5 +197,5 @@ public partial class LocateIpPage : Page
 	private void MyIPTxt_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
 	{
 		Clipboard.SetText(MyIPTxt.Text);
-    }
+	}
 }

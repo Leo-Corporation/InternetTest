@@ -54,14 +54,7 @@ public partial class HomePage : Page
 	{
 		// Load "Get started" section
 		List<AppPages> relevantPages = Enumerable.Empty<AppPages>().ToList();
-		if (Global.SynethiaConfig is not null)
-		{
-			relevantPages = Global.GetMostRelevantPages(Global.SynethiaConfig);
-		}
-		else
-		{
-			relevantPages = Global.DefaultRelevantPages;
-		}
+		relevantPages = Global.SynethiaConfig is not null ? Global.GetMostRelevantPages(Global.SynethiaConfig) : Global.DefaultRelevantPages;
 
 		for (int i = 0; i < 5; i++)
 		{
