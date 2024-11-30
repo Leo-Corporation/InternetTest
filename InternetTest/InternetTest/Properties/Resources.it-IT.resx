@@ -1090,6 +1090,6 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Cancellazione cache DNS completata.</value>
   </data>
   <data name="ZoomLevel" xml:space="preserve">
-    <value>Livello di zoom predefinito</value>
+    <value>Livello zoom predefinito</value>
   </data>
 </root>
