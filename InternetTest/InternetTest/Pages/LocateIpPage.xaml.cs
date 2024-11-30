@@ -94,12 +94,12 @@ public partial class LocateIpPage : Page
 		_ = double.TryParse(lon.Replace(".", ","), out double dLon);
 		Process.Start("explorer.exe", Global.Settings.MapProvider switch
 		{
-			MapProvider.OpenStreetMap => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\"",
+			MapProvider.OpenStreetMap => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map={Global.Settings.MapZoomLevel}/{lat}/{lon}\"",
 			MapProvider.Google => $"\"https://www.google.com/maps/place/{Global.GetGoogleMapsPoint(dLat, dLon)}\"",
-			MapProvider.Microsoft => $"\"https://www.bing.com/maps?q={lat} {lon}\"",
-			MapProvider.Here => $"\"https://wego.here.com/directions/mix/{lat},{lon}/?map={lat},{lon},12\"",
-			MapProvider.Yandex => $"\"https://yandex.com/maps/?ll={lon}%2C{lat}&z=12\"",
-			_ => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map=12/{lat}/{lon}\""
+			MapProvider.Microsoft => $"\"https://www.bing.com/maps?q={lat} {lon}&lvl={Global.Settings.MapZoomLevel}&cp={lat}~{lon}\"",
+			MapProvider.Here => $"\"https://wego.here.com/directions/mix/{lat},{lon}/?map={lat},{lon},{Global.Settings.MapZoomLevel}\"",
+			MapProvider.Yandex => $"\"https://yandex.com/maps/?ll={lon}%2C{lat}&z={Global.Settings.MapZoomLevel}\"",
+			_ => $"\"https://www.openstreetmap.org/directions?engine=graphhopper_foot&route={lat}%2C{lon}%3B{lat}%2C{lon}#map={Global.Settings.MapZoomLevel}/{lat}/{lon}\""
 		});
 	}
 
