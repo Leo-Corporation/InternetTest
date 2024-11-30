@@ -326,18 +326,13 @@
                     </Border>
                 </StackPanel>
             </Expander>
-            <Border
+            <Expander
                 Margin="10 10 10 0"
                 Background="{DynamicResource CardBackground}"
-                CornerRadius="5">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-
-                    <StackPanel Margin="15 15 10 15" Orientation="Horizontal">
+                Foreground="{DynamicResource Foreground1}"
+                Style="{DynamicResource ExpanderStyle1}">
+                <Expander.Header>
+                    <StackPanel Margin="10 15" Orientation="Horizontal">
                         <TextBlock
                             VerticalAlignment="Center"
                             FontFamily="..\Fonts\#FluentSystemIcons-Regular"
@@ -357,30 +352,68 @@
                                 Text="{x:Static lang:Resources.MapProviderDescription}"
                                 TextWrapping="Wrap" />
                         </StackPanel>
+
                     </StackPanel>
+                </Expander.Header>
+                <StackPanel Margin="10 0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0 0 10 0"
+                            VerticalAlignment="Center"
+                            FontSize="13"
+                            Text="{x:Static lang:Resources.MapProvider}" />
+                        <ComboBox
+                            x:Name="MapProviderComboBox"
+                            Grid.Column="2"
+                            Margin="0 0 10 0"
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="{DynamicResource Accent}"
+                            BorderThickness="2"
+                            Foreground="{DynamicResource Foreground1}"
+                            SelectionChanged="MapProviderComboBox_SelectionChanged"
+                            Style="{DynamicResource ComboBoxStyle1}">
+                            <ComboBoxItem Content="OpenStreetMap" />
+                            <ComboBoxItem Content="Bing Maps" />
+                            <ComboBoxItem Content="Google Maps" />
+                            <ComboBoxItem Content="HERE WeGo" />
+                            <ComboBoxItem Content="Yandex" />
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0 0 10 0"
+                            VerticalAlignment="Center"
+                            FontSize="13"
+                            Text="{x:Static lang:Resources.ZoomLevel}" />
+                        <Border
+                            Margin="10 3 10 3"
+                            Padding="3"
+                            Background="{DynamicResource CardBackground}"
+                            CornerRadius="5">
+                            <Border.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="15"
+                                    Opacity="0.2"
+                                    ShadowDepth="0"
+                                    Color="{DynamicResource AccentColor}" />
+                            </Border.Effect>
+                            <TextBox
+                                x:Name="ZoomLevelTxt"
+                                MinWidth="50"
+                                Padding="3"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Foreground="{DynamicResource Foreground1}"
+                                PreviewTextInput="TextBox_PreviewTextInput"
+                                TextChanged="ZoomLevelTxt_TextChanged" />
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
 
-                    <ComboBox
-                        x:Name="MapProviderComboBox"
-                        Grid.Column="2"
-                        Margin="0 0 10 0"
-                        Padding="5"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center"
-                        Background="Transparent"
-                        BorderBrush="{DynamicResource Accent}"
-                        BorderThickness="2"
-                        Foreground="{DynamicResource Foreground1}"
-                        SelectionChanged="MapProviderComboBox_SelectionChanged"
-                        Style="{DynamicResource ComboBoxStyle1}">
-                        <ComboBoxItem Content="OpenStreetMap" />
-                        <ComboBoxItem Content="Bing Maps" />
-                        <ComboBoxItem Content="Google Maps" />
-                        <ComboBoxItem Content="HERE WeGo" />
-                        <ComboBoxItem Content="Yandex" />
-                    </ComboBox>
-
-                </Grid>
-            </Border>
+            </Expander>
             <Expander
                 Margin="10 10 10 0"
                 Background="{DynamicResource CardBackground}"

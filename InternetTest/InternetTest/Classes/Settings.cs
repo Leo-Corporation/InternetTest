@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Enums;
-using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -54,6 +53,10 @@ public class Settings
 		TraceRouteMaxTimeOut = 5000;
 		MainWindowSize = (950, 600);
 		LaunchIpLocationOnStart = true;
+		DownDetectorWebsites = [];
+		DefaultTimeInterval = 10;
+		HideDisabledAdapters = false;
+		MapZoomLevel = 12;
 	}
 
 	public Themes Theme { get; set; }
@@ -78,25 +81,25 @@ public class Settings
 	public List<string>? DownDetectorWebsites { get; set; }
 	public int? DefaultTimeInterval { get; set; }
 	public bool? HideDisabledAdapters { get; set; }
+	public int? MapZoomLevel { get; set; }
 }
 
 public static class SettingsManager
 {
-	private static string SettingsPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\Settings.xml";
 	public static Settings Load()
 	{
-		if (!Directory.Exists($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\"))
+		if (!Directory.Exists(Global.DefaultStoragePath))
 		{
-			Directory.CreateDirectory($@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\");
+			Directory.CreateDirectory(Global.DefaultStoragePath);
 		}
 
-		if (!File.Exists(SettingsPath))
+		if (!File.Exists($@"{Global.DefaultStoragePath}\Settings.xml"))
 		{
 			Global.Settings = new();
 
 			// Serialize to XML
 			XmlSerializer xmlSerializer = new(typeof(Settings));
-			StreamWriter streamWriter = new(SettingsPath);
+			StreamWriter streamWriter = new($@"{Global.DefaultStoragePath}\Settings.xml");
 			xmlSerializer.Serialize(streamWriter, Global.Settings);
 			streamWriter.Dispose();
 			return new();
@@ -106,7 +109,7 @@ public static class SettingsManager
 		// Deserialize from xml
 		XmlSerializer xmlDeserializer = new(typeof(Settings));
 
-		StreamReader streamReader = new(SettingsPath);
+		StreamReader streamReader = new($@"{Global.DefaultStoragePath}\Settings.xml");
 		var settings = (Settings?)xmlDeserializer.Deserialize(streamReader) ?? new();
 
 		// Upgrade the settings file if it comes from an older version
@@ -122,6 +125,7 @@ public static class SettingsManager
 		settings.DownDetectorWebsites ??= [];
 		settings.DefaultTimeInterval ??= 10;
 		settings.HideDisabledAdapters ??= false;
+		settings.MapZoomLevel ??= 12;
 
 		return settings;
 	}
@@ -130,7 +134,7 @@ public static class SettingsManager
 	{
 		// Serialize to XML
 		XmlSerializer xmlSerializer = new(typeof(Settings));
-		StreamWriter streamWriter = new(SettingsPath);
+		StreamWriter streamWriter = new($@"{Global.DefaultStoragePath}\Settings.xml");
 		xmlSerializer.Serialize(streamWriter, Global.Settings);
 		streamWriter.Dispose();
 	}
@@ -186,6 +190,7 @@ public static class SettingsManager
 				settings.DownDetectorWebsites ??= [];
 				settings.DefaultTimeInterval ??= 10;
 				settings.HideDisabledAdapters ??= false;
+				settings.MapZoomLevel ??= 12;
 
 				Global.Settings = settings;
 

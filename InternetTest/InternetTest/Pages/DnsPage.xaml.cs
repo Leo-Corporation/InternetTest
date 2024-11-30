@@ -27,7 +27,6 @@ using InternetTest.Classes;
 using InternetTest.UserControls;
 using Microsoft.Win32;
 using Synethia;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -239,7 +238,7 @@ public partial class DnsPage : Page
 		if (MessageBox.Show(Properties.Resources.FlushDNSMessage, Properties.Resources.FlushDNS, MessageBoxButton.YesNoCancel, MessageBoxImage.Question) == MessageBoxResult.Yes)
 		{
 			ItemDisplayer.Children.Clear();
-			ProcessStartInfo processInfo = new ProcessStartInfo
+			ProcessStartInfo processInfo = new()
 			{
 				FileName = "ipconfig",
 				Arguments = "/flushdns",
@@ -257,6 +256,6 @@ public partial class DnsPage : Page
 			// Wait for the process to exit
 			process.WaitForExit();
 			MessageBox.Show(Properties.Resources.FlushDNSSuccess, Properties.Resources.FlushDNS, MessageBoxButton.OK, MessageBoxImage.Information);
-		}		
+		}
 	}
 }

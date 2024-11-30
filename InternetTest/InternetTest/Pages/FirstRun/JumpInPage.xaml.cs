@@ -23,9 +23,9 @@ SOFTWARE.
 */
 
 using InternetTest.Classes;
+using PeyrSharp.Env;
 using Synethia;
 using System.Diagnostics;
-using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -46,7 +46,7 @@ public partial class JumpInPage : Page
 		SettingsManager.Save();
 		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
 
-		Process.Start(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\InternetTest.exe");
+		Process.Start($@"{FileSys.CurrentDirectory}\InternetTest.exe");
 		Application.Current.Shutdown(); // Quit the app
 	}
 }

@@ -92,6 +92,7 @@ public partial class ThemePage : Page
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.Light;
+		Global.ChangeTheme();
 		SettingsManager.Save();
 	}
 
@@ -101,6 +102,7 @@ public partial class ThemePage : Page
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.Dark;
+		Global.ChangeTheme();
 		SettingsManager.Save();
 	}
 
@@ -110,6 +112,7 @@ public partial class ThemePage : Page
 		ThemeSelectedBorder = (Border)sender;
 		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
 		Global.Settings.Theme = Themes.System;
+		Global.ChangeTheme();
 		SettingsManager.Save();
 	}
 }

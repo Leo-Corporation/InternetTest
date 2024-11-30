@@ -95,6 +95,7 @@ public partial class SettingsPage : Page
 
 		// Select the map provider
 		MapProviderComboBox.SelectedIndex = (int)Global.Settings.MapProvider;
+		ZoomLevelTxt.Text = Global.Settings.MapZoomLevel.ToString();
 
 		// Notfication section
 		UpdateNotifChk.IsChecked = Global.Settings.ShowNotficationWhenUpdateAvailable;
@@ -477,5 +478,12 @@ public partial class SettingsPage : Page
 	private void GitHubBtn_Click(object sender, RoutedEventArgs e)
 	{
 		Process.Start("explorer.exe", "https://github.com/Leo-Corporation/InternetTest/");
+	}
+
+	private void ZoomLevelTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		if (string.IsNullOrEmpty(ZoomLevelTxt.Text)) return;
+		Global.Settings.MapZoomLevel = int.Parse(ZoomLevelTxt.Text);
+		SettingsManager.Save();
 	}
 }

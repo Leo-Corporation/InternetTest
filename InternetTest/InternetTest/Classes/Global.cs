@@ -48,13 +48,19 @@ public static class Global
 #if NIGHTLY
 	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-	public static string Version => $"8.6.1.2409-nightly{Date:yyMM.dd@HHmm}";
+	public static string Version => $"8.7.0.2411-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "8.6.1.2409";
+	public static string Version => "8.7.0.2411";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
-	internal static string SynethiaPath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\NewSynethiaConfig.json";
+
+#if PORTABLE
+	public static string DefaultStoragePath => $@"{FileSys.CurrentDirectory}\InternetTest Pro\";
+#else
+	public static string DefaultStoragePath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\";
+#endif
+	public static string SynethiaPath => $@"{DefaultStoragePath}\NewSynethiaConfig.json";
 	public static bool IsConfidentialModeEnabled { get; set; } = false;
 	public static Settings Settings { get; set; } = SettingsManager.Load();
 	public static SynethiaConfig SynethiaConfig { get; set; } = LoadConfig();
@@ -286,7 +292,7 @@ public static class Global
 			&& (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 	}
 
-	public async static Task<IPInfo?> GetIPInfoAsync(string ip)
+	public static async Task<IPInfo?> GetIPInfoAsync(string ip)
 	{
 		try
 		{
@@ -649,7 +655,7 @@ public static class Global
 	public static async Task<string> RunPowerShellCommandAsync(string psCommand)
 	{
 		// Create a new process to run PowerShell
-		ProcessStartInfo processInfo = new ProcessStartInfo
+		ProcessStartInfo processInfo = new()
 		{
 			FileName = "powershell.exe",
 			Arguments = $"-Command \"{psCommand}\"",

@@ -1089,4 +1089,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="FlushDNSSuccess" xml:space="preserve">
     <value>The DNS Cache has been successfully flushed.</value>
   </data>
+  <data name="ZoomLevel" xml:space="preserve">
+    <value>Default zoom level</value>
+  </data>
 </root>
