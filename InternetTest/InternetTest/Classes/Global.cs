@@ -51,7 +51,7 @@ public static class Global
 	public static string Version => $"8.7.0.2411-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "8.7.0.2411-pre1";
+	public static string Version => "8.7.0.2411-rc1";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 
