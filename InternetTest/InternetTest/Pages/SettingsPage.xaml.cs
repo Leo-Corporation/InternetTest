@@ -485,5 +485,5 @@ public partial class SettingsPage : Page
 		if (string.IsNullOrEmpty(ZoomLevelTxt.Text)) return;
 		Global.Settings.MapZoomLevel = int.Parse(ZoomLevelTxt.Text);
 		SettingsManager.Save();
-    }
+	}
 }

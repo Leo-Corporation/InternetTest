@@ -25,7 +25,6 @@ using InternetTest.Classes;
 using InternetTest.Enums;
 using InternetTest.UserControls;
 using ManagedNativeWifi;
-using PeyrSharp.Core;
 using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
@@ -67,7 +66,7 @@ public partial class HomePage : Page
 		{
 			DiscoverPanel.Children.Add(new PageCard(relevantPages[i]));
 		}
-	}	
+	}
 
 	private async void SpeedTest_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
 	{
