@@ -1080,4 +1080,7 @@
   <data name="FlushDNSSuccess" xml:space="preserve">
     <value>DNS 缓存已成功刷新。</value>
   </data>
+  <data name="ZoomLevel" xml:space="preserve">
+    <value>默认缩放级别</value>
+  </data>
 </root>

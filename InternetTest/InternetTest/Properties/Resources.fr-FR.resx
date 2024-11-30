@@ -1089,4 +1089,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="FlushDNSSuccess" xml:space="preserve">
     <value>Le cache DNS a été nettoyé avec succès.</value>
   </data>
+  <data name="ZoomLevel" xml:space="preserve">
+    <value>Niveau de zoom par défaut</value>
+  </data>
 </root>
