@@ -25,6 +25,7 @@ using InternetTest.Classes;
 using InternetTest.Enums;
 using InternetTest.Pages;
 using InternetTest.UserControls;
+using PeyrSharp.Core;
 using PeyrSharp.Env;
 using System;
 using System.Windows;
@@ -58,7 +59,7 @@ public partial class MainWindow : Window
 		Duration = new Duration(TimeSpan.FromSeconds(0.2)),
 	};
 
-	private void InitUI()
+	private async void InitUI()
 	{
 #if PORTABLE
 		VersionTxt.Text = Global.Version + " (Portable)";
@@ -154,6 +155,15 @@ public partial class MainWindow : Window
 			Width = Global.Settings.MainWindowSize?.Item1 ?? 950;
 			Height = Global.Settings.MainWindowSize?.Item2 ?? 600;
 		}
+
+		// Load "Status" section
+		if (Global.Settings.TestOnStart) LoadStatusCard();
+
+		// Load "Network" section
+		LoadNetworkCard();
+
+		// Load "My IP" section
+		ip = (await Global.GetIPInfoAsync(""))?.Query ?? "";
 	}
 
 	private void PageCard_OnCardClick(object? sender, PageEventArgs e)
@@ -475,5 +485,83 @@ public partial class MainWindow : Window
 
 		PageDisplayer.Content = Global.RequestsPage; // Display the IP config page
 		Global.SynethiaConfig.PagesInfo[8].EnterUnixTime = Sys.UnixTime; // Update the last entered time
+	}
+
+	private void StatusBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		RefreshStatusBtn.Visibility = Visibility.Visible;
+	}
+
+	private void StatusBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		RefreshStatusBtn.Visibility = Visibility.Hidden;
+	}
+
+	private void NetworkBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		RefreshNetworkBtn.Visibility = Visibility.Visible;
+	}
+
+	private void NetworkBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		RefreshNetworkBtn.Visibility = Visibility.Hidden;
+	}
+
+
+	private void RefreshStatusBtn_Click(object sender, RoutedEventArgs e)
+	{
+		StatusTxt.Text = Properties.Resources.Checking;
+		LoadStatusCard();
+	}
+
+	bool connected = true;
+	internal async void LoadStatusCard()
+	{
+		connected = await Internet.IsAvailableAsync(Global.Settings.TestSite); // Check if Internet is available
+		StatusTxt.Text = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS; // Set text
+		StatusIconTxt.Text = connected ? "\uF299" : "\uF36E";
+		StatusIconTxt.Foreground = connected ? Global.GetBrushFromResource("Green") : Global.GetBrushFromResource("Red");
+	}
+
+	internal void LoadNetworkCard()
+	{
+		try
+		{
+			string ssid = Global.GetCurrentWifiSSID();
+
+			NetworkTxt.Text = (ssid == null || !connected) ? Properties.Resources.NotConnectedS : ssid;
+			NetworkTitleTxt.Text = Properties.Resources.WiFi;
+			NetworkIconTxt.Text = (ssid == null || !connected) ? "\uFC27" : "\uF8C5";
+
+		}
+		catch // If there is no WiFi
+		{
+			NetworkIconTxt.Text = connected ? "\uF35A" : "\uFC27";
+			NetworkTxt.Text = connected ? Properties.Resources.Ethernet : Properties.Resources.NotConnectedS;
+			NetworkTitleTxt.Text = Properties.Resources.Network;
+		}
+	}
+
+	private void RefreshNetworkBtn_Click(object sender, RoutedEventArgs e)
+	{
+		LoadNetworkCard();
+	}
+
+	string ip = "";
+	private async void RefreshMyIpBtn_Click(object sender, RoutedEventArgs e)
+	{
+		ip = (await Global.GetIPInfoAsync(""))?.Query ?? "";
+	}
+
+	private void MyIpBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		MyIpTxt.Text = ip;
+		RefreshMyIpBtn.Visibility = Visibility.Visible;
+	}
+
+	private void MyIpBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+	{
+		MyIpTxt.Text = Properties.Resources.HoverToReveal;
+		RefreshMyIpBtn.Visibility = Visibility.Hidden;
 	}
 }

@@ -50,7 +50,7 @@ public partial class HomePage : Page
 		InitUI();
 	}
 
-	internal async void InitUI()
+	internal void InitUI()
 	{
 		// Load "Get started" section
 		List<AppPages> relevantPages = Enumerable.Empty<AppPages>().ToList();
@@ -67,73 +67,7 @@ public partial class HomePage : Page
 		{
 			DiscoverPanel.Children.Add(new PageCard(relevantPages[i]));
 		}
-
-		// Load "Status" section
-		if (Global.Settings.TestOnStart) LoadStatusCard();
-
-		// Load "Network" section
-		LoadNetworkCard();
-
-		// Load "My IP" section
-		ip = (await Global.GetIPInfoAsync(""))?.Query ?? "";
-	}
-
-	private async void RefreshStatusBtn_Click(object sender, System.Windows.RoutedEventArgs e)
-	{
-		StatusTxt.Text = Properties.Resources.Checking;
-		LoadStatusCard();
-	}
-
-	bool connected = true;
-	internal async void LoadStatusCard()
-	{
-		connected = await Internet.IsAvailableAsync(Global.Settings.TestSite); // Check if Internet is available
-		StatusTxt.Text = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS; // Set text
-		StatusIconTxt.Text = connected ? "\uF299" : "\uF36E";
-		StatusIconTxt.Foreground = connected ? Global.GetBrushFromResource("Green") : Global.GetBrushFromResource("Red");
-	}
-
-	internal void LoadNetworkCard()
-	{
-		try
-		{
-			string ssid = Global.GetCurrentWifiSSID();
-
-			NetworkTxt.Text = (ssid == null || !connected) ? Properties.Resources.NotConnectedS : ssid;
-			NetworkTitleTxt.Text = Properties.Resources.WiFi;
-			NetworkIconTxt.Text = (ssid == null || !connected) ? "\uFC27" : "\uF8C5";
-
-		}
-		catch // If there is no WiFi
-		{
-			NetworkIconTxt.Text = connected ? "\uF35A" : "\uFC27";
-			NetworkTxt.Text = connected ? Properties.Resources.Ethernet : Properties.Resources.NotConnectedS;
-			NetworkTitleTxt.Text = Properties.Resources.Network;
-		}
-	}
-
-	private void RefreshNetworkBtn_Click(object sender, System.Windows.RoutedEventArgs e)
-	{
-		LoadNetworkCard();
-	}
-
-	string ip = "";
-	private async void RefreshMyIpBtn_Click(object sender, System.Windows.RoutedEventArgs e)
-	{
-		ip = (await Global.GetIPInfoAsync(""))?.Query ?? "";
-	}
-
-	private void MyIpBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
-	{
-		MyIpTxt.Text = ip;
-		RefreshMyIpBtn.Visibility = Visibility.Visible;
-	}
-
-	private void MyIpBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-	{
-		MyIpTxt.Text = Properties.Resources.HoverToReveal;
-		RefreshMyIpBtn.Visibility = Visibility.Hidden;
-	}
+	}	
 
 	private async void SpeedTest_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
 	{
@@ -303,25 +237,5 @@ public partial class HomePage : Page
 		{
 			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 		}
-	}
-
-	private void StatusBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
-	{
-		RefreshStatusBtn.Visibility = Visibility.Visible;
-	}
-
-	private void StatusBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-	{
-		RefreshStatusBtn.Visibility = Visibility.Hidden;
-	}
-
-	private void NetworkBorder_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
-	{
-		RefreshNetworkBtn.Visibility = Visibility.Visible;
-	}
-
-	private void NetworkBorder_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-	{
-		RefreshNetworkBtn.Visibility = Visibility.Hidden;
 	}
 }
