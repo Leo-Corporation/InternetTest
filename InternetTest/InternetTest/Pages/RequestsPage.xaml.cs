@@ -205,4 +205,12 @@ public partial class RequestsPage : Page
 		ResponseSection.Visibility = Visibility.Collapsed;
 		HeadersSection.Visibility = Visibility.Visible;
 	}
+
+	private void RequestTypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+		if (sender is ComboBox comboBox && comboBox.SelectedItem is ComboBoxItem selectedItem)
+		{
+			comboBox.Foreground = selectedItem.Foreground;
+		}
+	}
 }

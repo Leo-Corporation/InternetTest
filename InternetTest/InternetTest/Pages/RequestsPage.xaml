@@ -46,27 +46,7 @@
                 <ColumnDefinition />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <ComboBox
-                x:Name="RequestTypeComboBox"
-                Margin="10 0 0 0"
-                Padding="5"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Background="Transparent"
-                BorderBrush="{DynamicResource Accent}"
-                BorderThickness="2"
-                Foreground="{DynamicResource Foreground1}"
-                Style="{DynamicResource ComboBoxStyle1}">
-                <ComboBoxItem Content="GET" />
-                <ComboBoxItem Content="POST" />
-                <ComboBoxItem Content="PUT" />
-                <ComboBoxItem Content="DELETE" />
-                <ComboBoxItem Content="HEAD" />
-                <ComboBoxItem Content="OPTIONS" />
-                <ComboBoxItem Content="PATCH" />
-                <ComboBoxItem Content="MERGE" />
-                <ComboBoxItem Content="COPY" />
-            </ComboBox>
+
             <Border
                 Grid.Column="1"
                 Margin="10 3 3 3"
@@ -81,11 +61,37 @@
                 </Border.Effect>
                 <Grid>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
+                    <ComboBox
+                        x:Name="RequestTypeComboBox"
+                        Margin="1 0 0 0"
+                        Padding="5"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Background="Transparent"
+                        BorderBrush="{DynamicResource Accent}"
+                        BorderThickness="2"
+                        FontFamily="Consolas"
+                        FontSize="14"
+                        Foreground="{DynamicResource Foreground1}"
+                        SelectionChanged="RequestTypeComboBox_SelectionChanged"
+                        Style="{DynamicResource ComboBoxStyle1}">
+                        <ComboBoxItem Content="GET" Foreground="{DynamicResource Green}" />
+                        <ComboBoxItem Content="POST" Foreground="{DynamicResource Accent}" />
+                        <ComboBoxItem Content="PUT" Foreground="{DynamicResource Orange}" />
+                        <ComboBoxItem Content="DELETE" Foreground="{DynamicResource Red}" />
+                        <ComboBoxItem Content="HEAD" Foreground="DarkCyan" />
+                        <ComboBoxItem Content="OPTIONS" Foreground="{DynamicResource DarkGray}" />
+                        <ComboBoxItem Content="PATCH" Foreground="BlueViolet" />
+                        <ComboBoxItem Content="MERGE" Foreground="RosyBrown" />
+                        <ComboBoxItem Content="COPY" Foreground="{DynamicResource Foreground1}" />
+                    </ComboBox>
                     <TextBox
                         x:Name="UrlTxt"
+                        Grid.Column="1"
                         Margin="5"
                         Padding="1"
                         d:Text="leocorporation.dev"
@@ -145,7 +151,10 @@
             </Border.Effect>
             <StackPanel x:Name="ParametersPanel" />
         </Border>
-        <StackPanel Grid.Row="3" Orientation="Horizontal">
+        <StackPanel
+            Grid.Row="3"
+            Margin="0 5 0 0"
+            Orientation="Horizontal">
             <RadioButton
                 x:Name="ResponseBtn"
                 Margin="5 0"
