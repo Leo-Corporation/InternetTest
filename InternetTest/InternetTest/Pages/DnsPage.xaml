@@ -107,7 +107,10 @@
             </RadioButton>
         </StackPanel>
 
-        <Grid x:Name="DnsInfoGrid" Grid.Row="2">
+        <Grid
+            x:Name="DnsInfoGrid"
+            Grid.Row="2"
+            d:Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -328,39 +331,116 @@
         <Grid
             x:Name="DnsCacheGrid"
             Grid.Row="2"
+            d:Visibility="Visible"
             Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <StackPanel Grid.ColumnSpan="5" Orientation="Horizontal">
-                <Button
-                    x:Name="GetDnsCacheBtn"
-                    Margin="5"
-                    Padding="5 2"
+            <Grid Grid.ColumnSpan="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <Button
+                        x:Name="GetDnsCacheBtn"
+                        Margin="5"
+                        Padding="5 2"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource Accent}"
+                        BorderThickness="0"
+                        Click="GetDnsCacheBtn_Click"
+                        Content="{x:Static lang:Resources.GetCache}"
+                        Cursor="Hand"
+                        FontWeight="ExtraBold"
+                        Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                        Style="{DynamicResource PrimaryButton}" />
+                    <Button
+                        x:Name="FlushDnsBtn"
+                        Margin="5"
+                        Padding="5 2"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource LightAccent}"
+                        BorderThickness="0"
+                        Click="FlushDnsBtn_Click"
+                        Content="{x:Static lang:Resources.FlushDNS}"
+                        Cursor="Hand"
+                        FontWeight="ExtraBold"
+                        Foreground="{DynamicResource Accent}"
+                        Style="{DynamicResource PrimaryButton}" />
+                </StackPanel>
+                <StackPanel
+                    x:Name="StatusSection"
+                    Grid.Column="2"
                     VerticalAlignment="Center"
-                    Background="{DynamicResource Accent}"
-                    BorderThickness="0"
-                    Click="GetDnsCacheBtn_Click"
-                    Content="{x:Static lang:Resources.GetCache}"
-                    Cursor="Hand"
-                    FontWeight="ExtraBold"
-                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
-                    Style="{DynamicResource PrimaryButton}" />
-                <Button
-                    x:Name="FlushDnsBtn"
-                    Margin="5"
-                    Padding="5 2"
-                    VerticalAlignment="Center"
-                    Background="{DynamicResource LightAccent}"
-                    BorderThickness="0"
-                    Click="FlushDnsBtn_Click"
-                    Content="{x:Static lang:Resources.FlushDNS}"
-                    Cursor="Hand"
-                    FontWeight="ExtraBold"
-                    Foreground="{DynamicResource Accent}"
-                    Style="{DynamicResource PrimaryButton}" />
-            </StackPanel>
+                    Orientation="Horizontal"
+                    Visibility="Collapsed">
+                    <Border
+                        x:Name="SuccessBorder"
+                        Margin="2 0"
+                        Padding="5 2"
+                        Background="{DynamicResource LightGreen}"
+                        CornerRadius="10">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0 0 5 0"
+                                VerticalAlignment="Center"
+                                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                Foreground="{DynamicResource ForegroundGreen}"
+                                Text="&#xF299;" />
+                            <TextBlock
+                                x:Name="SuccessNbTxt"
+                                VerticalAlignment="Center"
+                                d:Text="12"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource ForegroundGreen}" />
+                        </StackPanel>
+                    </Border>
+                    <Border
+                        x:Name="ErrorBorder"
+                        Margin="2 0"
+                        Padding="5 2"
+                        Background="{DynamicResource LightOrange}"
+                        CornerRadius="10">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0 0 5 0"
+                                VerticalAlignment="Center"
+                                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                Foreground="{DynamicResource ForegroundOrange}"
+                                Text="&#xF86A;" />
+                            <TextBlock
+                                x:Name="ErrorNbTxt"
+                                VerticalAlignment="Center"
+                                d:Text="12"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource ForegroundOrange}" />
+                        </StackPanel>
+                    </Border>
+                    <Border
+                        Margin="2 0"
+                        Padding="5 2"
+                        Background="{DynamicResource LightAccent}"
+                        CornerRadius="10">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0 0 5 0"
+                                VerticalAlignment="Center"
+                                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                Foreground="{DynamicResource Accent}"
+                                Text="&#xF4A4;" />
+                            <TextBlock
+                                x:Name="TotalTxt"
+                                VerticalAlignment="Center"
+                                d:Text="12"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Accent}" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
             <Border
                 Grid.Row="1"
                 Background="{DynamicResource Background1}"
