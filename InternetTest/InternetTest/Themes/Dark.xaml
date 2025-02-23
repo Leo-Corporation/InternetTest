@@ -24,6 +24,7 @@
     <SolidColorBrush x:Key="Red" Color="#FF321E" />
     <SolidColorBrush x:Key="Orange" Color="#ff7a00" />
     <SolidColorBrush x:Key="DarkGray" Color="#7474B1" />
+    <SolidColorBrush x:Key="Border" Color="#FF323264" />
     <ImageBrush x:Key="BackgroundImg" ImageSource="/Images/DarkBackground.png" />
     <Color
         x:Key="Background1Color"

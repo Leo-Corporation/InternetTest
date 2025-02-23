@@ -1018,10 +1018,11 @@
                         <ControlTemplate TargetType="{x:Type ToggleButton}">
                             <Border
                                 x:Name="templateRoot"
+                                Padding="3"
                                 Background="{StaticResource ComboBox.Static.Background}"
-                                BorderBrush="{StaticResource ComboBox.Static.Border}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4"
+                                BorderBrush="{DynamicResource Border}"
+                                BorderThickness="1"
+                                CornerRadius="5"
                                 SnapsToDevicePixels="true">
                                 <Border
                                     x:Name="splitBorder"
@@ -1037,7 +1038,7 @@
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
                                         Data="F1 M 0,0 L 2.667,2.66665 L 5.3334,0 L 5.3334,-1.78168 L 2.6667,0.88501 L0,-1.78168 L0,0 Z"
-                                        Fill="{StaticResource ComboBox.Static.Glyph}" />
+                                        Fill="{DynamicResource Border}" />
                                 </Border>
                             </Border>
                             <ControlTemplate.Triggers>
@@ -1138,38 +1139,43 @@
                         IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                         Placement="Bottom"
                         PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
-                        <theme:SystemDropShadowChrome
-                            x:Name="shadow"
-                            MinWidth="{Binding ActualWidth, ElementName=templateRoot}"
-                            MaxHeight="{TemplateBinding MaxDropDownHeight}"
-                            Color="Transparent">
-                            <Border
-                                x:Name="dropDownBorder"
-                                Background="{DynamicResource Background1}"
-                                BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"
-                                BorderThickness="1">
-                                <ScrollViewer x:Name="DropDownScrollViewer">
-                                    <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
-                                        <Canvas
-                                            x:Name="canvas"
-                                            Width="0"
-                                            Height="0"
-                                            HorizontalAlignment="Left"
-                                            VerticalAlignment="Top">
-                                            <Rectangle
-                                                x:Name="opaqueRect"
-                                                Width="{Binding ActualWidth, ElementName=dropDownBorder}"
-                                                Height="{Binding ActualHeight, ElementName=dropDownBorder}"
-                                                Fill="{Binding Background, ElementName=dropDownBorder}" />
-                                        </Canvas>
-                                        <ItemsPresenter
-                                            x:Name="ItemsPresenter"
-                                            KeyboardNavigation.DirectionalNavigation="Contained"
-                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                                    </Grid>
-                                </ScrollViewer>
-                            </Border>
-                        </theme:SystemDropShadowChrome>
+
+                        <Border
+                            x:Name="dropDownBorder"
+                            Margin="7"
+                            Padding="7 5"
+                            Background="{DynamicResource Background1}"
+                            BorderBrush="{DynamicResource Border}"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <ScrollViewer x:Name="DropDownScrollViewer">
+                                <Grid x:Name="grid" RenderOptions.ClearTypeHint="Enabled">
+                                    <Canvas
+                                        x:Name="canvas"
+                                        Width="0"
+                                        Height="0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top">
+                                        <Rectangle
+                                            x:Name="opaqueRect"
+                                            Width="{Binding ActualWidth, ElementName=dropDownBorder}"
+                                            Height="{Binding ActualHeight, ElementName=dropDownBorder}"
+                                            Fill="{Binding Background, ElementName=dropDownBorder}" />
+                                    </Canvas>
+                                    <ItemsPresenter
+                                        x:Name="ItemsPresenter"
+                                        KeyboardNavigation.DirectionalNavigation="Contained"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </Grid>
+                            </ScrollViewer>
+                            <Border.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="15"
+                                    Opacity="0.3"
+                                    ShadowDepth="0"
+                                    Color="{DynamicResource LightAccentColor}" />
+                            </Border.Effect>
+                        </Border>
                     </Popup>
                     <ToggleButton
                         x:Name="toggleButton"
@@ -1192,10 +1198,6 @@
                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                 </Grid>
                 <ControlTemplate.Triggers>
-                    <Trigger SourceName="PART_Popup" Property="HasDropShadow" Value="true">
-                        <Setter TargetName="shadow" Property="Margin" Value="0 0 5 5" />
-                        <Setter TargetName="shadow" Property="Color" Value="#71000000" />
-                    </Trigger>
                     <Trigger Property="HasItems" Value="false">
                         <Setter TargetName="dropDownBorder" Property="Height" Value="95" />
                     </Trigger>
@@ -1329,6 +1331,26 @@
                         <Setter Property="Foreground" Value="#fff" />
                     </Trigger>
                 </Style.Triggers>
+            </Style>
+            <Style TargetType="ComboBoxItem">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ComboBoxItem">
+                            <Border
+                                Padding="4"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="5">
+                                <ContentPresenter />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <!--  Remove default hover effect  -->
+                                <Trigger Property="IsHighlighted" Value="True">
+                                    <Setter Property="Background" Value="{DynamicResource Background2}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
             </Style>
             <Style x:Key="FocusVisual1">
                 <Setter Property="Control.Template">
