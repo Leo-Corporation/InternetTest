@@ -1083,4 +1083,7 @@
   <data name="ZoomLevel" xml:space="preserve">
     <value>默认缩放级别</value>
   </data>
+  <data name="Loading" xml:space="preserve">
+    <value>加载中</value>
+  </data>
 </root>

@@ -1424,6 +1424,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Loading.
+        /// </summary>
+        public static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Locate an IP.
         /// </summary>
         public static string LocateAnIP {

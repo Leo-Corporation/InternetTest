@@ -17,6 +17,10 @@
     <SolidColorBrush x:Key="LightAccent" Color="#CAD8FF" />
     <SolidColorBrush x:Key="Gray" Color="#DEDEDE" />
     <SolidColorBrush x:Key="Green" Color="#25DE0F" />
+    <SolidColorBrush x:Key="LightGreen" Color="#a9f8a0" />
+    <SolidColorBrush x:Key="ForegroundGreen" Color="#083003" />
+    <SolidColorBrush x:Key="LightOrange" Color="#ffca99" />
+    <SolidColorBrush x:Key="ForegroundOrange" Color="#4c2500" />
     <SolidColorBrush x:Key="Red" Color="#FF321E" />
     <SolidColorBrush x:Key="Orange" Color="#ff7a00" />
     <SolidColorBrush x:Key="DarkGray" Color="#969696" />
