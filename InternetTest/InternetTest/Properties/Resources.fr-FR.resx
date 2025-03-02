@@ -1119,4 +1119,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="Password" xml:space="preserve">
     <value>Mot de passe</value>
   </data>
+  <data name="NoAuthMethod" xml:space="preserve">
+    <value>Aucune information d'authentification ne sera fournie</value>
+  </data>
 </root>

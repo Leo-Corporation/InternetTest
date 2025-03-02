@@ -1724,6 +1724,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à No authentication information will be provided.
+        /// </summary>
+        public static string NoAuthMethod {
+            get {
+                return ResourceManager.GetString("NoAuthMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à None.
         /// </summary>
         public static string None {

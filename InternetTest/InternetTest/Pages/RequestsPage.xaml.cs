@@ -56,6 +56,7 @@ public partial class RequestsPage : Page
 		TitleTxt.Text = $"{Properties.Resources.Commands} > {Properties.Resources.Requests}";
 		RequestTypeComboBox.SelectedIndex = 0;
 		ResponseBtn.IsChecked = true;
+		AuthTypeComboBox.SelectedIndex = 0;
 	}
 
 	private void SendBtn_Click(object sender, RoutedEventArgs e)
@@ -88,6 +89,12 @@ public partial class RequestsPage : Page
 			if (!string.IsNullOrEmpty(BodyRawTxt.Text))
 			{
 				request.AddParameter(GetContentType(), BodyRawTxt.Text, ParameterType.RequestBody);
+			}
+
+			// Auth
+			if (AuthTypeComboBox.SelectedIndex != 0)
+			{
+				request.AddHeader("Authorization", GetAuthValue());
 			}
 
 			var response = await client.ExecuteAsync(request);
@@ -205,6 +212,7 @@ public partial class RequestsPage : Page
 		ResponseSection.Visibility = Visibility.Visible;
 		HeadersSection.Visibility = Visibility.Collapsed;
 		BodySection.Visibility = Visibility.Collapsed;
+		AuthSection.Visibility = Visibility.Collapsed;
 	}
 
 	private void HeadersBtn_Checked(object sender, RoutedEventArgs e)
@@ -212,6 +220,7 @@ public partial class RequestsPage : Page
 		ResponseSection.Visibility = Visibility.Collapsed;
 		HeadersSection.Visibility = Visibility.Visible;
 		BodySection.Visibility = Visibility.Collapsed;
+		AuthSection.Visibility = Visibility.Collapsed;
 	}
 
 	private void BodyBtn_Checked(object sender, RoutedEventArgs e)
@@ -219,6 +228,16 @@ public partial class RequestsPage : Page
 		ResponseSection.Visibility = Visibility.Collapsed;
 		HeadersSection.Visibility = Visibility.Collapsed;
 		BodySection.Visibility = Visibility.Visible;
+		AuthSection.Visibility = Visibility.Collapsed;
+	}
+
+
+	private void AuthBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		ResponseSection.Visibility = Visibility.Collapsed;
+		HeadersSection.Visibility = Visibility.Collapsed;
+		BodySection.Visibility = Visibility.Collapsed;
+		AuthSection.Visibility = Visibility.Visible;
 	}
 
 	private void RequestTypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -228,7 +247,7 @@ public partial class RequestsPage : Page
 			comboBox.Foreground = selectedItem.Foreground;
 		}
 	}
-	
+
 	private string GetContentType()
 	{
 		return BodyTypeComboBox.SelectedItem switch
@@ -240,5 +259,36 @@ public partial class RequestsPage : Page
 			"Text" => "text/plain",
 			_ => "text/plain"
 		};
+	}
+
+	private void AuthTypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+		switch (AuthTypeComboBox.SelectedIndex)
+		{
+			case 1:
+				NoAuthPanel.Visibility = Visibility.Collapsed;
+				BasicAuthPanel.Visibility = Visibility.Visible;
+				BearerAuthPanel.Visibility = Visibility.Collapsed;
+				break;
+			case 2:
+				NoAuthPanel.Visibility = Visibility.Collapsed;
+				BasicAuthPanel.Visibility = Visibility.Collapsed;
+				BearerAuthPanel.Visibility = Visibility.Visible;
+				break;
+			default:
+				NoAuthPanel.Visibility = Visibility.Visible;
+				BasicAuthPanel.Visibility = Visibility.Collapsed;
+				BearerAuthPanel.Visibility = Visibility.Collapsed;
+				break;
+		}
+	}
+
+	private string GetAuthValue() { 
+		return AuthTypeComboBox.SelectedIndex switch 
+		{ 
+			1 => $"Basic {Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes($"{BasicUsernameTxt.Text}:{BasicPasswordPwr.Password}"))}",
+			2 => $"Bearer {Bearer.Password}",
+			_ => "" 
+		}; 
 	}
 }

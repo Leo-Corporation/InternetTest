@@ -1110,4 +1110,7 @@
   <data name="Password" xml:space="preserve">
     <value>密码</value>
   </data>
+  <data name="NoAuthMethod" xml:space="preserve">
+    <value>不提供验证信息</value>
+  </data>
 </root>
