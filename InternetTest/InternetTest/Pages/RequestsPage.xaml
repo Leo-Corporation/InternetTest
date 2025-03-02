@@ -76,6 +76,7 @@
                         BorderThickness="2"
                         FontFamily="Consolas"
                         FontSize="14"
+                        FontWeight="SemiBold"
                         Foreground="{DynamicResource Foreground1}"
                         SelectionChanged="RequestTypeComboBox_SelectionChanged"
                         Style="{DynamicResource ComboBoxStyle1}">
@@ -173,6 +174,17 @@
                 Background="Transparent"
                 Checked="HeadersBtn_Checked"
                 Content="{x:Static lang:Resources.Headers}"
+                FontWeight="Bold"
+                Foreground="{DynamicResource Accent}"
+                GroupName="ResponseGroup"
+                Style="{DynamicResource TabRadioButton}" />
+            <RadioButton
+                x:Name="BodyBtn"
+                Margin="5 0"
+                Padding="3"
+                Background="Transparent"
+                Checked="BodyBtn_Checked"
+                Content="{x:Static lang:Resources.Body}"
                 FontWeight="Bold"
                 Foreground="{DynamicResource Accent}"
                 GroupName="ResponseGroup"
@@ -302,6 +314,61 @@
                 </StackPanel>
                 <StackPanel x:Name="HeadersPanel" Grid.Row="1" />
             </Grid>
+        </Border>
+        <Border
+            x:Name="BodySection"
+            Grid.Row="4"
+            Margin="5"
+            Padding="5"
+            Background="{DynamicResource Background1}"
+            CornerRadius="5"
+            Visibility="Collapsed">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.Body}" />
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.ContentType}" />
+                    <ComboBox
+                        x:Name="BodyTypeComboBox"
+                        Margin="10 0 0 0"
+                        Foreground="{DynamicResource Foreground1}"
+                        SelectedIndex="0"
+                        Style="{DynamicResource ComboBoxStyle1}">
+                        <ComboBoxItem Content="Text" />
+                        <ComboBoxItem Content="JavaScript" />
+                        <ComboBoxItem Content="JSON" />
+                        <ComboBoxItem Content="HTML" />
+                        <ComboBoxItem Content="XML" />
+                    </ComboBox>
+                </StackPanel>
+                <ScrollViewer
+                    Grid.Row="2"
+                    Style="{DynamicResource ScrollViewerStyle}"
+                    VerticalScrollBarVisibility="Auto">
+                    <TextBox
+                        x:Name="BodyRawTxt"
+                        d:Text="Hello"
+                        Background="{DynamicResource Background1}"
+                        BorderThickness="0"
+                        FontFamily="Consolas"
+                        Foreground="{DynamicResource Foreground1}"
+                        TextWrapping="Wrap" />
+                </ScrollViewer>
+            </Grid>
+            <Border.Effect>
+                <DropShadowEffect
+                    BlurRadius="15"
+                    Opacity="0.2"
+                    ShadowDepth="0"
+                    Color="{DynamicResource AccentColor}" />
+            </Border.Effect>
         </Border>
     </Grid>
 </Page>

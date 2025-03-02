@@ -84,6 +84,12 @@ public partial class RequestsPage : Page
 			var client = new RestClient(options);
 			var request = new RestRequest("", (Method)RequestTypeComboBox.SelectedIndex);
 
+			// Body
+			if (!string.IsNullOrEmpty(BodyRawTxt.Text))
+			{
+				request.AddParameter(GetContentType(), BodyRawTxt.Text, ParameterType.RequestBody);
+			}
+
 			var response = await client.ExecuteAsync(request);
 			ResponseTxt.Text = response.Content;
 
@@ -198,12 +204,21 @@ public partial class RequestsPage : Page
 	{
 		ResponseSection.Visibility = Visibility.Visible;
 		HeadersSection.Visibility = Visibility.Collapsed;
+		BodySection.Visibility = Visibility.Collapsed;
 	}
 
 	private void HeadersBtn_Checked(object sender, RoutedEventArgs e)
 	{
 		ResponseSection.Visibility = Visibility.Collapsed;
 		HeadersSection.Visibility = Visibility.Visible;
+		BodySection.Visibility = Visibility.Collapsed;
+	}
+
+	private void BodyBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		ResponseSection.Visibility = Visibility.Collapsed;
+		HeadersSection.Visibility = Visibility.Collapsed;
+		BodySection.Visibility = Visibility.Visible;
 	}
 
 	private void RequestTypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -212,5 +227,18 @@ public partial class RequestsPage : Page
 		{
 			comboBox.Foreground = selectedItem.Foreground;
 		}
+	}
+	
+	private string GetContentType()
+	{
+		return BodyTypeComboBox.SelectedItem switch
+		{
+			"JSON" => "application/json",
+			"JavaScript" => "application/javascript",
+			"XML" => "application/xml",
+			"HTML" => "text/html",
+			"Text" => "text/plain",
+			_ => "text/plain"
+		};
 	}
 }
