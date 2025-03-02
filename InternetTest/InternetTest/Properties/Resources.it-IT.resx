@@ -1108,7 +1108,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Bearer</value>
   </data>
   <data name="Token" xml:space="preserve">
-    <value>Gettone (Token)</value>
+    <value>Token</value>
   </data>
   <data name="AuthType" xml:space="preserve">
     <value>Tipo di autorizzazione</value>
