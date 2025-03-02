@@ -62,4 +62,19 @@ public partial class ParameterItem : UserControl
 		if (init) return;
 		UpdateParameter(NameTxt.Text, ValueTxt.Text, Id, Toggle.IsChecked == true);
 	}
+
+	bool isHidden = false;
+	private void HideBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+	{
+		isHidden = !isHidden;
+		ValuePwr.Visibility = isHidden ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
+		ValueTxt.Visibility = isHidden ? System.Windows.Visibility.Collapsed : System.Windows.Visibility.Visible;
+		HideBtn.Content = isHidden ? "\uF3FC" : "\uF3F8";
+		ValuePwr.Password = ValueTxt.Text;
+	}
+
+	private void ValuePwr_PasswordChanged(object sender, System.Windows.RoutedEventArgs e)
+	{
+		ValueTxt.Text = ValuePwr.Password;
+	}
 }
