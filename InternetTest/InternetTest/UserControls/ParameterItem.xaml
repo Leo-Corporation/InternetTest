@@ -45,16 +45,42 @@
             Margin="2"
             Background="{DynamicResource Background3}"
             CornerRadius="5">
-            <TextBox
-                x:Name="ValueTxt"
-                Margin="3"
-                Padding="3"
-                d:Text="123.54.132.56"
-                Background="Transparent"
-                BorderThickness="0"
-                FontWeight="Bold"
-                Foreground="{DynamicResource DarkGray}"
-                TextChanged="NameTxt_TextChanged" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox
+                    x:Name="ValueTxt"
+                    Margin="3"
+                    Padding="3"
+                    d:Text="123.54.132.56"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DarkGray}"
+                    TextChanged="NameTxt_TextChanged" />
+                <PasswordBox
+                    x:Name="ValuePwr"
+                    Margin="3"
+                    Padding="3"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DarkGray}"
+                    PasswordChanged="ValuePwr_PasswordChanged"
+                    Visibility="Collapsed" />
+                <Button
+                    x:Name="HideBtn"
+                    Grid.Column="1"
+                    Margin="5 0"
+                    Background="Transparent"
+                    Click="HideBtn_Click"
+                    Content="&#xF3F8;"
+                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                    Foreground="{DynamicResource Foreground1}"
+                    Style="{DynamicResource ToolButton}" />
+            </Grid>
         </Border>
     </Grid>
 </UserControl>

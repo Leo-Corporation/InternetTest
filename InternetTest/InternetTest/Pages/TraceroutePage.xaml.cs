@@ -65,7 +65,7 @@ public partial class TraceroutePage : Page
 
 		if (string.IsNullOrEmpty(AddressTxt.Text) || string.IsNullOrWhiteSpace(AddressTxt.Text))
 		{
-			MessageBox.Show(Properties.Resources.InvalidURLMsg, Properties.Resources.GetDnsInfo, MessageBoxButton.OK, MessageBoxImage.Error);
+			MessageBox.Show(Properties.Resources.InvalidURLMsg, Properties.Resources.ExecuteTraceRoute, MessageBoxButton.OK, MessageBoxImage.Error);
 			return;
 		}
 

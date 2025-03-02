@@ -1092,4 +1092,34 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="ZoomLevel" xml:space="preserve">
     <value>Livello zoom predefinito</value>
   </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Caricamento</value>
+  </data>
+  <data name="Body" xml:space="preserve">
+    <value>Corpo</value>
+  </data>
+  <data name="ContentType" xml:space="preserve">
+    <value>Tipo di contenuto</value>
+  </data>
+  <data name="Auth" xml:space="preserve">
+    <value>Auth</value>
+  </data>
+  <data name="Bearer" xml:space="preserve">
+    <value>Bearer</value>
+  </data>
+  <data name="Token" xml:space="preserve">
+    <value>Gettone (Token)</value>
+  </data>
+  <data name="AuthType" xml:space="preserve">
+    <value>Tipo di autorizzazione</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nome utente</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="NoAuthMethod" xml:space="preserve">
+    <value>Non verranno fornite informazioni di autenticazione</value>
+  </data>
 </root>

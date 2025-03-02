@@ -222,15 +222,36 @@ public partial class DnsPage : Page
 
 	private async void GetDnsCacheBtn_Click(object sender, RoutedEventArgs e)
 	{
+		// Show Loading UI
 		ItemDisplayer.Children.Clear();
+		StatusSection.Visibility = Visibility.Visible;
+		SuccessBorder.Visibility = Visibility.Collapsed;
+		ErrorBorder.Visibility = Visibility.Collapsed;
+		TotalTxt.Text = Properties.Resources.Loading;
+
+		int success = 0;
+		int error = 0;
+		int total = 0;
+
 		var cache = await Global.GetDnsCache();
 		if (cache != null)
 		{
 			for (int i = 0; i < cache.Length; i++)
 			{
 				ItemDisplayer.Children.Add(new DnsCacheItem(cache[i]));
+				total++;
+
+				if (cache[i].Status == 0) success++; else error++;
 			}
 		}
+
+		// Update Status section
+		SuccessBorder.Visibility = Visibility.Visible;
+		ErrorBorder.Visibility = Visibility.Visible;
+
+		SuccessNbTxt.Text = success.ToString();
+		ErrorNbTxt.Text = error.ToString();
+		TotalTxt.Text = total.ToString();
 	}
 
 	private void FlushDnsBtn_Click(object sender, RoutedEventArgs e)
@@ -256,6 +277,13 @@ public partial class DnsPage : Page
 			// Wait for the process to exit
 			process.WaitForExit();
 			MessageBox.Show(Properties.Resources.FlushDNSSuccess, Properties.Resources.FlushDNS, MessageBoxButton.OK, MessageBoxImage.Information);
+
+			// Clear Status section
+			SuccessNbTxt.Text = "0";
+			ErrorNbTxt.Text = "0";
+			TotalTxt.Text = "0";
+
+			StatusSection.Visibility = Visibility.Collapsed;
 		}
 	}
 }

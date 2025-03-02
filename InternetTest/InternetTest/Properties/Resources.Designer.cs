@@ -142,11 +142,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Auth.
+        /// </summary>
+        public static string Auth {
+            get {
+                return ResourceManager.GetString("Auth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Authentication.
         /// </summary>
         public static string Authentication {
             get {
                 return ResourceManager.GetString("Authentication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Auth Type.
+        /// </summary>
+        public static string AuthType {
+            get {
+                return ResourceManager.GetString("AuthType", resourceCulture);
             }
         }
         
@@ -192,6 +210,24 @@ namespace InternetTest.Properties {
         public static string Band {
             get {
                 return ResourceManager.GetString("Band", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Bearer.
+        /// </summary>
+        public static string Bearer {
+            get {
+                return ResourceManager.GetString("Bearer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Body.
+        /// </summary>
+        public static string Body {
+            get {
+                return ResourceManager.GetString("Body", resourceCulture);
             }
         }
         
@@ -363,6 +399,15 @@ namespace InternetTest.Properties {
         public static string ConnectWiFi {
             get {
                 return ResourceManager.GetString("ConnectWiFi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Content type.
+        /// </summary>
+        public static string ContentType {
+            get {
+                return ResourceManager.GetString("ContentType", resourceCulture);
             }
         }
         
@@ -1424,6 +1469,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Loading.
+        /// </summary>
+        public static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Locate an IP.
         /// </summary>
         public static string LocateAnIP {
@@ -1670,6 +1724,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à No authentication information will be provided.
+        /// </summary>
+        public static string NoAuthMethod {
+            get {
+                return ResourceManager.GetString("NoAuthMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à None.
         /// </summary>
         public static string None {
@@ -1873,6 +1936,15 @@ namespace InternetTest.Properties {
         public static string PackageSent {
             get {
                 return ResourceManager.GetString("PackageSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Password.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         
@@ -2600,6 +2672,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Token.
+        /// </summary>
+        public static string Token {
+            get {
+                return ResourceManager.GetString("Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Tools.
         /// </summary>
         public static string Tools {
@@ -2776,6 +2857,15 @@ namespace InternetTest.Properties {
         public static string URL {
             get {
                 return ResourceManager.GetString("URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Username.
+        /// </summary>
+        public static string Username {
+            get {
+                return ResourceManager.GetString("Username", resourceCulture);
             }
         }
         
