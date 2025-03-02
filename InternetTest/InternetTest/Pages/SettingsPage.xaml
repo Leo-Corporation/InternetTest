@@ -72,59 +72,102 @@
                     HorizontalAlignment="Center"
                     d:Text="8.0.0.2401"
                     FontSize="11" />
-                <TextBlock
-                    x:Name="UpdateTxt"
+                <Border
+                    x:Name="UpdateBorder"
+                    Margin="0 5"
+                    Padding="5"
+                    Background="{DynamicResource LightGreen}"
+                    CornerRadius="5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            x:Name="UpdateIconTxt"
+                            Margin="0 0 5 0"
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="14"
+                            Foreground="{DynamicResource ForegroundGreen}"
+                            Text="&#xF299;" />
+                        <TextBlock
+                            x:Name="UpdateTxt"
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            FontSize="11"
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource ForegroundGreen}"
+                            Text="{x:Static lang:Resources.UpToDate}" />
+                        <Button
+                            x:Name="CheckUpdateBtn"
+                            Grid.Column="2"
+                            Padding="5 2"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Click="CheckUpdateBtn_Click"
+                            Content="&#xF191;"
+                            Cursor="Hand"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="14"
+                            Foreground="{DynamicResource ForegroundGreen}"
+                            Style="{DynamicResource ToolButton}">
+                            <Button.ToolTip>
+                                <ToolTip Content="{x:Static lang:Resources.CheckUpdate}" />
+                            </Button.ToolTip>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <StackPanel
                     HorizontalAlignment="Center"
-                    FontSize="11"
-                    FontWeight="Bold"
-                    Text="{x:Static lang:Resources.UpToDate}" />
-                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <Button
-                        x:Name="CheckUpdateBtn"
-                        Margin="5 10"
-                        Padding="5 2"
-                        HorizontalAlignment="Center"
-                        Background="{DynamicResource Accent}"
-                        BorderThickness="0"
-                        Click="CheckUpdateBtn_Click"
-                        Content="{x:Static lang:Resources.CheckUpdate}"
-                        Cursor="Hand"
-                        FontWeight="ExtraBold"
-                        Foreground="{DynamicResource WindowButtonsHoverForeground1}"
-                        Style="{DynamicResource PrimaryButton}" />
-                    <Button
-                        x:Name="GitHubBtn"
-                        Margin="0 5 5 5"
-                        Padding="3"
-                        VerticalAlignment="Center"
-                        Background="{DynamicResource Background3}"
-                        Click="GitHubBtn_Click"
-                        Content="&#xF1FB;"
-                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
-                        FontSize="14"
-                        Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}">
-                        <Button.ToolTip>
-                            <ToolTip Content="{x:Static lang:Resources.GitHubRepo}" />
-                        </Button.ToolTip>
-                    </Button>
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
                     <Button
                         x:Name="SeeLicensesBtn"
-                        Margin="0 5"
-                        Padding="3"
-                        VerticalAlignment="Center"
-                        Background="{DynamicResource Background3}"
+                        Padding="5"
+                        HorizontalAlignment="Left"
+                        Background="{x:Null}"
                         Click="SeeLicensesBtn_Click"
-                        Content="&#xF4A4;"
-                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
-                        FontSize="14"
-                        Foreground="{DynamicResource Foreground1}"
-                        Style="{DynamicResource DefaultButton}">
-                        <Button.ToolTip>
-                            <ToolTip Content="{x:Static lang:Resources.SeeLicenses}" />
-                        </Button.ToolTip>
+                        Cursor="Hand"
+                        FontSize="12"
+                        FontWeight="ExtraBold"
+                        Foreground="{DynamicResource Accent}"
+                        Style="{DynamicResource StandardButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0 0 10 0"
+                                VerticalAlignment="Center"
+                                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                FontWeight="Regular"
+                                Text="&#xF583;" />
+                            <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.SeeLicenses}" />
+                        </StackPanel>
                     </Button>
-
+                    <Button
+                        x:Name="GitHubBtn"
+                        Padding="5"
+                        HorizontalAlignment="Left"
+                        Background="{x:Null}"
+                        Click="GitHubBtn_Click"
+                        Cursor="Hand"
+                        FontSize="12"
+                        FontWeight="ExtraBold"
+                        Foreground="{DynamicResource Accent}"
+                        Style="{DynamicResource StandardButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0 0 10 0"
+                                VerticalAlignment="Center"
+                                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                FontWeight="Regular"
+                                Text="&#xF583;" />
+                            <TextBlock VerticalAlignment="Center" Text="GitHub" />
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </StackPanel>
         </Border>

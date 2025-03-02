@@ -67,6 +67,7 @@ public partial class SettingsPage : Page
 	}
 
 	readonly System.Windows.Forms.NotifyIcon notifyIcon = new();
+	bool updatesAvailable = false;
 	private async void InitUI()
 	{
 		// About section
@@ -137,8 +138,9 @@ public partial class SettingsPage : Page
 
 		// If updates are available
 		// Update the UI
+		updatesAvailable = true;
 		CheckUpdateBtn.Content = Properties.Resources.Install;
-		UpdateTxt.Text = Properties.Resources.AvailableUpdates;
+		LoadUpdateSection();
 
 		// Show notification
 		if (!Global.Settings.ShowNotficationWhenUpdateAvailable) return;
@@ -147,6 +149,37 @@ public partial class SettingsPage : Page
 		notifyIcon.Visible = false; // Hide
 	}
 
+	internal void LoadUpdateSection()
+	{
+		if (updatesAvailable)
+		{
+			UpdateTxt.Text = Properties.Resources.AvailableUpdates;
+			UpdateIconTxt.Text = "\uF86A";
+			UpdateTxt.Foreground = Global.GetBrushFromResource("ForegroundOrange");
+			UpdateIconTxt.Foreground = Global.GetBrushFromResource("ForegroundOrange");
+			UpdateBorder.Background = Global.GetBrushFromResource("LightOrange");
+			CheckUpdateBtn.Foreground = Global.GetBrushFromResource("ForegroundOrange");
+			CheckUpdateBtn.Content = Properties.Resources.Install;
+			CheckUpdateBtn.FontFamily = new(new Uri("pack://application:,,,/"), "./Fonts/#Hauora");
+			CheckUpdateBtn.FontSize = 12;
+			CheckUpdateBtn.FontWeight = FontWeights.ExtraBold;
+		}
+		else
+		{
+			UpdateTxt.Text = Properties.Resources.UpToDate;
+			UpdateIconTxt.Text = "\uF299";
+			UpdateTxt.Foreground = Global.GetBrushFromResource("ForegroundGreen");
+			UpdateIconTxt.Foreground = Global.GetBrushFromResource("ForegroundGreen");
+			UpdateBorder.Background = Global.GetBrushFromResource("LightGreen");
+			CheckUpdateBtn.Foreground = Global.GetBrushFromResource("ForegroundGreen");
+			CheckUpdateBtn.Content = "\uF191";
+			CheckUpdateBtn.FontFamily = new(new Uri("pack://application:,,,/"), "./Fonts/#FluentSystemIcons-Regular");
+			CheckUpdateBtn.FontSize = 14;
+			CheckUpdateBtn.FontWeight = FontWeights.Normal;
+		}
+	}
+
+
 	private async void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
 	{
 		try
@@ -154,7 +187,9 @@ public partial class SettingsPage : Page
 			string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink);
 			if (Update.IsAvailable(Global.Version, lastVersion))
 			{
-				UpdateTxt.Text = Properties.Resources.AvailableUpdates;
+				updatesAvailable = true;
+				LoadUpdateSection();
+
 #if PORTABLE
 				MessageBox.Show(Properties.Resources.PortableNoAutoUpdates, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.OK, MessageBoxImage.Information);
 				return;
@@ -174,7 +209,8 @@ public partial class SettingsPage : Page
 			}
 			else
 			{
-				UpdateTxt.Text = Properties.Resources.UpToDate;
+				updatesAvailable = false;
+				LoadUpdateSection();
 			}
 		}
 		catch
@@ -214,6 +250,7 @@ public partial class SettingsPage : Page
 		HistoryManager.Save(Global.History);
 
 		Global.ChangeTheme();
+		LoadUpdateSection();
 	}
 
 	private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -228,6 +265,7 @@ public partial class SettingsPage : Page
 		HistoryManager.Save(Global.History);
 
 		Global.ChangeTheme();
+		LoadUpdateSection();
 	}
 
 	private void SystemBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -242,6 +280,7 @@ public partial class SettingsPage : Page
 		HistoryManager.Save(Global.History);
 
 		Global.ChangeTheme();
+		LoadUpdateSection();
 	}
 
 	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
