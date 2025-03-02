@@ -74,8 +74,6 @@
                         Background="Transparent"
                         BorderBrush="{DynamicResource Accent}"
                         BorderThickness="2"
-                        FontFamily="Consolas"
-                        FontSize="14"
                         FontWeight="SemiBold"
                         Foreground="{DynamicResource Foreground1}"
                         SelectionChanged="RequestTypeComboBox_SelectionChanged"
@@ -452,12 +450,13 @@
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 Padding="1"
-                                BorderBrush="{DynamicResource Background2}"
-                                BorderThickness="2"
+                                BorderBrush="{DynamicResource Border}"
+                                BorderThickness="1"
                                 CornerRadius="5">
                                 <TextBox
                                     x:Name="BasicUsernameTxt"
                                     Padding="1"
+                                    VerticalAlignment="Center"
                                     Background="Transparent"
                                     BorderThickness="0"
                                     FontWeight="Bold"
@@ -474,14 +473,16 @@
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 Padding="1"
-                                BorderBrush="{DynamicResource Background2}"
-                                BorderThickness="2"
+                                BorderBrush="{DynamicResource Border}"
+                                BorderThickness="1"
                                 CornerRadius="5">
                                 <PasswordBox
                                     x:Name="BasicPasswordPwr"
                                     Padding="1"
+                                    VerticalAlignment="Center"
                                     Background="Transparent"
                                     BorderThickness="0"
+                                    CaretBrush="{DynamicResource Foreground1}"
                                     FontWeight="Bold"
                                     Foreground="{DynamicResource DarkGray}" />
                             </Border>
@@ -504,14 +505,16 @@
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 Padding="1"
-                                BorderBrush="{DynamicResource Background2}"
-                                BorderThickness="2"
+                                BorderBrush="{DynamicResource Border}"
+                                BorderThickness="1"
                                 CornerRadius="5">
                                 <PasswordBox
                                     x:Name="Bearer"
                                     Padding="1"
+                                    VerticalAlignment="Center"
                                     Background="Transparent"
                                     BorderThickness="0"
+                                    CaretBrush="{DynamicResource Foreground1}"
                                     FontWeight="Bold"
                                     Foreground="{DynamicResource DarkGray}" />
                             </Border>
