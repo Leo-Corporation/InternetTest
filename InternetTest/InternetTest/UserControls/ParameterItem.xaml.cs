@@ -43,12 +43,15 @@ public partial class ParameterItem : UserControl
 		NameTxt.Text = VarName;
 		ValueTxt.Text = Value;
 		Toggle.IsChecked = true;
+		IsHidden = ContainsSensitiveData(VarName);
+		HideContent(IsHidden);
 		init = false;
 	}
 
 	public string VarName { get; }
 	public string Value { get; }
 	public int Id { get; }
+	public bool IsHidden { get; set; } = false;
 	public Action<string, string, int, bool> UpdateParameter { get; }
 
 	private void NameTxt_TextChanged(object sender, TextChangedEventArgs e)
@@ -63,18 +66,35 @@ public partial class ParameterItem : UserControl
 		UpdateParameter(NameTxt.Text, ValueTxt.Text, Id, Toggle.IsChecked == true);
 	}
 
-	bool isHidden = false;
 	private void HideBtn_Click(object sender, System.Windows.RoutedEventArgs e)
 	{
-		isHidden = !isHidden;
+		IsHidden = !IsHidden;
+		HideContent(IsHidden);
+	}
+
+	private void ValuePwr_PasswordChanged(object sender, System.Windows.RoutedEventArgs e)
+	{
+		ValueTxt.Text = ValuePwr.Password;
+	}
+
+	private void HideContent(bool isHidden)
+	{
 		ValuePwr.Visibility = isHidden ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
 		ValueTxt.Visibility = isHidden ? System.Windows.Visibility.Collapsed : System.Windows.Visibility.Visible;
 		HideBtn.Content = isHidden ? "\uF3FC" : "\uF3F8";
 		ValuePwr.Password = ValueTxt.Text;
 	}
 
-	private void ValuePwr_PasswordChanged(object sender, System.Windows.RoutedEventArgs e)
+	private bool ContainsSensitiveData(string name)
 	{
-		ValueTxt.Text = ValuePwr.Password;
+		string[] sensitiveWords = [
+			"password", "token", "key", "secret","private", "protected", "auth", "login", "username", "email"
+		];
+
+		foreach (string word in sensitiveWords)
+		{
+			if (name.ToLower().Contains(word)) return true;
+		}
+		return false;
 	}
 }
