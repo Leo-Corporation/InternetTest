@@ -109,7 +109,7 @@ namespace InternetTest.Windows
 				else
 				{
 					stackPanel.Children.Add(new TextBlock() { FontSize = 12, Text = category.Key, Foreground = Global.GetBrushFromResource("Foreground2") });
-					stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value.ToString() });
+					stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value?.ToString() });
 				}
 
 				Cat1Grid.Children.Add(stackPanel);
@@ -123,7 +123,7 @@ namespace InternetTest.Windows
 			{
 				StackPanel stackPanel = new() { Margin = new(5) };
 				stackPanel.Children.Add(new TextBlock() { FontSize = 12, Text = category.Key, Foreground = Global.GetBrushFromResource("Foreground2") });
-				stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value.ToString() });
+				stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value?.ToString() });
 				Cat2Grid.Children.Add(stackPanel);
 				Grid.SetColumn(stackPanel, i % 2);
 				Grid.SetRow(stackPanel, i / 2);
@@ -135,7 +135,7 @@ namespace InternetTest.Windows
 			{
 				StackPanel stackPanel = new() { Margin = new(5) };
 				stackPanel.Children.Add(new TextBlock() { FontSize = 12, Text = category.Key, Foreground = Global.GetBrushFromResource("Foreground2") });
-				stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value.ToString() });
+				stackPanel.Children.Add(new TextBlock() { FontSize = 14, FontWeight = FontWeights.SemiBold, Text = category.Value?.ToString() });
 				Cat3Grid.Children.Add(stackPanel);
 				Grid.SetColumn(stackPanel, i % 2);
 				Grid.SetRow(stackPanel, i / 2);
