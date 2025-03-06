@@ -1142,6 +1142,8 @@
 
                         <Border
                             x:Name="dropDownBorder"
+                            MinWidth="{Binding ActualWidth, ElementName=templateRoot}"
+                            MaxHeight="{TemplateBinding MaxDropDownHeight}"
                             Margin="7"
                             Padding="7 5"
                             Background="{DynamicResource Background1}"
