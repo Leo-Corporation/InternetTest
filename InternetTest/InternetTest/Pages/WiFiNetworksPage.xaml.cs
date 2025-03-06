@@ -27,6 +27,7 @@ using InternetTest.UserControls;
 using ManagedNativeWifi;
 using Synethia;
 using System;
+using System.Linq;
 using System.Net.NetworkInformation;
 using System.Windows;
 using System.Windows.Controls;
@@ -100,6 +101,9 @@ public partial class WiFiNetworksPage : Page
 			for (int i = 0; i < nics.Length; i++)
 			{
 				if (!(ShowHiddenChk.IsChecked ?? true) && nics[i].OperationalStatus == OperationalStatus.Down) continue;
+
+				// .NET 9+ get the same behavior as .NET 8
+				if (nics[i].GetIPProperties().UnicastAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork) is null) continue;
 				AdaptersPanel.Children.Add(new AdapterItem(new(nics[i])));
 			}
 		}

@@ -283,12 +283,13 @@ public partial class RequestsPage : Page
 		}
 	}
 
-	private string GetAuthValue() { 
-		return AuthTypeComboBox.SelectedIndex switch 
-		{ 
+	private string GetAuthValue()
+	{
+		return AuthTypeComboBox.SelectedIndex switch
+		{
 			1 => $"Basic {Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes($"{BasicUsernameTxt.Text}:{BasicPasswordPwr.Password}"))}",
 			2 => $"Bearer {Bearer.Password}",
-			_ => "" 
-		}; 
+			_ => ""
+		};
 	}
 }
