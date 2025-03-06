@@ -60,7 +60,6 @@ namespace InternetTest.Classes
 			NetworkInterfaceType = adapter.NetworkInterfaceType;
 			Status = adapter.OperationalStatus;
 			DnsSuffix = properties.DnsSuffix;
-			Mtu = properties.GetIPv4Properties().Mtu;
 			DnsEnabled = properties.IsDnsEnabled;
 			IsDynamicDnsEnabled = properties.IsDynamicDnsEnabled;
 			IsReceiveOnly = adapter.IsReceiveOnly;
@@ -82,10 +81,11 @@ namespace InternetTest.Classes
 			if (adapter.Supports(NetworkInterfaceComponent.IPv4))
 			{
 				IpVersion = "IPv4";
+				Mtu = properties.GetIPv4Properties().Mtu;
 			}
 			if (adapter.Supports(NetworkInterfaceComponent.IPv6))
 			{
-				if (IpVersion.Length > 0)
+				if (IpVersion?.Length > 0)
 				{
 					IpVersion += ", ";
 				}
@@ -147,6 +147,6 @@ namespace InternetTest.Classes
 				   $"{Properties.Resources.UnicastPacketsSent}: {UnicastPacketsSent}";
 		}
 
-		private string BoolToString(bool b) => b ? Properties.Resources.Yes : Properties.Resources.No;
+		private static string BoolToString(bool b) => b ? Properties.Resources.Yes : Properties.Resources.No;
 	}
 }
