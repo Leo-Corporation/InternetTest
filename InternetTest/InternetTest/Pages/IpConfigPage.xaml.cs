@@ -54,7 +54,7 @@ public partial class IpConfigPage : Page
 		for (int i = 0; i < networkInterfaces.Length; i++)
 		{
 			var props = networkInterfaces[i].GetIPProperties();
-			if (props.UnicastAddresses.FirstOrDefault(x => x.Address.AddressFamily == AddressFamily.InterNetwork) is null) continue; // Skip if no IPv4 address
+			if (!networkInterfaces[i].Supports(NetworkInterfaceComponent.IPv4)) continue; // Skip if no IPv4 address
 
 			IpConfigDisplayer.Children.Add(new IpConfigItem(new
 				(
