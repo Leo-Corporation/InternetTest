@@ -190,7 +190,8 @@ public partial class HomePage : Page
 			if (!Directory.Exists(path))
 			{
 				Directory.CreateDirectory(path);
-			};
+			}
+			;
 
 			// Run "netsh wlan export profile key=clear" command
 			Process process = new();

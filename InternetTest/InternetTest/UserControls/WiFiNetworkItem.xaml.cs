@@ -51,10 +51,10 @@ public partial class WiFiNetworkItem : UserControl
 
 		StrengthIconTxt.Text = NetworkInfo.SignalQuality switch
 		{
-			int n when (n >= 0 && n < 25) => "\uF8B3",
-			int n when (n >= 25 && n < 50) => "\uF8B1",
-			int n when (n >= 50 && n < 75) => "\uF8AF",
-			int n when (n >= 75 && n <= 100) => "\uF8AD",
+			int n when (n is >= 0 and < 25) => "\uF8B3",
+			int n when (n is >= 25 and < 50) => "\uF8B1",
+			int n when (n is >= 50 and < 75) => "\uF8AF",
+			int n when (n is >= 75 and <= 100) => "\uF8AD",
 			_ => "\uF8AD",
 		};
 

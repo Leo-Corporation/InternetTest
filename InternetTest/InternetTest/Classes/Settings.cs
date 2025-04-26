@@ -123,7 +123,7 @@ public static class SettingsManager
 		settings.TraceRouteMaxTimeOut ??= 5000;
 		settings.MainWindowSize ??= (950, 600);
 		settings.LaunchIpLocationOnStart ??= true;
-		settings.DefaultPage = (settings.DefaultPage == AppPages.Status || settings.DefaultPage == AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
+		settings.DefaultPage = (settings.DefaultPage is AppPages.Status or AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
 		settings.DownDetectorWebsites ??= [];
 		settings.DefaultTimeInterval ??= 10;
 		settings.HideDisabledAdapters ??= false;
@@ -189,7 +189,7 @@ public static class SettingsManager
 				settings.TraceRouteMaxTimeOut ??= 5000;
 				settings.MainWindowSize ??= (950, 600);
 				settings.LaunchIpLocationOnStart ??= true;
-				settings.DefaultPage = (settings.DefaultPage == AppPages.Status || settings.DefaultPage == AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
+				settings.DefaultPage = (settings.DefaultPage is AppPages.Status or AppPages.MyIP) ? AppPages.Home : settings.DefaultPage;
 				settings.DownDetectorWebsites ??= [];
 				settings.DefaultTimeInterval ??= 10;
 				settings.HideDisabledAdapters ??= false;

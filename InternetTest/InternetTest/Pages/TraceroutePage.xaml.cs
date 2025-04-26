@@ -119,7 +119,7 @@ public partial class TraceroutePage : Page
 			{
 				TracertPanel.Children.Add(new TraceRouteItem(route[i], i == route.Count - 1));
 			}
-			if (route[i].Status == IPStatus.Success || route[i].Status == IPStatus.TtlExpired) success++;
+			if (route[i].Status is IPStatus.Success or IPStatus.TtlExpired) success++;
 			else failed++;
 			time += route[i].RoundtripTime;
 		}
