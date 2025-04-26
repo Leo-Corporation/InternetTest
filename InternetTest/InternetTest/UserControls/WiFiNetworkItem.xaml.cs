@@ -34,11 +34,13 @@ namespace InternetTest.UserControls;
 public partial class WiFiNetworkItem : UserControl
 {
 	internal NetworkInfo NetworkInfo { get; init; }
-	public WiFiNetworkItem(NetworkInfo networkInfo)
+	public string CurrentSSID { get; init; }
+
+	public WiFiNetworkItem(NetworkInfo networkInfo, string currentSSID)
 	{
 		InitializeComponent();
 		NetworkInfo = networkInfo;
-
+		CurrentSSID = currentSSID;
 		InitUI();
 	}
 
@@ -63,6 +65,9 @@ public partial class WiFiNetworkItem : UserControl
 		ChannelTxt.Text = $"{NetworkInfo.Channel}";
 		BandTxt.Text = $"{NetworkInfo.Band:0.0} GHz";
 		FrequencyTxt.Text = $"{NetworkInfo.Frequency} kHz";
+
+		ConnectedIndicator.Visibility = NetworkInfo.Ssid == CurrentSSID ? Visibility.Visible : Visibility.Collapsed;
+		ConnectBtn.Visibility = NetworkInfo.Ssid == CurrentSSID ? Visibility.Collapsed : Visibility.Visible;
 	}
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)

@@ -131,11 +131,12 @@ public partial class HomePage : Page
 			WiFiQuickAction.Visibility = Visibility.Collapsed;
 			WiFiQuickActionPlaceholder.Visibility = Visibility.Collapsed;
 
+			string currentSSID = Global.GetCurrentWifiSSID();
 			await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
 			var wifis = Global.GetWiFis();
 			for (int i = 0; i < wifis.Count; i++)
 			{
-				WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i]));
+				WiFiDisplayer.Children.Add(new WiFiNetworkItem(wifis[i], currentSSID));
 			}
 			if (WiFiDisplayer.Children.Count > 0)
 			{

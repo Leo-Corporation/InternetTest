@@ -63,6 +63,22 @@
                         Foreground="{DynamicResource Accent}"
                         Style="{DynamicResource PrimaryButton}" />
 
+                    <Border
+                        x:Name="ConnectedIndicator"
+                        Grid.Row="1"
+                        Padding="10 0"
+                        Background="{DynamicResource LightGreen}"
+                        CornerRadius="12"
+                        Visibility="Collapsed">
+
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource ForegroundGreen}"
+                            Text="{x:Static lang:Resources.ConnectedS}" />
+                    </Border>
+
                     <Button
                         x:Name="CopyBtn"
                         Grid.Column="1"
