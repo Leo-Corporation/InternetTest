@@ -123,6 +123,7 @@ public partial class SettingsPage : Page
 
 		// Adapters section
 		HideNetworkAdaptersChk.IsChecked = Global.Settings.HideDisabledAdapters;
+		ShowNoIpv4Chk.IsChecked = Global.Settings.ShowAdaptersNoIpv4Support;
 
 		// Data section
 		UseSynethiaChk.IsChecked = Global.Settings.UseSynethia;
@@ -523,6 +524,12 @@ public partial class SettingsPage : Page
 	{
 		if (string.IsNullOrEmpty(ZoomLevelTxt.Text)) return;
 		Global.Settings.MapZoomLevel = int.Parse(ZoomLevelTxt.Text);
+		SettingsManager.Save();
+	}
+
+	private void ShowNoIpv4Chk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.ShowAdaptersNoIpv4Support = ShowNoIpv4Chk.IsChecked;
 		SettingsManager.Save();
 	}
 }

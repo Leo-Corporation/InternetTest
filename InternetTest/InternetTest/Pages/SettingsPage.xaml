@@ -974,6 +974,16 @@
                         Foreground="{DynamicResource Foreground1}"
                         Style="{DynamicResource CheckBoxStyle1}"
                         Unchecked="NetworkAdaptersChk_Checked" />
+                    <CheckBox
+                        x:Name="ShowNoIpv4Chk"
+                        Margin="10 0 0 5"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="2"
+                        Checked="ShowNoIpv4Chk_Checked"
+                        Content="{x:Static lang:Resources.ShowAdaptersNoIpv4Support}"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource CheckBoxStyle1}"
+                        Unchecked="ShowNoIpv4Chk_Checked" />
                 </StackPanel>
             </Expander>
 

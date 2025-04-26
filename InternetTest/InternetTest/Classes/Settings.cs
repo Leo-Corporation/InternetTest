@@ -57,6 +57,7 @@ public class Settings
 		DefaultTimeInterval = 10;
 		HideDisabledAdapters = false;
 		MapZoomLevel = 12;
+		ShowAdaptersNoIpv4Support = false;
 	}
 
 	public Themes Theme { get; set; }
@@ -82,6 +83,7 @@ public class Settings
 	public int? DefaultTimeInterval { get; set; }
 	public bool? HideDisabledAdapters { get; set; }
 	public int? MapZoomLevel { get; set; }
+	public bool? ShowAdaptersNoIpv4Support { get; set; }
 }
 
 public static class SettingsManager
@@ -126,6 +128,7 @@ public static class SettingsManager
 		settings.DefaultTimeInterval ??= 10;
 		settings.HideDisabledAdapters ??= false;
 		settings.MapZoomLevel ??= 12;
+		settings.ShowAdaptersNoIpv4Support ??= false;
 
 		return settings;
 	}
@@ -191,6 +194,7 @@ public static class SettingsManager
 				settings.DefaultTimeInterval ??= 10;
 				settings.HideDisabledAdapters ??= false;
 				settings.MapZoomLevel ??= 12;
+				settings.ShowAdaptersNoIpv4Support ??= false;
 
 				Global.Settings = settings;
 
