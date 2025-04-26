@@ -104,7 +104,7 @@ public partial class WiFiNetworksPage : Page
 				if (!(ShowHiddenChk.IsChecked ?? true) && networkInterfaces[i].OperationalStatus == OperationalStatus.Down) continue;
 
 				// .NET 9+ get the same behavior as .NET 8
-				if (!networkInterfaces[i].Supports(NetworkInterfaceComponent.IPv4)) continue;
+				if (!(Global.Settings.ShowAdaptersNoIpv4Support ?? false) && !networkInterfaces[i].Supports(NetworkInterfaceComponent.IPv4)) continue;
 				AdaptersPanel.Children.Add(new AdapterItem(new(networkInterfaces[i])));
 			}
 		}
