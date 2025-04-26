@@ -1113,4 +1113,7 @@
   <data name="NoAuthMethod" xml:space="preserve">
     <value>不提供验证信息</value>
   </data>
+  <data name="ShowAdaptersNoIpv4Support" xml:space="preserve">
+    <value>显示不支持 IPv4 的网络适配器</value>
+  </data>
 </root>
