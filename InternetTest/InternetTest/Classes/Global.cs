@@ -134,7 +134,7 @@ public static class Global
 	{
 		get
 		{
-			if (DateTime.Now.Hour is >= 21 and <= 7) // If between 9PM & 7AM
+			if (DateTime.Now.Hour is >= 21 or <= 7) // If between 9PM & 7AM
 			{
 				return Properties.Resources.GoodNight + ", " + Environment.UserName + "."; // Return the correct value
 			}
