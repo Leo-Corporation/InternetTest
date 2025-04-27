@@ -51,7 +51,7 @@ public static class Global
 	public static string Version => $"8.9.0.2504-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "8.9.0.2504-rc1";
+	public static string Version => "8.9.0.2504";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 
@@ -495,30 +495,30 @@ public static class Global
 	public static string GetWpa2PersonalProfileXml(string ssid, string password)
 	{
 		var profileXml = $@"<?xml version=""1.0""?>
-    <WLANProfile xmlns=""http://www.microsoft.com/networking/WLAN/profile/v1"">
-        <name>{ssid}</name>
-        <SSIDConfig>
-            <SSID>
-                <name>{ssid}</name>
-            </SSID>
-        </SSIDConfig>
-        <connectionType>ESS</connectionType>
-        <connectionMode>auto</connectionMode>
-        <MSM>
-            <security>
-                <authEncryption>
-                    <authentication>WPA2PSK</authentication>
-                    <encryption>AES</encryption>
-                    <useOneX>false</useOneX>
-                </authEncryption>
-                <sharedKey>
-                    <keyType>passPhrase</keyType>
-                    <protected>false</protected>
-                    <keyMaterial>{password}</keyMaterial>
-                </sharedKey>
-            </security>
-        </MSM>
-    </WLANProfile>";
+	<WLANProfile xmlns=""http://www.microsoft.com/networking/WLAN/profile/v1"">
+		<name>{ssid}</name>
+		<SSIDConfig>
+			<SSID>
+				<name>{ssid}</name>
+			</SSID>
+		</SSIDConfig>
+		<connectionType>ESS</connectionType>
+		<connectionMode>auto</connectionMode>
+		<MSM>
+			<security>
+				<authEncryption>
+					<authentication>WPA2PSK</authentication>
+					<encryption>AES</encryption>
+					<useOneX>false</useOneX>
+				</authEncryption>
+				<sharedKey>
+					<keyType>passPhrase</keyType>
+					<protected>false</protected>
+					<keyMaterial>{password}</keyMaterial>
+				</sharedKey>
+			</security>
+		</MSM>
+	</WLANProfile>";
 		return profileXml;
 	}
 
