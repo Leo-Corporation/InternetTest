@@ -147,7 +147,7 @@
                             FontFamily="../Fonts/#FluentSystemIcons-Regular"
                             FontSize="24"
                             Foreground="{DynamicResource Accent}"
-                            Text="&#xF8AC;" />
+                            Text="&#xF904;" />
                         <StackPanel
                             Grid.Column="1"
                             Margin="10 0"

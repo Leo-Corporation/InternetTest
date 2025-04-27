@@ -133,7 +133,7 @@ public partial class DnsCacheInfoWindow : Window
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)
 	{
-
+		Clipboard.SetText(DnsCacheInfo.ToString());
 	}
 
 	private void CloseBtn_Click(object sender, RoutedEventArgs e)

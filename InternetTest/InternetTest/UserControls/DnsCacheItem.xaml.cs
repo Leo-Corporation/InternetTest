@@ -25,6 +25,7 @@ SOFTWARE.
 using InternetTest.Classes;
 using InternetTest.Enums;
 using InternetTest.Windows;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace InternetTest.UserControls;
@@ -51,6 +52,10 @@ public partial class DnsCacheItem : UserControl
 		DataTxt.Text = DnsCacheInfo.Data;
 	}
 
+	private void CopyMenuItem_Click(object sender, System.Windows.RoutedEventArgs e)
+	{
+		Clipboard.SetText(DnsCacheInfo.ToString());
+	}
 
 	private void UserControl_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
 	{

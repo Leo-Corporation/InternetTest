@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:Background="White"
@@ -22,6 +23,14 @@
             </Style.Triggers>
         </Style>
     </UserControl.Style>
+    <UserControl.ContextMenu>
+        <ContextMenu>
+            <MenuItem
+                x:Name="CopyMenuItem"
+                Click="CopyMenuItem_Click"
+                Header="{x:Static lang:Resources.Copy}" />
+        </ContextMenu>
+    </UserControl.ContextMenu>
     <Border Padding="10 15" VerticalAlignment="Center">
 
         <Grid>
