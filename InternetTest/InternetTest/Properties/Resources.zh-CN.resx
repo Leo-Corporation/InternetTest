@@ -1113,4 +1113,37 @@
   <data name="NoAuthMethod" xml:space="preserve">
     <value>不提供验证信息</value>
   </data>
+  <data name="ShowAdaptersNoIpv4Support" xml:space="preserve">
+    <value>显示不支持 IPv4 的网络适配器</value>
+  </data>
+  <data name="DnsCacheWindowTitle" xml:space="preserve">
+    <value>缓存元素详细信息</value>
+  </data>
+  <data name="Caption" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>说明</value>
+  </data>
+  <data name="ElementName" xml:space="preserve">
+    <value>元素名称</value>
+  </data>
+  <data name="InstanceId" xml:space="preserve">
+    <value>实例 ID</value>
+  </data>
+  <data name="DataLength" xml:space="preserve">
+    <value>数据长度</value>
+  </data>
+  <data name="Section" xml:space="preserve">
+    <value>部门</value>
+  </data>
+  <data name="TimeToLive" xml:space="preserve">
+    <value>生活的时间</value>
+  </data>
+  <data name="PsComputerName" xml:space="preserve">
+    <value>PowerShell 電腦名稱</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>一般情况</value>
+  </data>
 </root>

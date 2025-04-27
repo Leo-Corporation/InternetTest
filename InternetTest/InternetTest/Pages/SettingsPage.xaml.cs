@@ -34,7 +34,6 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -77,19 +76,20 @@ public partial class SettingsPage : Page
 		VersionTxt.Text = Global.Version;
 #endif
 
-		// Select the default theme border
-		ThemeSelectedBorder = Global.Settings.Theme switch
+		// Select the default Theme radiobutton
+		switch (Global.Settings.Theme)
 		{
-			Themes.Light => LightBorder,
-			Themes.Dark => DarkBorder,
-			_ => SystemBorder
-		};
-		Border_MouseEnter(Global.Settings.Theme switch
-		{
-			Themes.Light => LightBorder,
-			Themes.Dark => DarkBorder,
-			_ => SystemBorder
-		}, null);
+			case Themes.Light:
+				LightBtn.IsChecked = true;
+				break;
+			case Themes.Dark:
+				DarkBtn.IsChecked = true;
+				break;
+			case Themes.System:
+				SystemBtn.IsChecked = true;
+				break;
+		}
+
 
 		// Select the language
 		LangComboBox.SelectedIndex = (int)Global.Settings.Language;
@@ -123,6 +123,7 @@ public partial class SettingsPage : Page
 
 		// Adapters section
 		HideNetworkAdaptersChk.IsChecked = Global.Settings.HideDisabledAdapters;
+		ShowNoIpv4Chk.IsChecked = Global.Settings.ShowAdaptersNoIpv4Support;
 
 		// Data section
 		UseSynethiaChk.IsChecked = Global.Settings.UseSynethia;
@@ -217,70 +218,6 @@ public partial class SettingsPage : Page
 		{
 			UpdateTxt.Text = Properties.Resources.UnableToCheckUpdates;
 		}
-	}
-
-	Border ThemeSelectedBorder;
-	private void Border_MouseEnter(object sender, MouseEventArgs e)
-	{
-		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
-	}
-
-	private void Border_MouseLeave(object sender, MouseEventArgs e)
-	{
-		if ((Border)sender == ThemeSelectedBorder) return;
-		((Border)sender).BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
-	}
-
-	private void ResetBorders()
-	{
-		LightBorder.BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
-		DarkBorder.BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
-		SystemBorder.BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
-	}
-
-	private void LightBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-	{
-		ResetBorders();
-		ThemeSelectedBorder = (Border)sender;
-		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
-		Global.Settings.Theme = Themes.Light;
-		SettingsManager.Save();
-
-		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
-		HistoryManager.Save(Global.History);
-
-		Global.ChangeTheme();
-		LoadUpdateSection();
-	}
-
-	private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-	{
-		ResetBorders();
-		ThemeSelectedBorder = (Border)sender;
-		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
-		Global.Settings.Theme = Themes.Dark;
-		SettingsManager.Save();
-
-		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
-		HistoryManager.Save(Global.History);
-
-		Global.ChangeTheme();
-		LoadUpdateSection();
-	}
-
-	private void SystemBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-	{
-		ResetBorders();
-		ThemeSelectedBorder = (Border)sender;
-		((Border)sender).BorderBrush = Global.GetBrushFromResource("Accent");
-		Global.Settings.Theme = Themes.System;
-		SettingsManager.Save();
-
-		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
-		HistoryManager.Save(Global.History);
-
-		Global.ChangeTheme();
-		LoadUpdateSection();
 	}
 
 	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -524,5 +461,22 @@ public partial class SettingsPage : Page
 		if (string.IsNullOrEmpty(ZoomLevelTxt.Text)) return;
 		Global.Settings.MapZoomLevel = int.Parse(ZoomLevelTxt.Text);
 		SettingsManager.Save();
+	}
+
+	private void ShowNoIpv4Chk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.ShowAdaptersNoIpv4Support = ShowNoIpv4Chk.IsChecked;
+		SettingsManager.Save();
+	}
+
+	private void LightBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		if (LightBtn.IsChecked ?? false)
+			Global.Settings.Theme = Themes.Light;
+		else Global.Settings.Theme = DarkBtn.IsChecked ?? false ? Themes.Dark : Themes.System;
+
+		SettingsManager.Save();
+		Global.ChangeTheme();
+		LoadUpdateSection();
 	}
 }

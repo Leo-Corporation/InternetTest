@@ -48,10 +48,10 @@ public static class Global
 #if NIGHTLY
 	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-	public static string Version => $"8.8.2.2503-nightly{Date:yyMM.dd@HHmm}";
+	public static string Version => $"8.9.0.2504-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "8.8.2.2503";
+	public static string Version => "8.9.0.2504";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 
@@ -134,19 +134,19 @@ public static class Global
 	{
 		get
 		{
-			if (DateTime.Now.Hour >= 21 && DateTime.Now.Hour <= 7) // If between 9PM & 7AM
+			if (DateTime.Now.Hour is >= 21 or <= 7) // If between 9PM & 7AM
 			{
 				return Properties.Resources.GoodNight + ", " + Environment.UserName + "."; // Return the correct value
 			}
-			else if (DateTime.Now.Hour >= 7 && DateTime.Now.Hour <= 12) // If between 7AM - 12PM
+			else if (DateTime.Now.Hour is >= 7 and <= 12) // If between 7AM - 12PM
 			{
 				return Properties.Resources.Hi + ", " + Environment.UserName + "."; // Return the correct value
 			}
-			else if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour <= 17) // If between 12PM - 5PM
+			else if (DateTime.Now.Hour is >= 12 and <= 17) // If between 12PM - 5PM
 			{
 				return Properties.Resources.GoodAfternoon + ", " + Environment.UserName + "."; // Return the correct value
 			}
-			else if (DateTime.Now.Hour >= 17 && DateTime.Now.Hour <= 21) // If between 5PM - 9PM
+			else if (DateTime.Now.Hour is >= 17 and <= 21) // If between 5PM - 9PM
 			{
 				return Properties.Resources.GoodEvening + ", " + Environment.UserName + "."; // Return the correct value
 			}
@@ -209,7 +209,7 @@ public static class Global
 
 		var sorted = appScores.OrderByDescending(x => x.Value);
 
-		return (from item in sorted select item.Key).ToList();
+		return [.. (from item in sorted select item.Key)];
 	}
 
 	public static List<AppPages> DefaultRelevantPages =>
@@ -347,7 +347,7 @@ public static class Global
 
 	public static bool IsSystemThemeDark()
 	{
-		if (Sys.CurrentWindowsVersion != WindowsVersion.Windows10 && Sys.CurrentWindowsVersion != WindowsVersion.Windows11)
+		if (Sys.CurrentWindowsVersion is not WindowsVersion.Windows10 and not WindowsVersion.Windows11)
 		{
 			return false; // Avoid errors on older OSs
 		}
@@ -422,7 +422,7 @@ public static class Global
 
 	public static bool DateIsInRange(int startDate, int endDate, int checkDate) => (startDate <= checkDate && checkDate <= endDate);
 
-	public static bool IsSuccessfulCode(int code) => code >= 200 && code < 400;
+	public static bool IsSuccessfulCode(int code) => code is >= 200 and < 400;
 
 	public static async Task<List<TracertStep>> Trace(string target, int maxHops, int timeout)
 	{
@@ -495,30 +495,30 @@ public static class Global
 	public static string GetWpa2PersonalProfileXml(string ssid, string password)
 	{
 		var profileXml = $@"<?xml version=""1.0""?>
-    <WLANProfile xmlns=""http://www.microsoft.com/networking/WLAN/profile/v1"">
-        <name>{ssid}</name>
-        <SSIDConfig>
-            <SSID>
-                <name>{ssid}</name>
-            </SSID>
-        </SSIDConfig>
-        <connectionType>ESS</connectionType>
-        <connectionMode>auto</connectionMode>
-        <MSM>
-            <security>
-                <authEncryption>
-                    <authentication>WPA2PSK</authentication>
-                    <encryption>AES</encryption>
-                    <useOneX>false</useOneX>
-                </authEncryption>
-                <sharedKey>
-                    <keyType>passPhrase</keyType>
-                    <protected>false</protected>
-                    <keyMaterial>{password}</keyMaterial>
-                </sharedKey>
-            </security>
-        </MSM>
-    </WLANProfile>";
+	<WLANProfile xmlns=""http://www.microsoft.com/networking/WLAN/profile/v1"">
+		<name>{ssid}</name>
+		<SSIDConfig>
+			<SSID>
+				<name>{ssid}</name>
+			</SSID>
+		</SSIDConfig>
+		<connectionType>ESS</connectionType>
+		<connectionMode>auto</connectionMode>
+		<MSM>
+			<security>
+				<authEncryption>
+					<authentication>WPA2PSK</authentication>
+					<encryption>AES</encryption>
+					<useOneX>false</useOneX>
+				</authEncryption>
+				<sharedKey>
+					<keyType>passPhrase</keyType>
+					<protected>false</protected>
+					<keyMaterial>{password}</keyMaterial>
+				</sharedKey>
+			</security>
+		</MSM>
+	</WLANProfile>";
 		return profileXml;
 	}
 

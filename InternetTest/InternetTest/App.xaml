@@ -201,6 +201,43 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+            <Style x:Key="ThemeButton" TargetType="{x:Type RadioButton}">
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Foreground" Value="{DynamicResource Foreground1}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RadioButton}">
+                            <Border
+                                x:Name="border"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5"
+                                SnapsToDevicePixels="true">
+                                <ContentPresenter
+                                    x:Name="contentPresenter"
+                                    Margin="{TemplateBinding Padding}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    Focusable="False"
+                                    RecognizesAccessKey="True"
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Accent}" />
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Accent}" />
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter TargetName="border" Property="Background" Value="Transparent" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="Transparent" />
+                                    <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Gray}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
             <Style x:Key="DefaultButton" TargetType="{x:Type Button}">
                 <Setter Property="Cursor" Value="Hand" />
                 <Setter Property="Template">
@@ -1729,6 +1766,64 @@
             </Style>
             <Style TargetType="TextBox">
                 <Setter Property="CaretBrush" Value="{DynamicResource Foreground1}" />
+            </Style>
+            <Style x:Key="{x:Type MenuItem}" TargetType="MenuItem">
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="OverridesDefaultStyle" Value="True" />
+                <Setter Property="Foreground" Value="{DynamicResource Foreground1}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="MenuItem">
+                            <Border
+                                x:Name="Border"
+                                MinWidth="100"
+                                Padding="2"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="5">
+                                <ContentPresenter Margin="2" ContentSource="Header" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="{DynamicResource Background2}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="{x:Type ContextMenu}" TargetType="ContextMenu">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border
+                                Margin="10"
+                                Padding="5"
+                                Background="{DynamicResource Background1}"
+                                CornerRadius="5">
+                                <ScrollViewer
+                                    Uid="ScrollViewer_9"
+                                    CanContentScroll="True"
+                                    Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer,
+                                                                                  TypeInTargetAssembly={x:Type FrameworkElement}}}">
+                                    <ItemsPresenter
+                                        Margin="{TemplateBinding Padding}"
+                                        KeyboardNavigation.DirectionalNavigation="Cycle"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </ScrollViewer>
+
+                                <Border.Effect>
+                                    <DropShadowEffect
+                                        BlurRadius="15"
+                                        Direction="135"
+                                        Opacity="0.2"
+                                        ShadowDepth="0"
+                                        Color="#000" />
+                                </Border.Effect>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

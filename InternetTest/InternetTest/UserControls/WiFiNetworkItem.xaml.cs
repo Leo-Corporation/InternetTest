@@ -34,11 +34,13 @@ namespace InternetTest.UserControls;
 public partial class WiFiNetworkItem : UserControl
 {
 	internal NetworkInfo NetworkInfo { get; init; }
-	public WiFiNetworkItem(NetworkInfo networkInfo)
+	public string CurrentSSID { get; init; }
+
+	public WiFiNetworkItem(NetworkInfo networkInfo, string currentSSID)
 	{
 		InitializeComponent();
 		NetworkInfo = networkInfo;
-
+		CurrentSSID = currentSSID;
 		InitUI();
 	}
 
@@ -49,10 +51,10 @@ public partial class WiFiNetworkItem : UserControl
 
 		StrengthIconTxt.Text = NetworkInfo.SignalQuality switch
 		{
-			int n when (n >= 0 && n < 25) => "\uF8B3",
-			int n when (n >= 25 && n < 50) => "\uF8B1",
-			int n when (n >= 50 && n < 75) => "\uF8AF",
-			int n when (n >= 75 && n <= 100) => "\uF8AD",
+			int n when (n is >= 0 and < 25) => "\uF8B3",
+			int n when (n is >= 25 and < 50) => "\uF8B1",
+			int n when (n is >= 50 and < 75) => "\uF8AF",
+			int n when (n is >= 75 and <= 100) => "\uF8AD",
 			_ => "\uF8AD",
 		};
 
@@ -63,6 +65,9 @@ public partial class WiFiNetworkItem : UserControl
 		ChannelTxt.Text = $"{NetworkInfo.Channel}";
 		BandTxt.Text = $"{NetworkInfo.Band:0.0} GHz";
 		FrequencyTxt.Text = $"{NetworkInfo.Frequency} kHz";
+
+		ConnectedIndicator.Visibility = NetworkInfo.Ssid == CurrentSSID ? Visibility.Visible : Visibility.Collapsed;
+		ConnectBtn.Visibility = NetworkInfo.Ssid == CurrentSSID ? Visibility.Collapsed : Visibility.Visible;
 	}
 
 	private void CopyBtn_Click(object sender, RoutedEventArgs e)

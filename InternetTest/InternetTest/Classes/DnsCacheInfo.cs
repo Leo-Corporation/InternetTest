@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
+using InternetTest.Enums;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -70,9 +71,43 @@ public partial class DnsCacheInfo
 
 	[JsonPropertyName("PSComputerName")]
 	public object PsComputerName { get; set; }
+
+	public override string ToString()
+	{
+		return $"{Properties.Resources.Entry}: {Entry}\n" +
+			$"{Properties.Resources.RecordName}: {Name}\n" +
+			$"{Properties.Resources.Data}: {Data ?? "N/A"}\n" +
+			$"{Properties.Resources.Type}: {(Types)Type}\n" +
+			$"{Properties.Resources.Status}: {(Status)Status}\n" +
+			$"{Properties.Resources.Description}: {Description ?? "N/A"}\n" +
+			$"{Properties.Resources.DataLength}: {DataLength}\n" +
+			$"{Properties.Resources.Section}: {(Section)Section}\n" +
+			$"{Properties.Resources.TimeToLive}: {TimeToLive}\n" +
+			$"{Properties.Resources.Caption}: {Caption ?? "N/A"}\n" +
+			$"{Properties.Resources.PsComputerName}: {PsComputerName ?? "N/A"}";
+	}
+
+	public DnsCacheInfo()
+	{
+		// Default values
+		Entry = string.Empty;
+		Name = string.Empty;
+		Data = string.Empty;
+		Caption = string.Empty;
+		Description = string.Empty;
+		DataLength = 0;
+		Ttl = 0;
+		Section = 0;
+		Type = 0;
+		Status = 0;
+		PsComputerName = string.Empty;
+		TimeToLive = 0;
+		InstanceId = string.Empty;
+		ElementName = string.Empty;
+	}
 }
 
 public partial class DnsCacheInfo
 {
-	public static DnsCacheInfo[] FromJson(string json) => JsonSerializer.Deserialize<DnsCacheInfo[]>(json);
+	public static DnsCacheInfo[] FromJson(string json) => JsonSerializer.Deserialize<DnsCacheInfo[]>(json) ?? [];
 }

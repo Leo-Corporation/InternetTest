@@ -66,7 +66,7 @@ public partial class TraceRouteItem : UserControl
 			NameTxt.Text = Properties.Resources.TimedOut;
 		}
 
-		if (TracertStep.Status != IPStatus.Success && TracertStep.Status != IPStatus.TtlExpired && TracertStep.Status != IPStatus.TimedOut)
+		if (TracertStep.Status is not IPStatus.Success and not IPStatus.TtlExpired and not IPStatus.TimedOut)
 		{
 			NameTxt.Text += $" ({TracertStep.Status})";
 		}

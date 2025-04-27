@@ -377,6 +377,9 @@
                     VerticalAlignment="Center"
                     Orientation="Horizontal"
                     Visibility="Collapsed">
+                    <StackPanel.ToolTip>
+                        <ToolTip x:Name="StatusToolTip" />
+                    </StackPanel.ToolTip>
                     <Border
                         x:Name="SuccessBorder"
                         Margin="2 0"
