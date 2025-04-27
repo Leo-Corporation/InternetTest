@@ -24,6 +24,7 @@ SOFTWARE.
 
 using DnsClient;
 using InternetTest.Classes;
+using InternetTest.Enums;
 using InternetTest.UserControls;
 using Microsoft.Win32;
 using Synethia;
@@ -229,9 +230,7 @@ public partial class DnsPage : Page
 		ErrorBorder.Visibility = Visibility.Collapsed;
 		TotalTxt.Text = Properties.Resources.Loading;
 
-		int success = 0;
-		int error = 0;
-		int total = 0;
+		var status = new Dictionary<Status, int>();
 
 		var cache = await Global.GetDnsCache();
 		if (cache != null)
@@ -239,9 +238,7 @@ public partial class DnsPage : Page
 			for (int i = 0; i < cache.Length; i++)
 			{
 				ItemDisplayer.Children.Add(new DnsCacheItem(cache[i]));
-				total++;
-
-				if (cache[i].Status == 0) success++; else error++;
+				status[(Status)cache[i].Status] = status.ContainsKey((Status)cache[i].Status) ? status[(Status)cache[i].Status] + 1 : 1;
 			}
 		}
 
@@ -249,9 +246,17 @@ public partial class DnsPage : Page
 		SuccessBorder.Visibility = Visibility.Visible;
 		ErrorBorder.Visibility = Visibility.Visible;
 
-		SuccessNbTxt.Text = success.ToString();
-		ErrorNbTxt.Text = error.ToString();
-		TotalTxt.Text = total.ToString();
+		SuccessNbTxt.Text = (status.TryGetValue(0, out int value) ? value : 0).ToString();
+		ErrorNbTxt.Text = (cache?.Length - value).ToString();
+		TotalTxt.Text = (cache?.Length).ToString();
+
+		// Status Tooltip
+		string statusTooltip = "";
+		foreach (var item in status)
+		{
+			statusTooltip += $"{item.Key} : {item.Value}\n";
+		}
+		StatusToolTip.Content = statusTooltip[..^1];
 	}
 
 	private void FlushDnsBtn_Click(object sender, RoutedEventArgs e)
