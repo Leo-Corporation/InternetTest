@@ -1730,6 +1730,64 @@
             <Style TargetType="TextBox">
                 <Setter Property="CaretBrush" Value="{DynamicResource Foreground1}" />
             </Style>
+            <Style x:Key="{x:Type MenuItem}" TargetType="MenuItem">
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="OverridesDefaultStyle" Value="True" />
+                <Setter Property="Foreground" Value="{DynamicResource Foreground1}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="MenuItem">
+                            <Border
+                                x:Name="Border"
+                                MinWidth="100"
+                                Padding="2"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="5">
+                                <ContentPresenter Margin="2" ContentSource="Header" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="{DynamicResource Background2}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="{x:Type ContextMenu}" TargetType="ContextMenu">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Border
+                                Margin="10"
+                                Padding="5"
+                                Background="{DynamicResource Background1}"
+                                CornerRadius="5">
+                                <ScrollViewer
+                                    Uid="ScrollViewer_9"
+                                    CanContentScroll="True"
+                                    Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer,
+                                                                                  TypeInTargetAssembly={x:Type FrameworkElement}}}">
+                                    <ItemsPresenter
+                                        Margin="{TemplateBinding Padding}"
+                                        KeyboardNavigation.DirectionalNavigation="Cycle"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </ScrollViewer>
+
+                                <Border.Effect>
+                                    <DropShadowEffect
+                                        BlurRadius="15"
+                                        Direction="135"
+                                        Opacity="0.2"
+                                        ShadowDepth="0"
+                                        Color="#000" />
+                                </Border.Effect>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
