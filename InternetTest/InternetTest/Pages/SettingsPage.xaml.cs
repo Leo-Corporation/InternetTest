@@ -34,7 +34,6 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace InternetTest.Pages;
 /// <summary>
@@ -474,10 +473,7 @@ public partial class SettingsPage : Page
 	{
 		if (LightBtn.IsChecked ?? false)
 			Global.Settings.Theme = Themes.Light;
-		else if (DarkBtn.IsChecked ?? false)
-			Global.Settings.Theme = Themes.Dark;
-		else
-			Global.Settings.Theme = Themes.System;
+		else Global.Settings.Theme = DarkBtn.IsChecked ?? false ? Themes.Dark : Themes.System;
 
 		SettingsManager.Save();
 		Global.ChangeTheme();
