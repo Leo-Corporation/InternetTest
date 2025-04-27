@@ -241,6 +241,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Caption.
+        /// </summary>
+        public static string Caption {
+            get {
+                return ResourceManager.GetString("Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change the language of InternetTest..
         /// </summary>
         public static string ChangeLanguage {
@@ -493,6 +502,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data Length.
+        /// </summary>
+        public static string DataLength {
+            get {
+                return ResourceManager.GetString("DataLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data and Privacy.
         /// </summary>
         public static string DataPrivacy {
@@ -565,6 +583,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details {
@@ -624,6 +651,15 @@ namespace InternetTest.Properties {
         public static string DnsCache {
             get {
                 return ResourceManager.GetString("DnsCache", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cache Element Details.
+        /// </summary>
+        public static string DnsCacheWindowTitle {
+            get {
+                return ResourceManager.GetString("DnsCacheWindowTitle", resourceCulture);
             }
         }
         
@@ -725,6 +761,15 @@ namespace InternetTest.Properties {
         public static string DownDetectorSettingsDesc {
             get {
                 return ResourceManager.GetString("DownDetectorSettingsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Element Name.
+        /// </summary>
+        public static string ElementName {
+            get {
+                return ResourceManager.GetString("ElementName", resourceCulture);
             }
         }
         
@@ -982,6 +1027,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string General {
+            get {
+                return ResourceManager.GetString("General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get cache.
         /// </summary>
         public static string GetCache {
@@ -1231,6 +1285,15 @@ namespace InternetTest.Properties {
         public static string InstallVersion {
             get {
                 return ResourceManager.GetString("InstallVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instance ID.
+        /// </summary>
+        public static string InstanceId {
+            get {
+                return ResourceManager.GetString("InstanceId", resourceCulture);
             }
         }
         
@@ -2057,6 +2120,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PowerShell Computer Name.
+        /// </summary>
+        public static string PsComputerName {
+            get {
+                return ResourceManager.GetString("PsComputerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quick actions.
         /// </summary>
         public static string QuickActions {
@@ -2242,6 +2314,15 @@ namespace InternetTest.Properties {
         public static string SecondsLower {
             get {
                 return ResourceManager.GetString("SecondsLower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Section.
+        /// </summary>
+        public static string Section {
+            get {
+                return ResourceManager.GetString("Section", resourceCulture);
             }
         }
         
@@ -2650,6 +2731,15 @@ namespace InternetTest.Properties {
         public static string TimerDesc {
             get {
                 return ResourceManager.GetString("TimerDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time to live.
+        /// </summary>
+        public static string TimeToLive {
+            get {
+                return ResourceManager.GetString("TimeToLive", resourceCulture);
             }
         }
         

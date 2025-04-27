@@ -1125,4 +1125,34 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="ShowAdaptersNoIpv4Support" xml:space="preserve">
     <value>Afficher les cartes réseaux ne supportant pas l'IPv4</value>
   </data>
+  <data name="DnsCacheWindowTitle" xml:space="preserve">
+    <value>Détails de l'élément de cache</value>
+  </data>
+  <data name="Caption" xml:space="preserve">
+    <value>Légende</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ElementName" xml:space="preserve">
+    <value>Nom de l'Element</value>
+  </data>
+  <data name="InstanceId" xml:space="preserve">
+    <value>ID de l'Instance</value>
+  </data>
+  <data name="DataLength" xml:space="preserve">
+    <value>Longueur des données</value>
+  </data>
+  <data name="Section" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="TimeToLive" xml:space="preserve">
+    <value>Temps de vie</value>
+  </data>
+  <data name="PsComputerName" xml:space="preserve">
+    <value>Nom de l'ordinateur PowerShell</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Général</value>
+  </data>
 </root>
