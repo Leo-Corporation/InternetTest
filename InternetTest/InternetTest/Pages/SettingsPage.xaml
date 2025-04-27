@@ -283,16 +283,15 @@
                     </StackPanel>
                 </Expander.Header>
                 <StackPanel Orientation="Horizontal">
-                    <Border
-                        x:Name="LightBorder"
-                        Margin="6"
-                        BorderBrush="{x:Null}"
+                    <RadioButton
+                        x:Name="LightBtn"
+                        Margin="5 0 0 0"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
                         BorderThickness="2"
-                        CornerRadius="5"
-                        Cursor="Hand"
-                        MouseEnter="Border_MouseEnter"
-                        MouseLeave="Border_MouseLeave"
-                        MouseLeftButtonUp="LightBorder_MouseLeftButtonUp">
+                        Checked="LightBtn_Checked"
+                        GroupName="Theme"
+                        Style="{DynamicResource ThemeButton}">
                         <StackPanel Orientation="Horizontal">
                             <Rectangle
                                 Width="50"
@@ -310,17 +309,16 @@
                                 FontWeight="Bold"
                                 Text="{x:Static lang:Resources.Light}" />
                         </StackPanel>
-                    </Border>
-                    <Border
-                        x:Name="DarkBorder"
-                        Margin="6"
-                        BorderBrush="{x:Null}"
+                    </RadioButton>
+                    <RadioButton
+                        x:Name="DarkBtn"
+                        Margin="5 0 0 0"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
                         BorderThickness="2"
-                        CornerRadius="5"
-                        Cursor="Hand"
-                        MouseEnter="Border_MouseEnter"
-                        MouseLeave="Border_MouseLeave"
-                        MouseLeftButtonUp="DarkBorder_MouseLeftButtonUp">
+                        Checked="LightBtn_Checked"
+                        GroupName="Theme"
+                        Style="{DynamicResource ThemeButton}">
                         <StackPanel Orientation="Horizontal">
                             <Rectangle
                                 Width="50"
@@ -338,17 +336,16 @@
                                 FontWeight="Bold"
                                 Text="{x:Static lang:Resources.Dark}" />
                         </StackPanel>
-                    </Border>
-                    <Border
-                        x:Name="SystemBorder"
-                        Margin="6"
-                        BorderBrush="{x:Null}"
+                    </RadioButton>
+                    <RadioButton
+                        x:Name="SystemBtn"
+                        Margin="5 0 0 0"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
                         BorderThickness="2"
-                        CornerRadius="5"
-                        Cursor="Hand"
-                        MouseEnter="Border_MouseEnter"
-                        MouseLeave="Border_MouseLeave"
-                        MouseLeftButtonUp="SystemBorder_MouseLeftButtonUp">
+                        Checked="LightBtn_Checked"
+                        GroupName="Theme"
+                        Style="{DynamicResource ThemeButton}">
                         <StackPanel Orientation="Horizontal">
                             <Rectangle
                                 Width="50"
@@ -366,7 +363,7 @@
                                 FontWeight="Bold"
                                 Text="{x:Static lang:Resources.DefaultTheme}" />
                         </StackPanel>
-                    </Border>
+                    </RadioButton>
                 </StackPanel>
             </Expander>
             <Expander
