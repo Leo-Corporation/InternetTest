@@ -22,38 +22,34 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-using InternetTest.Classes;
-using InternetTest.Enums;
-using InternetTest.Windows;
-using System.Windows.Controls;
+namespace InternetTest.Enums;
 
-namespace InternetTest.UserControls;
-/// <summary>
-/// Interaction logic for DnsCacheItem.xaml
-/// </summary>
-public partial class DnsCacheItem : UserControl
+public enum Types
 {
-	public DnsCacheInfo DnsCacheInfo { get; }
-	public DnsCacheItem(DnsCacheInfo dnsCacheInfo)
-	{
-		InitializeComponent();
-		DnsCacheInfo = dnsCacheInfo;
+	A = 1,
+	NS = 2,
+	CNAME = 5,
+	SOA = 6,
+	PTR = 12,
+	MX = 15,
+	TXT = 16,
+	AAAA = 28,
+}
 
-		InitUI();
-	}
+public enum Status
+{
+	Success,
+	NoRecords,
+	FormatError = 9501,
+	ServerFailure = 9502,
+	NotExist = 9503,
+	Refused = 9505
+}
 
-	private void InitUI()
-	{
-		EntryTxt.Text = DnsCacheInfo.Entry;
-		RecordNameTxt.Text = DnsCacheInfo.Name;
-		RecordTypeTxt.Text = ((Types)DnsCacheInfo.Type).ToString();
-		StatusTxt.Text = ((Status)DnsCacheInfo.Status).ToString();
-		DataTxt.Text = DnsCacheInfo.Data;
-	}
-
-
-	private void UserControl_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
-	{
-		new DnsCacheInfoWindow(DnsCacheInfo).Show();
-	}
+public enum Section
+{
+	Question = 0,
+	Answer = 1,
+	Authority = 2,
+	Additional = 3
 }

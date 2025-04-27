@@ -11,6 +11,7 @@
     BorderBrush="{DynamicResource Background2}"
     BorderThickness="0 0 0 1"
     FontFamily="..\Fonts\#Hauora"
+    MouseLeftButtonUp="UserControl_MouseLeftButtonUp"
     mc:Ignorable="d">
     <UserControl.Style>
         <Style TargetType="UserControl">
