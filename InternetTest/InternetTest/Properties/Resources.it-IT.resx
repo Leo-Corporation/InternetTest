@@ -421,7 +421,7 @@
 	<value>Azzera cronologia</value>
   </data>
   <data name="EmptyHistoryMsg" xml:space="preserve">
-	<value>Sei sicuro di voler azzerare la cronologia? 
+	<value>Vuoi azzerare la cronologia? 
 Questa azione è irreversibile.</value>
   </data>
   <data name="Pro" xml:space="preserve">
@@ -557,13 +557,13 @@ Per completare il processo, InternetTest verrà riavviato.</value>
     <value>Ripristina dati Synethia</value>
   </data>
   <data name="ResetSettingsConfirmation" xml:space="preserve">
-    <value>Sei sicuro di voler ripristinare tutte le impostazioni?</value>
+    <value>Vuoi ripristinare tutte le impostazioni?</value>
   </data>
   <data name="LaunchTestOnStart" xml:space="preserve">
     <value>Esegui un test all'avvio</value>
   </data>
   <data name="SynethiaDeleteMsg" xml:space="preserve">
-    <value>Sei sicuro di voler ripristinare tutti i dati di Synethia? 
+    <value>Vuoi ripristinare tutti i dati di Synethia? 
 La tua esperienza personalizzata andrà persa. 
 Questa azione non può essere annullata.</value>
   </data>
@@ -928,7 +928,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Cancella dati cache WiFi</value>
   </data>
   <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
-    <value>Sei sicuro di voler cancellare le password del WiFi memorizzate nella cache?</value>
+    <value>Vuoi cancellare le password del WiFi memorizzate nella cache?</value>
   </data>
   <data name="Ethernet" xml:space="preserve">
     <value>Ethernet</value>
@@ -1084,7 +1084,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Dati</value>
   </data>
   <data name="FlushDNSMessage" xml:space="preserve">
-    <value>Sei sicuro di voler cancellare la cache DNS memorizzata nel dispositivo? Questa operazione non potrà essere annullata.</value>
+    <value>Vuoi cancellare la cache DNS memorizzata nel dispositivo? Questa operazione non potrà essere annullata.</value>
   </data>
   <data name="FlushDNSSuccess" xml:space="preserve">
     <value>Cancellazione cache DNS completata.</value>
@@ -1123,10 +1123,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Non verranno fornite informazioni di autenticazione</value>
   </data>
   <data name="ShowAdaptersNoIpv4Support" xml:space="preserve">
-    <value>Mostra gli adattatori di rete che non supportano il protocollo IPv4.</value>
+    <value>Visualizza schede di rete che non supportano il protocollo IPv4.</value>
   </data>
   <data name="DnsCacheWindowTitle" xml:space="preserve">
-    <value>Dettagli dell'elemento della cache</value>
+    <value>Dettagli elemento della cache</value>
   </data>
   <data name="Caption" xml:space="preserve">
     <value>Didascalia</value>
@@ -1135,22 +1135,22 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Descrizione</value>
   </data>
   <data name="ElementName" xml:space="preserve">
-    <value>Nome dell'elemento</value>
+    <value>Nome elemento</value>
   </data>
   <data name="InstanceId" xml:space="preserve">
-    <value>ID Istanza</value>
+    <value>ID istanza</value>
   </data>
   <data name="DataLength" xml:space="preserve">
-    <value>Lunghezza dei dati</value>
+    <value>Lunghezza dati</value>
   </data>
   <data name="Section" xml:space="preserve">
     <value>Sezione</value>
   </data>
   <data name="TimeToLive" xml:space="preserve">
-    <value>Tempo di vivere</value>
+    <value>Tempo vita</value>
   </data>
   <data name="PsComputerName" xml:space="preserve">
-    <value>Nome del computer PowerShell</value>
+    <value>Nome computer PowerShell</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Generale</value>

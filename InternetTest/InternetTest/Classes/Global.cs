@@ -48,10 +48,10 @@ public static class Global
 #if NIGHTLY
 	private static DateTime Date => System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-	public static string Version => $"8.9.0.2504-nightly{Date:yyMM.dd@HHmm}";
+	public static string Version => $"8.9.1.2504-nightly{Date:yyMM.dd@HHmm}";
 
 #else
-	public static string Version => "8.9.0.2504";
+	public static string Version => "8.9.1.2504";
 #endif
 	public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/7.0/Version.txt";
 
