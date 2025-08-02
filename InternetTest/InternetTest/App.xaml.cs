@@ -21,56 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Classes;
-using InternetTest.Windows;
-using Synethia;
+using System.Configuration;
+using System.Data;
 using System.Windows;
 
-namespace InternetTest;
-/// <summary>
-/// Interaction logic for App.xaml
-/// </summary>
-public partial class App : Application
+namespace InternetTest
 {
-	private void Application_Startup(object sender, StartupEventArgs e)
-	{
-		try
-		{
-			Global.ChangeTheme();
-			Global.ChangeLanguage();
-
-			Global.HomePage = new();
-			Global.HistoryPage = new();
-			Global.SettingsPage = new();
-			Global.DownDetectorPage = new();
-			Global.LocateIpPage = new();
-			Global.PingPage = new();
-			Global.IpConfigPage = new();
-			Global.WiFiPasswordsPage = new();
-			Global.DnsPage = new();
-			Global.TraceroutePage = new();
-			Global.WiFiNetworksPage = new();
-			Global.RequestsPage = new();
-
-			if (!Global.Settings.IsFirstRun)
-			{
-				new MainWindow().Show();
-			}
-			else
-			{
-				new FirstRunWindow().Show();
-			}
-		}
-		catch (System.Exception ex)
-		{
-			MessageBox.Show(ex.Message);
-		}
-	}
-
-	private void Application_Exit(object sender, ExitEventArgs e)
-	{
-		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
-		HistoryManager.Save(Global.History);
-		SettingsManager.Save();
-	}
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App : Application
+    {
+    }
 }
