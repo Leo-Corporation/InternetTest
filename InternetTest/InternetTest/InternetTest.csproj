@@ -23,29 +23,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MicaWPF.Lite" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-      <EmbeddedResource Update="Properties\Resources.en-US.resx">
-          <CustomToolNamespace></CustomToolNamespace>
-          <Generator>PublicResXFileCodeGenerator</Generator>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Properties\Resources.fr-FR.resx">
-          <CustomToolNamespace></CustomToolNamespace>
-          <Generator>PublicResXFileCodeGenerator</Generator>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Properties\Resources.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-          <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Properties\Resources.zh-CN.resx">
-          <Generator>PublicResXFileCodeGenerator</Generator>
-      </EmbeddedResource>
   </ItemGroup>
 
 </Project>
