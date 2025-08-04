@@ -21,26 +21,27 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.ViewModels;
-using System.Windows;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace InternetTest
+namespace InternetTest.ViewModels;
+
+
+
+public class MainViewModel: ViewModelBase
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
-    {
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            // Set the main window
-            MainWindow = new MainWindow();
-            MainViewModel mvm = new();
-            MainWindow.DataContext = mvm;
+	private object? _currentView;
+	public object? CurrentViewModel
+	{
+		get { return _currentView; }
+		set { _currentView = value; OnPropertyChanged(nameof(CurrentViewModel)); }
+	}
 
-            MainWindow.Show();
-
-			base.OnStartup(e);
-		}
+	public MainViewModel()
+	{
+		
 	}
 }

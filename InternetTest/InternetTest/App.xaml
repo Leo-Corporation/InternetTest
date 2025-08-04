@@ -3,13 +3,116 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:InternetTest"
-    xmlns:mica="clr-namespace:MicaWPF.Lite.Styles;assembly=MicaWPF.Lite"
-    StartupUri="MainWindow.xaml">
+    xmlns:mica="clr-namespace:MicaWPF.Lite.Styles;assembly=MicaWPF.Lite">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <mica:ThemeDictionary DesignModeTheme="Auto" Theme="Auto" />
+                <ResourceDictionary Source="/Themes/Dark.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <!--  Sidebar button style  -->
+            <Style x:Key="SidebarButton" TargetType="RadioButton">
+                <Setter Property="Foreground" Value="{DynamicResource Foreground1}" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Border
+                                x:Name="border"
+                                Padding="{TemplateBinding Padding}"
+                                Background="{TemplateBinding Background}"
+                                BorderThickness="0"
+                                CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource CardBackground}" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource CardBackground}" />
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource CardBackground}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--  Sidebar button style with dropdown chevron  -->
+            <Style x:Key="SidebarChevronButton" TargetType="ToggleButton">
+                <Setter Property="Foreground" Value="{DynamicResource Foreground1}" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <Border
+                                x:Name="border"
+                                Padding="{TemplateBinding Padding}"
+                                Background="{TemplateBinding Background}"
+                                BorderThickness="0"
+                                CornerRadius="10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        FontFamily="\Fonts\#FluentSystemIcons-Regular"
+                                        FontSize="14"
+                                        RenderTransformOrigin="0.5,0.5"
+                                        Text="&#xF2B1;">
+                                        <TextBlock.RenderTransform>
+                                            <TransformGroup>
+                                                <RotateTransform x:Name="UtilRotator" Angle="0" />
+                                            </TransformGroup>
+                                        </TextBlock.RenderTransform>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource CardBackground}" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource CardBackground}" />
+                                </Trigger>
+                                <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Storyboard.TargetName="UtilRotator"
+                                                Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                                To="90"
+                                                Duration="0:0:0.2" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Storyboard.TargetName="UtilRotator"
+                                                Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                                To="0"
+                                                Duration="0:0:0.2" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
