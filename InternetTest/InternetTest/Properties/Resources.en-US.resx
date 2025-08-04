@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
+	Microsoft ResX Schema 
+	
+	Version 2.0
+	
+	The primary goals of this format is to allow a simple XML format 
+	that is mostly human readable. The generation and parsing of the 
+	various data types are done through the TypeConverter classes 
+	associated with the data types.
+	
+	Example:
+	
+	... ado.net/XML headers & schema ...
+	<resheader name="resmimetype">text/microsoft-resx</resheader>
+	<resheader name="version">2.0</resheader>
+	<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+	<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+	<data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+	<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+	<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+		<value>[base64 mime encoded serialized .NET Framework object]</value>
+	</data>
+	<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+		<value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+		<comment>This is a comment</comment>
+	</data>
+				
+	There are any number of "resheader" rows that contain simple 
+	name/value pairs.
+	
+	Each data row contains a name, and value. The row also contains a 
+	type or mimetype. Type corresponds to a .NET class that support 
+	text/value conversion through the TypeConverter architecture. 
+	Classes that don't support this are serialized and stored with the 
+	mimetype set.
+	
+	The mimetype is used for serialized objects, and tells the 
+	ResXResourceReader how to depersist the object. This is currently not 
+	extensible. For a given mimetype the value must be set accordingly:
+	
+	Note - application/x-microsoft.net.object.binary.base64 is the format 
+	that the ResXResourceWriter will generate, however the reader can 
+	read any of the formats listed below.
+	
+	mimetype: application/x-microsoft.net.object.binary.base64
+	value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+	
+	mimetype: application/x-microsoft.net.object.soap.base64
+	value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
 
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
+	mimetype: application/x-microsoft.net.object.bytearray.base64
+	value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -118,6 +118,1041 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="InternetTest" xml:space="preserve">
-    <value>InternetTest</value>
+	<value>InternetTest</value>
+  </data>
+  <data name="Hi" xml:space="preserve">
+	<value>Hi</value>
+  </data>
+  <data name="GoodAfternoon" xml:space="preserve">
+	<value>Good afternoon</value>
+  </data>
+  <data name="GoodNight" xml:space="preserve">
+	<value>Good night</value>
+  </data>
+  <data name="GoodEvening" xml:space="preserve">
+	<value>Good evening</value>
+  </data>
+  <data name="Pinned" xml:space="preserve">
+	<value>Pinned</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+	<value>Home</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+	<value>Settings</value>
+  </data>
+  <data name="History" xml:space="preserve">
+	<value>History</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+	<value>Tools</value>
+  </data>
+  <data name="WebUtilities" xml:space="preserve">
+	<value>Web Utilities</value>
+  </data>
+  <data name="IPTools" xml:space="preserve">
+	<value>IP Tools</value>
+  </data>
+  <data name="Commands" xml:space="preserve">
+	<value>Commands</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+	<value>Status</value>
+  </data>
+  <data name="DownDetector" xml:space="preserve">
+	<value>DownDetector</value>
+  </data>
+  <data name="MyIP" xml:space="preserve">
+	<value>My IP</value>
+  </data>
+  <data name="LocateIP" xml:space="preserve">
+	<value>Locate IP</value>
+  </data>
+  <data name="Ping" xml:space="preserve">
+	<value>Ping</value>
+  </data>
+  <data name="IPConfig" xml:space="preserve">
+	<value>IP Config</value>
+  </data>
+  <data name="WifiPasswords" xml:space="preserve">
+	<value>WiFi Passwords</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+	<value>Get started</value>
+  </data>
+  <data name="SuggestedActions" xml:space="preserve">
+	<value>Suggested actions</value>
+  </data>
+  <data name="Discover" xml:space="preserve">
+	<value>Discover</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+	<value>Details</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+	<value>Test</value>
+  </data>
+  <data name="OpenBrowser" xml:space="preserve">
+	<value>Open in browser</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+	<value>You are connected to the Internet</value>
+  </data>
+  <data name="NotConnected" xml:space="preserve">
+	<value>You aren't connected to the Internet</value>
+  </data>
+  <data name="TestInProgress" xml:space="preserve">
+	<value>Testing, please wait...</value>
+  </data>
+  <data name="TimeElapsed" xml:space="preserve">
+	<value>Time elapsed</value>
+  </data>
+  <data name="StatusMessage" xml:space="preserve">
+	<value>Status Message</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+	<value>Error</value>
+  </data>
+  <data name="LaunchTestToCheckConnection" xml:space="preserve">
+	<value>Launch a test to check your connection</value>
+  </data>
+  <data name="TestConnection" xml:space="preserve">
+	<value>Test your connection</value>
+  </data>
+  <data name="WebsiteAvailable" xml:space="preserve">
+	<value>The website is available</value>
+  </data>
+  <data name="WebsiteDown" xml:space="preserve">
+	<value>The website is down</value>
+  </data>
+  <data name="OfWebsite" xml:space="preserve">
+	<value>of {0}</value>
+  </data>
+  <data name="ScheduledTests" xml:space="preserve">
+	<value>Scheduled Tests</value>
+  </data>
+  <data name="LaunchScheduledTest" xml:space="preserve">
+	<value>Start scheduled tests</value>
+  </data>
+  <data name="ScheduledTestInterval" xml:space="preserve">
+	<value>All websites will be tested in {0} seconds.</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+	<value>Time interval</value>
+  </data>
+  <data name="SecondsLower" xml:space="preserve">
+	<value>seconds</value>
+  </data>
+  <data name="StopScheduledTests" xml:space="preserve">
+	<value>Stop scheduled tests</value>
+  </data>
+  <data name="TestWebsite" xml:space="preserve">
+	<value>Test website</value>
+  </data>
+  <data name="DownDetectorPlaceHolder" xml:space="preserve">
+	<value>Add a website to check if it is available or not</value>
+  </data>
+  <data name="MapProvider" xml:space="preserve">
+	<value>Map provider</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+	<value>Country</value>
+  </data>
+  <data name="Region" xml:space="preserve">
+	<value>Region</value>
+  </data>
+  <data name="City" xml:space="preserve">
+	<value>City</value>
+  </data>
+  <data name="ZIPCode" xml:space="preserve">
+	<value>ZIP Code</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+	<value>Latitude</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+	<value>Longitude</value>
+  </data>
+  <data name="Timezone" xml:space="preserve">
+	<value>Timezone</value>
+  </data>
+  <data name="ISP" xml:space="preserve">
+	<value>ISP</value>
+  </data>
+  <data name="ShowOnMap" xml:space="preserve">
+	<value>Show on a map</value>
+  </data>
+  <data name="IPShowHere" xml:space="preserve">
+	<value>Your IP will show here.</value>
+  </data>
+  <data name="GetMyIP" xml:space="preserve">
+	<value>Get my IP</value>
+  </data>
+  <data name="IPShowHere2" xml:space="preserve">
+	<value>The IP will show here.</value>
+  </data>
+  <data name="LocateAnIP" xml:space="preserve">
+	<value>Locate an IP</value>
+  </data>
+  <data name="InternetTestPro" xml:space="preserve">
+	<value>InternetTest Pro</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+	<value>Save</value>
+  </data>
+  <data name="TxtFiles" xml:space="preserve">
+	<value>Text files</value>
+  </data>
+  <data name="MakePing" xml:space="preserve">
+	<value>Make a ping</value>
+  </data>
+  <data name="IPAddress" xml:space="preserve">
+	<value>IP Address</value>
+  </data>
+  <data name="MaxTime" xml:space="preserve">
+	<value>Max duration</value>
+  </data>
+  <data name="MinTime" xml:space="preserve">
+	<value>Min duration</value>
+  </data>
+  <data name="AverageTime" xml:space="preserve">
+	<value>Average duration</value>
+  </data>
+  <data name="PingWait" xml:space="preserve">
+	<value>Ping request is in progress, please wait.</value>
+  </data>
+  <data name="PingSuccess" xml:space="preserve">
+	<value>The ping request was successful</value>
+  </data>
+  <data name="PingFail" xml:space="preserve">
+	<value>The ping request failed</value>
+  </data>
+  <data name="EnterIP" xml:space="preserve">
+	<value>Please enter an IP or URL.</value>
+  </data>
+  <data name="PackageSent" xml:space="preserve">
+	<value>Package(s) sent</value>
+  </data>
+  <data name="PackageReceived" xml:space="preserve">
+	<value>Package(s) received</value>
+  </data>
+  <data name="PackageLost" xml:space="preserve">
+	<value>Package(s) lost</value>
+  </data>
+  <data name="PingStatus" xml:space="preserve">
+	<value>Ping Status will show here</value>
+  </data>
+  <data name="IPv4Address" xml:space="preserve">
+	<value>IPv4 address</value>
+  </data>
+  <data name="IPv6Address" xml:space="preserve">
+	<value>IPv6 address</value>
+  </data>
+  <data name="GatewayIPv4" xml:space="preserve">
+	<value>Default gateway (IPv4)</value>
+  </data>
+  <data name="GatewayIPv6" xml:space="preserve">
+	<value>Default gateway (IPv6)</value>
+  </data>
+  <data name="DNSSuffix" xml:space="preserve">
+	<value>DNS Suffix</value>
+  </data>
+  <data name="ConnectedS" xml:space="preserve">
+	<value>Connected</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+	<value>Disconnected</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+	<value>Refresh</value>
+  </data>
+  <data name="SubnetMask" xml:space="preserve">
+	<value>Subnet Mask</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+	<value>Name</value>
+  </data>
+  <data name="None" xml:space="preserve">
+	<value>None</value>
+  </data>
+  <data name="GetWiFi" xml:space="preserve">
+	<value>Get locally stored networks</value>
+  </data>
+  <data name="ConnectionMode" xml:space="preserve">
+	<value>Connection mode</value>
+  </data>
+  <data name="ConnectionType" xml:space="preserve">
+	<value>Connection type</value>
+  </data>
+  <data name="Automatic" xml:space="preserve">
+	<value>Automatic</value>
+  </data>
+  <data name="Encryption" xml:space="preserve">
+	<value>Encryption</value>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+	<value>Authentication</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+	<value>Key</value>
+  </data>
+  <data name="InfrastructureNetwork" xml:space="preserve">
+	<value>Infrastructure network</value>
+  </data>
+  <data name="AdHocNetwork" xml:space="preserve">
+	<value>Ad-hoc network</value>
+  </data>
+  <data name="GetIPConfig" xml:space="preserve">
+	<value>Get IP Config</value>
+  </data>
+  <data name="NothingToShow" xml:space="preserve">
+	<value>There is nothing to show for now, try refreshing the page.</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+	<value>Available</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+	<value>Down</value>
+  </data>
+  <data name="HistoryEmpty" xml:space="preserve">
+	<value>The history is empty.</value>
+  </data>
+  <data name="EmptyHistory" xml:space="preserve">
+	<value>Empty History</value>
+  </data>
+  <data name="EmptyHistoryMsg" xml:space="preserve">
+	<value>Are you sure you want to empty this history? 
+This action is irreversible.</value>
+  </data>
+  <data name="Pro" xml:space="preserve">
+	<value>Pro</value>
+  </data>
+  <data name="CheckUpdate" xml:space="preserve">
+	<value>Check for updates</value>
+  </data>
+  <data name="Updates" xml:space="preserve">
+	<value>Updates</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+	<value>Install</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+	<value>Theme</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+	<value>Light theme</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+	<value>Dark theme</value>
+  </data>
+  <data name="Licenses" xml:space="preserve">
+	<value>Licenses</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+	<value>Apply</value>
+  </data>
+  <data name="SeeLicenses" xml:space="preserve">
+	<value>See licenses</value>
+  </data>
+  <data name="ChangeTheme" xml:space="preserve">
+	<value>Change InternetTest theme.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+	<value>Language</value>
+  </data>
+  <data name="NeedRestartToApplyChanges" xml:space="preserve">
+	<value>InternetTest needs to restart to apply the changes. 
+Do you want to restart now?</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+	<value>Default</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+	<value>InternetTest is up to date.</value>
+  </data>
+  <data name="AvailableUpdates" xml:space="preserve">
+	<value>Updates are available.</value>
+  </data>
+  <data name="InstallConfirmMsg" xml:space="preserve">
+	<value>To install updates, InternetTest needs to restarts. 
+Do you want to continue?</value>
+  </data>
+  <data name="InstallVersion" xml:space="preserve">
+	<value>Install version</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+	<value>Version</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+	<value>Change the language of InternetTest.</value>
+  </data>
+  <data name="MapProviderDescription" xml:space="preserve">
+	<value>The map provider used to show the location of an IP address.</value>
+  </data>
+  <data name="NotifyUpdates" xml:space="preserve">
+	<value>Show a notification when updates are available</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+	<value>Notifications</value>
+  </data>
+  <data name="NotificationsDescription" xml:space="preserve">
+	<value>Notifications settings.</value>
+  </data>
+  <data name="CheckUpdatesOnStart" xml:space="preserve">
+	<value>Check for updates on start</value>
+  </data>
+  <data name="StartupPage" xml:space="preserve">
+	<value>Default page on start</value>
+  </data>
+  <data name="OnStart" xml:space="preserve">
+	<value>On start</value>
+  </data>
+  <data name="OnStartDescription" xml:space="preserve">
+	<value>Settings that applies on start.</value>
+  </data>
+  <data name="WebSettingsDescription" xml:space="preserve">
+	<value>Web related settings.</value>
+  </data>
+  <data name="WebSettings" xml:space="preserve">
+	<value>Web settings</value>
+  </data>
+  <data name="TestSite" xml:space="preserve">
+	<value>Test website</value>
+  </data>
+  <data name="DefaultProtocol" xml:space="preserve">
+	<value>Default protocol</value>
+  </data>
+  <data name="HTTP" xml:space="preserve">
+	<value>HTTP</value>
+  </data>
+  <data name="HTTPS" xml:space="preserve">
+	<value>HTTPS</value>
+  </data>
+  <data name="DataPrivacy" xml:space="preserve">
+	<value>Data and Privacy</value>
+  </data>
+  <data name="DataDescription" xml:space="preserve">
+	<value>Manage your data and your privacy.</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+	<value>Import settings</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+	<value>Export settings</value>
+  </data>
+  <data name="SettingsExportedSucessMsg" xml:space="preserve">
+	<value>Settings have been sucessfully exported.</value>
+  </data>
+  <data name="SettingsImportedMsg" xml:space="preserve">
+	<value>Settings were sucessfully imported. 
+To finish the process, InternetTest is going to restart.</value>
+  </data>
+  <data name="ResetSettings" xml:space="preserve">
+    <value>Reset settings</value>
+  </data>
+  <data name="SynethiaEnable" xml:space="preserve">
+    <value>Enable Synethia customized experience.</value>
+  </data>
+  <data name="ResetSynethia" xml:space="preserve">
+    <value>Reset Synethia data</value>
+  </data>
+  <data name="ResetSettingsConfirmation" xml:space="preserve">
+    <value>Are you sure you want to reset all settings?</value>
+  </data>
+  <data name="LaunchTestOnStart" xml:space="preserve">
+    <value>Launch a test on start</value>
+  </data>
+  <data name="SynethiaDeleteMsg" xml:space="preserve">
+    <value>Are you sure you want to reset all Synethia data? 
+Your personalized experience will be lost; This action cannot be canceled.</value>
+  </data>
+  <data name="FirstRunQuitMsg" xml:space="preserve">
+    <value>Do you want to ignore this window and continue to InternetTest?</value>
+  </data>
+  <data name="WelcomeDesc" xml:space="preserve">
+    <value>Taking you to another level.</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Skip</value>
+  </data>
+  <data name="DownDetectorInfo" xml:space="preserve">
+    <value>Wondering whether a website is working or not? 
+Check and get real-time information about specified websites using InternetTest Pro's DownDetector feature.
+You can get site status, response time and much more!</value>
+  </data>
+  <data name="LocateIPInfo" xml:space="preserve">
+    <value>You can locate an IP adress using this feature. 
+You will get information about the city, country, region, timezone, and more!
+You can also locate and get the IP of servers from an URL.</value>
+  </data>
+  <data name="WiFiPasswordsInfo" xml:space="preserve">
+    <value>Forgot your WiFi password? 
+Don't worry, you can recover it using InternetTest Pro "WiFi Passwords" feature!
+Using this feature, you will be able to get information about each wireless networks saved on your computer, such as authentification mode, encyrption algorithm, etc...</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="Agree" xml:space="preserve">
+    <value>I agree</value>
+  </data>
+  <data name="NoThanks" xml:space="preserve">
+    <value>No thanks</value>
+  </data>
+  <data name="IntroducingSynethia" xml:space="preserve">
+    <value>Introducing Synethia</value>
+  </data>
+  <data name="SynethiaInfo" xml:space="preserve">
+    <value>Synethia is an algorithm that personnalizes your experience.</value>
+  </data>
+  <data name="SynethiaDataInfo" xml:space="preserve">
+    <value>Synethia collects data in InternetTest only</value>
+  </data>
+  <data name="SynethiaAnalyze" xml:space="preserve">
+    <value>Synethia will then analyze this data to provide a unique experience</value>
+  </data>
+  <data name="SynethiaHome" xml:space="preserve">
+    <value>The Home dashbord will recommand actions based on your usage</value>
+  </data>
+  <data name="SynethiaPrivacy" xml:space="preserve">
+    <value>Your data is stored on your device, anonymously. 
+Absolutely NO data is sent to Léo Corporation.</value>
+  </data>
+  <data name="LetsGo" xml:space="preserve">
+    <value>Let's go!</value>
+  </data>
+  <data name="WelcomeReady" xml:space="preserve">
+    <value>Everyting is ready</value>
+  </data>
+  <data name="ConfidentialModeEnabled" xml:space="preserve">
+    <value>Confidential Mode is enabled</value>
+  </data>
+  <data name="DetailsNotAvailableCM" xml:space="preserve">
+    <value>Details aren't available in Confidential Mode</value>
+  </data>
+  <data name="OpenNetwork" xml:space="preserve">
+    <value>Open Network (802.11)</value>
+  </data>
+  <data name="SharedNetwork" xml:space="preserve">
+    <value>Shared Network (802.11)</value>
+  </data>
+  <data name="WPANetwork" xml:space="preserve">
+    <value>WPA-Enterprise (802.11) Network</value>
+  </data>
+  <data name="WPAPSKNetwork" xml:space="preserve">
+    <value>WPA-Personal (802.11) Network</value>
+  </data>
+  <data name="WPA2Network" xml:space="preserve">
+    <value>WPA2-Enterprise (802.11) Network</value>
+  </data>
+  <data name="WPA2PSKNetwork" xml:space="preserve">
+    <value>WPA2-Personal (802.11) Network</value>
+  </data>
+  <data name="AllSuccess" xml:space="preserve">
+    <value>All tests were successful</value>
+  </data>
+  <data name="AllFailed" xml:space="preserve">
+    <value>All tests have failed</value>
+  </data>
+  <data name="TestSucessAndFailed" xml:space="preserve">
+    <value>Some tests have failed</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="InvalidDateMsg" xml:space="preserve">
+    <value>Please provide a valid date.</value>
+  </data>
+  <data name="Successful" xml:space="preserve">
+    <value>Successful</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="ToggleConfidentialModeOnStart" xml:space="preserve">
+    <value>Toggle confidential mode</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="RememberPinState" xml:space="preserve">
+    <value>Remember the "Pinned" state</value>
+  </data>
+  <data name="DNS" xml:space="preserve">
+    <value>DNS</value>
+  </data>
+  <data name="DNSTool" xml:space="preserve">
+    <value>DNS Tool</value>
+  </data>
+  <data name="GetDnsInfo" xml:space="preserve">
+    <value>Get DNS information</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="DNSInfo" xml:space="preserve">
+    <value>DNS Information</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Creation date</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Expiration date</value>
+  </data>
+  <data name="Registrant" xml:space="preserve">
+    <value>Registrant</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>System language</value>
+  </data>
+  <data name="DefaultTheme" xml:space="preserve">
+    <value>System theme</value>
+  </data>
+  <data name="SpeedTest" xml:space="preserve">
+    <value>Make a speed test</value>
+  </data>
+  <data name="MinSpeed" xml:space="preserve">
+    <value>Min speed</value>
+  </data>
+  <data name="MaxSpeed" xml:space="preserve">
+    <value>Max speed</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="SpeedTestSucess" xml:space="preserve">
+    <value>The speed test was successful</value>
+  </data>
+  <data name="SpeedTestFailed" xml:space="preserve">
+    <value>The speed test failed</value>
+  </data>
+  <data name="TraceRoute" xml:space="preserve">
+    <value>Trace Route</value>
+  </data>
+  <data name="Trace" xml:space="preserve">
+    <value>Trace</value>
+  </data>
+  <data name="ExecuteTraceRoute" xml:space="preserve">
+    <value>Execute a trace route</value>
+  </data>
+  <data name="TimedOut" xml:space="preserve">
+    <value>Timed out</value>
+  </data>
+  <data name="TraceRouteInformation" xml:space="preserve">
+    <value>Trace route information will appear here</value>
+  </data>
+  <data name="TraceProgress" xml:space="preserve">
+    <value>Tracing in progress</value>
+  </data>
+  <data name="TraceRouteDesc" xml:space="preserve">
+    <value>Define the settings to use when performing a trace route.</value>
+  </data>
+  <data name="MaxTimeOut" xml:space="preserve">
+    <value>Maximum time out</value>
+  </data>
+  <data name="MaxHops" xml:space="preserve">
+    <value>Maximum hops</value>
+  </data>
+  <data name="HopsLower" xml:space="preserve">
+    <value>hops</value>
+  </data>
+  <data name="WiFiNetworks" xml:space="preserve">
+    <value>WiFi Networks</value>
+  </data>
+  <data name="ConnectWiFi" xml:space="preserve">
+    <value>Connect to a WiFi network</value>
+  </data>
+  <data name="SignalQuality" xml:space="preserve">
+    <value>Signal quality</value>
+  </data>
+  <data name="BssType" xml:space="preserve">
+    <value>BSS Type</value>
+  </data>
+  <data name="Band" xml:space="preserve">
+    <value>Band</value>
+  </data>
+  <data name="Interface" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="SecurityEnabled" xml:space="preserve">
+    <value>Is security enabled</value>
+  </data>
+  <data name="ProfileName" xml:space="preserve">
+    <value>Profile Name</value>
+  </data>
+  <data name="Channel" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="ScanningInProgress" xml:space="preserve">
+    <value>InternetTest Pro is scanning networks nearby, please wait.</value>
+  </data>
+  <data name="NoNetworks" xml:space="preserve">
+    <value>No networks are available.</value>
+  </data>
+  <data name="Adapters" xml:space="preserve">
+    <value>Network adapters</value>
+  </data>
+  <data name="InterfaceType" xml:space="preserve">
+    <value>Interface type</value>
+  </data>
+  <data name="TotalBytesSent" xml:space="preserve">
+    <value>Total bytes sent</value>
+  </data>
+  <data name="TotalBytesReceived" xml:space="preserve">
+    <value>Total bytes received</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>Bytes,Kilobytes,Megabytes,Gigabytes,Terabytes,Petabytes</value>
+  </data>
+  <data name="Types" xml:space="preserve">
+    <value>Unknown,Ethernet,TokenRing,FDDI,Basic ISDN,Primary ISDN,PPP,Loopback,Ethernet 3 Megabit,SLIP,ATM,Generic Modem,Fast Ethernet T,ISDN,Fast Ethernet FX,Wireless 802.11,Asymmetric DSL,Rate-Adaptive DSL,Symmetric DSL,Very High-Speed DSL,IP over ATM,Gigabit Ethernet,Tunnel,Multi-Rate Symmetric DSL,High-Performance Serial Bus,WMAN,WWANPP,WWANPP2</value>
+  </data>
+  <data name="MTU" xml:space="preserve">
+    <value>MTU</value>
+  </data>
+  <data name="PhysicalAddress" xml:space="preserve">
+    <value>Physical Address</value>
+  </data>
+  <data name="IpVersion" xml:space="preserve">
+    <value>IP Version(s)</value>
+  </data>
+  <data name="DnsEnabled" xml:space="preserve">
+    <value>DNS enabled</value>
+  </data>
+  <data name="DnsDynamicConfigured" xml:space="preserve">
+    <value>Dynamically configured DNS</value>
+  </data>
+  <data name="ReceiveOnly" xml:space="preserve">
+    <value>Receive Only</value>
+  </data>
+  <data name="Multicast" xml:space="preserve">
+    <value>Multicast</value>
+  </data>
+  <data name="UnicastPacketsSent" xml:space="preserve">
+    <value>Unicast Packets Sent</value>
+  </data>
+  <data name="UnicastPacketsReceived" xml:space="preserve">
+    <value>Unicast Packets Received</value>
+  </data>
+  <data name="NonUnicastPacketsSent" xml:space="preserve">
+    <value>Non-Unicast Packets Sent</value>
+  </data>
+  <data name="NonUnicastPacketsReceived" xml:space="preserve">
+    <value>Non-Unicast Packets Received</value>
+  </data>
+  <data name="IncomingPacketsDiscarded" xml:space="preserve">
+    <value>Incoming Packets Discarded</value>
+  </data>
+  <data name="OutgoingPacketsDiscarded" xml:space="preserve">
+    <value>Outgoing Packets Discarded</value>
+  </data>
+  <data name="IncomingPacketsWithErrors" xml:space="preserve">
+    <value>Incoming Packets With Errors</value>
+  </data>
+  <data name="OutgoingPacketsWithErrors" xml:space="preserve">
+    <value>Outgoing Packets With Errors</value>
+  </data>
+  <data name="IncomingUnknownProtocolPackets" xml:space="preserve">
+    <value>Incoming Unknown Protocol Packets</value>
+  </data>
+  <data name="OutputQueueLength" xml:space="preserve">
+    <value>Output Queue Length</value>
+  </data>
+  <data name="ShowDisabled" xml:space="preserve">
+    <value>Show disabled</value>
+  </data>
+  <data name="LocateMyIpOnStart" xml:space="preserve">
+    <value>Locate my IP on start</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="NotConnectedS" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="Checking" xml:space="preserve">
+    <value>Checking</value>
+  </data>
+  <data name="Network" xml:space="preserve">
+    <value>Network</value>
+  </data>
+  <data name="HoverToReveal" xml:space="preserve">
+    <value>Hover to reveal</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="QuickActions" xml:space="preserve">
+    <value>Quick actions</value>
+  </data>
+  <data name="DnsInfoWillShowHere" xml:space="preserve">
+    <value>DNS Information will show here</value>
+  </data>
+  <data name="AddSite" xml:space="preserve">
+    <value>Add site</value>
+  </data>
+  <data name="TimerDesc" xml:space="preserve">
+    <value>Automatically launch tests to check whether a website is down or not.</value>
+  </data>
+  <data name="TestAll" xml:space="preserve">
+    <value>Test all</value>
+  </data>
+  <data name="EraseWiFiPasswordsFiles" xml:space="preserve">
+    <value>Erase cached WiFi data</value>
+  </data>
+  <data name="EraseWiFiPasswordsFilesMsg" xml:space="preserve">
+    <value>Are you sure you want to erase cached WiFi Passwords?</value>
+  </data>
+  <data name="Ethernet" xml:space="preserve">
+    <value>Ethernet</value>
+  </data>
+  <data name="InvalidURLMsg" xml:space="preserve">
+    <value>Please provide a valid URL.</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="DefaultTimeInterval" xml:space="preserve">
+    <value>Default time interval</value>
+  </data>
+  <data name="DownDetectorSettingsDesc" xml:space="preserve">
+    <value>Settings for the DownDetector feature.</value>
+  </data>
+  <data name="NetworkAdapters" xml:space="preserve">
+    <value>Network Adapters</value>
+  </data>
+  <data name="NetworkAdaptersSettingsDesc" xml:space="preserve">
+    <value>Settings to apply to the network adapters section.</value>
+  </data>
+  <data name="HideDisabledAdaptersByDefault" xml:space="preserve">
+    <value>Hide disabled adapters by default</value>
+  </data>
+  <data name="PortableNoAutoUpdates" xml:space="preserve">
+    <value>Automatic updates are not available in portable mode, please download InternetTest Pro (Portable) again.</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="WiFi" xml:space="preserve">
+    <value>WiFi</value>
+  </data>
+  <data name="NoWiFIPasswordsFound" xml:space="preserve">
+    <value>No WiFi passwords were found on this device.</value>
+  </data>
+  <data name="SearchingForWiFiPasswords" xml:space="preserve">
+    <value>InternetTest Pro is searching for WiFi passwords.</value>
+  </data>
+  <data name="ExportWithPasswords" xml:space="preserve">
+    <value>Export with passwords</value>
+  </data>
+  <data name="ExportWithoutPasswords" xml:space="preserve">
+    <value>Export without passwords</value>
+  </data>
+  <data name="WiFiExportSuccessful" xml:space="preserve">
+    <value>All WiFi networks were sucessfully exported.</value>
+  </data>
+  <data name="DataConsumption" xml:space="preserve">
+    <value>Data consumption</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>Requests</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Response" xml:space="preserve">
+    <value>Response</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>Headers</value>
+  </data>
+  <data name="Cookies" xml:space="preserve">
+    <value>Cookies</value>
+  </data>
+  <data name="Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>Expand/Collapse</value>
+  </data>
+  <data name="EnableConfidential" xml:space="preserve">
+    <value>Enable Confidential Mode</value>
+  </data>
+  <data name="DisableConfidential" xml:space="preserve">
+    <value>Disable Confidential Mode</value>
+  </data>
+  <data name="Pin" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="Unpin" xml:space="preserve">
+    <value>Unpin</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="RunTest" xml:space="preserve">
+    <value>Run test</value>
+  </data>
+  <data name="ShareWithQrCode" xml:space="preserve">
+    <value>Share with a QR Code</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="CopyKey" xml:space="preserve">
+    <value>Copy Key</value>
+  </data>
+  <data name="ShowHideKey" xml:space="preserve">
+    <value>Show/Hide secret key</value>
+  </data>
+  <data name="GitHubRepo" xml:space="preserve">
+    <value>Access GitHub repository</value>
+  </data>
+  <data name="ExportToCSV" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
+  <data name="ShowHideTimedOut" xml:space="preserve">
+    <value>Show/Hide Timed Out items</value>
+  </data>
+  <data name="PerformanceMetrics" xml:space="preserve">
+    <value>Performance Metrics</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="AdapterDesc" xml:space="preserve">
+    <value>View information about your network adapter</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="UnableToCheckUpdates" xml:space="preserve">
+    <value>Unable to check for updates</value>
+  </data>
+  <data name="DnsCache" xml:space="preserve">
+    <value>DNS Cache</value>
+  </data>
+  <data name="GetCache" xml:space="preserve">
+    <value>Get cache</value>
+  </data>
+  <data name="FlushDNS" xml:space="preserve">
+    <value>Flush DNS cache</value>
+  </data>
+  <data name="Entry" xml:space="preserve">
+    <value>Entry</value>
+  </data>
+  <data name="RecordName" xml:space="preserve">
+    <value>Record name</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="FlushDNSMessage" xml:space="preserve">
+    <value>Are you sure you want to flush the DNS cache stored on your device? This operation cannot be cancelled.</value>
+  </data>
+  <data name="FlushDNSSuccess" xml:space="preserve">
+    <value>The DNS Cache has been successfully flushed.</value>
+  </data>
+  <data name="ZoomLevel" xml:space="preserve">
+    <value>Default zoom level</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="Body" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="ContentType" xml:space="preserve">
+    <value>Content type</value>
+  </data>
+  <data name="Auth" xml:space="preserve">
+    <value>Auth</value>
+  </data>
+  <data name="Bearer" xml:space="preserve">
+    <value>Bearer</value>
+  </data>
+  <data name="Token" xml:space="preserve">
+    <value>Token</value>
+  </data>
+  <data name="AuthType" xml:space="preserve">
+    <value>Auth Type</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="NoAuthMethod" xml:space="preserve">
+    <value>No authentication information will be provided</value>
+  </data>
+  <data name="ShowAdaptersNoIpv4Support" xml:space="preserve">
+    <value>Show adapters that do not support IPv4</value>
+  </data>
+  <data name="DnsCacheWindowTitle" xml:space="preserve">
+    <value>Cache Element Details</value>
+  </data>
+  <data name="Caption" xml:space="preserve">
+    <value>Caption</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ElementName" xml:space="preserve">
+    <value>Element Name</value>
+  </data>
+  <data name="InstanceId" xml:space="preserve">
+    <value>Instance ID</value>
+  </data>
+  <data name="DataLength" xml:space="preserve">
+    <value>Data Length</value>
+  </data>
+  <data name="Section" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="TimeToLive" xml:space="preserve">
+    <value>Time to live</value>
+  </data>
+  <data name="PsComputerName" xml:space="preserve">
+    <value>PowerShell Computer Name</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
   </data>
 </root>
