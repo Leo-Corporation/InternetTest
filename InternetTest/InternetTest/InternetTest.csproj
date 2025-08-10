@@ -19,8 +19,6 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\Components\" />
-    <Folder Include="Views\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +27,7 @@
 
   <ItemGroup>
     <PackageReference Include="MicaWPF.Lite" Version="6.3.0" />
+    <PackageReference Include="PeyrSharp.Core" Version="2.1.0.2312" />
   </ItemGroup>
 
   <ItemGroup>

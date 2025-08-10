@@ -4,10 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:components="clr-namespace:InternetTest.Components"
     xmlns:controls="clr-namespace:MicaWPF.Lite.Controls;assembly=MicaWPF.Lite"
+    xmlns:cvm="clr-namespace:InternetTest.ViewModels.Components"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:InternetTest.Views"
+    xmlns:vm="clr-namespace:InternetTest.ViewModels"
     Title="{x:Static lang:Resources.InternetTest}"
     Width="950"
     Height="600"
@@ -21,7 +24,19 @@
             <ColumnDefinition Width="250" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <components:Sidebar Grid.Column="0" />
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vm:HomePageViewModel}">
+                <views:HomePage />
+            </DataTemplate>
+        </Grid.Resources>
+        <Grid DataContext="{Binding SidebarViewModel}">
+            <Grid.Resources>
+                <DataTemplate DataType="{x:Type cvm:SidebarViewModel}">
+                    <components:Sidebar />
+                </DataTemplate>
+            </Grid.Resources>
+            <components:Sidebar />
+        </Grid>
         <ScrollViewer
             Grid.Column="1"
             HorizontalScrollBarVisibility="Disabled"
