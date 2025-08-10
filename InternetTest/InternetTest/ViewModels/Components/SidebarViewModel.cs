@@ -21,35 +21,26 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.ViewModels.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using InternetTest.Commands;
+using System.Windows.Input;
 
-namespace InternetTest.ViewModels;
+namespace InternetTest.ViewModels.Components;
 
-
-
-public class MainViewModel: ViewModelBase
+public class SidebarViewModel : ViewModelBase
 {
-	private SidebarViewModel _sidebarViewModel;
-	public SidebarViewModel SidebarViewModel
+	private readonly MainViewModel _mainViewModel;
+
+	public ICommand HomePageCommand { get; }
+
+	public SidebarViewModel(MainViewModel mainViewModel)
 	{
-		get { return _sidebarViewModel; }
-		set { _sidebarViewModel = value; OnPropertyChanged(nameof(SidebarViewModel)); }
+		_mainViewModel = mainViewModel;
+
+		HomePageCommand = new RelayCommand(HomePage);
 	}
 
-	private object? _currentView;
-	public object? CurrentViewModel
+	private void HomePage(object? obj)
 	{
-		get { return _currentView; }
-		set { _currentView = value; OnPropertyChanged(nameof(CurrentViewModel)); }
-	}
-
-	public MainViewModel()
-	{
-		_sidebarViewModel = new(this);
+		_mainViewModel.CurrentViewModel = new HomePageViewModel();
 	}
 }

@@ -34,6 +34,7 @@
                 Padding="5"
                 HorizontalContentAlignment="Stretch"
                 Background="Transparent"
+                Command="{Binding HomePageCommand}"
                 GroupName="Sidebar"
                 Style="{DynamicResource SidebarButton}">
                 <Grid>
