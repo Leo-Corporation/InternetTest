@@ -385,6 +385,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connection details.
+        /// </summary>
+        public static string ConnectionDetails {
+            get {
+                return ResourceManager.GetString("ConnectionDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connection mode.
         /// </summary>
         public static string ConnectionMode {
@@ -1176,6 +1185,15 @@ namespace InternetTest.Properties {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monitor your Internet connection and network status..
+        /// </summary>
+        public static string HomeWelcomeDesc {
+            get {
+                return ResourceManager.GetString("HomeWelcomeDesc", resourceCulture);
             }
         }
         
@@ -2143,6 +2161,15 @@ namespace InternetTest.Properties {
         public static string ReceiveOnly {
             get {
                 return ResourceManager.GetString("ReceiveOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recent activity.
+        /// </summary>
+        public static string RecentActivity {
+            get {
+                return ResourceManager.GetString("RecentActivity", resourceCulture);
             }
         }
         

@@ -1155,4 +1155,13 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="General" xml:space="preserve">
     <value>Général</value>
   </data>
+  <data name="HomeWelcomeDesc" xml:space="preserve">
+    <value>Gérez votre connexion Internet et l'état de votre réseau.</value>
+  </data>
+  <data name="RecentActivity" xml:space="preserve">
+    <value>Activité récente</value>
+  </data>
+  <data name="ConnectionDetails" xml:space="preserve">
+    <value>Infos sur la connexion</value>
+  </data>
 </root>

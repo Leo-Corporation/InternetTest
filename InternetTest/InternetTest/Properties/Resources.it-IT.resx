@@ -1123,7 +1123,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Non verranno fornite informazioni di autenticazione</value>
   </data>
   <data name="ShowAdaptersNoIpv4Support" xml:space="preserve">
-    <value>Visualizza schede di rete che non supportano il protocollo IPv4.</value>
+    <value>Visualizza schede di rete che non supportano il protocollo IPv4</value>
   </data>
   <data name="DnsCacheWindowTitle" xml:space="preserve">
     <value>Dettagli elemento della cache</value>
@@ -1154,5 +1154,14 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Generale</value>
+  </data>
+  <data name="HomeWelcomeDesc" xml:space="preserve">
+    <value>Controlla la tua connessione Internet e lo stato della rete.</value>
+  </data>
+  <data name="RecentActivity" xml:space="preserve">
+    <value>Attività recente</value>
+  </data>
+  <data name="ConnectionDetails" xml:space="preserve">
+    <value>Dettagli di connessione</value>
   </data>
 </root>

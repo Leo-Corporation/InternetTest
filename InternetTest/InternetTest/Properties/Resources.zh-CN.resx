@@ -1146,4 +1146,13 @@
   <data name="General" xml:space="preserve">
     <value>一般情况</value>
   </data>
+  <data name="HomeWelcomeDesc" xml:space="preserve">
+    <value>监控您的互联网连接和网络状态。</value>
+  </data>
+  <data name="RecentActivity" xml:space="preserve">
+    <value>近期活动</value>
+  </data>
+  <data name="ConnectionDetails" xml:space="preserve">
+    <value>连接详细信息</value>
+  </data>
 </root>
