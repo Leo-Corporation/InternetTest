@@ -84,7 +84,7 @@
                         Grid.Row="2"
                         Grid.ColumnSpan="2"
                         Foreground="{DynamicResource DarkGray}"
-                        Text="{x:Static lang:Resources.WiFi}" />
+                        Text="{x:Static lang:Resources.Network}" />
                 </Grid>
             </Border>
 
@@ -116,6 +116,7 @@
                         Text="{Binding WiFiIcon}" />
                     <TextBlock
                         Grid.Row="1"
+                        Grid.ColumnSpan="2"
                         d:Text="Home WiFi 3"
                         FontSize="18"
                         FontWeight="Bold"

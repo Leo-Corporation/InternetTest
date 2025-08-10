@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Models;
 using InternetTest.ViewModels.Components;
 using System;
 using System.Collections.Generic;
@@ -48,8 +49,11 @@ public class MainViewModel: ViewModelBase
 		set { _currentView = value; OnPropertyChanged(nameof(CurrentViewModel)); }
 	}
 
-	public MainViewModel()
+	public Settings Settings { get; }
+
+	public MainViewModel(Settings settings)
 	{
 		_sidebarViewModel = new(this);
+		Settings = settings;
 	}
 }

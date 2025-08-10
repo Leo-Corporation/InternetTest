@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Models;
 using InternetTest.ViewModels;
 using System.Windows;
 
@@ -33,9 +34,13 @@ namespace InternetTest
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            // Set the main window
-            MainWindow = new MainWindow();
-            MainViewModel mvm = new();
+			// Load settings
+			Settings settings = new();
+            settings.Load();
+
+			// Set the main window
+			MainWindow = new MainWindow();
+            MainViewModel mvm = new(settings);
             MainWindow.DataContext = mvm;
 
             MainWindow.Show();

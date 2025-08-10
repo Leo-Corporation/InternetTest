@@ -18,14 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
 	  <Content Include="InternetTest.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ManagedNativeWifi" Version="3.0.2" />
     <PackageReference Include="MicaWPF.Lite" Version="6.3.0" />
     <PackageReference Include="PeyrSharp.Core" Version="2.1.0.2312" />
     <PackageReference Include="PeyrSharp.Env" Version="2.1.0.2312" />

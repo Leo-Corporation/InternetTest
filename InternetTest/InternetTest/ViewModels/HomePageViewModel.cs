@@ -21,11 +21,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using InternetTest.Helpers;
+using InternetTest.Models;
+using PeyrSharp.Core;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels;
@@ -62,10 +60,51 @@ public class HomePageViewModel : ViewModelBase
 	public string Speed { get => _speed; set { _speed = value; OnPropertyChanged(nameof(Speed)); } }
 
 	private SolidColorBrush _statusColor;
+	private readonly Settings _settings;
+
 	public SolidColorBrush StatusColor { get => _statusColor; set { _statusColor = value; OnPropertyChanged(nameof(StatusColor)); } }
 
-	public HomePageViewModel()
+	bool connected = true;
+	public HomePageViewModel(Settings settings)
 	{
+		_settings = settings;
 
+		// Get status
+		LoadStatusCard();
+
+		// Get WiFi information
+		string? ssid = NetworkHelper.GetCurrentWifiSSID();
+		int signalQuality = ssid != null ? NetworkHelper.GetCurrentNetwork().SignalQuality : 0;
+		WiFiName = ssid ?? (connected ? Properties.Resources.Ethernet : Properties.Resources.NotConnectedS);
+		WiFiIcon = ssid != null ? GetWiFiIcon(signalQuality) : (connected ? "\uF35A" : "\uFB69");
+		WiFiStrengthText = $"{Properties.Resources.SignalQuality} - {(ssid != null ? signalQuality : 100)}%";
+
+		// Get IP address
+		LoadIpAddress();
+
+		// Network speed
+		Speed = $"~{NetworkHelper.GetCurrentSpeed()} Mbps";
 	}
+
+	internal async void LoadIpAddress()
+	{
+		Ip ip = await Ip.GetIp("");
+		IpAddress = ip.Query ?? Properties.Resources.Unknown;
+		IpLocation = $"{ip.City}, {ip.Country}" ?? Properties.Resources.Unknown;
+	}
+
+	internal async void LoadStatusCard()
+	{
+		connected = await Internet.IsAvailableAsync(_settings.TestSite);
+		StatusText = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS;
+		StatusColor = connected ? ThemeHelper.GetSolidColorBrush("Green") : ThemeHelper.GetSolidColorBrush("Red");
+	}
+
+	private static string GetWiFiIcon(int signalQuality) => signalQuality switch
+	{
+		>= 75 => "\uF8AD",
+		>= 50 => "\uF8AF",
+		>= 25 => "\uF8B1",
+		_ => "\uF8B3"
+	};
 }
