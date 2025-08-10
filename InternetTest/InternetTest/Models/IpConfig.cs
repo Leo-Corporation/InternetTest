@@ -21,17 +21,25 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using PeyrSharp.Env;
+using System.Net.NetworkInformation;
 
-namespace InternetTest.Helpers;
-
-public static class Context
+namespace InternetTest.Models;
+public record WindowsIpConfig(
+	string? Name,
+	string? IPv4Address,
+	string? IPv4Mask,
+	string? IPv4Gateway,
+	string? IPv6Address,
+	string? IPv6Gateway,
+	string? DNSSuffix,
+	OperationalStatus? Status)
 {
-	public static string Version => "9.0.0.2508-pre1";
-
-#if PORTABLE
-	public static string DefaultStoragePath => $@"{FileSys.CurrentDirectory}\InternetTest Pro\";
-#else
-	public static string DefaultStoragePath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\";
-#endif
+	public override string ToString() => $"{Properties.Resources.Name}: {Name}\n" +
+		$"{Properties.Resources.IPv4Address}: {IPv4Address}\n" +
+		$"{Properties.Resources.SubnetMask}: {IPv4Mask}\n" +
+		$"{Properties.Resources.GatewayIPv4}: {IPv4Gateway ?? Properties.Resources.None}\n" +
+		$"{Properties.Resources.IPv6Address}: {IPv6Address}\n" +
+		$"{Properties.Resources.GatewayIPv6}: {IPv6Gateway ?? Properties.Resources.None}\n" +
+		$"{Properties.Resources.DNSSuffix}: {DNSSuffix ?? Properties.Resources.None}\n" +
+		$"{Properties.Resources.Status}: {(Status == OperationalStatus.Up ? Properties.Resources.ConnectedS : Properties.Resources.Disconnected)}";
 }

@@ -21,17 +21,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using PeyrSharp.Env;
-
-namespace InternetTest.Helpers;
-
-public static class Context
+namespace InternetTest.Enums;
+public enum MapProvider
 {
-	public static string Version => "9.0.0.2508-pre1";
-
-#if PORTABLE
-	public static string DefaultStoragePath => $@"{FileSys.CurrentDirectory}\InternetTest Pro\";
-#else
-	public static string DefaultStoragePath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\";
-#endif
+	Google = 2,
+	Microsoft = 1,
+	Here = 3,
+	OpenStreetMap = 0,
+	Yandex = 4
 }

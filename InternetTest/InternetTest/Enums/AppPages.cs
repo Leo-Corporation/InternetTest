@@ -21,17 +21,22 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using PeyrSharp.Env;
 
-namespace InternetTest.Helpers;
-
-public static class Context
+namespace InternetTest.Enums;
+public enum AppPages
 {
-	public static string Version => "9.0.0.2508-pre1";
-
-#if PORTABLE
-	public static string DefaultStoragePath => $@"{FileSys.CurrentDirectory}\InternetTest Pro\";
-#else
-	public static string DefaultStoragePath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\";
-#endif
+	Settings = -1, // Special page
+	Home,
+	History, // Legacy feature, leaving for compatibility
+	Status,
+	DownDetector,
+	MyIP,
+	LocateIP,
+	Ping,
+	IPConfig,
+	WiFiPasswords, // Legacy feature, leaving for compatibility
+	DnsTool,
+	TraceRoute,
+	WiFiNetworks,
+	Requests
 }
