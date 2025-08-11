@@ -42,4 +42,20 @@ public record WindowsIpConfig(
 		$"{Properties.Resources.GatewayIPv6}: {IPv6Gateway ?? Properties.Resources.None}\n" +
 		$"{Properties.Resources.DNSSuffix}: {DNSSuffix ?? Properties.Resources.None}\n" +
 		$"{Properties.Resources.Status}: {(Status == OperationalStatus.Up ? Properties.Resources.ConnectedS : Properties.Resources.Disconnected)}";
+
+	public static WindowsIpConfig? FromNetworkInterface(NetworkInterface networkInterface)
+	{
+		var props = networkInterface.GetIPProperties();
+		if (props.UnicastAddresses.Count == 0)
+			return null;
+		return new WindowsIpConfig(
+			networkInterface.Name,
+			props.UnicastAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)?.Address.ToString(),
+			props.UnicastAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)?.IPv4Mask.ToString(),
+			props.GatewayAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)?.Address.ToString(),
+			props.UnicastAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)?.Address.ToString(),
+			props.GatewayAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)?.Address.ToString(),
+			props.DnsSuffix,
+			networkInterface.OperationalStatus);
+	}
 }

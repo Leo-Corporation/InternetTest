@@ -157,6 +157,7 @@
                         Text="&#xF3FC;" />
                     <TextBlock
                         Grid.Row="1"
+                        Grid.ColumnSpan="2"
                         d:Text="183.155.50.54"
                         FontSize="18"
                         FontWeight="Bold"
@@ -197,6 +198,7 @@
                         Text="&#xF3FC;" />
                     <TextBlock
                         Grid.Row="1"
+                        Grid.ColumnSpan="2"
                         d:Text="~411 Mbps"
                         FontSize="18"
                         FontWeight="Bold"
@@ -284,22 +286,26 @@
                             <TextBlock
                                 Margin="0 0 0 5"
                                 d:Text="191.25.52.2"
-                                FontFamily="Consolas" />
+                                FontFamily="Consolas"
+                                Text="{Binding LocalIp}" />
                             <TextBlock Foreground="{DynamicResource DarkGray}" Text="{x:Static lang:Resources.ISP}" />
                             <TextBlock
                                 Margin="0 0 0 5"
                                 d:Text="191.25.52.2"
-                                FontFamily="Consolas" />
+                                FontFamily="Consolas"
+                                Text="{Binding Isp}" />
                             <TextBlock Foreground="{DynamicResource DarkGray}" Text="{x:Static lang:Resources.DNS}" />
                             <TextBlock
                                 Margin="0 0 0 5"
                                 d:Text="191.25.52.2"
-                                FontFamily="Consolas" />
+                                FontFamily="Consolas"
+                                Text="{Binding Dns}" />
                             <TextBlock Foreground="{DynamicResource DarkGray}" Text="{x:Static lang:Resources.GatewayIPv4}" />
                             <TextBlock
                                 Margin="0 0 0 5"
                                 d:Text="191.25.52.2"
-                                FontFamily="Consolas" />
+                                FontFamily="Consolas"
+                                Text="{Binding Gateway}" />
                         </StackPanel>
                     </StackPanel>
                 </Grid>

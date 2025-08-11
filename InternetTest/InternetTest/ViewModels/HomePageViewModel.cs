@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Helpers;
 using InternetTest.Models;
 using PeyrSharp.Core;
+using System.Net.NetworkInformation;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels;
@@ -59,6 +60,18 @@ public class HomePageViewModel : ViewModelBase
 	private string _speed;
 	public string Speed { get => _speed; set { _speed = value; OnPropertyChanged(nameof(Speed)); } }
 
+	private string _localIp;
+	public string LocalIp { get => _localIp; set { _localIp = value; OnPropertyChanged(nameof(LocalIp)); } }
+
+	private string isp;
+	public string Isp { get => isp; set { isp = value; OnPropertyChanged(nameof(Isp)); } }
+
+	private string dns;
+	public string Dns { get => dns; set { dns = value; OnPropertyChanged(nameof(Dns)); } }
+
+	private string gateway;
+	public string Gateway { get => gateway; set { gateway = value; OnPropertyChanged(nameof(Gateway)); } }
+
 	private SolidColorBrush _statusColor;
 	private readonly Settings _settings;
 
@@ -84,6 +97,20 @@ public class HomePageViewModel : ViewModelBase
 
 		// Network speed
 		Speed = $"~{NetworkHelper.GetCurrentSpeed()} Mbps";
+
+		// Load connection details
+		var networkInterface = NetworkInterface.GetAllNetworkInterfaces()
+			.Where(x => x.OperationalStatus == OperationalStatus.Up)
+			.OrderByDescending(x => x.GetIPStatistics().BytesReceived)
+			.FirstOrDefault();
+		if (networkInterface != null)
+		{
+			var ipProps = WindowsIpConfig.FromNetworkInterface(networkInterface);
+
+			LocalIp = ipProps?.IPv4Address ?? Properties.Resources.Unknown;
+			Gateway = ipProps?.IPv4Gateway ?? Properties.Resources.Unknown;
+			Dns = string.Join("\n", networkInterface.GetIPProperties().DnsAddresses.Select(x => x.ToString().Replace("%16", ""))) ?? Properties.Resources.Unknown;
+		}
 	}
 
 	internal async void LoadIpAddress()
@@ -91,6 +118,7 @@ public class HomePageViewModel : ViewModelBase
 		Ip ip = await Ip.GetIp("");
 		IpAddress = ip.Query ?? Properties.Resources.Unknown;
 		IpLocation = $"{ip.City}, {ip.Country}" ?? Properties.Resources.Unknown;
+		Isp = ip.Isp ?? Properties.Resources.Unknown;
 	}
 
 	internal async void LoadStatusCard()
