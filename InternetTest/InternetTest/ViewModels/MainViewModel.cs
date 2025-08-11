@@ -23,17 +23,12 @@ SOFTWARE.
 */
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetTest.ViewModels;
 
 
 
-public class MainViewModel: ViewModelBase
+public class MainViewModel : ViewModelBase
 {
 	private SidebarViewModel _sidebarViewModel;
 	public SidebarViewModel SidebarViewModel

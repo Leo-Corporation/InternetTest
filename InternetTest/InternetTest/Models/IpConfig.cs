@@ -46,9 +46,9 @@ public record WindowsIpConfig(
 	public static WindowsIpConfig? FromNetworkInterface(NetworkInterface networkInterface)
 	{
 		var props = networkInterface.GetIPProperties();
-		if (props.UnicastAddresses.Count == 0)
-			return null;
-		return new WindowsIpConfig(
+		return props.UnicastAddresses.Count == 0
+			? null
+			: new WindowsIpConfig(
 			networkInterface.Name,
 			props.UnicastAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)?.Address.ToString(),
 			props.UnicastAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)?.IPv4Mask.ToString(),

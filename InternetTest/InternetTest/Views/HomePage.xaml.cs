@@ -25,14 +25,14 @@ using System.Windows.Controls;
 
 namespace InternetTest.Views
 {
-    /// <summary>
-    /// Interaction logic for HomePage.xaml
-    /// </summary>
-    public partial class HomePage : UserControl
-    {
-        public HomePage()
-        {
-            InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// Interaction logic for HomePage.xaml
+	/// </summary>
+	public partial class HomePage : UserControl
+	{
+		public HomePage()
+		{
+			InitializeComponent();
+		}
+	}
 }

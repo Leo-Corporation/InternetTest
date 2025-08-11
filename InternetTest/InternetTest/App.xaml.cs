@@ -27,23 +27,23 @@ using System.Windows;
 
 namespace InternetTest
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
-    {
-        protected override void OnStartup(StartupEventArgs e)
-        {
+	/// <summary>
+	/// Interaction logic for App.xaml
+	/// </summary>
+	public partial class App : Application
+	{
+		protected override void OnStartup(StartupEventArgs e)
+		{
 			// Load settings
 			Settings settings = new();
-            settings.Load();
+			settings.Load();
 
 			// Set the main window
 			MainWindow = new MainWindow();
-            MainViewModel mvm = new(settings);
-            MainWindow.DataContext = mvm;
+			MainViewModel mvm = new(settings);
+			MainWindow.DataContext = mvm;
 
-            MainWindow.Show();
+			MainWindow.Show();
 
 			base.OnStartup(e);
 		}

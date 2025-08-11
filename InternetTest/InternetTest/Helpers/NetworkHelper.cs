@@ -48,7 +48,7 @@ public static class NetworkHelper
 					BssType = cc.BssType.ToString(),
 					IsSecurityEnabled = cc.IsSecurityEnabled,
 					ProfileName = cc.ProfileName,
-				}; 
+				};
 			}
 		}
 		return new Network();
@@ -56,7 +56,7 @@ public static class NetworkHelper
 
 	public static int GetCurrentSpeed()
 	{
-		NetworkInterface[] adapters = [.. NetworkInterface.GetAllNetworkInterfaces().OrderByDescending(x=>x.GetIPStatistics().BytesReceived)];
+		NetworkInterface[] adapters = [.. NetworkInterface.GetAllNetworkInterfaces().OrderByDescending(x => x.GetIPStatistics().BytesReceived)];
 		foreach (NetworkInterface adapter in adapters)
 		{
 			if (adapter.OperationalStatus == OperationalStatus.Up && adapter.NetworkInterfaceType != NetworkInterfaceType.Loopback)
