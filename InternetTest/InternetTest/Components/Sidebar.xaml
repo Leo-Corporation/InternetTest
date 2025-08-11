@@ -250,7 +250,7 @@
 
             <RadioButton
                 Grid.Row="4"
-                Padding="5"
+                Padding="5" Command="{Binding SettingsPageCommand}"
                 HorizontalContentAlignment="Left"
                 Background="Transparent"
                 GroupName="Sidebar"

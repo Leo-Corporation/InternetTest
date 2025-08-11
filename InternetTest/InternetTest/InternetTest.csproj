@@ -10,6 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\DarkTheme.png" />
+    <None Remove="Assets\LightTheme.png" />
+    <None Remove="Assets\SystemTheme.png" />
     <None Remove="Fonts\FluentSystemIcons-Filled.ttf" />
     <None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
     <None Remove="Fonts\Hauora-ExtraBold.ttf" />
@@ -29,6 +32,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\DarkTheme.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\LightTheme.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\SystemTheme.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Fonts\FluentSystemIcons-Filled.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

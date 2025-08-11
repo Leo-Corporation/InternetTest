@@ -28,9 +28,9 @@ public enum AppPages
 	Settings = -1, // Special page
 	Home,
 	History, // Legacy feature, leaving for compatibility
-	Status,
+	Status, // Legacy feature, leaving for compatibility
 	DownDetector,
-	MyIP,
+	MyIP, // Legacy feature, leaving for compatibility
 	LocateIP,
 	Ping,
 	IPConfig,

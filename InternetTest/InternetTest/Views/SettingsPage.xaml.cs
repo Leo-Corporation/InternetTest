@@ -21,33 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Commands;
-using System.Windows.Input;
+using System.Windows.Controls;
 
-namespace InternetTest.ViewModels.Components;
-
-public class SidebarViewModel : ViewModelBase
+namespace InternetTest.Views;
+/// <summary>
+/// Interaction logic for SettingsPage.xaml
+/// </summary>
+public partial class SettingsPage : UserControl
 {
-	private readonly MainViewModel _mainViewModel;
-
-	public ICommand HomePageCommand { get; }
-	public ICommand SettingsPageCommand { get; }
-
-	public SidebarViewModel(MainViewModel mainViewModel)
+	public SettingsPage()
 	{
-		_mainViewModel = mainViewModel;
-
-		HomePageCommand = new RelayCommand(HomePage);
-		SettingsPageCommand = new RelayCommand(SettingsPage);
-	}
-
-	private void HomePage(object? obj)
-	{
-		_mainViewModel.CurrentViewModel = new HomePageViewModel(_mainViewModel.Settings);
-	}
-
-	private void SettingsPage(object? obj)
-	{
-		_mainViewModel.CurrentViewModel = new SettingsPageViewModel(_mainViewModel);
+		InitializeComponent();
 	}
 }
