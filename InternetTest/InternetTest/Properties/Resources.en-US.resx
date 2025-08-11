@@ -1164,4 +1164,10 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="ConnectionDetails" xml:space="preserve">
     <value>Connection details</value>
   </data>
+  <data name="SettingsDesc" xml:space="preserve">
+    <value>Configure your InternetTest application preferences.</value>
+  </data>
+  <data name="GeneralDesc" xml:space="preserve">
+    <value>Basic application preferences and appearance.</value>
+  </data>
 </root>

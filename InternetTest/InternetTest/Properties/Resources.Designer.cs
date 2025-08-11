@@ -1045,6 +1045,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Basic application preferences and appearance..
+        /// </summary>
+        public static string GeneralDesc {
+            get {
+                return ResourceManager.GetString("GeneralDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get cache.
         /// </summary>
         public static string GetCache {
@@ -2395,6 +2404,15 @@ namespace InternetTest.Properties {
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configure your InternetTest application preferences..
+        /// </summary>
+        public static string SettingsDesc {
+            get {
+                return ResourceManager.GetString("SettingsDesc", resourceCulture);
             }
         }
         
