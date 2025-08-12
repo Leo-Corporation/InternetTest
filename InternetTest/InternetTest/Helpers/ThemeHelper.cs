@@ -51,10 +51,10 @@ public class ThemeHelper
 			Source = new Uri($"..\\Themes\\{(isDark ? "Dark" : "Light")}.xaml", UriKind.Relative)
 		};
 
-		MicaWPFServiceUtility.ThemeService.ChangeTheme((WindowsTheme)theme);
-
 		Application.Current.Resources.MergedDictionaries.Clear();
 		Application.Current.Resources.MergedDictionaries.Add(dictionary);
+
+		MicaWPFServiceUtility.ThemeService.ChangeTheme((WindowsTheme)theme);
 	}
 
 	public static bool IsSystemThemeDark()
