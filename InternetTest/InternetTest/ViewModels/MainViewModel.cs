@@ -21,8 +21,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Commands;
+using InternetTest.Helpers;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
+using System.Windows;
+using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
 
@@ -46,9 +50,51 @@ public class MainViewModel : ViewModelBase
 
 	public Settings Settings { get; set; }
 
-	public MainViewModel(Settings settings)
+	public string Version => Context.Version;
+
+	private bool _pinned;
+	private readonly Window _mainWindow;
+
+	public ICommand PinCommand { get; }
+
+	public bool Pinned
+	{
+		get => _pinned;
+		set
+		{
+			_pinned = value;
+			_mainWindow.Topmost = value;
+
+			OnPropertyChanged(nameof(Pinned));
+		}
+	}
+
+	public MainViewModel(Settings settings, Window mainWindow)
 	{
 		_sidebarViewModel = new(this);
 		Settings = settings;
+		_mainWindow = mainWindow;
+
+		if (Settings.RememberPinnedState == true)
+		{
+			Pinned = Settings.Pinned ?? false;
+		}
+		else
+		{
+			Pinned = false;
+		}
+
+		PinCommand = new RelayCommand(Pin);
+	}
+
+	public void Pin(object? obj)
+	{
+		Pinned = !Pinned;
+
+		if (Settings.RememberPinnedState == true)
+		{
+			Settings.Pinned = Pinned;
+			Settings.Save();
+		}
 	}
 }

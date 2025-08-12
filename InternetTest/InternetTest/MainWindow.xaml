@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:components="clr-namespace:InternetTest.Components"
     xmlns:controls="clr-namespace:MicaWPF.Lite.Controls;assembly=MicaWPF.Lite"
+    xmlns:converters="clr-namespace:InternetTest.Converters"
     xmlns:cvm="clr-namespace:InternetTest.ViewModels.Components"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:lang="clr-namespace:InternetTest.Properties"
@@ -19,6 +20,66 @@
     FontFamily="\Fonts\#Hauora"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+    <controls:MicaWindow.Resources>
+        <converters:BoolToStringConverter x:Key="BoolToStringConverter" />
+    </controls:MicaWindow.Resources>
+    <controls:MicaWindow.TitleBarContent>
+        <StackPanel
+            HorizontalAlignment="Right"
+            Orientation="Horizontal"
+            WindowChrome.IsHitTestVisibleInChrome="False">
+            <Border
+                Grid.Column="1"
+                Padding="5 2"
+                VerticalAlignment="Center"
+                Background="{DynamicResource CardBackground}"
+                CornerRadius="10">
+                <TextBlock
+                    x:Name="VersionTxt"
+                    d:Text="9.0.0.2508"
+                    FontSize="10"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DarkGray}"
+                    Text="{Binding Version}" />
+            </Border>
+            <Button
+                Width="46"
+                Height="24"
+                Background="Transparent"
+                Command="{Binding PinCommand}"
+                Content="{Binding Pinned, Converter={StaticResource BoolToStringConverter}, Mode=TwoWay, ConverterParameter='&#xF604;,&#xF602;'}"
+                FontFamily="/Fonts/#FluentSystemIcons-Regular"
+                FontSize="14"
+                Foreground="{DynamicResource Foreground1}"
+                Style="{DynamicResource TitleBarButtonStyle}">
+                <Button.ToolTip>
+                    <ToolTip x:Name="PinTooltip" Content="{x:Static lang:Resources.Pin}" />
+                </Button.ToolTip>
+            </Button>
+            <Button
+                Width="46"
+                Height="24"
+                Background="Transparent"
+                FontSize="14"
+                Foreground="{DynamicResource Foreground1}"
+                Style="{DynamicResource TitleBarButtonStyle}">
+                <Grid>
+                    <TextBlock
+                        x:Name="RegularLockTxt"
+                        FontFamily="/Fonts/#FluentSystemIcons-Regular"
+                        Text="&#xFC25;" />
+                    <TextBlock
+                        x:Name="FilledLockTxt"
+                        FontFamily="/Fonts/#FluentSystemIcons-Filled"
+                        Text="&#xFC2C;"
+                        Visibility="Collapsed" />
+                </Grid>
+                <Button.ToolTip>
+                    <ToolTip x:Name="ConfidentialModeTooltip" Content="{x:Static lang:Resources.EnableConfidential}" />
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+    </controls:MicaWindow.TitleBarContent>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250" />

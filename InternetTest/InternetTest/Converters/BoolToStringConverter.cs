@@ -21,34 +21,38 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Helpers;
-using InternetTest.Models;
-using InternetTest.ViewModels;
-using System.Windows;
+using System.Globalization;
+using System.Windows.Data;
 
-namespace InternetTest
+namespace InternetTest.Converters;
+public class BoolToStringConverter : IValueConverter
 {
-	/// <summary>
-	/// Interaction logic for App.xaml
-	/// </summary>
-	public partial class App : Application
+	// Expect parameter format: "TrueValue,FalseValue"
+	public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 	{
-		protected override void OnStartup(StartupEventArgs e)
+		bool boolValue = value is bool b && b;
+		if (parameter is string param)
 		{
-			// Load settings
-			Settings settings = new();
-			settings.Load();
-
-			ThemeHelper.ChangeTheme(settings.Theme);
-
-			// Set the main window
-			MainWindow = new MainWindow();
-			MainViewModel mvm = new(settings, MainWindow);
-			MainWindow.DataContext = mvm;
-
-			MainWindow.Show();
-
-			base.OnStartup(e);
+			var parts = param.Split(',');
+			if (parts.Length == 2)
+			{
+				return boolValue ? parts[0] : parts[1];
+			}
 		}
+		// Fallback default values
+		return "";
+	}
+
+	public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+	{
+		if (parameter is string param)
+		{
+			var parts = param.Split(',');
+			if (parts.Length == 2 && value is string strVal)
+			{
+				return strVal == parts[0];
+			}
+		}
+		return false;
 	}
 }
