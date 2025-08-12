@@ -136,10 +136,10 @@
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="true">
-                                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Accent}" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Border}" />
                                 </Trigger>
                                 <Trigger Property="IsChecked" Value="True">
-                                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Accent}" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource Border}" />
                                 </Trigger>
                                 <Trigger Property="IsEnabled" Value="false">
                                     <Setter TargetName="border" Property="Background" Value="Transparent" />
@@ -266,6 +266,169 @@
                                 <!--  Remove default hover effect  -->
                                 <Trigger Property="IsHighlighted" Value="True">
                                     <Setter Property="Background" Value="{DynamicResource WindowButtonsPressed1}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style TargetType="{x:Type CheckBox}">
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type CheckBox}">
+                            <Grid
+                                x:Name="templateRoot"
+                                Background="Transparent"
+                                SnapsToDevicePixels="True">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Border
+                                    x:Name="checkBoxBorder"
+                                    Width="20"
+                                    Height="20"
+                                    Margin="1"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    BorderBrush="{DynamicResource Border}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="3">
+                                    <Grid x:Name="markGrid">
+                                        <Path
+                                            x:Name="optionMark"
+                                            Margin="1"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Data="F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z "
+                                            Fill="{DynamicResource Gray}"
+                                            Opacity="0"
+                                            Stretch="None" />
+                                        <Rectangle
+                                            x:Name="indeterminateMark"
+                                            Margin="2"
+                                            Fill="{DynamicResource Gray}"
+                                            Opacity="0" />
+                                    </Grid>
+                                </Border>
+                                <ContentPresenter
+                                    x:Name="contentPresenter"
+                                    Grid.Column="1"
+                                    Margin="{TemplateBinding Padding}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="Center"
+                                    Focusable="False"
+                                    RecognizesAccessKey="True"
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="HasContent" Value="true">
+                                    <Setter Property="Padding" Value="4 -1 0 0" />
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="true">
+                                    <Setter TargetName="optionMark" Property="Opacity" Value="1" />
+                                    <Setter TargetName="indeterminateMark" Property="Opacity" Value="0" />
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="{x:Null}">
+                                    <Setter TargetName="optionMark" Property="Opacity" Value="0" />
+                                    <Setter TargetName="indeterminateMark" Property="Opacity" Value="1" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Foreground" Value="{DynamicResource Foreground1}" />
+                <Setter Property="CaretBrush" Value="{DynamicResource Foreground1}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border
+                                Background="Transparent"
+                                BorderBrush="{DynamicResource Border}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                                <ScrollViewer x:Name="PART_ContentHost" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="RadioButton">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <BulletDecorator Background="Transparent" Cursor="Hand">
+                                <BulletDecorator.Bullet>
+                                    <Grid Width="16" Height="16">
+                                        <Ellipse
+                                            x:Name="RadioBorder"
+                                            Fill="{DynamicResource Background1}"
+                                            Stroke="{DynamicResource Border}"
+                                            StrokeThickness="1" />
+                                        <Ellipse
+                                            x:Name="RadioMark"
+                                            Margin="4"
+                                            Fill="{DynamicResource Border}"
+                                            Visibility="Collapsed" />
+                                    </Grid>
+                                </BulletDecorator.Bullet>
+                                <ContentPresenter
+                                    Margin="4 0 0 0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center" />
+                            </BulletDecorator>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="RadioMark" Property="Visibility" Value="Visible" />
+                                    <Setter TargetName="RadioBorder" Property="Stroke" Value="{DynamicResource Border}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border
+                                Padding="{TemplateBinding Padding}"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                CornerRadius="5">
+                                <ContentPresenter
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="Link" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border
+                                Padding="{TemplateBinding Padding}"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                CornerRadius="5">
+                                <ContentPresenter
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="{DynamicResource Background1}" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
