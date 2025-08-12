@@ -1170,4 +1170,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="GeneralDesc" xml:space="preserve">
     <value>Basic application preferences and appearance.</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
 </root>

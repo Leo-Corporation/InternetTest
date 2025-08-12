@@ -34,4 +34,5 @@ public static class Context
 #else
 	public static string DefaultStoragePath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\";
 #endif
+	public static string UpdateVersionUrl => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/9.0/Version.txt";
 }

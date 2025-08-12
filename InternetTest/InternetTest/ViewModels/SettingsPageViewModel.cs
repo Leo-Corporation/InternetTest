@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace InternetTest.ViewModels;
 public class SettingsPageViewModel : ViewModelBase
@@ -44,6 +45,9 @@ public class SettingsPageViewModel : ViewModelBase
 	public ICommand ExportCommand { get; }
 	public ICommand ResetCommand { get; }
 	public ICommand ResetWiFiCommand { get; }
+	public ICommand CheckUpdateCommand { get; }
+	public ICommand SeeLicensesCommand { get; }
+	public ICommand GitHubCommand { get; }
 
 	private Theme _currentTheme;
 	public Theme CurrentTheme { get => _currentTheme; set { _currentTheme = value; OnPropertyChanged(nameof(CurrentTheme)); } }
@@ -285,6 +289,23 @@ public class SettingsPageViewModel : ViewModelBase
 		}
 	}
 
+	private string _updateText;
+	public string UpdateText { get => _updateText; set { _updateText = value; OnPropertyChanged(nameof(UpdateText)); } }
+
+	private string _updateIcon;
+	public string UpdateIcon { get => _updateIcon; set { _updateIcon = value; OnPropertyChanged(nameof(UpdateIcon)); } }
+
+	private string _updateBtnIcon;
+	public string UpdateBtnIcon { get => _updateBtnIcon; set { _updateBtnIcon = value; OnPropertyChanged(nameof(UpdateBtnIcon)); } }
+
+	private SolidColorBrush _updateBorderColor;
+	public SolidColorBrush UpdateBorderColor { get => _updateBorderColor; set { _updateBorderColor = value; OnPropertyChanged(nameof(UpdateBorderColor)); } }
+
+	private SolidColorBrush _updateTextColor;
+	public SolidColorBrush UpdateTextColor { get => _updateTextColor; set { _updateTextColor = value; OnPropertyChanged(nameof(UpdateTextColor)); } }
+
+	public string Version => Context.Version;
+
 	public SettingsPageViewModel(MainViewModel mainViewModel)
 	{
 		_mainViewModel = mainViewModel;
@@ -314,6 +335,22 @@ public class SettingsPageViewModel : ViewModelBase
 		ExportCommand = new RelayCommand(ExportSettings);
 		ResetCommand = new RelayCommand(ResetSettings);
 		ResetWiFiCommand = new RelayCommand(ResetWiFiSettings);
+		CheckUpdateCommand = new RelayCommand(CheckUpdate);
+		SeeLicensesCommand = new RelayCommand(SeeLicenses);
+		GitHubCommand = new RelayCommand(GitHub);
+
+		if (_mainViewModel.Settings.CheckUpdateOnStart)
+		{
+			CheckUpdate(true); // Check for updates on settings page load
+		}
+		else
+		{
+			UpdateText = Properties.Resources.UnableToCheckUpdates;
+			UpdateBorderColor = ThemeHelper.GetSolidColorBrush("LightAccent");
+			UpdateTextColor = ThemeHelper.GetSolidColorBrush("Accent");
+			UpdateIcon = "\uF2B1"; // Default icon
+			UpdateBtnIcon = "\uF191"; // Default button icon
+		}
 	}
 
 	private void LightTheme(object? obj)
@@ -402,5 +439,72 @@ public class SettingsPageViewModel : ViewModelBase
 			File.Delete(files[i]); // Remove the temp file
 		}
 		Directory.Delete(path); // Delete the temp directory		
+	}
+
+	private void SeeLicenses(object? obj)
+	{
+		MessageBox.Show($"{Properties.Resources.Licenses}\n\n" +
+		"DnsClient - Apache License Version 2.0 - © Michael Conrad\n" +
+		"Fluent System Icons - MIT License - © 2020 Microsoft Corporation\n" +
+		"ManagedNativeWifi - MIT License - © 2015-2019 emoacht\n" +
+		"PeyrSharp - MIT License - © 2022-2025 Devyus\n" +
+		"QRCoder - MIT License - © 2013-2018 Raffael Herrmann\n" +
+		"RestSharp - Apache License Version 2.0 - © .NET Foundation and Contributors\n" +
+		"Synethia - MIT License - © 2023-2025 Devyus\n" +
+		"Whois - MIT License - © 2012 Chris Wood\n" +
+		"InternetTest - MIT License - © 2021-2025 Léo Corporation", $"{Properties.Resources.InternetTestPro} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
+	}
+
+	private void GitHub(object? obj)
+	{
+		Process.Start("explorer.exe", "https://github.com/Leo-Corporation/InternetTest/");
+	}
+
+	private async void CheckUpdate(object? obj)
+	{
+		try
+		{
+			string lastVersion = await Update.GetLastVersionAsync(Context.UpdateVersionUrl);
+			if (Update.IsAvailable(Context.Version, lastVersion))
+			{
+				UpdateBorderColor = ThemeHelper.GetSolidColorBrush("LightOrange");
+				UpdateTextColor = ThemeHelper.GetSolidColorBrush("ForegroundOrange");
+				UpdateText = Properties.Resources.AvailableUpdates;
+				UpdateIcon = "\uF86A"; // Update icon
+				UpdateBtnIcon = "\uF151"; // Update button icon
+
+				if (obj is bool value && value)
+				{
+					// If the update check was triggered on startup, we don't show the message box.
+					return;
+				}
+
+#if PORTABLE
+				MessageBox.Show(Properties.Resources.PortableNoAutoUpdates, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.OK, MessageBoxImage.Information);
+				return;
+#else
+				if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+				{
+					return;
+				}
+#endif
+				// If the user wants to proceed.
+				
+				Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+				Application.Current.Shutdown(); // Close
+			}
+			else
+			{
+				UpdateBorderColor = ThemeHelper.GetSolidColorBrush("LightGreen");
+				UpdateTextColor = ThemeHelper.GetSolidColorBrush("ForegroundGreen");
+				UpdateText = Properties.Resources.UpToDate;
+				UpdateIcon = "\uF299"; // Update icon
+				UpdateBtnIcon = "\uF191"; // Update button icon
+			}
+		}
+		catch
+		{
+			UpdateText = Properties.Resources.UnableToCheckUpdates;
+		}
 	}
 }

@@ -1161,4 +1161,7 @@
   <data name="GeneralDesc" xml:space="preserve">
     <value>基本应用程序设置和外观。</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>关于</value>
+  </data>
 </root>

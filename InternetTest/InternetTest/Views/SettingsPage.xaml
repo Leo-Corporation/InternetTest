@@ -8,7 +8,7 @@
     xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="1450"
+    d:DesignHeight="1850"
     d:DesignWidth="800"
     FontFamily="..\Fonts\#Hauora"
     Foreground="{DynamicResource Foreground1}"
@@ -630,6 +630,149 @@
                                 <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.EraseWiFiPasswordsFiles}" />
                             </StackPanel>
                         </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF4A4;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.About}" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock
+                                FontSize="18"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Accent}"
+                                Text="{x:Static lang:Resources.InternetTest}" />
+                            <TextBlock
+                                Margin="5 0 0 0"
+                                FontSize="18"
+                                FontWeight="Bold"
+                                Text="{x:Static lang:Resources.Pro}" />
+                        </StackPanel>
+                        <TextBlock
+                            x:Name="VersionTxt"
+                            HorizontalAlignment="Center"
+                            d:Text="8.0.0.2401"
+                            FontSize="11"
+                            Text="{Binding Version}" />
+                        <Border
+                            x:Name="UpdateBorder"
+                            Margin="0 5"
+                            Padding="5"
+                            HorizontalAlignment="Center"
+                            Background="{Binding UpdateBorderColor}"
+                            CornerRadius="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    x:Name="UpdateIconTxt"
+                                    Margin="0 0 5 0"
+                                    VerticalAlignment="Center"
+                                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                    FontSize="14"
+                                    Foreground="{Binding UpdateTextColor}"
+                                    Text="{Binding UpdateIcon}" />
+                                <TextBlock
+                                    x:Name="UpdateTxt"
+                                    Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    FontSize="11"
+                                    FontWeight="SemiBold"
+                                    Foreground="{Binding UpdateTextColor}"
+                                    Text="{Binding UpdateText}" />
+                                <Button
+                                    x:Name="CheckUpdateBtn"
+                                    Grid.Column="2"
+                                    Padding="5 2"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Command="{Binding CheckUpdateCommand}"
+                                    Content="{Binding UpdateBtnIcon}"
+                                    Cursor="Hand"
+                                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                    FontSize="14"
+                                    Foreground="{Binding UpdateTextColor}">
+                                    <Button.ToolTip>
+                                        <ToolTip Content="{x:Static lang:Resources.CheckUpdate}" />
+                                    </Button.ToolTip>
+                                </Button>
+                            </Grid>
+                        </Border>
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Button
+                                x:Name="SeeLicensesBtn"
+                                Padding="5"
+                                HorizontalAlignment="Left"
+                                Background="{x:Null}"
+                                Command="{Binding SeeLicensesCommand}"
+                                Cursor="Hand"
+                                FontSize="12"
+                                FontWeight="ExtraBold"
+                                Foreground="{DynamicResource Accent}"
+                                Style="{DynamicResource Link}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0 0 10 0"
+                                        VerticalAlignment="Center"
+                                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                        FontWeight="Regular"
+                                        Text="&#xF583;" />
+                                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.SeeLicenses}" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                x:Name="GitHubBtn"
+                                Padding="5"
+                                HorizontalAlignment="Left"
+                                Background="{x:Null}"
+                                Command="{Binding GitHubCommand}"
+                                Cursor="Hand"
+                                FontSize="12"
+                                FontWeight="ExtraBold"
+                                Foreground="{DynamicResource Accent}"
+                                Style="{DynamicResource Link}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0 0 10 0"
+                                        VerticalAlignment="Center"
+                                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                        FontWeight="Regular"
+                                        Text="&#xF583;" />
+                                    <TextBlock VerticalAlignment="Center" Text="GitHub" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
                     </StackPanel>
                 </Grid>
             </Border>
