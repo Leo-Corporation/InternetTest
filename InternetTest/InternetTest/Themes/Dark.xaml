@@ -24,6 +24,7 @@
     <SolidColorBrush x:Key="Orange" Color="#ff7a00" />
     <SolidColorBrush x:Key="DarkGray" Color="#7474B1" />
     <SolidColorBrush x:Key="Border" Color="#FF323264" />
+    <SolidColorBrush x:Key="SidebarBorder" Color="Transparent" />
     <Color
         x:Key="Background1Color"
         A="255"
