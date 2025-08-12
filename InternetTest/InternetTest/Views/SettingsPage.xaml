@@ -6,7 +6,7 @@
     xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="450"
+    d:DesignHeight="1450"
     d:DesignWidth="800"
     FontFamily="..\Fonts\#Hauora"
     Foreground="{DynamicResource Foreground1}"
@@ -163,10 +163,7 @@
                             Margin="0 5"
                             FontWeight="SemiBold"
                             Text="{x:Static lang:Resources.StartupPage}" />
-                        <ComboBox
-                            Width="200"
-                            HorizontalAlignment="Left"
-                           >
+                        <ComboBox Width="200" HorizontalAlignment="Left">
                             <ComboBoxItem Content="{x:Static lang:Resources.Home}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.DownDetector}" />
                             <ComboBoxItem Content="{x:Static lang:Resources.DNSTool}" />
@@ -188,6 +185,413 @@
                             <ComboBoxItem Content="中文（简体）" />
                             <ComboBoxItem Content="Italiano (Italia)" />
                         </ComboBox>
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.DefaultProtocol}" />
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton
+                                Margin="5"
+                                Content="{x:Static lang:Resources.HTTPS}"
+                                FontWeight="SemiBold"
+                                Foreground="{DynamicResource Foreground1}"
+                                GroupName="DefaultProtocol" />
+                            <RadioButton
+                                Margin="5"
+                                Content="{x:Static lang:Resources.HTTP}"
+                                FontWeight="SemiBold"
+                                Foreground="{DynamicResource Foreground1}"
+                                GroupName="DefaultProtocol" />
+                        </StackPanel>
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.TestSite}" />
+                        <TextBox
+                            Width="200"
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            TextAlignment="Center" />
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.DownDetector}" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox
+                                Width="100"
+                                Padding="5"
+                                HorizontalAlignment="Left"
+                                TextAlignment="Center" />
+                            <TextBlock
+                                Margin="5 0"
+                                VerticalAlignment="Center"
+                                FontWeight="SemiBold"
+                                Foreground="{DynamicResource DarkGray}"
+                                Text="{x:Static lang:Resources.DefaultTimeInterval}" />
+
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF115;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.Notifications}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.NotificationsDescription}" />
+                    <StackPanel Grid.Row="2">
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.CheckUpdatesOnStart}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}" />
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.NotifyUpdates}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF60F;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.OnStart}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.OnStartDescription}" />
+                    <StackPanel Grid.Row="2">
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.LaunchTestOnStart}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}" />
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.LocateMyIpOnStart}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}" />
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.ToggleConfidentialModeOnStart}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}" />
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.RememberPinState}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF52E;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.MapProvider}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.MapProviderDescription}" />
+                    <StackPanel Grid.Row="2">
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.MapProvider}" />
+                        <ComboBox Width="200" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="OpenStreetMap" />
+                            <ComboBoxItem Content="Bing Maps" />
+                            <ComboBoxItem Content="Google Maps" />
+                            <ComboBoxItem Content="HERE WeGo" />
+                            <ComboBoxItem Content="Yandex" />
+                        </ComboBox>
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.ZoomLevel}" />
+                        <TextBox
+                            Width="100"
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            TextAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF679;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.TraceRoute}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.TraceRouteDesc}" />
+                    <StackPanel Grid.Row="2">
+
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.MaxHops}" />
+                        <TextBox
+                            Width="100"
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            TextAlignment="Center" />
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.MaxTimeOut}" />
+                        <TextBox
+                            Width="100"
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            TextAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF35C;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.NetworkAdapters}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.NetworkAdaptersSettingsDesc}" />
+                    <StackPanel Grid.Row="2">
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.HideDisabledAdaptersByDefault}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}" />
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.ShowAdaptersNoIpv4Support}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF35C;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.DataPrivacy}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.DataDescription}" />
+                    <StackPanel Grid.Row="2">
+                        <StackPanel Margin="0 5" Orientation="Horizontal">
+                            <Button
+                                x:Name="ImportBtn"
+                                Margin="0 0 10 0"
+                                Padding="10 5 10 5"
+                                VerticalAlignment="Center"
+                                Background="{DynamicResource Accent}"
+                                Cursor="Hand"
+                                FontWeight="ExtraBold"
+                                Foreground="{DynamicResource WindowButtonsHoverForeground1}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0 0 5 0"
+                                        VerticalAlignment="Center"
+                                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                        FontSize="16"
+                                        FontWeight="Regular"
+                                        Text="&#xF151;" />
+                                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.Import}" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                x:Name="ExportBtn"
+                                Padding="10 5 10 5"
+                                VerticalAlignment="Center"
+                                Background="{DynamicResource LightAccent}"
+                                Cursor="Hand"
+                                FontWeight="ExtraBold"
+                                Foreground="{DynamicResource Accent}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0 0 5 0"
+                                        VerticalAlignment="Center"
+                                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                        FontSize="16"
+                                        FontWeight="Regular"
+                                        Text="&#xF1A5;" />
+                                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.Export}" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <Button
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            Background="{x:Null}"
+                            Cursor="Hand"
+                            FontSize="14"
+                            FontWeight="ExtraBold"
+                            Foreground="{DynamicResource Accent}"
+                            Style="{DynamicResource Link}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    Margin="0 0 10 0"
+                                    VerticalAlignment="Center"
+                                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                    FontWeight="Regular"
+                                    Text="&#xF583;" />
+                                <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.ResetSettings}" />
+                            </StackPanel>
+                        </Button>
+                        <Button
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            Background="{x:Null}"
+                            Cursor="Hand"
+                            FontSize="14"
+                            FontWeight="ExtraBold"
+                            Foreground="{DynamicResource Accent}"
+                            Style="{DynamicResource Link}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    Margin="0 0 10 0"
+                                    VerticalAlignment="Center"
+                                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                    FontWeight="Regular"
+                                    Text="&#xF583;" />
+                                <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.EraseWiFiPasswordsFiles}" />
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
                 </Grid>
             </Border>
