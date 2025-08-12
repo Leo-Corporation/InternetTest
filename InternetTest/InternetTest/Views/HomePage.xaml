@@ -71,7 +71,7 @@
                             Width="10"
                             Height="10"
                             Margin="0 0 10 0"
-                            Fill="{DynamicResource Green}"
+                            Fill="{Binding StatusColor}"
                             RadiusX="10"
                             RadiusY="10" />
                         <TextBlock

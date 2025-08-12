@@ -115,6 +115,12 @@ public class HomePageViewModel : ViewModelBase
 
 	internal async void LoadIpAddress()
 	{
+		if (!(_settings.LaunchIpLocationOnStart ?? true))
+		{
+			IpAddress = Properties.Resources.Unknown;
+			IpLocation = Properties.Resources.Unknown;
+			return;
+		}
 		Ip ip = await Ip.GetIp("");
 		IpAddress = ip.Query ?? Properties.Resources.Unknown;
 		IpLocation = $"{ip.City}, {ip.Country}" ?? Properties.Resources.Unknown;
@@ -123,6 +129,13 @@ public class HomePageViewModel : ViewModelBase
 
 	internal async void LoadStatusCard()
 	{
+		if (!_settings.TestOnStart)
+		{
+			StatusText = Properties.Resources.Unknown;
+			StatusColor = ThemeHelper.GetSolidColorBrush("Accent");
+			return;
+		}
+
 		connected = await Internet.IsAvailableAsync(_settings.TestSite);
 		StatusText = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS;
 		StatusColor = connected ? ThemeHelper.GetSolidColorBrush("Green") : ThemeHelper.GetSolidColorBrush("Red");
