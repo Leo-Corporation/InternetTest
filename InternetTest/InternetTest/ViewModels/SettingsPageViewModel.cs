@@ -489,7 +489,7 @@ public class SettingsPageViewModel : ViewModelBase
 				}
 #endif
 				// If the user wants to proceed.
-				
+
 				Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
 				Application.Current.Shutdown(); // Close
 			}

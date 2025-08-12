@@ -75,14 +75,7 @@ public class MainViewModel : ViewModelBase
 		Settings = settings;
 		_mainWindow = mainWindow;
 
-		if (Settings.RememberPinnedState == true)
-		{
-			Pinned = Settings.Pinned ?? false;
-		}
-		else
-		{
-			Pinned = false;
-		}
+		Pinned = Settings.RememberPinnedState == true && (Settings.Pinned ?? false);
 
 		PinCommand = new RelayCommand(Pin);
 	}
