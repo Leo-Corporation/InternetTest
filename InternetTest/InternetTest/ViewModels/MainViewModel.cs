@@ -44,7 +44,7 @@ public class MainViewModel : ViewModelBase
 		set { _currentView = value; OnPropertyChanged(nameof(CurrentViewModel)); }
 	}
 
-	public Settings Settings { get; }
+	public Settings Settings { get; set; }
 
 	public MainViewModel(Settings settings)
 	{

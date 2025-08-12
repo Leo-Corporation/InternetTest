@@ -15,7 +15,9 @@
     mc:Ignorable="d">
     <Grid>
         <Grid.Resources>
-            <converters:ThemeToBoolConverter x:Key="ThemeToBoolConverter" />
+            <converters:EnumToBoolConverter x:Key="EnumToBoolConverter" />
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converters:IntToStringConverter x:Key="IntToStringConverter" />
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -85,7 +87,7 @@
                                 BorderThickness="2"
                                 Command="{Binding LightThemeCommand}"
                                 GroupName="Theme"
-                                IsChecked="{Binding CurrentTheme, Converter={StaticResource ThemeToBoolConverter}, ConverterParameter={x:Static enums:Theme.Light}}"
+                                IsChecked="{Binding CurrentTheme, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:Theme.Light}}"
                                 Style="{DynamicResource ThemeButton}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -115,7 +117,7 @@
                                 BorderThickness="2"
                                 Command="{Binding DarkThemeCommand}"
                                 GroupName="Theme"
-                                IsChecked="{Binding CurrentTheme, Converter={StaticResource ThemeToBoolConverter}, ConverterParameter={x:Static enums:Theme.Dark}}"
+                                IsChecked="{Binding CurrentTheme, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:Theme.Dark}}"
                                 Style="{DynamicResource ThemeButton}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -144,7 +146,7 @@
                                 BorderThickness="2"
                                 Command="{Binding SystemThemeCommand}"
                                 GroupName="Theme"
-                                IsChecked="{Binding CurrentTheme, Converter={StaticResource ThemeToBoolConverter}, ConverterParameter={x:Static enums:Theme.System}}"
+                                IsChecked="{Binding CurrentTheme, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:Theme.System}}"
                                 Style="{DynamicResource ThemeButton}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -175,21 +177,24 @@
                             FontWeight="SemiBold"
                             Text="{x:Static lang:Resources.StartupPage}" />
                         <ComboBox Width="200" HorizontalAlignment="Left">
-                            <ComboBoxItem Content="{x:Static lang:Resources.Home}" />
-                            <ComboBoxItem Content="{x:Static lang:Resources.DownDetector}" />
-                            <ComboBoxItem Content="{x:Static lang:Resources.DNSTool}" />
-                            <ComboBoxItem Content="{x:Static lang:Resources.WiFiNetworks}" />
-                            <ComboBoxItem Content="{x:Static lang:Resources.LocateIP}" />
-                            <ComboBoxItem Content="{x:Static lang:Resources.IPConfig}" />
-                            <ComboBoxItem Content="{x:Static lang:Resources.Ping}" />
-                            <ComboBoxItem Content="{x:Static lang:Resources.Requests}" />
-                            <ComboBoxItem Content="{x:Static lang:Resources.TraceRoute}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.Home}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.Home}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.DownDetector}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.DownDetector}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.DNSTool}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.DnsTool}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.WiFiNetworks}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.WiFiNetworks}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.LocateIP}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.LocateIP}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.IPConfig}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.IPConfig}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.Ping}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.Ping}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.Requests}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.Requests}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.TraceRoute}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.TraceRoute}}" />
                         </ComboBox>
                         <TextBlock
                             Margin="0 5"
                             FontWeight="SemiBold"
                             Text="{x:Static lang:Resources.Language}" />
-                        <ComboBox Width="200" HorizontalAlignment="Left">
+                        <ComboBox
+                            Width="200"
+                            HorizontalAlignment="Left"
+                            SelectedIndex="{Binding CurrentLanguage}">
                             <ComboBoxItem Content="{x:Static lang:Resources.DefaultLanguage}" />
                             <ComboBoxItem Content="English (United States)" />
                             <ComboBoxItem Content="Français (France)" />
@@ -206,13 +211,15 @@
                                 Content="{x:Static lang:Resources.HTTPS}"
                                 FontWeight="SemiBold"
                                 Foreground="{DynamicResource Foreground1}"
-                                GroupName="DefaultProtocol" />
+                                GroupName="DefaultProtocol"
+                                IsChecked="{Binding UseHttps, Mode=TwoWay}" />
                             <RadioButton
                                 Margin="5"
                                 Content="{x:Static lang:Resources.HTTP}"
                                 FontWeight="SemiBold"
                                 Foreground="{DynamicResource Foreground1}"
-                                GroupName="DefaultProtocol" />
+                                GroupName="DefaultProtocol"
+                                IsChecked="{Binding UseHttps, Converter={StaticResource InverseBoolConverter}, Mode=TwoWay}" />
                         </StackPanel>
                         <TextBlock
                             Margin="0 5"
@@ -222,6 +229,7 @@
                             Width="200"
                             Padding="5"
                             HorizontalAlignment="Left"
+                            Text="{Binding TestSite}"
                             TextAlignment="Center" />
                         <TextBlock
                             Margin="0 5"
@@ -232,6 +240,7 @@
                                 Width="100"
                                 Padding="5"
                                 HorizontalAlignment="Left"
+                                Text="{Binding Interval, Converter={StaticResource IntToStringConverter}, Mode=TwoWay}"
                                 TextAlignment="Center" />
                             <TextBlock
                                 Margin="5 0"
@@ -279,12 +288,14 @@
                             Margin="0 5"
                             Content="{x:Static lang:Resources.CheckUpdatesOnStart}"
                             FontWeight="SemiBold"
-                            Foreground="{DynamicResource Foreground1}" />
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding CheckUpdateOnStart}" />
                         <CheckBox
                             Margin="0 5"
                             Content="{x:Static lang:Resources.NotifyUpdates}"
                             FontWeight="SemiBold"
-                            Foreground="{DynamicResource Foreground1}" />
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding ShowNotificationWhenUpdateAvailable}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -323,22 +334,26 @@
                             Margin="0 5"
                             Content="{x:Static lang:Resources.LaunchTestOnStart}"
                             FontWeight="SemiBold"
-                            Foreground="{DynamicResource Foreground1}" />
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding LaunchTestOnStart}" />
                         <CheckBox
                             Margin="0 5"
                             Content="{x:Static lang:Resources.LocateMyIpOnStart}"
                             FontWeight="SemiBold"
-                            Foreground="{DynamicResource Foreground1}" />
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding LocateIpOnStart}" />
                         <CheckBox
                             Margin="0 5"
                             Content="{x:Static lang:Resources.ToggleConfidentialModeOnStart}"
                             FontWeight="SemiBold"
-                            Foreground="{DynamicResource Foreground1}" />
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding ToggleConfidentialMode}" />
                         <CheckBox
                             Margin="0 5"
                             Content="{x:Static lang:Resources.RememberPinState}"
                             FontWeight="SemiBold"
-                            Foreground="{DynamicResource Foreground1}" />
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding RememberPinState}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -377,7 +392,10 @@
                             Margin="0 5"
                             FontWeight="SemiBold"
                             Text="{x:Static lang:Resources.MapProvider}" />
-                        <ComboBox Width="200" HorizontalAlignment="Left">
+                        <ComboBox
+                            Width="200"
+                            HorizontalAlignment="Left"
+                            SelectedIndex="{Binding MapProvider}">
                             <ComboBoxItem Content="OpenStreetMap" />
                             <ComboBoxItem Content="Bing Maps" />
                             <ComboBoxItem Content="Google Maps" />
@@ -392,6 +410,7 @@
                             Width="100"
                             Padding="5"
                             HorizontalAlignment="Left"
+                            Text="{Binding ZoomLevel, Converter={StaticResource IntToStringConverter}, Mode=TwoWay}"
                             TextAlignment="Center" />
                     </StackPanel>
                 </Grid>
@@ -436,6 +455,7 @@
                             Width="100"
                             Padding="5"
                             HorizontalAlignment="Left"
+                            Text="{Binding MaxHops, Converter={StaticResource IntToStringConverter}, Mode=TwoWay}"
                             TextAlignment="Center" />
                         <TextBlock
                             Margin="0 5"
@@ -445,6 +465,7 @@
                             Width="100"
                             Padding="5"
                             HorizontalAlignment="Left"
+                            Text="{Binding MaxTimeOut, Converter={StaticResource IntToStringConverter}, Mode=TwoWay}"
                             TextAlignment="Center" />
                     </StackPanel>
                 </Grid>
@@ -484,12 +505,14 @@
                             Margin="0 5"
                             Content="{x:Static lang:Resources.HideDisabledAdaptersByDefault}"
                             FontWeight="SemiBold"
-                            Foreground="{DynamicResource Foreground1}" />
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding HideDisabledAdapters}" />
                         <CheckBox
                             Margin="0 5"
                             Content="{x:Static lang:Resources.ShowAdaptersNoIpv4Support}"
                             FontWeight="SemiBold"
-                            Foreground="{DynamicResource Foreground1}" />
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding ShowAdaptersNoIpv4Support}" />
                     </StackPanel>
                 </Grid>
             </Border>
@@ -531,6 +554,7 @@
                                 Padding="10 5 10 5"
                                 VerticalAlignment="Center"
                                 Background="{DynamicResource Accent}"
+                                Command="{Binding ImportCommand}"
                                 Cursor="Hand"
                                 FontWeight="ExtraBold"
                                 Foreground="{DynamicResource WindowButtonsHoverForeground1}">
@@ -550,6 +574,7 @@
                                 Padding="10 5 10 5"
                                 VerticalAlignment="Center"
                                 Background="{DynamicResource LightAccent}"
+                                Command="{Binding ExportCommand}"
                                 Cursor="Hand"
                                 FontWeight="ExtraBold"
                                 Foreground="{DynamicResource Accent}">
@@ -569,6 +594,7 @@
                             Padding="5"
                             HorizontalAlignment="Left"
                             Background="{x:Null}"
+                            Command="{Binding ResetCommand}"
                             Cursor="Hand"
                             FontSize="14"
                             FontWeight="ExtraBold"
@@ -588,6 +614,7 @@
                             Padding="5"
                             HorizontalAlignment="Left"
                             Background="{x:Null}"
+                            Command="{Binding ResetWiFiCommand}"
                             Cursor="Hand"
                             FontSize="14"
                             FontWeight="ExtraBold"
