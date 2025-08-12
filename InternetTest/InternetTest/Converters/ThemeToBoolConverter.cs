@@ -21,34 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Helpers;
-using InternetTest.Models;
-using InternetTest.ViewModels;
-using System.Windows;
+using System.Globalization;
+using System.Windows.Data;
 
-namespace InternetTest
+namespace InternetTest.Converters;
+
+public class ThemeToBoolConverter : IValueConverter
 {
-	/// <summary>
-	/// Interaction logic for App.xaml
-	/// </summary>
-	public partial class App : Application
-	{
-		protected override void OnStartup(StartupEventArgs e)
-		{
-			// Load settings
-			Settings settings = new();
-			settings.Load();
+	public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		=> value.Equals(parameter);
 
-			ThemeHelper.ChangeTheme(settings.Theme);
-
-			// Set the main window
-			MainWindow = new MainWindow();
-			MainViewModel mvm = new(settings);
-			MainWindow.DataContext = mvm;
-
-			MainWindow.Show();
-
-			base.OnStartup(e);
-		}
-	}
+	public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+		=> (bool)value ? parameter : Binding.DoNothing;
 }
