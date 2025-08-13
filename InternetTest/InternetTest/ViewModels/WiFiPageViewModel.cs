@@ -21,40 +21,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Commands;
-using System.Windows.Input;
+using InternetTest.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace InternetTest.ViewModels.Components;
-
-public class SidebarViewModel : ViewModelBase
+namespace InternetTest.ViewModels;
+public class WiFiPageViewModel : ViewModelBase
 {
-	private readonly MainViewModel _mainViewModel;
+	private readonly Settings _settings;
 
-	public ICommand HomePageCommand { get; }
-	public ICommand SettingsPageCommand { get; }
-	public ICommand WiFiPageCommand { get; }
-
-	public SidebarViewModel(MainViewModel mainViewModel)
+	public WiFiPageViewModel(Settings settings)
 	{
-		_mainViewModel = mainViewModel;
-
-		HomePageCommand = new RelayCommand(HomePage);
-		SettingsPageCommand = new RelayCommand(SettingsPage);
-		WiFiPageCommand = new RelayCommand(WiFiPage);
-	}
-
-	private void HomePage(object? obj)
-	{
-		_mainViewModel.CurrentViewModel = new HomePageViewModel(_mainViewModel.Settings);
-	}
-
-	private void SettingsPage(object? obj)
-	{
-		_mainViewModel.CurrentViewModel = new SettingsPageViewModel(_mainViewModel);
-	}
-
-	private void WiFiPage(object? obj)
-	{
-		_mainViewModel.CurrentViewModel = new WiFiPageViewModel(_mainViewModel.Settings);
+		_settings = settings;
 	}
 }

@@ -1173,4 +1173,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="About" xml:space="preserve">
     <value>Informazioni</value>
   </data>
+  <data name="WiFiNetworksDesc" xml:space="preserve">
+    <value>Gestisci le tue connessioni di rete wireless.</value>
+  </data>
 </root>

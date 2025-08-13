@@ -61,7 +61,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to About.
         /// </summary>
         public static string About {
             get {
@@ -3118,6 +3118,15 @@ namespace InternetTest.Properties {
         public static string WiFiNetworks {
             get {
                 return ResourceManager.GetString("WiFiNetworks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string WiFiNetworksDesc {
+            get {
+                return ResourceManager.GetString("WiFiNetworksDesc", resourceCulture);
             }
         }
         

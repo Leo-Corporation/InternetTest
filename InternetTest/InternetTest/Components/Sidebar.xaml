@@ -131,6 +131,7 @@
                             Padding="5"
                             HorizontalContentAlignment="Left"
                             Background="Transparent"
+                            Command="{Binding WiFiPageCommand}"
                             Content="{x:Static lang:Resources.WiFi}"
                             GroupName="Sidebar"
                             Style="{DynamicResource SidebarButton}" />
@@ -250,9 +251,10 @@
 
             <RadioButton
                 Grid.Row="4"
-                Padding="5" Command="{Binding SettingsPageCommand}"
+                Padding="5"
                 HorizontalContentAlignment="Left"
                 Background="Transparent"
+                Command="{Binding SettingsPageCommand}"
                 GroupName="Sidebar"
                 Style="{DynamicResource SidebarButton}">
                 <StackPanel Orientation="Horizontal">
