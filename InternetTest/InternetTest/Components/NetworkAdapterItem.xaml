@@ -6,7 +6,7 @@
     xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Width="400"
+    Width="350"
     Height="200"
     FontFamily="..\Fonts\#Hauora"
     Foreground="{DynamicResource Foreground1}"
@@ -52,6 +52,7 @@
                     TextWrapping="Wrap" />
                 <Border
                     Grid.Column="2"
+                    Margin="5 0 0 0"
                     Padding="5 2"
                     VerticalAlignment="Center"
                     d:BorderBrush="Green"

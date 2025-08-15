@@ -14,11 +14,18 @@
     Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
     <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="6">
             <TextBlock
                 Margin="10 5"
@@ -36,6 +43,7 @@
             Margin="10"
             Orientation="Horizontal">
             <RadioButton
+                x:Name="WiFiTabBtn"
                 Padding="5"
                 Background="Transparent"
                 Content="{x:Static lang:Resources.WiFiNetworks}"
@@ -43,6 +51,7 @@
                 GroupName="Tab"
                 Style="{DynamicResource Tab}" />
             <RadioButton
+                x:Name="AdapterTabBtn"
                 Margin="10 0"
                 Padding="5"
                 Background="Transparent"
@@ -51,7 +60,40 @@
                 GroupName="Tab"
                 Style="{DynamicResource Tab}" />
         </StackPanel>
-        <Grid x:Name="AdaptersPage" Grid.Row="2">
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            Orientation="Horizontal"
+            Visibility="{Binding ElementName=AdapterTabBtn, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+            <CheckBox
+                Margin="10 0"
+                Padding="5"
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                Content="{x:Static lang:Resources.ShowDisabled}"
+                Foreground="{DynamicResource Foreground1}"
+                IsChecked="{Binding ShowHidden, Mode=TwoWay}" />
+            <Button
+                Margin="0 0 10 0"
+                Padding="5 2"
+                Background="{DynamicResource LightAccent}"
+                Command="{Binding RefreshCommand}"
+                Content="{x:Static lang:Resources.Refresh}"
+                Cursor="Hand"
+                FontWeight="SemiBold"
+                Foreground="{DynamicResource Accent}" />
+        </StackPanel>
+        <Grid
+            x:Name="WiFiNetworksPage"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Visibility="{Binding ElementName=WiFiTabBtn, Path=IsChecked, Converter={StaticResource BoolToVis}}" />
+        <Grid
+            x:Name="AdaptersPage"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Visibility="{Binding ElementName=AdapterTabBtn, Path=IsChecked, Converter={StaticResource BoolToVis}}">
             <ItemsControl ItemsSource="{Binding Adapters}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

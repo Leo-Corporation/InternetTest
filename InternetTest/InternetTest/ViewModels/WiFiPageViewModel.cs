@@ -21,32 +21,39 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Commands;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
+using System.Collections.ObjectModel;
 using System.Net.NetworkInformation;
 using System.Windows;
+using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
 public class WiFiPageViewModel : ViewModelBase
 {
 	private readonly Settings _settings;
 
-	private List<NetworkAdapterItemViewModel> _adapters = [];
-	public List<NetworkAdapterItemViewModel> Adapters
+	private ObservableCollection<NetworkAdapterItemViewModel> _adapters = [];
+	public ObservableCollection<NetworkAdapterItemViewModel> Adapters
 	{
 		get => _adapters;
 		set { _adapters = value; OnPropertyChanged(nameof(Adapters)); }
 	}
 
 	private bool _showHidden = false;
-	public bool ShowHidden { get => _showHidden; set { _showHidden = value; OnPropertyChanged(nameof(ShowHidden)); } }
+	public bool ShowHidden { get => _showHidden; set { _showHidden = value; OnPropertyChanged(nameof(ShowHidden)); GetAdapters(); } }
+
+	public ICommand RefreshCommand { get; }
 	public WiFiPageViewModel(Settings settings)
 	{
 		_settings = settings;
 		Adapters = [];
-		ShowHidden = _settings.HideDisabledAdapters ?? false;
+		ShowHidden = !_settings.HideDisabledAdapters ?? false;
 
 		GetAdapters();
+
+		RefreshCommand = new RelayCommand(o => GetAdapters());
 	}
 
 	internal void GetAdapters()
@@ -61,7 +68,7 @@ public class WiFiPageViewModel : ViewModelBase
 
 				// .NET 9+ get the same behavior as .NET 8
 				if (!(_settings.ShowAdaptersNoIpv4Support ?? false) && !networkInterfaces[i].Supports(NetworkInterfaceComponent.IPv4)) continue;
-				Adapters.Add(new (new(networkInterfaces[i])));
+				Adapters.Add(new(new(networkInterfaces[i])));
 			}
 		}
 		catch (Exception ex)
