@@ -23,14 +23,14 @@ SOFTWARE.
 */
 using MicaWPF.Lite.Controls;
 
-namespace InternetTest;
+namespace InternetTest.Windows;
 
 /// <summary>
-/// Interaction logic for MainWindow.xaml
+/// Interaction logic for AdapterDetailsWindow.xaml
 /// </summary>
-public partial class MainWindow : MicaWindow
+public partial class AdapterDetailsWindow : MicaWindow
 {
-	public MainWindow()
+	public AdapterDetailsWindow()
 	{
 		InitializeComponent();
 	}

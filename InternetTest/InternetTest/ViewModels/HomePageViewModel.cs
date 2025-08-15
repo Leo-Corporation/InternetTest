@@ -74,7 +74,7 @@ public class HomePageViewModel : ViewModelBase
 
 	private SolidColorBrush? _statusColor;
 	public SolidColorBrush? StatusColor { get => _statusColor; set { _statusColor = value; OnPropertyChanged(nameof(StatusColor)); } }
-	
+
 	private readonly Settings _settings;
 
 	bool connected = true;

@@ -26,14 +26,14 @@ using System.Windows.Controls;
 
 namespace InternetTest.Components
 {
-    /// <summary>
-    /// Interaction logic for NetworkAdapterItem.xaml
-    /// </summary>
-    public partial class NetworkAdapterItem : UserControl
-    {
-        public NetworkAdapterItem()
-        {
-            InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// Interaction logic for NetworkAdapterItem.xaml
+	/// </summary>
+	public partial class NetworkAdapterItem : UserControl
+	{
+		public NetworkAdapterItem()
+		{
+			InitializeComponent();
+		}
+	}
 }

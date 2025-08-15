@@ -136,6 +136,7 @@
                 <Button
                     Padding="5 3"
                     Background="Transparent"
+                    Command="{Binding DetailsCommand}"
                     Cursor="Hand"
                     Foreground="{DynamicResource Foreground1}">
                     <StackPanel Orientation="Horizontal">

@@ -24,6 +24,8 @@ SOFTWARE.
 using InternetTest.Commands;
 using InternetTest.Helpers;
 using InternetTest.Models;
+using InternetTest.Services;
+using InternetTest.Windows;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Windows.Input;
@@ -66,6 +68,7 @@ public class NetworkAdapterItemViewModel : ViewModelBase
 	}
 
 	public ICommand SettingsCommand { get; }
+	public ICommand DetailsCommand { get; }
 
 	public NetworkAdapterItemViewModel(NetworkAdapter networkAdapter)
 	{
@@ -101,9 +104,15 @@ public class NetworkAdapterItemViewModel : ViewModelBase
 		TotalBytesSent = $"{StorageUnitHelper.GetStorageUnit(networkAdapter.BytesSent).Item2:0.00} {StorageUnitHelper.UnitToString(StorageUnitHelper.GetStorageUnit(networkAdapter.BytesSent).Item1)}";
 		TotalBytesReceived = $"{StorageUnitHelper.GetStorageUnit(networkAdapter.BytesReceived).Item2:0.00} {StorageUnitHelper.UnitToString(StorageUnitHelper.GetStorageUnit(networkAdapter.BytesReceived).Item1)}";
 
-		SettingsCommand = new RelayCommand((object o) =>
+		SettingsCommand = new RelayCommand(o =>
 		{
 			Process.Start("control.exe", "ncpa.cpl");
+		});
+
+		DetailsCommand = new RelayCommand(o =>
+		{
+			WindowService windowService = new();
+			windowService.ShowWindow<AdapterDetailsWindow>(new Windows.AdapterDetailsWindowViewModel(networkAdapter));
 		});
 	}
 }
