@@ -14,6 +14,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel Grid.ColumnSpan="6">
@@ -27,6 +28,26 @@
                 FontSize="14"
                 Text="{x:Static lang:Resources.WiFiNetworksDesc}"
                 TextWrapping="Wrap" />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="1"
+            Margin="10"
+            Orientation="Horizontal">
+            <RadioButton
+                Padding="5"
+                Background="Transparent"
+                Content="{x:Static lang:Resources.WiFiNetworks}"
+                Foreground="{DynamicResource Foreground1}"
+                GroupName="Tab"
+                Style="{DynamicResource Tab}" />
+            <RadioButton
+                Margin="10 0"
+                Padding="5"
+                Background="Transparent"
+                Content="{x:Static lang:Resources.NetworkAdapters}"
+                Foreground="{DynamicResource Foreground1}"
+                GroupName="Tab"
+                Style="{DynamicResource Tab}" />
         </StackPanel>
     </Grid>
 </UserControl>
