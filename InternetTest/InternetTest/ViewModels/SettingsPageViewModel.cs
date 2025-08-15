@@ -289,20 +289,20 @@ public class SettingsPageViewModel : ViewModelBase
 		}
 	}
 
-	private string _updateText;
+	private string _updateText = "";
 	public string UpdateText { get => _updateText; set { _updateText = value; OnPropertyChanged(nameof(UpdateText)); } }
 
-	private string _updateIcon;
+	private string _updateIcon = "";
 	public string UpdateIcon { get => _updateIcon; set { _updateIcon = value; OnPropertyChanged(nameof(UpdateIcon)); } }
 
-	private string _updateBtnIcon;
+	private string _updateBtnIcon = "";
 	public string UpdateBtnIcon { get => _updateBtnIcon; set { _updateBtnIcon = value; OnPropertyChanged(nameof(UpdateBtnIcon)); } }
 
-	private SolidColorBrush _updateBorderColor;
-	public SolidColorBrush UpdateBorderColor { get => _updateBorderColor; set { _updateBorderColor = value; OnPropertyChanged(nameof(UpdateBorderColor)); } }
+	private SolidColorBrush? _updateBorderColor;
+	public SolidColorBrush? UpdateBorderColor { get => _updateBorderColor; set { _updateBorderColor = value; OnPropertyChanged(nameof(UpdateBorderColor)); } }
 
-	private SolidColorBrush _updateTextColor;
-	public SolidColorBrush UpdateTextColor { get => _updateTextColor; set { _updateTextColor = value; OnPropertyChanged(nameof(UpdateTextColor)); } }
+	private SolidColorBrush? _updateTextColor;
+	public SolidColorBrush? UpdateTextColor { get => _updateTextColor; set { _updateTextColor = value; OnPropertyChanged(nameof(UpdateTextColor)); } }
 
 	public string Version => Context.Version;
 

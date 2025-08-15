@@ -24,12 +24,12 @@ SOFTWARE.
 namespace InternetTest.Models;
 public class Network
 {
-	public string Ssid { get; set; }
+	public string? Ssid { get; set; }
 	public int SignalQuality { get; set; }
-	public string BssType { get; set; }
+	public string? BssType { get; set; }
 	public bool IsSecurityEnabled { get; set; }
-	public string ProfileName { get; set; }
-	public string InterfaceDescription { get; set; }
+	public string? ProfileName { get; set; }
+	public string? InterfaceDescription { get; set; }
 	public int? Channel { get; set; }
 	public int? Frequency { get; set; }
 	public double? Band { get; set; }
@@ -37,7 +37,7 @@ public class Network
 	public override string ToString()
 	{
 		return $"SSID: {Ssid}\n" +
-			new string('=', Ssid.Length + 6) + "\n" +
+			new string('=', (Ssid ?? "").Length + 6) + "\n" +
 			$"Signal Strength: {SignalQuality}\n" +
 			$"ProfileName: {ProfileName}\n" +
 			$"Interface: {InterfaceDescription}\n" +

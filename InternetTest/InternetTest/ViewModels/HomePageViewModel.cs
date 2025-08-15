@@ -39,43 +39,43 @@ public class HomePageViewModel : ViewModelBase
 		>= 17 and <= 21 => $"{Properties.Resources.GoodEvening}, {Environment.UserName}.",
 	};
 
-	private string _statusText;
-	public string StatusText { get => _statusText; set { _statusText = value; OnPropertyChanged(nameof(StatusText)); } }
+	private string? _statusText;
+	public string? StatusText { get => _statusText; set { _statusText = value; OnPropertyChanged(nameof(StatusText)); } }
 
-	private string _wiFiName;
-	public string WiFiName { get => _wiFiName; set { _wiFiName = value; OnPropertyChanged(nameof(WiFiName)); } }
+	private string? _wiFiName;
+	public string? WiFiName { get => _wiFiName; set { _wiFiName = value; OnPropertyChanged(nameof(WiFiName)); } }
 
-	private string _wiFiStrengthText;
-	public string WiFiStrengthText { get => _wiFiStrengthText; set { _wiFiStrengthText = value; OnPropertyChanged(nameof(WiFiStrengthText)); } }
+	private string? _wiFiStrengthText;
+	public string? WiFiStrengthText { get => _wiFiStrengthText; set { _wiFiStrengthText = value; OnPropertyChanged(nameof(WiFiStrengthText)); } }
 
-	private string _wiFiIcon;
-	public string WiFiIcon { get => _wiFiIcon; set { _wiFiIcon = value; OnPropertyChanged(nameof(WiFiIcon)); } }
+	private string? _wiFiIcon;
+	public string? WiFiIcon { get => _wiFiIcon; set { _wiFiIcon = value; OnPropertyChanged(nameof(WiFiIcon)); } }
 
-	private string _ipAddress;
-	public string IpAddress { get => _ipAddress; set { _ipAddress = value; OnPropertyChanged(nameof(IpAddress)); } }
+	private string? _ipAddress;
+	public string? IpAddress { get => _ipAddress; set { _ipAddress = value; OnPropertyChanged(nameof(IpAddress)); } }
 
-	private string _ipLocation;
-	public string IpLocation { get => _ipLocation; set { _ipLocation = value; OnPropertyChanged(nameof(IpLocation)); } }
+	private string? _ipLocation;
+	public string? IpLocation { get => _ipLocation; set { _ipLocation = value; OnPropertyChanged(nameof(IpLocation)); } }
 
-	private string _speed;
-	public string Speed { get => _speed; set { _speed = value; OnPropertyChanged(nameof(Speed)); } }
+	private string? _speed;
+	public string? Speed { get => _speed; set { _speed = value; OnPropertyChanged(nameof(Speed)); } }
 
-	private string _localIp;
-	public string LocalIp { get => _localIp; set { _localIp = value; OnPropertyChanged(nameof(LocalIp)); } }
+	private string? _localIp;
+	public string? LocalIp { get => _localIp; set { _localIp = value; OnPropertyChanged(nameof(LocalIp)); } }
 
-	private string isp;
-	public string Isp { get => isp; set { isp = value; OnPropertyChanged(nameof(Isp)); } }
+	private string? isp;
+	public string? Isp { get => isp; set { isp = value; OnPropertyChanged(nameof(Isp)); } }
 
-	private string dns;
-	public string Dns { get => dns; set { dns = value; OnPropertyChanged(nameof(Dns)); } }
+	private string? dns;
+	public string? Dns { get => dns; set { dns = value; OnPropertyChanged(nameof(Dns)); } }
 
-	private string gateway;
-	public string Gateway { get => gateway; set { gateway = value; OnPropertyChanged(nameof(Gateway)); } }
+	private string? gateway;
+	public string? Gateway { get => gateway; set { gateway = value; OnPropertyChanged(nameof(Gateway)); } }
 
-	private SolidColorBrush _statusColor;
+	private SolidColorBrush? _statusColor;
+	public SolidColorBrush? StatusColor { get => _statusColor; set { _statusColor = value; OnPropertyChanged(nameof(StatusColor)); } }
+	
 	private readonly Settings _settings;
-
-	public SolidColorBrush StatusColor { get => _statusColor; set { _statusColor = value; OnPropertyChanged(nameof(StatusColor)); } }
 
 	bool connected = true;
 	public HomePageViewModel(Settings settings)
