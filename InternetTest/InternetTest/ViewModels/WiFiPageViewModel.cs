@@ -22,19 +22,51 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using InternetTest.ViewModels.Components;
+using System.Net.NetworkInformation;
+using System.Windows;
 
 namespace InternetTest.ViewModels;
 public class WiFiPageViewModel : ViewModelBase
 {
 	private readonly Settings _settings;
 
+	private List<NetworkAdapterItemViewModel> _adapters = [];
+	public List<NetworkAdapterItemViewModel> Adapters
+	{
+		get => _adapters;
+		set { _adapters = value; OnPropertyChanged(nameof(Adapters)); }
+	}
+
+	private bool _showHidden = false;
+	public bool ShowHidden { get => _showHidden; set { _showHidden = value; OnPropertyChanged(nameof(ShowHidden)); } }
 	public WiFiPageViewModel(Settings settings)
 	{
 		_settings = settings;
+		Adapters = [];
+		ShowHidden = _settings.HideDisabledAdapters ?? false;
+
+		GetAdapters();
+	}
+
+	internal void GetAdapters()
+	{
+		try
+		{
+			Adapters = [];
+			NetworkInterface[] networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+			for (int i = 0; i < networkInterfaces.Length; i++)
+			{
+				if (!ShowHidden && networkInterfaces[i].OperationalStatus == OperationalStatus.Down) continue;
+
+				// .NET 9+ get the same behavior as .NET 8
+				if (!(_settings.ShowAdaptersNoIpv4Support ?? false) && !networkInterfaces[i].Supports(NetworkInterfaceComponent.IPv4)) continue;
+				Adapters.Add(new (new(networkInterfaces[i])));
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
 	}
 }
