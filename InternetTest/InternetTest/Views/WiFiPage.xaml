@@ -55,7 +55,7 @@
                 Margin="10 0"
                 Padding="5"
                 Background="Transparent"
-                Content="{x:Static lang:Resources.NetworkAdapters}"
+                Content="{x:Static lang:Resources.Adapters}"
                 Foreground="{DynamicResource Foreground1}"
                 GroupName="Tab"
                 Style="{DynamicResource Tab}" />
