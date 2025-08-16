@@ -196,6 +196,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nearby wireless networks you can connect to..
+        /// </summary>
+        public static string AvailableNetworksDesc {
+            get {
+                return ResourceManager.GetString("AvailableNetworksDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Updates are available..
         /// </summary>
         public static string AvailableUpdates {
@@ -3122,7 +3131,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Manage your wireless network connections..
         /// </summary>
         public static string WiFiNetworksDesc {
             get {

@@ -1167,4 +1167,7 @@
   <data name="WiFiNetworksDesc" xml:space="preserve">
     <value>管理您的无线网络连接。</value>
   </data>
+  <data name="AvailableNetworksDesc" xml:space="preserve">
+    <value>附近可连接的无线网络。</value>
+  </data>
 </root>
