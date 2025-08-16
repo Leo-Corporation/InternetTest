@@ -42,15 +42,27 @@ public class ConnectWiFiItemViewModel : ViewModelBase
 	private SolidColorBrush? _strengthColor;
 	public SolidColorBrush? StrengthColor { get => _strengthColor; set { _strengthColor = value; OnPropertyChanged(nameof(StrengthColor)); } }
 
+	private bool _popupOpen = false;
+	public bool PopupOpen { get => _popupOpen; set { _popupOpen = value; OnPropertyChanged(nameof(PopupOpen)); } }
+
+	private bool _isConnected = false;
+	public bool IsConnected { get => _isConnected; set { _isConnected = value; OnPropertyChanged(nameof(IsConnected)); } }
+
+	private string _password = "";
+	public string Password { get => _password; set { _password = value; OnPropertyChanged(nameof(Password)); } }
+
 	public ObservableCollection<GridItemViewModel> Details { get; }
 
 	private readonly WiFiNetwork _wiFiNetwork;
 
 	public ICommand CopyCommand => new RelayCommand(Copy);
-	public ConnectWiFiItemViewModel(WiFiNetwork wiFiNetwork)
+	public ICommand ConnectCommand => new RelayCommand(Connect);
+	public ICommand ConnectPopupCommand => new RelayCommand(ConnectPopup);
+	public ConnectWiFiItemViewModel(WiFiNetwork wiFiNetwork, string? currentSsid)
 	{
 		_wiFiNetwork = wiFiNetwork;
 		Name = _wiFiNetwork.Ssid;
+		IsConnected = _wiFiNetwork.Ssid == currentSsid;
 		StrengthIcon = _wiFiNetwork.SignalQuality switch
 		{
 			int n when (n is >= 0 and < 25) => "\uF8B3",
@@ -73,16 +85,54 @@ public class ConnectWiFiItemViewModel : ViewModelBase
 			new(Properties.Resources.SignalQuality, _wiFiNetwork.SignalQuality.ToString(), 0, 0),
 			new(Properties.Resources.ProfileName, _wiFiNetwork.ProfileName ?? "", 0, 1),
 			new(Properties.Resources.Interface, _wiFiNetwork.InterfaceDescription ?? "", 0, 2),
-			new(Properties.Resources.BssType, _wiFiNetwork.BssType ?? "", 1, 0),
+			new(Properties.Resources.BssType, _wiFiNetwork.BssType.ToString() ?? "", 1, 0),
 			new(Properties.Resources.SecurityEnabled, _wiFiNetwork.IsSecurityEnabled ? Properties.Resources.Yes : Properties.Resources.No, 1, 1),
 			new(Properties.Resources.Channel, _wiFiNetwork.Channel.ToString() ?? "", 1,2),
 			new(Properties.Resources.Band, $"{_wiFiNetwork.Band:0.0} GHz", 2, 0),
-			new(Properties.Resources.Frequency	, $"{_wiFiNetwork.Frequency} kHz", 2, 1),
+			new(Properties.Resources.Frequency  , $"{_wiFiNetwork.Frequency} kHz", 2, 1),
 		];
 	}
 
 	private void Copy(object? o)
 	{
 		Clipboard.SetDataObject(_wiFiNetwork.ToString());
+	}
+
+	private async void Connect(object? o)
+	{
+		if (_wiFiNetwork.ProfileName is { Length: 0 })
+		{
+			PopupOpen = !PopupOpen;
+			return;
+		}
+
+		bool connected = await _wiFiNetwork.ConnectAsync();
+		IsConnected = connected;
+
+		if (connected)
+		{
+			MessageBox.Show(Properties.Resources.Connected);
+		}
+		else
+		{
+			MessageBox.Show(Properties.Resources.NotConnected);
+		}
+	}
+
+	private async void ConnectPopup(object? o)
+	{
+		bool connected = await _wiFiNetwork.ConnectAsync(Password);
+		IsConnected = connected;
+
+		if (connected)
+		{
+			MessageBox.Show(Properties.Resources.Connected);
+		}
+		else
+		{
+			MessageBox.Show(Properties.Resources.NotConnected);
+		}
+
+		PopupOpen = false;
 	}
 }

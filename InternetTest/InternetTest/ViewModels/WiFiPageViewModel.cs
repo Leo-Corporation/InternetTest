@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Commands;
+using InternetTest.Helpers;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
 using System.Collections.ObjectModel;
@@ -55,7 +56,9 @@ public class WiFiPageViewModel : ViewModelBase
 
 		GetAdapters();
 
-		WiFiNetworks = [.. WiFiNetwork.GetWiFis().Select(x => new ConnectWiFiItemViewModel(x))];
+		string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
+
+		WiFiNetworks = [.. WiFiNetwork.GetWiFis().Select(x => new ConnectWiFiItemViewModel(x, currentSsid))];
 		RefreshCommand = new RelayCommand(o => GetAdapters());
 	}
 

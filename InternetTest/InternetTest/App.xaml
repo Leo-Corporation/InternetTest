@@ -535,6 +535,24 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+            <Style TargetType="PasswordBox">
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Foreground" Value="{DynamicResource Foreground1}" />
+                <Setter Property="CaretBrush" Value="{DynamicResource Foreground1}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="PasswordBox">
+                            <Border
+                                Background="Transparent"
+                                BorderBrush="{DynamicResource Border}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                                <ScrollViewer x:Name="PART_ContentHost" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
             <Style TargetType="RadioButton">
                 <Setter Property="Template">
                     <Setter.Value>

@@ -2,7 +2,9 @@
     x:Class="InternetTest.Components.ConnectWiFiItem"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:InternetTest.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:InternetTest.Helpers"
     xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -21,6 +23,7 @@
         <Grid>
             <Grid.Resources>
                 <BooleanToVisibilityConverter x:Key="BoolToVis" />
+                <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVis" />
             </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -48,18 +51,35 @@
                 FontWeight="Bold"
                 Text="{Binding Name}" />
             <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <Border
+                    Grid.Column="2"
+                    Margin="5 0 0 0"
+                    Padding="5 2"
+                    VerticalAlignment="Center"
+                    BorderBrush="{DynamicResource Green}"
+                    BorderThickness="1"
+                    CornerRadius="10"
+                    Visibility="{Binding IsConnected, Converter={StaticResource BoolToVis}}">
+                    <TextBlock
+                        FontWeight="SemiBold"
+                        Foreground="{DynamicResource Green}"
+                        Text="{x:Static lang:Resources.ConnectedS}" />
+                </Border>
                 <Button
+                    x:Name="ConnectBtn"
                     Margin="5 0"
                     Padding="5 2"
                     Background="{DynamicResource LightAccent}"
-                    Command="{Binding CopyCommand}"
+                    Command="{Binding ConnectCommand}"
                     Content="{x:Static lang:Resources.Connect}"
                     Cursor="Hand"
                     FontWeight="SemiBold"
-                    Foreground="{DynamicResource Accent}" />
+                    Foreground="{DynamicResource Accent}"
+                    Visibility="{Binding IsConnected, Converter={StaticResource InverseBoolToVis}}" />
                 <Button
                     Margin="5 0"
                     Background="Transparent"
+                    Command="{Binding CopyCommand}"
                     Content="&#xF32C;"
                     Cursor="Hand"
                     FontFamily="..\Fonts\#FluentSystemIcons-Regular"
@@ -109,6 +129,53 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+            <Popup
+                x:Name="PasswordPopup"
+                AllowsTransparency="True"
+                IsOpen="{Binding PopupOpen}"
+                Placement="Bottom"
+                PlacementTarget="{Binding ElementName=ConnectBtn}"
+                StaysOpen="False">
+                <Border
+                    Margin="10"
+                    Padding="10"
+                    Background="{DynamicResource Background1}"
+                    CornerRadius="10">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="15"
+                            Opacity="0.2"
+                            ShadowDepth="0"
+                            Color="{DynamicResource AccentColor}" />
+                    </Border.Effect>
+                    <StackPanel>
+                        <StackPanel>
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontWeight="Bold"
+                                Text="{x:Static lang:Resources.Key}" />
+                            <PasswordBox
+                                x:Name="PasswordTxt"
+                                Width="200"
+                                Padding="5"
+                                VerticalAlignment="Center"
+                                helpers:PasswordBoxHelper.BoundPassword="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+                        <Button
+                            x:Name="ConnectPopupBtn"
+                            Grid.Row="1"
+                            Margin="5"
+                            Padding="5 2"
+                            HorizontalAlignment="Center"
+                            Background="{DynamicResource LightAccent}"
+                            Command="{Binding ConnectPopupCommand}"
+                            Content="{x:Static lang:Resources.Connect}"
+                            Cursor="Hand"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Accent}" />
+                    </StackPanel>
+                </Border>
+            </Popup>
         </Grid>
     </Border>
 </UserControl>

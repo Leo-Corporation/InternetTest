@@ -34,13 +34,15 @@ public class WiFiNetwork
 {
 	public string? Ssid { get; set; }
 	public int SignalQuality { get; set; }
-	public string? BssType { get; set; }
+	public BssType? BssType { get; set; }
 	public bool IsSecurityEnabled { get; set; }
 	public string? ProfileName { get; set; }
 	public string? InterfaceDescription { get; set; }
 	public int? Channel { get; set; }
 	public int? Frequency { get; set; }
 	public double? Band { get; set; }
+
+	public InterfaceInfo? Interface { get; set; }
 
 	public override string ToString()
 	{
@@ -63,10 +65,11 @@ public class WiFiNetwork
 			{
 				Ssid = x.Ssid.ToString(),
 				SignalQuality = x.SignalQuality,
-				BssType = x.BssType.ToString(),
+				BssType = x.BssType,
 				IsSecurityEnabled = x.IsSecurityEnabled,
 				ProfileName = x.ProfileName,
-				InterfaceDescription = x.InterfaceInfo.Description
+				InterfaceDescription = x.InterfaceInfo.Description,
+				Interface = x.InterfaceInfo
 			})
 			.ToList();
 
@@ -85,5 +88,58 @@ public class WiFiNetwork
 			}
 		}
 		return availableNetworks;
+	}
+
+	public async Task<bool> ConnectAsync(string password = "")
+	{
+		if (Interface is null || Ssid is null)
+			return false;
+		
+		if (ProfileName is { Length: 0 })
+		{
+			var profileXml = GetWpa2PersonalProfileXml(Ssid, password);
+			NativeWifi.SetProfile(Interface.Id, ProfileType.AllUser, profileXml, null, false);
+		}
+
+		var connectionResult = await NativeWifi.ConnectNetworkAsync(
+			interfaceId: Interface.Id,
+			profileName: Ssid,
+			bssType: BssType ?? ManagedNativeWifi.BssType.Any,
+			timeout: TimeSpan.FromSeconds(10));
+
+		if (!connectionResult)
+			return false;
+
+		return true;
+	}
+
+	public static string GetWpa2PersonalProfileXml(string ssid, string password)
+	{
+		var profileXml = $@"<?xml version=""1.0""?>
+	<WLANProfile xmlns=""http://www.microsoft.com/networking/WLAN/profile/v1"">
+		<name>{ssid}</name>
+		<SSIDConfig>
+			<SSID>
+				<name>{ssid}</name>
+			</SSID>
+		</SSIDConfig>
+		<connectionType>ESS</connectionType>
+		<connectionMode>auto</connectionMode>
+		<MSM>
+			<security>
+				<authEncryption>
+					<authentication>WPA2PSK</authentication>
+					<encryption>AES</encryption>
+					<useOneX>false</useOneX>
+				</authEncryption>
+				<sharedKey>
+					<keyType>passPhrase</keyType>
+					<protected>false</protected>
+					<keyMaterial>{password}</keyMaterial>
+				</sharedKey>
+			</security>
+		</MSM>
+	</WLANProfile>";
+		return profileXml;
 	}
 }
