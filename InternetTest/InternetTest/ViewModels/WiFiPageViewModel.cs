@@ -41,6 +41,8 @@ public class WiFiPageViewModel : ViewModelBase
 		set { _adapters = value; OnPropertyChanged(nameof(Adapters)); }
 	}
 
+	public ObservableCollection<ConnectWiFiItemViewModel> WiFiNetworks { get; } = [];
+
 	private bool _showHidden = false;
 	public bool ShowHidden { get => _showHidden; set { _showHidden = value; OnPropertyChanged(nameof(ShowHidden)); GetAdapters(); } }
 
@@ -53,6 +55,7 @@ public class WiFiPageViewModel : ViewModelBase
 
 		GetAdapters();
 
+		WiFiNetworks = [.. WiFiNetwork.GetWiFis().Select(x => new ConnectWiFiItemViewModel(x))];
 		RefreshCommand = new RelayCommand(o => GetAdapters());
 	}
 
