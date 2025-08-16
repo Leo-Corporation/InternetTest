@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:components="clr-namespace:InternetTest.Components"
+    xmlns:converters="clr-namespace:InternetTest.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest.Views"
@@ -16,6 +17,7 @@
     <Grid>
         <Grid.Resources>
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
+            <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVis" />
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -106,6 +108,10 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition />
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock
@@ -123,7 +129,26 @@
                         <TextBlock Foreground="{DynamicResource DarkGray}" Text="{x:Static lang:Resources.AvailableNetworksDesc}" />
                     </StackPanel>
 
-                    <ItemsControl Grid.Row="1" ItemsSource="{Binding WiFiNetworks}">
+                    <Button
+                        Grid.Column="1"
+                        Padding="5"
+                        VerticalAlignment="Center"
+                        Background="Transparent"
+                        Command="{Binding RefreshWiFiCommand}"
+                        Content="&#xF191;"
+                        Cursor="Hand"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Refresh}" />
+                        </Button.ToolTip>
+                    </Button>
+
+                    <ItemsControl
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        ItemsSource="{Binding WiFiNetworks}"
+                        Visibility="{Binding IsRefreshing, Converter={StaticResource InverseBoolToVis}}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel />
@@ -135,6 +160,60 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
+                    <StackPanel
+                        x:Name="ScanningPanel"
+                        Grid.Row="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Visibility="{Binding IsRefreshing, Converter={StaticResource BoolToVis}}">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="48"
+                            Foreground="{DynamicResource Accent}"
+                            RenderTransformOrigin="0.5,0.5"
+                            Text="&#xF709;">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform x:Name="SpinTransform" Angle="0" />
+                            </TextBlock.RenderTransform>
+
+                            <TextBlock.Triggers>
+                                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                RepeatBehavior="Forever"
+                                                Storyboard.TargetName="SpinTransform"
+                                                Storyboard.TargetProperty="Angle"
+                                                From="0"
+                                                To="360"
+                                                Duration="0:0:1" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Text="{x:Static lang:Resources.ScanningInProgress}"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel
+                        x:Name="NoNetworksPanel"
+                        Grid.Row="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Visibility="{Binding NoNetworks, Converter={StaticResource BoolToVis}}">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="48"
+                            Text="&#xFB69;" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Text="{x:Static lang:Resources.NoNetworks}"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
                 </Grid>
 
             </Border>

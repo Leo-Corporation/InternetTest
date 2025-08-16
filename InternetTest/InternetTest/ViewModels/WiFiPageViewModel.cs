@@ -42,12 +42,19 @@ public class WiFiPageViewModel : ViewModelBase
 		set { _adapters = value; OnPropertyChanged(nameof(Adapters)); }
 	}
 
-	public ObservableCollection<ConnectWiFiItemViewModel> WiFiNetworks { get; } = [];
+	public ObservableCollection<ConnectWiFiItemViewModel> WiFiNetworks { get; set; } = [];
 
 	private bool _showHidden = false;
 	public bool ShowHidden { get => _showHidden; set { _showHidden = value; OnPropertyChanged(nameof(ShowHidden)); GetAdapters(); } }
 
-	public ICommand RefreshCommand { get; }
+	private bool _isRefrshing = false;
+	public bool IsRefreshing { get => _isRefrshing; set { _isRefrshing = value; OnPropertyChanged(nameof(IsRefreshing)); } }
+
+	private bool _noNetworks = false;
+	public bool NoNetworks { get => _noNetworks; set { _noNetworks = value; OnPropertyChanged(nameof(NoNetworks)); } }
+
+	public ICommand RefreshCommand => new RelayCommand(o => GetAdapters());
+	public ICommand RefreshWiFiCommand { get; set; }
 	public WiFiPageViewModel(Settings settings)
 	{
 		_settings = settings;
@@ -57,9 +64,18 @@ public class WiFiPageViewModel : ViewModelBase
 		GetAdapters();
 
 		string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
-
 		WiFiNetworks = [.. WiFiNetwork.GetWiFis().Select(x => new ConnectWiFiItemViewModel(x, currentSsid))];
-		RefreshCommand = new RelayCommand(o => GetAdapters());
+		NoNetworks = WiFiNetworks.Count == 0;
+
+		RefreshWiFiCommand = new RelayCommand(o =>
+		{
+			IsRefreshing = true;
+			WiFiNetworks.Clear();
+			string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
+			WiFiNetwork.GetWiFis().ForEach(x => WiFiNetworks.Add(new ConnectWiFiItemViewModel(x, currentSsid)));
+			IsRefreshing = false;
+			NoNetworks = WiFiNetworks.Count == 0;
+		});
 	}
 
 	internal void GetAdapters()

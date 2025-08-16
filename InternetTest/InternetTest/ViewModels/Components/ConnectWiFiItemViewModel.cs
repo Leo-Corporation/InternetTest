@@ -65,19 +65,19 @@ public class ConnectWiFiItemViewModel : ViewModelBase
 		IsConnected = _wiFiNetwork.Ssid == currentSsid;
 		StrengthIcon = _wiFiNetwork.SignalQuality switch
 		{
-			int n when (n is >= 0 and < 25) => "\uF8B3",
-			int n when (n is >= 25 and < 50) => "\uF8B1",
-			int n when (n is >= 50 and < 75) => "\uF8AF",
-			int n when (n is >= 75 and <= 100) => "\uF8AD",
+			int n when n is >= 0 and < 25 => "\uF8B3",
+			int n when n is >= 25 and < 50 => "\uF8B1",
+			int n when n is >= 50 and < 75 => "\uF8AF",
+			int n when n is >= 75 and <= 100 => "\uF8AD",
 			_ => "\uF8AD",
 		};
 
 		StrengthColor = _wiFiNetwork.SignalQuality switch
 		{
-			int n when (n is >= 0 and < 25) => ThemeHelper.GetSolidColorBrush("Red"),
-			int n when (n is >= 25 and < 50) => ThemeHelper.GetSolidColorBrush("Orange"),
-			int n when (n is >= 50 and < 75) => ThemeHelper.GetSolidColorBrush("Accent"),
-			int n when (n is >= 75 and <= 100) => ThemeHelper.GetSolidColorBrush("Green"),
+			int n when n is >= 0 and < 25 => ThemeHelper.GetSolidColorBrush("Red"),
+			int n when n is >= 25 and < 50 => ThemeHelper.GetSolidColorBrush("Orange"),
+			int n when n is >= 50 and < 75 => ThemeHelper.GetSolidColorBrush("Accent"),
+			int n when n is >= 75 and <= 100 => ThemeHelper.GetSolidColorBrush("Green"),
 			_ => ThemeHelper.GetSolidColorBrush("Green"), // Default to green
 		};
 
