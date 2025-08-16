@@ -2,11 +2,13 @@
     x:Class="InternetTest.Windows.AdapterDetailsWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:InternetTest.Components"
     xmlns:controls="clr-namespace:MicaWPF.Lite.Controls;assembly=MicaWPF.Lite"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:InternetTest.ViewModels.Components"
     Title="{Binding Name}"
     Width="500"
     Height="550"
@@ -97,17 +99,8 @@
                         </Style>
                     </ItemsControl.ItemContainerStyle>
                     <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0 5">
-                                <TextBlock
-                                    FontSize="12"
-                                    Foreground="{DynamicResource DarkGray}"
-                                    Text="{Binding Title}" />
-                                <TextBlock
-                                    FontSize="14"
-                                    FontWeight="SemiBold"
-                                    Text="{Binding Value}" />
-                            </StackPanel>
+                        <DataTemplate DataType="{x:Type vm:GridItemViewModel}">
+                            <components:GridItem />
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -156,17 +149,8 @@
                         </Style>
                     </ItemsControl.ItemContainerStyle>
                     <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0 5">
-                                <TextBlock
-                                    FontSize="12"
-                                    Foreground="{DynamicResource DarkGray}"
-                                    Text="{Binding Title}" />
-                                <TextBlock
-                                    FontSize="14"
-                                    FontWeight="SemiBold"
-                                    Text="{Binding Value}" />
-                            </StackPanel>
+                        <DataTemplate DataType="{x:Type vm:GridItemViewModel}">
+                            <components:GridItem />
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -219,17 +203,8 @@
                         </Style>
                     </ItemsControl.ItemContainerStyle>
                     <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0 5">
-                                <TextBlock
-                                    FontSize="12"
-                                    Foreground="{DynamicResource DarkGray}"
-                                    Text="{Binding Title}" />
-                                <TextBlock
-                                    FontSize="14"
-                                    FontWeight="SemiBold"
-                                    Text="{Binding Value}" />
-                            </StackPanel>
+                        <DataTemplate DataType="{x:Type vm:GridItemViewModel}">
+                            <components:GridItem />
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

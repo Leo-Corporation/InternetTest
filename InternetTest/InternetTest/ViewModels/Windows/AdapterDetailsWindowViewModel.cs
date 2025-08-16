@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Commands;
 using InternetTest.Helpers;
 using InternetTest.Models;
+using InternetTest.ViewModels.Components;
 using System.Collections.ObjectModel;
 using System.Net.NetworkInformation;
 using System.Windows;
@@ -107,43 +108,5 @@ public class AdapterDetailsWindowViewModel : ViewModelBase
 	private string BoolToString(bool b)
 	{
 		return b ? Properties.Resources.Yes : Properties.Resources.No;
-	}
-}
-
-public class GridItemViewModel : ViewModelBase
-{
-	private string? _title;
-	public string? Title
-	{
-		get => _title;
-		set { _title = value; OnPropertyChanged(nameof(Title)); }
-	}
-	private string? _value;
-	public string? Value
-	{
-		get => _value;
-		set { _value = value; OnPropertyChanged(nameof(Value)); }
-	}
-
-	private int _gridColumn;
-	public int GridColumn
-	{
-		get => _gridColumn;
-		set { _gridColumn = value; OnPropertyChanged(nameof(GridColumn)); }
-	}
-
-	private int _gridRow;
-	public int GridRow
-	{
-		get => _gridRow;
-		set { _gridRow = value; OnPropertyChanged(nameof(GridRow)); }
-	}
-
-	public GridItemViewModel(string title, string value, int row, int col)
-	{
-		Title = title;
-		Value = value;
-		GridRow = row;
-		GridColumn = col;
 	}
 }
