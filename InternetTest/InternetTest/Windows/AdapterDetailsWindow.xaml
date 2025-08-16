@@ -44,10 +44,11 @@
                     x:Name="AdapterIcon"
                     Margin="5 0"
                     VerticalAlignment="Center"
+                    d:Text="&#xF8AC;"
                     FontFamily="../Fonts/#FluentSystemIcons-Regular"
                     FontSize="24"
                     Foreground="{DynamicResource Accent}"
-                    Text="&#xF8AC;" />
+                    Text="{Binding Icon}" />
                 <StackPanel
                     Grid.Column="1"
                     Margin="10 0"

@@ -6,7 +6,7 @@
     xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Width="350"
+    Width="340"
     Height="200"
     FontFamily="..\Fonts\#Hauora"
     Foreground="{DynamicResource Foreground1}"

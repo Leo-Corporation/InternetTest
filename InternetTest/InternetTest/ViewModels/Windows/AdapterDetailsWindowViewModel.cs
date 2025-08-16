@@ -37,6 +37,9 @@ public class AdapterDetailsWindowViewModel : ViewModelBase
 
 	private string? _name;
 	public string Name { get => _name ?? string.Empty; set { _name = value; OnPropertyChanged(nameof(Name)); } }
+
+	private string? _icon;
+	public string? Icon { get => _icon; set { _icon = value; OnPropertyChanged(nameof(Icon)); } }
 	public ObservableCollection<GridItemViewModel> Details { get; } = [];
 	public ObservableCollection<GridItemViewModel> Cat2 { get; } = [];
 	public ObservableCollection<GridItemViewModel> Cat3 { get; } = [];
@@ -45,6 +48,18 @@ public class AdapterDetailsWindowViewModel : ViewModelBase
 	public AdapterDetailsWindowViewModel(NetworkAdapter networkAdapter)
 	{
 		Name = networkAdapter.Name;
+		Icon = networkAdapter.NetworkInterfaceType switch
+		{
+			NetworkInterfaceType.Tunnel => "\uF18E",
+			NetworkInterfaceType.Ethernet => "\uFB32",
+			NetworkInterfaceType.Ethernet3Megabit => "\uFB32",
+			NetworkInterfaceType.FastEthernetFx => "\uFB32",
+			NetworkInterfaceType.FastEthernetT => "\uFB32",
+			NetworkInterfaceType.GigabitEthernet => "\uFB32",
+			_ => "\uF8AC"
+		};
+		if (networkAdapter.Name.Contains("Bluetooth")) Icon = "\uF1DF";
+
 		Details = [
 			new(Properties.Resources.DataConsumption, $"{StorageUnitHelper.GetStorageUnit(networkAdapter.BytesReceived + networkAdapter.BytesSent).Item2:0.00} {StorageUnitHelper.UnitToString(StorageUnitHelper.GetStorageUnit(networkAdapter.BytesReceived + networkAdapter.BytesSent).Item1)}", 0, 0),
 			new(Properties.Resources.InterfaceType, NetworkAdapter.GetInterfaceTypeName(networkAdapter.NetworkInterfaceType), 1, 0),
