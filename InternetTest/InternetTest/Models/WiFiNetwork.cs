@@ -22,11 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using ManagedNativeWifi;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetTest.Models;
 
@@ -94,7 +89,7 @@ public class WiFiNetwork
 	{
 		if (Interface is null || Ssid is null)
 			return false;
-		
+
 		if (ProfileName is { Length: 0 })
 		{
 			var profileXml = GetWpa2PersonalProfileXml(Ssid, password);
