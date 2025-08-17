@@ -114,7 +114,7 @@ public class WlanProfile
 		$"{Properties.Resources.ConnectionMode}: {(ConnectionMode == "auto" ? Properties.Resources.Automatic : ConnectionMode)}\n" +
 		$"{Properties.Resources.ConnectionType}: {ConnectionType switch { "ESS" => Properties.Resources.InfrastructureNetwork, "IBSS" => Properties.Resources.AdHocNetwork, _ => ConnectionType }}";
 
-	public static async Task<List<WlanProfile>> GetProfilesAsync()
+	public static async Task<List<WlanProfile>> GetProfilesAsync(bool forceRefresh = false)
 	{
 		try
 		{
@@ -126,32 +126,27 @@ public class WlanProfile
 				Directory.CreateDirectory(path);
 			}
 
-			// Run "netsh wlan export profile key=clear" command
-			Process process = new();
-			process.StartInfo.FileName = "cmd.exe";
-			process.StartInfo.Arguments = $"/c netsh wlan export profile key=clear folder=\"{path}\"";
-			process.StartInfo.UseShellExecute = false;
-			process.StartInfo.CreateNoWindow = true;
-			process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-			process.Start();
-			await process.WaitForExitAsync();
+			if ((await GetFilesAsync(path, "*.xml")).Length == 0 || forceRefresh)
+			{
+				// Run "netsh wlan export profile key=clear" command
+				Process process = new();
+				process.StartInfo.FileName = "cmd.exe";
+				process.StartInfo.Arguments = $"/c netsh wlan export profile key=clear folder=\"{path}\"";
+				process.StartInfo.UseShellExecute = false;
+				process.StartInfo.CreateNoWindow = true;
+				process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+				process.Start();
+				await process.WaitForExitAsync();
+			}
 
-			string[] files = Directory.GetFiles(path, "*.xml");
+			string[] files = await GetFilesAsync(path, "*.xml");
 
-			List<WlanProfile> profiles = new();
+			List<WlanProfile> profiles = [];
 
 			for (int i = 0; i < files.Length; i++)
 			{
-				XmlSerializer serializer = new(typeof(WlanProfile));
-				StreamReader streamReader = new(files[i]); // Where the file is going to be read
-
-				var profile = (WlanProfile?)serializer.Deserialize(streamReader);
-
-				if (profile != null)
-				{
-					profiles.Add(profile);
-				}
-				streamReader.Close();
+				var profile = await DeserializeXmlAsync<WlanProfile>(files[i]);
+				if (profile != null) profiles.Add(profile);
 			}
 
 			return profiles;
@@ -162,4 +157,20 @@ public class WlanProfile
 			return [];
 		}
 	}
+
+	private static async Task<string[]> GetFilesAsync(string directory, string searchPatternn)
+	{
+		return await Task.Run(() => Directory.GetFiles(directory, searchPatternn));
+	}
+
+	private static async Task<T?> DeserializeXmlAsync<T>(string filepath)
+	{
+		return await Task.Run(() =>
+		{
+			XmlSerializer serializer = new(typeof(T));
+			using StreamReader reader = new(filepath);
+			return (T?)serializer.Deserialize(reader);
+		});
+	}
+
 }
