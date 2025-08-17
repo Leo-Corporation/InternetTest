@@ -1642,6 +1642,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manual.
+        /// </summary>
+        public static string Manual {
+            get {
+                return ResourceManager.GetString("Manual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Map provider.
         /// </summary>
         public static string MapProvider {
@@ -3145,6 +3154,15 @@ namespace InternetTest.Properties {
         public static string WifiPasswords {
             get {
                 return ResourceManager.GetString("WifiPasswords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse saved WiFi profiles and recover your lost passwords..
+        /// </summary>
+        public static string WiFiPasswordsDesc {
+            get {
+                return ResourceManager.GetString("WiFiPasswordsDesc", resourceCulture);
             }
         }
         

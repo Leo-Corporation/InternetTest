@@ -1170,4 +1170,10 @@
   <data name="AvailableNetworksDesc" xml:space="preserve">
     <value>附近可连接的无线网络。</value>
   </data>
+  <data name="WiFiPasswordsDesc" xml:space="preserve">
+    <value>浏览已保存的Wi-Fi配置文件并恢复您丢失的密码。</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>手册</value>
+  </data>
 </root>

@@ -1179,4 +1179,10 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="AvailableNetworksDesc" xml:space="preserve">
     <value>Réseaux sans fil à proximité auxquels vous pouvez vous connecter.</value>
   </data>
+  <data name="WiFiPasswordsDesc" xml:space="preserve">
+    <value>Parcourez les profils WiFi enregistrés et récupérez vos mots de passe perdus.</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>Manuel</value>
+  </data>
 </root>
