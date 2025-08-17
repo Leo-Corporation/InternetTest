@@ -43,6 +43,7 @@ public class WiFiPageViewModel : ViewModelBase
 	}
 
 	public ObservableCollection<ConnectWiFiItemViewModel> WiFiNetworks { get; set; } = [];
+	public ObservableCollection<WlanProfileItemViewModel> WlanProfiles { get; set; } = [];
 
 	private bool _showHidden = false;
 	public bool ShowHidden { get => _showHidden; set { _showHidden = value; OnPropertyChanged(nameof(ShowHidden)); GetAdapters(); } }
@@ -66,6 +67,8 @@ public class WiFiPageViewModel : ViewModelBase
 		string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
 		WiFiNetworks = [.. WiFiNetwork.GetWiFis().Select(x => new ConnectWiFiItemViewModel(x, currentSsid))];
 		NoNetworks = WiFiNetworks.Count == 0;
+
+		RefreshProfiles();
 
 		RefreshWiFiCommand = new RelayCommand(o =>
 		{
@@ -97,5 +100,12 @@ public class WiFiPageViewModel : ViewModelBase
 		{
 			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 		}
+	}
+
+	private async void RefreshProfiles()
+	{
+		var profiles = await WlanProfile.GetProfilesAsync();
+		WlanProfiles.Clear();
+		profiles.ForEach(x => WlanProfiles.Add(new WlanProfileItemViewModel(x)));
 	}
 }

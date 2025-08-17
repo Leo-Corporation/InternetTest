@@ -118,6 +118,56 @@
                                 VerticalAlignment="Center"
                                 FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                                 FontSize="16"
+                                Text="&#xF8B4;" />
+                            <TextBlock
+                                Margin="5 0 0 0"
+                                VerticalAlignment="Center"
+                                FontSize="14"
+                                FontWeight="Bold"
+                                Text="{x:Static lang:Resources.WifiPasswords}" />
+                        </StackPanel>
+                        <TextBlock Foreground="{DynamicResource DarkGray}" Text="{x:Static lang:Resources.WiFiPasswordsDesc}" />
+                    </StackPanel>
+                    <ItemsControl
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        ItemsSource="{Binding WlanProfiles}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate DataType="{x:Type vm:WlanProfileItemViewModel}">
+                                <components:WlanProfileItem />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </Border>
+            <Border
+                Grid.Row="1"
+                Margin="10"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                FontSize="16"
                                 Text="&#xF8AD;" />
                             <TextBlock
                                 Margin="5 0 0 0"

@@ -10,7 +10,7 @@
     FontFamily="..\Fonts\#Hauora"
     Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
-    <StackPanel Margin="0 5">
+    <StackPanel Margin="5">
         <TextBlock
             FontSize="12"
             Foreground="{DynamicResource DarkGray}"
