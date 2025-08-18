@@ -1185,4 +1185,10 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="Manual" xml:space="preserve">
     <value>Manual</value>
   </data>
+  <data name="ExportWlanProfilesMsg" xml:space="preserve">
+    <value>Do you want to include passwords in the exported files?</value>
+  </data>
+  <data name="ExportWlanProfiles" xml:space="preserve">
+    <value>Export saved WiFi networks</value>
+  </data>
 </root>

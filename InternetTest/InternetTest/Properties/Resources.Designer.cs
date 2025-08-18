@@ -955,6 +955,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export saved WiFi networks.
+        /// </summary>
+        public static string ExportWlanProfiles {
+            get {
+                return ResourceManager.GetString("ExportWlanProfiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to include passwords in the exported files?.
+        /// </summary>
+        public static string ExportWlanProfilesMsg {
+            get {
+                return ResourceManager.GetString("ExportWlanProfilesMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed.
         /// </summary>
         public static string Failed {

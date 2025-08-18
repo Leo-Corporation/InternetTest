@@ -26,6 +26,7 @@ using InternetTest.Helpers;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
 using ManagedNativeWifi;
+using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.Net.NetworkInformation;
 using System.Windows;
@@ -64,6 +65,23 @@ public class WiFiPageViewModel : ViewModelBase
 	public ICommand RefreshCommand => new RelayCommand(o => GetAdapters());
 	public ICommand RefreshWiFiCommand { get; set; }
 	public ICommand RefreshProfilesCommand => new RelayCommand(o => RefreshProfiles(true));
+	public ICommand ExportCommand => new RelayCommand(async o =>
+	{
+		if (MessageBox.Show(Properties.Resources.ExportWlanProfilesMsg, Properties.Resources.InternetTest, MessageBoxButton.YesNoCancel, MessageBoxImage.Question) != MessageBoxResult.Yes)
+			return;
+
+		OpenFolderDialog openFolderDialog = new()
+		{
+			Title = Properties.Resources.Export,
+			InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+			Multiselect = false
+		};
+
+		if (openFolderDialog.ShowDialog() == true)
+		{
+			await WlanProfile.ExportProfilesAsync(openFolderDialog.FolderNames[0], true);
+		}
+	});
 
 	public WiFiPageViewModel(Settings settings)
 	{
@@ -83,7 +101,7 @@ public class WiFiPageViewModel : ViewModelBase
 		{
 			IsRefreshing = true;
 			WiFiNetworks.Clear();
-			
+
 			await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
 
 			string? currentSsid = NetworkHelper.GetCurrentWifiSSID();

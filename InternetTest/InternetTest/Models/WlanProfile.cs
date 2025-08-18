@@ -158,6 +158,27 @@ public class WlanProfile
 		}
 	}
 
+	public static async Task ExportProfilesAsync(string path, bool keyVis)
+	{
+		try
+		{
+			Process process = new();
+			process.StartInfo.FileName = "cmd.exe";
+			process.StartInfo.Arguments = $"/c netsh wlan export profile {(keyVis ? "key=clear" : "")} folder=\"{path}\"";
+			process.StartInfo.UseShellExecute = false;
+			process.StartInfo.CreateNoWindow = true;
+			process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+			process.Start();
+			await process.WaitForExitAsync();
+
+			MessageBox.Show(Properties.Resources.WiFiExportSuccessful, Properties.Resources.Export, MessageBoxButton.OK, MessageBoxImage.Information);
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
+	}
+
 	private static async Task<string[]> GetFilesAsync(string directory, string searchPatternn)
 	{
 		return await Task.Run(() => Directory.GetFiles(directory, searchPatternn));

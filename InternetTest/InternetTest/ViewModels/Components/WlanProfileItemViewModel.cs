@@ -91,7 +91,7 @@ public class WlanProfileItemViewModel : ViewModelBase
 	{
 		if (QrCodeImage == null)
 			return;
-		
+
 		var dialog = new SaveFileDialog() { Filter = "PNG Files|*.png", Title = Properties.Resources.Save, FileName = _wlanProfile.SSIDConfig?.SSID?.Name ?? "" };
 		if (dialog.ShowDialog() ?? false)
 		{

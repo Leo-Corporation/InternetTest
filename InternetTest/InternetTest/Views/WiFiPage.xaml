@@ -201,6 +201,19 @@
                             Padding="5"
                             VerticalAlignment="Center"
                             Background="Transparent"
+                            Command="{Binding ExportCommand}"
+                            Content="&#xF1A5;"
+                            Cursor="Hand"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            Foreground="{DynamicResource Foreground1}">
+                            <Button.ToolTip>
+                                <ToolTip Content="{x:Static lang:Resources.Export}" />
+                            </Button.ToolTip>
+                        </Button>
+                        <Button
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
                             Command="{Binding RefreshProfilesCommand}"
                             Content="&#xF191;"
                             Cursor="Hand"

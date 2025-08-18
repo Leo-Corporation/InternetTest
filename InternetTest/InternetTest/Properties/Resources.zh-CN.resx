@@ -1176,4 +1176,10 @@
   <data name="Manual" xml:space="preserve">
     <value>手册</value>
   </data>
+  <data name="ExportWlanProfilesMsg" xml:space="preserve">
+    <value>您是否希望在导出的文件中包含密码？</value>
+  </data>
+  <data name="ExportWlanProfiles" xml:space="preserve">
+    <value>导出已保存的Wi-Fi网络</value>
+  </data>
 </root>
