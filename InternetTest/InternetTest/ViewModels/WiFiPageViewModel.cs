@@ -54,6 +54,12 @@ public class WiFiPageViewModel : ViewModelBase
 	private bool _noNetworks = false;
 	public bool NoNetworks { get => _noNetworks; set { _noNetworks = value; OnPropertyChanged(nameof(NoNetworks)); } }
 
+	private bool _profileLoading = false;
+	public bool ProfileLoading { get => _profileLoading; set { _profileLoading = value; OnPropertyChanged(nameof(ProfileLoading)); } }
+
+	private bool _noProfiles = false;
+	public bool NoProfiles { get => _noProfiles; set { _noProfiles = value; OnPropertyChanged(nameof(NoProfiles)); } }
+
 	public ICommand RefreshCommand => new RelayCommand(o => GetAdapters());
 	public ICommand RefreshWiFiCommand { get; set; }
 	public WiFiPageViewModel(Settings settings)
@@ -104,8 +110,11 @@ public class WiFiPageViewModel : ViewModelBase
 
 	private async void RefreshProfiles()
 	{
+		ProfileLoading = true;
 		var profiles = await WlanProfile.GetProfilesAsync();
 		WlanProfiles.Clear();
 		profiles.ForEach(x => WlanProfiles.Add(new WlanProfileItemViewModel(x)));
+		ProfileLoading = false;
+		NoProfiles = WlanProfiles.Count == 0;
 	}
 }

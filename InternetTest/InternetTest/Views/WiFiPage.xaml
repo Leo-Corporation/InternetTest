@@ -143,6 +143,58 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
+                    <StackPanel
+                        Grid.Row="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Visibility="{Binding ProfileLoading, Converter={StaticResource BoolToVis}}">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="48"
+                            Foreground="{DynamicResource Accent}"
+                            RenderTransformOrigin="0.5,0.5"
+                            Text="&#xF709;">
+                            <TextBlock.RenderTransform>
+                                <RotateTransform x:Name="SpinTransform1" Angle="0" />
+                            </TextBlock.RenderTransform>
+
+                            <TextBlock.Triggers>
+                                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                RepeatBehavior="Forever"
+                                                Storyboard.TargetName="SpinTransform1"
+                                                Storyboard.TargetProperty="Angle"
+                                                From="0"
+                                                To="360"
+                                                Duration="0:0:1" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Text="{x:Static lang:Resources.Loading}"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Row="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Visibility="{Binding NoProfiles, Converter={StaticResource BoolToVis}}">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="48"
+                            Text="&#xF4A4;" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Text="{x:Static lang:Resources.NoNetworks}"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
                 </Grid>
             </Border>
             <Border
