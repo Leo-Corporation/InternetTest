@@ -51,9 +51,10 @@
                 Text="{Binding Name}" />
             <StackPanel Grid.Column="2" Orientation="Horizontal">
                 <Button
+                    x:Name="GetQrBtn"
                     Margin="5 0"
                     Background="Transparent"
-                    Command="{Binding QrCodeCommand}"
+                    Command="{Binding OpenQrCommand}"
                     Content="&#xF635;"
                     Cursor="Hand"
                     FontFamily="..\Fonts\#FluentSystemIcons-Regular"
@@ -153,6 +154,52 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
+            <Popup
+                x:Name="QrPopup"
+                Width="200"
+                Height="230"
+                AllowsTransparency="True"
+                IsOpen="{Binding QrOpen}"
+                Placement="Center"
+                PlacementTarget="{Binding ElementName=GetQrBtn}"
+                PopupAnimation="Fade">
+                <Border
+                    Margin="10"
+                    Padding="5"
+                    Background="{DynamicResource Background1}"
+                    CornerRadius="5">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="10"
+                            Opacity="0.4"
+                            RenderingBias="Performance"
+                            ShadowDepth="0"
+                            Color="Black" />
+                    </Border.Effect>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image x:Name="QrImage" Source="{Binding QrCodeImage}" />
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <Button
+                                x:Name="SaveQrBtn"
+                                Margin="0 0 5 0"
+                                Padding="3"
+                                Background="{DynamicResource LightAccent}"
+                                Command="{Binding SaveQrCommand}"
+                                Content="{x:Static lang:Resources.Save}"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Accent}" />
+                            <Button
+                                x:Name="CloseQrBtn"
+                                Padding="3"
+                                Background="{DynamicResource CardBackground}"
+                                Command="{Binding CloseQrCommand}"
+                                Content="{x:Static lang:Resources.Close}"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Foreground1}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Popup>
         </Grid>
     </Border>
 </UserControl>

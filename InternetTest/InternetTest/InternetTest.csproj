@@ -32,6 +32,7 @@
     <PackageReference Include="MicaWPF.Lite" Version="6.3.0" />
     <PackageReference Include="PeyrSharp.Core" Version="2.1.0.2312" />
     <PackageReference Include="PeyrSharp.Env" Version="2.1.0.2312" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
   </ItemGroup>
 
   <ItemGroup>

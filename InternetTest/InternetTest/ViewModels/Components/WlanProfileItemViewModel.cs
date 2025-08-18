@@ -23,9 +23,14 @@ SOFTWARE.
 */
 using InternetTest.Commands;
 using InternetTest.Models;
+using Microsoft.Win32;
+using QRCoder;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace InternetTest.ViewModels.Components;
 public class WlanProfileItemViewModel : ViewModelBase
@@ -52,6 +57,12 @@ public class WlanProfileItemViewModel : ViewModelBase
 		}
 	}
 
+	private bool _qrOpen = false;
+	public bool QrOpen { get => _qrOpen; set { _qrOpen = value; OnPropertyChanged(nameof(QrOpen)); } }
+
+	private ImageSource? _qrCodeImage;
+	public ImageSource? QrCodeImage { get => _qrCodeImage; set { _qrCodeImage = value; OnPropertyChanged(nameof(QrCodeImage)); } }
+
 	public ICommand CopyCommand => new RelayCommand(o =>
 	{
 		Clipboard.SetDataObject(_wlanProfile.ToString());
@@ -60,6 +71,32 @@ public class WlanProfileItemViewModel : ViewModelBase
 	public ICommand CopyKeyCommand => new RelayCommand(o =>
 	{
 		Clipboard.SetDataObject(_wlanProfile.MSM?.Security?.SharedKey?.KeyMaterial ?? Properties.Resources.Unknown);
+	});
+
+	public ICommand OpenQrCommand => new RelayCommand(o =>
+	{
+		QrOpen = !QrOpen;
+		if (QrCodeImage == null)
+		{
+			GenerateQrCode();
+		}
+	});
+
+	public ICommand CloseQrCommand => new RelayCommand(o =>
+	{
+		QrOpen = false;
+	});
+
+	public ICommand SaveQrCommand => new RelayCommand(o =>
+	{
+		if (QrCodeImage == null)
+			return;
+		
+		var dialog = new SaveFileDialog() { Filter = "PNG Files|*.png", Title = Properties.Resources.Save, FileName = _wlanProfile.SSIDConfig?.SSID?.Name ?? "" };
+		if (dialog.ShowDialog() ?? false)
+		{
+			SaveImageSourceToPng(QrCodeImage, dialog.FileName);
+		}
 	});
 
 	public WlanProfileItemViewModel(WlanProfile wlanProfile)
@@ -94,5 +131,34 @@ public class WlanProfileItemViewModel : ViewModelBase
 					_ => _wlanProfile.ConnectionType
 				} ?? Properties.Resources.Unknown, 1, 1)
 		];
+	}
+
+	private void GenerateQrCode()
+	{
+		QRCodeGenerator qrGenerator = new();
+		QRCodeData qrCodeData = qrGenerator.CreateQrCode($"WIFI:T:{((_wlanProfile.MSM?.Security?.AuthEncryption?.Authentication ?? "").Contains("WPA") ? "WPA" : "NONE")};S:{_wlanProfile?.SSIDConfig?.SSID?.Name ?? ""};P:{_wlanProfile.MSM?.Security?.SharedKey?.KeyMaterial};;\r\n\r\n", QRCodeGenerator.ECCLevel.Q);
+		BitmapByteQRCode qrCode = new(qrCodeData);
+		byte[] qrCodeAsBitmapByteArr = qrCode.GetGraphic(20);
+
+		BitmapImage bitmapImage = new();
+		using MemoryStream memory = new(qrCodeAsBitmapByteArr);
+		memory.Position = 0;
+
+		bitmapImage.BeginInit();
+		bitmapImage.StreamSource = memory;
+		bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+		bitmapImage.EndInit();
+
+		QrCodeImage = bitmapImage;
+	}
+
+	private void SaveImageSourceToPng(ImageSource imageSource, string filePath)
+	{
+		var encoder = new PngBitmapEncoder();
+		var frame = BitmapFrame.Create((BitmapSource)imageSource);
+		encoder.Frames.Add(frame);
+
+		using var stream = new FileStream(filePath, FileMode.Create);
+		encoder.Save(stream);
 	}
 }
