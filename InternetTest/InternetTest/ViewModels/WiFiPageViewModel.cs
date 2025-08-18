@@ -63,6 +63,8 @@ public class WiFiPageViewModel : ViewModelBase
 
 	public ICommand RefreshCommand => new RelayCommand(o => GetAdapters());
 	public ICommand RefreshWiFiCommand { get; set; }
+	public ICommand RefreshProfilesCommand => new RelayCommand(o => RefreshProfiles(true));
+
 	public WiFiPageViewModel(Settings settings)
 	{
 		_settings = settings;
@@ -112,10 +114,10 @@ public class WiFiPageViewModel : ViewModelBase
 		}
 	}
 
-	private async void RefreshProfiles()
+	private async void RefreshProfiles(bool forceRefresh = false)
 	{
 		ProfileLoading = true;
-		var profiles = await WlanProfile.GetProfilesAsync();
+		var profiles = await WlanProfile.GetProfilesAsync(forceRefresh);
 		WlanProfiles.Clear();
 		profiles.ForEach(x => WlanProfiles.Add(new WlanProfileItemViewModel(x)));
 		ProfileLoading = false;

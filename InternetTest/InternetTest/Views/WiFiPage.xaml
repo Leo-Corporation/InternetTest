@@ -195,6 +195,22 @@
                             Text="{x:Static lang:Resources.NoNetworks}"
                             TextWrapping="Wrap" />
                     </StackPanel>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <Button
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Command="{Binding RefreshProfilesCommand}"
+                            Content="&#xF191;"
+                            Cursor="Hand"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            Foreground="{DynamicResource Foreground1}">
+                            <Button.ToolTip>
+                                <ToolTip Content="{x:Static lang:Resources.Refresh}" />
+                            </Button.ToolTip>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </Border>
             <Border
