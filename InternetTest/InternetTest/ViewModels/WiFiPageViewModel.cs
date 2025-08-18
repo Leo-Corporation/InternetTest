@@ -25,6 +25,7 @@ using InternetTest.Commands;
 using InternetTest.Helpers;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
+using ManagedNativeWifi;
 using System.Collections.ObjectModel;
 using System.Net.NetworkInformation;
 using System.Windows;
@@ -76,10 +77,13 @@ public class WiFiPageViewModel : ViewModelBase
 
 		RefreshProfiles();
 
-		RefreshWiFiCommand = new RelayCommand(o =>
+		RefreshWiFiCommand = new RelayCommand(async o =>
 		{
 			IsRefreshing = true;
 			WiFiNetworks.Clear();
+			
+			await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
+
 			string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
 			WiFiNetwork.GetWiFis().ForEach(x => WiFiNetworks.Add(new ConnectWiFiItemViewModel(x, currentSsid)));
 			IsRefreshing = false;
