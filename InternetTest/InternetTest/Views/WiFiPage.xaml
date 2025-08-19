@@ -63,6 +63,17 @@
                 GroupName="Tab"
                 Style="{DynamicResource Tab}" />
         </StackPanel>
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="200"
+            Margin="10 0"
+            Padding="5"
+            VerticalAlignment="Center"
+            BorderBrush="{DynamicResource Border}"
+            BorderThickness="1"
+            Text="{Binding Query, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Visibility="{Binding ElementName=WiFiTabBtn, Path=IsChecked, Converter={StaticResource BoolToVis}}" />
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"

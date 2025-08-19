@@ -43,9 +43,14 @@ public class WiFiPageViewModel : ViewModelBase
 		get => _adapters;
 		set { _adapters = value; OnPropertyChanged(nameof(Adapters)); }
 	}
+	private ObservableCollection<ConnectWiFiItemViewModel> _wifiNetworks = [];
+	public ObservableCollection<ConnectWiFiItemViewModel> WiFiNetworks { get => _wifiNetworks; set { _wifiNetworks = value; OnPropertyChanged(nameof(WiFiNetworks)); } }
 
-	public ObservableCollection<ConnectWiFiItemViewModel> WiFiNetworks { get; set; } = [];
-	public ObservableCollection<WlanProfileItemViewModel> WlanProfiles { get; set; } = [];
+	private ObservableCollection<WlanProfileItemViewModel> _wlanProfiles = [];
+	public ObservableCollection<WlanProfileItemViewModel> WlanProfiles { get => _wlanProfiles; set { _wlanProfiles = value; OnPropertyChanged(nameof(WlanProfiles)); } }
+
+	private List<ConnectWiFiItemViewModel> _connectWiFis = [];
+	private List<WlanProfileItemViewModel> _wlanProfilesList = [];
 
 	private bool _showHidden = false;
 	public bool ShowHidden { get => _showHidden; set { _showHidden = value; OnPropertyChanged(nameof(ShowHidden)); GetAdapters(); } }
@@ -61,6 +66,21 @@ public class WiFiPageViewModel : ViewModelBase
 
 	private bool _noProfiles = false;
 	public bool NoProfiles { get => _noProfiles; set { _noProfiles = value; OnPropertyChanged(nameof(NoProfiles)); } }
+
+	private string _query = string.Empty;
+	public string Query
+	{
+		get => _query;
+		set
+		{
+			_query = value;
+			OnPropertyChanged(nameof(Query));
+			WiFiNetworks = new(_connectWiFis.Where(x => x.Name?.Contains(value, StringComparison.OrdinalIgnoreCase) ?? false));
+			WlanProfiles = new(_wlanProfilesList.Where(x => x.Name?.Contains(value, StringComparison.OrdinalIgnoreCase) ?? false));
+			NoNetworks = WiFiNetworks.Count == 0;
+			NoProfiles = WlanProfiles.Count == 0;
+		}
+	}
 
 	public ICommand RefreshCommand => new RelayCommand(o => GetAdapters());
 	public ICommand RefreshWiFiCommand { get; set; }
@@ -93,12 +113,14 @@ public class WiFiPageViewModel : ViewModelBase
 
 		string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
 		WiFiNetworks = [.. WiFiNetwork.GetWiFis().Select(x => new ConnectWiFiItemViewModel(x, currentSsid))];
+		_connectWiFis = [.. WiFiNetworks];
 		NoNetworks = WiFiNetworks.Count == 0;
 
 		RefreshProfiles();
 
 		RefreshWiFiCommand = new RelayCommand(async o =>
 		{
+			Query = string.Empty;
 			WiFiNetworks.Clear();
 			NoNetworks = false;
 			IsRefreshing = true;
@@ -107,6 +129,8 @@ public class WiFiPageViewModel : ViewModelBase
 
 			string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
 			WiFiNetwork.GetWiFis().ForEach(x => WiFiNetworks.Add(new ConnectWiFiItemViewModel(x, currentSsid)));
+
+			_connectWiFis = [.. WiFiNetworks];
 			IsRefreshing = false;
 			NoNetworks = WiFiNetworks.Count == 0;
 		});
@@ -135,12 +159,14 @@ public class WiFiPageViewModel : ViewModelBase
 
 	private async void RefreshProfiles(bool forceRefresh = false)
 	{
+		Query = string.Empty;
 		WlanProfiles.Clear();
 		NoProfiles = false;
 		ProfileLoading = true;
 
 		var profiles = await WlanProfile.GetProfilesAsync(forceRefresh);
 		profiles.ForEach(x => WlanProfiles.Add(new WlanProfileItemViewModel(x)));
+		_wlanProfilesList = [.. WlanProfiles];
 
 		ProfileLoading = false;
 		NoProfiles = WlanProfiles.Count == 0;
