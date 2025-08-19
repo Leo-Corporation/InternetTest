@@ -83,7 +83,7 @@ public class WiFiPageViewModel : ViewModelBase
 	}
 
 	public ICommand RefreshCommand => new RelayCommand(o => GetAdapters());
-	public ICommand RefreshWiFiCommand { get; set; }
+	public ICommand RefreshWiFiCommand => new RelayCommand(o => RefreshWiFi());
 	public ICommand RefreshProfilesCommand => new RelayCommand(o => RefreshProfiles(true));
 	public ICommand ExportCommand => new RelayCommand(async o =>
 	{
@@ -112,28 +112,28 @@ public class WiFiPageViewModel : ViewModelBase
 		GetAdapters();
 
 		string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
-		WiFiNetworks = [.. WiFiNetwork.GetWiFis().Select(x => new ConnectWiFiItemViewModel(x, currentSsid))];
+		WiFiNetworks = [.. WiFiNetwork.GetWiFis().Select(x => new ConnectWiFiItemViewModel(x, currentSsid, this))];
 		_connectWiFis = [.. WiFiNetworks];
 		NoNetworks = WiFiNetworks.Count == 0;
 
 		RefreshProfiles();
+	}
 
-		RefreshWiFiCommand = new RelayCommand(async o =>
-		{
-			Query = string.Empty;
-			WiFiNetworks.Clear();
-			NoNetworks = false;
-			IsRefreshing = true;
+	internal async void RefreshWiFi()
+	{
+		Query = string.Empty;
+		WiFiNetworks.Clear();
+		NoNetworks = false;
+		IsRefreshing = true;
 
-			await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
+		await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
 
-			string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
-			WiFiNetwork.GetWiFis().ForEach(x => WiFiNetworks.Add(new ConnectWiFiItemViewModel(x, currentSsid)));
+		string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
+		WiFiNetwork.GetWiFis().ForEach(x => WiFiNetworks.Add(new ConnectWiFiItemViewModel(x, currentSsid, this)));
 
-			_connectWiFis = [.. WiFiNetworks];
-			IsRefreshing = false;
-			NoNetworks = WiFiNetworks.Count == 0;
-		});
+		_connectWiFis = [.. WiFiNetworks];
+		IsRefreshing = false;
+		NoNetworks = WiFiNetworks.Count == 0;
 	}
 
 	internal void GetAdapters()

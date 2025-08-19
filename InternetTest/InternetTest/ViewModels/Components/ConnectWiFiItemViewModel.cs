@@ -54,13 +54,16 @@ public class ConnectWiFiItemViewModel : ViewModelBase
 	public ObservableCollection<GridItemViewModel> Details { get; }
 
 	private readonly WiFiNetwork _wiFiNetwork;
+	private readonly WiFiPageViewModel _wiFiPageViewModel;
 
 	public ICommand CopyCommand => new RelayCommand(Copy);
 	public ICommand ConnectCommand => new RelayCommand(Connect);
 	public ICommand ConnectPopupCommand => new RelayCommand(ConnectPopup);
-	public ConnectWiFiItemViewModel(WiFiNetwork wiFiNetwork, string? currentSsid)
+	public ConnectWiFiItemViewModel(WiFiNetwork wiFiNetwork, string? currentSsid, WiFiPageViewModel wiFiPageViewModel)
 	{
 		_wiFiNetwork = wiFiNetwork;
+		_wiFiPageViewModel = wiFiPageViewModel;
+
 		Name = _wiFiNetwork.Ssid;
 		IsConnected = _wiFiNetwork.Ssid == currentSsid;
 		StrengthIcon = _wiFiNetwork.SignalQuality switch
@@ -117,6 +120,8 @@ public class ConnectWiFiItemViewModel : ViewModelBase
 		{
 			MessageBox.Show(Properties.Resources.NotConnected);
 		}
+
+		_wiFiPageViewModel.RefreshWiFi();
 	}
 
 	private async void ConnectPopup(object? o)
