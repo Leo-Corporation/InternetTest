@@ -1622,6 +1622,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string LocateIpDesc {
+            get {
+                return ResourceManager.GetString("LocateIpDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You can locate an IP adress using this feature. 
         ///You will get information about the city, country, region, timezone, and more!
         ///You can also locate and get the IP of servers from an URL..

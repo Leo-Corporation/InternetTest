@@ -1182,4 +1182,7 @@
   <data name="ExportWlanProfiles" xml:space="preserve">
     <value>导出已保存的Wi-Fi网络</value>
   </data>
+  <data name="LocateIpDesc" xml:space="preserve">
+    <value>获取公共 IP 地址及其大致位置的信息。</value>
+  </data>
 </root>

@@ -33,6 +33,7 @@ public class SidebarViewModel : ViewModelBase
 	public ICommand HomePageCommand { get; }
 	public ICommand SettingsPageCommand { get; }
 	public ICommand WiFiPageCommand { get; }
+	public ICommand LocateIpPageCommand { get; }
 
 	public SidebarViewModel(MainViewModel mainViewModel)
 	{
@@ -41,6 +42,7 @@ public class SidebarViewModel : ViewModelBase
 		HomePageCommand = new RelayCommand(HomePage);
 		SettingsPageCommand = new RelayCommand(SettingsPage);
 		WiFiPageCommand = new RelayCommand(WiFiPage);
+		LocateIpPageCommand = new RelayCommand(LocateIpPage);
 	}
 
 	private void HomePage(object? obj)
@@ -56,5 +58,10 @@ public class SidebarViewModel : ViewModelBase
 	private void WiFiPage(object? obj)
 	{
 		_mainViewModel.CurrentViewModel = new WiFiPageViewModel(_mainViewModel.Settings);
+	}
+
+	private void LocateIpPage(object? obj)
+	{
+		_mainViewModel.CurrentViewModel = new LocateIpPageViewModel(_mainViewModel.Settings);
 	}
 }

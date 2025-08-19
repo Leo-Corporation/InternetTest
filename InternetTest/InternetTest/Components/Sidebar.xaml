@@ -175,6 +175,7 @@
                             Padding="5"
                             HorizontalContentAlignment="Left"
                             Background="Transparent"
+                            Command="{Binding LocateIpPageCommand}"
                             Content="{x:Static lang:Resources.LocateIP}"
                             GroupName="Sidebar"
                             Style="{DynamicResource SidebarButton}" />

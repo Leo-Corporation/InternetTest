@@ -93,7 +93,10 @@
                 <views:SettingsPage />
             </DataTemplate>
             <DataTemplate DataType="{x:Type vm:WiFiPageViewModel}">
-                <views:WiFiPage/>
+                <views:WiFiPage />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:LocateIpPageViewModel}">
+                <views:LocateIpPage />
             </DataTemplate>
         </Grid.Resources>
         <Grid DataContext="{Binding SidebarViewModel}">

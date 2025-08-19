@@ -1191,4 +1191,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="ExportWlanProfiles" xml:space="preserve">
     <value>Export les réseaux WiFi sauvegardés</value>
   </data>
+  <data name="LocateIpDesc" xml:space="preserve">
+    <value>Obtenir des informations sur une adresse IP publique et sa localisation approximative.</value>
+  </data>
 </root>
