@@ -99,8 +99,9 @@ public class WiFiPageViewModel : ViewModelBase
 
 		RefreshWiFiCommand = new RelayCommand(async o =>
 		{
-			IsRefreshing = true;
 			WiFiNetworks.Clear();
+			NoNetworks = false;
+			IsRefreshing = true;
 
 			await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
 
@@ -134,10 +135,13 @@ public class WiFiPageViewModel : ViewModelBase
 
 	private async void RefreshProfiles(bool forceRefresh = false)
 	{
-		ProfileLoading = true;
-		var profiles = await WlanProfile.GetProfilesAsync(forceRefresh);
 		WlanProfiles.Clear();
+		NoProfiles = false;
+		ProfileLoading = true;
+
+		var profiles = await WlanProfile.GetProfilesAsync(forceRefresh);
 		profiles.ForEach(x => WlanProfiles.Add(new WlanProfileItemViewModel(x)));
+
 		ProfileLoading = false;
 		NoProfiles = WlanProfiles.Count == 0;
 	}
