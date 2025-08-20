@@ -96,7 +96,7 @@
                 Content="{x:Static lang:Resources.Refresh}"
                 Cursor="Hand"
                 FontWeight="SemiBold"
-                Foreground="{DynamicResource Accent}" />
+                Foreground="{DynamicResource DarkFAccent}" />
         </StackPanel>
         <Grid
             x:Name="WiFiNetworksPage"

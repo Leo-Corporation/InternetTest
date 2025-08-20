@@ -577,7 +577,7 @@
                                 Command="{Binding ExportCommand}"
                                 Cursor="Hand"
                                 FontWeight="ExtraBold"
-                                Foreground="{DynamicResource Accent}">
+                                Foreground="{DynamicResource DarkFAccent}">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock
                                         Margin="0 0 5 0"

@@ -74,7 +74,7 @@
                     Content="{x:Static lang:Resources.Connect}"
                     Cursor="Hand"
                     FontWeight="SemiBold"
-                    Foreground="{DynamicResource Accent}"
+                    Foreground="{DynamicResource DarkFAccent}"
                     Visibility="{Binding IsConnected, Converter={StaticResource InverseBoolToVis}}" />
                 <Button
                     Margin="5 0"
