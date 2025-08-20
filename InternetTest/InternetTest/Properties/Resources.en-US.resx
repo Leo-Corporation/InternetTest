@@ -1194,4 +1194,28 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="LocateIpDesc" xml:space="preserve">
     <value>Get information about a public IP address and its approximate location.</value>
   </data>
+  <data name="IpAddressLookup" xml:space="preserve">
+    <value>IP Address Lookup</value>
+  </data>
+  <data name="IpAddressLookupDesc" xml:space="preserve">
+    <value>Enter an IP address to get its geographical location and details.</value>
+  </data>
+  <data name="NetworkIspDetails" xml:space="preserve">
+    <value>Network &amp; ISP Details</value>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>District</value>
+  </data>
+  <data name="AsNumber" xml:space="preserve">
+    <value>AS Number</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
 </root>

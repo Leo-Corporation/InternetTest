@@ -151,6 +151,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AS Number.
+        /// </summary>
+        public static string AsNumber {
+            get {
+                return ResourceManager.GetString("AsNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auth.
         /// </summary>
         public static string Auth {
@@ -660,6 +669,15 @@ namespace InternetTest.Properties {
         public static string Discover {
             get {
                 return ResourceManager.GetString("Discover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to District.
+        /// </summary>
+        public static string District {
+            get {
+                return ResourceManager.GetString("District", resourceCulture);
             }
         }
         
@@ -1442,6 +1460,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IP Address Lookup.
+        /// </summary>
+        public static string IpAddressLookup {
+            get {
+                return ResourceManager.GetString("IpAddressLookup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter an IP address to get its geographical location and details..
+        /// </summary>
+        public static string IpAddressLookupDesc {
+            get {
+                return ResourceManager.GetString("IpAddressLookupDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IP Config.
         /// </summary>
         public static string IPConfig {
@@ -1622,7 +1658,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Get information about a public IP address and its approximate location..
         /// </summary>
         public static string LocateIpDesc {
             get {
@@ -1768,6 +1804,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mobile.
+        /// </summary>
+        public static string Mobile {
+            get {
+                return ResourceManager.GetString("Mobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MTU.
         /// </summary>
         public static string MTU {
@@ -1846,6 +1891,15 @@ namespace InternetTest.Properties {
         public static string NetworkAdaptersSettingsDesc {
             get {
                 return ResourceManager.GetString("NetworkAdaptersSettingsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Network &amp; ISP Details.
+        /// </summary>
+        public static string NetworkIspDetails {
+            get {
+                return ResourceManager.GetString("NetworkIspDetails", resourceCulture);
             }
         }
         
@@ -2030,6 +2084,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Organization.
+        /// </summary>
+        public static string Organization {
+            get {
+                return ResourceManager.GetString("Organization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Outgoing Packets Discarded.
         /// </summary>
         public static string OutgoingPacketsDiscarded {
@@ -2197,6 +2260,15 @@ namespace InternetTest.Properties {
         public static string ProfileName {
             get {
                 return ResourceManager.GetString("ProfileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proxy.
+        /// </summary>
+        public static string Proxy {
+            get {
+                return ResourceManager.GetString("Proxy", resourceCulture);
             }
         }
         

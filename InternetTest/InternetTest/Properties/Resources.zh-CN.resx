@@ -1185,4 +1185,28 @@
   <data name="LocateIpDesc" xml:space="preserve">
     <value>获取公共 IP 地址及其大致位置的信息。</value>
   </data>
+  <data name="IpAddressLookup" xml:space="preserve">
+    <value>IP地址查询</value>
+  </data>
+  <data name="IpAddressLookupDesc" xml:space="preserve">
+    <value>输入一个IP地址以获取其地理位置及详细信息。</value>
+  </data>
+  <data name="NetworkIspDetails" xml:space="preserve">
+    <value>网络及互联网服务提供商（ISP）详细信息</value>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>区</value>
+  </data>
+  <data name="AsNumber" xml:space="preserve">
+    <value>AS 编号</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>组织</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>移动</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>代理</value>
+  </data>
 </root>
