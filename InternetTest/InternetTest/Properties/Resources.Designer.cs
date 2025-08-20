@@ -810,6 +810,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duration.
+        /// </summary>
+        public static string Duration {
+            get {
+                return ResourceManager.GetString("Duration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Element Name.
         /// </summary>
         public static string ElementName {
@@ -1696,6 +1705,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loss Rate.
+        /// </summary>
+        public static string LossRate {
+            get {
+                return ResourceManager.GetString("LossRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Make a ping.
         /// </summary>
         public static string MakePing {
@@ -2147,6 +2165,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Packet Statistics.
+        /// </summary>
+        public static string PacketStatistics {
+            get {
+                return ResourceManager.GetString("PacketStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -2192,7 +2219,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Execute a ping..
         /// </summary>
         public static string PingDesc {
             get {
@@ -2417,6 +2444,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Response Times.
+        /// </summary>
+        public static string ResponseTimes {
+            get {
+                return ResourceManager.GetString("ResponseTimes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restore.
         /// </summary>
         public static string Restore {
@@ -2530,6 +2566,15 @@ namespace InternetTest.Properties {
         public static string Send {
             get {
                 return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Session Info.
+        /// </summary>
+        public static string SessionInfo {
+            get {
+                return ResourceManager.GetString("SessionInfo", resourceCulture);
             }
         }
         
@@ -2684,6 +2729,15 @@ namespace InternetTest.Properties {
         public static string SpeedTestSucess {
             get {
                 return ResourceManager.GetString("SpeedTestSucess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start time.
+        /// </summary>
+        public static string StartTime {
+            get {
+                return ResourceManager.GetString("StartTime", resourceCulture);
             }
         }
         

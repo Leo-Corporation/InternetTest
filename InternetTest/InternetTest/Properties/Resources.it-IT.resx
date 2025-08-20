@@ -1221,4 +1221,22 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="PingDesc" xml:space="preserve">
     <value>Esegui un ping.</value>
   </data>
+  <data name="SessionInfo" xml:space="preserve">
+    <value>Informazioni sulla sessione</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Durata</value>
+  </data>
+  <data name="ResponseTimes" xml:space="preserve">
+    <value>Tempi di risposta</value>
+  </data>
+  <data name="PacketStatistics" xml:space="preserve">
+    <value>Statistiche pacchetti</value>
+  </data>
+  <data name="LossRate" xml:space="preserve">
+    <value>Tasso di perdita</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Ora di inizio</value>
+  </data>
 </root>

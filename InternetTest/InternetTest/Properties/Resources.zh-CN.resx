@@ -1212,4 +1212,22 @@
   <data name="PingDesc" xml:space="preserve">
     <value>执行一次ping操作。</value>
   </data>
+  <data name="SessionInfo" xml:space="preserve">
+    <value>会议信息</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>持续时间</value>
+  </data>
+  <data name="ResponseTimes" xml:space="preserve">
+    <value>响应时间</value>
+  </data>
+  <data name="PacketStatistics" xml:space="preserve">
+    <value>数据包统计信息</value>
+  </data>
+  <data name="LossRate" xml:space="preserve">
+    <value>损失率</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
 </root>
