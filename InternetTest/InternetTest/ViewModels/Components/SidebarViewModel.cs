@@ -69,6 +69,6 @@ public class SidebarViewModel : ViewModelBase
 
 	private void PingPage(object? obj)
 	{
-		_mainViewModel.CurrentViewModel = new PingPageViewModel();
+		_mainViewModel.CurrentViewModel = new PingPageViewModel(_mainViewModel.Settings);
 	}
 }

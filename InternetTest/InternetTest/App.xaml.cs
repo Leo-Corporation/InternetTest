@@ -26,29 +26,28 @@ using InternetTest.Models;
 using InternetTest.ViewModels;
 using System.Windows;
 
-namespace InternetTest
+namespace InternetTest;
+
+/// <summary>
+/// Interaction logic for App.xaml
+/// </summary>
+public partial class App : Application
 {
-	/// <summary>
-	/// Interaction logic for App.xaml
-	/// </summary>
-	public partial class App : Application
+	protected override void OnStartup(StartupEventArgs e)
 	{
-		protected override void OnStartup(StartupEventArgs e)
-		{
-			// Load settings
-			Settings settings = new();
-			settings.Load();
+		// Load settings
+		Settings settings = new();
+		settings.Load();
 
-			ThemeHelper.ChangeTheme(settings.Theme);
+		ThemeHelper.ChangeTheme(settings.Theme);
 
-			// Set the main window
-			MainWindow = new MainWindow();
-			MainViewModel mvm = new(settings, MainWindow);
-			MainWindow.DataContext = mvm;
+		// Set the main window
+		MainWindow = new MainWindow();
+		MainViewModel mvm = new(settings, MainWindow);
+		MainWindow.DataContext = mvm;
 
-			MainWindow.Show();
+		MainWindow.Show();
 
-			base.OnStartup(e);
-		}
+		base.OnStartup(e);
 	}
 }
