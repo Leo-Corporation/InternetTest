@@ -24,6 +24,7 @@ SOFTWARE.
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace InternetTest.Models;
 public class Ip
@@ -39,6 +40,9 @@ public class Ip
 
 	[JsonPropertyName("countryCode")]
 	public string? CountryCode { get; set; }
+
+	[JsonPropertyName("district")]
+	public string? District { get; set; }
 
 	[JsonPropertyName("region")]
 	public string? Region { get; set; }
@@ -70,6 +74,15 @@ public class Ip
 	[JsonPropertyName("as")]
 	public string? As { get; set; }
 
+	[JsonPropertyName("mobile")]
+	public bool? Mobile { get; set; }
+
+	[JsonPropertyName("proxy")]
+	public bool? Proxy { get; set; }
+
+	[JsonPropertyName("hosting")]
+	public bool? Hosting { get; set; }
+
 	public override string ToString() => $"{Properties.Resources.Country}: {Country}\n" +
 			$"{Properties.Resources.Region}: {RegionName}\n" +
 			$"{Properties.Resources.City}: {City}\n" +
@@ -91,5 +104,28 @@ public class Ip
 		{
 			return new();
 		}
+	}
+
+	public static bool IsValid(string ip)
+	{
+		if (ip == "") return true; // This is valid, it will return the user's current IP
+
+		if (IsUrlValid(ip)) return true; // This is valid, it is possible to get IP info from a URL
+
+		// Initialize a regex that checks if an IP is valid
+		Regex ipRegex = new(@"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+
+		// Check if the IP is valid
+		return ipRegex.IsMatch(ip);
+	}
+
+	private static bool IsUrlValid(string url)
+	{
+		if (!url.StartsWith("http://") || !url.StartsWith("https://"))
+		{
+			url = "https://" + url;
+		}
+		return Uri.TryCreate(url, UriKind.Absolute, out Uri? uriResult)
+			&& (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
 	}
 }
