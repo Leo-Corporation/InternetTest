@@ -45,8 +45,7 @@ public static class PasswordBoxHelper
 
 	private static void OnBoundPasswordChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 	{
-		var passwordBox = d as PasswordBox;
-		if (passwordBox != null)
+		if (d is PasswordBox passwordBox)
 		{
 			passwordBox.PasswordChanged -= PasswordChanged;
 			passwordBox.Password = e.NewValue as string ?? string.Empty;

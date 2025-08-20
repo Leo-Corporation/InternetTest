@@ -98,6 +98,9 @@
             <DataTemplate DataType="{x:Type vm:LocateIpPageViewModel}">
                 <views:LocateIpPage />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:PingPageViewModel}">
+                <views:PingPage />
+            </DataTemplate>
         </Grid.Resources>
         <Grid DataContext="{Binding SidebarViewModel}">
             <Grid.Resources>

@@ -1209,4 +1209,7 @@
   <data name="Proxy" xml:space="preserve">
     <value>代理</value>
   </data>
+  <data name="PingDesc" xml:space="preserve">
+    <value>执行一次ping操作。</value>
+  </data>
 </root>

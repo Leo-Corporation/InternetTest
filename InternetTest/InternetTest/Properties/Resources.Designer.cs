@@ -2192,6 +2192,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string PingDesc {
+            get {
+                return ResourceManager.GetString("PingDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The ping request failed.
         /// </summary>
         public static string PingFail {

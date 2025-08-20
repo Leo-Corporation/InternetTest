@@ -227,6 +227,7 @@
                             Padding="5"
                             HorizontalContentAlignment="Left"
                             Background="Transparent"
+                            Command="{Binding PingPageCommand}"
                             Content="{x:Static lang:Resources.Ping}"
                             GroupName="Sidebar"
                             Style="{DynamicResource SidebarButton}" />

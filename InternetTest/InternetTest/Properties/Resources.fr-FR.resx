@@ -1218,4 +1218,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="Proxy" xml:space="preserve">
     <value>Proxy</value>
   </data>
+  <data name="PingDesc" xml:space="preserve">
+    <value>Exécuter un ping.</value>
+  </data>
 </root>

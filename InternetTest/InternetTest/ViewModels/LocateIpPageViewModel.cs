@@ -70,7 +70,7 @@ public class LocateIpPageViewModel : ViewModelBase
 		});
 	});
 	public ICommand ResetCommand => new RelayCommand(o => { IpAddress = ""; Empty = true; });
-	public ICommand SaveCommand => new RelayCommand(o => 
+	public ICommand SaveCommand => new RelayCommand(o =>
 	{
 		if (_ip is null) return;
 		SaveFileDialog dialog = new()

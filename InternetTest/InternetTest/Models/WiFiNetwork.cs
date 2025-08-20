@@ -102,10 +102,7 @@ public class WiFiNetwork
 			bssType: BssType ?? ManagedNativeWifi.BssType.Any,
 			timeout: TimeSpan.FromSeconds(10));
 
-		if (!connectionResult)
-			return false;
-
-		return true;
+		return connectionResult;
 	}
 
 	public static string GetWpa2PersonalProfileXml(string ssid, string password)
