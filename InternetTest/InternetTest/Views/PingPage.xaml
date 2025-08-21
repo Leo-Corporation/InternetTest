@@ -87,6 +87,7 @@
                             Margin="5"
                             Padding="5"
                             HorizontalAlignment="Left"
+                            HorizontalContentAlignment="Center"
                             Text="{Binding RequestAmount, Mode=TwoWay}" />
                     </StackPanel>
                     <Button
@@ -117,7 +118,11 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock
                             VerticalAlignment="Center"
@@ -136,7 +141,21 @@
                         Foreground="{DynamicResource DarkGray}"
                         Text="{Binding Host}" />
                 </StackPanel>
-                <Grid Grid.Row="1">
+                <Button
+                    Grid.Column="1"
+                    Padding="5"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Command="{Binding CopyCommand}"
+                    Content="&#xF32C;"
+                    Cursor="Hand"
+                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                    Foreground="{DynamicResource Foreground1}">
+                    <Button.ToolTip>
+                        <ToolTip Content="{x:Static lang:Resources.Copy}" />
+                    </Button.ToolTip>
+                </Button>
+                <Grid Grid.Row="1" Grid.ColumnSpan="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition Width="Auto" />

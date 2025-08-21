@@ -74,13 +74,25 @@ public class PingPageViewModel : ViewModelBase
 	public bool Empty { get => _empty; set { _empty = value; OnPropertyChanged(nameof(Empty)); } }
 
 	public ICommand PingCommand => new RelayCommand(o => Ping());
+	public ICommand CopyCommand => new RelayCommand(o =>
+	{
+		Clipboard.SetDataObject($"\n{Properties.Resources.Ping} {Query}:\n" +
+			$"{Properties.Resources.MinTime}: {Min}\n" +
+			$"{Properties.Resources.MaxTime}: {Max}\n" +
+			$"{Properties.Resources.AverageTime}: {Avg}\n" +
+			$"{Properties.Resources.StartTime}: {StartTime}\n" +
+			$"{Properties.Resources.Duration}: {Duration}\n" +
+			$"{Properties.Resources.PackageSent}: {Sent}\n" +
+			$"{Properties.Resources.PackageReceived}: {Received}\n" +
+			$"{Properties.Resources.PackageLost}: {Lost} ({LossPercentage})");
+	});
 
 	private readonly Settings _settings;
 	public PingPageViewModel(Settings settings)
 	{
 		_settings = settings;
 
-		Query = settings.TestSite ?? "google.com";
+		Query = _settings.TestSite ?? "google.com";
 	}
 
 	private async Task Ping()
