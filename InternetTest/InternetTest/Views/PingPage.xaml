@@ -15,6 +15,7 @@
 
     <Grid>
         <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="BoolToVis" />
             <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVis" />
         </Grid.Resources>
         <Grid.RowDefinitions>
@@ -327,5 +328,21 @@
                 </Grid>
             </Grid>
         </Border>
+        <StackPanel
+            Grid.Row="2"
+            Margin="20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Visibility="{Binding Empty, Converter={StaticResource BoolToVis}}">
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                FontSize="48"
+                Text="&#xF4F1;" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                Text="{x:Static lang:Resources.PingStatus}"
+                TextWrapping="Wrap" />
+        </StackPanel>
     </Grid>
 </UserControl>
