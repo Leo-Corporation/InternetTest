@@ -1239,4 +1239,10 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="StartTime" xml:space="preserve">
     <value>Start time</value>
   </data>
+  <data name="IpConfigAdaptersDesc" xml:space="preserve">
+    <value>Summary of all network adapters on this system.</value>
+  </data>
+  <data name="IpConfigDesc" xml:space="preserve">
+    <value>Display network adapter configuration information.</value>
+  </data>
 </root>

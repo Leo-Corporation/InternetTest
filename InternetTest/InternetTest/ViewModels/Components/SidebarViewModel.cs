@@ -34,6 +34,7 @@ public class SidebarViewModel : ViewModelBase
 	public ICommand SettingsPageCommand { get; }
 	public ICommand WiFiPageCommand { get; }
 	public ICommand LocateIpPageCommand { get; }
+	public ICommand IpConfigPageCommand { get; }
 	public ICommand PingPageCommand { get; }
 
 	public SidebarViewModel(MainViewModel mainViewModel)
@@ -44,6 +45,7 @@ public class SidebarViewModel : ViewModelBase
 		SettingsPageCommand = new RelayCommand(SettingsPage);
 		WiFiPageCommand = new RelayCommand(WiFiPage);
 		LocateIpPageCommand = new RelayCommand(LocateIpPage);
+		IpConfigPageCommand = new RelayCommand(IpConfigPage);
 		PingPageCommand = new RelayCommand(PingPage);
 	}
 
@@ -65,6 +67,11 @@ public class SidebarViewModel : ViewModelBase
 	private void LocateIpPage(object? obj)
 	{
 		_mainViewModel.CurrentViewModel = new LocateIpPageViewModel(_mainViewModel.Settings);
+	}
+
+	private void IpConfigPage(object? obj)
+	{
+		_mainViewModel.CurrentViewModel = new IpConfigPageViewModel();
 	}
 
 	private void PingPage(object? obj)

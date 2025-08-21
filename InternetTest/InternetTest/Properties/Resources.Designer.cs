@@ -1496,6 +1496,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Summary of all network adapters on this system..
+        /// </summary>
+        public static string IpConfigAdaptersDesc {
+            get {
+                return ResourceManager.GetString("IpConfigAdaptersDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display network adapter configuration information..
+        /// </summary>
+        public static string IpConfigDesc {
+            get {
+                return ResourceManager.GetString("IpConfigDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your IP will show here..
         /// </summary>
         public static string IPShowHere {

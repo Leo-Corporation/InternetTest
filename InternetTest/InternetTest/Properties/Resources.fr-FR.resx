@@ -1239,4 +1239,10 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="StartTime" xml:space="preserve">
     <value>Heure de début</value>
   </data>
+  <data name="IpConfigAdaptersDesc" xml:space="preserve">
+    <value>Résumé de toutes les cartes réseau présentes sur ce système.</value>
+  </data>
+  <data name="IpConfigDesc" xml:space="preserve">
+    <value>Afficher les informations de configuration de la carte réseau.</value>
+  </data>
 </root>

@@ -1230,4 +1230,10 @@
   <data name="StartTime" xml:space="preserve">
     <value>开始时间</value>
   </data>
+  <data name="IpConfigAdaptersDesc" xml:space="preserve">
+    <value>本系统中所有网络适配器的汇总信息。</value>
+  </data>
+  <data name="IpConfigDesc" xml:space="preserve">
+    <value>显示网络适配器配置信息。</value>
+  </data>
 </root>

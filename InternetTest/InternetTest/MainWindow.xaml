@@ -102,6 +102,9 @@
             <DataTemplate DataType="{x:Type vm:LocateIpPageViewModel}">
                 <views:LocateIpPage />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:IpConfigPageViewModel}">
+                <views:IpConfigPage />
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:PingPageViewModel}">
                 <views:PingPage />
             </DataTemplate>

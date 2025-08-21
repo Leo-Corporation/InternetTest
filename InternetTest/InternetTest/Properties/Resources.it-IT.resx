@@ -1239,4 +1239,10 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="StartTime" xml:space="preserve">
     <value>Ora di inizio</value>
   </data>
+  <data name="IpConfigAdaptersDesc" xml:space="preserve">
+    <value>Riepilogo di tutte le schede di rete presenti su questo sistema.</value>
+  </data>
+  <data name="IpConfigDesc" xml:space="preserve">
+    <value>Visualizza le informazioni di configurazione della scheda di rete.</value>
+  </data>
 </root>
