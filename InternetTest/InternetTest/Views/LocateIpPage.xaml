@@ -255,6 +255,7 @@
         <StackPanel
             Grid.Row="2"
             Grid.ColumnSpan="2"
+            Margin="20"
             Visibility="{Binding Empty, Converter={StaticResource BoolToVis}}">
             <TextBlock
                 HorizontalAlignment="Center"

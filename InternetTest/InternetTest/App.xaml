@@ -426,8 +426,10 @@
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border
                                 x:Name="border"
+                                Padding="2"
                                 Background="{TemplateBinding Background}"
                                 BorderThickness="0"
+                                CornerRadius="5"
                                 SnapsToDevicePixels="true">
                                 <ContentPresenter
                                     x:Name="contentPresenter"

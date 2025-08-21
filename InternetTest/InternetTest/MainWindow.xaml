@@ -21,7 +21,9 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <controls:MicaWindow.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
         <converters:BoolToStringConverter x:Key="BoolToStringConverter" />
+        <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVis" />
     </controls:MicaWindow.Resources>
     <controls:MicaWindow.TitleBarContent>
         <StackPanel
@@ -53,13 +55,14 @@
                 Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource TitleBarButtonStyle}">
                 <Button.ToolTip>
-                    <ToolTip x:Name="PinTooltip" Content="{x:Static lang:Resources.Pin}" />
+                    <ToolTip x:Name="PinTooltip" Content="{Binding PinnedTooltip}" />
                 </Button.ToolTip>
             </Button>
             <Button
                 Width="46"
                 Height="24"
                 Background="Transparent"
+                Command="{Binding ToggleConfidentialModeCommand}"
                 FontSize="14"
                 Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource TitleBarButtonStyle}">
@@ -67,15 +70,16 @@
                     <TextBlock
                         x:Name="RegularLockTxt"
                         FontFamily="/Fonts/#FluentSystemIcons-Regular"
-                        Text="&#xFC25;" />
+                        Text="&#xFC25;"
+                        Visibility="{Binding ConfidentialMode, Converter={StaticResource InverseBoolToVis}}" />
                     <TextBlock
                         x:Name="FilledLockTxt"
                         FontFamily="/Fonts/#FluentSystemIcons-Filled"
                         Text="&#xFC2C;"
-                        Visibility="Collapsed" />
+                        Visibility="{Binding ConfidentialMode, Converter={StaticResource BoolToVis}}" />
                 </Grid>
                 <Button.ToolTip>
-                    <ToolTip x:Name="ConfidentialModeTooltip" Content="{x:Static lang:Resources.EnableConfidential}" />
+                    <ToolTip x:Name="ConfidentialModeTooltip" Content="{Binding ConfidentialTooltip}" />
                 </Button.ToolTip>
             </Button>
         </StackPanel>
