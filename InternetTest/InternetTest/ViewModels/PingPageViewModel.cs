@@ -25,7 +25,6 @@ using InternetTest.Commands;
 using InternetTest.Models;
 using System.Net;
 using System.Net.NetworkInformation;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 

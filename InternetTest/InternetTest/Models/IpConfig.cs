@@ -26,13 +26,15 @@ using System.Net.NetworkInformation;
 namespace InternetTest.Models;
 public record WindowsIpConfig(
 	string? Name,
+	string? Description,
 	string? IPv4Address,
 	string? IPv4Mask,
 	string? IPv4Gateway,
 	string? IPv6Address,
 	string? IPv6Gateway,
 	string? DNSSuffix,
-	OperationalStatus? Status)
+	OperationalStatus? Status,
+	NetworkInterfaceType? NetworkInterfaceType)
 {
 	public override string ToString() => $"{Properties.Resources.Name}: {Name}\n" +
 		$"{Properties.Resources.IPv4Address}: {IPv4Address}\n" +
@@ -50,12 +52,14 @@ public record WindowsIpConfig(
 			? null
 			: new WindowsIpConfig(
 			networkInterface.Name,
+			networkInterface.Description,
 			props.UnicastAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)?.Address.ToString(),
 			props.UnicastAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)?.IPv4Mask.ToString(),
 			props.GatewayAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)?.Address.ToString(),
 			props.UnicastAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)?.Address.ToString(),
 			props.GatewayAddresses.FirstOrDefault(x => x.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)?.Address.ToString(),
 			props.DnsSuffix,
-			networkInterface.OperationalStatus);
+			networkInterface.OperationalStatus,
+			networkInterface.NetworkInterfaceType);
 	}
 }

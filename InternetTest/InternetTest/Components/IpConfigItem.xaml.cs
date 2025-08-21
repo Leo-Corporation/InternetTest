@@ -21,30 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Commands;
-using InternetTest.Models;
-using InternetTest.ViewModels.Components;
-using System.Net.NetworkInformation;
-using System.Windows.Input;
+using System.Windows.Controls;
 
-namespace InternetTest.ViewModels;
-public class IpConfigPageViewModel : ViewModelBase
+namespace InternetTest.Components;
+/// <summary>
+/// Interaction logic for IpConfigItem.xaml
+/// </summary>
+public partial class IpConfigItem : UserControl
 {
-	private List<IpConfigItemViewModel> _ipConfigs = [];
-	public List<IpConfigItemViewModel> IpConfigItems { get => _ipConfigs; set { _ipConfigs = value; OnPropertyChanged(nameof(IpConfigItems)); } }
-
-	public ICommand RefreshCommand => new RelayCommand(o => LoadIpConfigs());
-	public IpConfigPageViewModel()
+	public IpConfigItem()
 	{
-		LoadIpConfigs();
-	}
-
-	private void LoadIpConfigs()
-	{
-		var networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
-		IpConfigItems = [.. networkInterfaces
-			.Select(WindowsIpConfig.FromNetworkInterface)
-			.Where(x => x != null)
-			.Select(x => new IpConfigItemViewModel(x!))];
+		InitializeComponent();
 	}
 }
