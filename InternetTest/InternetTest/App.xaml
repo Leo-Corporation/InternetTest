@@ -377,9 +377,9 @@
                                             CornerRadius="8">
                                             <Border.Effect>
                                                 <DropShadowEffect
-                                                    BlurRadius="10"
-                                                    Opacity="0.4"
-                                                    ShadowDepth="2"
+                                                    BlurRadius="8"
+                                                    Opacity="0.2"
+                                                    ShadowDepth="1"
                                                     Color="Black" />
                                             </Border.Effect>
                                             <ScrollViewer Margin="4" SnapsToDevicePixels="True">
