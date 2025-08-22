@@ -24,8 +24,10 @@ SOFTWARE.
 using InternetTest.Commands;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
+using Microsoft.Win32;
 using RestSharp;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
@@ -124,15 +126,46 @@ public class RequestsPageViewModel : ViewModelBase
 
 		// Load headers section
 		Headers.Clear();
+		_headersText = "";
 		foreach (var header in response.Headers ?? [])
 		{
 			Headers.Add(new(header.Name, header.Value?.ToString() ?? string.Empty));
+			_headersText += $"{header}\n";
 		}
 
 		ResponseVisible = true;
 	});
 
+	public ICommand CopyCommand => new RelayCommand(o =>
+	{
+		Clipboard.SetDataObject(ResponseText);
+	});
+
+	public ICommand CopyHeadersCommand => new RelayCommand(o =>
+	{
+		Clipboard.SetDataObject(_headersText);
+	});
+
+	public ICommand SaveCommand => new RelayCommand(o =>
+	{
+		if (string.IsNullOrEmpty(ResponseText)) return;
+		SaveFileDialog dialog = new()
+		{
+			Title = Properties.Resources.Save,
+			Filter = Properties.Resources.TxtFiles + " (*.txt)|*.txt|JSON (*.json)|*.json|All Files|",
+			InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+			FileName = Properties.Resources.Requests + ".txt",
+			DefaultExt = ".txt"
+		};
+
+		if (dialog.ShowDialog() ?? false)
+		{
+			File.WriteAllText(dialog.FileName, ResponseText);
+		}
+	});
+
 	private readonly Settings _settings;
+	private string _headersText = "";
 	public RequestsPageViewModel(Settings settings)
 	{
 		_settings = settings;

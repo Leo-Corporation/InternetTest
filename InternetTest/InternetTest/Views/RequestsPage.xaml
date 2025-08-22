@@ -224,7 +224,10 @@
                         Foreground="{DynamicResource DarkGray}"
                         Text="{Binding ResponseStatus}" />
                 </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <StackPanel
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal">
                     <RadioButton
                         x:Name="BodyTabBtn"
                         Padding="5"
@@ -243,6 +246,53 @@
                         Foreground="{DynamicResource Foreground1}"
                         GroupName="Tab"
                         Style="{DynamicResource Tab}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Button
+                        Grid.Column="1"
+                        Padding="5"
+                        VerticalAlignment="Center"
+                        Background="Transparent"
+                        Command="{Binding SaveCommand}"
+                        Content="&#xF680;"
+                        Cursor="Hand"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}"
+                        Visibility="{Binding ElementName=BodyTabBtn, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Save}" />
+                        </Button.ToolTip>
+                    </Button>
+                    <Button
+                        Grid.Column="1"
+                        Padding="5"
+                        VerticalAlignment="Center"
+                        Background="Transparent"
+                        Command="{Binding CopyCommand}"
+                        Content="&#xF32C;"
+                        Cursor="Hand"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}"
+                        Visibility="{Binding ElementName=BodyTabBtn, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Copy}" />
+                        </Button.ToolTip>
+                    </Button>
+                    <Button
+                        Grid.Column="1"
+                        Padding="5"
+                        VerticalAlignment="Center"
+                        Background="Transparent"
+                        Command="{Binding CopyHeadersCommand}"
+                        Content="&#xF32C;"
+                        Cursor="Hand"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}"
+                        Visibility="{Binding ElementName=HeadersTabBtn, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Copy}" />
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
                 <Grid
                     x:Name="BodyTab"

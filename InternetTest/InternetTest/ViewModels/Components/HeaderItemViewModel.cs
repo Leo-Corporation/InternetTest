@@ -33,14 +33,17 @@ public class HeaderItemViewModel : ViewModelBase
 	private string _value = string.Empty;
 	public string Value { get => _value; set { _value = value; OnPropertyChanged(nameof(Value)); } }
 
+	private string _fullValue = string.Empty;
+
 	public ICommand CopyCommand => new RelayCommand(o =>
 	{
 		if (string.IsNullOrEmpty(Value)) return;
-		System.Windows.Clipboard.SetDataObject($"{Title}={Value}");
+		System.Windows.Clipboard.SetDataObject($"{Title}={_fullValue}");
 	});
 	public HeaderItemViewModel(string title, string value)
 	{
 		Title = title;
 		Value = value.Length > 50 ? value[..50] + "..." : value;
+		_fullValue = value;
 	}
 }
