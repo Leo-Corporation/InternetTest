@@ -1248,4 +1248,7 @@
   <data name="ResponseDesc" xml:space="preserve">
     <value>响应信息 - 状态 {0}。</value>
   </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>参数</value>
+  </data>
 </root>

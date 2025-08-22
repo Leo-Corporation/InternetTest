@@ -1257,4 +1257,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="ResponseDesc" xml:space="preserve">
     <value>Response information - Status {0}.</value>
   </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
 </root>

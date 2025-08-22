@@ -2192,6 +2192,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Parameters {
+            get {
+                return ResourceManager.GetString("Parameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {

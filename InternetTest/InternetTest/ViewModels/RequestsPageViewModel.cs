@@ -37,6 +37,9 @@ public class RequestsPageViewModel : ViewModelBase
 	private ObservableCollection<HeaderItemViewModel> _headers = [];
 	public ObservableCollection<HeaderItemViewModel> Headers { get => _headers; set { _headers = value; OnPropertyChanged(nameof(Headers)); } }
 
+	private ObservableCollection<RequestParamItemViewModel> _requestParams = [];
+	public ObservableCollection<RequestParamItemViewModel> RequestParams { get => _requestParams; set { _requestParams = value; OnPropertyChanged(nameof(RequestParams)); } }
+
 	private int _requestType = 0;
 	public int RequestType { get => _requestType; set { _requestType = value; OnPropertyChanged(nameof(RequestType)); } }
 
@@ -64,7 +67,7 @@ public class RequestsPageViewModel : ViewModelBase
 	}
 
 	private string _url = string.Empty;
-	public string Url { get => _url; set { _url = value; OnPropertyChanged(nameof(Url)); } }
+	public string Url { get => _url; set { _url = value; ParseUrl(value); OnPropertyChanged(nameof(Url)); } }
 
 	private string _body = string.Empty;
 	public string Body { get => _body; set { _body = value; OnPropertyChanged(nameof(Body)); } }
@@ -93,9 +96,13 @@ public class RequestsPageViewModel : ViewModelBase
 	private Visibility _bodyVisibility = Visibility.Collapsed;
 	public Visibility BodyVisibility { get => _bodyVisibility; set { _bodyVisibility = value; OnPropertyChanged(nameof(BodyVisibility)); } }
 
+	private Visibility _paramsVisibility = Visibility.Collapsed;
+	public Visibility ParamsVisibility { get => _paramsVisibility; set { _paramsVisibility = value; OnPropertyChanged(nameof(ParamsVisibility)); } }
+
 	public bool _responseVisible = false;
 	public bool ResponseVisible { get => _responseVisible; set { _responseVisible = value; OnPropertyChanged(nameof(ResponseVisible)); } }
 
+	internal bool TriggerParseUrl = true;
 	public ICommand SendRequestCommand => new RelayCommand(async o =>
 	{
 		if (string.IsNullOrEmpty(Url)) return;
@@ -191,5 +198,26 @@ public class RequestsPageViewModel : ViewModelBase
 			2 => $"Bearer {AuthToken}",
 			_ => string.Empty
 		};
+	}
+
+	private void ParseUrl(string url)
+	{
+		if (!TriggerParseUrl) return;
+		RequestParams.Clear();
+		ParamsVisibility = Visibility.Collapsed;
+
+		if (string.IsNullOrEmpty(url)) return;
+
+		var elements = url.Split(["/", "//"], StringSplitOptions.None);
+		var parameters = elements[^1].Split(["?", "&"], StringSplitOptions.None);
+
+		for (int i = 0; i < parameters.Length; i++)
+		{
+			var kv = parameters[i].Split(["="], StringSplitOptions.None);
+			if (kv.Length < 2) continue;
+			RequestParams.Add(new(this, new(kv[0], kv[1])));
+		}
+
+		if (RequestParams.Count > 0) ParamsVisibility = Visibility.Visible;
 	}
 }

@@ -24,6 +24,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <StackPanel Grid.ColumnSpan="6">
             <TextBlock
@@ -193,6 +194,53 @@
             BorderBrush="{DynamicResource Border}"
             BorderThickness="1"
             CornerRadius="10"
+            Visibility="{Binding ParamsVisibility}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.ColumnSpan="2">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF69A;" />
+                        <TextBlock
+                            Margin="5 0 0 0"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.Parameters}" />
+                    </StackPanel>
+                </StackPanel>
+                <ItemsControl
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    ItemsSource="{Binding RequestParams}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type vm:RequestParamItemViewModel}">
+                            <components:RequestParamItem />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </Border>
+        <Border
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Margin="10"
+            Padding="10"
+            Background="{DynamicResource CardBackground}"
+            BorderBrush="{DynamicResource Border}"
+            BorderThickness="1"
+            CornerRadius="10"
             Visibility="{Binding ResponseVisible, Converter={StaticResource BoolToVis}}">
             <Grid>
                 <Grid.RowDefinitions>
@@ -329,7 +377,7 @@
             </Grid>
         </Border>
         <StackPanel
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.ColumnSpan="2"
             Margin="20"
             VerticalAlignment="Center"
