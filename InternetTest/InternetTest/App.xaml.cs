@@ -40,6 +40,7 @@ public partial class App : Application
 		settings.Load();
 
 		ThemeHelper.ChangeTheme(settings.Theme);
+		Context.ChangeLanguage(settings.Language);
 
 		// Set the main window
 		MainWindow = new MainWindow();

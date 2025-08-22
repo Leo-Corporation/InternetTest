@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Enums;
 using PeyrSharp.Env;
 
 namespace InternetTest.Helpers;
@@ -35,4 +36,16 @@ public static class Context
 	public static string DefaultStoragePath => $@"{FileSys.AppDataPath}\Léo Corporation\InternetTest Pro\";
 #endif
 	public static string UpdateVersionUrl => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/InternetTest/9.0/Version.txt";
+
+	public static void ChangeLanguage(Language language)
+	{
+		Thread.CurrentThread.CurrentUICulture = language switch
+		{
+			Language.en_US => new System.Globalization.CultureInfo("en-US"),
+			Language.fr_FR => new System.Globalization.CultureInfo("fr-FR"),
+			Language.zh_CN => new System.Globalization.CultureInfo("zh-CN"),
+			Language.it_IT => new System.Globalization.CultureInfo("it-IT"),
+			_ => Thread.CurrentThread.CurrentUICulture
+		};
+	}
 }
