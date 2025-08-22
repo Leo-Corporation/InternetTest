@@ -1260,4 +1260,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="Parameters" xml:space="preserve">
     <value>Parametri</value>
   </data>
+  <data name="TraceroutePageDesc" xml:space="preserve">
+    <value>Traccia il percorso di rete verso qualsiasi destinazione.</value>
+  </data>
 </root>

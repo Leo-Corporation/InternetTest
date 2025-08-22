@@ -1251,4 +1251,7 @@
   <data name="Parameters" xml:space="preserve">
     <value>参数</value>
   </data>
+  <data name="TraceroutePageDesc" xml:space="preserve">
+    <value>追踪到任何目的地的网络路径。</value>
+  </data>
 </root>

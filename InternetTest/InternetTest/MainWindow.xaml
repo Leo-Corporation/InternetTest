@@ -111,6 +111,9 @@
             <DataTemplate DataType="{x:Type vm:RequestsPageViewModel}">
                 <views:RequestsPage />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:TraceroutePageViewModel}">
+                <views:TraceroutePage />
+            </DataTemplate>
         </Grid.Resources>
         <Grid DataContext="{Binding SidebarViewModel}">
             <Grid.Resources>

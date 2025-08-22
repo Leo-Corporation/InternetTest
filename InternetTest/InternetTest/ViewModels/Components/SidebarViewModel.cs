@@ -37,6 +37,7 @@ public class SidebarViewModel : ViewModelBase
 	public ICommand IpConfigPageCommand { get; }
 	public ICommand PingPageCommand { get; }
 	public ICommand RequestsPageCommand { get; }
+	public ICommand TraceroutePageCommand { get; }
 
 	public SidebarViewModel(MainViewModel mainViewModel)
 	{
@@ -49,6 +50,7 @@ public class SidebarViewModel : ViewModelBase
 		IpConfigPageCommand = new RelayCommand(IpConfigPage);
 		PingPageCommand = new RelayCommand(PingPage);
 		RequestsPageCommand = new RelayCommand(RequestsPage);
+		TraceroutePageCommand = new RelayCommand(TraceroutePage);
 	}
 
 	private void HomePage(object? obj)
@@ -84,5 +86,10 @@ public class SidebarViewModel : ViewModelBase
 	private void RequestsPage(object? obj)
 	{
 		_mainViewModel.CurrentViewModel = new RequestsPageViewModel(_mainViewModel.Settings);
+	}
+
+	private void TraceroutePage(object? obj)
+	{
+		_mainViewModel.CurrentViewModel = new TraceroutePageViewModel(_mainViewModel.Settings);
 	}
 }

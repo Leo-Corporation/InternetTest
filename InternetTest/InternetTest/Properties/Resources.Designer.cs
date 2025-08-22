@@ -2192,7 +2192,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Parameters.
         /// </summary>
         public static string Parameters {
             get {
@@ -3145,6 +3145,15 @@ namespace InternetTest.Properties {
         public static string TraceRouteInformation {
             get {
                 return ResourceManager.GetString("TraceRouteInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trace the network path to any destination..
+        /// </summary>
+        public static string TraceroutePageDesc {
+            get {
+                return ResourceManager.GetString("TraceroutePageDesc", resourceCulture);
             }
         }
         

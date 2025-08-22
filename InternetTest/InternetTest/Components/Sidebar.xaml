@@ -246,6 +246,7 @@
                             Padding="5"
                             HorizontalContentAlignment="Left"
                             Background="Transparent"
+                            Command="{Binding TraceroutePageCommand}"
                             Content="{x:Static lang:Resources.TraceRoute}"
                             GroupName="Sidebar"
                             Style="{DynamicResource SidebarButton}" />
