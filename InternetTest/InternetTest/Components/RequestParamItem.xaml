@@ -2,17 +2,25 @@
     x:Class="InternetTest.Components.RequestParamItem"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:InternetTest.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:InternetTest.Helpers"
     xmlns:local="clr-namespace:InternetTest.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Border Margin="0 5 0 0">
         <Grid>
+            <Grid.Resources>
+                <BooleanToVisibilityConverter x:Key="BoolToVis" />
+                <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVis" />
+                <converters:BoolToStringConverter x:Key="BoolToString" />
+            </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
                 <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <CheckBox VerticalAlignment="Center" IsChecked="{Binding IsChecked, Mode=TwoWay}" />
             <TextBox
@@ -26,7 +34,26 @@
                 Margin="5 0"
                 Padding="5 1"
                 VerticalAlignment="Center"
-                Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Visibility="{Binding ElementName=PasswordBtn, Path=IsChecked, Converter={StaticResource InverseBoolToVis}}" />
+            <PasswordBox
+                Grid.Column="2"
+                Margin="5 0"
+                Padding="5 1"
+                VerticalAlignment="Center"
+                helpers:PasswordBoxHelper.BoundPassword="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Visibility="{Binding ElementName=PasswordBtn, Path=IsChecked, Converter={StaticResource BoolToVis}}" />
+            <ToggleButton
+                x:Name="PasswordBtn"
+                Grid.Column="3"
+                Padding="5"
+                VerticalAlignment="Center"
+                d:Content="&#xF3F8;"
+                Background="Transparent"
+                Content="{Binding ElementName=PasswordBtn, Path=IsChecked, Converter={StaticResource BoolToString}, ConverterParameter='&#xF3FC;,&#xF3F8;'}"
+                Cursor="Hand"
+                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                Foreground="{DynamicResource Foreground1}" />
         </Grid>
     </Border>
 </UserControl>
