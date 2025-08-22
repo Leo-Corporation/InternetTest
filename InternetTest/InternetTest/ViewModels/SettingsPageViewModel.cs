@@ -312,6 +312,7 @@ public class SettingsPageViewModel : ViewModelBase
 
 		CurrentTheme = mainViewModel.Settings.Theme;
 		CurrentLanguage = (int)mainViewModel.Settings.Language;
+		DefaultPage = mainViewModel.Settings.DefaultPage;
 		UseHttps = mainViewModel.Settings.UseHttps;
 		TestSite = mainViewModel.Settings.TestSite ?? "https://leocorporation.dev"; // Default test site
 		CheckUpdateOnStart = mainViewModel.Settings.CheckUpdateOnStart;

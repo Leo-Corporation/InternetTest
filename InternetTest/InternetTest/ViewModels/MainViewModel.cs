@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Commands;
+using InternetTest.Enums;
 using InternetTest.Helpers;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
@@ -98,6 +99,18 @@ public class MainViewModel : ViewModelBase
 
 		Pinned = Settings.RememberPinnedState == true && (Settings.Pinned ?? false);
 		ConfidentialMode = Settings.ToggleConfidentialMode ?? false;
+
+		CurrentViewModel = Settings.DefaultPage switch
+		{
+			AppPages.WiFiNetworks => new WiFiPageViewModel(Settings),
+			AppPages.WiFiPasswords => new WiFiPageViewModel(Settings),
+			AppPages.LocateIP => new LocateIpPageViewModel(Settings),
+			AppPages.IPConfig => new IpConfigPageViewModel(),
+			AppPages.Ping => new PingPageViewModel(Settings),
+			AppPages.Requests => new RequestsPageViewModel(Settings),
+			AppPages.TraceRoute => new TraceroutePageViewModel(Settings),
+			_ => new HomePageViewModel(Settings)
+		};
 
 		PinCommand = new RelayCommand(Pin);
 	}
