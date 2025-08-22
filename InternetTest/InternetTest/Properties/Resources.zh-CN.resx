@@ -1236,4 +1236,13 @@
   <data name="IpConfigDesc" xml:space="preserve">
     <value>显示网络适配器配置信息。</value>
   </data>
+  <data name="RequestsDesc" xml:space="preserve">
+    <value>向特定的URL发送HTTP请求。</value>
+  </data>
+  <data name="RequestSettings" xml:space="preserve">
+    <value>请求设置</value>
+  </data>
+  <data name="RequestSettingsDesc" xml:space="preserve">
+    <value>请在此提供您请求的所有相关信息。</value>
+  </data>
 </root>

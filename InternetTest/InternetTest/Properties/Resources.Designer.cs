@@ -2417,6 +2417,33 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make a HTTP request to a specific URL..
+        /// </summary>
+        public static string RequestsDesc {
+            get {
+                return ResourceManager.GetString("RequestsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request Settings.
+        /// </summary>
+        public static string RequestSettings {
+            get {
+                return ResourceManager.GetString("RequestSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provide all the information about your request here..
+        /// </summary>
+        public static string RequestSettingsDesc {
+            get {
+                return ResourceManager.GetString("RequestSettingsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset.
         /// </summary>
         public static string Reset {

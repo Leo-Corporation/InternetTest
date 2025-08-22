@@ -1245,4 +1245,13 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="IpConfigDesc" xml:space="preserve">
     <value>Afficher les informations de configuration de la carte réseau.</value>
   </data>
+  <data name="RequestsDesc" xml:space="preserve">
+    <value>Effectuer une requête HTTP vers une URL spécifique.</value>
+  </data>
+  <data name="RequestSettings" xml:space="preserve">
+    <value>Paramètres de la requête</value>
+  </data>
+  <data name="RequestSettingsDesc" xml:space="preserve">
+    <value>Fournissez toutes les informations de votre requête ici.</value>
+  </data>
 </root>

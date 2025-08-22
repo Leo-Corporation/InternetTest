@@ -1245,4 +1245,13 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="IpConfigDesc" xml:space="preserve">
     <value>Display network adapter configuration information.</value>
   </data>
+  <data name="RequestsDesc" xml:space="preserve">
+    <value>Make a HTTP request to a specific URL.</value>
+  </data>
+  <data name="RequestSettings" xml:space="preserve">
+    <value>Request Settings</value>
+  </data>
+  <data name="RequestSettingsDesc" xml:space="preserve">
+    <value>Provide all the information about your request here.</value>
+  </data>
 </root>

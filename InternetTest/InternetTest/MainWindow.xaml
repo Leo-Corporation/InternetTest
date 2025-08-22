@@ -108,6 +108,9 @@
             <DataTemplate DataType="{x:Type vm:PingPageViewModel}">
                 <views:PingPage />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:RequestsPageViewModel}">
+                <views:RequestsPage />
+            </DataTemplate>
         </Grid.Resources>
         <Grid DataContext="{Binding SidebarViewModel}">
             <Grid.Resources>

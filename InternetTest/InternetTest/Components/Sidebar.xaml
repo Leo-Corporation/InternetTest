@@ -237,6 +237,7 @@
                             Padding="5"
                             HorizontalContentAlignment="Left"
                             Background="Transparent"
+                            Command="{Binding RequestsPageCommand}"
                             Content="{x:Static lang:Resources.Requests}"
                             GroupName="Sidebar"
                             Style="{DynamicResource SidebarButton}" />
