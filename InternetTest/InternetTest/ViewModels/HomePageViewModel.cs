@@ -22,14 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Helpers;
+using InternetTest.Interfaces;
 using InternetTest.Models;
 using PeyrSharp.Core;
 using System.Net.NetworkInformation;
+using System.Windows;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels;
 
-public class HomePageViewModel : ViewModelBase
+public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 {
 	public string HelloText => DateTime.Now.Hour switch
 	{
@@ -148,4 +150,9 @@ public class HomePageViewModel : ViewModelBase
 		>= 25 => "\uF8B1",
 		_ => "\uF8B3"
 	};
+
+	void ISensitiveViewModel.ToggleConfidentialMode(bool confidentialMode)
+	{
+		//TODO
+	}
 }

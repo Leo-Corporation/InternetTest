@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Commands;
 using InternetTest.Enums;
 using InternetTest.Helpers;
+using InternetTest.Interfaces;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
 using System.Windows;
@@ -74,6 +75,8 @@ public class MainViewModel : ViewModelBase
 		{
 			_confidentialMode = value;
 			ConfidentialTooltip = value ? Properties.Resources.DisableConfidential : Properties.Resources.EnableConfidential;
+
+			if (CurrentViewModel is ISensitiveViewModel sensitiveViewModel) sensitiveViewModel.ToggleConfidentialMode(value);
 
 			OnPropertyChanged(nameof(ConfidentialMode));
 		}
