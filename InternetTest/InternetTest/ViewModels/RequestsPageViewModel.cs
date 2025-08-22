@@ -23,13 +23,18 @@ SOFTWARE.
 */
 using InternetTest.Commands;
 using InternetTest.Models;
+using InternetTest.ViewModels.Components;
 using RestSharp;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
 public class RequestsPageViewModel : ViewModelBase
 {
+	private ObservableCollection<HeaderItemViewModel> _headers = [];
+	public ObservableCollection<HeaderItemViewModel> Headers { get => _headers; set { _headers = value; OnPropertyChanged(nameof(Headers)); } }
+
 	private int _requestType = 0;
 	public int RequestType { get => _requestType; set { _requestType = value; OnPropertyChanged(nameof(RequestType)); } }
 
@@ -86,6 +91,9 @@ public class RequestsPageViewModel : ViewModelBase
 	private Visibility _bodyVisibility = Visibility.Collapsed;
 	public Visibility BodyVisibility { get => _bodyVisibility; set { _bodyVisibility = value; OnPropertyChanged(nameof(BodyVisibility)); } }
 
+	public bool _responseVisible = false;
+	public bool ResponseVisible { get => _responseVisible; set { _responseVisible = value; OnPropertyChanged(nameof(ResponseVisible)); } }
+
 	public ICommand SendRequestCommand => new RelayCommand(async o =>
 	{
 		if (string.IsNullOrEmpty(Url)) return;
@@ -107,12 +115,21 @@ public class RequestsPageViewModel : ViewModelBase
 			request.AddHeader("Authorization", GetAuthValue());
 		}
 
+		ResponseVisible = false;
+
 		// Send the request
 		var response = await client.ExecuteAsync(request);
 		ResponseText = response.Content ?? string.Empty;
 		ResponseStatus = string.Format(Properties.Resources.ResponseDesc, $"{(int)response.StatusCode} {response.StatusDescription}");
 
 		// Load headers section
+		Headers.Clear();
+		foreach (var header in response.Headers ?? [])
+		{
+			Headers.Add(new(header.Name, header.Value?.ToString() ?? string.Empty));
+		}
+
+		ResponseVisible = true;
 	});
 
 	private readonly Settings _settings;
