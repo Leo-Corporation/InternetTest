@@ -1254,4 +1254,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="RequestSettingsDesc" xml:space="preserve">
     <value>Fournissez toutes les informations de votre requête ici.</value>
   </data>
+  <data name="ResponseDesc" xml:space="preserve">
+    <value>Informations de la réponse - Statut {0}.</value>
+  </data>
 </root>

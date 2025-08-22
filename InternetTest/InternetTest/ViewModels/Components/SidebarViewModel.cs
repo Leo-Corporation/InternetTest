@@ -83,6 +83,6 @@ public class SidebarViewModel : ViewModelBase
 
 	private void RequestsPage(object? obj)
 	{
-		_mainViewModel.CurrentViewModel = new RequestsPageViewModel();
+		_mainViewModel.CurrentViewModel = new RequestsPageViewModel(_mainViewModel.Settings);
 	}
 }

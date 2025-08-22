@@ -1245,4 +1245,7 @@
   <data name="RequestSettingsDesc" xml:space="preserve">
     <value>请在此提供您请求的所有相关信息。</value>
   </data>
+  <data name="ResponseDesc" xml:space="preserve">
+    <value>响应信息 - 状态 {0}。</value>
+  </data>
 </root>

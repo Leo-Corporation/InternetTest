@@ -2489,6 +2489,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Response information - Status {0}..
+        /// </summary>
+        public static string ResponseDesc {
+            get {
+                return ResourceManager.GetString("ResponseDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Response Times.
         /// </summary>
         public static string ResponseTimes {
