@@ -2,7 +2,9 @@
     x:Class="InternetTest.Components.Sidebar"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:InternetTest.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:enums="clr-namespace:InternetTest.Enums"
     xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -14,6 +16,7 @@
     mc:Ignorable="d">
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        <converters:EnumToBoolConverter x:Key="EnumToBool" />
     </UserControl.Resources>
     <Border
         Margin="10"
@@ -36,6 +39,7 @@
                 Background="Transparent"
                 Command="{Binding HomePageCommand}"
                 GroupName="Sidebar"
+                IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.Home}}"
                 Style="{DynamicResource SidebarButton}">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -160,6 +164,7 @@
                             Background="Transparent"
                             Content="{x:Static lang:Resources.DownDetector}"
                             GroupName="Sidebar"
+                            IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.DownDetector}}"
                             Style="{DynamicResource SidebarButton}" />
                         <RadioButton
                             Grid.Row="4"
@@ -168,6 +173,7 @@
                             Background="Transparent"
                             Content="{x:Static lang:Resources.DNSTool}"
                             GroupName="Sidebar"
+                            IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.DnsTool}}"
                             Style="{DynamicResource SidebarButton}" />
                         <RadioButton
                             Grid.Row="4"
@@ -177,6 +183,7 @@
                             Command="{Binding WiFiPageCommand}"
                             Content="{x:Static lang:Resources.WiFi}"
                             GroupName="Sidebar"
+                            IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.WiFiNetworks}}"
                             Style="{DynamicResource SidebarButton}" />
                     </StackPanel>
                 </Grid>
@@ -249,6 +256,7 @@
                             Command="{Binding LocateIpPageCommand}"
                             Content="{x:Static lang:Resources.LocateIP}"
                             GroupName="Sidebar"
+                            IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.LocateIP}}"
                             Style="{DynamicResource SidebarButton}" />
                         <RadioButton
                             Grid.Row="4"
@@ -258,6 +266,7 @@
                             Command="{Binding IpConfigPageCommand}"
                             Content="{x:Static lang:Resources.IPConfig}"
                             GroupName="Sidebar"
+                            IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.IPConfig}}"
                             Style="{DynamicResource SidebarButton}" />
                     </StackPanel>
                 </Grid>
@@ -335,6 +344,7 @@
                             Command="{Binding PingPageCommand}"
                             Content="{x:Static lang:Resources.Ping}"
                             GroupName="Sidebar"
+                            IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.Ping}}"
                             Style="{DynamicResource SidebarButton}" />
                         <RadioButton
                             Grid.Row="4"
@@ -344,6 +354,7 @@
                             Command="{Binding RequestsPageCommand}"
                             Content="{x:Static lang:Resources.Requests}"
                             GroupName="Sidebar"
+                            IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.Requests}}"
                             Style="{DynamicResource SidebarButton}" />
                         <RadioButton
                             Grid.Row="4"
@@ -353,6 +364,7 @@
                             Command="{Binding TraceroutePageCommand}"
                             Content="{x:Static lang:Resources.TraceRoute}"
                             GroupName="Sidebar"
+                            IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.TraceRoute}}"
                             Style="{DynamicResource SidebarButton}" />
                     </StackPanel>
                 </Grid>

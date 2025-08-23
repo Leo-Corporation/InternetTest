@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Commands;
+using InternetTest.Enums;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels.Components;
@@ -39,9 +40,13 @@ public class SidebarViewModel : ViewModelBase
 	public ICommand RequestsPageCommand { get; }
 	public ICommand TraceroutePageCommand { get; }
 
+	public AppPages DefaultPage { get; init; }
+
 	public SidebarViewModel(MainViewModel mainViewModel)
 	{
 		_mainViewModel = mainViewModel;
+		DefaultPage = _mainViewModel.Settings.DefaultPage;
+		OnPropertyChanged(nameof(DefaultPage));
 
 		HomePageCommand = new RelayCommand(HomePage);
 		SettingsPageCommand = new RelayCommand(SettingsPage);

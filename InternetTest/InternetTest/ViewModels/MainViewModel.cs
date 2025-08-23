@@ -96,9 +96,9 @@ public class MainViewModel : ViewModelBase
 	});
 	public MainViewModel(Settings settings, Window mainWindow)
 	{
-		_sidebarViewModel = new(this);
 		Settings = settings;
 		_mainWindow = mainWindow;
+		_sidebarViewModel = new(this);
 
 		Pinned = Settings.RememberPinnedState == true && (Settings.Pinned ?? false);
 		ConfidentialMode = Settings.ToggleConfidentialMode ?? false;
