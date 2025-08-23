@@ -51,6 +51,22 @@ public class IpConfigItemViewModel : ViewModelBase
 	private bool _isExpanded = false;
 	public bool IsExpanded { get => _isExpanded; set { _isExpanded = value; OnPropertyChanged(nameof(IsExpanded)); } }
 
+	private bool _confidentialMode = false;
+	public bool ConfidentialMode
+	{
+		get => _confidentialMode;
+		set
+		{
+			_confidentialMode = value;
+			OnPropertyChanged(nameof(ConfidentialMode));
+			foreach (var item in Details)
+			{
+				item.ConfidentialMode = value;
+			}
+			IsExpanded = !value && IsExpanded;
+		}
+	}
+
 	private SolidColorBrush? _statusBrush;
 	public SolidColorBrush? StatusBrush { get => _statusBrush; set { _statusBrush = value; OnPropertyChanged(nameof(StatusBrush)); } }
 
@@ -89,12 +105,12 @@ public class IpConfigItemViewModel : ViewModelBase
 
 		Details = [
 			new (Properties.Resources.DNSSuffix, _ipConfig.DNSSuffix ?? Properties.Resources.Unknown, 0, 0),
-			new (Properties.Resources.IPv4Address, _ipConfig.IPv4Address ?? Properties.Resources.Unknown, 1, 0),
-			new (Properties.Resources.IPv6Address, _ipConfig.IPv6Address ?? Properties.Resources.Unknown, 0, 1),
-			new (Properties.Resources.SubnetMask, _ipConfig.IPv4Mask ?? Properties.Resources.Unknown, 1, 1),
+			new (Properties.Resources.IPv4Address, _ipConfig.IPv4Address ?? Properties.Resources.Unknown, 1, 0, true),
+			new (Properties.Resources.IPv6Address, _ipConfig.IPv6Address ?? Properties.Resources.Unknown, 0, 1, true),
+			new (Properties.Resources.SubnetMask, _ipConfig.IPv4Mask ?? Properties.Resources.Unknown, 1, 1, true),
 		];
 
-		if (!string.IsNullOrEmpty(_ipConfig.IPv4Gateway)) Details.Add(new GridItemViewModel(Properties.Resources.GatewayIPv4, _ipConfig.IPv4Gateway, 2, 0));
-		if (!string.IsNullOrEmpty(_ipConfig.IPv6Gateway)) Details.Add(new GridItemViewModel(Properties.Resources.GatewayIPv6, _ipConfig.IPv6Gateway, 2, 1));
+		if (!string.IsNullOrEmpty(_ipConfig.IPv4Gateway)) Details.Add(new GridItemViewModel(Properties.Resources.GatewayIPv4, _ipConfig.IPv4Gateway, 2, 0, true));
+		if (!string.IsNullOrEmpty(_ipConfig.IPv6Gateway)) Details.Add(new GridItemViewModel(Properties.Resources.GatewayIPv6, _ipConfig.IPv6Gateway, 2, 1, true));
 	}
 }

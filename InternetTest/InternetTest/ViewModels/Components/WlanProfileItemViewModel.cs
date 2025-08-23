@@ -52,13 +52,16 @@ public class WlanProfileItemViewModel : ViewModelBase
 		set
 		{
 			_keyVisible = value;
-			Key = !value ? new string('*', _wlanProfile.MSM?.Security?.SharedKey?.KeyMaterial?.Length ?? 0) : _wlanProfile.MSM?.Security?.SharedKey?.KeyMaterial ?? Properties.Resources.Unknown;
+			Key = !value ? new string('•', _wlanProfile.MSM?.Security?.SharedKey?.KeyMaterial?.Length ?? 0) : _wlanProfile.MSM?.Security?.SharedKey?.KeyMaterial ?? Properties.Resources.Unknown;
 			OnPropertyChanged(nameof(KeyVisible));
 		}
 	}
 
 	private bool _qrOpen = false;
 	public bool QrOpen { get => _qrOpen; set { _qrOpen = value; OnPropertyChanged(nameof(QrOpen)); } }
+
+	private bool _confidentialMode = false;
+	public bool ConfidentialMode { get => _confidentialMode; set { _confidentialMode = value; OnPropertyChanged(nameof(ConfidentialMode)); } }
 
 	private ImageSource? _qrCodeImage;
 	public ImageSource? QrCodeImage { get => _qrCodeImage; set { _qrCodeImage = value; OnPropertyChanged(nameof(QrCodeImage)); } }

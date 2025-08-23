@@ -22,16 +22,31 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Commands;
+using InternetTest.Interfaces;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
 using System.Net.NetworkInformation;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
-public class IpConfigPageViewModel : ViewModelBase
+public class IpConfigPageViewModel : ViewModelBase, ISensitiveViewModel
 {
 	private List<IpConfigItemViewModel> _ipConfigs = [];
 	public List<IpConfigItemViewModel> IpConfigItems { get => _ipConfigs; set { _ipConfigs = value; OnPropertyChanged(nameof(IpConfigItems)); } }
+
+	private bool _confidentialMode = false;
+	public bool ConfidentialMode
+	{
+		get => _confidentialMode; set
+		{
+			_confidentialMode = value;
+			OnPropertyChanged(nameof(ConfidentialMode));
+			foreach (var item in IpConfigItems)
+			{
+				item.ConfidentialMode = value;
+			}
+		}
+	}
 
 	public ICommand RefreshCommand => new RelayCommand(o => LoadIpConfigs());
 	public IpConfigPageViewModel()
@@ -46,5 +61,10 @@ public class IpConfigPageViewModel : ViewModelBase
 			.Select(WindowsIpConfig.FromNetworkInterface)
 			.Where(x => x != null)
 			.Select(x => new IpConfigItemViewModel(x!))];
+	}
+
+	void ISensitiveViewModel.ToggleConfidentialMode(bool confidentialMode)
+	{
+		ConfidentialMode = confidentialMode;
 	}
 }

@@ -268,7 +268,8 @@
                 Text="&#xF4A4;" />
             <TextBlock
                 HorizontalAlignment="Center"
-                Text="{x:Static lang:Resources.NothingToShow}"
+                d:Text="{x:Static lang:Resources.NothingToShow}"
+                Text="{Binding PlaceholderText}"
                 TextWrapping="Wrap" />
         </StackPanel>
         <StackPanel

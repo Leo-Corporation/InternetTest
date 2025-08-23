@@ -47,7 +47,12 @@ public class MainViewModel : ViewModelBase
 	public object? CurrentViewModel
 	{
 		get { return _currentView; }
-		set { _currentView = value; OnPropertyChanged(nameof(CurrentViewModel)); }
+		set
+		{
+			_currentView = value;
+			if (value is ISensitiveViewModel sensitiveViewModel) sensitiveViewModel.ToggleConfidentialMode(ConfidentialMode);
+			OnPropertyChanged(nameof(CurrentViewModel));
+		}
 	}
 
 	private bool _pinned;
@@ -114,6 +119,7 @@ public class MainViewModel : ViewModelBase
 			AppPages.TraceRoute => new TraceroutePageViewModel(Settings),
 			_ => new HomePageViewModel(Settings)
 		};
+
 
 		PinCommand = new RelayCommand(Pin);
 	}

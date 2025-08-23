@@ -49,7 +49,14 @@
                 VerticalAlignment="Center"
                 d:Text="WiFi Name"
                 FontWeight="Bold"
-                Text="{Binding Name}" />
+                Text="{Binding Name}"
+                Visibility="{Binding ConfidentialMode, Converter={StaticResource InverseBoolToVis}}" />
+            <TextBlock
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                FontWeight="Bold"
+                Text="•••••"
+                Visibility="{Binding ConfidentialMode, Converter={StaticResource BoolToVis}}" />
             <StackPanel Grid.Column="2" Orientation="Horizontal">
                 <Border
                     Grid.Column="2"

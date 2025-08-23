@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Commands;
 using InternetTest.Helpers;
+using InternetTest.Interfaces;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
 using ManagedNativeWifi;
@@ -33,7 +34,7 @@ using System.Windows;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
-public class WiFiPageViewModel : ViewModelBase
+public class WiFiPageViewModel : ViewModelBase, ISensitiveViewModel
 {
 	private readonly Settings _settings;
 
@@ -66,6 +67,26 @@ public class WiFiPageViewModel : ViewModelBase
 
 	private bool _noProfiles = false;
 	public bool NoProfiles { get => _noProfiles; set { _noProfiles = value; OnPropertyChanged(nameof(NoProfiles)); } }
+
+	private bool _confidentialMode = false;
+	public bool ConfidentialMode
+	{
+		get => _confidentialMode;
+		set
+		{
+			_confidentialMode = value;
+			OnPropertyChanged(nameof(ConfidentialMode));
+			foreach (var item in WiFiNetworks)
+			{
+				item.ConfidentialMode = value;
+			}
+
+			foreach (var item in WlanProfiles)
+			{
+				item.ConfidentialMode = value;
+			}
+		}
+	}
 
 	private string _query = string.Empty;
 	public string Query
@@ -134,6 +155,7 @@ public class WiFiPageViewModel : ViewModelBase
 		_connectWiFis = [.. WiFiNetworks];
 		IsRefreshing = false;
 		NoNetworks = WiFiNetworks.Count == 0;
+		ConfidentialMode = _confidentialMode;
 	}
 
 	internal void GetAdapters()
@@ -155,6 +177,7 @@ public class WiFiPageViewModel : ViewModelBase
 		{
 			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
 		}
+		ConfidentialMode = _confidentialMode;
 	}
 
 	private async void RefreshProfiles(bool forceRefresh = false)
@@ -170,5 +193,11 @@ public class WiFiPageViewModel : ViewModelBase
 
 		ProfileLoading = false;
 		NoProfiles = WlanProfiles.Count == 0;
+		ConfidentialMode = _confidentialMode;
+	}
+
+	void ISensitiveViewModel.ToggleConfidentialMode(bool confidentialMode)
+	{
+		ConfidentialMode = confidentialMode;
 	}
 }

@@ -48,6 +48,21 @@ public class ConnectWiFiItemViewModel : ViewModelBase
 	private bool _isConnected = false;
 	public bool IsConnected { get => _isConnected; set { _isConnected = value; OnPropertyChanged(nameof(IsConnected)); } }
 
+	private bool _confidentialMode = false;
+	public bool ConfidentialMode
+	{
+		get => _confidentialMode;
+		set
+		{
+			_confidentialMode = value;
+			OnPropertyChanged(nameof(ConfidentialMode));
+			foreach (var item in Details)
+			{
+				item.ConfidentialMode = value;
+			}
+		}
+	}
+
 	private string _password = "";
 	public string Password { get => _password; set { _password = value; OnPropertyChanged(nameof(Password)); } }
 
@@ -86,7 +101,7 @@ public class ConnectWiFiItemViewModel : ViewModelBase
 
 		Details = [
 			new(Properties.Resources.SignalQuality, _wiFiNetwork.SignalQuality.ToString(), 0, 0),
-			new(Properties.Resources.ProfileName, _wiFiNetwork.ProfileName ?? "", 0, 1),
+			new(Properties.Resources.ProfileName, _wiFiNetwork.ProfileName ?? "", 0, 1, true),
 			new(Properties.Resources.Interface, _wiFiNetwork.InterfaceDescription ?? "", 0, 2),
 			new(Properties.Resources.BssType, _wiFiNetwork.BssType.ToString() ?? "", 1, 0),
 			new(Properties.Resources.SecurityEnabled, _wiFiNetwork.IsSecurityEnabled ? Properties.Resources.Yes : Properties.Resources.No, 1, 1),

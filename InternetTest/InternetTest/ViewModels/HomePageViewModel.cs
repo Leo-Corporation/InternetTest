@@ -76,6 +76,9 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 	private SolidColorBrush? _statusColor;
 	public SolidColorBrush? StatusColor { get => _statusColor; set { _statusColor = value; OnPropertyChanged(nameof(StatusColor)); } }
 
+	private bool _confidentialMode = false;
+	public bool ConfidentialMode { get => _confidentialMode; set { _confidentialMode = value; OnPropertyChanged(nameof(ConfidentialMode)); } }
+
 	private readonly Settings _settings;
 
 	bool connected = true;
@@ -152,6 +155,6 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 
 	void ISensitiveViewModel.ToggleConfidentialMode(bool confidentialMode)
 	{
-		//TODO
+		ConfidentialMode = confidentialMode;
 	}
 }

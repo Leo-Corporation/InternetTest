@@ -2,6 +2,7 @@
     x:Class="InternetTest.Components.GridItem"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:InternetTest.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:InternetTest.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -11,6 +12,10 @@
     Foreground="{DynamicResource Foreground1}"
     mc:Ignorable="d">
     <StackPanel Margin="5">
+        <StackPanel.Resources>
+            <BooleanToVisibilityConverter x:Key="BoolToVis" />
+            <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVis" />
+        </StackPanel.Resources>
         <TextBlock
             FontSize="12"
             Foreground="{DynamicResource DarkGray}"
@@ -18,6 +23,12 @@
         <TextBlock
             FontSize="14"
             FontWeight="SemiBold"
-            Text="{Binding Value}" />
+            Text="{Binding Value}"
+            Visibility="{Binding ConfidentialMode, Converter={StaticResource InverseBoolToVis}}" />
+        <TextBlock
+            FontSize="14"
+            FontWeight="SemiBold"
+            Text="•••••"
+            Visibility="{Binding ConfidentialMode, Converter={StaticResource BoolToVis}}" />
     </StackPanel>
 </UserControl>

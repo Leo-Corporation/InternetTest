@@ -53,11 +53,25 @@ public class GridItemViewModel : ViewModelBase
 		set { _gridRow = value; OnPropertyChanged(nameof(GridRow)); }
 	}
 
-	public GridItemViewModel(string title, string value, int row, int col)
+	private bool _confidentialMode = false;
+	public bool ConfidentialMode
+	{
+		get => _sensitive && _confidentialMode;
+		set
+		{
+			_confidentialMode = value;
+			OnPropertyChanged(nameof(ConfidentialMode));
+		}
+	}
+
+	private readonly bool _sensitive;
+
+	public GridItemViewModel(string title, string value, int row, int col, bool sensitive = false)
 	{
 		Title = title;
 		Value = value;
 		GridRow = row;
 		GridColumn = col;
+		_sensitive = sensitive;
 	}
 }

@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Commands;
 using InternetTest.Enums;
+using InternetTest.Interfaces;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
 using Microsoft.Win32;
@@ -33,7 +34,7 @@ using System.Windows;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
-public class LocateIpPageViewModel : ViewModelBase
+public class LocateIpPageViewModel : ViewModelBase, ISensitiveViewModel
 {
 	private readonly Settings _settings;
 
@@ -46,8 +47,22 @@ public class LocateIpPageViewModel : ViewModelBase
 	private string? _ipAddress;
 	public string? IpAddress { get => _ipAddress; set { _ipAddress = value; OnPropertyChanged(nameof(IpAddress)); } }
 
+	private string _placeholderText = Properties.Resources.NothingToShow;
+	public string PlaceholderText { get => _placeholderText; set { _placeholderText = value; OnPropertyChanged(nameof(PlaceholderText)); } }
+
 	private bool _empty = true;
 	public bool Empty { get => _empty; set { _empty = value; OnPropertyChanged(nameof(Empty)); } }
+
+	private bool _confidentialMode = false;
+	public bool ConfidentialMode
+	{
+		get => _confidentialMode; set
+		{
+			_confidentialMode = value;
+			PlaceholderText = value ? Properties.Resources.DetailsNotAvailableCM : Properties.Resources.NothingToShow;
+			OnPropertyChanged(nameof(ConfidentialMode));
+		}
+	}
 
 	private Ip? _ip;
 
@@ -125,7 +140,7 @@ public class LocateIpPageViewModel : ViewModelBase
 			new (Properties.Resources.Proxy, (_ip.Proxy ?? false) ? Properties.Resources.Yes : Properties.Resources.No, 2, 1),
 		];
 
-		Empty = false;
+		if (!ConfidentialMode) Empty = false;
 	}
 
 	private static string GetGoogleMapsPoint(double lat, double lon)
@@ -143,5 +158,11 @@ public class LocateIpPageViewModel : ViewModelBase
 		string sD2 = d2.ToString().Replace(",", "."); // Ensure to use . instead of ,
 
 		return $"{deg}° {sD}' {fDir}, {deg2}° {sD2}' {sDir}".Replace("-", "");
+	}
+
+	void ISensitiveViewModel.ToggleConfidentialMode(bool confidentialMode)
+	{
+		ConfidentialMode = confidentialMode;
+		if (Details.Count > 0) Empty = confidentialMode;
 	}
 }
