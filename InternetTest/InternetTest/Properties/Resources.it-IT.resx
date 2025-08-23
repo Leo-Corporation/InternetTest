@@ -1263,4 +1263,13 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="TraceroutePageDesc" xml:space="preserve">
     <value>Traccia il percorso di rete verso qualsiasi destinazione.</value>
   </data>
+  <data name="TracerouteConfiguration" xml:space="preserve">
+    <value>Configurazione Traceroute</value>
+  </data>
+  <data name="TargetHostname" xml:space="preserve">
+    <value>Destinazione (IP o nome host)</value>
+  </data>
+  <data name="RouteTraceDesc" xml:space="preserve">
+    <value>Analisi completa del percorso fino a {0}</value>
+  </data>
 </root>

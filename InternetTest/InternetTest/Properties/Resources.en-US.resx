@@ -1263,4 +1263,13 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="TraceroutePageDesc" xml:space="preserve">
     <value>Trace the network path to any destination.</value>
   </data>
+  <data name="TracerouteConfiguration" xml:space="preserve">
+    <value>Traceroute Configuration</value>
+  </data>
+  <data name="TargetHostname" xml:space="preserve">
+    <value>Target (IP or Hostname)</value>
+  </data>
+  <data name="RouteTraceDesc" xml:space="preserve">
+    <value>Complete path analysis to {0}</value>
+  </data>
 </root>

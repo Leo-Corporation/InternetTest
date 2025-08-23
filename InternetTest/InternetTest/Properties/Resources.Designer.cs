@@ -2525,6 +2525,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Complete path analysis to {0}.
+        /// </summary>
+        public static string RouteTraceDesc {
+            get {
+                return ResourceManager.GetString("RouteTraceDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Run test.
         /// </summary>
         public static string RunTest {
@@ -2933,6 +2942,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Target (IP or Hostname).
+        /// </summary>
+        public static string TargetHostname {
+            get {
+                return ResourceManager.GetString("TargetHostname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Test.
         /// </summary>
         public static string Test {
@@ -3127,6 +3145,15 @@ namespace InternetTest.Properties {
         public static string TraceRoute {
             get {
                 return ResourceManager.GetString("TraceRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Traceroute Configuration.
+        /// </summary>
+        public static string TracerouteConfiguration {
+            get {
+                return ResourceManager.GetString("TracerouteConfiguration", resourceCulture);
             }
         }
         

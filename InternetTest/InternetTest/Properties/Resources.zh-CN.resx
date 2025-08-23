@@ -1254,4 +1254,13 @@
   <data name="TraceroutePageDesc" xml:space="preserve">
     <value>追踪到任何目的地的网络路径。</value>
   </data>
+  <data name="TracerouteConfiguration" xml:space="preserve">
+    <value>跟踪路由配置</value>
+  </data>
+  <data name="TargetHostname" xml:space="preserve">
+    <value>目标（IP地址或主机名）</value>
+  </data>
+  <data name="RouteTraceDesc" xml:space="preserve">
+    <value>对{0}进行完整的路径分析</value>
+  </data>
 </root>
