@@ -76,7 +76,11 @@
                     <TextBox
                         Margin="5"
                         Padding="5"
-                        Text="{Binding Query, Mode=TwoWay}" />
+                        Text="{Binding Query, Mode=TwoWay}">
+                        <TextBox.InputBindings>
+                            <KeyBinding Key="Enter" Command="{Binding PingCommand}" />
+                        </TextBox.InputBindings>
+                    </TextBox>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock
                             Margin="5"

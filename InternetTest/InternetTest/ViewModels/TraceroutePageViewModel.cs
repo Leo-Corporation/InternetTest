@@ -76,7 +76,7 @@ public class TraceroutePageViewModel : ViewModelBase
 
 	public ICommand TraceCommand => new RelayCommand(async o =>
 	{
-		if (Target is { Length: 0 }) return;
+		if (Target is { Length: 0 } || Loading) return;
 		Loading = true;
 		Empty = false;
 		DetailsVisible = false;

@@ -446,6 +446,10 @@
                                 <Trigger Property="IsPressed" Value="true">
                                     <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowButtonsHover1}" />
                                 </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="border" Property="Opacity" Value="0.8" />
+                                    <Setter Property="Cursor" Value="No" />
+                                </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>

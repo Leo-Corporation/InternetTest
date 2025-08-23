@@ -85,7 +85,11 @@
                 <TextBox
                     Grid.Row="2"
                     Padding="5"
-                    Text="{Binding IpAddress, Mode=TwoWay}" />
+                    Text="{Binding IpAddress, Mode=TwoWay}">
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Enter" Command="{Binding LocateIpCommand}" />
+                    </TextBox.InputBindings>
+                </TextBox>
                 <Button
                     Grid.Row="2"
                     Grid.Column="1"
