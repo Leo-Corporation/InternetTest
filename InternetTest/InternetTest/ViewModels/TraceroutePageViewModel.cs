@@ -76,6 +76,7 @@ public class TraceroutePageViewModel : ViewModelBase
 
 	public ICommand TraceCommand => new RelayCommand(async o =>
 	{
+		Target = Target.Trim().Replace("https://","").Replace("http://", "").Split("/")[0];
 		if (Target is { Length: 0 } || Loading) return;
 		Loading = true;
 		Empty = false;
