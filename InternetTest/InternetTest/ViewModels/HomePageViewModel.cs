@@ -26,7 +26,6 @@ using InternetTest.Interfaces;
 using InternetTest.Models;
 using PeyrSharp.Core;
 using System.Net.NetworkInformation;
-using System.Windows;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels;
