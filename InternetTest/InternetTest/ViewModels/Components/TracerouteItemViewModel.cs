@@ -21,10 +21,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Commands;
 using InternetTest.Helpers;
 using InternetTest.Models;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels.Components;
@@ -44,6 +47,11 @@ public class TracerouteItemViewModel : ViewModelBase
 
 	private SolidColorBrush? _backgroundBrush;
 	public SolidColorBrush? BackgroundBrush { get => _backgroundBrush; set { _backgroundBrush = value; OnPropertyChanged(nameof(BackgroundBrush)); } }
+
+	public ICommand CopyCommand => new RelayCommand(o =>
+	{
+		Clipboard.SetDataObject(Host);
+	});
 
 	public TracerouteItemViewModel(TracerouteStep tracerouteStep)
 	{
