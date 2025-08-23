@@ -36,13 +36,13 @@ public class RequestParamItemViewModel : ViewModelBase
 	public bool IsChecked { get => _isChecked; set { _isChecked = value; Update(); OnPropertyChanged(nameof(IsChecked)); } }
 
 	private readonly RequestsPageViewModel _requestsPageViewModel;
-	private bool _init = false;
+	private readonly bool _init = false;
 	public RequestParamItemViewModel(RequestsPageViewModel requestsPageViewModel, RequestParam requestParam)
 	{
 		_requestsPageViewModel = requestsPageViewModel;
 		Key = requestParam.Key;
 		Value = requestParam.Value;
-		_init = true;	
+		_init = true;
 	}
 
 	private void Update()

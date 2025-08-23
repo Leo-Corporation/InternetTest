@@ -33,7 +33,7 @@ public class HeaderItemViewModel : ViewModelBase
 	private string _value = string.Empty;
 	public string Value { get => _value; set { _value = value; OnPropertyChanged(nameof(Value)); } }
 
-	private string _fullValue = string.Empty;
+	private readonly string _fullValue = string.Empty;
 
 	public ICommand CopyCommand => new RelayCommand(o =>
 	{
