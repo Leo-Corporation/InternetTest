@@ -57,7 +57,7 @@ public class TracerouteItemViewModel : ViewModelBase
 
 		Duration = tracerouteStep.RoundtripTime >= 0 ? $"{tracerouteStep.RoundtripTime} ms" : "N/A";
 		Index = tracerouteStep.TTL;
-		ForegroundBrush = tracerouteStep.Status is IPStatus.TtlExpired or IPStatus.Success ? ThemeHelper.GetSolidColorBrush("Green") : ThemeHelper.GetSolidColorBrush("Orange");
+		ForegroundBrush = tracerouteStep.Status is IPStatus.TtlExpired or IPStatus.Success ? ThemeHelper.GetSolidColorBrush("ForegroundGreen") : ThemeHelper.GetSolidColorBrush("ForegroundOrange");
 		BackgroundBrush = tracerouteStep.Status is IPStatus.TtlExpired or IPStatus.Success ? ThemeHelper.GetSolidColorBrush("LightGreen") : ThemeHelper.GetSolidColorBrush("LightOrange");
 	}
 

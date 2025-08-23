@@ -1272,4 +1272,19 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="RouteTraceDesc" xml:space="preserve">
     <value>Analyse complète du chemin vers {0}</value>
   </data>
+  <data name="TotalHops" xml:space="preserve">
+    <value>Nombre de sauts</value>
+  </data>
+  <data name="MaxHopsS" xml:space="preserve">
+    <value>Sauts max : {0}</value>
+  </data>
+  <data name="SuccessfulHops" xml:space="preserve">
+    <value>Sauts réussis</value>
+  </data>
+  <data name="StartedTime" xml:space="preserve">
+    <value>Début : {0}</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Cible</value>
+  </data>
 </root>

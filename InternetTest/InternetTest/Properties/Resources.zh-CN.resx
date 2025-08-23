@@ -1263,4 +1263,19 @@
   <data name="RouteTraceDesc" xml:space="preserve">
     <value>对{0}进行完整的路径分析</value>
   </data>
+  <data name="TotalHops" xml:space="preserve">
+    <value>总啤酒花</value>
+  </data>
+  <data name="MaxHopsS" xml:space="preserve">
+    <value>最大跳数：{0}</value>
+  </data>
+  <data name="SuccessfulHops" xml:space="preserve">
+    <value>成功的啤酒花</value>
+  </data>
+  <data name="StartedTime" xml:space="preserve">
+    <value>开始时间：{0}</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>目标</value>
+  </data>
 </root>

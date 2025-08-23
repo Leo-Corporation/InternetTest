@@ -1777,6 +1777,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Max hops: {0}.
+        /// </summary>
+        public static string MaxHopsS {
+            get {
+                return ResourceManager.GetString("MaxHopsS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Maximize.
         /// </summary>
         public static string Maximize {
@@ -2805,6 +2814,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Started: {0}.
+        /// </summary>
+        public static string StartedTime {
+            get {
+                return ResourceManager.GetString("StartedTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start time.
         /// </summary>
         public static string StartTime {
@@ -2864,6 +2882,15 @@ namespace InternetTest.Properties {
         public static string Successful {
             get {
                 return ResourceManager.GetString("Successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successful Hops.
+        /// </summary>
+        public static string SuccessfulHops {
+            get {
+                return ResourceManager.GetString("SuccessfulHops", resourceCulture);
             }
         }
         
@@ -2938,6 +2965,15 @@ namespace InternetTest.Properties {
         public static string SynethiaPrivacy {
             get {
                 return ResourceManager.GetString("SynethiaPrivacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target.
+        /// </summary>
+        public static string Target {
+            get {
+                return ResourceManager.GetString("Target", resourceCulture);
             }
         }
         
@@ -3118,6 +3154,15 @@ namespace InternetTest.Properties {
         public static string TotalBytesSent {
             get {
                 return ResourceManager.GetString("TotalBytesSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Hops.
+        /// </summary>
+        public static string TotalHops {
+            get {
+                return ResourceManager.GetString("TotalHops", resourceCulture);
             }
         }
         

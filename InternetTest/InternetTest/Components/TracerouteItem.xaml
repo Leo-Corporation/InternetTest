@@ -56,7 +56,7 @@
                 <TextBlock
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    d:Foreground="{DynamicResource Green}"
+                    d:Foreground="{DynamicResource ForegroundGreen}"
                     d:Text="29ms"
                     FontWeight="SemiBold"
                     Foreground="{Binding ForegroundBrush}"
