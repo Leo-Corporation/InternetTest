@@ -50,6 +50,7 @@
                         Background="{DynamicResource Accent}"
                         CornerRadius="10">
                         <TextBlock
+                            x:Name="HomeIconTxt"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             FontFamily="..\Fonts\#FluentSystemIcons-Filled"
@@ -68,6 +69,20 @@
                         <TextBlock Text="{x:Static lang:Resources.Home}" />
                     </StackPanel>
                 </Grid>
+                <RadioButton.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetName="HomeIconTxt"
+                                    Storyboard.TargetProperty="FontSize"
+                                    From="12"
+                                    To="18"
+                                    Duration="0:0:0.2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </RadioButton.Triggers>
             </RadioButton>
             <TextBlock
                 Grid.Row="1"
@@ -79,16 +94,29 @@
             <StackPanel Grid.Row="2">
                 <ToggleButton
                     x:Name="WebUtilsBtn"
+                    Height="30"
                     Padding="5"
                     HorizontalContentAlignment="Left"
                     Background="Transparent"
                     Style="{DynamicResource SidebarChevronButton}">
-                    <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
                         <TextBlock
+                            x:Name="UtilIconTxt"
                             VerticalAlignment="Center"
                             FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                             FontSize="16"
-                            Text="&#xF45B;" />
+                            RenderTransformOrigin="0.5,0.5"
+                            Text="&#xF45B;">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform x:Name="UtilRotator" Angle="0" />
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
                         <TextBlock
                             Grid.Column="1"
                             Margin="10 0 0 0"
@@ -96,7 +124,22 @@
                             FontWeight="SemiBold"
                             Text="{x:Static lang:Resources.WebUtilities}" />
 
-                    </StackPanel>
+                    </Grid>
+                    <ToggleButton.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ThicknessAnimationUsingKeyFrames
+                                        BeginTime="00:00:00"
+                                        Storyboard.TargetName="UtilIconTxt"
+                                        Storyboard.TargetProperty="Margin">
+                                        <SplineThicknessKeyFrame KeyTime="00:00:00" Value="20,0,0,0" />
+                                        <SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
+                                    </ThicknessAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ToggleButton.Triggers>
                 </ToggleButton>
                 <Grid Visibility="{Binding IsChecked, ElementName=WebUtilsBtn, Converter={StaticResource BoolToVis}}">
                     <Grid.ColumnDefinitions>
@@ -139,16 +182,29 @@
                 </Grid>
                 <ToggleButton
                     x:Name="IpBtn"
+                    Height="30"
                     Padding="5"
                     HorizontalContentAlignment="Left"
                     Background="Transparent"
                     Style="{DynamicResource SidebarChevronButton}">
-                    <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
                         <TextBlock
+                            x:Name="IPIconTxt"
                             VerticalAlignment="Center"
                             FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                             FontSize="16"
-                            Text="&#xF4F9;" />
+                            RenderTransformOrigin="0.5,0.5"
+                            Text="&#xF4F9;">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform x:Name="IPRotator" Angle="0" />
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
                         <TextBlock
                             Grid.Column="1"
                             Margin="10 0 0 0"
@@ -156,7 +212,22 @@
                             FontWeight="SemiBold"
                             Text="{x:Static lang:Resources.IPTools}" />
 
-                    </StackPanel>
+                    </Grid>
+                    <ToggleButton.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ThicknessAnimationUsingKeyFrames
+                                        BeginTime="00:00:00"
+                                        Storyboard.TargetName="IPIconTxt"
+                                        Storyboard.TargetProperty="Margin">
+                                        <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0,0,0,20" />
+                                        <SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
+                                    </ThicknessAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ToggleButton.Triggers>
                 </ToggleButton>
                 <Grid Visibility="{Binding IsChecked, ElementName=IpBtn, Converter={StaticResource BoolToVis}}">
                     <Grid.ColumnDefinitions>
@@ -192,16 +263,29 @@
                 </Grid>
                 <ToggleButton
                     x:Name="CommandBtn"
+                    Height="30"
                     Padding="5"
                     HorizontalContentAlignment="Left"
                     Background="Transparent"
                     Style="{DynamicResource SidebarChevronButton}">
-                    <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
                         <TextBlock
+                            x:Name="ComIconTxt"
                             VerticalAlignment="Center"
                             FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                             FontSize="16"
-                            Text="&#xF8B9;" />
+                            RenderTransformOrigin="0.5,0.5"
+                            Text="&#xF8B9;">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform x:Name="ComIconRotator" Angle="0" />
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
                         <TextBlock
                             Grid.Column="1"
                             Margin="10 0 0 0"
@@ -209,7 +293,27 @@
                             FontWeight="SemiBold"
                             Text="{x:Static lang:Resources.Commands}" />
 
-                    </StackPanel>
+                    </Grid>
+                    <ToggleButton.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="ComIconTxt"
+                                        Storyboard.TargetProperty="FontSize"
+                                        From="4"
+                                        To="16"
+                                        Duration="0:0:0.2" />
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="ComIconRotator"
+                                        Storyboard.TargetProperty="Angle"
+                                        From="180"
+                                        To="0"
+                                        Duration="0:0:0.2" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ToggleButton.Triggers>
                 </ToggleButton>
                 <Grid Visibility="{Binding IsChecked, ElementName=CommandBtn, Converter={StaticResource BoolToVis}}">
                     <Grid.ColumnDefinitions>
@@ -256,6 +360,7 @@
 
             <RadioButton
                 Grid.Row="4"
+                Height="30"
                 Padding="5"
                 HorizontalContentAlignment="Left"
                 Background="Transparent"
@@ -267,13 +372,34 @@
                         VerticalAlignment="Center"
                         FontFamily="..\Fonts\#FluentSystemIcons-Regular"
                         FontSize="16"
-                        Text="&#xF6AA;" />
+                        RenderTransformOrigin="0.5,0.5"
+                        Text="&#xF6AA;">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform x:Name="SettingsRotator" Angle="0" />
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
                     <TextBlock
                         Margin="10 0 0 0"
                         VerticalAlignment="Center"
                         FontWeight="SemiBold"
                         Text="{x:Static lang:Resources.Settings}" />
                 </StackPanel>
+                <RadioButton.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetName="SettingsRotator"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="360"
+                                    To="0"
+                                    Duration="0:0:0.4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </RadioButton.Triggers>
             </RadioButton>
         </Grid>
     </Border>
