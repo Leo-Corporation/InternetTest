@@ -99,6 +99,9 @@
             <DataTemplate DataType="{x:Type vm:DownDetectorPageViewModel}">
                 <views:DownDetectorPage />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:DnsToolsPageViewModel}">
+                <views:DnsToolsPage />
+            </DataTemplate>
             <DataTemplate DataType="{x:Type vm:WiFiPageViewModel}">
                 <views:WiFiPage />
             </DataTemplate>

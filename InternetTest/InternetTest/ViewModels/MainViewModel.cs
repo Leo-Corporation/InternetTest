@@ -110,6 +110,8 @@ public class MainViewModel : ViewModelBase
 
 		CurrentViewModel = Settings.DefaultPage switch
 		{
+			AppPages.DownDetector => new DownDetectorPageViewModel(Settings),
+			AppPages.DnsTool => new DnsToolsPageViewModel(),
 			AppPages.WiFiNetworks => new WiFiPageViewModel(Settings),
 			AppPages.WiFiPasswords => new WiFiPageViewModel(Settings),
 			AppPages.LocateIP => new LocateIpPageViewModel(Settings),

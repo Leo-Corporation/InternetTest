@@ -172,6 +172,7 @@
                             Padding="5"
                             HorizontalContentAlignment="Left"
                             Background="Transparent"
+                            Command="{Binding DnsToolsPageCommand}"
                             Content="{x:Static lang:Resources.DNSTool}"
                             GroupName="Sidebar"
                             IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.DnsTool}}"

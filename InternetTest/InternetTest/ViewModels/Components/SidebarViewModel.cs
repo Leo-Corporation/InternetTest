@@ -34,6 +34,7 @@ public class SidebarViewModel : ViewModelBase
 	public ICommand HomePageCommand { get; }
 	public ICommand SettingsPageCommand { get; }
 	public ICommand DownDetectorCommand { get; }
+	public ICommand DnsToolsPageCommand { get; }
 	public ICommand WiFiPageCommand { get; }
 	public ICommand LocateIpPageCommand { get; }
 	public ICommand IpConfigPageCommand { get; }
@@ -52,6 +53,7 @@ public class SidebarViewModel : ViewModelBase
 		HomePageCommand = new RelayCommand(HomePage);
 		SettingsPageCommand = new RelayCommand(SettingsPage);
 		DownDetectorCommand = new RelayCommand(DownDetectorPage);
+		DnsToolsPageCommand = new RelayCommand(DnsToolsPage);
 		WiFiPageCommand = new RelayCommand(WiFiPage);
 		LocateIpPageCommand = new RelayCommand(LocateIpPage);
 		IpConfigPageCommand = new RelayCommand(IpConfigPage);
@@ -73,6 +75,11 @@ public class SidebarViewModel : ViewModelBase
 	private void DownDetectorPage(object? obj)
 	{
 		_mainViewModel.CurrentViewModel = new DownDetectorPageViewModel(_mainViewModel.Settings);
+	}
+
+	private void DnsToolsPage(object? obj)
+	{
+		_mainViewModel.CurrentViewModel = new DnsToolsPageViewModel();
 	}
 
 	private void WiFiPage(object? obj)

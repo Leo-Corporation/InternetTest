@@ -1296,4 +1296,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="WebsitesDesc" xml:space="preserve">
     <value>L'elenco dei siti web da controllare.</value>
   </data>
+  <data name="DnsPageDesc" xml:space="preserve">
+    <value>Ottieni informazioni DNS su un dominio e sulla cache DNS locale.</value>
+  </data>
 </root>

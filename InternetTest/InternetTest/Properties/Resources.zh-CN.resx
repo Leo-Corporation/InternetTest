@@ -1287,4 +1287,7 @@
   <data name="WebsitesDesc" xml:space="preserve">
     <value>需要检查的网站列表。</value>
   </data>
+  <data name="DnsPageDesc" xml:space="preserve">
+    <value>获取域名的DNS信息以及本地DNS缓存。</value>
+  </data>
 </root>

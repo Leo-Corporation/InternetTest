@@ -745,6 +745,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get DNS information about a domain and your local DNS cache..
+        /// </summary>
+        public static string DnsPageDesc {
+            get {
+                return ResourceManager.GetString("DnsPageDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DNS Suffix.
         /// </summary>
         public static string DNSSuffix {
