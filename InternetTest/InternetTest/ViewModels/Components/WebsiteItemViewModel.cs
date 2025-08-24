@@ -102,7 +102,12 @@ public class WebsiteItemViewModel : ViewModelBase
 				new(Properties.Resources.TimeElapsed,  $"{(endTime - startTime).TotalMilliseconds:0} ms", 0,1 ),
 			];
 
-			_history.Activity.Add(new Activity(Url, statusInfo.StatusCode.ToString(), statusInfo.StatusCode is >= 200 and < 300, DateTime.Now));
+			_history.Activity.Add(new Activity(Url, statusInfo.StatusCode.ToString(), statusInfo.StatusCode switch
+			{
+				>= 400 => false,
+				>= 300 or <= 100 => null,
+				_ => true,
+			}, DateTime.Now));
 		}
 		catch { }
 		ShowStatusCode = true;

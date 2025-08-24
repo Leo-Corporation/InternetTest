@@ -68,10 +68,10 @@ public class Activity
 {
 	public string Name { get; init; }
 	public string Result { get; init; }
-	public bool Success { get; init; }
+	public bool? Success { get; init; }
 	public DateTime Date { get; init; }
 
-	public Activity(string name, string result, bool success, DateTime date)
+	public Activity(string name, string result, bool? success, DateTime date)
 	{
 		Name = name;
 		Result = result;
@@ -83,7 +83,7 @@ public class Activity
 	{
 		Name = string.Empty;
 		Result = string.Empty;
-		Success = false;
+		Success = null;
 		Date = DateTime.MinValue;
 	}
 }

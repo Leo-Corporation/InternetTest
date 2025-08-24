@@ -64,7 +64,7 @@ public class SidebarViewModel : ViewModelBase
 
 	private void HomePage(object? obj)
 	{
-		_mainViewModel.CurrentViewModel = new HomePageViewModel(_mainViewModel.Settings);
+		_mainViewModel.CurrentViewModel = new HomePageViewModel(_mainViewModel.Settings, _mainViewModel.History);
 	}
 
 	private void SettingsPage(object? obj)

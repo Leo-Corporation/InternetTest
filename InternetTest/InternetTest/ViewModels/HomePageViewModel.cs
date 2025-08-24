@@ -24,7 +24,9 @@ SOFTWARE.
 using InternetTest.Helpers;
 using InternetTest.Interfaces;
 using InternetTest.Models;
+using InternetTest.ViewModels.Components;
 using PeyrSharp.Core;
+using System.Collections.ObjectModel;
 using System.Net.NetworkInformation;
 using System.Windows.Media;
 
@@ -32,6 +34,9 @@ namespace InternetTest.ViewModels;
 
 public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 {
+	private ObservableCollection<HistoryItemViewModel> _history = [];
+	public ObservableCollection<HistoryItemViewModel> History { get => _history; set { _history = value; OnPropertyChanged(nameof(History)); } }
+
 	public string HelloText => DateTime.Now.Hour switch
 	{
 		>= 21 or <= 7 => $"{Properties.Resources.GoodNight}, {Environment.UserName}.",
@@ -82,7 +87,7 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 	private readonly Settings _settings;
 
 	bool connected = true;
-	public HomePageViewModel(Settings settings)
+	public HomePageViewModel(Settings settings, ActivityHistory history)
 	{
 		_settings = settings;
 
@@ -115,6 +120,9 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 			Gateway = ipProps?.IPv4Gateway ?? Properties.Resources.Unknown;
 			Dns = string.Join("\n", networkInterface.GetIPProperties().DnsAddresses.Select(x => x.ToString().Replace("%16", ""))) ?? Properties.Resources.Unknown;
 		}
+
+		// Load history
+		History = new ObservableCollection<HistoryItemViewModel>(history.Activity.Select(x => new HistoryItemViewModel(x)));
 	}
 
 	internal async void LoadIpAddress()
