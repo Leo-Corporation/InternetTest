@@ -91,7 +91,7 @@ public class MainViewModel : ViewModelBase
 	public string ConfidentialTooltip { get => _confidentialTooltip; set { _confidentialTooltip = value; OnPropertyChanged(nameof(ConfidentialTooltip)); } }
 
 	public Settings Settings { get; set; }
-	public string Version => Context.Version;
+	public static string Version => Context.Version;
 	private readonly Window _mainWindow;
 
 	public ICommand PinCommand { get; }

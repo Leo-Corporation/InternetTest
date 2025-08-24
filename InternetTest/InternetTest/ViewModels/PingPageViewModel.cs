@@ -72,7 +72,7 @@ public class PingPageViewModel : ViewModelBase
 
 	public bool Empty { get => _empty; set { _empty = value; OnPropertyChanged(nameof(Empty)); } }
 
-	public ICommand PingCommand => new RelayCommand(o => Ping());
+	public ICommand PingCommand => new RelayCommand(async o => await Ping());
 	public ICommand CopyCommand => new RelayCommand(o =>
 	{
 		Clipboard.SetDataObject($"\n{Properties.Resources.Ping} {Query}:\n" +

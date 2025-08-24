@@ -106,7 +106,7 @@ public class WiFiPageViewModel : ViewModelBase, ISensitiveViewModel
 	public ICommand RefreshCommand => new RelayCommand(o => GetAdapters());
 	public ICommand RefreshWiFiCommand => new RelayCommand(o => RefreshWiFi());
 	public ICommand RefreshProfilesCommand => new RelayCommand(o => RefreshProfiles(true));
-	public ICommand ExportCommand => new RelayCommand(async o =>
+	public static ICommand ExportCommand => new RelayCommand(async o =>
 	{
 		if (MessageBox.Show(Properties.Resources.ExportWlanProfilesMsg, Properties.Resources.InternetTest, MessageBoxButton.YesNoCancel, MessageBoxImage.Question) != MessageBoxResult.Yes)
 			return;

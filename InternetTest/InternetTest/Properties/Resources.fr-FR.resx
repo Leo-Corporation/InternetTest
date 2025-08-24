@@ -724,7 +724,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
     <value>Faire un speed test</value>
   </data>
   <data name="MinSpeed" xml:space="preserve">
-    <value>Vitesse min.</value>
+    <value>Vitesse min</value>
   </data>
   <data name="MaxSpeed" xml:space="preserve">
     <value>Vitesse maxi</value>
