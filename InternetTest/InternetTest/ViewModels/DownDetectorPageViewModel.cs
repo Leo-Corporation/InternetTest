@@ -105,7 +105,7 @@ public class DownDetectorPageViewModel : ViewModelBase
 					site.TestAsync();
 				}
 				i = 0;
-			}; 
+			};
 		}
 
 		if (!IsScheduledInProgress)
@@ -130,6 +130,12 @@ public class DownDetectorPageViewModel : ViewModelBase
 	{
 		_settings = settings;
 		TimeInterval = _settings.DefaultTimeInterval ?? 10;
-		Websites.CollectionChanged += (s, e) => { OnPropertyChanged(nameof(HasWebsites)); };
+		Websites.CollectionChanged += (s, e) =>
+		{
+			OnPropertyChanged(nameof(HasWebsites));
+			_settings.DownDetectorWebsites = [.. Websites.Select(x => x.Url)];
+			_settings.Save();
+		};
+		Websites = [.. _settings.DownDetectorWebsites?.Select(x => new WebsiteItemViewModel(x, this)) ?? []];
 	}
 }
