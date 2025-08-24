@@ -79,7 +79,11 @@
                     Margin="0 5"
                     Padding="5"
                     VerticalContentAlignment="Center"
-                    Text="{Binding Site, UpdateSourceTrigger=PropertyChanged}" />
+                    Text="{Binding Site, UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Enter" Command="{Binding AddWebsiteCommand}" />
+                    </TextBox.InputBindings>
+                </TextBox>
                 <StackPanel
                     Grid.Row="3"
                     VerticalAlignment="Bottom"
