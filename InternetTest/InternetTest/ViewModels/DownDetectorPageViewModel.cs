@@ -26,6 +26,7 @@ using InternetTest.Models;
 using InternetTest.ViewModels.Components;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace InternetTest.ViewModels;
 public class DownDetectorPageViewModel : ViewModelBase
@@ -36,13 +37,26 @@ public class DownDetectorPageViewModel : ViewModelBase
 	private string _site = string.Empty;
 	public string Site { get => _site; set { _site = value; OnPropertyChanged(nameof(Site)); } }
 
+	private string _scheduledText = string.Empty;
+	public string ScheduledText { get => _scheduledText; set { _scheduledText = value; OnPropertyChanged(nameof(ScheduledText)); } }
+
+	private string _scheduledButtonText = Properties.Resources.LaunchScheduledTest;
+	public string ScheduledButtonText { get => _scheduledButtonText; set { _scheduledButtonText = value; OnPropertyChanged(nameof(ScheduledButtonText)); } }
+
 	private int _timeInterval = 10;
 	public int TimeInterval { get => _timeInterval; set { _timeInterval = value; OnPropertyChanged(nameof(TimeInterval)); } }
 
 	private bool _isTesting = false;
 	public bool IsTesting { get => _isTesting; set { _isTesting = value; OnPropertyChanged(nameof(IsTesting)); } }
+
+	private bool _isScheduledInProgress = false;
+	public bool IsScheduledInProgress { get => _isScheduledInProgress; set { _isScheduledInProgress = value; OnPropertyChanged(nameof(IsScheduledInProgress)); } }
+
 	public bool HasWebsites => Websites != null && Websites.Count > 0;
-	public ICommand AddWebsiteCommand => new RelayCommand(o => {
+
+	private DispatcherTimer? _timer;
+	public ICommand AddWebsiteCommand => new RelayCommand(o =>
+	{
 		if (string.IsNullOrEmpty(Site)) return;
 		if ((!Site.StartsWith("https://") && !Site.StartsWith("http://")) || (!Site.StartsWith("http://") && !Site.StartsWith("https://")))
 		{
@@ -54,7 +68,8 @@ public class DownDetectorPageViewModel : ViewModelBase
 		Websites.Add(new WebsiteItemViewModel(Site, this));
 	});
 
-	public ICommand TestWebsitesCommand => new RelayCommand(o => {
+	public ICommand TestWebsitesCommand => new RelayCommand(o =>
+	{
 		IsTesting = true;
 		foreach (var site in Websites)
 		{
@@ -65,9 +80,47 @@ public class DownDetectorPageViewModel : ViewModelBase
 
 	public ICommand LaunchScheduledCommand => new RelayCommand(o =>
 	{
-		IsTesting = true;
-		//TODO: Implement scheduled testing with a timer
-		IsTesting = false;
+		if (Websites.Count == 0) return;
+		IsScheduledInProgress = !IsScheduledInProgress;
+		ScheduledText = string.Format(Properties.Resources.ScheduledTestInterval, TimeInterval);
+
+		int i = 0;
+		if (_timer is null)
+		{
+			_timer = new DispatcherTimer
+			{
+				Interval = TimeSpan.FromSeconds(1)
+			};
+			_timer.Tick += (s, e) =>
+			{
+				if (i < TimeInterval)
+				{
+					i++;
+					ScheduledText = string.Format(Properties.Resources.ScheduledTestInterval, TimeInterval - i);
+
+					return;
+				}
+				foreach (var site in Websites)
+				{
+					site.TestAsync();
+				}
+				i = 0;
+			}; 
+		}
+
+		if (!IsScheduledInProgress)
+		{
+			_timer.Stop();
+			_timer = null;
+			IsTesting = false;
+			ScheduledButtonText = Properties.Resources.LaunchScheduledTest;
+		}
+		else
+		{
+			_timer.Start();
+			IsTesting = true;
+			ScheduledButtonText = Properties.Resources.StopScheduledTests;
+		}
 	});
 
 	public ICommand ClearCommand => new RelayCommand(o => Websites.Clear());

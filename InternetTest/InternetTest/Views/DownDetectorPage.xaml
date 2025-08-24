@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:components="clr-namespace:InternetTest.Components"
-    xmlns:convereters="clr-namespace:InternetTest.Converters"
+    xmlns:converters="clr-namespace:InternetTest.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:lang="clr-namespace:InternetTest.Properties"
     xmlns:local="clr-namespace:InternetTest.Views"
@@ -17,7 +17,8 @@
     <Grid>
         <Grid.Resources>
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
-            <convereters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVis" />
+            <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVis" />
+            <converters:InverseBoolConverter x:Key="InverseBool" />
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -89,7 +90,8 @@
                         Command="{Binding AddWebsiteCommand}"
                         Content="{x:Static lang:Resources.AddSite}"
                         FontWeight="SemiBold"
-                        Foreground="{DynamicResource DarkFAccent}" />
+                        Foreground="{DynamicResource DarkFAccent}"
+                        IsEnabled="{Binding IsTesting, Converter={StaticResource InverseBool}}" />
                     <Button
                         Margin="10 0"
                         Padding="5"
@@ -97,7 +99,8 @@
                         Command="{Binding TestWebsitesCommand}"
                         Content="{x:Static lang:Resources.TestAll}"
                         FontWeight="SemiBold"
-                        Foreground="{DynamicResource WindowButtonsHoverForeground1}" />
+                        Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                        IsEnabled="{Binding IsTesting, Converter={StaticResource InverseBool}}" />
                 </StackPanel>
             </Grid>
         </Border>
@@ -136,7 +139,10 @@
                         Text="{x:Static lang:Resources.TimerDesc}"
                         TextWrapping="Wrap" />
                 </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <StackPanel
+                    Grid.Row="1"
+                    Orientation="Horizontal"
+                    Visibility="{Binding IsScheduledInProgress, Converter={StaticResource InverseBoolToVis}}">
                     <TextBlock
                         VerticalAlignment="Center"
                         FontWeight="SemiBold"
@@ -155,12 +161,21 @@
                         FontWeight="SemiBold"
                         Text="{x:Static lang:Resources.SecondsLower}" />
                 </StackPanel>
+                <TextBlock
+                    Grid.Row="1"
+                    Margin="0 5 0 0"
+                    VerticalAlignment="Center"
+                    FontWeight="SemiBold"
+                    Text="{Binding ScheduledText}"
+                    Visibility="{Binding IsScheduledInProgress, Converter={StaticResource BoolToVis}}" />
                 <Button
                     Grid.Row="3"
                     Padding="5"
                     HorizontalAlignment="Left"
+                    d:Content="{x:Static lang:Resources.LaunchScheduledTest}"
                     Background="{DynamicResource LightAccent}"
-                    Content="{x:Static lang:Resources.LaunchScheduledTest}"
+                    Command="{Binding LaunchScheduledCommand}"
+                    Content="{Binding ScheduledButtonText}"
                     FontWeight="SemiBold"
                     Foreground="{DynamicResource DarkFAccent}" />
             </Grid>
