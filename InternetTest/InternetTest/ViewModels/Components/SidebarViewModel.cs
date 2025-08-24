@@ -74,7 +74,7 @@ public class SidebarViewModel : ViewModelBase
 
 	private void DownDetectorPage(object? obj)
 	{
-		_mainViewModel.CurrentViewModel = new DownDetectorPageViewModel(_mainViewModel.Settings);
+		_mainViewModel.CurrentViewModel = new DownDetectorPageViewModel(_mainViewModel.Settings, _mainViewModel.History);
 	}
 
 	private void DnsToolsPage(object? obj)

@@ -91,6 +91,7 @@ public class MainViewModel : ViewModelBase
 	public string ConfidentialTooltip { get => _confidentialTooltip; set { _confidentialTooltip = value; OnPropertyChanged(nameof(ConfidentialTooltip)); } }
 
 	public Settings Settings { get; set; }
+	public ActivityHistory History { get; set; }
 	public static string Version => Context.Version;
 	private readonly Window _mainWindow;
 
@@ -99,9 +100,10 @@ public class MainViewModel : ViewModelBase
 	{
 		ConfidentialMode = !ConfidentialMode;
 	});
-	public MainViewModel(Settings settings, Window mainWindow)
+	public MainViewModel(Settings settings, ActivityHistory history, Window mainWindow)
 	{
 		Settings = settings;
+		History = history;
 		_mainWindow = mainWindow;
 		_sidebarViewModel = new(this);
 
@@ -110,7 +112,7 @@ public class MainViewModel : ViewModelBase
 
 		CurrentViewModel = Settings.DefaultPage switch
 		{
-			AppPages.DownDetector => new DownDetectorPageViewModel(Settings),
+			AppPages.DownDetector => new DownDetectorPageViewModel(Settings, History),
 			AppPages.DnsTool => new DnsToolsPageViewModel(),
 			AppPages.WiFiNetworks => new WiFiPageViewModel(Settings),
 			AppPages.WiFiPasswords => new WiFiPageViewModel(Settings),

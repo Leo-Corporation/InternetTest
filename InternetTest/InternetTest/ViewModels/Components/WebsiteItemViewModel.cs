@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Commands;
 using InternetTest.Helpers;
+using InternetTest.Models;
 using PeyrSharp.Core;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -56,9 +57,11 @@ public class WebsiteItemViewModel : ViewModelBase
 	});
 
 	private readonly DownDetectorPageViewModel _downDetectorPageViewModel;
-	public WebsiteItemViewModel(string url, DownDetectorPageViewModel downDetectorPageViewModel)
+	private readonly ActivityHistory _history;
+	public WebsiteItemViewModel(string url, DownDetectorPageViewModel downDetectorPageViewModel, ActivityHistory history)
 	{
 		_downDetectorPageViewModel = downDetectorPageViewModel;
+		_history = history;
 
 		Url = url;
 		StatusBackground = ThemeHelper.GetSolidColorBrush("LightAccent");
@@ -98,6 +101,8 @@ public class WebsiteItemViewModel : ViewModelBase
 				new(Properties.Resources.StatusMessage, statusInfo.StatusDescription, 0, 0),
 				new(Properties.Resources.TimeElapsed,  $"{(endTime - startTime).TotalMilliseconds:0} ms", 0,1 ),
 			];
+
+			_history.Activity.Add(new Activity(Url, statusInfo.StatusCode.ToString(), statusInfo.StatusCode is >= 200 and < 300, DateTime.Now));
 		}
 		catch { }
 		ShowStatusCode = true;

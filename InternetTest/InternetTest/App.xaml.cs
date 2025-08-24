@@ -33,18 +33,20 @@ namespace InternetTest;
 /// </summary>
 public partial class App : Application
 {
-	protected override void OnStartup(StartupEventArgs e)
+	protected override async void OnStartup(StartupEventArgs e)
 	{
 		// Load settings
 		Settings settings = new();
 		settings.Load();
+
+		ActivityHistory history = await ActivityHistory.LoadAsync();
 
 		ThemeHelper.ChangeTheme(settings.Theme);
 		Context.ChangeLanguage(settings.Language);
 
 		// Set the main window
 		MainWindow = new MainWindow();
-		MainViewModel mvm = new(settings, MainWindow);
+		MainViewModel mvm = new(settings, history, MainWindow);
 		MainWindow.DataContext = mvm;
 
 		MainWindow.Show();

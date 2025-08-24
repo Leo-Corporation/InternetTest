@@ -65,7 +65,7 @@ public class DownDetectorPageViewModel : ViewModelBase
 
 		if (Websites.Any(x => x.Url == Site)) return; // already exists
 
-		Websites.Add(new WebsiteItemViewModel(Site, this));
+		Websites.Add(new WebsiteItemViewModel(Site, this, _history));
 		Site = string.Empty;
 	});
 
@@ -77,6 +77,7 @@ public class DownDetectorPageViewModel : ViewModelBase
 			site.TestAsync();
 		}
 		IsTesting = false;
+		_history.Save();
 	});
 
 	public ICommand LaunchScheduledCommand => new RelayCommand(o =>
@@ -127,11 +128,13 @@ public class DownDetectorPageViewModel : ViewModelBase
 	public ICommand ClearCommand => new RelayCommand(o => Websites.Clear());
 
 	private readonly Settings _settings;
-	public DownDetectorPageViewModel(Settings settings)
+	private readonly ActivityHistory _history;
+	public DownDetectorPageViewModel(Settings settings, ActivityHistory history)
 	{
 		_settings = settings;
+		_history = history;
 		TimeInterval = _settings.DefaultTimeInterval ?? 10;
-		Websites = [.. _settings.DownDetectorWebsites?.Select(x => new WebsiteItemViewModel(x, this)) ?? []];
+		Websites = [.. _settings.DownDetectorWebsites?.Select(x => new WebsiteItemViewModel(x, this, _history)) ?? []];
 		Websites.CollectionChanged += (s, e) =>
 		{
 			_settings.DownDetectorWebsites = [.. Websites.Select(x => x.Url)];
