@@ -1,0 +1,123 @@
+﻿<UserControl
+    x:Class="InternetTest.Components.WebsiteItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:InternetTest.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lang="clr-namespace:InternetTest.Properties"
+    xmlns:local="clr-namespace:InternetTest.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:InternetTest.ViewModels.Components"
+    d:DesignWidth="800"
+    FontFamily="..\Fonts\#Hauora"
+    Foreground="{DynamicResource Foreground1}"
+    mc:Ignorable="d">
+    <Border
+        Margin="5"
+        Padding="5"
+        BorderBrush="{DynamicResource Border}"
+        BorderThickness="1"
+        CornerRadius="10">
+        <Grid>
+            <Grid.Resources>
+                <BooleanToVisibilityConverter x:Key="BoolToVis" />
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border
+                Padding="5 2"
+                d:Background="{DynamicResource LightGreen}"
+                Background="{Binding StatusBackground}"
+                CornerRadius="5"
+                Visibility="{Binding ShowStatusCode, Converter={StaticResource BoolToVis}}">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    d:Foreground="{DynamicResource ForegroundGreen}"
+                    d:Text="200"
+                    FontWeight="SemiBold"
+                    Foreground="{Binding StatusForeground}"
+                    Text="{Binding StatusCode}" />
+            </Border>
+            <TextBlock
+                Grid.Column="1"
+                Margin="5 0"
+                VerticalAlignment="Center"
+                d:Text="google.fr"
+                FontWeight="SemiBold"
+                Text="{Binding Url}" />
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <Button
+                    Grid.Column="3"
+                    Padding="5"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Command="{Binding TestCommand}"
+                    Content="&#xF606;"
+                    Cursor="Hand"
+                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                    Foreground="{DynamicResource Foreground1}">
+                    <Button.ToolTip>
+                        <ToolTip Content="{x:Static lang:Resources.Test}" />
+                    </Button.ToolTip>
+                </Button>
+                <ToggleButton
+                    x:Name="ExpandBtn"
+                    Margin="5 0"
+                    Padding="5"
+                    Background="Transparent"
+                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                    Foreground="{DynamicResource Foreground1}"
+                    Style="{DynamicResource ExpanderChevronButton}" />
+                <Button
+                    Grid.Column="3"
+                    Padding="5"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Command="{Binding DeleteCommand}"
+                    Content="&#xF34D;"
+                    Cursor="Hand"
+                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                    Foreground="{DynamicResource Foreground1}">
+                    <Button.ToolTip>
+                        <ToolTip Content="{x:Static lang:Resources.Delete}" />
+                    </Button.ToolTip>
+                </Button>
+            </StackPanel>
+            <ItemsControl
+                Grid.Row="1"
+                Grid.ColumnSpan="5"
+                ItemsSource="{Binding Details}"
+                Visibility="{Binding ElementName=ExpandBtn, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ContentPresenter">
+                        <Setter Property="Grid.Row" Value="{Binding GridRow}" />
+                        <Setter Property="Grid.Column" Value="{Binding GridColumn}" />
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type vm:GridItemViewModel}">
+                        <local:GridItem />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </Border>
+</UserControl>
