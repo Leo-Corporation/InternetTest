@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Helpers;
 using PeyrSharp.Env;
 using System.Diagnostics;
 using System.IO;
@@ -145,7 +146,7 @@ public class WlanProfile
 
 			for (int i = 0; i < files.Length; i++)
 			{
-				var profile = await DeserializeXmlAsync<WlanProfile>(files[i]);
+				var profile = await XmlHelper.DeserializeAsync<WlanProfile>(files[i]);
 				if (profile != null) profiles.Add(profile);
 			}
 
@@ -184,14 +185,5 @@ public class WlanProfile
 		return await Task.Run(() => Directory.GetFiles(directory, searchPatternn));
 	}
 
-	private static async Task<T?> DeserializeXmlAsync<T>(string filepath)
-	{
-		return await Task.Run(() =>
-		{
-			XmlSerializer serializer = new(typeof(T));
-			using StreamReader reader = new(filepath);
-			return (T?)serializer.Deserialize(reader);
-		});
-	}
 
 }
