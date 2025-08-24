@@ -781,6 +781,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Easily monitor down status for any websites..
+        /// </summary>
+        public static string DownDetectorDesc {
+            get {
+                return ResourceManager.GetString("DownDetectorDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wondering whether a website is working or not? 
         ///Check and get real-time information about specified websites using InternetTest Pro&apos;s DownDetector feature.
         ///You can get site status, response time and much more!.
@@ -3388,6 +3397,24 @@ namespace InternetTest.Properties {
         public static string WebsiteDown {
             get {
                 return ResourceManager.GetString("WebsiteDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Websites.
+        /// </summary>
+        public static string Websites {
+            get {
+                return ResourceManager.GetString("Websites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The list of websites to check..
+        /// </summary>
+        public static string WebsitesDesc {
+            get {
+                return ResourceManager.GetString("WebsitesDesc", resourceCulture);
             }
         }
         

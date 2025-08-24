@@ -1287,4 +1287,13 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
   <data name="Target" xml:space="preserve">
     <value>Obiettivo</value>
   </data>
+  <data name="DownDetectorDesc" xml:space="preserve">
+    <value>Monitorare facilmente lo stato di inattività di qualsiasi sito web.</value>
+  </data>
+  <data name="Websites" xml:space="preserve">
+    <value>Siti web</value>
+  </data>
+  <data name="WebsitesDesc" xml:space="preserve">
+    <value>L'elenco dei siti web da controllare.</value>
+  </data>
 </root>

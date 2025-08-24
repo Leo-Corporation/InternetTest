@@ -162,6 +162,7 @@
                             Padding="5"
                             HorizontalContentAlignment="Left"
                             Background="Transparent"
+                            Command="{Binding DownDetectorCommand}"
                             Content="{x:Static lang:Resources.DownDetector}"
                             GroupName="Sidebar"
                             IsChecked="{Binding DefaultPage, Converter={StaticResource EnumToBool}, ConverterParameter={x:Static enums:AppPages.DownDetector}}"

@@ -33,6 +33,7 @@ public class SidebarViewModel : ViewModelBase
 
 	public ICommand HomePageCommand { get; }
 	public ICommand SettingsPageCommand { get; }
+	public ICommand DownDetectorCommand { get; }
 	public ICommand WiFiPageCommand { get; }
 	public ICommand LocateIpPageCommand { get; }
 	public ICommand IpConfigPageCommand { get; }
@@ -50,6 +51,7 @@ public class SidebarViewModel : ViewModelBase
 
 		HomePageCommand = new RelayCommand(HomePage);
 		SettingsPageCommand = new RelayCommand(SettingsPage);
+		DownDetectorCommand = new RelayCommand(DownDetectorPage);
 		WiFiPageCommand = new RelayCommand(WiFiPage);
 		LocateIpPageCommand = new RelayCommand(LocateIpPage);
 		IpConfigPageCommand = new RelayCommand(IpConfigPage);
@@ -66,6 +68,11 @@ public class SidebarViewModel : ViewModelBase
 	private void SettingsPage(object? obj)
 	{
 		_mainViewModel.CurrentViewModel = new SettingsPageViewModel(_mainViewModel);
+	}
+
+	private void DownDetectorPage(object? obj)
+	{
+		_mainViewModel.CurrentViewModel = new DownDetectorPageViewModel(_mainViewModel.Settings);
 	}
 
 	private void WiFiPage(object? obj)

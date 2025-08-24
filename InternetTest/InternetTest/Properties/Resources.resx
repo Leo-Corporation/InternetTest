@@ -1287,4 +1287,13 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="Target" xml:space="preserve">
     <value>Target</value>
   </data>
+  <data name="DownDetectorDesc" xml:space="preserve">
+    <value>Easily monitor down status for any websites.</value>
+  </data>
+  <data name="Websites" xml:space="preserve">
+    <value>Websites</value>
+  </data>
+  <data name="WebsitesDesc" xml:space="preserve">
+    <value>The list of websites to check.</value>
+  </data>
 </root>

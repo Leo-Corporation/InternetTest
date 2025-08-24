@@ -1287,4 +1287,13 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="Target" xml:space="preserve">
     <value>Cible</value>
   </data>
+  <data name="DownDetectorDesc" xml:space="preserve">
+    <value>Surveillez facilement l'état de disponibilité de n'importe quel site web.</value>
+  </data>
+  <data name="Websites" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="WebsitesDesc" xml:space="preserve">
+    <value>Liste des sites à vérifier.</value>
+  </data>
 </root>

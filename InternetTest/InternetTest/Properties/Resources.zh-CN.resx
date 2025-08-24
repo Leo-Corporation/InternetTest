@@ -1278,4 +1278,13 @@
   <data name="Target" xml:space="preserve">
     <value>目标</value>
   </data>
+  <data name="DownDetectorDesc" xml:space="preserve">
+    <value>轻松监控任何网站的离线状态。</value>
+  </data>
+  <data name="Websites" xml:space="preserve">
+    <value>网站</value>
+  </data>
+  <data name="WebsitesDesc" xml:space="preserve">
+    <value>需要检查的网站列表。</value>
+  </data>
 </root>
