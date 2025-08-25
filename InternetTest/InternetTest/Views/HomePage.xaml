@@ -276,18 +276,24 @@
                                 Text="{x:Static lang:Resources.RecentActivity}" />
                         </StackPanel>
                     </StackPanel>
-                    <ItemsControl Grid.Row="1" ItemsSource="{Binding History}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate DataType="{x:Type vm:HistoryItemViewModel}">
-                                <components:HistoryItem />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                    <ScrollViewer
+                        Grid.Row="1"
+                        MaxHeight="200"
+                        CanContentScroll="True"
+                        VerticalScrollBarVisibility="Auto">
+                        <ItemsControl ItemsSource="{Binding History}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type vm:HistoryItemViewModel}">
+                                    <components:HistoryItem />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
                     <StackPanel
                         Grid.Row="1"
                         Grid.ColumnSpan="2"
