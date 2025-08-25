@@ -42,13 +42,13 @@ public class SidebarViewModel : ViewModelBase
 	public ICommand RequestsPageCommand { get; }
 	public ICommand TraceroutePageCommand { get; }
 
-	public AppPages DefaultPage { get; init; }
+	private AppPages _defaultPage;
+	public AppPages DefaultPage { get => _defaultPage; set { _defaultPage = value; OnPropertyChanged(nameof(DefaultPage)); } }
 
 	public SidebarViewModel(MainViewModel mainViewModel)
 	{
 		_mainViewModel = mainViewModel;
 		DefaultPage = _mainViewModel.Settings.DefaultPage;
-		OnPropertyChanged(nameof(DefaultPage));
 
 		HomePageCommand = new RelayCommand(HomePage);
 		SettingsPageCommand = new RelayCommand(SettingsPage);
@@ -64,7 +64,7 @@ public class SidebarViewModel : ViewModelBase
 
 	private void HomePage(object? obj)
 	{
-		_mainViewModel.CurrentViewModel = new HomePageViewModel(_mainViewModel.Settings, _mainViewModel.History);
+		_mainViewModel.CurrentViewModel = new HomePageViewModel(_mainViewModel.Settings, _mainViewModel.History, _mainViewModel);
 	}
 
 	private void SettingsPage(object? obj)

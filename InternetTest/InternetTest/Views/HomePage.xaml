@@ -24,6 +24,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <StackPanel>
             <TextBlock
@@ -383,5 +384,72 @@
                 </Grid>
             </Border>
         </Grid>
+        <StackPanel Grid.Row="5" Margin="10 0">
+            <TextBlock
+                Margin="0 10"
+                FontSize="14"
+                FontWeight="Bold"
+                Text="{x:Static lang:Resources.QuickActions}" />
+            <Button
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{x:Null}"
+                Command="{Binding WiFiCommand}"
+                Cursor="Hand"
+                FontSize="14"
+                FontWeight="ExtraBold"
+                Foreground="{DynamicResource Accent}"
+                Style="{DynamicResource Link}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="0 0 10 0"
+                        VerticalAlignment="Center"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        FontWeight="Regular"
+                        Text="&#xF8AD;" />
+                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.WiFi}" />
+                </StackPanel>
+            </Button>
+            <Button
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{x:Null}"
+                Command="{Binding LocateIpCommand}"
+                Cursor="Hand"
+                FontSize="14"
+                FontWeight="ExtraBold"
+                Foreground="{DynamicResource Accent}"
+                Style="{DynamicResource Link}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="0 0 10 0"
+                        VerticalAlignment="Center"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        FontWeight="Regular"
+                        Text="&#xF4F9;" />
+                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.LocateAnIP}" />
+                </StackPanel>
+            </Button>
+            <Button
+                Padding="5"
+                HorizontalAlignment="Left"
+                Background="{x:Null}"
+                Command="{Binding DnsCommand}"
+                Cursor="Hand"
+                FontSize="14"
+                FontWeight="ExtraBold"
+                Foreground="{DynamicResource Accent}"
+                Style="{DynamicResource Link}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="0 0 10 0"
+                        VerticalAlignment="Center"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        FontWeight="Regular"
+                        Text="&#xF531;" />
+                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.DNSTool}" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
     </Grid>
 </UserControl>

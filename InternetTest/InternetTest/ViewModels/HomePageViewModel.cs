@@ -21,6 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Commands;
+using InternetTest.Enums;
 using InternetTest.Helpers;
 using InternetTest.Interfaces;
 using InternetTest.Models;
@@ -28,6 +30,7 @@ using InternetTest.ViewModels.Components;
 using PeyrSharp.Core;
 using System.Collections.ObjectModel;
 using System.Net.NetworkInformation;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels;
@@ -89,9 +92,29 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 	private readonly Settings _settings;
 
 	bool connected = true;
-	public HomePageViewModel(Settings settings, ActivityHistory history)
+
+	public ICommand WiFiCommand => new RelayCommand(o =>
+	{
+		_mainViewModel.CurrentViewModel = new WiFiPageViewModel(_settings);
+		_mainViewModel.SidebarViewModel.DefaultPage = AppPages.WiFiNetworks;
+	});
+
+	public ICommand LocateIpCommand => new RelayCommand(o =>
+	{
+		_mainViewModel.CurrentViewModel = new LocateIpPageViewModel(_settings);
+		_mainViewModel.SidebarViewModel.DefaultPage = AppPages.LocateIP;
+	});
+
+	public ICommand DnsCommand => new RelayCommand(o =>
+	{
+		_mainViewModel.CurrentViewModel = new DnsToolsPageViewModel();
+		_mainViewModel.SidebarViewModel.DefaultPage = AppPages.DnsTool;
+	});
+	private readonly MainViewModel _mainViewModel;
+	public HomePageViewModel(Settings settings, ActivityHistory history, MainViewModel mainViewModel)
 	{
 		_settings = settings;
+		_mainViewModel = mainViewModel;
 
 		// Get status
 		LoadStatusCard();

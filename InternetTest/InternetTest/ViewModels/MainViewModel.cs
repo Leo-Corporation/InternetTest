@@ -103,7 +103,7 @@ public class MainViewModel : ViewModelBase
 	public ICommand ToggleConfidentialModeCommand => new RelayCommand(o =>
 	{
 		ConfidentialMode = !ConfidentialMode;
-	});
+	});	
 	public MainViewModel(Settings settings, ActivityHistory history, Window mainWindow)
 	{
 		Settings = settings;
@@ -125,7 +125,7 @@ public class MainViewModel : ViewModelBase
 			AppPages.Ping => new PingPageViewModel(Settings),
 			AppPages.Requests => new RequestsPageViewModel(Settings),
 			AppPages.TraceRoute => new TraceroutePageViewModel(Settings),
-			_ => new HomePageViewModel(Settings, History)
+			_ => new HomePageViewModel(Settings, History, this)
 		};
 
 
