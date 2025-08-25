@@ -92,7 +92,11 @@ public class MainViewModel : ViewModelBase
 
 	public Settings Settings { get; set; }
 	public ActivityHistory History { get; set; }
+#if PORTABLE
+	public static string Version => $"{Context.Version} (Portable)";
+#else
 	public static string Version => Context.Version;
+#endif
 	private readonly Window _mainWindow;
 
 	public ICommand PinCommand { get; }
