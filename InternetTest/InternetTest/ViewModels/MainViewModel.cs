@@ -21,12 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using Hardcodet.Wpf.TaskbarNotification;
 using InternetTest.Commands;
 using InternetTest.Enums;
 using InternetTest.Helpers;
 using InternetTest.Interfaces;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
+using PeyrSharp.Core;
+using PeyrSharp.Env;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
@@ -103,7 +107,7 @@ public class MainViewModel : ViewModelBase
 	public ICommand ToggleConfidentialModeCommand => new RelayCommand(o =>
 	{
 		ConfidentialMode = !ConfidentialMode;
-	});	
+	});
 	public MainViewModel(Settings settings, ActivityHistory history, Window mainWindow)
 	{
 		Settings = settings;
@@ -130,6 +134,8 @@ public class MainViewModel : ViewModelBase
 
 
 		PinCommand = new RelayCommand(Pin);
+
+		CheckUpdates();
 	}
 
 	public void Pin(object? obj)
@@ -141,5 +147,35 @@ public class MainViewModel : ViewModelBase
 			Settings.Pinned = Pinned;
 			Settings.Save();
 		}
+	}
+
+	private async void CheckUpdates()
+	{
+		if (!Settings.CheckUpdateOnStart) return;
+		if (!await Internet.IsAvailableAsync()) return;
+		var lastVersion = await Update.GetLastVersionAsync(Context.UpdateVersionUrl);
+		if (!Update.IsAvailable(Context.Version, lastVersion)) return;
+
+		var notify = new TaskbarIcon()
+		{
+			Icon = System.Drawing.Icon.ExtractAssociatedIcon(AppDomain.CurrentDomain.BaseDirectory + @"\InternetTest.exe"),
+			ToolTipText = "InternetTest",
+		};
+		notify.TrayBalloonTipClosed += (s, e) => { notify.Dispose(); };
+		notify.TrayBalloonTipClicked += (s, e) =>
+		{
+#if PORTABLE
+			MessageBox.Show(Properties.Resources.PortableNoAutoUpdates, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.OK, MessageBoxImage.Information);
+			return;
+#else
+			if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+			{
+				Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+				Application.Current.Shutdown(); // Close
+			}
+#endif
+			notify.Dispose();
+		};
+		notify.ShowBalloonTip(Properties.Resources.Updates, Properties.Resources.AvailableUpdates, BalloonIcon.Info);
 	}
 }
