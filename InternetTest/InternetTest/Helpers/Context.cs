@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using InternetTest.Enums;
 using PeyrSharp.Env;
+using System.Diagnostics;
 
 namespace InternetTest.Helpers;
 
@@ -47,5 +48,33 @@ public static class Context
 			Language.it_IT => new System.Globalization.CultureInfo("it-IT"),
 			_ => Thread.CurrentThread.CurrentUICulture
 		};
+	}
+
+
+	public static async Task<string> RunPowerShellCommandAsync(string psCommand)
+	{
+		// Create a new process to run PowerShell
+		ProcessStartInfo processInfo = new()
+		{
+			FileName = "powershell.exe",
+			Arguments = $"-Command \"{psCommand}\"",
+			RedirectStandardOutput = true,
+			RedirectStandardError = true,
+			UseShellExecute = false,
+			CreateNoWindow = true
+		};
+
+		// Start the PowerShell process
+		using Process? process = Process.Start(processInfo);
+
+		// Asynchronously read the output from the process
+		if (process == null) return string.Empty;
+		string output = await process.StandardOutput.ReadToEndAsync();
+
+		// Wait for the process to complete asynchronously
+		await process.WaitForExitAsync();
+
+		// Return the JSON output
+		return output;
 	}
 }

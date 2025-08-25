@@ -4,6 +4,7 @@
     xmlns:local="clr-namespace:InternetTest.Themes">
 
     <SolidColorBrush x:Key="Background1" Color="#ffffff" />
+    <SolidColorBrush x:Key="HoverBackground" Color="#e6e6e6" />
     <SolidColorBrush x:Key="CardBackground" Color="#ffffff" />
     <SolidColorBrush x:Key="SidebarBackground" Color="#ccffffff" />
     <SolidColorBrush x:Key="Foreground1" Color="#000000" />

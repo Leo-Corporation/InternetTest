@@ -22,12 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using DnsClient;
-using DnsClient.Protocol;
 using InternetTest.Commands;
+using InternetTest.Enums;
+using InternetTest.Helpers;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows;
@@ -42,6 +44,9 @@ public class DnsToolsPageViewModel : ViewModelBase
 
 	private ObservableCollection<DnsItemViewModel> _dnsRecordsItems = [];
 	public ObservableCollection<DnsItemViewModel> DnsRecordsItems { get => _dnsRecordsItems; set { _dnsRecordsItems = value; OnPropertyChanged(nameof(DnsRecordsItems)); } }
+
+	private ObservableCollection<DnsCacheItemViewModel> _dnsCacheItems = [];
+	public ObservableCollection<DnsCacheItemViewModel> DnsCacheItems { get => _dnsCacheItems; set { _dnsCacheItems = value; OnPropertyChanged(nameof(DnsCacheItems)); } }
 
 	private string _query = string.Empty;
 	public string Query { get => _query; set { _query = value; OnPropertyChanged(nameof(Query)); } }
@@ -64,7 +69,89 @@ public class DnsToolsPageViewModel : ViewModelBase
 	private string _status = string.Empty;
 	public string Status { get => _status; set { _status = value; OnPropertyChanged(nameof(Status)); } }
 
+	private string _success = string.Empty;
+	public string Success { get => _success; set { _success = value; OnPropertyChanged(nameof(Success)); } }
+
+	private string _error = string.Empty;
+	public string Error { get => _error; set { _error = value; OnPropertyChanged(nameof(Error)); } }
+
+	private string _info = string.Empty;
+	public string Info { get => _info; set { _info = value; OnPropertyChanged(nameof(Info)); } }
+
+	private string _tooltipContent = string.Empty;
+	public string TooltipContent { get => _tooltipContent; set { _tooltipContent = value; OnPropertyChanged(nameof(TooltipContent)); } }
+
 	private string _csv = string.Empty;
+
+	public ICommand GetDnsCacheCommand => new RelayCommand(async o =>
+	{
+		try
+		{
+			var cache = await GetDnsCache();
+			DnsCacheItems = [.. cache.Select(x => new DnsCacheItemViewModel(x))];
+
+			var status = new Dictionary<Status, int>();
+			if (cache != null)
+			{
+				for (int i = 0; i < cache.Length; i++)
+				{
+					status[(Status)cache[i].Status] = status.ContainsKey((Status)cache[i].Status) ? status[(Status)cache[i].Status] + 1 : 1;
+				}
+			}
+
+			Success = status.TryGetValue(Enums.Status.Success, out int value) ? value.ToString() : "0";
+			Error = (cache?.Length - value ?? 0).ToString();
+			Info = cache?.Length.ToString() ?? "0";
+
+			foreach (var pair in status)
+			{
+				TooltipContent += $"{pair.Key}: {pair.Value}\n";
+			}
+			TooltipContent = TooltipContent.TrimEnd('\n');
+
+			CacheLoaded = true;
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+			CacheLoaded = false;
+		}
+	});
+
+	public ICommand FlushCommand => new RelayCommand(o =>
+	{
+		if (MessageBox.Show(Properties.Resources.FlushDNSMessage, Properties.Resources.FlushDNS, MessageBoxButton.YesNoCancel, MessageBoxImage.Question) != MessageBoxResult.Yes)
+			return;
+		try
+		{
+			ProcessStartInfo processInfo = new()
+			{
+				FileName = "ipconfig",
+				Arguments = "/flushdns",
+				RedirectStandardOutput = true,
+				RedirectStandardError = true,
+				UseShellExecute = false,
+				CreateNoWindow = true
+			};
+
+			using Process? process = Process.Start(processInfo);
+			if (process is null) return;
+			// Read the output from the command
+			string output = process.StandardOutput.ReadToEnd();
+			string error = process.StandardError.ReadToEnd();
+
+			// Wait for the process to exit
+			process.WaitForExit();
+			MessageBox.Show(Properties.Resources.FlushDNSSuccess, Properties.Resources.FlushDNS, MessageBoxButton.OK, MessageBoxImage.Information);
+
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
+		CacheLoaded = false;
+	});
+
 	public ICommand GetDnsInfoCommand => new RelayCommand(async o =>
 	{
 		try
@@ -105,6 +192,9 @@ public class DnsToolsPageViewModel : ViewModelBase
 	public bool IsRefreshing { get => _isRefreshing; set { _isRefreshing = value; OnPropertyChanged(nameof(IsRefreshing)); OnPropertyChanged(nameof(PlaceholderVis)); } }
 
 	public bool PlaceholderVis => !IsRefreshing && !HasInfo;
+
+	private bool _cacheLoaded = false;
+	public bool CacheLoaded { get => _cacheLoaded; set { _cacheLoaded = value; OnPropertyChanged(nameof(CacheLoaded)); } }
 
 	public List<DnsRecord> DnsRecords { get; set; } = [];
 	public DnsToolsPageViewModel()
@@ -156,6 +246,17 @@ public class DnsToolsPageViewModel : ViewModelBase
 
 		DnsRecordsItems = [.. DnsRecords.Select(x => new DnsItemViewModel(x))];
 	}
+
+	public static async Task<DnsCacheInfo[]> GetDnsCache()
+	{
+		// The PowerShell command to execute
+		string psCommand = "Get-DnsClientCache | ConvertTo-Json -Depth 4";
+
+		// Capture the JSON output asynchronously
+		string json = await Context.RunPowerShellCommandAsync(psCommand);
+		return DnsCacheInfo.FromJson(json);
+	}
+
 }
 
 public class DnsRecordTabBtnViewModel(string title, DnsToolsPageViewModel dnsToolsPage, QueryType type, bool isChecked = false) : ViewModelBase
