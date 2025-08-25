@@ -1299,4 +1299,10 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="DnsPageDesc" xml:space="preserve">
     <value>Get DNS information about a domain and your local DNS cache.</value>
   </data>
+  <data name="DomainLookup" xml:space="preserve">
+    <value>Domain Lookup</value>
+  </data>
+  <data name="Domain" xml:space="preserve">
+    <value>Domain</value>
+  </data>
 </root>
