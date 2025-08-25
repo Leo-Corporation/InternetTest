@@ -288,6 +288,22 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Margin="20"
+                        VerticalAlignment="Center"
+                        Visibility="{Binding HasHistory, Converter={StaticResource InverseBoolToVis}}">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                            FontSize="48"
+                            Text="&#xF4A4;" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Text="{x:Static lang:Resources.HistoryEmpty}"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
                 </Grid>
             </Border>
             <Border

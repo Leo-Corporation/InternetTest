@@ -84,6 +84,8 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 	private bool _confidentialMode = false;
 	public bool ConfidentialMode { get => _confidentialMode; set { _confidentialMode = value; OnPropertyChanged(nameof(ConfidentialMode)); } }
 
+	public bool HasHistory => History.Count > 0;
+
 	private readonly Settings _settings;
 
 	bool connected = true;
@@ -123,6 +125,7 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 
 		// Load history
 		History = new ObservableCollection<HistoryItemViewModel>(history.Activity.Select(x => new HistoryItemViewModel(x)));
+		History.CollectionChanged += (s, e) => { OnPropertyChanged(nameof(HasHistory)); };
 	}
 
 	internal async void LoadIpAddress()
