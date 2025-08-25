@@ -1,0 +1,108 @@
+﻿<UserControl
+    x:Class="InternetTest.Components.DnsItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lang="clr-namespace:InternetTest.Properties"
+    xmlns:local="clr-namespace:InternetTest.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignWidth="800"
+    FontFamily="..\Fonts\#Hauora"
+    Foreground="{DynamicResource Foreground1}"
+    mc:Ignorable="d">
+    <Border
+        Margin="0 5"
+        Padding="10"
+        BorderBrush="{DynamicResource Border}"
+        BorderThickness="1"
+        CornerRadius="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border
+                MinWidth="40"
+                Padding="5 2"
+                d:Background="DeepSkyBlue"
+                Background="{Binding TypeBackground}"
+                CornerRadius="10">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    d:Text="A"
+                    FontWeight="SemiBold"
+                    Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                    Text="{Binding RecordType}" />
+            </Border>
+            <TextBlock
+                Grid.Column="1"
+                Margin="5 0"
+                VerticalAlignment="Center"
+                d:Text="example.com"
+                FontFamily="Consolas"
+                Text="{Binding Domain}" />
+            <Button
+                Grid.Column="2"
+                Padding="5"
+                Background="Transparent"
+                Command="{Binding CopyCommand}"
+                Content="&#xF32C;"
+                FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                Foreground="{DynamicResource Foreground1}">
+                <Button.ToolTip>
+                    <ToolTip Content="{x:Static lang:Resources.Copy}" />
+                </Button.ToolTip>
+            </Button>
+
+            <TextBlock
+                Grid.Row="1"
+                Margin="0 5"
+                Foreground="{DynamicResource DarkGray}"
+                Text="{x:Static lang:Resources.Value}" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="0 5"
+                HorizontalAlignment="Right"
+                FontFamily="Consolas"
+                Foreground="{DynamicResource DarkGray}"
+                Text="{Binding Value}" />
+            <TextBlock
+                Grid.Row="2"
+                Margin="0 5"
+                Foreground="{DynamicResource DarkGray}"
+                Text="{x:Static lang:Resources.TimeToLive}" />
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="0 5"
+                HorizontalAlignment="Right"
+                FontFamily="Consolas"
+                Foreground="{DynamicResource DarkGray}"
+                Text="{Binding Ttl}" />
+            <TextBlock
+                Grid.Row="3"
+                Margin="0 5"
+                Foreground="{DynamicResource DarkGray}"
+                Text="{x:Static lang:Resources.Class}" />
+            <TextBlock
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="0 5"
+                HorizontalAlignment="Right"
+                FontFamily="Consolas"
+                Foreground="{DynamicResource DarkGray}"
+                Text="{Binding Class}" />
+        </Grid>
+    </Border>
+</UserControl>

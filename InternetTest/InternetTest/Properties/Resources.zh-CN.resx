@@ -1296,4 +1296,10 @@
   <data name="Domain" xml:space="preserve">
     <value>域名</value>
   </data>
+  <data name="Class" xml:space="preserve">
+    <value>班级</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>价值</value>
+  </data>
 </root>

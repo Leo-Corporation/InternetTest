@@ -21,44 +21,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using DnsClient;
+using System.Windows.Controls;
 
-namespace InternetTest.Models;
+namespace InternetTest.Components;
 
-public class DnsRecord
+/// <summary>
+/// Interaction logic for DnsItem.xaml
+/// </summary>
+public partial class DnsItem : UserControl
 {
-	public QueryType Type { get; set; }
-	public string Name { get; set; }
-	public string Ttl { get; set; } = string.Empty;
-	public string Value { get; set; } = string.Empty;
-	public string Class { get; set; } = string.Empty;
-
-	private string _raw;
-	public DnsRecord(string name, string raw, QueryType queryType)
+	public DnsItem()
 	{
-		Name = name;
-		Type = queryType;
-		ParseRecord(raw);
-
-		_raw = raw;
+		InitializeComponent();
 	}
-
-	private void ParseRecord(string record)
-	{
-		var parts = record.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-		if (parts.Length >= 4)
-		{
-			Ttl = parts[1];
-			Class = parts[2];
-			Value = string.Join(' ', parts, 4, parts.Length - 4);
-		}
-		else
-		{
-			Ttl = Properties.Resources.Unknown;
-			Class = Properties.Resources.Unknown;
-			Value = record;
-		}
-	}
-
-	public override string ToString() => _raw;
 }

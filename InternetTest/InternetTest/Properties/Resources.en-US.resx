@@ -1305,4 +1305,10 @@ Absolutely NO data is sent to Léo Corporation.</value>
   <data name="Domain" xml:space="preserve">
     <value>Domain</value>
   </data>
+  <data name="Class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
 </root>
