@@ -26,7 +26,9 @@ using DnsClient.Protocol;
 using InternetTest.Commands;
 using InternetTest.Models;
 using InternetTest.ViewModels.Components;
+using Microsoft.Win32;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Net;
 using System.Windows;
 using System.Windows.Input;
@@ -62,6 +64,7 @@ public class DnsToolsPageViewModel : ViewModelBase
 	private string _status = string.Empty;
 	public string Status { get => _status; set { _status = value; OnPropertyChanged(nameof(Status)); } }
 
+	private string _csv = string.Empty;
 	public ICommand GetDnsInfoCommand => new RelayCommand(async o =>
 	{
 		try
@@ -77,6 +80,22 @@ public class DnsToolsPageViewModel : ViewModelBase
 			HasInfo = false;
 		}
 		IsRefreshing = false;
+	});
+
+	public ICommand SaveCommand => new RelayCommand(o =>
+	{
+		SaveFileDialog saveFileDialog = new()
+		{
+			FileName = $"{Query}.csv",
+			Filter = "CSV|*.csv",
+			Title = Properties.Resources.ExportToCSV
+		}; // Create file dialog
+
+		if (saveFileDialog.ShowDialog() ?? true)
+		{
+			using StreamWriter outputFile = new(saveFileDialog.FileName);
+			outputFile.Write(_csv);
+		}
 	});
 
 	private bool _hasInfo = false;
@@ -119,6 +138,8 @@ public class DnsToolsPageViewModel : ViewModelBase
 		var lookup = new LookupClient();
 		var result = await lookup.QueryAsync(Query, QueryType.ANY);
 
+		_csv = string.Empty;
+
 		DnsRecords.Clear();
 		DnsTabs.Clear();
 		DnsTabs.Add(new("ANY", this, QueryType.ANY, true));
@@ -126,6 +147,8 @@ public class DnsToolsPageViewModel : ViewModelBase
 		foreach (var record in result.AllRecords)
 		{
 			DnsRecords.Add(new(record.DomainName, record.ToString(), (QueryType)record.RecordType));
+
+			_csv += $"{record.RecordType},{record}\n";
 
 			if (DnsTabs.FirstOrDefault(x => x.Title == record.RecordType.ToString()) == null)
 				DnsTabs.Add(new(record.RecordType.ToString(), this, (QueryType)record.RecordType));

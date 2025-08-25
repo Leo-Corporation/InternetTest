@@ -306,6 +306,10 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock
                             VerticalAlignment="Center"
@@ -319,7 +323,22 @@
                             FontWeight="Bold"
                             Text="{x:Static lang:Resources.DNSInfo}" />
                     </StackPanel>
-                    <ItemsControl Grid.Row="1" ItemsSource="{Binding DnsTabs}">
+                    <Button
+                        Grid.Column="1"
+                        Padding="5"
+                        Background="Transparent"
+                        Command="{Binding SaveCommand}"
+                        Content="&#xF680;"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.ExportToCSV}" />
+                        </Button.ToolTip>
+                    </Button>
+                    <ItemsControl
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        ItemsSource="{Binding DnsTabs}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Horizontal" />
@@ -342,7 +361,10 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
-                    <ItemsControl Grid.Row="2" ItemsSource="{Binding DnsRecordsItems}">
+                    <ItemsControl
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        ItemsSource="{Binding DnsRecordsItems}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel />
