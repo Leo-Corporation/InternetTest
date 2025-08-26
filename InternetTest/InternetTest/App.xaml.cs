@@ -59,7 +59,8 @@ public partial class App : Application
 			return;
 		}
 
-		MainWindow = new MainWindow() {
+		MainWindow = new MainWindow()
+		{
 			Width = settings.MainWindowSize?.Item1 ?? 950,
 			Height = settings.MainWindowSize?.Item2 ?? 600,
 		};

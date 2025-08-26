@@ -33,7 +33,7 @@ public class DnsRecord
 	public string Value { get; set; } = string.Empty;
 	public string Class { get; set; } = string.Empty;
 
-	private string _raw;
+	private readonly string _raw;
 	public DnsRecord(string name, string raw, QueryType queryType)
 	{
 		Name = name;

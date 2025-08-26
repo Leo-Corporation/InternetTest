@@ -114,7 +114,7 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 	public ICommand ClearCommand => new RelayCommand(o =>
 	{
 		_mainViewModel.History.Activity.Clear();
-		_mainViewModel.History.Save();	
+		_mainViewModel.History.Save();
 		History = [];
 		OnPropertyChanged(nameof(HasHistory));
 	});
