@@ -262,6 +262,10 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition />
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock
@@ -277,8 +281,23 @@
                                 Text="{x:Static lang:Resources.RecentActivity}" />
                         </StackPanel>
                     </StackPanel>
+                    <Button
+                        Grid.Column="1"
+                        Padding="5"
+                        VerticalAlignment="Center"
+                        Background="Transparent"
+                        Command="{Binding ClearCommand}"
+                        Content="&#xF9F0;"
+                        Cursor="Hand"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}">
+                        <Button.ToolTip>
+                            <ToolTip Content="{x:Static lang:Resources.Clear}" />
+                        </Button.ToolTip>
+                    </Button>
                     <ScrollViewer
                         Grid.Row="1"
+                        Grid.ColumnSpan="2"
                         MaxHeight="200"
                         CanContentScroll="True"
                         VerticalScrollBarVisibility="Auto">

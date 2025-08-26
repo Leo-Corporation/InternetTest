@@ -110,6 +110,14 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 		_mainViewModel.CurrentViewModel = new DnsToolsPageViewModel();
 		_mainViewModel.SidebarViewModel.DefaultPage = AppPages.DnsTool;
 	});
+
+	public ICommand ClearCommand => new RelayCommand(o =>
+	{
+		_mainViewModel.History.Activity.Clear();
+		_mainViewModel.History.Save();	
+		History = [];
+	});
+
 	private readonly MainViewModel _mainViewModel;
 	public HomePageViewModel(Settings settings, ActivityHistory history, MainViewModel mainViewModel)
 	{
@@ -147,7 +155,7 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 		}
 
 		// Load history
-		History = new ObservableCollection<HistoryItemViewModel>(history.Activity.Select(x => new HistoryItemViewModel(x)));
+		History = new(history.Activity.OrderByDescending(x => x.Date).Select(x => new HistoryItemViewModel(x)));
 		History.CollectionChanged += (s, e) => { OnPropertyChanged(nameof(HasHistory)); };
 	}
 
