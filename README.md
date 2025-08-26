@@ -29,7 +29,14 @@
 
 ## Introduction
 
-![Banner](.github/images/banner.png)
+
+<picture>
+  <source srcset=".github/images/banner2.png" media="(prefers-color-scheme: dark)"          />
+    <img
+      src=".github/images/banner.png"
+      alt="Banner"
+    />
+</picture>
 
 InternetTest Pro - Your Windows connection toolkit. Monitor, diagnose, and optimize internet connectivity with ease. Empowering users with actionable insights, from network diagnostics to WiFi password recovery. Seamlessly enhance your online experience anytime, anywhere.
 
