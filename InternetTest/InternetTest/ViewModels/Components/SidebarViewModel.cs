@@ -99,7 +99,7 @@ public class SidebarViewModel : ViewModelBase
 
 	private void PingPage(object? obj)
 	{
-		_mainViewModel.CurrentViewModel = new PingPageViewModel(_mainViewModel.Settings);
+		_mainViewModel.CurrentViewModel = new PingPageViewModel(_mainViewModel.Settings, _mainViewModel.History);
 	}
 
 	private void RequestsPage(object? obj)

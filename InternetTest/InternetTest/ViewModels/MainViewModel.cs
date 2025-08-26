@@ -126,7 +126,7 @@ public class MainViewModel : ViewModelBase
 			AppPages.WiFiPasswords => new WiFiPageViewModel(Settings),
 			AppPages.LocateIP => new LocateIpPageViewModel(Settings),
 			AppPages.IPConfig => new IpConfigPageViewModel(),
-			AppPages.Ping => new PingPageViewModel(Settings),
+			AppPages.Ping => new PingPageViewModel(Settings, History),
 			AppPages.Requests => new RequestsPageViewModel(Settings),
 			AppPages.TraceRoute => new TraceroutePageViewModel(Settings),
 			_ => new HomePageViewModel(Settings, History, this)

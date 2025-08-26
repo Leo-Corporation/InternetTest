@@ -87,9 +87,11 @@ public class PingPageViewModel : ViewModelBase
 	});
 
 	private readonly Settings _settings;
-	public PingPageViewModel(Settings settings)
+	private readonly ActivityHistory _activityHistory;
+	public PingPageViewModel(Settings settings, ActivityHistory history)
 	{
 		_settings = settings;
+		_activityHistory = history;
 
 		Query = _settings.TestSite ?? "google.com";
 	}
@@ -109,6 +111,7 @@ public class PingPageViewModel : ViewModelBase
 		Lost = 0;
 		StartTime = DateTime.Now.ToString("HH:mm:ss");
 		Empty = false;
+		Min = Max = Avg = Duration = LossPercentage = Properties.Resources.NA;
 
 		long[] times = new long[RequestAmount];
 		for (int i = 0; i < RequestAmount; i++)
@@ -128,6 +131,8 @@ public class PingPageViewModel : ViewModelBase
 					Max = $"{times.Max()} ms";
 					Avg = $"{times.Average()} ms";
 					Duration = $"{times.Sum()} ms";
+
+
 				}
 				else
 				{
@@ -141,6 +146,16 @@ public class PingPageViewModel : ViewModelBase
 				return;
 			}
 		}
+
+		// Save to history
+		_activityHistory.Activity.Add(new()
+		{
+			Name = $"{Properties.Resources.Ping} - {Query}",
+			Date = DateTime.Now,
+			Success = Lost < Received,
+			Result = Avg
+		});
+		_activityHistory.Save();
 
 		Host = Dns.GetHostEntry(Query).HostName;
 	}

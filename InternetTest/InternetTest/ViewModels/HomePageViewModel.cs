@@ -116,6 +116,7 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 		_mainViewModel.History.Activity.Clear();
 		_mainViewModel.History.Save();	
 		History = [];
+		OnPropertyChanged(nameof(HasHistory));
 	});
 
 	private readonly MainViewModel _mainViewModel;
