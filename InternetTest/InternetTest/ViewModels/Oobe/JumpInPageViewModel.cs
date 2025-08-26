@@ -21,50 +21,22 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Helpers;
-using InternetTest.Models;
-using InternetTest.ViewModels;
+using InternetTest.Commands;
 using InternetTest.ViewModels.Windows;
-using InternetTest.Windows;
+using PeyrSharp.Env;
+using System.Diagnostics;
 using System.Windows;
+using System.Windows.Input;
 
-namespace InternetTest;
+namespace InternetTest.ViewModels.Oobe;
 
-/// <summary>
-/// Interaction logic for App.xaml
-/// </summary>
-public partial class App : Application
+public class JumpInPageViewModel(OobeWindowViewModel oobe)
 {
-	protected override async void OnStartup(StartupEventArgs e)
+	public ICommand FinishCommand => new RelayCommand(o =>
 	{
-		// Load settings
-		Settings settings = new();
-		settings.Load();
-
-		ActivityHistory history = await ActivityHistory.LoadAsync();
-
-		ThemeHelper.ChangeTheme(settings.Theme);
-		Context.ChangeLanguage(settings.Language);
-
-		// Set the main window
-		if (settings.IsFirstRun)
-		{
-			MainWindow = new OobeWindow
-			{
-				DataContext = new OobeWindowViewModel(settings)
-			};
-			MainWindow.Show();
-			base.OnStartup(e);
-
-			return;
-		}
-
-		MainWindow = new MainWindow();
-		MainViewModel mvm = new(settings, history, MainWindow);
-		MainWindow.DataContext = mvm;
-
-		MainWindow.Show();
-
-		base.OnStartup(e);
-	}
+		oobe.Settings.IsFirstRun = false;
+		oobe.Settings.Save();
+		Process.Start(FileSys.CurrentAppDirectory + @"\InternetTest.exe");
+		Application.Current.Shutdown(0);
+	});
 }

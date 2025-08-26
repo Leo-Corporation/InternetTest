@@ -51,7 +51,7 @@ public class ThemePageViewModel : ViewModelBase
 
 	public ICommand NextCommand => new RelayCommand(o =>
 	{
-		//_oobe.CurrentViewModel = new FinalPageViewModel(_oobe);
+		_oobe.CurrentViewModel = new JumpInPageViewModel(_oobe);
 	});
 	public ThemePageViewModel(OobeWindowViewModel oobe)
 	{

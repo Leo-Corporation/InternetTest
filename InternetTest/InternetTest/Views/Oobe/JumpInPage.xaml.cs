@@ -21,50 +21,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Helpers;
-using InternetTest.Models;
-using InternetTest.ViewModels;
-using InternetTest.ViewModels.Windows;
-using InternetTest.Windows;
-using System.Windows;
+using System.Windows.Controls;
 
-namespace InternetTest;
+namespace InternetTest.Views.Oobe;
 
 /// <summary>
-/// Interaction logic for App.xaml
+/// Interaction logic for JumpInPage.xaml
 /// </summary>
-public partial class App : Application
+public partial class JumpInPage : UserControl
 {
-	protected override async void OnStartup(StartupEventArgs e)
+	public JumpInPage()
 	{
-		// Load settings
-		Settings settings = new();
-		settings.Load();
-
-		ActivityHistory history = await ActivityHistory.LoadAsync();
-
-		ThemeHelper.ChangeTheme(settings.Theme);
-		Context.ChangeLanguage(settings.Language);
-
-		// Set the main window
-		if (settings.IsFirstRun)
-		{
-			MainWindow = new OobeWindow
-			{
-				DataContext = new OobeWindowViewModel(settings)
-			};
-			MainWindow.Show();
-			base.OnStartup(e);
-
-			return;
-		}
-
-		MainWindow = new MainWindow();
-		MainViewModel mvm = new(settings, history, MainWindow);
-		MainWindow.DataContext = mvm;
-
-		MainWindow.Show();
-
-		base.OnStartup(e);
+		InitializeComponent();
 	}
 }
