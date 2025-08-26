@@ -39,7 +39,7 @@
             Grid.Row="1"
             Grid.Column="1"
             MaxWidth="1000"
-            Margin="30 0">
+            Margin="30 5">
             <Border
                 Margin="5"
                 Padding="10"
