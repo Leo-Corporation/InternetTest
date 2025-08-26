@@ -571,7 +571,7 @@ Questa azione non può essere annullata.</value>
     <value>Vuoi ignorare questa finestra e continuare con InternetTest?</value>
   </data>
   <data name="WelcomeDesc" xml:space="preserve">
-    <value>Portandoti ad un altro livello.</value>
+    <value>I tuoi strumenti Internet, tutti in un unico posto moderno.</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Avanti</value>
@@ -591,7 +591,7 @@ Puoi anche individuare e ottenere l'IP dei server da una URL.</value>
   <data name="WiFiPasswordsInfo" xml:space="preserve">
     <value>Hai dimenticato la password del Wi-Fi? 
 Non preoccuparti, puoi recuperarla usando la funzione "Password WiFi" di InternetTest Pro! 
-Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiFi salvata nel computer, come la modalità di autenticazione, l'algoritmo di crittografia, ecc.</value>
+Usando questa funzione, sarai in grado di ottenere informazioni su ogni rete WiFi salvata nel computer, come la modalità di autenticazione, l'algoritmo di crittografia, ecc...</value>
   </data>
   <data name="Features" xml:space="preserve">
     <value>Caratteristiche</value>

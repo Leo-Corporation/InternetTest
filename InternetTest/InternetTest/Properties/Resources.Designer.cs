@@ -3500,7 +3500,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Taking you to another level..
+        ///   Looks up a localized string similar to Your internet tools, all in one modern place..
         /// </summary>
         public static string WelcomeDesc {
             get {
