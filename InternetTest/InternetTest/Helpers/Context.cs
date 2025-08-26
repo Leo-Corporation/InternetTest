@@ -40,7 +40,7 @@ public static class Context
 
 	public static void ChangeLanguage(Language language)
 	{
-		Thread.CurrentThread.CurrentUICulture = language switch
+		var ci = language switch
 		{
 			Language.en_US => new System.Globalization.CultureInfo("en-US"),
 			Language.fr_FR => new System.Globalization.CultureInfo("fr-FR"),
@@ -48,6 +48,9 @@ public static class Context
 			Language.it_IT => new System.Globalization.CultureInfo("it-IT"),
 			_ => Thread.CurrentThread.CurrentUICulture
 		};
+		Thread.CurrentThread.CurrentUICulture = ci;
+		Thread.CurrentThread.CurrentCulture = ci;
+		Properties.Resources.Culture = ci;
 	}
 
 
