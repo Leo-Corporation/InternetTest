@@ -23,15 +23,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.ColumnSpan="6">
+        <StackPanel>
             <TextBlock
                 Margin="10 5"
                 FontSize="24"
@@ -46,7 +38,8 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
-            Grid.ColumnSpan="4">
+            MaxWidth="1000"
+            Margin="30 0">
             <Border
                 Margin="5"
                 Padding="10"
@@ -82,7 +75,12 @@
                             Margin="0 5"
                             FontWeight="SemiBold"
                             Text="{x:Static lang:Resources.Theme}" />
-                        <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
                             <RadioButton
                                 BorderThickness="2"
                                 Command="{Binding LightThemeCommand}"
@@ -94,25 +92,34 @@
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
-                                    <Rectangle
-                                        Width="50"
-                                        Height="50"
-                                        RadiusX="4"
-                                        RadiusY="4">
-                                        <Rectangle.Fill>
-                                            <ImageBrush ImageSource="../Assets/LightTheme.png" />
-                                        </Rectangle.Fill>
-                                    </Rectangle>
-                                    <TextBlock
-                                        Grid.Column="1"
+                                    <Border
+                                        Width="40"
+                                        Height="40"
                                         Margin="5"
-                                        VerticalAlignment="Center"
-                                        FontWeight="SemiBold"
-                                        Text="{x:Static lang:Resources.Light}" />
-
+                                        Background="{DynamicResource HoverBackground}"
+                                        CornerRadius="5">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                            FontSize="24"
+                                            Text="&#xF8A2;" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                        <TextBlock
+                                            Margin="5 0"
+                                            FontWeight="Bold"
+                                            Text="{x:Static lang:Resources.Light}" />
+                                        <TextBlock
+                                            Margin="5 0"
+                                            Foreground="{DynamicResource DarkGray}"
+                                            Text="{x:Static lang:Resources.LightDesc}"
+                                            TextWrapping="Wrap" />
+                                    </StackPanel>
                                 </Grid>
                             </RadioButton>
                             <RadioButton
+                                Grid.Column="1"
                                 Margin="10 0"
                                 BorderThickness="2"
                                 Command="{Binding DarkThemeCommand}"
@@ -124,25 +131,35 @@
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
-                                    <Rectangle
-                                        Width="50"
-                                        Height="50"
-                                        RadiusX="4"
-                                        RadiusY="4">
-                                        <Rectangle.Fill>
-                                            <ImageBrush ImageSource="../Assets/DarkTheme.png" />
-                                        </Rectangle.Fill>
-                                    </Rectangle>
-                                    <TextBlock
-                                        Grid.Column="1"
+                                    <Border
+                                        Width="40"
+                                        Height="40"
                                         Margin="5"
-                                        VerticalAlignment="Center"
-                                        FontWeight="SemiBold"
-                                        Text="{x:Static lang:Resources.Dark}" />
+                                        Background="{DynamicResource HoverBackground}"
+                                        CornerRadius="5">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                            FontSize="24"
+                                            Text="&#xF87E;" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                        <TextBlock
+                                            Margin="5 0"
+                                            FontWeight="Bold"
+                                            Text="{x:Static lang:Resources.Dark}" />
+                                        <TextBlock
+                                            Margin="5 0"
+                                            Foreground="{DynamicResource DarkGray}"
+                                            Text="{x:Static lang:Resources.DarkDesc}"
+                                            TextWrapping="Wrap" />
+                                    </StackPanel>
 
                                 </Grid>
                             </RadioButton>
                             <RadioButton
+                                Grid.Column="2"
                                 BorderThickness="2"
                                 Command="{Binding SystemThemeCommand}"
                                 GroupName="Theme"
@@ -153,25 +170,34 @@
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
-                                    <Rectangle
-                                        Width="50"
-                                        Height="50"
-                                        RadiusX="4"
-                                        RadiusY="4">
-                                        <Rectangle.Fill>
-                                            <ImageBrush ImageSource="../Assets/SystemTheme.png" />
-                                        </Rectangle.Fill>
-                                    </Rectangle>
-                                    <TextBlock
-                                        Grid.Column="1"
+                                    <Border
+                                        Width="40"
+                                        Height="40"
                                         Margin="5"
-                                        VerticalAlignment="Center"
-                                        FontWeight="SemiBold"
-                                        Text="{x:Static lang:Resources.DefaultTheme}" />
+                                        Background="{DynamicResource HoverBackground}"
+                                        CornerRadius="5">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                            FontSize="24"
+                                            Text="&#xF33C;" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                        <TextBlock
+                                            Margin="5 0"
+                                            FontWeight="Bold"
+                                            Text="{x:Static lang:Resources.Default}" />
+                                        <TextBlock
+                                            Margin="5 0"
+                                            Foreground="{DynamicResource DarkGray}"
+                                            Text="{x:Static lang:Resources.DefaultThemeDesc}"
+                                            TextWrapping="Wrap" />
+                                    </StackPanel>
 
                                 </Grid>
                             </RadioButton>
-                        </StackPanel>
+                        </Grid>
                         <TextBlock
                             Margin="0 5"
                             FontWeight="SemiBold"

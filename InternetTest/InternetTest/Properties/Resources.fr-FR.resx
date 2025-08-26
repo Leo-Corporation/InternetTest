@@ -440,10 +440,10 @@ Cette action est irréversible.</value>
 	<value>Thème</value>
   </data>
   <data name="Light" xml:space="preserve">
-	<value>Thème clair</value>
+	<value>Clair</value>
   </data>
   <data name="Dark" xml:space="preserve">
-	<value>Thème sombre</value>
+	<value>Sombre</value>
   </data>
   <data name="Licenses" xml:space="preserve">
 	<value>Licences</value>
@@ -718,7 +718,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
     <value>Langue du système</value>
   </data>
   <data name="DefaultTheme" xml:space="preserve">
-    <value>Thème système</value>
+    <value>Système</value>
   </data>
   <data name="SpeedTest" xml:space="preserve">
     <value>Faire un speed test</value>
@@ -1310,5 +1310,14 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   </data>
   <data name="Value" xml:space="preserve">
     <value>Valeur</value>
+  </data>
+  <data name="LightDesc" xml:space="preserve">
+    <value>Interface lumineuse</value>
+  </data>
+  <data name="DarkDesc" xml:space="preserve">
+    <value>Agréable le soir</value>
+  </data>
+  <data name="DefaultThemeDesc" xml:space="preserve">
+    <value>Suit vos préférences</value>
   </data>
 </root>

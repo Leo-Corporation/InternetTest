@@ -511,11 +511,20 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark theme.
+        ///   Looks up a localized string similar to Dark.
         /// </summary>
         public static string Dark {
             get {
                 return ResourceManager.GetString("Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Easy in low light.
+        /// </summary>
+        public static string DarkDesc {
+            get {
+                return ResourceManager.GetString("DarkDesc", resourceCulture);
             }
         }
         
@@ -601,11 +610,20 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System theme.
+        ///   Looks up a localized string similar to System.
         /// </summary>
         public static string DefaultTheme {
             get {
                 return ResourceManager.GetString("DefaultTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Follows your preference.
+        /// </summary>
+        public static string DefaultThemeDesc {
+            get {
+                return ResourceManager.GetString("DefaultThemeDesc", resourceCulture);
             }
         }
         
@@ -1694,11 +1712,20 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light theme.
+        ///   Looks up a localized string similar to Light.
         /// </summary>
         public static string Light {
             get {
                 return ResourceManager.GetString("Light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clean and bright.
+        /// </summary>
+        public static string LightDesc {
+            get {
+                return ResourceManager.GetString("LightDesc", resourceCulture);
             }
         }
         
