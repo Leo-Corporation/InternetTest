@@ -21,22 +21,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Commands;
-using InternetTest.ViewModels.Windows;
-using System.Windows.Input;
+using System.Windows.Controls;
 
-namespace InternetTest.ViewModels.Oobe;
+namespace InternetTest.Views.Oobe;
 
-public class FeaturesPageViewModel : ViewModelBase
-{
-	private readonly OobeWindowViewModel _oobe;
-
-	public ICommand NextCommand => new RelayCommand(o =>
-	{
-		_oobe.CurrentViewModel = new ThemePageViewModel(_oobe);
-	});
-	public FeaturesPageViewModel(OobeWindowViewModel oobe)
-	{
-		_oobe = oobe;
-	}
-}
+    /// <summary>
+    /// Interaction logic for ThemePage.xaml
+    /// </summary>
+    public partial class ThemePage : UserControl
+    {
+        public ThemePage()
+        {
+            InitializeComponent();
+        }
+    }

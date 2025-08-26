@@ -35,6 +35,6 @@ public class OobeWindowViewModel : ViewModelBase
 	public OobeWindowViewModel(Settings settings)
 	{
 		Settings = settings;
-		CurrentViewModel = new WelcomePageViewModel(this, settings);
+		CurrentViewModel = new WelcomePageViewModel(this);
 	}
 }

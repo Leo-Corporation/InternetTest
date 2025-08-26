@@ -56,10 +56,10 @@ public class WelcomePageViewModel : ViewModelBase
 		Process.Start(FileSys.CurrentAppDirectory + @"\InternetTest.exe");
 		Application.Current.Shutdown(0);
 	});
-	public WelcomePageViewModel(OobeWindowViewModel oobe, Settings settings)
+	public WelcomePageViewModel(OobeWindowViewModel oobe)
 	{
 		_oobe = oobe;
-		_settings = settings;
-		Language = (int)settings.Language;
+		_settings = _oobe.Settings;
+		Language = (int)_settings.Language;
 	}
 }

@@ -22,21 +22,41 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using InternetTest.Commands;
+using InternetTest.Enums;
+using InternetTest.Helpers;
+using InternetTest.Models;
 using InternetTest.ViewModels.Windows;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels.Oobe;
 
-public class FeaturesPageViewModel : ViewModelBase
+public class ThemePageViewModel : ViewModelBase
 {
 	private readonly OobeWindowViewModel _oobe;
+	private readonly Settings _settings;
+
+	private Theme _currentTheme = Theme.System;
+	public Theme CurrentTheme
+	{
+		get => _currentTheme; set
+		{
+			_currentTheme = value;
+			_settings.Theme = value;
+			_settings.Save();
+			ThemeHelper.ChangeTheme(value);
+
+			OnPropertyChanged(nameof(CurrentTheme));
+		}
+	}
 
 	public ICommand NextCommand => new RelayCommand(o =>
 	{
-		_oobe.CurrentViewModel = new ThemePageViewModel(_oobe);
+		//_oobe.CurrentViewModel = new FinalPageViewModel(_oobe);
 	});
-	public FeaturesPageViewModel(OobeWindowViewModel oobe)
+	public ThemePageViewModel(OobeWindowViewModel oobe)
 	{
 		_oobe = oobe;
+		_settings = _oobe.Settings;
+		CurrentTheme = _settings.Theme;
 	}
 }
