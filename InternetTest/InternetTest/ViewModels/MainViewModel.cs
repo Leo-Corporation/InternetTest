@@ -131,7 +131,20 @@ public class MainViewModel : ViewModelBase
 			AppPages.TraceRoute => new TraceroutePageViewModel(Settings),
 			_ => new HomePageViewModel(Settings, History, this)
 		};
-
+		_mainWindow.WindowState = Settings.IsMaximized == true ? WindowState.Maximized : WindowState.Normal;
+		_mainWindow.SizeChanged += (s, e) =>
+		{
+			if (_mainWindow.WindowState == WindowState.Maximized)
+			{
+				Settings.IsMaximized = true;
+			}
+			else if (_mainWindow.WindowState == WindowState.Normal)
+			{
+				Settings.IsMaximized = false;
+				Settings.MainWindowSize = (_mainWindow.Width, _mainWindow.Height);
+			}
+			Settings.Save();
+		};
 
 		PinCommand = new RelayCommand(Pin);
 
