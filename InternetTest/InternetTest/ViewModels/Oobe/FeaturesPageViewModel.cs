@@ -21,45 +21,22 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-
 using InternetTest.Commands;
-using InternetTest.Enums;
-using InternetTest.Models;
 using InternetTest.ViewModels.Windows;
-using PeyrSharp.Env;
-using System.Diagnostics;
-using System.Windows;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels.Oobe;
 
-public class WelcomePageViewModel : ViewModelBase
+public class FeaturesPageViewModel : ViewModelBase
 {
-	private int _language;
-	public int Language { get => _language; set { _language = value; OnPropertyChanged(nameof(Language)); } }
-
 	private readonly OobeWindowViewModel _oobe;
-	private readonly Settings _settings;
 
 	public ICommand NextCommand => new RelayCommand(o =>
 	{
-		_settings.Language = (Language)Language;
-		_settings.Save();
-		_oobe.CurrentViewModel = new FeaturesPageViewModel(_oobe);
+		//_oobe.CurrentViewModel = new ThemePageViewModel(_oobe);
 	});
-
-	public ICommand SkipCommand => new RelayCommand(o =>
-	{
-		_settings.IsFirstRun = false;
-		_settings.Save();
-
-		Process.Start(FileSys.CurrentAppDirectory + @"\InternetTest.exe");
-		Application.Current.Shutdown(0);
-	});
-	public WelcomePageViewModel(OobeWindowViewModel oobe, Settings settings)
+	public FeaturesPageViewModel(OobeWindowViewModel oobe)
 	{
 		_oobe = oobe;
-		_settings = settings;
-		Language = (int)settings.Language;
 	}
 }

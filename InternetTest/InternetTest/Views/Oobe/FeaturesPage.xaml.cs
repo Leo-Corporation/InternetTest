@@ -21,45 +21,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using System.Windows.Controls;
 
-using InternetTest.Commands;
-using InternetTest.Enums;
-using InternetTest.Models;
-using InternetTest.ViewModels.Windows;
-using PeyrSharp.Env;
-using System.Diagnostics;
-using System.Windows;
-using System.Windows.Input;
+namespace InternetTest.Views.Oobe;
 
-namespace InternetTest.ViewModels.Oobe;
-
-public class WelcomePageViewModel : ViewModelBase
+/// <summary>
+/// Interaction logic for FeaturesPage.xaml
+/// </summary>
+public partial class FeaturesPage : UserControl
 {
-	private int _language;
-	public int Language { get => _language; set { _language = value; OnPropertyChanged(nameof(Language)); } }
-
-	private readonly OobeWindowViewModel _oobe;
-	private readonly Settings _settings;
-
-	public ICommand NextCommand => new RelayCommand(o =>
+	public FeaturesPage()
 	{
-		_settings.Language = (Language)Language;
-		_settings.Save();
-		_oobe.CurrentViewModel = new FeaturesPageViewModel(_oobe);
-	});
-
-	public ICommand SkipCommand => new RelayCommand(o =>
-	{
-		_settings.IsFirstRun = false;
-		_settings.Save();
-
-		Process.Start(FileSys.CurrentAppDirectory + @"\InternetTest.exe");
-		Application.Current.Shutdown(0);
-	});
-	public WelcomePageViewModel(OobeWindowViewModel oobe, Settings settings)
-	{
-		_oobe = oobe;
-		_settings = settings;
-		Language = (int)settings.Language;
+		InitializeComponent();
 	}
 }
