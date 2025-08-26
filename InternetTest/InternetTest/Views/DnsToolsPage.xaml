@@ -496,7 +496,7 @@
                         Grid.Column="2"
                         VerticalAlignment="Center"
                         Orientation="Horizontal"
-                        Visibility="{Binding CacheLoaded}">
+                        Visibility="{Binding CacheLoaded, Converter={StaticResource BoolToVis}}">
                         <StackPanel.ToolTip>
                             <ToolTip Content="{Binding TooltipContent}" />
                         </StackPanel.ToolTip>

@@ -21,7 +21,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using InternetTest.Commands;
 using InternetTest.Models;
+using InternetTest.Services;
+using InternetTest.ViewModels.Windows;
+using InternetTest.Windows;
+using System.Windows.Input;
 
 namespace InternetTest.ViewModels.Components;
 
@@ -42,6 +47,8 @@ public class DnsCacheItemViewModel : ViewModelBase
 	private string _data = string.Empty;
 	public string Data { get => _data; set { _data = value; OnPropertyChanged(nameof(Data)); } }
 
+	public ICommand ShowDetailsCommand { get; init; }
+
 	public DnsCacheItemViewModel(DnsCacheInfo dnsCacheInfo)
 	{
 		Entry = dnsCacheInfo.Entry;
@@ -49,5 +56,10 @@ public class DnsCacheItemViewModel : ViewModelBase
 		RecordType = ((Enums.Types)dnsCacheInfo.Type).ToString();
 		Status = ((Enums.Status)dnsCacheInfo.Status).ToString();
 		Data = string.IsNullOrEmpty(dnsCacheInfo.Data) ? Properties.Resources.NA : dnsCacheInfo.Data;
+
+		ShowDetailsCommand = new RelayCommand(o =>
+		{
+			new WindowService().ShowWindow<DnsDetailsWindow>(new DnsDetailsWindowViewModel(dnsCacheInfo));
+		});
 	}
 }
