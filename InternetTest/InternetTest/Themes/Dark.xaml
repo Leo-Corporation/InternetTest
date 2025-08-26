@@ -56,4 +56,5 @@
         B="101"
         G="26"
         R="0" />
+    <ImageBrush x:Key="Logo" ImageSource="/Assets/InternetTestD.png" />
 </ResourceDictionary>

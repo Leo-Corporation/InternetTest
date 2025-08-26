@@ -28,11 +28,12 @@
     </UserControl.Triggers>
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Image
+            <Rectangle
                 x:Name="IconImg"
-                Height="75"
+                Width="175"
+                Height="175"
                 HorizontalAlignment="Center"
-                Source="../../Assets/InternetTest.png" />
+                Fill="{DynamicResource Logo}" />
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <TextBlock
                     FontSize="32"

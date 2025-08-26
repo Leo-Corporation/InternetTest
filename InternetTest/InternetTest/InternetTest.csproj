@@ -14,6 +14,7 @@
   <ItemGroup>
 	<None Remove="Assets\DarkTheme.png" />
 	<None Remove="Assets\InternetTest.png" />
+	<None Remove="Assets\InternetTestD.png" />
 	<None Remove="Assets\LightTheme.png" />
 	<None Remove="Assets\SystemTheme.png" />
 	<None Remove="Fonts\FluentSystemIcons-Filled.ttf" />
@@ -46,6 +47,9 @@
 	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</Resource>
 	<Resource Include="Assets\InternetTest.png">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</Resource>
+	<Resource Include="Assets\InternetTestD.png">
 	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</Resource>
 	<Resource Include="Assets\LightTheme.png">
