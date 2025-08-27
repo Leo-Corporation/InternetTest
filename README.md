@@ -210,7 +210,7 @@ Customization lies at the heart of InternetTest Pro's design, empowering you to 
 
 ## Compatibility
 
-InternetTest Pro is available only on Windows from Windows 7 to 11. For legacy platforms, you may need to install the [.NET Desktop SDK](https://dotnet.microsoft.com/en-us/download) manually.
+InternetTest Pro is available only on Windows 10/11. For legacy platforms, you may need to install the [.NET Desktop SDK](https://dotnet.microsoft.com/en-us/download) manually.
 
 ## Latest release
 
@@ -230,8 +230,8 @@ Before you begin contributing to InternetTest Pro, ensure that you have the foll
   - .NET Desktop Development (to select in Visual Studio installer)
 - .NET SDK + .NET SDK Desktop
 - Git
-- .NET 6
-- _(Optional)_ Inno Setup v6.1 or higher (for building installers)
+- .NET 8
+- _(Optional)_ Inno Setup v6.3 or higher (for building installers)
 
 These tools and software components are essential for building, testing, and contributing to InternetTest Pro effectively. Make sure to have them set up on your development environment before proceeding with any contributions.
 
