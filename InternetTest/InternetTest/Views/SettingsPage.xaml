@@ -1,0 +1,807 @@
+﻿<UserControl
+    x:Class="InternetTest.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:InternetTest.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:enums="clr-namespace:InternetTest.Enums"
+    xmlns:lang="clr-namespace:InternetTest.Properties"
+    xmlns:local="clr-namespace:InternetTest.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="1850"
+    d:DesignWidth="800"
+    FontFamily="..\Fonts\#Hauora"
+    Foreground="{DynamicResource Foreground1}"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.Resources>
+            <converters:EnumToBoolConverter x:Key="EnumToBoolConverter" />
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converters:IntToStringConverter x:Key="IntToStringConverter" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock
+                Margin="10 5"
+                FontSize="24"
+                FontWeight="Bold"
+                Text="{x:Static lang:Resources.Settings}" />
+            <TextBlock
+                Margin="10 0"
+                FontSize="14"
+                Text="{x:Static lang:Resources.SettingsDesc}"
+                TextWrapping="Wrap" />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            MaxWidth="1000"
+            Margin="30 5">
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF2F6;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.General}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.GeneralDesc}" />
+                    <StackPanel Grid.Row="2">
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.Theme}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <RadioButton
+                                BorderThickness="2"
+                                Command="{Binding LightThemeCommand}"
+                                GroupName="Theme"
+                                IsChecked="{Binding CurrentTheme, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:Theme.Light}}"
+                                Style="{DynamicResource ThemeButton}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Border
+                                        Width="40"
+                                        Height="40"
+                                        Margin="5"
+                                        Background="{DynamicResource HoverBackground}"
+                                        CornerRadius="5">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                            FontSize="24"
+                                            Text="&#xF8A2;" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                        <TextBlock
+                                            Margin="5 0"
+                                            FontWeight="Bold"
+                                            Text="{x:Static lang:Resources.Light}" />
+                                        <TextBlock
+                                            Margin="5 0"
+                                            Foreground="{DynamicResource DarkGray}"
+                                            Text="{x:Static lang:Resources.LightDesc}"
+                                            TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Grid>
+                            </RadioButton>
+                            <RadioButton
+                                Grid.Column="1"
+                                Margin="10 0"
+                                BorderThickness="2"
+                                Command="{Binding DarkThemeCommand}"
+                                GroupName="Theme"
+                                IsChecked="{Binding CurrentTheme, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:Theme.Dark}}"
+                                Style="{DynamicResource ThemeButton}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Border
+                                        Width="40"
+                                        Height="40"
+                                        Margin="5"
+                                        Background="{DynamicResource HoverBackground}"
+                                        CornerRadius="5">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                            FontSize="24"
+                                            Text="&#xF87E;" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                        <TextBlock
+                                            Margin="5 0"
+                                            FontWeight="Bold"
+                                            Text="{x:Static lang:Resources.Dark}" />
+                                        <TextBlock
+                                            Margin="5 0"
+                                            Foreground="{DynamicResource DarkGray}"
+                                            Text="{x:Static lang:Resources.DarkDesc}"
+                                            TextWrapping="Wrap" />
+                                    </StackPanel>
+
+                                </Grid>
+                            </RadioButton>
+                            <RadioButton
+                                Grid.Column="2"
+                                BorderThickness="2"
+                                Command="{Binding SystemThemeCommand}"
+                                GroupName="Theme"
+                                IsChecked="{Binding CurrentTheme, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:Theme.System}}"
+                                Style="{DynamicResource ThemeButton}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Border
+                                        Width="40"
+                                        Height="40"
+                                        Margin="5"
+                                        Background="{DynamicResource HoverBackground}"
+                                        CornerRadius="5">
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                            FontSize="24"
+                                            Text="&#xF33C;" />
+                                    </Border>
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                        <TextBlock
+                                            Margin="5 0"
+                                            FontWeight="Bold"
+                                            Text="{x:Static lang:Resources.Default}" />
+                                        <TextBlock
+                                            Margin="5 0"
+                                            Foreground="{DynamicResource DarkGray}"
+                                            Text="{x:Static lang:Resources.DefaultThemeDesc}"
+                                            TextWrapping="Wrap" />
+                                    </StackPanel>
+
+                                </Grid>
+                            </RadioButton>
+                        </Grid>
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.StartupPage}" />
+                        <ComboBox Width="200" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="{x:Static lang:Resources.Home}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.Home}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.DownDetector}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.DownDetector}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.DNSTool}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.DnsTool}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.WiFiNetworks}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.WiFiNetworks}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.LocateIP}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.LocateIP}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.IPConfig}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.IPConfig}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.Ping}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.Ping}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.Requests}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.Requests}}" />
+                            <ComboBoxItem Content="{x:Static lang:Resources.TraceRoute}" IsSelected="{Binding DefaultPage, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enums:AppPages.TraceRoute}}" />
+                        </ComboBox>
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.Language}" />
+                        <ComboBox
+                            Width="200"
+                            HorizontalAlignment="Left"
+                            SelectedIndex="{Binding CurrentLanguage}">
+                            <ComboBoxItem Content="{x:Static lang:Resources.DefaultLanguage}" />
+                            <ComboBoxItem Content="English (United States)" />
+                            <ComboBoxItem Content="Français (France)" />
+                            <ComboBoxItem Content="中文（简体）" />
+                            <ComboBoxItem Content="Italiano (Italia)" />
+                        </ComboBox>
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.DefaultProtocol}" />
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton
+                                Margin="5"
+                                Content="{x:Static lang:Resources.HTTPS}"
+                                FontWeight="SemiBold"
+                                Foreground="{DynamicResource Foreground1}"
+                                GroupName="DefaultProtocol"
+                                IsChecked="{Binding UseHttps, Mode=TwoWay}" />
+                            <RadioButton
+                                Margin="5"
+                                Content="{x:Static lang:Resources.HTTP}"
+                                FontWeight="SemiBold"
+                                Foreground="{DynamicResource Foreground1}"
+                                GroupName="DefaultProtocol"
+                                IsChecked="{Binding UseHttps, Converter={StaticResource InverseBoolConverter}, Mode=TwoWay}" />
+                        </StackPanel>
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.TestSite}" />
+                        <TextBox
+                            Width="200"
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            Text="{Binding TestSite}"
+                            TextAlignment="Center" />
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.DownDetector}" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox
+                                Width="100"
+                                Padding="5"
+                                HorizontalAlignment="Left"
+                                Text="{Binding Interval, Converter={StaticResource IntToStringConverter}, Mode=TwoWay}"
+                                TextAlignment="Center" />
+                            <TextBlock
+                                Margin="5 0"
+                                VerticalAlignment="Center"
+                                FontWeight="SemiBold"
+                                Foreground="{DynamicResource DarkGray}"
+                                Text="{x:Static lang:Resources.DefaultTimeInterval}" />
+
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF115;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.Notifications}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.NotificationsDescription}" />
+                    <StackPanel Grid.Row="2">
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.CheckUpdatesOnStart}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding CheckUpdateOnStart}" />
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.NotifyUpdates}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding ShowNotificationWhenUpdateAvailable}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF60F;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.OnStart}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.OnStartDescription}" />
+                    <StackPanel Grid.Row="2">
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.LaunchTestOnStart}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding LaunchTestOnStart}" />
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.LocateMyIpOnStart}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding LocateIpOnStart}" />
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.ToggleConfidentialModeOnStart}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding ToggleConfidentialMode}" />
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.RememberPinState}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding RememberPinState}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF52E;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.MapProvider}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.MapProviderDescription}" />
+                    <StackPanel Grid.Row="2">
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.MapProvider}" />
+                        <ComboBox
+                            Width="200"
+                            HorizontalAlignment="Left"
+                            SelectedIndex="{Binding MapProvider}">
+                            <ComboBoxItem Content="OpenStreetMap" />
+                            <ComboBoxItem Content="Bing Maps" />
+                            <ComboBoxItem Content="Google Maps" />
+                            <ComboBoxItem Content="HERE WeGo" />
+                            <ComboBoxItem Content="Yandex" />
+                        </ComboBox>
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.ZoomLevel}" />
+                        <TextBox
+                            Width="100"
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            Text="{Binding ZoomLevel, Converter={StaticResource IntToStringConverter}, Mode=TwoWay}"
+                            TextAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF679;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.TraceRoute}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.TraceRouteDesc}" />
+                    <StackPanel Grid.Row="2">
+
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.MaxHops}" />
+                        <TextBox
+                            Width="100"
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            Text="{Binding MaxHops, Converter={StaticResource IntToStringConverter}, Mode=TwoWay}"
+                            TextAlignment="Center" />
+                        <TextBlock
+                            Margin="0 5"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.MaxTimeOut}" />
+                        <TextBox
+                            Width="100"
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            Text="{Binding MaxTimeOut, Converter={StaticResource IntToStringConverter}, Mode=TwoWay}"
+                            TextAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF35C;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.NetworkAdapters}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.NetworkAdaptersSettingsDesc}" />
+                    <StackPanel Grid.Row="2">
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.HideDisabledAdaptersByDefault}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding HideDisabledAdapters}" />
+                        <CheckBox
+                            Margin="0 5"
+                            Content="{x:Static lang:Resources.ShowAdaptersNoIpv4Support}"
+                            FontWeight="SemiBold"
+                            Foreground="{DynamicResource Foreground1}"
+                            IsChecked="{Binding ShowAdaptersNoIpv4Support}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF35C;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.DataPrivacy}" />
+                    </StackPanel>
+                    <TextBlock
+                        Grid.Row="1"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.DataDescription}" />
+                    <StackPanel Grid.Row="2">
+                        <StackPanel Margin="0 5" Orientation="Horizontal">
+                            <Button
+                                x:Name="ImportBtn"
+                                Margin="0 0 10 0"
+                                Padding="10 5 10 5"
+                                VerticalAlignment="Center"
+                                Background="{DynamicResource Accent}"
+                                Command="{Binding ImportCommand}"
+                                Cursor="Hand"
+                                FontWeight="ExtraBold"
+                                Foreground="{DynamicResource WindowButtonsHoverForeground1}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0 0 5 0"
+                                        VerticalAlignment="Center"
+                                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                        FontSize="16"
+                                        FontWeight="Regular"
+                                        Text="&#xF151;" />
+                                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.Import}" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                x:Name="ExportBtn"
+                                Padding="10 5 10 5"
+                                VerticalAlignment="Center"
+                                Background="{DynamicResource LightAccent}"
+                                Command="{Binding ExportCommand}"
+                                Cursor="Hand"
+                                FontWeight="ExtraBold"
+                                Foreground="{DynamicResource DarkFAccent}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0 0 5 0"
+                                        VerticalAlignment="Center"
+                                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                        FontSize="16"
+                                        FontWeight="Regular"
+                                        Text="&#xF1A5;" />
+                                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.Export}" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <Button
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            Background="{x:Null}"
+                            Command="{Binding ResetCommand}"
+                            Cursor="Hand"
+                            FontSize="14"
+                            FontWeight="ExtraBold"
+                            Foreground="{DynamicResource Accent}"
+                            Style="{DynamicResource Link}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    Margin="0 0 10 0"
+                                    VerticalAlignment="Center"
+                                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                    FontWeight="Regular"
+                                    Text="&#xF583;" />
+                                <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.ResetSettings}" />
+                            </StackPanel>
+                        </Button>
+                        <Button
+                            Padding="5"
+                            HorizontalAlignment="Left"
+                            Background="{x:Null}"
+                            Command="{Binding ResetWiFiCommand}"
+                            Cursor="Hand"
+                            FontSize="14"
+                            FontWeight="ExtraBold"
+                            Foreground="{DynamicResource Accent}"
+                            Style="{DynamicResource Link}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    Margin="0 0 10 0"
+                                    VerticalAlignment="Center"
+                                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                    FontWeight="Regular"
+                                    Text="&#xF583;" />
+                                <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.EraseWiFiPasswordsFiles}" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border
+                Margin="5"
+                Padding="10"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="1"
+                CornerRadius="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="16"
+                            Text="&#xF4A4;" />
+                        <TextBlock
+                            Margin="5 0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Text="{x:Static lang:Resources.About}" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock
+                                FontSize="18"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource Accent}"
+                                Text="{x:Static lang:Resources.InternetTest}" />
+                            <TextBlock
+                                Margin="5 0 0 0"
+                                FontSize="18"
+                                FontWeight="Bold"
+                                Text="{x:Static lang:Resources.Pro}" />
+                        </StackPanel>
+                        <TextBlock
+                            x:Name="VersionTxt"
+                            HorizontalAlignment="Center"
+                            d:Text="8.0.0.2401"
+                            FontSize="11"
+                            Text="{Binding Version}" />
+                        <Border
+                            x:Name="UpdateBorder"
+                            Margin="0 5"
+                            Padding="5"
+                            HorizontalAlignment="Center"
+                            Background="{Binding UpdateBorderColor}"
+                            CornerRadius="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    x:Name="UpdateIconTxt"
+                                    Margin="0 0 5 0"
+                                    VerticalAlignment="Center"
+                                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                    FontSize="14"
+                                    Foreground="{Binding UpdateTextColor}"
+                                    Text="{Binding UpdateIcon}" />
+                                <TextBlock
+                                    x:Name="UpdateTxt"
+                                    Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    FontSize="11"
+                                    FontWeight="SemiBold"
+                                    Foreground="{Binding UpdateTextColor}"
+                                    Text="{Binding UpdateText}" />
+                                <Button
+                                    x:Name="CheckUpdateBtn"
+                                    Grid.Column="2"
+                                    Padding="5 2"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Command="{Binding CheckUpdateCommand}"
+                                    Content="{Binding UpdateBtnIcon}"
+                                    Cursor="Hand"
+                                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                    FontSize="14"
+                                    Foreground="{Binding UpdateTextColor}">
+                                    <Button.ToolTip>
+                                        <ToolTip Content="{x:Static lang:Resources.CheckUpdate}" />
+                                    </Button.ToolTip>
+                                </Button>
+                            </Grid>
+                        </Border>
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Button
+                                x:Name="SeeLicensesBtn"
+                                Padding="5"
+                                HorizontalAlignment="Left"
+                                Background="{x:Null}"
+                                Command="{Binding SeeLicensesCommand}"
+                                Cursor="Hand"
+                                FontSize="12"
+                                FontWeight="ExtraBold"
+                                Foreground="{DynamicResource Accent}"
+                                Style="{DynamicResource Link}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0 0 10 0"
+                                        VerticalAlignment="Center"
+                                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                        FontWeight="Regular"
+                                        Text="&#xF583;" />
+                                    <TextBlock VerticalAlignment="Center" Text="{x:Static lang:Resources.SeeLicenses}" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                                x:Name="GitHubBtn"
+                                Padding="5"
+                                HorizontalAlignment="Left"
+                                Background="{x:Null}"
+                                Command="{Binding GitHubCommand}"
+                                Cursor="Hand"
+                                FontSize="12"
+                                FontWeight="ExtraBold"
+                                Foreground="{DynamicResource Accent}"
+                                Style="{DynamicResource Link}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="0 0 10 0"
+                                        VerticalAlignment="Center"
+                                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                                        FontWeight="Regular"
+                                        Text="&#xF583;" />
+                                    <TextBlock VerticalAlignment="Center" Text="GitHub" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

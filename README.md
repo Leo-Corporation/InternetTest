@@ -29,7 +29,14 @@
 
 ## Introduction
 
-![Banner](.github/images/banner.png)
+
+<picture>
+  <source srcset=".github/images/banner2.png" media="(prefers-color-scheme: dark)"          />
+    <img
+      src=".github/images/banner.png"
+      alt="Banner"
+    />
+</picture>
 
 InternetTest Pro - Your Windows connection toolkit. Monitor, diagnose, and optimize internet connectivity with ease. Empowering users with actionable insights, from network diagnostics to WiFi password recovery. Seamlessly enhance your online experience anytime, anywhere.
 
@@ -38,30 +45,21 @@ InternetTest Pro - Your Windows connection toolkit. Monitor, diagnose, and optim
 ## Features
 
 InternetTest Pro is a powerful and modern connection utility designed for Windows users. With its comprehensive set of features, InternetTest Pro empowers you to monitor and optimize your internet connection experience. Here are some of the key features:
-
-### Check Internet Connection
-
-Easily determine whether your Windows device is currently connected to the internet. InternetTest Pro provides a quick and accurate way to assess your online status.
-
-### Perform Speed Test
-
-Measure your internet connection's speed with precision using the built-in speed test feature. Understand your download speed to ensure you're getting the performance you expect from your service provider.
-
 ### Website Availability Check
 
 Verify the availability of websites in real-time. InternetTest Pro allows you to check whether specific websites are up or down, helping you identify potential network or website issues.
 
-### DNS Information Retrieval
+### DNS Tools
 
-Retrieve DNS information for a domain using the DNS lookup feature. Similar to the `dig` command, InternetTest Pro provides detailed DNS records for domains, enabling you to diagnose and troubleshoot network-related problems.
+<picture>
+  <source srcset=".github/images/screens/7B.png" media="(prefers-color-scheme: dark)"          />
+    <img
+      src=".github/images/screens/7.png"
+      alt="A screenshot of the 'DNS Tool' page of InternetTest Pro"
+    />
+</picture>
 
-### Nearby WiFi Network Information
-
-Discover nearby WiFi networks and gather essential information about them. InternetTest Pro provides insights into available networks, aiding in the selection of the most suitable and stable connection.
-
-### IP Address Display
-
-The "IP Address Display" feature in InternetTest Pro provides you with an immediate and straightforward way to access your device's current IP address. Your device's IP address is a fundamental identifier used to communicate on a network.
+Retrieve DNS information for a domain using the DNS lookup feature. Similar to the `dig` command, InternetTest Pro provides detailed DNS records for domains, enabling you to diagnose and troubleshoot network-related problems. You can also access WHOIS information for domain registration details. Plus, you can view the local DNS cache and flush it if needed.
 
 ### IP and URL Geolocation
 
@@ -122,7 +120,13 @@ InternetTest Pro includes a traceroute feature that enables you to trace the pat
 
 The traceroute functionality in InternetTest Pro provides valuable insights into the network's structure and performance, enabling you to optimize your network connections and diagnose issues effectively.
 
-### WiFi Password Recovery
+
+
+### WiFi Utilities
+
+The WiFi Utilities feature in InternetTest Pro empowers users with a comprehensive set of tools to manage and optimize their wireless network connections. Whether you're seeking information about nearby networks or fine-tuning your network adapters, this section provides you with the functionality you need.
+
+#### 1. WiFi Password Recovery
 
 <picture>
   <source srcset=".github/images/screens/3B.png" media="(prefers-color-scheme: dark)"          />
@@ -141,11 +145,7 @@ The "WiFi Password Recovery" feature in InternetTest Pro offers a convenient and
 
 InternetTest Pro brings together a comprehensive suite of tools to empower Windows users with detailed insights into their internet connection and network environment. Whether you're troubleshooting connectivity issues or optimizing your online experience, InternetTest Pro has you covered.
 
-### WiFi Networks
-
-The WiFi Networks feature in InternetTest Pro empowers users with a comprehensive set of tools to manage and optimize their wireless network connections. Whether you're seeking information about nearby networks or fine-tuning your network adapters, this section provides you with the functionality you need.
-
-#### 1. WiFi Networks Section
+#### 2. WiFi Networks
 
 - **Discover Available Nearby Networks**:
   InternetTest Pro allows you to access detailed information about nearby WiFi networks, including speed, signal strength, band, frequency, and more. Make informed decisions about which network to connect to, ensuring a seamless online experience.
@@ -154,7 +154,7 @@ The WiFi Networks feature in InternetTest Pro empowers users with a comprehensiv
 - **WiFi Network Scanning**:
   Stay up-to-date with the latest information on nearby WiFi networks. Launch a scan to refresh the list of available networks, ensuring you always have access to the most accurate and current data.
 
-#### 2. Network Adapters Section
+#### 3. Network Adapters
 
 - **Obtain Available Network Adapters**:
   Get all available network adapters on your system, along with essential information such as their status, interface type, speed, and total bytes received and sent. This knowledge allows you to troubleshoot network issues effectively.
@@ -167,7 +167,7 @@ The WiFi Networks feature in InternetTest Pro puts you in control of your wirele
 
 InternetTest Pro offers a range of customization features that fit to your unique preferences and needs. These features are designed to enhance your overall user experience and adapt the utility to fit your specific requirements.
 
-### Customized Dashboard ([Synethia](https://github.com/DevyusCode/Synethia))
+### Modern Dashboard
 
 <picture>
   <source srcset=".github/images/screens/1B.png" media="(prefers-color-scheme: dark)"          />
@@ -176,7 +176,8 @@ InternetTest Pro offers a range of customization features that fit to your uniqu
       alt="A screenshot of the 'Home' page of InternetTest Pro"
     />
 </picture>
-Experience a dashboard tailored to your usage patterns with the innovative Synethia feature. InternetTest Pro intelligently analyzes your interactions and prioritizes the tools you use most frequently. This means that your most-used features are conveniently placed front and center, allowing for a faster and more efficient workflow.
+
+Quickly find the information you need with the modern dashboard's intuitive layout. The dashboard provides an overview of your internet connection status, recent activities, and quick access to essential features. This streamlined design ensures that you can navigate the utility effortlessly and access the tools you need with ease.
 
 ### Dark Mode
 
@@ -209,7 +210,7 @@ Customization lies at the heart of InternetTest Pro's design, empowering you to 
 
 ## Compatibility
 
-InternetTest Pro is available only on Windows from Windows 7 to 11. For legacy platforms, you may need to install the [.NET Desktop SDK](https://dotnet.microsoft.com/en-us/download) manually.
+InternetTest Pro is available only on Windows 10/11. For legacy platforms, you may need to install the [.NET Desktop SDK](https://dotnet.microsoft.com/en-us/download) manually.
 
 ## Latest release
 
@@ -229,8 +230,8 @@ Before you begin contributing to InternetTest Pro, ensure that you have the foll
   - .NET Desktop Development (to select in Visual Studio installer)
 - .NET SDK + .NET SDK Desktop
 - Git
-- .NET 6
-- _(Optional)_ Inno Setup v6.1 or higher (for building installers)
+- .NET 8
+- _(Optional)_ Inno Setup v6.3 or higher (for building installers)
 
 These tools and software components are essential for building, testing, and contributing to InternetTest Pro effectively. Make sure to have them set up on your development environment before proceeding with any contributions.
 

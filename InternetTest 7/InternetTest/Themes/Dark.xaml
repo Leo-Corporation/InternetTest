@@ -1,0 +1,59 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:InternetTest.Themes">
+
+    <SolidColorBrush x:Key="Background1" Color="#0A0A1E" />
+    <SolidColorBrush x:Key="Background2" Color="#141428" />
+    <SolidColorBrush x:Key="Background3" Color="#141428" />
+    <SolidColorBrush x:Key="CardBackground" Color="#141446" />
+    <SolidColorBrush x:Key="Foreground1" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Foreground2" Color="#DBDBD7" />
+    <SolidColorBrush x:Key="WindowButtonsHover1" Color="#141428" />
+    <SolidColorBrush x:Key="WindowButtonsPressed1" Color="#1E1E32" />
+    <SolidColorBrush x:Key="WindowButtonsHoverForeground1" Color="#ffffff" />
+    <SolidColorBrush x:Key="Accent" Color="#2153E0" />
+    <SolidColorBrush x:Key="DarkFAccent" Color="#7998ec" />
+    <SolidColorBrush x:Key="LightAccent" Color="#001A65" />
+    <SolidColorBrush x:Key="Gray" Color="#5A5A6E" />
+    <SolidColorBrush x:Key="Green" Color="#25DE0F" />
+    <SolidColorBrush x:Key="LightGreen" Color="#083003" />
+    <SolidColorBrush x:Key="ForegroundGreen" Color="#a9f8a0" />
+    <SolidColorBrush x:Key="LightOrange" Color="#4c2500" />
+    <SolidColorBrush x:Key="ForegroundOrange" Color="#ffca99" />
+    <SolidColorBrush x:Key="Red" Color="#FF321E" />
+    <SolidColorBrush x:Key="Orange" Color="#ff7a00" />
+    <SolidColorBrush x:Key="DarkGray" Color="#7474B1" />
+    <SolidColorBrush x:Key="Border" Color="#FF323264" />
+    <ImageBrush x:Key="BackgroundImg" ImageSource="/Images/DarkBackground.png" />
+    <Color
+        x:Key="Background1Color"
+        A="255"
+        B="10"
+        G="10"
+        R="30" />
+    <Color
+        x:Key="Foreground1Color"
+        A="255"
+        B="255"
+        G="255"
+        R="255" />
+    <Color
+        x:Key="AccentColor"
+        A="255"
+        B="224"
+        G="83"
+        R="33" />
+    <Color
+        x:Key="DarkGrayColor"
+        A="255"
+        B="177"
+        G="116"
+        R="116" />
+    <Color
+        x:Key="LightAccentColor"
+        A="255"
+        B="101"
+        G="26"
+        R="0" />
+</ResourceDictionary>

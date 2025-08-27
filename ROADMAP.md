@@ -1,51 +1,34 @@
-# Roadmap and features of InternetTest Pro 8
+# Roadmap and features of InternetTest Pro 9
 
 <img src=".github/images/banner.png" alt="banner">
 
-## Introduction
+## 🚀 Project Overview
 
-InternetTest Pro 8 is the next major iteration for InternetTest. It is a free and open source Windows application. This version will focus on improving the user experience, making it more intuitive to use the app - but that's not it, a UI refresh is also to be expected.
+InternetTest Pro 9 is the next big leap forward—a ground-up rewrite of InternetTest, rearchitected using the MVVM pattern in WPF. We’re retiring the legacy code in favor of a cleaner and more maintainable architecture. Visually, v9 introduces a modern MicaWindow style, aligning with Windows 11 design concepts, and unveils a completely redesigned Home dashboard that consolidates functionality in one streamlined view. The legacy “History” page has been removed to make space for this richer entry point.
 
-## Roadmap
+## 📋 Roadmap
+* **MVVM Architecture**
 
-- [ ] Global/App
+  * UI Views will bind to `ViewModel` objects exposing properties and `ICommand`s. UI logic stays entirely separate from business logic through `INotifyPropertyChanged` and `ObservableCollection<T>` .
 
-  - [ ] New navigation button system
-  - [ ] New Navigation styles
-  - [ ] Portable mode
-  - [ ] Remove Status page
-  - [ ] Remove My IP page
-  - [ ] Move IP Config page to IP Tools category
-  - [ ] Rewrite Synethia config system using the official NuGet package
-- [ ] Pages
+* **MicaWindow Style**
 
-  - [ ] Home page
+  * Entire app window uses a Mica backdrop (or Mica Alt variant if desired) to adopt OS theme and desktop wallpaper, giving it a lightweight yet visually rich appearance.
 
-    - [ ] Add new Quick Info section with Status, WiFi name, IP Address
-    - [ ] Redesign Page Cards
-    - [ ] Add new Quick Actions system
-      - [ ] Speed Test
-      - [ ] Connect to WiFi
-      - [ ] Recover Passwords
+* **Redesigned Home Dashboard**
 
-  - [ ] DNS page
-    - [ ] Add placeholder in DNS information section
-  - [ ] DownDetector page
-    - [ ] Add "Add website" section
-    - [ ] Add Website Item with details section
-    - [ ] Add the possibility to remove a website
-    - [ ] Add the possibility to test all websites
-    - [ ] Add new Timer panel
-      - [ ] Add the possibility to check the status automatically
-      - [ ] Add the possibility to provide an interval for the auto status check
-    - [ ] Add the possibility to remember websites
-  - [ ] Locate IP page
-    - [ ] Add the possibility to get the user's IP
-  - [ ] WiFi passwords page
-    - [ ] Add the possibility to remember the user's passwords
-    - [ ] Add the possibility to erase saved WiFi passwords
+  * Newly designed landing page aggregates:
 
-- [ ] Settings
-  - [ ] Instant theme switching
-  - [ ] Default interval for DownDetector check
-  - [ ] Possibility to hide by default disabled adapters
+    * Internet connection checks, Speed Test
+    * Recent pings/traceroute
+    * Details about the current connection
+    * WiFi scanning
+  * This becomes the default view; **History page is removed**.
+
+* **Dashboard Widgets & Interaction Patterns**
+
+  * Each section is represented as a widget card with real-time status, most-used actions, and interactive elements (e.g. “Test again” button with a bound `ICommand`).
+
+* New and modern navigation sidebar
+* Redesigned Settings page, removal of the accordion UI in favor of cards
+

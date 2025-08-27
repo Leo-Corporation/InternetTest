@@ -61,6 +61,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View information about your network adapter.
         /// </summary>
         public static string AdapterDesc {
@@ -142,6 +151,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AS Number.
+        /// </summary>
+        public static string AsNumber {
+            get {
+                return ResourceManager.GetString("AsNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auth.
         /// </summary>
         public static string Auth {
@@ -183,6 +201,15 @@ namespace InternetTest.Properties {
         public static string Available {
             get {
                 return ResourceManager.GetString("Available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nearby wireless networks you can connect to..
+        /// </summary>
+        public static string AvailableNetworksDesc {
+            get {
+                return ResourceManager.GetString("AvailableNetworksDesc", resourceCulture);
             }
         }
         
@@ -313,6 +340,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Class.
+        /// </summary>
+        public static string Class {
+            get {
+                return ResourceManager.GetString("Class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear.
         /// </summary>
         public static string Clear {
@@ -381,6 +417,15 @@ namespace InternetTest.Properties {
         public static string ConnectedS {
             get {
                 return ResourceManager.GetString("ConnectedS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connection details.
+        /// </summary>
+        public static string ConnectionDetails {
+            get {
+                return ResourceManager.GetString("ConnectionDetails", resourceCulture);
             }
         }
         
@@ -466,11 +511,20 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark theme.
+        ///   Looks up a localized string similar to Dark.
         /// </summary>
         public static string Dark {
             get {
                 return ResourceManager.GetString("Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Easy in low light.
+        /// </summary>
+        public static string DarkDesc {
+            get {
+                return ResourceManager.GetString("DarkDesc", resourceCulture);
             }
         }
         
@@ -556,11 +610,20 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System theme.
+        ///   Looks up a localized string similar to System.
         /// </summary>
         public static string DefaultTheme {
             get {
                 return ResourceManager.GetString("DefaultTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Follows your preference.
+        /// </summary>
+        public static string DefaultThemeDesc {
+            get {
+                return ResourceManager.GetString("DefaultThemeDesc", resourceCulture);
             }
         }
         
@@ -637,6 +700,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to District.
+        /// </summary>
+        public static string District {
+            get {
+                return ResourceManager.GetString("District", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DNS.
         /// </summary>
         public static string DNS {
@@ -700,6 +772,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get DNS information about a domain and your local DNS cache..
+        /// </summary>
+        public static string DnsPageDesc {
+            get {
+                return ResourceManager.GetString("DnsPageDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DNS Suffix.
         /// </summary>
         public static string DNSSuffix {
@@ -718,6 +799,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Domain.
+        /// </summary>
+        public static string Domain {
+            get {
+                return ResourceManager.GetString("Domain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domain Lookup.
+        /// </summary>
+        public static string DomainLookup {
+            get {
+                return ResourceManager.GetString("DomainLookup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Down.
         /// </summary>
         public static string Down {
@@ -732,6 +831,15 @@ namespace InternetTest.Properties {
         public static string DownDetector {
             get {
                 return ResourceManager.GetString("DownDetector", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Easily monitor down status for any websites..
+        /// </summary>
+        public static string DownDetectorDesc {
+            get {
+                return ResourceManager.GetString("DownDetectorDesc", resourceCulture);
             }
         }
         
@@ -761,6 +869,15 @@ namespace InternetTest.Properties {
         public static string DownDetectorSettingsDesc {
             get {
                 return ResourceManager.GetString("DownDetectorSettingsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duration.
+        /// </summary>
+        public static string Duration {
+            get {
+                return ResourceManager.GetString("Duration", resourceCulture);
             }
         }
         
@@ -928,6 +1045,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export saved WiFi networks.
+        /// </summary>
+        public static string ExportWlanProfiles {
+            get {
+                return ResourceManager.GetString("ExportWlanProfiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to include passwords in the exported files?.
+        /// </summary>
+        public static string ExportWlanProfilesMsg {
+            get {
+                return ResourceManager.GetString("ExportWlanProfilesMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed.
         /// </summary>
         public static string Failed {
@@ -1032,6 +1167,15 @@ namespace InternetTest.Properties {
         public static string General {
             get {
                 return ResourceManager.GetString("General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Basic application preferences and appearance..
+        /// </summary>
+        public static string GeneralDesc {
+            get {
+                return ResourceManager.GetString("GeneralDesc", resourceCulture);
             }
         }
         
@@ -1176,6 +1320,15 @@ namespace InternetTest.Properties {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monitor your Internet connection and network status..
+        /// </summary>
+        public static string HomeWelcomeDesc {
+            get {
+                return ResourceManager.GetString("HomeWelcomeDesc", resourceCulture);
             }
         }
         
@@ -1379,11 +1532,47 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IP Address Lookup.
+        /// </summary>
+        public static string IpAddressLookup {
+            get {
+                return ResourceManager.GetString("IpAddressLookup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter an IP address to get its geographical location and details..
+        /// </summary>
+        public static string IpAddressLookupDesc {
+            get {
+                return ResourceManager.GetString("IpAddressLookupDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IP Config.
         /// </summary>
         public static string IPConfig {
             get {
                 return ResourceManager.GetString("IPConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Summary of all network adapters on this system..
+        /// </summary>
+        public static string IpConfigAdaptersDesc {
+            get {
+                return ResourceManager.GetString("IpConfigAdaptersDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display network adapter configuration information..
+        /// </summary>
+        public static string IpConfigDesc {
+            get {
+                return ResourceManager.GetString("IpConfigDesc", resourceCulture);
             }
         }
         
@@ -1523,11 +1712,20 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light theme.
+        ///   Looks up a localized string similar to Light.
         /// </summary>
         public static string Light {
             get {
                 return ResourceManager.GetString("Light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clean and bright.
+        /// </summary>
+        public static string LightDesc {
+            get {
+                return ResourceManager.GetString("LightDesc", resourceCulture);
             }
         }
         
@@ -1555,6 +1753,15 @@ namespace InternetTest.Properties {
         public static string LocateIP {
             get {
                 return ResourceManager.GetString("LocateIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get information about a public IP address and its approximate location..
+        /// </summary>
+        public static string LocateIpDesc {
+            get {
+                return ResourceManager.GetString("LocateIpDesc", resourceCulture);
             }
         }
         
@@ -1588,11 +1795,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loss Rate.
+        /// </summary>
+        public static string LossRate {
+            get {
+                return ResourceManager.GetString("LossRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Make a ping.
         /// </summary>
         public static string MakePing {
             get {
                 return ResourceManager.GetString("MakePing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manual.
+        /// </summary>
+        public static string Manual {
+            get {
+                return ResourceManager.GetString("Manual", resourceCulture);
             }
         }
         
@@ -1620,6 +1845,15 @@ namespace InternetTest.Properties {
         public static string MaxHops {
             get {
                 return ResourceManager.GetString("MaxHops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max hops: {0}.
+        /// </summary>
+        public static string MaxHopsS {
+            get {
+                return ResourceManager.GetString("MaxHopsS", resourceCulture);
             }
         }
         
@@ -1683,6 +1917,15 @@ namespace InternetTest.Properties {
         public static string MinTime {
             get {
                 return ResourceManager.GetString("MinTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mobile.
+        /// </summary>
+        public static string Mobile {
+            get {
+                return ResourceManager.GetString("Mobile", resourceCulture);
             }
         }
         
@@ -1765,6 +2008,15 @@ namespace InternetTest.Properties {
         public static string NetworkAdaptersSettingsDesc {
             get {
                 return ResourceManager.GetString("NetworkAdaptersSettingsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Network &amp; ISP Details.
+        /// </summary>
+        public static string NetworkIspDetails {
+            get {
+                return ResourceManager.GetString("NetworkIspDetails", resourceCulture);
             }
         }
         
@@ -1949,6 +2201,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Organization.
+        /// </summary>
+        public static string Organization {
+            get {
+                return ResourceManager.GetString("Organization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Outgoing Packets Discarded.
         /// </summary>
         public static string OutgoingPacketsDiscarded {
@@ -2003,6 +2264,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Packet Statistics.
+        /// </summary>
+        public static string PacketStatistics {
+            get {
+                return ResourceManager.GetString("PacketStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parameters.
+        /// </summary>
+        public static string Parameters {
+            get {
+                return ResourceManager.GetString("Parameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -2044,6 +2323,15 @@ namespace InternetTest.Properties {
         public static string Ping {
             get {
                 return ResourceManager.GetString("Ping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Execute a ping..
+        /// </summary>
+        public static string PingDesc {
+            get {
+                return ResourceManager.GetString("PingDesc", resourceCulture);
             }
         }
         
@@ -2120,6 +2408,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Proxy.
+        /// </summary>
+        public static string Proxy {
+            get {
+                return ResourceManager.GetString("Proxy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PowerShell Computer Name.
         /// </summary>
         public static string PsComputerName {
@@ -2143,6 +2440,15 @@ namespace InternetTest.Properties {
         public static string ReceiveOnly {
             get {
                 return ResourceManager.GetString("ReceiveOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recent activity.
+        /// </summary>
+        public static string RecentActivity {
+            get {
+                return ResourceManager.GetString("RecentActivity", resourceCulture);
             }
         }
         
@@ -2201,6 +2507,33 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make a HTTP request to a specific URL..
+        /// </summary>
+        public static string RequestsDesc {
+            get {
+                return ResourceManager.GetString("RequestsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request Settings.
+        /// </summary>
+        public static string RequestSettings {
+            get {
+                return ResourceManager.GetString("RequestSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provide all the information about your request here..
+        /// </summary>
+        public static string RequestSettingsDesc {
+            get {
+                return ResourceManager.GetString("RequestSettingsDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset.
         /// </summary>
         public static string Reset {
@@ -2246,11 +2579,38 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Response information - Status {0}..
+        /// </summary>
+        public static string ResponseDesc {
+            get {
+                return ResourceManager.GetString("ResponseDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response Times.
+        /// </summary>
+        public static string ResponseTimes {
+            get {
+                return ResourceManager.GetString("ResponseTimes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restore.
         /// </summary>
         public static string Restore {
             get {
                 return ResourceManager.GetString("Restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complete path analysis to {0}.
+        /// </summary>
+        public static string RouteTraceDesc {
+            get {
+                return ResourceManager.GetString("RouteTraceDesc", resourceCulture);
             }
         }
         
@@ -2363,11 +2723,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Session Info.
+        /// </summary>
+        public static string SessionInfo {
+            get {
+                return ResourceManager.GetString("SessionInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configure your InternetTest application preferences..
+        /// </summary>
+        public static string SettingsDesc {
+            get {
+                return ResourceManager.GetString("SettingsDesc", resourceCulture);
             }
         }
         
@@ -2508,6 +2886,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Started: {0}.
+        /// </summary>
+        public static string StartedTime {
+            get {
+                return ResourceManager.GetString("StartedTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start time.
+        /// </summary>
+        public static string StartTime {
+            get {
+                return ResourceManager.GetString("StartTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default page on start.
         /// </summary>
         public static string StartupPage {
@@ -2558,6 +2954,15 @@ namespace InternetTest.Properties {
         public static string Successful {
             get {
                 return ResourceManager.GetString("Successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successful Hops.
+        /// </summary>
+        public static string SuccessfulHops {
+            get {
+                return ResourceManager.GetString("SuccessfulHops", resourceCulture);
             }
         }
         
@@ -2632,6 +3037,24 @@ namespace InternetTest.Properties {
         public static string SynethiaPrivacy {
             get {
                 return ResourceManager.GetString("SynethiaPrivacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target.
+        /// </summary>
+        public static string Target {
+            get {
+                return ResourceManager.GetString("Target", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target (IP or Hostname).
+        /// </summary>
+        public static string TargetHostname {
+            get {
+                return ResourceManager.GetString("TargetHostname", resourceCulture);
             }
         }
         
@@ -2807,6 +3230,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Hops.
+        /// </summary>
+        public static string TotalHops {
+            get {
+                return ResourceManager.GetString("TotalHops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trace.
         /// </summary>
         public static string Trace {
@@ -2834,6 +3266,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Traceroute Configuration.
+        /// </summary>
+        public static string TracerouteConfiguration {
+            get {
+                return ResourceManager.GetString("TracerouteConfiguration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Define the settings to use when performing a trace route..
         /// </summary>
         public static string TraceRouteDesc {
@@ -2848,6 +3289,15 @@ namespace InternetTest.Properties {
         public static string TraceRouteInformation {
             get {
                 return ResourceManager.GetString("TraceRouteInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trace the network path to any destination..
+        /// </summary>
+        public static string TraceroutePageDesc {
+            get {
+                return ResourceManager.GetString("TraceroutePageDesc", resourceCulture);
             }
         }
         
@@ -2969,6 +3419,15 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version.
         /// </summary>
         public static string Version {
@@ -3014,6 +3473,24 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Websites.
+        /// </summary>
+        public static string Websites {
+            get {
+                return ResourceManager.GetString("Websites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The list of websites to check..
+        /// </summary>
+        public static string WebsitesDesc {
+            get {
+                return ResourceManager.GetString("WebsitesDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Web Utilities.
         /// </summary>
         public static string WebUtilities {
@@ -3023,7 +3500,7 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Taking you to another level..
+        ///   Looks up a localized string similar to Your internet tools, all in one modern place..
         /// </summary>
         public static string WelcomeDesc {
             get {
@@ -3068,11 +3545,29 @@ namespace InternetTest.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manage your wireless network connections..
+        /// </summary>
+        public static string WiFiNetworksDesc {
+            get {
+                return ResourceManager.GetString("WiFiNetworksDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WiFi Passwords.
         /// </summary>
         public static string WifiPasswords {
             get {
                 return ResourceManager.GetString("WifiPasswords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse saved WiFi profiles and recover your lost passwords..
+        /// </summary>
+        public static string WiFiPasswordsDesc {
+            get {
+                return ResourceManager.GetString("WiFiPasswordsDesc", resourceCulture);
             }
         }
         

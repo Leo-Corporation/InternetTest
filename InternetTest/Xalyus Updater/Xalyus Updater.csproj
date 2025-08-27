@@ -7,9 +7,9 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Xalyus Updater.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>1.0.0.2404</Version>
+    <Version>1.0.0.2508</Version>
     <Company>Léo Corporation</Company>
-    <Copyright>© 2024</Copyright>
+    <Copyright>© 2025</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

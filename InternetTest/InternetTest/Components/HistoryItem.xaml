@@ -1,0 +1,57 @@
+﻿<UserControl
+    x:Class="InternetTest.Components.HistoryItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:InternetTest.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignWidth="800"
+    FontFamily="..\Fonts\#Hauora"
+    Foreground="{DynamicResource Foreground1}"
+    mc:Ignorable="d">
+    <Border
+        Margin="0 5"
+        Padding="5"
+        BorderBrush="{DynamicResource Border}"
+        BorderThickness="1"
+        CornerRadius="5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                VerticalAlignment="Center"
+                d:Text="Activity Name"
+                FontWeight="SemiBold"
+                Text="{Binding Name}" />
+
+            <TextBlock
+                Grid.Column="1"
+                Margin="0 0 5 0"
+                VerticalAlignment="Center"
+                d:Text="Activity Date"
+                FontSize="11"
+                Foreground="{DynamicResource DarkGray}"
+                Text="{Binding DateText}" />
+            <Border
+                Grid.Column="2"
+                MinWidth="50"
+                Padding="2"
+                VerticalAlignment="Center"
+                d:Background="{DynamicResource LightGreen}"
+                Background="{Binding StatusBackground}"
+                CornerRadius="2">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    d:Foreground="{DynamicResource ForegroundGreen}"
+                    d:Text="200"
+                    FontWeight="SemiBold"
+                    Foreground="{Binding StatusForeground}"
+                    Text="{Binding StatusText}" />
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

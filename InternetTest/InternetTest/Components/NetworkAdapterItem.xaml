@@ -1,0 +1,173 @@
+﻿<UserControl
+    x:Class="InternetTest.Components.NetworkAdapterItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lang="clr-namespace:InternetTest.Properties"
+    xmlns:local="clr-namespace:InternetTest.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="340"
+    Height="200"
+    FontFamily="..\Fonts\#Hauora"
+    Foreground="{DynamicResource Foreground1}"
+    mc:Ignorable="d">
+    <Border
+        Margin="10"
+        Padding="10"
+        Background="{DynamicResource Background1}"
+        BorderBrush="{DynamicResource Border}"
+        BorderThickness="1"
+        CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="AdapterIcon"
+                    Margin="5 0"
+                    VerticalAlignment="Center"
+                    d:Text="&#xF8AC;"
+                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                    FontSize="16"
+                    Foreground="{DynamicResource Accent}"
+                    Text="{Binding Icon}" />
+                <TextBlock
+                    x:Name="NameTxt"
+                    Grid.Column="1"
+                    MaxWidth="280"
+                    VerticalAlignment="Center"
+                    d:Text="Long Adapter Name Will Be Displayed Here"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Text="{Binding Name}"
+                    TextWrapping="Wrap" />
+                <Border
+                    Grid.Column="2"
+                    Margin="5 0 0 0"
+                    Padding="5 2"
+                    VerticalAlignment="Center"
+                    d:BorderBrush="Green"
+                    BorderBrush="{Binding StatusColor}"
+                    BorderThickness="1"
+                    CornerRadius="10">
+                    <TextBlock
+                        d:Foreground="Green"
+                        d:Text="Connected"
+                        FontWeight="SemiBold"
+                        Foreground="{Binding StatusColor}"
+                        Text="{Binding Status}" />
+                </Border>
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Margin="5">
+                    <TextBlock
+                        FontSize="12"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.InterfaceType}" />
+                    <TextBlock
+                        d:Text="{x:Static lang:Resources.InterfaceType}"
+                        FontSize="14"
+                        FontWeight="SemiBold"
+                        Text="{Binding InterfaceType}" />
+
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="5">
+                    <TextBlock
+                        FontSize="12"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.Speed}" />
+                    <TextBlock
+                        d:Text="{x:Static lang:Resources.Speed}"
+                        FontSize="14"
+                        FontWeight="SemiBold"
+                        Text="{Binding Speed}" />
+
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="5">
+                    <TextBlock
+                        FontSize="12"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.TotalBytesReceived}" />
+                    <TextBlock
+                        d:Text="{x:Static lang:Resources.TotalBytesReceived}"
+                        FontSize="14"
+                        FontWeight="SemiBold"
+                        Text="{Binding TotalBytesReceived}" />
+
+                </StackPanel>
+                <StackPanel
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="5">
+                    <TextBlock
+                        FontSize="12"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.TotalBytesSent}" />
+                    <TextBlock
+                        d:Text="{x:Static lang:Resources.TotalBytesSent}"
+                        FontSize="14"
+                        FontWeight="SemiBold"
+                        Text="{Binding TotalBytesSent}" />
+
+                </StackPanel>
+            </Grid>
+            <StackPanel
+                Grid.Row="2"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <Button
+                    Padding="5 3"
+                    Background="Transparent"
+                    Command="{Binding DetailsCommand}"
+                    Cursor="Hand"
+                    Foreground="{DynamicResource Foreground1}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            Text="&#xF4A4;" />
+                        <TextBlock
+                            Margin="5 0 0 0"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.Details}" />
+                    </StackPanel>
+                </Button>
+                <Button
+                    Padding="5 3"
+                    Background="Transparent"
+                    Command="{Binding SettingsCommand}"
+                    Cursor="Hand"
+                    Foreground="{DynamicResource Foreground1}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            Text="&#xFD05;" />
+                        <TextBlock
+                            Margin="5 0 0 0"
+                            FontWeight="SemiBold"
+                            Text="{x:Static lang:Resources.Settings}" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

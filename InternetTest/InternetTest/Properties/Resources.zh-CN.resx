@@ -565,7 +565,7 @@
     <value>是否要忽略此窗口并继续进行 InternetTest？</value>
   </data>
   <data name="WelcomeDesc" xml:space="preserve">
-    <value>带您进入另一个层次。</value>
+    <value>您的互联网工具，尽在一处现代化的空间。</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>下一步</value>
@@ -1145,5 +1145,170 @@
   </data>
   <data name="General" xml:space="preserve">
     <value>一般情况</value>
+  </data>
+  <data name="HomeWelcomeDesc" xml:space="preserve">
+    <value>监控您的互联网连接和网络状态。</value>
+  </data>
+  <data name="RecentActivity" xml:space="preserve">
+    <value>近期活动</value>
+  </data>
+  <data name="ConnectionDetails" xml:space="preserve">
+    <value>连接详细信息</value>
+  </data>
+  <data name="SettingsDesc" xml:space="preserve">
+    <value>配置您的InternetTest应用程序首选项。</value>
+  </data>
+  <data name="GeneralDesc" xml:space="preserve">
+    <value>基本应用程序设置和外观。</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="WiFiNetworksDesc" xml:space="preserve">
+    <value>管理您的无线网络连接。</value>
+  </data>
+  <data name="AvailableNetworksDesc" xml:space="preserve">
+    <value>附近可连接的无线网络。</value>
+  </data>
+  <data name="WiFiPasswordsDesc" xml:space="preserve">
+    <value>浏览已保存的Wi-Fi配置文件并恢复您丢失的密码。</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>手册</value>
+  </data>
+  <data name="ExportWlanProfilesMsg" xml:space="preserve">
+    <value>您是否希望在导出的文件中包含密码？</value>
+  </data>
+  <data name="ExportWlanProfiles" xml:space="preserve">
+    <value>导出已保存的Wi-Fi网络</value>
+  </data>
+  <data name="LocateIpDesc" xml:space="preserve">
+    <value>获取公共 IP 地址及其大致位置的信息。</value>
+  </data>
+  <data name="IpAddressLookup" xml:space="preserve">
+    <value>IP地址查询</value>
+  </data>
+  <data name="IpAddressLookupDesc" xml:space="preserve">
+    <value>输入一个IP地址以获取其地理位置及详细信息。</value>
+  </data>
+  <data name="NetworkIspDetails" xml:space="preserve">
+    <value>网络及互联网服务提供商（ISP）详细信息</value>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>区</value>
+  </data>
+  <data name="AsNumber" xml:space="preserve">
+    <value>AS 编号</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>组织</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>移动</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>代理</value>
+  </data>
+  <data name="PingDesc" xml:space="preserve">
+    <value>执行一次ping操作。</value>
+  </data>
+  <data name="SessionInfo" xml:space="preserve">
+    <value>会议信息</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>持续时间</value>
+  </data>
+  <data name="ResponseTimes" xml:space="preserve">
+    <value>响应时间</value>
+  </data>
+  <data name="PacketStatistics" xml:space="preserve">
+    <value>数据包统计信息</value>
+  </data>
+  <data name="LossRate" xml:space="preserve">
+    <value>损失率</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
+  <data name="IpConfigAdaptersDesc" xml:space="preserve">
+    <value>本系统中所有网络适配器的汇总信息。</value>
+  </data>
+  <data name="IpConfigDesc" xml:space="preserve">
+    <value>显示网络适配器配置信息。</value>
+  </data>
+  <data name="RequestsDesc" xml:space="preserve">
+    <value>向特定的URL发送HTTP请求。</value>
+  </data>
+  <data name="RequestSettings" xml:space="preserve">
+    <value>请求设置</value>
+  </data>
+  <data name="RequestSettingsDesc" xml:space="preserve">
+    <value>请在此提供您请求的所有相关信息。</value>
+  </data>
+  <data name="ResponseDesc" xml:space="preserve">
+    <value>响应信息 - 状态 {0}。</value>
+  </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>参数</value>
+  </data>
+  <data name="TraceroutePageDesc" xml:space="preserve">
+    <value>追踪到任何目的地的网络路径。</value>
+  </data>
+  <data name="TracerouteConfiguration" xml:space="preserve">
+    <value>跟踪路由配置</value>
+  </data>
+  <data name="TargetHostname" xml:space="preserve">
+    <value>目标（IP地址或主机名）</value>
+  </data>
+  <data name="RouteTraceDesc" xml:space="preserve">
+    <value>对{0}进行完整的路径分析</value>
+  </data>
+  <data name="TotalHops" xml:space="preserve">
+    <value>总啤酒花</value>
+  </data>
+  <data name="MaxHopsS" xml:space="preserve">
+    <value>最大跳数：{0}</value>
+  </data>
+  <data name="SuccessfulHops" xml:space="preserve">
+    <value>成功的啤酒花</value>
+  </data>
+  <data name="StartedTime" xml:space="preserve">
+    <value>开始时间：{0}</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>目标</value>
+  </data>
+  <data name="DownDetectorDesc" xml:space="preserve">
+    <value>轻松监控任何网站的离线状态。</value>
+  </data>
+  <data name="Websites" xml:space="preserve">
+    <value>网站</value>
+  </data>
+  <data name="WebsitesDesc" xml:space="preserve">
+    <value>需要检查的网站列表。</value>
+  </data>
+  <data name="DnsPageDesc" xml:space="preserve">
+    <value>获取域名的DNS信息以及本地DNS缓存。</value>
+  </data>
+  <data name="DomainLookup" xml:space="preserve">
+    <value>域名查询</value>
+  </data>
+  <data name="Domain" xml:space="preserve">
+    <value>域名</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>班级</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>价值</value>
+  </data>
+  <data name="LightDesc" xml:space="preserve">
+    <value>简洁明了的界面</value>
+  </data>
+  <data name="DarkDesc" xml:space="preserve">
+    <value>晚上很舒适</value>
+  </data>
+  <data name="DefaultThemeDesc" xml:space="preserve">
+    <value>根据您的设备偏好设置</value>
   </data>
 </root>

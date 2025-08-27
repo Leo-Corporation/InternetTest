@@ -440,10 +440,10 @@ Cette action est irréversible.</value>
 	<value>Thème</value>
   </data>
   <data name="Light" xml:space="preserve">
-	<value>Thème clair</value>
+	<value>Clair</value>
   </data>
   <data name="Dark" xml:space="preserve">
-	<value>Thème sombre</value>
+	<value>Sombre</value>
   </data>
   <data name="Licenses" xml:space="preserve">
 	<value>Licences</value>
@@ -570,7 +570,7 @@ Votre expérience personnalisée sera perdue ; Cette action ne peut être annul�
     <value>Voulez-vous ignorer cette fenêtre et continuer sur InternetTest ?</value>
   </data>
   <data name="WelcomeDesc" xml:space="preserve">
-    <value>Vous emmener à un autre niveau.</value>
+    <value>Vos outils Internet, tous réunis dans un seul et même endroit moderne.</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Suivant</value>
@@ -718,13 +718,13 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
     <value>Langue du système</value>
   </data>
   <data name="DefaultTheme" xml:space="preserve">
-    <value>Thème système</value>
+    <value>Système</value>
   </data>
   <data name="SpeedTest" xml:space="preserve">
     <value>Faire un speed test</value>
   </data>
   <data name="MinSpeed" xml:space="preserve">
-    <value>Vitesse min.</value>
+    <value>Vitesse min</value>
   </data>
   <data name="MaxSpeed" xml:space="preserve">
     <value>Vitesse maxi</value>
@@ -1154,5 +1154,170 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Général</value>
+  </data>
+  <data name="HomeWelcomeDesc" xml:space="preserve">
+    <value>Gérez votre connexion Internet et l'état de votre réseau.</value>
+  </data>
+  <data name="RecentActivity" xml:space="preserve">
+    <value>Activité récente</value>
+  </data>
+  <data name="ConnectionDetails" xml:space="preserve">
+    <value>Infos sur la connexion</value>
+  </data>
+  <data name="SettingsDesc" xml:space="preserve">
+    <value>Configurez vos préférences d'application pour InternetTest.</value>
+  </data>
+  <data name="GeneralDesc" xml:space="preserve">
+    <value>Préférences et apparence de base de l'application.</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>A propos</value>
+  </data>
+  <data name="WiFiNetworksDesc" xml:space="preserve">
+    <value>Gérez vos connexions réseau sans fil.</value>
+  </data>
+  <data name="AvailableNetworksDesc" xml:space="preserve">
+    <value>Réseaux sans fil à proximité auxquels vous pouvez vous connecter.</value>
+  </data>
+  <data name="WiFiPasswordsDesc" xml:space="preserve">
+    <value>Parcourez les profils WiFi enregistrés et récupérez vos mots de passe perdus.</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>Manuel</value>
+  </data>
+  <data name="ExportWlanProfilesMsg" xml:space="preserve">
+    <value>Souhaitez-vous inclure les mots de passe dans les fichiers exportés ?</value>
+  </data>
+  <data name="ExportWlanProfiles" xml:space="preserve">
+    <value>Export les réseaux WiFi sauvegardés</value>
+  </data>
+  <data name="LocateIpDesc" xml:space="preserve">
+    <value>Obtenir des informations sur une adresse IP publique et sa localisation approximative.</value>
+  </data>
+  <data name="IpAddressLookup" xml:space="preserve">
+    <value>Recherche d'adresse IP</value>
+  </data>
+  <data name="IpAddressLookupDesc" xml:space="preserve">
+    <value>Entrez une adresse IP pour obtenir sa localisation géographique et ses détails.</value>
+  </data>
+  <data name="NetworkIspDetails" xml:space="preserve">
+    <value>Détails du réseau et du FAI</value>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>District</value>
+  </data>
+  <data name="AsNumber" xml:space="preserve">
+    <value>Numéro AS</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>Organisation</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="PingDesc" xml:space="preserve">
+    <value>Exécuter un ping.</value>
+  </data>
+  <data name="SessionInfo" xml:space="preserve">
+    <value>Info sur la session</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Durée</value>
+  </data>
+  <data name="ResponseTimes" xml:space="preserve">
+    <value>Temps de réponse</value>
+  </data>
+  <data name="PacketStatistics" xml:space="preserve">
+    <value>Statistiques sur les paquets</value>
+  </data>
+  <data name="LossRate" xml:space="preserve">
+    <value>Taux de perte</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Heure de début</value>
+  </data>
+  <data name="IpConfigAdaptersDesc" xml:space="preserve">
+    <value>Résumé de toutes les cartes réseau présentes sur ce système.</value>
+  </data>
+  <data name="IpConfigDesc" xml:space="preserve">
+    <value>Afficher les informations de configuration de la carte réseau.</value>
+  </data>
+  <data name="RequestsDesc" xml:space="preserve">
+    <value>Effectuer une requête HTTP vers une URL spécifique.</value>
+  </data>
+  <data name="RequestSettings" xml:space="preserve">
+    <value>Paramètres de la requête</value>
+  </data>
+  <data name="RequestSettingsDesc" xml:space="preserve">
+    <value>Fournissez toutes les informations de votre requête ici.</value>
+  </data>
+  <data name="ResponseDesc" xml:space="preserve">
+    <value>Informations de la réponse - Statut {0}.</value>
+  </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="TraceroutePageDesc" xml:space="preserve">
+    <value>Suivez le chemin réseau vers n'importe quelle destination.</value>
+  </data>
+  <data name="TracerouteConfiguration" xml:space="preserve">
+    <value>Configuration du Traceroute</value>
+  </data>
+  <data name="TargetHostname" xml:space="preserve">
+    <value>Cible (IP ou nom d'hôte)</value>
+  </data>
+  <data name="RouteTraceDesc" xml:space="preserve">
+    <value>Analyse complète du chemin vers {0}</value>
+  </data>
+  <data name="TotalHops" xml:space="preserve">
+    <value>Nombre de sauts</value>
+  </data>
+  <data name="MaxHopsS" xml:space="preserve">
+    <value>Sauts max : {0}</value>
+  </data>
+  <data name="SuccessfulHops" xml:space="preserve">
+    <value>Sauts réussis</value>
+  </data>
+  <data name="StartedTime" xml:space="preserve">
+    <value>Début : {0}</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Cible</value>
+  </data>
+  <data name="DownDetectorDesc" xml:space="preserve">
+    <value>Surveillez facilement l'état de disponibilité de n'importe quel site web.</value>
+  </data>
+  <data name="Websites" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="WebsitesDesc" xml:space="preserve">
+    <value>Liste des sites à vérifier.</value>
+  </data>
+  <data name="DnsPageDesc" xml:space="preserve">
+    <value>Obtenez des informations DNS sur un domaine et sur votre cache DNS local.</value>
+  </data>
+  <data name="DomainLookup" xml:space="preserve">
+    <value>Recherche de domaine</value>
+  </data>
+  <data name="Domain" xml:space="preserve">
+    <value>Domaine</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>Classe</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="LightDesc" xml:space="preserve">
+    <value>Interface lumineuse</value>
+  </data>
+  <data name="DarkDesc" xml:space="preserve">
+    <value>Agréable le soir</value>
+  </data>
+  <data name="DefaultThemeDesc" xml:space="preserve">
+    <value>Suit vos préférences</value>
   </data>
 </root>

@@ -440,10 +440,10 @@ This action is irreversible.</value>
 	<value>Theme</value>
   </data>
   <data name="Light" xml:space="preserve">
-	<value>Light theme</value>
+	<value>Light</value>
   </data>
   <data name="Dark" xml:space="preserve">
-	<value>Dark theme</value>
+	<value>Dark</value>
   </data>
   <data name="Licenses" xml:space="preserve">
 	<value>Licenses</value>
@@ -570,7 +570,7 @@ Your personalized experience will be lost; This action cannot be canceled.</valu
     <value>Do you want to ignore this window and continue to InternetTest?</value>
   </data>
   <data name="WelcomeDesc" xml:space="preserve">
-    <value>Taking you to another level.</value>
+    <value>Your internet tools, all in one modern place.</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Next</value>
@@ -718,7 +718,7 @@ Absolutely NO data is sent to Léo Corporation.</value>
     <value>System language</value>
   </data>
   <data name="DefaultTheme" xml:space="preserve">
-    <value>System theme</value>
+    <value>System</value>
   </data>
   <data name="SpeedTest" xml:space="preserve">
     <value>Make a speed test</value>
@@ -1154,5 +1154,170 @@ Absolutely NO data is sent to Léo Corporation.</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>General</value>
+  </data>
+  <data name="HomeWelcomeDesc" xml:space="preserve">
+    <value>Monitor your Internet connection and network status.</value>
+  </data>
+  <data name="RecentActivity" xml:space="preserve">
+    <value>Recent activity</value>
+  </data>
+  <data name="ConnectionDetails" xml:space="preserve">
+    <value>Connection details</value>
+  </data>
+  <data name="SettingsDesc" xml:space="preserve">
+    <value>Configure your InternetTest application preferences.</value>
+  </data>
+  <data name="GeneralDesc" xml:space="preserve">
+    <value>Basic application preferences and appearance.</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="WiFiNetworksDesc" xml:space="preserve">
+    <value>Manage your wireless network connections.</value>
+  </data>
+  <data name="AvailableNetworksDesc" xml:space="preserve">
+    <value>Nearby wireless networks you can connect to.</value>
+  </data>
+  <data name="WiFiPasswordsDesc" xml:space="preserve">
+    <value>Browse saved WiFi profiles and recover your lost passwords.</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="ExportWlanProfilesMsg" xml:space="preserve">
+    <value>Do you want to include passwords in the exported files?</value>
+  </data>
+  <data name="ExportWlanProfiles" xml:space="preserve">
+    <value>Export saved WiFi networks</value>
+  </data>
+  <data name="LocateIpDesc" xml:space="preserve">
+    <value>Get information about a public IP address and its approximate location.</value>
+  </data>
+  <data name="IpAddressLookup" xml:space="preserve">
+    <value>IP Address Lookup</value>
+  </data>
+  <data name="IpAddressLookupDesc" xml:space="preserve">
+    <value>Enter an IP address to get its geographical location and details.</value>
+  </data>
+  <data name="NetworkIspDetails" xml:space="preserve">
+    <value>Network &amp; ISP Details</value>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>District</value>
+  </data>
+  <data name="AsNumber" xml:space="preserve">
+    <value>AS Number</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="PingDesc" xml:space="preserve">
+    <value>Execute a ping.</value>
+  </data>
+  <data name="SessionInfo" xml:space="preserve">
+    <value>Session Info</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="ResponseTimes" xml:space="preserve">
+    <value>Response Times</value>
+  </data>
+  <data name="PacketStatistics" xml:space="preserve">
+    <value>Packet Statistics</value>
+  </data>
+  <data name="LossRate" xml:space="preserve">
+    <value>Loss Rate</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Start time</value>
+  </data>
+  <data name="IpConfigAdaptersDesc" xml:space="preserve">
+    <value>Summary of all network adapters on this system.</value>
+  </data>
+  <data name="IpConfigDesc" xml:space="preserve">
+    <value>Display network adapter configuration information.</value>
+  </data>
+  <data name="RequestsDesc" xml:space="preserve">
+    <value>Make a HTTP request to a specific URL.</value>
+  </data>
+  <data name="RequestSettings" xml:space="preserve">
+    <value>Request Settings</value>
+  </data>
+  <data name="RequestSettingsDesc" xml:space="preserve">
+    <value>Provide all the information about your request here.</value>
+  </data>
+  <data name="ResponseDesc" xml:space="preserve">
+    <value>Response information - Status {0}.</value>
+  </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="TraceroutePageDesc" xml:space="preserve">
+    <value>Trace the network path to any destination.</value>
+  </data>
+  <data name="TracerouteConfiguration" xml:space="preserve">
+    <value>Traceroute Configuration</value>
+  </data>
+  <data name="TargetHostname" xml:space="preserve">
+    <value>Target (IP or Hostname)</value>
+  </data>
+  <data name="RouteTraceDesc" xml:space="preserve">
+    <value>Complete path analysis to {0}</value>
+  </data>
+  <data name="TotalHops" xml:space="preserve">
+    <value>Total Hops</value>
+  </data>
+  <data name="MaxHopsS" xml:space="preserve">
+    <value>Max hops: {0}</value>
+  </data>
+  <data name="SuccessfulHops" xml:space="preserve">
+    <value>Successful Hops</value>
+  </data>
+  <data name="StartedTime" xml:space="preserve">
+    <value>Started: {0}</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="DownDetectorDesc" xml:space="preserve">
+    <value>Easily monitor down status for any websites.</value>
+  </data>
+  <data name="Websites" xml:space="preserve">
+    <value>Websites</value>
+  </data>
+  <data name="WebsitesDesc" xml:space="preserve">
+    <value>The list of websites to check.</value>
+  </data>
+  <data name="DnsPageDesc" xml:space="preserve">
+    <value>Get DNS information about a domain and your local DNS cache.</value>
+  </data>
+  <data name="DomainLookup" xml:space="preserve">
+    <value>Domain Lookup</value>
+  </data>
+  <data name="Domain" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="LightDesc" xml:space="preserve">
+    <value>Clean and bright</value>
+  </data>
+  <data name="DarkDesc" xml:space="preserve">
+    <value>Easy in low light</value>
+  </data>
+  <data name="DefaultThemeDesc" xml:space="preserve">
+    <value>Follows your preference</value>
   </data>
 </root>

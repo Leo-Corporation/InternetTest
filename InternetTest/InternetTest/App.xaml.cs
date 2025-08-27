@@ -21,56 +21,54 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using InternetTest.Classes;
+using InternetTest.Helpers;
+using InternetTest.Models;
+using InternetTest.ViewModels;
+using InternetTest.ViewModels.Windows;
 using InternetTest.Windows;
-using Synethia;
 using System.Windows;
 
 namespace InternetTest;
+
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>
 public partial class App : Application
 {
-	private void Application_Startup(object sender, StartupEventArgs e)
+	protected override async void OnStartup(StartupEventArgs e)
 	{
-		try
+		// Load settings
+		Settings settings = new();
+		settings.Load();
+
+		ActivityHistory history = await ActivityHistory.LoadAsync();
+
+		ThemeHelper.ChangeTheme(settings.Theme);
+		Context.ChangeLanguage(settings.Language);
+
+		// Set the main window
+		if (settings.IsFirstRun)
 		{
-			Global.ChangeTheme();
-			Global.ChangeLanguage();
-
-			Global.HomePage = new();
-			Global.HistoryPage = new();
-			Global.SettingsPage = new();
-			Global.DownDetectorPage = new();
-			Global.LocateIpPage = new();
-			Global.PingPage = new();
-			Global.IpConfigPage = new();
-			Global.WiFiPasswordsPage = new();
-			Global.DnsPage = new();
-			Global.TraceroutePage = new();
-			Global.WiFiNetworksPage = new();
-			Global.RequestsPage = new();
-
-			if (!Global.Settings.IsFirstRun)
+			MainWindow = new OobeWindow
 			{
-				new MainWindow().Show();
-			}
-			else
-			{
-				new FirstRunWindow().Show();
-			}
+				DataContext = new OobeWindowViewModel(settings)
+			};
+			MainWindow.Show();
+			base.OnStartup(e);
+
+			return;
 		}
-		catch (System.Exception ex)
+
+		MainWindow = new MainWindow()
 		{
-			MessageBox.Show(ex.Message);
-		}
-	}
+			Width = settings.MainWindowSize?.Item1 ?? 950,
+			Height = settings.MainWindowSize?.Item2 ?? 600,
+		};
+		MainViewModel mvm = new(settings, history, MainWindow);
+		MainWindow.DataContext = mvm;
 
-	private void Application_Exit(object sender, ExitEventArgs e)
-	{
-		SynethiaManager.Save(Global.SynethiaConfig, Global.SynethiaPath);
-		HistoryManager.Save(Global.History);
-		SettingsManager.Save();
+		MainWindow.Show();
+
+		base.OnStartup(e);
 	}
 }

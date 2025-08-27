@@ -1,0 +1,227 @@
+﻿<controls:MicaWindow
+    x:Class="InternetTest.Windows.AdapterDetailsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:InternetTest.Components"
+    xmlns:controls="clr-namespace:MicaWPF.Lite.Controls;assembly=MicaWPF.Lite"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lang="clr-namespace:InternetTest.Properties"
+    xmlns:local="clr-namespace:InternetTest.Windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:InternetTest.ViewModels.Components"
+    Title="{Binding Name}"
+    Width="500"
+    Height="550"
+    MinWidth="450"
+    MinHeight="550"
+    d:Background="Transparent"
+    FontFamily="../Fonts/#Hauora"
+    Foreground="{DynamicResource Foreground1}"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="ToolWindow"
+    mc:Ignorable="d">
+    <Grid VerticalAlignment="Stretch">
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Height="Auto" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="AdapterIcon"
+                    Margin="5 0"
+                    VerticalAlignment="Center"
+                    d:Text="&#xF8AC;"
+                    FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                    FontSize="24"
+                    Foreground="{DynamicResource Accent}"
+                    Text="{Binding Icon}" />
+                <StackPanel
+                    Grid.Column="1"
+                    Margin="10 0"
+                    VerticalAlignment="Center">
+                    <TextBlock
+                        x:Name="NameTxt"
+                        VerticalAlignment="Center"
+                        d:Text="Long Adapter Name"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Text="{Binding Name}"
+                        TextWrapping="Wrap" />
+                    <TextBlock FontSize="10" Text="{x:Static lang:Resources.AdapterDesc}" />
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+
+        <ScrollViewer
+            Grid.Row="1"
+            HorizontalScrollBarVisibility="Disabled"
+            Style="{DynamicResource ScrollViewerStyle}"
+            VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <ItemsControl x:Name="Cat1" ItemsSource="{Binding Details}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid x:Name="Cat1Grid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="ContentPresenter">
+                            <Setter Property="Grid.Row" Value="{Binding GridRow}" />
+                            <Setter Property="Grid.Column" Value="{Binding GridColumn}" />
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type vm:GridItemViewModel}">
+                            <components:GridItem />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Text="{x:Static lang:Resources.Configuration}" />
+                    <ToggleButton
+                        x:Name="ExpandCat2Btn"
+                        Grid.Column="1"
+                        Padding="5"
+                        Background="{DynamicResource Border}"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource ExpanderChevronButton}" />
+                </Grid>
+                <ItemsControl
+                    x:Name="Cat2"
+                    ItemsSource="{Binding Cat2}"
+                    Visibility="{Binding ElementName=ExpandCat2Btn, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid x:Name="Cat2Grid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="ContentPresenter">
+                            <Setter Property="Grid.Row" Value="{Binding GridRow}" />
+                            <Setter Property="Grid.Column" Value="{Binding GridColumn}" />
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type vm:GridItemViewModel}">
+                            <components:GridItem />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Text="{x:Static lang:Resources.PerformanceMetrics}" />
+                    <ToggleButton
+                        x:Name="ExpandCat3Btn"
+                        Grid.Column="1"
+                        Padding="5"
+                        Background="{DynamicResource Border}"
+                        FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource ExpanderChevronButton}" />
+                </Grid>
+                <ItemsControl
+                    x:Name="Cat3"
+                    ItemsSource="{Binding Cat3}"
+                    Visibility="{Binding ElementName=ExpandCat3Btn, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid x:Name="Cat3Grid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="ContentPresenter">
+                            <Setter Property="Grid.Row" Value="{Binding GridRow}" />
+                            <Setter Property="Grid.Column" Value="{Binding GridColumn}" />
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type vm:GridItemViewModel}">
+                            <components:GridItem />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+        <Button
+            x:Name="CopyBtn"
+            Grid.Row="2"
+            Margin="5"
+            Padding="5"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="{DynamicResource Accent}"
+            Command="{Binding CopyCommand}"
+            Content="{x:Static lang:Resources.Copy}"
+            Cursor="Hand"
+            FontWeight="Bold"
+            Foreground="{DynamicResource WindowButtonsHoverForeground1}" />
+    </Grid>
+</controls:MicaWindow>

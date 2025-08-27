@@ -27,14 +27,14 @@ public enum AppPages
 {
 	Settings = -1, // Special page
 	Home,
-	History,
-	Status,
+	History, // Legacy feature, leaving for compatibility
+	Status, // Legacy feature, leaving for compatibility
 	DownDetector,
-	MyIP,
+	MyIP, // Legacy feature, leaving for compatibility
 	LocateIP,
 	Ping,
 	IPConfig,
-	WiFiPasswords,
+	WiFiPasswords, // Legacy feature, leaving for compatibility
 	DnsTool,
 	TraceRoute,
 	WiFiNetworks,

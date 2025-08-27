@@ -4,12 +4,12 @@
     xmlns:local="clr-namespace:InternetTest.Themes">
 
     <SolidColorBrush x:Key="Background1" Color="#0A0A1E" />
-    <SolidColorBrush x:Key="Background2" Color="#141428" />
-    <SolidColorBrush x:Key="Background3" Color="#141428" />
-    <SolidColorBrush x:Key="CardBackground" Color="#141446" />
+    <SolidColorBrush x:Key="HoverBackground" Color="#0A0A1E" />
+    <SolidColorBrush x:Key="CardBackground" Color="#FF141428" />
+    <SolidColorBrush x:Key="SidebarBackground" Color="#3F141428" />
     <SolidColorBrush x:Key="Foreground1" Color="#FFFFFF" />
     <SolidColorBrush x:Key="Foreground2" Color="#DBDBD7" />
-    <SolidColorBrush x:Key="WindowButtonsHover1" Color="#141428" />
+    <SolidColorBrush x:Key="WindowButtonsHover1" Color="#33808080" />
     <SolidColorBrush x:Key="WindowButtonsPressed1" Color="#1E1E32" />
     <SolidColorBrush x:Key="WindowButtonsHoverForeground1" Color="#ffffff" />
     <SolidColorBrush x:Key="Accent" Color="#2153E0" />
@@ -25,7 +25,7 @@
     <SolidColorBrush x:Key="Orange" Color="#ff7a00" />
     <SolidColorBrush x:Key="DarkGray" Color="#7474B1" />
     <SolidColorBrush x:Key="Border" Color="#FF323264" />
-    <ImageBrush x:Key="BackgroundImg" ImageSource="/Images/DarkBackground.png" />
+    <SolidColorBrush x:Key="SidebarBorder" Color="Transparent" />
     <Color
         x:Key="Background1Color"
         A="255"
@@ -56,4 +56,5 @@
         B="101"
         G="26"
         R="0" />
+    <ImageBrush x:Key="Logo" ImageSource="/Assets/InternetTestD.png" />
 </ResourceDictionary>
