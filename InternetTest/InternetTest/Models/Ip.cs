@@ -102,7 +102,19 @@ public class Ip
 		}
 		catch
 		{
-			return new();
+			return new()
+			{
+				Isp = Properties.Resources.Unknown,
+				City = Properties.Resources.Unknown,
+				Country = Properties.Resources.Unknown,
+				Lat = 0,
+				Lon = 0,
+				RegionName = Properties.Resources.Unknown,
+				Status = Properties.Resources.Failed,
+				Timezone = Properties.Resources.Unknown,
+				Zip = Properties.Resources.Unknown,
+				Query = ip
+			};
 		}
 	}
 
