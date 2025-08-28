@@ -54,7 +54,7 @@ public class ThemeHelper
 		Application.Current.Resources.MergedDictionaries.Clear();
 		Application.Current.Resources.MergedDictionaries.Add(dictionary);
 
-		MicaWPFServiceUtility.ThemeService.ChangeTheme((WindowsTheme)theme);
+		MicaWPFServiceUtility.ThemeService.ChangeTheme(isDark ? WindowsTheme.Dark : WindowsTheme.Light);
 	}
 
 	public static bool IsSystemThemeDark()

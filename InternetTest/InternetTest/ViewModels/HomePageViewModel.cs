@@ -125,35 +125,14 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 		_settings = settings;
 		_mainViewModel = mainViewModel;
 
-		// Get status
 		LoadStatusCard();
-
-		// Get WiFi information
-		string? ssid = NetworkHelper.GetCurrentWifiSSID();
-		int signalQuality = ssid != null ? NetworkHelper.GetCurrentNetwork().SignalQuality : 0;
-		WiFiName = ssid ?? (connected ? Properties.Resources.Ethernet : Properties.Resources.NotConnectedS);
-		WiFiIcon = ssid != null ? GetWiFiIcon(signalQuality) : (connected ? "\uF35A" : "\uFB69");
-		WiFiStrengthText = $"{Properties.Resources.SignalQuality} - {(ssid != null ? signalQuality : 100)}%";
-
-		// Get IP address
+		LoadWiFiInfo();
 		LoadIpAddress();
 
 		// Network speed
-		Speed = $"~{NetworkHelper.GetCurrentSpeed()} Mbps";
+		Speed = connected ? $"~{NetworkHelper.GetCurrentSpeed()} Mbps" : Properties.Resources.Unknown;
 
-		// Load connection details
-		var networkInterface = NetworkInterface.GetAllNetworkInterfaces()
-			.Where(x => x.OperationalStatus == OperationalStatus.Up)
-			.OrderByDescending(x => x.GetIPStatistics().BytesReceived)
-			.FirstOrDefault();
-		if (networkInterface != null)
-		{
-			var ipProps = WindowsIpConfig.FromNetworkInterface(networkInterface);
-
-			LocalIp = ipProps?.IPv4Address ?? Properties.Resources.Unknown;
-			Gateway = ipProps?.IPv4Gateway ?? Properties.Resources.Unknown;
-			Dns = string.Join("\n", networkInterface.GetIPProperties().DnsAddresses.Select(x => x.ToString().Replace("%16", ""))) ?? Properties.Resources.Unknown;
-		}
+		LoadConnectionDetails();
 
 		// Load history
 		History = new(history.Activity.OrderByDescending(x => x.Date).Select(x => new HistoryItemViewModel(x)));
@@ -183,9 +162,35 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 			return;
 		}
 
-		connected = await Internet.IsAvailableAsync(_settings.TestSite);
-		StatusText = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS;
-		StatusColor = connected ? ThemeHelper.GetSolidColorBrush("Green") : ThemeHelper.GetSolidColorBrush("Red");
+		try
+		{
+			connected = await Internet.IsAvailableAsync(_settings.TestSite);
+			StatusText = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS;
+			StatusColor = connected ? ThemeHelper.GetSolidColorBrush("Green") : ThemeHelper.GetSolidColorBrush("Red");
+		}
+		catch
+		{
+			connected = false;
+			StatusText = connected ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS;
+			StatusColor = connected ? ThemeHelper.GetSolidColorBrush("Green") : ThemeHelper.GetSolidColorBrush("Red");
+		}
+	}
+
+	private void LoadWiFiInfo()
+	{
+		try
+		{
+			string? ssid = NetworkHelper.GetCurrentWifiSSID();
+			int signalQuality = ssid != null ? NetworkHelper.GetCurrentNetwork().SignalQuality : 0;
+			WiFiName = ssid ?? (connected ? Properties.Resources.Ethernet : Properties.Resources.NotConnectedS);
+			WiFiIcon = ssid != null ? GetWiFiIcon(signalQuality) : (connected ? "\uF35A" : "\uFB69");
+			WiFiStrengthText = $"{Properties.Resources.SignalQuality} - {(ssid != null ? signalQuality : 100)}%";
+		}
+		catch
+		{
+			WiFiName = connected ? Properties.Resources.Ethernet : Properties.Resources.NotConnectedS;
+			WiFiStrengthText = Properties.Resources.Unknown;
+		}
 	}
 
 	private static string GetWiFiIcon(int signalQuality) => signalQuality switch
@@ -195,6 +200,31 @@ public class HomePageViewModel : ViewModelBase, ISensitiveViewModel
 		>= 25 => "\uF8B1",
 		_ => "\uF8B3"
 	};
+
+	private void LoadConnectionDetails()
+	{
+		try
+		{
+			var networkInterface = NetworkInterface.GetAllNetworkInterfaces()
+				.Where(x => x.OperationalStatus == OperationalStatus.Up)
+				.OrderByDescending(x => x.GetIPStatistics().BytesReceived)
+				.FirstOrDefault();
+			if (networkInterface != null)
+			{
+				var ipProps = WindowsIpConfig.FromNetworkInterface(networkInterface);
+
+				LocalIp = ipProps?.IPv4Address ?? Properties.Resources.Unknown;
+				Gateway = ipProps?.IPv4Gateway ?? Properties.Resources.Unknown;
+				Dns = string.Join("\n", networkInterface.GetIPProperties().DnsAddresses.Select(x => x.ToString().Replace("%16", ""))) ?? Properties.Resources.Unknown;
+			}
+		}
+		catch
+		{
+			LocalIp = Properties.Resources.Unknown;
+			Gateway = Properties.Resources.Unknown;
+			Dns = Properties.Resources.Unknown;
+		}
+	}
 
 	void ISensitiveViewModel.ToggleConfidentialMode(bool confidentialMode)
 	{

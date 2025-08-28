@@ -36,8 +36,6 @@ using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
 
-
-
 public class MainViewModel : ViewModelBase
 {
 	private SidebarViewModel _sidebarViewModel;
@@ -164,31 +162,35 @@ public class MainViewModel : ViewModelBase
 
 	private async void CheckUpdates()
 	{
-		if (!Settings.CheckUpdateOnStart) return;
-		if (!await Internet.IsAvailableAsync()) return;
-		var lastVersion = await Update.GetLastVersionAsync(Context.UpdateVersionUrl);
-		if (!Update.IsAvailable(Context.Version, lastVersion)) return;
+		try
+		{
+			if (!Settings.CheckUpdateOnStart) return;
+			if (!await Internet.IsAvailableAsync()) return;
+			var lastVersion = await Update.GetLastVersionAsync(Context.UpdateVersionUrl);
+			if (!Update.IsAvailable(Context.Version, lastVersion)) return;
 
-		var notify = new TaskbarIcon()
-		{
-			Icon = System.Drawing.Icon.ExtractAssociatedIcon(AppDomain.CurrentDomain.BaseDirectory + @"\InternetTest.exe"),
-			ToolTipText = "InternetTest",
-		};
-		notify.TrayBalloonTipClosed += (s, e) => { notify.Dispose(); };
-		notify.TrayBalloonTipClicked += (s, e) =>
-		{
+			var notify = new TaskbarIcon()
+			{
+				Icon = System.Drawing.Icon.ExtractAssociatedIcon(AppDomain.CurrentDomain.BaseDirectory + @"\InternetTest.exe"),
+				ToolTipText = "InternetTest",
+			};
+			notify.TrayBalloonTipClosed += (s, e) => { notify.Dispose(); };
+			notify.TrayBalloonTipClicked += (s, e) =>
+			{
 #if PORTABLE
 			MessageBox.Show(Properties.Resources.PortableNoAutoUpdates, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.OK, MessageBoxImage.Information);
 			return;
 #else
-			if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
-			{
-				Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
-				Application.Current.Shutdown(); // Close
-			}
+				if (MessageBox.Show(Properties.Resources.InstallConfirmMsg, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+				{
+					Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+					Application.Current.Shutdown(); // Close
+				}
 #endif
-			notify.Dispose();
-		};
-		notify.ShowBalloonTip(Properties.Resources.Updates, Properties.Resources.AvailableUpdates, BalloonIcon.Info);
+				notify.Dispose();
+			};
+			notify.ShowBalloonTip(Properties.Resources.Updates, Properties.Resources.AvailableUpdates, BalloonIcon.Info);
+		}
+		catch { }
 	}
 }

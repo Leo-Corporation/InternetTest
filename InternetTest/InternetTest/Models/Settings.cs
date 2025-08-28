@@ -39,7 +39,7 @@ public class Settings
 		MapProvider = MapProvider.OpenStreetMap;
 		DefaultPage = AppPages.Home;
 		ShowNotficationWhenUpdateAvailable = true;
-		CheckUpdateOnStart = true;
+		CheckUpdateOnStart = false;
 		UseHttps = true;
 		IsFirstRun = true;
 		TestSite = "https://leocorporation.dev";

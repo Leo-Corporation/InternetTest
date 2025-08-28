@@ -56,18 +56,22 @@ public static class NetworkHelper
 
 	public static int GetCurrentSpeed()
 	{
-		NetworkInterface[] adapters = [.. NetworkInterface.GetAllNetworkInterfaces().OrderByDescending(x => x.GetIPStatistics().BytesReceived)];
-		foreach (NetworkInterface adapter in adapters)
+		try
 		{
-			if (adapter.OperationalStatus == OperationalStatus.Up && adapter.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+			NetworkInterface[] adapters = [.. NetworkInterface.GetAllNetworkInterfaces().OrderByDescending(x => x.GetIPStatistics().BytesReceived)];
+			foreach (NetworkInterface adapter in adapters)
 			{
-				long speed = adapter.Speed;
-				if (speed > 0)
+				if (adapter.OperationalStatus == OperationalStatus.Up && adapter.NetworkInterfaceType != NetworkInterfaceType.Loopback)
 				{
-					return (int)(speed / 1_000_000); // Convert to Mbps
+					long speed = adapter.Speed;
+					if (speed > 0)
+					{
+						return (int)(speed / 1_000_000); // Convert to Mbps
+					}
 				}
 			}
 		}
+		catch { }
 		return 0; // No active network found or speed is zero
 	}
 }
