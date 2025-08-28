@@ -571,7 +571,7 @@ Questa azione non può essere annullata.</value>
     <value>Vuoi ignorare questa finestra e continuare con InternetTest?</value>
   </data>
   <data name="WelcomeDesc" xml:space="preserve">
-    <value>I tuoi strumenti Internet, tutti in un unico posto moderno.</value>
+    <value>I tuoi strumenti Internet, tutti in un unico programma moderno.</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Avanti</value>
@@ -1237,13 +1237,13 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Tasso di perdita</value>
   </data>
   <data name="StartTime" xml:space="preserve">
-    <value>Ora di inizio</value>
+    <value>Ora inizio</value>
   </data>
   <data name="IpConfigAdaptersDesc" xml:space="preserve">
-    <value>Riepilogo di tutte le schede di rete presenti su questo sistema.</value>
+    <value>Riepilogo schede di rete presenti in questo sistema.</value>
   </data>
   <data name="IpConfigDesc" xml:space="preserve">
-    <value>Visualizza le informazioni di configurazione della scheda di rete.</value>
+    <value>Visualizza informazioni configurazione scheda di rete.</value>
   </data>
   <data name="RequestsDesc" xml:space="preserve">
     <value>Effettua una richiesta HTTP a un URL specifico.</value>
@@ -1252,7 +1252,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Impostazioni richiesta</value>
   </data>
   <data name="RequestSettingsDesc" xml:space="preserve">
-    <value>Fornisci qui tutte le informazioni relative alla tua richiesta.</value>
+    <value>Vengono riportate qui tutte le informazioni relative alla richiesta.</value>
   </data>
   <data name="ResponseDesc" xml:space="preserve">
     <value>Informazioni sulla risposta - Stato {0}.</value>
@@ -1264,7 +1264,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Traccia il percorso di rete verso qualsiasi destinazione.</value>
   </data>
   <data name="TracerouteConfiguration" xml:space="preserve">
-    <value>Configurazione Traceroute</value>
+    <value>Configurazione traceroute</value>
   </data>
   <data name="TargetHostname" xml:space="preserve">
     <value>Destinazione (IP o nome host)</value>
@@ -1273,22 +1273,22 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Analisi completa del percorso fino a {0}</value>
   </data>
   <data name="TotalHops" xml:space="preserve">
-    <value>Totale luppolo</value>
+    <value>Totale hop</value>
   </data>
   <data name="MaxHopsS" xml:space="preserve">
     <value>Numero massimo: {0}</value>
   </data>
   <data name="SuccessfulHops" xml:space="preserve">
-    <value>Luppolo di successo</value>
+    <value>Hop compleati</value>
   </data>
   <data name="StartedTime" xml:space="preserve">
-    <value>Iniziato: {0}</value>
+    <value>Avviato: {0}</value>
   </data>
   <data name="Target" xml:space="preserve">
     <value>Obiettivo</value>
   </data>
   <data name="DownDetectorDesc" xml:space="preserve">
-    <value>Monitorare facilmente lo stato di inattività di qualsiasi sito web.</value>
+    <value>Monitora facilmente lo stato di inattività di qualsiasi sito web.</value>
   </data>
   <data name="Websites" xml:space="preserve">
     <value>Siti web</value>
@@ -1312,7 +1312,7 @@ Assolutamente NESSUN dato verrà inviato a Léo Corporation.</value>
     <value>Valore</value>
   </data>
   <data name="LightDesc" xml:space="preserve">
-    <value>Interfaccia luminosa</value>
+    <value>Chiara e luminosa</value>
   </data>
   <data name="DarkDesc" xml:space="preserve">
     <value>Piacevole la sera</value>
