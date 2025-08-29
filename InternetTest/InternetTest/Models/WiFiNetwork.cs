@@ -55,34 +55,41 @@ public class WiFiNetwork
 
 	public static List<WiFiNetwork> GetWiFis()
 	{
-		var availableNetworks = NativeWifi.EnumerateAvailableNetworks()
-			.Select(x => new WiFiNetwork
-			{
-				Ssid = x.Ssid.ToString(),
-				SignalQuality = x.SignalQuality,
-				BssType = x.BssType,
-				IsSecurityEnabled = x.IsSecurityEnabled,
-				ProfileName = x.ProfileName,
-				InterfaceDescription = x.InterfaceInfo.Description,
-				Interface = x.InterfaceInfo
-			})
-			.ToList();
-
-		var bssNetworks = NativeWifi.EnumerateBssNetworks()
-			.Select(x => new { x.Ssid, x.Channel, x.Band, x.Frequency })
-			.ToList();
-
-		foreach (var network in availableNetworks)
+		try
 		{
-			var bssNetwork = bssNetworks.FirstOrDefault(x => x.Ssid.ToString() == network.Ssid);
-			if (bssNetwork != null)
+			var availableNetworks = NativeWifi.EnumerateAvailableNetworks()
+				.Select(x => new WiFiNetwork
+				{
+					Ssid = x.Ssid.ToString(),
+					SignalQuality = x.SignalQuality,
+					BssType = x.BssType,
+					IsSecurityEnabled = x.IsSecurityEnabled,
+					ProfileName = x.ProfileName,
+					InterfaceDescription = x.InterfaceInfo.Description,
+					Interface = x.InterfaceInfo
+				})
+				.ToList();
+
+			var bssNetworks = NativeWifi.EnumerateBssNetworks()
+				.Select(x => new { x.Ssid, x.Channel, x.Band, x.Frequency })
+				.ToList();
+
+			foreach (var network in availableNetworks)
 			{
-				network.Channel = bssNetwork.Channel;
-				network.Frequency = bssNetwork.Frequency;
-				network.Band = bssNetwork.Band;
+				var bssNetwork = bssNetworks.FirstOrDefault(x => x.Ssid.ToString() == network.Ssid);
+				if (bssNetwork != null)
+				{
+					network.Channel = bssNetwork.Channel;
+					network.Frequency = bssNetwork.Frequency;
+					network.Band = bssNetwork.Band;
+				}
 			}
+			return availableNetworks;
 		}
-		return availableNetworks;
+		catch
+		{
+			return [];
+		}
 	}
 
 	public async Task<bool> ConnectAsync(string password = "")

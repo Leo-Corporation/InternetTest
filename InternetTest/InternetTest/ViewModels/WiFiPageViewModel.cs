@@ -132,25 +132,30 @@ public class WiFiPageViewModel : ViewModelBase, ISensitiveViewModel
 
 		GetAdapters();
 
-		string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
-		WiFiNetworks = [.. WiFiNetwork.GetWiFis().Select(x => new ConnectWiFiItemViewModel(x, currentSsid, this))];
-		_connectWiFis = [.. WiFiNetworks];
-		NoNetworks = WiFiNetworks.Count == 0;
+		RefreshWiFi(false);
 
 		RefreshProfiles();
 	}
 
-	internal async void RefreshWiFi()
+	internal async void RefreshWiFi(bool scan = true)
 	{
 		Query = string.Empty;
 		WiFiNetworks.Clear();
 		NoNetworks = false;
 		IsRefreshing = true;
 
-		await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
+		try
+		{
+			if (scan)
+				await NativeWifi.ScanNetworksAsync(TimeSpan.FromSeconds(10));
 
-		string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
-		WiFiNetwork.GetWiFis().ForEach(x => WiFiNetworks.Add(new ConnectWiFiItemViewModel(x, currentSsid, this)));
+			string? currentSsid = NetworkHelper.GetCurrentWifiSSID();
+			WiFiNetwork.GetWiFis().ForEach(x => WiFiNetworks.Add(new ConnectWiFiItemViewModel(x, currentSsid, this)));
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
 
 		_connectWiFis = [.. WiFiNetworks];
 		IsRefreshing = false;

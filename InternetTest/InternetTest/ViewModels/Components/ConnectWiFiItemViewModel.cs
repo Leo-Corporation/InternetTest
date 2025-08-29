@@ -136,7 +136,7 @@ public class ConnectWiFiItemViewModel : ViewModelBase
 			MessageBox.Show(Properties.Resources.NotConnected);
 		}
 
-		_wiFiPageViewModel.RefreshWiFi();
+		_wiFiPageViewModel.RefreshWiFi(false);
 	}
 
 	private async void ConnectPopup(object? o)
