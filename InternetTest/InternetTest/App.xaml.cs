@@ -37,38 +37,45 @@ public partial class App : Application
 {
 	protected override async void OnStartup(StartupEventArgs e)
 	{
-		// Load settings
-		Settings settings = new();
-		settings.Load();
-
-		ActivityHistory history = await ActivityHistory.LoadAsync();
-
-		ThemeHelper.ChangeTheme(settings.Theme);
-		Context.ChangeLanguage(settings.Language);
-
-		// Set the main window
-		if (settings.IsFirstRun)
+		try
 		{
-			MainWindow = new OobeWindow
+			// Load settings
+			Settings settings = new();
+			settings.Load();
+
+			ActivityHistory history = await ActivityHistory.LoadAsync();
+
+			ThemeHelper.ChangeTheme(settings.Theme);
+			Context.ChangeLanguage(settings.Language);
+
+			// Set the main window
+			if (settings.IsFirstRun)
 			{
-				DataContext = new OobeWindowViewModel(settings)
+				MainWindow = new OobeWindow
+				{
+					DataContext = new OobeWindowViewModel(settings)
+				};
+				MainWindow.Show();
+				base.OnStartup(e);
+
+				return;
+			}
+
+			MainWindow = new MainWindow()
+			{
+				Width = settings.MainWindowSize?.Item1 ?? 950,
+				Height = settings.MainWindowSize?.Item2 ?? 600,
 			};
+			MainViewModel mvm = new(settings, history, MainWindow);
+			MainWindow.DataContext = mvm;
+
 			MainWindow.Show();
+
 			base.OnStartup(e);
-
-			return;
 		}
-
-		MainWindow = new MainWindow()
+		catch (Exception ex)
 		{
-			Width = settings.MainWindowSize?.Item1 ?? 950,
-			Height = settings.MainWindowSize?.Item2 ?? 600,
-		};
-		MainViewModel mvm = new(settings, history, MainWindow);
-		MainWindow.DataContext = mvm;
-
-		MainWindow.Show();
-
-		base.OnStartup(e);
+			MessageBox.Show(ex.Message, InternetTest.Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
 	}
 }
