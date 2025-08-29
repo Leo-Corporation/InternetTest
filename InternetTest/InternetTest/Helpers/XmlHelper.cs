@@ -34,7 +34,13 @@ public static class XmlHelper
 		{
 			XmlSerializer serializer = new(typeof(T));
 			using StreamReader reader = new(filepath);
-			return (T?)serializer.Deserialize(reader);
+
+			var o = (T?)serializer.Deserialize(reader);
+
+			reader.Close();
+			reader.Dispose();
+
+			return o;
 		});
 	}
 }

@@ -154,18 +154,13 @@ public class DnsToolsPageViewModel : ViewModelBase
 
 	public ICommand GetDnsInfoCommand => new RelayCommand(async o =>
 	{
-		try
-		{
-			IsRefreshing = true;
-			await GetDnsInfo();
-			await GetDnsRecords();
-			HasInfo = true;
-		}
-		catch (Exception ex)
-		{
-			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
-			HasInfo = false;
-		}
+		IsRefreshing = true;
+		HasInfo = false;
+
+		await GetDnsInfo();
+		await GetDnsRecords();
+		HasInfo = true;
+
 		IsRefreshing = false;
 	});
 
@@ -204,47 +199,64 @@ public class DnsToolsPageViewModel : ViewModelBase
 
 	private async Task GetDnsInfo()
 	{
-		if (string.IsNullOrEmpty(Query)) return;
-		Query = Query.Replace("https://", "").Replace("http://", "").Replace("www.", "").Split("/")[0];
+		try
+		{
+			if (string.IsNullOrEmpty(Query)) return;
+			Query = Query.Replace("https://", "").Replace("http://", "").Replace("www.", "").Split("/")[0];
 
-		IPHostEntry host = Dns.GetHostEntry(Query);
-		IPAddress ip = host.AddressList[0];
+			IPHostEntry host = Dns.GetHostEntry(Query);
+			IPAddress ip = host.AddressList[0];
 
-		var whois = new WhoisLookup();
-		var response = await whois.LookupAsync(Query);
+			var whois = new WhoisLookup();
+			var response = await whois.LookupAsync(Query);
 
-		IpAddress = ip.ToString();
-		Domain = Query;
+			IpAddress = ip.ToString();
+			Domain = Query;
 
-		if (response is null) return;
-		CreateDate = response.Registered.ToString() ?? Properties.Resources.Unknown;
-		ExpirationDate = response.Expiration.ToString() ?? Properties.Resources.Unknown;
-		Registrant = response.Registrant.Name ?? Properties.Resources.Unknown;
-		Status = string.Join("\n", response.DomainStatus) ?? Properties.Resources.Unknown;
+			if (response is null) return;
+			CreateDate = response.Registered.ToString() ?? Properties.Resources.Unknown;
+			ExpirationDate = response.Expiration.ToString() ?? Properties.Resources.Unknown;
+			Registrant = response.Registrant?.Name ?? Properties.Resources.Unknown;
+
+			Status = response.DomainStatus is null || response.DomainStatus.Count == 0
+				? Properties.Resources.Unknown
+				: string.Join("\n", response.DomainStatus) ?? Properties.Resources.Unknown;
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
 	}
 
 	private async Task GetDnsRecords()
 	{
-		var lookup = new LookupClient();
-		var result = await lookup.QueryAsync(Query, QueryType.ANY);
-
-		_csv = string.Empty;
-
-		DnsRecords.Clear();
-		DnsTabs.Clear();
-		DnsTabs.Add(new("ANY", this, QueryType.ANY, true));
-
-		foreach (var record in result.AllRecords)
+		try
 		{
-			DnsRecords.Add(new(record.DomainName, record.ToString(), (QueryType)record.RecordType));
+			var lookup = new LookupClient();
+			var result = await lookup.QueryAsync(Query, QueryType.ANY);
 
-			_csv += $"{record.RecordType},{record}\n";
+			_csv = string.Empty;
 
-			if (DnsTabs.FirstOrDefault(x => x.Title == record.RecordType.ToString()) == null)
-				DnsTabs.Add(new(record.RecordType.ToString(), this, (QueryType)record.RecordType));
+			DnsRecords.Clear();
+			DnsTabs.Clear();
+			DnsTabs.Add(new("ANY", this, QueryType.ANY, true));
+
+			foreach (var record in result.AllRecords)
+			{
+				DnsRecords.Add(new(record.DomainName, record.ToString(), (QueryType)record.RecordType));
+
+				_csv += $"{record.RecordType},{record}\n";
+
+				if (DnsTabs.FirstOrDefault(x => x.Title == record.RecordType.ToString()) == null)
+					DnsTabs.Add(new(record.RecordType.ToString(), this, (QueryType)record.RecordType));
+			}
+
+			DnsRecordsItems = [.. DnsRecords.Select(x => new DnsItemViewModel(x))];
 		}
-
-		DnsRecordsItems = [.. DnsRecords.Select(x => new DnsItemViewModel(x))];
+		catch (Exception ex)
+		{
+			MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+		}
 	}
 
 	public static async Task<DnsCacheInfo[]> GetDnsCache()

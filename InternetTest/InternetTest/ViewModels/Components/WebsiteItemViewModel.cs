@@ -81,7 +81,7 @@ public class WebsiteItemViewModel : ViewModelBase
 			var statusInfo = await Internet.GetStatusInfoAsync(Url);
 			var endTime = DateTime.Now;
 
-			StatusCode = statusInfo.StatusCode;
+			StatusCode = statusInfo?.StatusCode ?? 400;
 
 			StatusBackground = StatusCode switch
 			{
@@ -98,18 +98,35 @@ public class WebsiteItemViewModel : ViewModelBase
 			};
 
 			Details = [
-				new(Properties.Resources.StatusMessage, statusInfo.StatusDescription, 0, 0),
+				new(Properties.Resources.StatusMessage, statusInfo?.StatusDescription ?? Properties.Resources.Failed, 0, 0),
 				new(Properties.Resources.TimeElapsed,  $"{(endTime - startTime).TotalMilliseconds:0} ms", 0,1 ),
 			];
 
-			_history.Activity.Add(new Activity(Url, statusInfo.StatusCode.ToString(), statusInfo.StatusCode switch
+			_history.Activity.Add(new Activity(Url, (StatusCode).ToString(), StatusCode switch
 			{
 				>= 400 => false,
 				>= 300 or <= 100 => null,
 				_ => true,
 			}, DateTime.Now));
 		}
-		catch { }
+		catch
+		{
+			StatusCode = 400;
+
+			StatusBackground = StatusCode switch
+			{
+				>= 400 => ThemeHelper.GetSolidColorBrush("LightOrange"),
+				>= 300 => ThemeHelper.GetSolidColorBrush("DarkFAccent"),
+				_ => ThemeHelper.GetSolidColorBrush("LightGreen"),
+			};
+
+			StatusForeground = StatusCode switch
+			{
+				>= 400 => ThemeHelper.GetSolidColorBrush("ForegroundOrange"),
+				>= 300 => ThemeHelper.GetSolidColorBrush("LightAccent"),
+				_ => ThemeHelper.GetSolidColorBrush("ForegroundGreen"),
+			};
+		}
 		ShowStatusCode = true;
 	}
 

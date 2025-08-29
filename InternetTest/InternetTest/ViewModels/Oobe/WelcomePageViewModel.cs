@@ -54,6 +54,7 @@ public class WelcomePageViewModel : ViewModelBase
 		_settings.Save();
 
 		Process.Start(FileSys.CurrentAppDirectory + @"\InternetTest.exe");
+		Application.Current.MainWindow?.Close();
 		Application.Current.Shutdown(0);
 	});
 	public WelcomePageViewModel(OobeWindowViewModel oobe)

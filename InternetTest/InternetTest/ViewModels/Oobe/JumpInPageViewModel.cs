@@ -37,6 +37,7 @@ public class JumpInPageViewModel(OobeWindowViewModel oobe)
 		oobe.Settings.IsFirstRun = false;
 		oobe.Settings.Save();
 		Process.Start(FileSys.CurrentAppDirectory + @"\InternetTest.exe");
+		Application.Current.MainWindow?.Close();
 		Application.Current.Shutdown(0);
 	});
 }
