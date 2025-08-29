@@ -60,6 +60,7 @@ public class ActivityHistory
 		StreamWriter streamWriter = new(filePath);
 		xmlSerializer.Serialize(streamWriter, this);
 
+		streamWriter.Close();
 		streamWriter.Dispose();
 	}
 }
