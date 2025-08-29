@@ -103,12 +103,16 @@ public class Settings
 		{
 			using var writer = new StreamWriter(filePath);
 			new XmlSerializer(typeof(Settings)).Serialize(writer, new Settings());
+			writer.Close();
+			writer.Dispose();
 		}
 
 		Settings settings;
 		using (var reader = new StreamReader(filePath))
 		{
 			settings = (Settings?)new XmlSerializer(typeof(Settings)).Deserialize(reader) ?? new Settings();
+			reader.Close();
+			reader.Dispose();
 		}
 
 		// Upgrade defaults in one go if they're null
