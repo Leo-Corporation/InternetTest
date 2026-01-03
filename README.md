@@ -2,7 +2,6 @@
 ![GitHub issues](https://img.shields.io/github/issues/Leo-Corporation/InternetTest)
 ![GitHub](https://img.shields.io/github/license/Leo-Corporation/InternetTest)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Leo-Corporation/InternetTest/dotnet-core-desktop.yml?branch=main)
-![Using PeyrSharp](https://img.shields.io/badge/using-PeyrSharp-DD00FF?logo=nuget)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Leo-Corporation/InternetTest)
 <br />
 
