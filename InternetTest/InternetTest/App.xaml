@@ -678,6 +678,12 @@
                                     VerticalAlignment="Center"
                                     RecognizesAccessKey="True" />
                             </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Opacity" Value="0.7" />
+                                    <Setter Property="Cursor" Value="No" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>

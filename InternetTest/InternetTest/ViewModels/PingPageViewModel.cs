@@ -69,8 +69,10 @@ public class PingPageViewModel : ViewModelBase
 	public int RequestAmount { get => _requestAmount; set { _requestAmount = value; OnPropertyChanged(nameof(RequestAmount)); } }
 
 	private bool _empty = true;
-
 	public bool Empty { get => _empty; set { _empty = value; OnPropertyChanged(nameof(Empty)); } }
+
+	private bool _pingEnabled = true;
+	public bool PingEnabled { get => _pingEnabled; set { _pingEnabled = value; OnPropertyChanged(nameof(PingEnabled)); } }
 
 	public ICommand PingCommand => new RelayCommand(async o => await Ping());
 	public ICommand CopyCommand => new RelayCommand(o =>
@@ -106,6 +108,7 @@ public class PingPageViewModel : ViewModelBase
 			return;
 		}
 
+		PingEnabled = false;
 		Sent = 0;
 		Received = 0;
 		Lost = 0;
@@ -131,8 +134,6 @@ public class PingPageViewModel : ViewModelBase
 					Max = $"{times.Max()} ms";
 					Avg = $"{times.Average()} ms";
 					Duration = $"{times.Sum()} ms";
-
-
 				}
 				else
 				{
@@ -143,6 +144,7 @@ public class PingPageViewModel : ViewModelBase
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error);
+				PingEnabled = true;
 				return;
 			}
 		}
@@ -158,5 +160,7 @@ public class PingPageViewModel : ViewModelBase
 		_activityHistory.Save();
 
 		Host = Dns.GetHostEntry(Query).HostName;
+
+		PingEnabled = true;
 	}
 }

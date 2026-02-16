@@ -104,7 +104,8 @@
                         Command="{Binding PingCommand}"
                         Content="{x:Static lang:Resources.Ping}"
                         FontWeight="SemiBold"
-                        Foreground="{DynamicResource WindowButtonsHoverForeground1}" />
+                        Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                        IsEnabled="{Binding PingEnabled}" />
                 </StackPanel>
             </Grid>
         </Border>
