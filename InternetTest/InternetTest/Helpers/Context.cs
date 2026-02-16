@@ -29,7 +29,7 @@ namespace InternetTest.Helpers;
 
 public static class Context
 {
-	public static string Version => "9.0.2.2508";
+	public static string Version => "9.1.0.2602-pre1";
 
 #if PORTABLE
 	public static string DefaultStoragePath => $@"{FileSys.CurrentDirectory}\InternetTest Pro\";
