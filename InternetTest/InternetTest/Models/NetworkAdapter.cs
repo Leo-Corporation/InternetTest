@@ -186,12 +186,49 @@ public class NetworkAdapter
 				NetworkInterfaceType.Wwanpp2 => 27,
 				_ => 0 // Handle any other cases or invalid values as needed.
 			};
+
+			if ((int)networkInterfaceType == 53)
+				return Properties.Resources.PropVirtual;
+
 			return types[i];
 		}
 		catch
 		{
-			return "";
+			return Properties.Resources.Unknown;
 		}
 	}
 
+
+	public string Icon
+	{
+		get
+		{
+			if ((int)NetworkInterfaceType == 53) // Virtual
+				return "\uFCA7";
+
+
+			if (Name.Contains("Bluetooth")) return "\uF1DF";
+			if (Name.Contains("Tunnel")) return "\uFCA7";
+
+			return NetworkInterfaceType switch
+			{
+				NetworkInterfaceType.Tunnel => "\uFCA7",
+				NetworkInterfaceType.Ethernet => "\uFB32",
+				NetworkInterfaceType.Ethernet3Megabit => "\uFB32",
+				NetworkInterfaceType.FastEthernetFx => "\uFB32",
+				NetworkInterfaceType.FastEthernetT => "\uFB32",
+				NetworkInterfaceType.GigabitEthernet => "\uFB32",
+				NetworkInterfaceType.AsymmetricDsl => "\uF864",
+				NetworkInterfaceType.RateAdaptDsl => "\uF864",
+				NetworkInterfaceType.SymmetricDsl => "\uF864",
+				NetworkInterfaceType.VeryHighSpeedDsl => "\uF864",
+				NetworkInterfaceType.Loopback => "\uF18E",
+				NetworkInterfaceType.BasicIsdn => "\uF57E",
+				NetworkInterfaceType.PrimaryIsdn => "\uF57E",
+				NetworkInterfaceType.Isdn => "\uF57E",
+				_ => "\uF8AC"
+			};
+
+		}
+	}
 }

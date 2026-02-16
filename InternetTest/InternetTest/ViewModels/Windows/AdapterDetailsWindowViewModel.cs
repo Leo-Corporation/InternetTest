@@ -49,17 +49,7 @@ public class AdapterDetailsWindowViewModel : ViewModelBase
 	public AdapterDetailsWindowViewModel(NetworkAdapter networkAdapter)
 	{
 		Name = networkAdapter.Name;
-		Icon = networkAdapter.NetworkInterfaceType switch
-		{
-			NetworkInterfaceType.Tunnel => "\uF18E",
-			NetworkInterfaceType.Ethernet => "\uFB32",
-			NetworkInterfaceType.Ethernet3Megabit => "\uFB32",
-			NetworkInterfaceType.FastEthernetFx => "\uFB32",
-			NetworkInterfaceType.FastEthernetT => "\uFB32",
-			NetworkInterfaceType.GigabitEthernet => "\uFB32",
-			_ => "\uF8AC"
-		};
-		if (networkAdapter.Name.Contains("Bluetooth")) Icon = "\uF1DF";
+		Icon = networkAdapter.Icon;
 
 		Details = [
 			new(Properties.Resources.DataConsumption, $"{StorageUnitHelper.GetStorageUnit(networkAdapter.BytesReceived + networkAdapter.BytesSent).Item2:0.00} {StorageUnitHelper.UnitToString(StorageUnitHelper.GetStorageUnit(networkAdapter.BytesReceived + networkAdapter.BytesSent).Item1)}", 0, 0),
@@ -105,8 +95,5 @@ public class AdapterDetailsWindowViewModel : ViewModelBase
 		Clipboard.SetDataObject(_networkAdapter.ToFormattedString());
 	}
 
-	private string BoolToString(bool b)
-	{
-		return b ? Properties.Resources.Yes : Properties.Resources.No;
-	}
+	private static string BoolToString(bool b) => b ? Properties.Resources.Yes : Properties.Resources.No;
 }

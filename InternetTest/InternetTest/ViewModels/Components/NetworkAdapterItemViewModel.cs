@@ -73,7 +73,7 @@ public class NetworkAdapterItemViewModel : ViewModelBase
 	public NetworkAdapterItemViewModel(NetworkAdapter networkAdapter)
 	{
 		Name = networkAdapter.Name;
-		InterfaceType = networkAdapter.NetworkInterfaceType.ToString();
+		InterfaceType = NetworkAdapter.GetInterfaceTypeName(networkAdapter.NetworkInterfaceType);
 		StatusColor = networkAdapter.Status switch
 		{
 			OperationalStatus.Up => ThemeHelper.GetSolidColorBrush("Green"),
@@ -87,18 +87,7 @@ public class NetworkAdapterItemViewModel : ViewModelBase
 			_ => networkAdapter.Status.ToString()
 		};
 
-		Icon = networkAdapter.NetworkInterfaceType switch
-		{
-			NetworkInterfaceType.Tunnel => "\uF18E",
-			NetworkInterfaceType.Ethernet => "\uFB32",
-			NetworkInterfaceType.Ethernet3Megabit => "\uFB32",
-			NetworkInterfaceType.FastEthernetFx => "\uFB32",
-			NetworkInterfaceType.FastEthernetT => "\uFB32",
-			NetworkInterfaceType.GigabitEthernet => "\uFB32",
-			_ => "\uF8AC"
-		};
-
-		if (networkAdapter.Name.Contains("Bluetooth")) Icon = "\uF1DF";
+		Icon = networkAdapter.Icon;
 
 		Speed = $"{StorageUnitHelper.GetStorageUnit(networkAdapter.Speed).Item2:0.00} {StorageUnitHelper.UnitToString(StorageUnitHelper.GetStorageUnit(networkAdapter.Speed).Item1)}/s";
 		TotalBytesSent = $"{StorageUnitHelper.GetStorageUnit(networkAdapter.BytesSent).Item2:0.00} {StorageUnitHelper.UnitToString(StorageUnitHelper.GetStorageUnit(networkAdapter.BytesSent).Item1)}";

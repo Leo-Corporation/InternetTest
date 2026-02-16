@@ -26,6 +26,7 @@ using ManagedNativeWifi;
 using System.Net.NetworkInformation;
 
 namespace InternetTest.Helpers;
+
 public static class NetworkHelper
 {
 	public static string? GetCurrentWifiSSID()

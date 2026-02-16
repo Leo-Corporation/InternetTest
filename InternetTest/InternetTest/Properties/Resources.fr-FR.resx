@@ -1320,4 +1320,7 @@ Absolument AUCUNE donnée n'est envoyée à Léo Corporation.</value>
   <data name="DefaultThemeDesc" xml:space="preserve">
     <value>Suit vos préférences</value>
   </data>
+  <data name="PropVirtual" xml:space="preserve">
+    <value>Virtuel/interne propriétaire</value>
+  </data>
 </root>
