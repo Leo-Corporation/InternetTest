@@ -26,6 +26,7 @@ using InternetTest.Models;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels.Components;
+
 public class HistoryItemViewModel : ViewModelBase
 {
 	private string _name = string.Empty;

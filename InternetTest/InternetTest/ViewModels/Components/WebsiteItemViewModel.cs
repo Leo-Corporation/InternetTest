@@ -30,6 +30,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels.Components;
+
 public class WebsiteItemViewModel : ViewModelBase
 {
 	private ObservableCollection<GridItemViewModel> _details = [];

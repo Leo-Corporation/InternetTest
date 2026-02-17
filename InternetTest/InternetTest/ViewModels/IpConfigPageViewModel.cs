@@ -29,6 +29,7 @@ using System.Net.NetworkInformation;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
+
 public class IpConfigPageViewModel : ViewModelBase, ISensitiveViewModel
 {
 	private List<IpConfigItemViewModel> _ipConfigs = [];

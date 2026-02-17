@@ -29,6 +29,7 @@ using System.Windows;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels.Windows;
+
 public class DnsDetailsWindowViewModel : ViewModelBase
 {
 	private ObservableCollection<GridItemViewModel> _details = [];

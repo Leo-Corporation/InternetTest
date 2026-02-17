@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 namespace InternetTest.Enums;
+
 public enum Theme
 {
 	Light,

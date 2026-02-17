@@ -25,4 +25,5 @@ using System.Net;
 using System.Net.NetworkInformation;
 
 namespace InternetTest.Models;
+
 public record TracerouteStep(int TTL, IPAddress Address, long RoundtripTime, IPStatus Status);

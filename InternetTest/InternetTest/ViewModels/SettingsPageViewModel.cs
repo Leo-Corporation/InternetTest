@@ -34,6 +34,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels;
+
 public class SettingsPageViewModel : ViewModelBase
 {
 	private readonly MainViewModel _mainViewModel;

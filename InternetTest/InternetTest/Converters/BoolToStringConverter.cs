@@ -25,6 +25,7 @@ using System.Globalization;
 using System.Windows.Data;
 
 namespace InternetTest.Converters;
+
 public class BoolToStringConverter : IValueConverter
 {
 	// Expect parameter format: "TrueValue,FalseValue"

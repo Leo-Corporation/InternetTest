@@ -34,6 +34,7 @@ using System.Windows;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
+
 public class LocateIpPageViewModel : ViewModelBase, ISensitiveViewModel
 {
 	private readonly Settings _settings;

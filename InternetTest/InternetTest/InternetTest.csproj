@@ -1,81 +1,81 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-	<OutputType>WinExe</OutputType>
-	<TargetFramework>net8.0-windows</TargetFramework>
-	<Nullable>enable</Nullable>
-	<ImplicitUsings>enable</ImplicitUsings>
-	<UseWPF>true</UseWPF>
-	<ApplicationIcon>InternetTest.ico</ApplicationIcon>
-	<ApplicationManifest>app.manifest</ApplicationManifest>
-	<Version>9.1.0.2602-pre1</Version>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+		<ApplicationIcon>InternetTest.ico</ApplicationIcon>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Version>9.1.0.2602-pre1</Version>
+	</PropertyGroup>
 
-  <ItemGroup>
-	<None Remove="Assets\InternetTest.png" />
-	<None Remove="Assets\InternetTestD.png" />
-	<None Remove="Fonts\FluentSystemIcons-Filled.ttf" />
-	<None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
-	<None Remove="Fonts\Hauora-ExtraBold.ttf" />
-	<None Remove="Fonts\Hauora-Regular.ttf" />
-	<None Remove="Fonts\Hauora-SemiBold.ttf" />
-	<None Remove="InternetTest.ico" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Assets\InternetTest.png" />
+		<None Remove="Assets\InternetTestD.png" />
+		<None Remove="Fonts\FluentSystemIcons-Filled.ttf" />
+		<None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
+		<None Remove="Fonts\Hauora-ExtraBold.ttf" />
+		<None Remove="Fonts\Hauora-Regular.ttf" />
+		<None Remove="Fonts\Hauora-SemiBold.ttf" />
+		<None Remove="InternetTest.ico" />
+	</ItemGroup>
 
-  <ItemGroup>
-	  <Content Include="InternetTest.ico" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="InternetTest.ico" />
+	</ItemGroup>
 
-  <ItemGroup>
-	<PackageReference Include="DnsClient" Version="1.8.0" />
-	<PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
-	<PackageReference Include="ManagedNativeWifi" Version="3.0.2" />
-	<PackageReference Include="MicaWPF.Lite" Version="6.3.0" />
-	<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
-	<PackageReference Include="PeyrSharp.Core" Version="2.1.0.2312" />
-	<PackageReference Include="PeyrSharp.Env" Version="2.1.0.2312" />
-	<PackageReference Include="QRCoder" Version="1.6.0" />
-	<PackageReference Include="RestSharp" Version="112.1.0" />
-	<PackageReference Include="Whois" Version="3.0.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DnsClient" Version="1.8.0" />
+		<PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
+		<PackageReference Include="ManagedNativeWifi" Version="3.0.2" />
+		<PackageReference Include="MicaWPF.Lite" Version="6.3.0" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+		<PackageReference Include="PeyrSharp.Core" Version="2.1.0.2312" />
+		<PackageReference Include="PeyrSharp.Env" Version="2.1.0.2312" />
+		<PackageReference Include="QRCoder" Version="1.6.0" />
+		<PackageReference Include="RestSharp" Version="112.1.0" />
+		<PackageReference Include="Whois" Version="3.0.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-	<Resource Include="Assets\InternetTest.png">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Assets\InternetTestD.png">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Fonts\FluentSystemIcons-Filled.ttf">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Fonts\FluentSystemIcons-Regular.ttf">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Fonts\Hauora-ExtraBold.ttf">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Fonts\Hauora-Regular.ttf">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Fonts\Hauora-SemiBold.ttf">
-	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</Resource>
-  </ItemGroup>
+	<ItemGroup>
+		<Resource Include="Assets\InternetTest.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\InternetTestD.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\FluentSystemIcons-Filled.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\FluentSystemIcons-Regular.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\Hauora-ExtraBold.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\Hauora-Regular.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\Hauora-SemiBold.ttf">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
 
-  <ItemGroup>
-	<Compile Update="Properties\Resources.Designer.cs">
-	  <DesignTime>True</DesignTime>
-	  <AutoGen>True</AutoGen>
-	  <DependentUpon>Resources.resx</DependentUpon>
-	</Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-	<EmbeddedResource Update="Properties\Resources.resx">
-	  <Generator>PublicResXFileCodeGenerator</Generator>
-	  <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-	</EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
 
 </Project>

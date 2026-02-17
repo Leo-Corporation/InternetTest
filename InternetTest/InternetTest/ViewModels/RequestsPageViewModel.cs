@@ -32,6 +32,7 @@ using System.Windows;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
+
 public class RequestsPageViewModel : ViewModelBase
 {
 	private ObservableCollection<HeaderItemViewModel> _headers = [];

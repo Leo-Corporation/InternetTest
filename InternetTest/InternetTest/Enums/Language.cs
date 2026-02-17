@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 namespace InternetTest.Enums;
+
 public enum Language
 {
 	Default = 0,

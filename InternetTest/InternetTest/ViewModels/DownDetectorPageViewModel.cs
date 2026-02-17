@@ -29,6 +29,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace InternetTest.ViewModels;
+
 public class DownDetectorPageViewModel : ViewModelBase
 {
 	private ObservableCollection<WebsiteItemViewModel> _websites = [];

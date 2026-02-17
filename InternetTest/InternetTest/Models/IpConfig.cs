@@ -24,6 +24,7 @@ SOFTWARE.
 using System.Net.NetworkInformation;
 
 namespace InternetTest.Models;
+
 public record WindowsIpConfig(
 	string? Name,
 	string? Description,

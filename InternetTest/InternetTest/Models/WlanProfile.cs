@@ -29,6 +29,7 @@ using System.Windows;
 using System.Xml.Serialization;
 
 namespace InternetTest.Models;
+
 [XmlRoot(ElementName = "SSID")]
 public class Ssid
 {

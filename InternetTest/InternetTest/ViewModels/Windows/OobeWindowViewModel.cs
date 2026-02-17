@@ -25,6 +25,7 @@ using InternetTest.Models;
 using InternetTest.ViewModels.Oobe;
 
 namespace InternetTest.ViewModels.Windows;
+
 public class OobeWindowViewModel : ViewModelBase
 {
 	public Settings Settings { get; }

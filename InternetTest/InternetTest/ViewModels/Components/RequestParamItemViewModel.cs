@@ -24,6 +24,7 @@ SOFTWARE.
 using InternetTest.Models;
 
 namespace InternetTest.ViewModels.Components;
+
 public class RequestParamItemViewModel : ViewModelBase
 {
 	private string _key = string.Empty;
