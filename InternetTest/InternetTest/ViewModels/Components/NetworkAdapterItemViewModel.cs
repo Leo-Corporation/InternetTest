@@ -67,6 +67,17 @@ public class NetworkAdapterItemViewModel : ViewModelBase
 		}
 	}
 
+	private SolidColorBrush? _statusBackgroundColor;
+	public SolidColorBrush? StatusBackgroundColor
+	{
+		get => _statusBackgroundColor;
+		set
+		{
+			_statusBackgroundColor = value;
+			OnPropertyChanged(nameof(StatusBackgroundColor));
+		}
+	}
+
 	public ICommand SettingsCommand { get; }
 	public ICommand DetailsCommand { get; }
 
@@ -74,12 +85,20 @@ public class NetworkAdapterItemViewModel : ViewModelBase
 	{
 		Name = networkAdapter.Name;
 		InterfaceType = NetworkAdapter.GetInterfaceTypeName(networkAdapter.NetworkInterfaceType);
+		StatusBackgroundColor = networkAdapter.Status switch
+		{
+			OperationalStatus.Up => ThemeHelper.GetSolidColorBrush("LightGreen"),
+			OperationalStatus.Down => ThemeHelper.GetSolidColorBrush("LightRed"),
+			_ => ThemeHelper.GetSolidColorBrush("LightAccent")
+		};
+
 		StatusColor = networkAdapter.Status switch
 		{
-			OperationalStatus.Up => ThemeHelper.GetSolidColorBrush("Green"),
-			OperationalStatus.Down => ThemeHelper.GetSolidColorBrush("Red"),
-			_ => ThemeHelper.GetSolidColorBrush("Accent")
+			OperationalStatus.Up => ThemeHelper.GetSolidColorBrush("ForegroundGreen"),
+			OperationalStatus.Down => ThemeHelper.GetSolidColorBrush("ForegroundRed"),
+			_ => ThemeHelper.GetSolidColorBrush("DarkFAccent")
 		};
+
 		Status = networkAdapter.Status switch
 		{
 			OperationalStatus.Up => Properties.Resources.ConnectedS,

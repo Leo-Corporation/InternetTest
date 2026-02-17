@@ -61,12 +61,12 @@
                     Margin="5 0 0 0"
                     Padding="5 2"
                     VerticalAlignment="Center"
-                    d:BorderBrush="{DynamicResource Green}"
-                    BorderBrush="{Binding StatusBrush}"
+                    d:Background="{DynamicResource LightGreen}"
+                    Background="{Binding StatusBackgroundBrush}"
                     BorderThickness="1"
-                    CornerRadius="10">
+                    CornerRadius="5">
                     <TextBlock
-                        d:Foreground="{DynamicResource Green}"
+                        d:Foreground="{DynamicResource ForegroundGreen}"
                         d:Text="{x:Static lang:Resources.ConnectedS}"
                         FontWeight="SemiBold"
                         Foreground="{Binding StatusBrush}"

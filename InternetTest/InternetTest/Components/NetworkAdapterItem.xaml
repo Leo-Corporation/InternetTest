@@ -55,12 +55,12 @@
                     Margin="5 0 0 0"
                     Padding="5 2"
                     VerticalAlignment="Center"
-                    d:BorderBrush="Green"
-                    BorderBrush="{Binding StatusColor}"
+                    d:Background="{DynamicResource LightGreen}"
+                    Background="{Binding StatusBackgroundColor}"
                     BorderThickness="1"
-                    CornerRadius="10">
+                    CornerRadius="5">
                     <TextBlock
-                        d:Foreground="Green"
+                        d:Foreground="{DynamicResource ForegroundGreen}"
                         d:Text="Connected"
                         FontWeight="SemiBold"
                         Foreground="{Binding StatusColor}"

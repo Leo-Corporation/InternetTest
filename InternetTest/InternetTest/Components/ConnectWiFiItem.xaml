@@ -63,13 +63,13 @@
                     Margin="5 0 0 0"
                     Padding="5 2"
                     VerticalAlignment="Center"
-                    BorderBrush="{DynamicResource Green}"
+                    Background="{DynamicResource LightGreen}"
                     BorderThickness="1"
-                    CornerRadius="10"
+                    CornerRadius="5"
                     Visibility="{Binding IsConnected, Converter={StaticResource BoolToVis}}">
                     <TextBlock
                         FontWeight="SemiBold"
-                        Foreground="{DynamicResource Green}"
+                        Foreground="{DynamicResource ForegroundGreen}"
                         Text="{x:Static lang:Resources.ConnectedS}" />
                 </Border>
                 <Button
