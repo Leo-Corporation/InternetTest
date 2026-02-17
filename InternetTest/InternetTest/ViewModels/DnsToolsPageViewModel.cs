@@ -37,6 +37,7 @@ using System.Windows.Input;
 using Whois;
 
 namespace InternetTest.ViewModels;
+
 public class DnsToolsPageViewModel : ViewModelBase
 {
 	private ObservableCollection<DnsRecordTabBtnViewModel> _dnsTabs = [];

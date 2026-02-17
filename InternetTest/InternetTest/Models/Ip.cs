@@ -27,6 +27,7 @@ using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace InternetTest.Models;
+
 public class Ip
 {
 	[JsonPropertyName("query")]

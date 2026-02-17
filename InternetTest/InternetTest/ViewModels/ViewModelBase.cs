@@ -24,6 +24,7 @@ SOFTWARE.
 using System.ComponentModel;
 
 namespace InternetTest.ViewModels;
+
 public class ViewModelBase : INotifyPropertyChanged, IDisposable
 {
 	public event PropertyChangedEventHandler? PropertyChanged;

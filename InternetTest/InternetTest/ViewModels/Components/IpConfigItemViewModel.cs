@@ -31,6 +31,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels.Components;
+
 public class IpConfigItemViewModel : ViewModelBase
 {
 	private ObservableCollection<GridItemViewModel> _details = [];
@@ -70,6 +71,9 @@ public class IpConfigItemViewModel : ViewModelBase
 	private SolidColorBrush? _statusBrush;
 	public SolidColorBrush? StatusBrush { get => _statusBrush; set { _statusBrush = value; OnPropertyChanged(nameof(StatusBrush)); } }
 
+	private SolidColorBrush? _statusBackgroundBrush;
+	public SolidColorBrush? StatusBackgroundBrush { get => _statusBackgroundBrush; set { _statusBackgroundBrush = value; OnPropertyChanged(nameof(StatusBackgroundBrush)); } }
+
 	public ICommand CopyCommand => new RelayCommand(o =>
 	{
 		Clipboard.SetDataObject(_ipConfig.ToString());
@@ -85,8 +89,12 @@ public class IpConfigItemViewModel : ViewModelBase
 
 		StatusText = _ipConfig.Status == OperationalStatus.Up ? Properties.Resources.ConnectedS : Properties.Resources.NotConnectedS;
 		StatusBrush = _ipConfig.Status == OperationalStatus.Up
-			? ThemeHelper.GetSolidColorBrush("Green")
-			: ThemeHelper.GetSolidColorBrush("Red");
+			? ThemeHelper.GetSolidColorBrush("ForegroundGreen")
+			: ThemeHelper.GetSolidColorBrush("ForegroundRed");
+
+		StatusBackgroundBrush = _ipConfig.Status == OperationalStatus.Up
+			? ThemeHelper.GetSolidColorBrush("LightGreen")
+			: ThemeHelper.GetSolidColorBrush("LightRed");
 
 		IsExpanded = _ipConfig.Status == OperationalStatus.Up;
 

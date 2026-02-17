@@ -34,6 +34,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels;
+
 public class SettingsPageViewModel : ViewModelBase
 {
 	private readonly MainViewModel _mainViewModel;
@@ -448,12 +449,11 @@ public class SettingsPageViewModel : ViewModelBase
 		"DnsClient - Apache License Version 2.0 - © Michael Conrad\n" +
 		"Fluent System Icons - MIT License - © 2020 Microsoft Corporation\n" +
 		"ManagedNativeWifi - MIT License - © 2015-2019 emoacht\n" +
-		"PeyrSharp - MIT License - © 2022-2025 Devyus\n" +
+		"PeyrSharp - MIT License - © 2022-2026 Léo Corporation\n" +
 		"QRCoder - MIT License - © 2013-2018 Raffael Herrmann\n" +
 		"RestSharp - Apache License Version 2.0 - © .NET Foundation and Contributors\n" +
-		"Synethia - MIT License - © 2023-2025 Devyus\n" +
 		"Whois - MIT License - © 2012 Chris Wood\n" +
-		"InternetTest - MIT License - © 2021-2025 Léo Corporation", $"{Properties.Resources.InternetTestPro} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
+		"InternetTest - MIT License - © 2021-2026 Léo Corporation", $"{Properties.Resources.InternetTestPro} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
 	}
 
 	private void GitHub(object? obj)

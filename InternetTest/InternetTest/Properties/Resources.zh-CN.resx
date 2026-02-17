@@ -1311,4 +1311,7 @@
   <data name="DefaultThemeDesc" xml:space="preserve">
     <value>根据您的设备偏好设置</value>
   </data>
+  <data name="PropVirtual" xml:space="preserve">
+    <value>专有虚拟/内部</value>
+  </data>
 </root>

@@ -26,6 +26,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace InternetTest.Models;
+
 public partial class DnsCacheInfo
 {
 	[JsonPropertyName("TTL")]

@@ -25,6 +25,7 @@ using InternetTest.Commands;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels.Components;
+
 public class HeaderItemViewModel : ViewModelBase
 {
 	private string _title = string.Empty;

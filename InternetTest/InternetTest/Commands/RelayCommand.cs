@@ -24,6 +24,7 @@ SOFTWARE.
 using System.Windows.Input;
 
 namespace InternetTest.Commands;
+
 public class RelayCommand(Action<object> execute, Func<object, bool> canExecute) : ICommand
 {
 	private readonly Action<object> _execute = execute ?? throw new ArgumentNullException(nameof(execute));

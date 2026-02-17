@@ -30,6 +30,7 @@ using System.Windows;
 using System.Windows.Input;
 
 namespace InternetTest.ViewModels;
+
 public class TraceroutePageViewModel : ViewModelBase
 {
 	private ObservableCollection<TracerouteItemViewModel> _tracerouteItems = [];

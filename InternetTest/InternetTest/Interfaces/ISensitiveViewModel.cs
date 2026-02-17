@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 namespace InternetTest.Interfaces;
+
 public interface ISensitiveViewModel
 {
 	internal void ToggleConfidentialMode(bool confidentialMode);

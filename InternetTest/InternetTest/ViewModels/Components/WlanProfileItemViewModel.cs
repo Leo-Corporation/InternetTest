@@ -33,6 +33,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace InternetTest.ViewModels.Components;
+
 public class WlanProfileItemViewModel : ViewModelBase
 {
 	private readonly WlanProfile _wlanProfile;

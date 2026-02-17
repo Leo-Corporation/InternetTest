@@ -31,6 +31,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels.Components;
+
 public class TracerouteItemViewModel : ViewModelBase
 {
 	private string _host = string.Empty;

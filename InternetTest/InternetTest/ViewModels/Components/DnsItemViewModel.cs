@@ -29,6 +29,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 namespace InternetTest.ViewModels.Components;
+
 public class DnsItemViewModel : ViewModelBase
 {
 	private string _value = string.Empty;

@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <RootNamespace>Xalyus_Updater</RootNamespace>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Xalyus Updater.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>1.0.0.2508</Version>
+    <Version>1.1.0.2602</Version>
     <Company>Léo Corporation</Company>
-    <Copyright>© 2025</Copyright>
+    <Copyright>© 2026</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

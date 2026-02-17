@@ -26,6 +26,7 @@ using System.Windows;
 using System.Windows.Data;
 
 namespace InternetTest.Converters;
+
 public class IntToStringConverter : IValueConverter
 {
 	public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

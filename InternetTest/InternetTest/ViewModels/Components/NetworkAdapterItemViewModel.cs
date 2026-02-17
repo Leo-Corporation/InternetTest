@@ -67,19 +67,38 @@ public class NetworkAdapterItemViewModel : ViewModelBase
 		}
 	}
 
+	private SolidColorBrush? _statusBackgroundColor;
+	public SolidColorBrush? StatusBackgroundColor
+	{
+		get => _statusBackgroundColor;
+		set
+		{
+			_statusBackgroundColor = value;
+			OnPropertyChanged(nameof(StatusBackgroundColor));
+		}
+	}
+
 	public ICommand SettingsCommand { get; }
 	public ICommand DetailsCommand { get; }
 
 	public NetworkAdapterItemViewModel(NetworkAdapter networkAdapter)
 	{
 		Name = networkAdapter.Name;
-		InterfaceType = networkAdapter.NetworkInterfaceType.ToString();
+		InterfaceType = NetworkAdapter.GetInterfaceTypeName(networkAdapter.NetworkInterfaceType);
+		StatusBackgroundColor = networkAdapter.Status switch
+		{
+			OperationalStatus.Up => ThemeHelper.GetSolidColorBrush("LightGreen"),
+			OperationalStatus.Down => ThemeHelper.GetSolidColorBrush("LightRed"),
+			_ => ThemeHelper.GetSolidColorBrush("LightAccent")
+		};
+
 		StatusColor = networkAdapter.Status switch
 		{
-			OperationalStatus.Up => ThemeHelper.GetSolidColorBrush("Green"),
-			OperationalStatus.Down => ThemeHelper.GetSolidColorBrush("Red"),
-			_ => ThemeHelper.GetSolidColorBrush("Accent")
+			OperationalStatus.Up => ThemeHelper.GetSolidColorBrush("ForegroundGreen"),
+			OperationalStatus.Down => ThemeHelper.GetSolidColorBrush("ForegroundRed"),
+			_ => ThemeHelper.GetSolidColorBrush("DarkFAccent")
 		};
+
 		Status = networkAdapter.Status switch
 		{
 			OperationalStatus.Up => Properties.Resources.ConnectedS,
@@ -87,18 +106,7 @@ public class NetworkAdapterItemViewModel : ViewModelBase
 			_ => networkAdapter.Status.ToString()
 		};
 
-		Icon = networkAdapter.NetworkInterfaceType switch
-		{
-			NetworkInterfaceType.Tunnel => "\uF18E",
-			NetworkInterfaceType.Ethernet => "\uFB32",
-			NetworkInterfaceType.Ethernet3Megabit => "\uFB32",
-			NetworkInterfaceType.FastEthernetFx => "\uFB32",
-			NetworkInterfaceType.FastEthernetT => "\uFB32",
-			NetworkInterfaceType.GigabitEthernet => "\uFB32",
-			_ => "\uF8AC"
-		};
-
-		if (networkAdapter.Name.Contains("Bluetooth")) Icon = "\uF1DF";
+		Icon = networkAdapter.Icon;
 
 		Speed = $"{StorageUnitHelper.GetStorageUnit(networkAdapter.Speed).Item2:0.00} {StorageUnitHelper.UnitToString(StorageUnitHelper.GetStorageUnit(networkAdapter.Speed).Item1)}/s";
 		TotalBytesSent = $"{StorageUnitHelper.GetStorageUnit(networkAdapter.BytesSent).Item2:0.00} {StorageUnitHelper.UnitToString(StorageUnitHelper.GetStorageUnit(networkAdapter.BytesSent).Item1)}";
