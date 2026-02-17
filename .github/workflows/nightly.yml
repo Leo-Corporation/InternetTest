@@ -2,32 +2,32 @@ name: Nightly Build
 on: [pull_request, workflow_dispatch]
 
 jobs:
-  build:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      # Install the .NET workload
-      - name: Install .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 8.0.x
+    build:
+        runs-on: windows-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v6
+              with:
+                  fetch-depth: 0
+            # Install the .NET workload
+            - name: Install .NET
+              uses: actions/setup-dotnet@v5
+              with:
+                  dotnet-version: 10.0.x
 
-      - name: Build App
-        run: dotnet publish InternetTest\InternetTest.sln -c Release -p:DefineConstants=NIGHTLY -r win-x64 -o InternetTest\InternetTest\bin\release\net8.0-windows\publish\win-x64
+            - name: Build App
+              run: dotnet publish InternetTest\InternetTest.sln -c Release -p:DefineConstants=NIGHTLY -r win-x64 -o InternetTest\InternetTest\bin\release\net10.0-windows\publish\win-x64
 
-      - name: Test App
-        run: dotnet test InternetTest\InternetTest.sln
+            - name: Test App
+              run: dotnet test InternetTest\InternetTest.sln
 
-      - name: Build Setup
-        uses: nadeemjazmawe/inno-setup-action-cli@v6.0.5
-        with:
-          filepath: "./InternetTest.Setup/Setup.iss"
+            - name: Build Setup
+              uses: nadeemjazmawe/inno-setup-action-cli@v6.0.5
+              with:
+                  filepath: './InternetTest.Setup/Setup.iss'
 
-      - name: Upload Setup file
-        uses: actions/upload-artifact@v4
-        with:
-          name: InternetTestProSetup.exe
-          path: "./InternetTest.Setup/Output/InternetTestProSetup.exe"
+            - name: Upload Setup file
+              uses: actions/upload-artifact@v6
+              with:
+                  name: InternetTestProSetup.exe
+                  path: './InternetTest.Setup/Output/InternetTestProSetup.exe'

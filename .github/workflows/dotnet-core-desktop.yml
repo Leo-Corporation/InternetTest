@@ -1,28 +1,28 @@
 name: .NET CI
 
 on:
-  push:
-  pull_request:
+    push:
+    pull_request:
 
 jobs:
-  build:
-    runs-on:
-      windows-latest # For a list of available runner types, refer to
-      # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+    build:
+        runs-on:
+            windows-latest # For a list of available runner types, refer to
+            # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v6
+              with:
+                  fetch-depth: 0
 
-      # Install the .NET workload
-      - name: Install .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 6.0.x
+            # Install the .NET workload
+            - name: Install .NET
+              uses: actions/setup-dotnet@v5
+              with:
+                  dotnet-version: 10.0.x
 
-      - name: Build App
-        run: dotnet build InternetTest\InternetTest\InternetTest.csproj -c Release
+            - name: Build App
+              run: dotnet build InternetTest\InternetTest\InternetTest.csproj -c Release
 
-      - name: Test App
-        run: dotnet test InternetTest\InternetTest\InternetTest.csproj
+            - name: Test App
+              run: dotnet test InternetTest\InternetTest\InternetTest.csproj
